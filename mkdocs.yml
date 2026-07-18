@@ -1,0 +1,186 @@
+site_name: WoW API Docs
+site_description: "Cataclysm-era World of Warcraft API reference (wowprogramming.com archive)"
+site_url: !ENV [MKDOCS_SITE_URL, "http://127.0.0.1:8000/"]
+
+docs_dir: docs
+site_dir: site
+
+exclude_docs: |
+  WoW API Docs.md
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Dark mode
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+
+nav:
+  - Home: index.md
+  - API Types: API Types.md
+  - Failed Scrapes: Failed Scrapes.md
+  - Categories:
+      - Achievement: categories/Achievement.md
+      - Action: categories/Action.md
+      - ActionBar: categories/ActionBar.md
+      - Addon-related: categories/Addon-related.md
+      - Arena: categories/Arena.md
+      - Auction: categories/Auction.md
+      - Bank: categories/Bank.md
+      - Barbershop: categories/Barbershop.md
+      - Battle.net: categories/Battle.net.md
+      - Battlefield: categories/Battlefield.md
+      - Blizzard internal: categories/Blizzard internal.md
+      - Buff: categories/Buff.md
+      - CVar: categories/CVar.md
+      - Calendar: categories/Calendar.md
+      - Camera: categories/Camera.md
+      - Channel: categories/Channel.md
+      - Chat: categories/Chat.md
+      - Class resource: categories/Class resource.md
+      - Client control and information: categories/Client control and information.md
+      - Combat: categories/Combat.md
+      - CombatLog: categories/CombatLog.md
+      - Commentator: categories/Commentator.md
+      - Companion: categories/Companion.md
+      - Complaint: categories/Complaint.md
+      - Container: categories/Container.md
+      - Currency: categories/Currency.md
+      - Cursor: categories/Cursor.md
+      - Debugging and Profiling: categories/Debugging and Profiling.md
+      - Deprecated: categories/Deprecated.md
+      - Duel: categories/Duel.md
+      - Equipment Manager: categories/Equipment Manager.md
+      - Experience (XP): categories/Experience (XP).md
+      - Faction: categories/Faction.md
+      - GM Survey: categories/GM Survey.md
+      - GM Ticket: categories/GM Ticket.md
+      - Glyph: categories/Glyph.md
+      - Guild: categories/Guild.md
+      - Guild bank: categories/Guild bank.md
+      - Hyperlink: categories/Hyperlink.md
+      - In-game movie playback: categories/In-game movie playback.md
+      - Inspect: categories/Inspect.md
+      - Instance: categories/Instance.md
+      - Inventory: categories/Inventory.md
+      - Item: categories/Item.md
+      - Item Text: categories/Item Text.md
+      - Keybind: categories/Keybind.md
+      - Keyboard: categories/Keyboard.md
+      - Knowledge-base: categories/Knowledge-base.md
+      - Limited play time: categories/Limited play time.md
+      - Locale-specific: categories/Locale-specific.md
+      - Looking for group: categories/Looking for group.md
+      - Loot: categories/Loot.md
+      - Lua library: categories/Lua library.md
+      - Mac client: categories/Mac client.md
+      - Macro: categories/Macro.md
+      - Mail: categories/Mail.md
+      - Map: categories/Map.md
+      - Merchant: categories/Merchant.md
+      - Minigame: categories/Minigame.md
+      - Modified click: categories/Modified click.md
+      - Money: categories/Money.md
+      - Movement: categories/Movement.md
+      - Multi-cast actions: categories/Multi-cast actions.md
+      - NPC Gossip Dialog: categories/NPC Gossip Dialog.md
+      - Objectives tracking: categories/Objectives tracking.md
+      - Party: categories/Party.md
+      - Pet: categories/Pet.md
+      - Pet Stable: categories/Pet Stable.md
+      - Petition: categories/Petition.md
+      - Player information: categories/Player information.md
+      - PvP: categories/PvP.md
+      - Quest: categories/Quest.md
+      - Raid: categories/Raid.md
+      - Recruit-a-friend: categories/Recruit-a-friend.md
+      - Secure execution utility: categories/Secure execution utility.md
+      - Skill: categories/Skill.md
+      - Social: categories/Social.md
+      - Socketing: categories/Socketing.md
+      - Sound: categories/Sound.md
+      - Spell: categories/Spell.md
+      - StanceShapeshift: categories/StanceShapeshift.md
+      - Stat information: categories/Stat information.md
+      - Summoning: categories/Summoning.md
+      - Talent: categories/Talent.md
+      - Targeting: categories/Targeting.md
+      - TaxiFlight: categories/TaxiFlight.md
+      - Threat: categories/Threat.md
+      - Tracking: categories/Tracking.md
+      - Trade: categories/Trade.md
+      - Tradeskill: categories/Tradeskill.md
+      - Trainer: categories/Trainer.md
+      - Tutorial: categories/Tutorial.md
+      - UIVisual: categories/UIVisual.md
+      - Uncategorized: categories/Uncategorized.md
+      - Unit: categories/Unit.md
+      - Utility: categories/Utility.md
+      - Vehicle: categories/Vehicle.md
+      - Video: categories/Video.md
+      - Voice: categories/Voice.md
+      - Zone information: categories/Zone information.md
+  - Types:
+      - 1nil: types/1nil.md
+      - actionID: types/actionID.md
+      - ah-list-type: types/ah-list-type.md
+      - anchorPoint: types/anchorPoint.md
+      - arenaTeamID: types/arenaTeamID.md
+      - auraFilter: types/auraFilter.md
+      - backdrop: types/backdrop.md
+      - binding: types/binding.md
+      - bitfield: types/bitfield.md
+      - blizzid: types/blizzid.md
+      - chatMsgType: types/chatMsgType.md
+      - colorString: types/colorString.md
+      - containerID: types/containerID.md
+      - containerSlotID: types/containerSlotID.md
+      - expansionID: types/expansionID.md
+      - frameStrata: types/frameStrata.md
+      - glyphIndex: types/glyphIndex.md
+      - guid: types/guid.md
+      - hyperlink: types/hyperlink.md
+      - inventoryID: types/inventoryID.md
+      - itemID: types/itemID.md
+      - itemLocation: types/itemLocation.md
+      - itemQuality: types/itemQuality.md
+      - itemString: types/itemString.md
+      - justifyH: types/justifyH.md
+      - justifyV: types/justifyV.md
+      - layer: types/layer.md
+      - macroID: types/macroID.md
+      - powerType: types/powerType.md
+      - rollID: types/rollID.md
+      - spellID: types/spellID.md
+      - spellbookID: types/spellbookID.md
+      - standingID: types/standingID.md
+      - unitID: types/unitID.md

@@ -1,0 +1,9 @@
+_cache/
+.DS_Store
+site/
+.venv/
+venv/
+__pycache__/
+*.pyc
+_fn_names.txt
+.obsidian/workspace.json
