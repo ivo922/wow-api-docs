@@ -4,8 +4,6 @@ Cataclysm-era World of Warcraft API reference, scraped from the [wowprogramming.
 
 ## Browse locally
 
-**MkDocs (recommended for reading):**
-
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -13,27 +11,15 @@ pip install -r requirements-docs.txt
 mkdocs serve
 ```
 
-Then open http://127.0.0.1:8000/
-
-**Obsidian:** open the `docs/` folder as the vault. Start from `docs/index.md` (or `docs/WoW API Docs.md`).
+Open http://127.0.0.1:8000/
 
 ## Publish (GitHub Pages)
 
 Push to `main`. The [Deploy docs](.github/workflows/docs.yml) workflow builds with MkDocs Material and deploys to GitHub Pages.
 
-After the first push, enable Pages in the repo settings:
+After the first push: **Settings → Pages → Source: GitHub Actions**
 
-**Settings → Pages → Build and deployment → Source: GitHub Actions**
-
-Site URL will be `https://<user>.github.io/<repo>/`.
-
-## Regenerating nav / links
-
-If you add pages or restore Obsidian `[[wikilinks]]`:
-
-```bash
-python3 scripts/prep_mkdocs.py
-```
+Site URL: `https://<user>.github.io/<repo>/`
 
 ## Sources
 
