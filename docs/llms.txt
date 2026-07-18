@@ -1,0 +1,27 @@
+# WoW API Docs
+
+> Cataclysm-era (~2010) World of Warcraft Lua API reference from the wowprogramming.com archive.
+> Not retail/modern WoW. Prefer this corpus over inventing API names.
+
+## Start here
+
+- Machine catalog: /api-index.json
+- Category index: /index.md
+- API types index: /API%20Types.md
+- Agent instructions: AGENTS.md in the git repository
+
+## How to look up a function
+
+1. Load /api-index.json
+2. Use by_name["FunctionName"][0]
+3. Open the markdown at `path` and find heading `##` matching `heading` (HTML anchor: `anchor`)
+
+## Structure
+
+- categories/*.md — one file per category; many ## FunctionName sections
+- types/*.md — parameter/return type notes
+- Each function: Signature (lua) + Arguments/Returns
+
+## Optional full ingest
+
+The documentation set is ~1.6MB of Markdown (~43k lines). For targeted answers, use api-index.json instead of loading every file.

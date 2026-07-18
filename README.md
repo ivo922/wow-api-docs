@@ -21,6 +21,18 @@ After the first push: **Settings → Pages → Source: GitHub Actions**
 
 Site URL: `https://<user>.github.io/<repo>/`
 
+## For AI agents
+
+- [`AGENTS.md`](AGENTS.md) — lookup recipe
+- [`docs/api-index.json`](docs/api-index.json) — function/type catalog
+- [`llms.txt`](llms.txt) — short machine map (also served at `/llms.txt` on Pages)
+
+Regenerate the catalog after editing API pages:
+
+```bash
+python3 tools/gen_api_index.py
+```
+
 ## Sources
 
 - [API categories](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_categories) (2010-07-26)
