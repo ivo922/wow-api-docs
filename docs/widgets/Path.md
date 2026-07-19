@@ -78,6 +78,12 @@ Returns the curveType of the given path
 curveType = Path:GetCurve()
 ```
 
+**Returns:**
+
+- `curveType` - The curse type for the given path (`string`)
+  - `NONE` - The control points are used literally.
+  - `SMOOTH` - The control points are used with a smoothing function that may give a more pleasing animation.
+
 ---
 
 ### Animation:GetDuration
@@ -377,8 +383,16 @@ Returns whether the widget supports a script handler
 **Signature:**
 
 ```lua
-hasScript = Path:HasScript("scriptType")
+hasScript = ScriptObject:HasScript("scriptType")
 ```
+
+**Arguments:**
+
+- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+
+**Returns:**
+
+- `hasScript` - `1` if the widget can handle the script, otherwise `nil` (`1nil`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
 

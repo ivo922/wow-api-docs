@@ -34,12 +34,12 @@ EditBox:AddHistoryLine("text")
 
 ### Frame:AllowAttributeChanges
 
-Temporarily allows insecure code to modify the frame's attributes during combat
+Temporarily allows insecure code to modify the frame's attributes during combat. This permission is automatically rescinded when the frame's [`OnUpdate`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnUpdate) script next runs.
 
 **Signature:**
 
 ```lua
-EditBox:AllowAttributeChanges()
+Frame:AllowAttributeChanges()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -84,12 +84,12 @@ canChange = Region:CanChangeProtectedState()
 
 ### Region:ClearAllPoints
 
-Removes all anchor points from the region
+Clear all anchor point for the given region
 
 **Signature:**
 
 ```lua
-EditBox:ClearAllPoints()
+Region:ClearAllPoints()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -122,13 +122,18 @@ EditBox:ClearHistory()
 
 ### Region:CreateAnimationGroup
 
-Creates a new AnimationGroup as a child of the region
+Create and return a new AnimationGroup as a child of this Region
 
 **Signature:**
 
 ```lua
-animationGroup = EditBox:CreateAnimationGroup(["name" [, "inheritsFrom"]])
+Region:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new animation group (`string`)
+- `inheritsFrom` - A template from which the new animation group should inherit (`string`)
 
 *Inherited from [Region](Region.md)*
 
@@ -136,13 +141,19 @@ animationGroup = EditBox:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 
 ### Frame:CreateFontString
 
-Creates a new [[docs/widgets/FontString|`FontString`]] as a child of the frame
+Creates a new FontString for the Frame on a given layer, possibly inheriting from a template
 
 **Signature:**
 
 ```lua
-fontstring = EditBox:CreateFontString(["name" [, "layer" [, "inherits"]]])
+Frame:CreateFontString(["name" [, "layer" [, "inherits"]]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new font string (`string`)
+- `layer` - The graphic layer on which to create the font string. Default value is `ARTWORK`. (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `inherits` - A template from which the new front string should inherit (`string`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -150,13 +161,24 @@ fontstring = EditBox:CreateFontString(["name" [, "layer" [, "inherits"]]])
 
 ### Frame:CreateTexture
 
-Creates a new [[docs/widgets/Texture|`Texture`]] as a child of the frame
+Creates a new [`Texture`](Texture.md) as a child of the frame. The `sublevel` argument can be used to provide layering of textures within a draw layer. As it can be difficult to compute the proper layering, addon authors should avoid using this option, and it's XML equivalent `textureSubLevel` without reason. It should also be noted that `FontStrings` will always appear on top of all textures in a given draw layer.
 
 **Signature:**
 
 ```lua
-texture = EditBox:CreateTexture(["name" [, "layer" [, "inherits"]]])
+texture = Frame:CreateTexture(["name" [, "layer" [, "inherits" [, sublevel]]]])
 ```
+
+**Arguments:**
+
+- `name` - Global name for the new texture (`string`)
+- `layer` - Graphic layer on which to create the texture; defaults to `ARTWORK` if not specified (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `inherits` - Name of a template from which the new texture should inherit (`string`)
+- `sublevel` - The sub-level on the given graphics layer ranging from `-8`- to `7`. The default value of this argument is `0` (`number`)
+
+**Returns:**
+
+- `texture` - Reference to the new `Texture` object (`texture`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -164,13 +186,17 @@ texture = EditBox:CreateTexture(["name" [, "layer" [, "inherits"]]])
 
 ### Frame:CreateTitleRegion
 
-Creates a title region for dragging the frame
+Creates a title region for dragging the frame. Creating a title region allows a frame to be repositioned by the user (by clicking and dragging in the region) without requiring additional scripts. (This behavior only applies if the frame is [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse).)
 
 **Signature:**
 
 ```lua
-region = EditBox:CreateTitleRegion()
+region = Frame:CreateTitleRegion()
 ```
+
+**Returns:**
+
+- `region` - Reference to the new `Region` object (`region`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -183,8 +209,12 @@ Prevents display of all child objects of the frame on a specified graphics layer
 **Signature:**
 
 ```lua
-EditBox:DisableDrawLayer("layer")
+Frame:DisableDrawLayer("layer")
 ```
+
+**Arguments:**
+
+- `layer` - Name of a graphics layer (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
 
 *Inherited from [Frame](Frame.md)*
 
@@ -210,13 +240,19 @@ Frame:EnableDrawLayer("layer")
 
 ### Frame:EnableJoystick
 
-Enables or disables joystick interactivity
+Enables or disables joystick interactivity. Joystick interactivity must be enabled in order for a frame's joystick-related [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) handlers to be run.
+
+(As of this writing, joystick support is partially implemented but not enabled in the current version of World of Warcraft.)
 
 **Signature:**
 
 ```lua
-EditBox:EnableJoystick(enable)
+Frame:EnableJoystick(enable)
 ```
+
+**Arguments:**
+
+- `enable` - True to enable joystick interactivity; false to disable (`boolean`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -312,13 +348,17 @@ enabled = EditBox:GetAltArrowKeyMode()
 
 ### Region:GetAnimationGroups
 
-Returns a list of animation groups belonging to the region
+Returns a list of animation groups belonging to this region
 
 **Signature:**
 
 ```lua
-... = EditBox:GetAnimationGroups()
+... = Region:GetAnimationGroups()
 ```
+
+**Returns:**
+
+- `...` - The list of animation groups belonging to this region (`list of AnimationGroup`)
 
 *Inherited from [Region](Region.md)*
 
@@ -463,12 +503,12 @@ left, bottom, width, height = Frame:GetBoundsRect()
 
 ### Region:GetCenter
 
-Returns the screen coordinates of the region's center
+Returns the screen coordinates of the Region's center.
 
 **Signature:**
 
 ```lua
-x, y = EditBox:GetCenter()
+Region:GetCenter()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -582,13 +622,17 @@ alpha = Frame:GetEffectiveAlpha()
 
 ### Frame:GetEffectiveDepth
 
-Returns the overall 3D depth of the frame (for stereoscopic 3D configurations)
+Returns the overall 3D depth of the frame (for stereoscopic 3D configurations). Unlike [`:GetDepth()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/GetDepth) which returns the apparent depth of the frame relative to its parent, this function returns the absolute depth of the frame, taking into account the relative depths of parent frames.
 
 **Signature:**
 
 ```lua
-depth = EditBox:GetEffectiveDepth()
+depth = Frame:GetEffectiveDepth()
 ```
+
+**Returns:**
+
+- `depth` - Apparent 3D depth of this frame relative to the screen (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -596,12 +640,12 @@ depth = EditBox:GetEffectiveDepth()
 
 ### Frame:GetEffectiveScale
 
-Returns the overall scale factor of the frame
+Returns the frame's effective scale
 
 **Signature:**
 
 ```lua
-scale = EditBox:GetEffectiveScale()
+Frame:GetEffectiveScale()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -633,13 +677,17 @@ filename, fontHeight, flags = FontInstance:GetFont()
 
 ### FontInstance:GetFontObject
 
-Returns the `Font` object from which the font instance's properties are inherited
+Returns the `Font` object from which the font instance's properties are inherited. See [`FontInstance:SetFontObject()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetFontObject) for details.
 
 **Signature:**
 
 ```lua
-font = EditBox:GetFontObject()
+font = FontInstance:GetFontObject()
 ```
+
+**Returns:**
+
+- `font` - Reference to the `Font` object from which the font instance's properties are inherited, or `nil` if the font instance has no inherited properties (`font`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -692,12 +740,12 @@ strata = Frame:GetFrameStrata()
 
 ### Region:GetHeight
 
-Returns the height of the region
+Returns the height of the region.
 
 **Signature:**
 
 ```lua
-height = EditBox:GetHeight()
+Region:GetHeight()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -722,12 +770,12 @@ count = EditBox:GetHistoryLines()
 
 ### Frame:GetHitRectInsets
 
-Returns the insets from the frame's edges which determine its mouse-interactable area
+Returns the inserts for the frame's HitRect
 
 **Signature:**
 
 ```lua
-left, right, top, bottom = EditBox:GetHitRectInsets()
+Frame:GetHitRectInsets()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -762,17 +810,25 @@ Returns whether long lines of text are indented when wrapping
 indent = EditBox:GetIndentedWordWrap()
 ```
 
+**Returns:**
+
+- `indent` - `1` if long lines of text are indented when wrapping; otherwise `nil` (`1nil`)
+
 ---
 
 ### EditBox:GetInputLanguage
 
-Returns the currently selected keyboard input language (character set / input method)
+Returns the currently selected keyboard input language (character set / input method). Applies to keyboard input methods, not in-game languages or client locales.
 
 **Signature:**
 
 ```lua
 language = EditBox:GetInputLanguage()
 ```
+
+**Returns:**
+
+- `language` - Token representing the current keyboard input method (`string`)
 
 ---
 
@@ -804,8 +860,15 @@ Returns the font instance's vertical text alignment style
 **Signature:**
 
 ```lua
-justify = EditBox:GetJustifyV()
+justify = FontInstance:GetJustifyV()
 ```
+
+**Returns:**
+
+- `justify` - Vertical text alignment style (`string`, [justifyV](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyV))
+  - `BOTTOM`
+  - `MIDDLE`
+  - `TOP`
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -831,13 +894,17 @@ left = Region:GetLeft()
 
 ### EditBox:GetMaxBytes
 
-Returns the maximum number of bytes of text allowed in the edit box
+Returns the maximum number of bytes of text allowed in the edit box. Note: Unicode characters may consist of more than one byte each, so the behavior of a byte limit may differ from that of a [character limit](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/EditBox/GetMaxLetters) in practical use.
 
 **Signature:**
 
 ```lua
 maxBytes = EditBox:GetMaxBytes()
 ```
+
+**Returns:**
+
+- `maxBytes` - Maximum number of text bytes allowed in the edit box (`number`)
 
 ---
 
@@ -851,17 +918,26 @@ Returns the maximum number of text characters allowed in the edit box
 maxLetters = EditBox:GetMaxLetters()
 ```
 
+**Returns:**
+
+- `maxLetters` - Maximum number of text characters allowed in the edit box (`number`)
+
 ---
 
 ### Frame:GetMaxResize
 
-Returns the maximum size of the frame for user resizing
+Returns the maximum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing).
 
 **Signature:**
 
 ```lua
-maxWidth, maxHeight = EditBox:GetMaxResize()
+maxWidth, maxHeight = Frame:GetMaxResize()
 ```
+
+**Returns:**
+
+- `maxWidth` - Maximum width of the frame (in pixels), or `0` for no limit (`number`)
+- `maxHeight` - Maximum height of the frame (in pixels), or `0` for no limit (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -911,8 +987,12 @@ Returns the number of child frames belonging to the frame
 **Signature:**
 
 ```lua
-numChildren = EditBox:GetNumChildren()
+numChildren = Frame:GetNumChildren()
 ```
+
+**Returns:**
+
+- `numChildren` - Number of child frames belonging to the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -959,8 +1039,12 @@ Returns the number of non-Frame child regions belonging to the frame
 **Signature:**
 
 ```lua
-numRegions = EditBox:GetNumRegions()
+numRegions = Frame:GetNumRegions()
 ```
+
+**Returns:**
+
+- `numRegions` - Number of non-Frame child regions (`FontString`s and `Texture`s) belonging to the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1072,8 +1156,12 @@ Returns a list of non-Frame child regions belonging to the frame
 **Signature:**
 
 ```lua
-... = EditBox:GetRegions()
+... = Frame:GetRegions()
 ```
+
+**Returns:**
+
+- `...` - A list of each non-Frame child region (`FontString` or `Texture`) belonging to the frame (`list`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1099,12 +1187,12 @@ right = Region:GetRight()
 
 ### Frame:GetScale
 
-Returns the frame's scale factor
+Returns the scale of the frame
 
 **Signature:**
 
 ```lua
-scale = EditBox:GetScale()
+Frame:GetScale()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1161,8 +1249,13 @@ Returns the offset of the font instance's text shadow from its text
 **Signature:**
 
 ```lua
-xOffset, yOffset = EditBox:GetShadowOffset()
+xOffset, yOffset = FontInstance:GetShadowOffset()
 ```
+
+**Returns:**
+
+- `xOffset` - Horizontal distance between the text and its shadow (in pixels) (`number`)
+- `yOffset` - Vertical distance between the text and its shadow (in pixels) (`number`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -1194,8 +1287,12 @@ Returns the font instance's amount of spacing between lines
 **Signature:**
 
 ```lua
-spacing = EditBox:GetSpacing()
+spacing = FontInstance:GetSpacing()
 ```
+
+**Returns:**
+
+- `spacing` - Amount of space between lines of text (in pixels) (`number`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -1224,8 +1321,15 @@ Returns the font instance's default text color
 **Signature:**
 
 ```lua
-textR, textG, textB, textAlpha = EditBox:GetTextColor()
+textR, textG, textB, textAlpha = FontInstance:GetTextColor()
 ```
+
+**Returns:**
+
+- `textR` - Red component of the text color (0.0 - 1.0) (`number`)
+- `textG` - Green component of the text color (0.0 - 1.0) (`number`)
+- `textB` - Blue component of the text color (0.0 - 1.0) (`number`)
+- `textAlpha` - Alpha (opacity) of the text (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -1240,6 +1344,13 @@ Returns the insets from the edit box's edges which determine its interactive tex
 ```lua
 left, right, top, bottom = EditBox:GetTextInsets()
 ```
+
+**Returns:**
+
+- `left` - Distance from the left edge of the edit box to the left edge of its interactive text area (in pixels) (`number`)
+- `right` - Distance from the right edge of the edit box to the right edge of its interactive text area (in pixels) (`number`)
+- `top` - Distance from the top edge of the edit box to the top edge of its interactive text area (in pixels) (`number`)
+- `bottom` - Distance from the bottom edge of the edit box to the bottom edge of its interactive text area (in pixels) (`number`)
 
 ---
 
@@ -1281,13 +1392,17 @@ top = Region:GetTop()
 
 ### EditBox:GetUTF8CursorPosition
 
-Returns the cursor's numeric position in the edit box, taking UTF-8 multi-byte character into account
+Returns the cursor's numeric position in the edit box, taking UTF-8 multi-byte character into account. If the `EditBox` contains multi-byte Unicode characters, the `GetCursorPosition()` method will not return correct results, as it considers each eight byte character to count as a single glyph. This method properly returns the position in the edit box from the perspective of the user.
 
 **Signature:**
 
 ```lua
 position = EditBox:GetUTF8CursorPosition()
 ```
+
+**Returns:**
+
+- `position` - The cursor's numeric position (leftmost position is 0), taking UTF8 multi-byte characters into account. (`number`)
 
 ---
 
@@ -1332,8 +1447,16 @@ Returns whether the widget supports a script handler
 **Signature:**
 
 ```lua
-hasScript = EditBox:HasScript("scriptType")
+hasScript = ScriptObject:HasScript("scriptType")
 ```
+
+**Arguments:**
+
+- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+
+**Returns:**
+
+- `hasScript` - `1` if the widget can handle the script, otherwise `nil` (`1nil`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
 
@@ -1362,6 +1485,11 @@ Selects all or a portion of the text in the edit box
 ```lua
 EditBox:HighlightText([start [, end]])
 ```
+
+**Arguments:**
+
+- `start` - Character position at which to begin the selection (between 0, for the position before the first character, and `editbox:`[`GetNumLetters()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/EditBox/GetNumLetters), for the position after the last character); defaults to 0 if not specified (`number`)
+- `end` - Character position at which to end the selection; if not specified or if less than `start`, selects all characters after the `start` position; if equal to `start`, selects nothing and positions the cursor at the `start` position (`number`)
 
 ---
 
@@ -1432,16 +1560,20 @@ Returns whether the edit box automatically acquires keyboard input focus
 enabled = EditBox:IsAutoFocus()
 ```
 
+**Returns:**
+
+- `enabled` - `1` if the edit box automatically acquires keyboard input focus; otherwise `nil` (`1nil`)
+
 ---
 
 ### Frame:IsClampedToScreen
 
-Returns whether the frame's boundaries are limited to those of the screen
+Returns whether or not the frame is clamped to the screen
 
 **Signature:**
 
 ```lua
-enabled = EditBox:IsClampedToScreen()
+Frame:IsClampedToScreen()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1480,12 +1612,12 @@ isDragging = Region:IsDragging()
 
 ### Frame:IsEventRegistered
 
-Returns whether the frame is registered for a given [[docs/events|event]]
+Returns whether or not the frame is registered for the given event
 
 **Signature:**
 
 ```lua
-registered = EditBox:IsEventRegistered("event")
+Frame:IsEventRegistered()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1544,12 +1676,12 @@ enabled = EditBox:IsJoystickEnabled()
 
 ### Frame:IsKeyboardEnabled
 
-Returns whether keyboard interactivity is enabled for the frame
+Returns whether or not the frame is keyboard enabled
 
 **Signature:**
 
 ```lua
-enabled = EditBox:IsKeyboardEnabled()
+Frame:IsKeyboardEnabled()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1871,13 +2003,22 @@ Frame:RegisterEvent("event")
 
 ### Frame:RegisterForDrag
 
-Registers the frame for dragging
+Registers the frame for dragging. Once the frame is registered for dragging (and [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse)), the frame's [`OnDragStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStart) and [`OnDragStop`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStop) scripts will be called when the specified mouse button(s) are clicked and dragged starting from within the frame (or its mouse-interactive area).
 
 **Signature:**
 
 ```lua
-EditBox:RegisterForDrag(...)
+Frame:RegisterForDrag(...)
 ```
+
+**Arguments:**
+
+- `...` - A list of strings, each the name of a mouse button for which the frame should respond to drag actions (`list`)
+  - `Button4`
+  - `Button5`
+  - `LeftButton`
+  - `MiddleButton`
+  - `RightButton`
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1938,13 +2079,18 @@ EditBox:SetAltArrowKeyMode(enable)
 
 ### Frame:SetAttribute
 
-Sets a secure frame attribute
+Sets a secure frame attribute. See the [secure template documentation](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/secure_template) for more information about frame attributes.
 
 **Signature:**
 
 ```lua
-EditBox:SetAttribute("name", value)
+Frame:SetAttribute("name", value)
 ```
+
+**Arguments:**
+
+- `name` - Name of an attribute, case insensitive (`string`)
+- `value` - New value to set for the attribute (`value`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1968,12 +2114,28 @@ EditBox:SetAutoFocus(enable)
 
 ### Frame:SetBackdrop
 
-Sets a backdrop graphic for the frame
+Sets a frame's backdrop as defined by a table.
+
+This function accepts the return from the Frame:GetBackdrop() function.  The format of the backdropTbl argument is as follows:
+
+{
+ bgFile = "bgFile", 
+ edgeFile = "edgeFile", 
+ tile = false, 
+ tileSize = 0, 
+ edgeSize = 32,
+ insets = { 
+ left = 0, 
+ right = 0, 
+ top = 0, 
+ bottom = 0 
+ }
+}
 
 **Signature:**
 
 ```lua
-EditBox:SetBackdrop(backdrop)
+Frame:SetBackdrop()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1982,13 +2144,20 @@ EditBox:SetBackdrop(backdrop)
 
 ### Frame:SetBackdropBorderColor
 
-Sets a shading color for the frame's border graphic
+Sets a shading color for the frame's border graphic. As with [`Texture:SetVertexColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Texture/SetVertexColor), this color is a shading applied to the colors of the texture image; a color of `(1, 1, 1)` allows the image's original colors to show.
 
 **Signature:**
 
 ```lua
-EditBox:SetBackdropBorderColor(red, green, blue [, alpha])
+Frame:SetBackdropBorderColor(red, green, blue [, alpha])
 ```
+
+**Arguments:**
+
+- `red` - Red component of the color (0.0 - 1.0) (`number`)
+- `green` - Green component of the color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the color (0.0 - 1.0) (`number`)
+- `alpha` - Alpha (opacity) for the graphic (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2144,13 +2313,33 @@ EditBox:SetFocus()
 
 ### FontInstance:SetFont
 
-Sets the font instance's basic font properties
+Sets the font instance's basic font properties. Font files included with the default WoW client:
+
+- `Fonts\\FRIZQT__.TTF` - Friz Quadrata, used by default for player names and most UI text
+- `Fonts\\ARIALN.TTF` - Arial Narrow, used by default for chat windows, action button numbers, etc.
+- `Fonts\\skurri.ttf` - Skurri, used by default for incoming damage/parry/miss/etc indicators on the Player and Pet frames
+- `Fonts\\MORPHEUS.ttf` - Morpheus, used by default for quest title headers, mail, and readable in-game objects.
+
+Font files can also be included in addons.
 
 **Signature:**
 
 ```lua
-isValid = EditBox:SetFont("filename", fontHeight, "flags")
+isValid = FontInstance:SetFont("filename", fontHeight, "flags")
 ```
+
+**Arguments:**
+
+- `filename` - Path to a font file (`string`)
+- `fontHeight` - Height (point size) of the font to be displayed (in pixels) (`number`)
+- `flags` - Additional properties for the font specified by one or more (separated by commas) of the following tokens: (`string`)
+  - `MONOCHROME` - Font is rendered without antialiasing
+  - `OUTLINE` - Font is displayed with a black outline
+  - `THICKOUTLINE` - Font is displayed with a thick black outline
+
+**Returns:**
+
+- `isValid` - `1` if `filename` refers to a valid font file; otherwise `nil` (`1nil`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -2158,13 +2347,18 @@ isValid = EditBox:SetFont("filename", fontHeight, "flags")
 
 ### FontInstance:SetFontObject
 
-Sets the `Font` object from which the font instance's properties are inherited
+Sets the `Font` object from which the font instance's properties are inherited. This method allows for easy standardization and reuse of font styles. For example, a button's normal font can be set to appear in the same style as many default UI elements by setting its font to `"GameFontNormal"` -- if Blizzard changes the main UI font in a future patch, or if the user installs another addon which changes the main UI font, the button's font will automatically change to match.
 
 **Signature:**
 
 ```lua
-EditBox:SetFontObject(object) or EditBox:SetFontObject("name")
+FontInstance:SetFontObject(object) or FontInstance:SetFontObject("name")
 ```
+
+**Arguments:**
+
+- `object` - Reference to a `Font` object (`font`)
+- `name` - Global name of a `Font` object (`string`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -2226,13 +2420,17 @@ Region:SetHeight(height)
 
 ### EditBox:SetHistoryLines
 
-Sets the maximum number of history lines stored by the edit box
+Sets the maximum number of history lines stored by the edit box. Lines of text can be added to the edit box's history by calling [`:AddHistoryLine()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/EditBox/AddHistoryLine); once added, the user can quickly set the edit box's contents to one of these lines by pressing the up or down arrow keys. (History lines are only accessible via the arrow keys if the edit box is not in [multi-line](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/EditBox/SetMultiLine) mode.)
 
 **Signature:**
 
 ```lua
 EditBox:SetHistoryLines(count)
 ```
+
+**Arguments:**
+
+- `count` - Maximum number of history lines to be stored by the edit box (`number`)
 
 ---
 
@@ -2243,8 +2441,15 @@ Sets the insets from the frame's edges which determine its mouse-interactable ar
 **Signature:**
 
 ```lua
-EditBox:SetHitRectInsets(left, right, top, bottom)
+Frame:SetHitRectInsets(left, right, top, bottom)
 ```
+
+**Arguments:**
+
+- `left` - Distance from the left edge of the frame to the left edge of its mouse-interactive area (in pixels) (`number`)
+- `right` - Distance from the right edge of the frame to the right edge of its mouse-interactive area (in pixels) (`number`)
+- `top` - Distance from the top edge of the frame to the top edge of its mouse-interactive area (in pixels) (`number`)
+- `bottom` - Distance from the bottom edge of the frame to the bottom edge of its mouse-interactive area (in pixels) (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2252,13 +2457,17 @@ EditBox:SetHitRectInsets(left, right, top, bottom)
 
 ### Frame:SetID
 
-Sets a numeric identifier for the frame
+Sets a numeric identifier for the frame. Frame IDs have no effect on frame behavior, but can be a useful way to keep track of multiple similar frames, especially in cases where a list of frames is created from a template (such as for action buttons, loot slots, or lines in a FauxScrollFrame).
 
 **Signature:**
 
 ```lua
-EditBox:SetID(id)
+Frame:SetID(id)
 ```
+
+**Arguments:**
+
+- `id` - A numeric identifier for the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2433,16 +2642,20 @@ Sets the contents of the edit box to a number
 EditBox:SetNumber(num)
 ```
 
+**Arguments:**
+
+- `num` - New numeric content for the edit box (`number`)
+
 ---
 
 ### EditBox:SetNumeric
 
-Sets whether the edit box only accepts numeric input
+Sets whether the edit box should only accept numbers.. Note: flag must be false false, not nil, in order to turn off numeric mode.
 
 **Signature:**
 
 ```lua
-EditBox:SetNumeric(enable)
+EditBox:SetNumeric()
 ```
 
 ---
@@ -2475,6 +2688,10 @@ Sets whether the text entered in the edit box is masked
 ```lua
 EditBox:SetPassword(enable)
 ```
+
+**Arguments:**
+
+- `enable` - True to mask text entered in the edit box with asterisk characters (`*`); false to show the actual text entered (`boolean`)
 
 ---
 
@@ -2634,12 +2851,12 @@ FontInstance:SetSpacing(spacing)
 
 ### EditBox:SetText
 
-Sets the edit box's text contents
+Sets the contents of the EditBox to text. This fires the OnTextChanged handler.
 
 **Signature:**
 
 ```lua
-EditBox:SetText("text")
+EditBox:SetText()
 ```
 
 ---
@@ -2761,7 +2978,7 @@ Begins repositioning the frame via mouse movement
 **Signature:**
 
 ```lua
-EditBox:StartMoving()
+Frame:StartMoving()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2789,7 +3006,7 @@ Stops any active animations involving the region or its children
 **Signature:**
 
 ```lua
-EditBox:StopAnimating()
+Region:StopAnimating()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -2798,12 +3015,12 @@ EditBox:StopAnimating()
 
 ### Frame:StopMovingOrSizing
 
-Ends movement or resizing of the frame initiated with [[docs/widgets/Frame/StartMoving|`:StartMoving()`]] or [[docs/widgets/Frame/StartSizing|`:StartSizing()`]]
+Ends movement or resizing of the frame initiated with [`:StartMoving()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartMoving) or [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing)
 
 **Signature:**
 
 ```lua
-EditBox:StopMovingOrSizing()
+Frame:StopMovingOrSizing()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2812,7 +3029,7 @@ EditBox:StopMovingOrSizing()
 
 ### EditBox:ToggleInputLanguage
 
-Switches the edit box's language input mode
+Switches the edit box's language input mode. If the edit box is in `ROMAN` mode and an alternate Input Method Editor composition mode is available (as determined by the client locale and system settings), switches to the alternate input mode. If the edit box is in IME composition mode, switches back to `ROMAN`.
 
 **Signature:**
 
@@ -2824,12 +3041,12 @@ EditBox:ToggleInputLanguage()
 
 ### Frame:UnregisterAllEvents
 
-Unregisters the frame from any [[docs/events|events]] for which it is registered
+Unregisters the frame from any [events](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) for which it is registered
 
 **Signature:**
 
 ```lua
-EditBox:UnregisterAllEvents()
+Frame:UnregisterAllEvents()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2838,13 +3055,19 @@ EditBox:UnregisterAllEvents()
 
 ### Frame:UnregisterEvent
 
-Unregisters the frame for an event
+Unregisters the frame for an event. Once unregistered, the frame's [`OnEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnEvent) script handler will not be called for that event.
+
+Unregistering from notifications for an event can be useful for improving addon performance at times when it's not necessary to process the event. For example, a frame which monitors target health does not need to receive the [`UNIT_HEALTH`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_HEALTH) event while the player has no target. An addon that sorts the contents of the player's bags can register for the [`BAG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/BAG_UPDATE) event to keep track of when items are picked up, but unregister from the event while it performs its sorting.
 
 **Signature:**
 
 ```lua
-EditBox:UnregisterEvent("event")
+Frame:UnregisterEvent("event")
 ```
+
+**Arguments:**
+
+- `event` - Name of an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) (`string`)
 
 *Inherited from [Frame](Frame.md)*
 

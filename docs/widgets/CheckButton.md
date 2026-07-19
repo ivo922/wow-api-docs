@@ -20,12 +20,12 @@ Some convenient CheckButton templates include UICheckButtonTemplate (the convent
 
 ### Frame:AllowAttributeChanges
 
-Temporarily allows insecure code to modify the frame's attributes during combat
+Temporarily allows insecure code to modify the frame's attributes during combat. This permission is automatically rescinded when the frame's [`OnUpdate`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnUpdate) script next runs.
 
 **Signature:**
 
 ```lua
-CheckButton:AllowAttributeChanges()
+Frame:AllowAttributeChanges()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -70,12 +70,12 @@ canChange = Region:CanChangeProtectedState()
 
 ### Region:ClearAllPoints
 
-Removes all anchor points from the region
+Clear all anchor point for the given region
 
 **Signature:**
 
 ```lua
-CheckButton:ClearAllPoints()
+Region:ClearAllPoints()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -110,13 +110,18 @@ Button:Click("button", down)
 
 ### Region:CreateAnimationGroup
 
-Creates a new AnimationGroup as a child of the region
+Create and return a new AnimationGroup as a child of this Region
 
 **Signature:**
 
 ```lua
-animationGroup = CheckButton:CreateAnimationGroup(["name" [, "inheritsFrom"]])
+Region:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new animation group (`string`)
+- `inheritsFrom` - A template from which the new animation group should inherit (`string`)
 
 *Inherited from [Region](Region.md)*
 
@@ -124,13 +129,19 @@ animationGroup = CheckButton:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 
 ### Frame:CreateFontString
 
-Creates a new [[docs/widgets/FontString|`FontString`]] as a child of the frame
+Creates a new FontString for the Frame on a given layer, possibly inheriting from a template
 
 **Signature:**
 
 ```lua
-fontstring = CheckButton:CreateFontString(["name" [, "layer" [, "inherits"]]])
+Frame:CreateFontString(["name" [, "layer" [, "inherits"]]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new font string (`string`)
+- `layer` - The graphic layer on which to create the font string. Default value is `ARTWORK`. (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `inherits` - A template from which the new front string should inherit (`string`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -138,13 +149,24 @@ fontstring = CheckButton:CreateFontString(["name" [, "layer" [, "inherits"]]])
 
 ### Frame:CreateTexture
 
-Creates a new [[docs/widgets/Texture|`Texture`]] as a child of the frame
+Creates a new [`Texture`](Texture.md) as a child of the frame. The `sublevel` argument can be used to provide layering of textures within a draw layer. As it can be difficult to compute the proper layering, addon authors should avoid using this option, and it's XML equivalent `textureSubLevel` without reason. It should also be noted that `FontStrings` will always appear on top of all textures in a given draw layer.
 
 **Signature:**
 
 ```lua
-texture = CheckButton:CreateTexture(["name" [, "layer" [, "inherits"]]])
+texture = Frame:CreateTexture(["name" [, "layer" [, "inherits" [, sublevel]]]])
 ```
+
+**Arguments:**
+
+- `name` - Global name for the new texture (`string`)
+- `layer` - Graphic layer on which to create the texture; defaults to `ARTWORK` if not specified (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `inherits` - Name of a template from which the new texture should inherit (`string`)
+- `sublevel` - The sub-level on the given graphics layer ranging from `-8`- to `7`. The default value of this argument is `0` (`number`)
+
+**Returns:**
+
+- `texture` - Reference to the new `Texture` object (`texture`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -152,13 +174,17 @@ texture = CheckButton:CreateTexture(["name" [, "layer" [, "inherits"]]])
 
 ### Frame:CreateTitleRegion
 
-Creates a title region for dragging the frame
+Creates a title region for dragging the frame. Creating a title region allows a frame to be repositioned by the user (by clicking and dragging in the region) without requiring additional scripts. (This behavior only applies if the frame is [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse).)
 
 **Signature:**
 
 ```lua
-region = CheckButton:CreateTitleRegion()
+region = Frame:CreateTitleRegion()
 ```
+
+**Returns:**
+
+- `region` - Reference to the new `Region` object (`region`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -185,8 +211,12 @@ Prevents display of all child objects of the frame on a specified graphics layer
 **Signature:**
 
 ```lua
-CheckButton:DisableDrawLayer("layer")
+Frame:DisableDrawLayer("layer")
 ```
+
+**Arguments:**
+
+- `layer` - Name of a graphics layer (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
 
 *Inherited from [Frame](Frame.md)*
 
@@ -226,13 +256,19 @@ Frame:EnableDrawLayer("layer")
 
 ### Frame:EnableJoystick
 
-Enables or disables joystick interactivity
+Enables or disables joystick interactivity. Joystick interactivity must be enabled in order for a frame's joystick-related [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) handlers to be run.
+
+(As of this writing, joystick support is partially implemented but not enabled in the current version of World of Warcraft.)
 
 **Signature:**
 
 ```lua
-CheckButton:EnableJoystick(enable)
+Frame:EnableJoystick(enable)
 ```
+
+**Arguments:**
+
+- `enable` - True to enable joystick interactivity; false to disable (`boolean`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -312,13 +348,17 @@ alpha = VisibleRegion:GetAlpha()
 
 ### Region:GetAnimationGroups
 
-Returns a list of animation groups belonging to the region
+Returns a list of animation groups belonging to this region
 
 **Signature:**
 
 ```lua
-... = CheckButton:GetAnimationGroups()
+... = Region:GetAnimationGroups()
 ```
+
+**Returns:**
+
+- `...` - The list of animation groups belonging to this region (`list of AnimationGroup`)
 
 *Inherited from [Region](Region.md)*
 
@@ -468,12 +508,12 @@ state = Button:GetButtonState()
 
 ### Region:GetCenter
 
-Returns the screen coordinates of the region's center
+Returns the screen coordinates of the Region's center.
 
 **Signature:**
 
 ```lua
-x, y = CheckButton:GetCenter()
+Region:GetCenter()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -655,13 +695,17 @@ alpha = Frame:GetEffectiveAlpha()
 
 ### Frame:GetEffectiveDepth
 
-Returns the overall 3D depth of the frame (for stereoscopic 3D configurations)
+Returns the overall 3D depth of the frame (for stereoscopic 3D configurations). Unlike [`:GetDepth()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/GetDepth) which returns the apparent depth of the frame relative to its parent, this function returns the absolute depth of the frame, taking into account the relative depths of parent frames.
 
 **Signature:**
 
 ```lua
-depth = CheckButton:GetEffectiveDepth()
+depth = Frame:GetEffectiveDepth()
 ```
+
+**Returns:**
+
+- `depth` - Apparent 3D depth of this frame relative to the screen (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -669,12 +713,12 @@ depth = CheckButton:GetEffectiveDepth()
 
 ### Frame:GetEffectiveScale
 
-Returns the overall scale factor of the frame
+Returns the frame's effective scale
 
 **Signature:**
 
 ```lua
-scale = CheckButton:GetEffectiveScale()
+Frame:GetEffectiveScale()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -746,12 +790,12 @@ strata = Frame:GetFrameStrata()
 
 ### Region:GetHeight
 
-Returns the height of the region
+Returns the height of the region.
 
 **Signature:**
 
 ```lua
-height = CheckButton:GetHeight()
+Region:GetHeight()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -796,12 +840,12 @@ texture = Button:GetHighlightTexture()
 
 ### Frame:GetHitRectInsets
 
-Returns the insets from the frame's edges which determine its mouse-interactable area
+Returns the inserts for the frame's HitRect
 
 **Signature:**
 
 ```lua
-left, right, top, bottom = CheckButton:GetHitRectInsets()
+Frame:GetHitRectInsets()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -846,13 +890,18 @@ left = Region:GetLeft()
 
 ### Frame:GetMaxResize
 
-Returns the maximum size of the frame for user resizing
+Returns the maximum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing).
 
 **Signature:**
 
 ```lua
-maxWidth, maxHeight = CheckButton:GetMaxResize()
+maxWidth, maxHeight = Frame:GetMaxResize()
 ```
+
+**Returns:**
+
+- `maxWidth` - Maximum width of the frame (in pixels), or `0` for no limit (`number`)
+- `maxHeight` - Maximum height of the frame (in pixels), or `0` for no limit (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -956,8 +1005,12 @@ Returns the number of child frames belonging to the frame
 **Signature:**
 
 ```lua
-numChildren = CheckButton:GetNumChildren()
+numChildren = Frame:GetNumChildren()
 ```
+
+**Returns:**
+
+- `numChildren` - Number of child frames belonging to the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -988,8 +1041,12 @@ Returns the number of non-Frame child regions belonging to the frame
 **Signature:**
 
 ```lua
-numRegions = CheckButton:GetNumRegions()
+numRegions = Frame:GetNumRegions()
 ```
+
+**Returns:**
+
+- `numRegions` - Number of non-Frame child regions (`FontString`s and `Texture`s) belonging to the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1122,8 +1179,12 @@ Returns a list of non-Frame child regions belonging to the frame
 **Signature:**
 
 ```lua
-... = CheckButton:GetRegions()
+... = Frame:GetRegions()
 ```
+
+**Returns:**
+
+- `...` - A list of each non-Frame child region (`FontString` or `Texture`) belonging to the frame (`list`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1149,12 +1210,12 @@ right = Region:GetRight()
 
 ### Frame:GetScale
 
-Returns the frame's scale factor
+Returns the scale of the frame
 
 **Signature:**
 
 ```lua
-scale = CheckButton:GetScale()
+Frame:GetScale()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1317,8 +1378,16 @@ Returns whether the widget supports a script handler
 **Signature:**
 
 ```lua
-hasScript = CheckButton:HasScript("scriptType")
+hasScript = ScriptObject:HasScript("scriptType")
 ```
+
+**Arguments:**
+
+- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+
+**Returns:**
+
+- `hasScript` - `1` if the widget can handle the script, otherwise `nil` (`1nil`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
 
@@ -1381,12 +1450,12 @@ Frame:IgnoreDepth(enable)
 
 ### Frame:IsClampedToScreen
 
-Returns whether the frame's boundaries are limited to those of the screen
+Returns whether or not the frame is clamped to the screen
 
 **Signature:**
 
 ```lua
-enabled = CheckButton:IsClampedToScreen()
+Frame:IsClampedToScreen()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1418,8 +1487,12 @@ Returns whether user interaction with the button is allowed
 **Signature:**
 
 ```lua
-enabled = CheckButton:IsEnabled()
+enabled = Button:IsEnabled()
 ```
+
+**Returns:**
+
+- `enabled` - `1` if user interaction with the button is allowed; otherwise `nil` (`1nil`)
 
 *Inherited from [Button](Button.md)*
 
@@ -1427,12 +1500,12 @@ enabled = CheckButton:IsEnabled()
 
 ### Frame:IsEventRegistered
 
-Returns whether the frame is registered for a given [[docs/events|event]]
+Returns whether or not the frame is registered for the given event
 
 **Signature:**
 
 ```lua
-registered = CheckButton:IsEventRegistered("event")
+Frame:IsEventRegistered()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1473,12 +1546,12 @@ enabled = CheckButton:IsJoystickEnabled()
 
 ### Frame:IsKeyboardEnabled
 
-Returns whether keyboard interactivity is enabled for the frame
+Returns whether or not the frame is keyboard enabled
 
 **Signature:**
 
 ```lua
-enabled = CheckButton:IsKeyboardEnabled()
+Frame:IsKeyboardEnabled()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1692,12 +1765,12 @@ visible = VisibleRegion:IsVisible()
 
 ### Button:LockHighlight
 
-Locks the button in its highlight state
+Locks the button in its highlight state. When the highlight state is locked, the button will always appear highlighted regardless of whether it is moused over.
 
 **Signature:**
 
 ```lua
-CheckButton:LockHighlight()
+Button:LockHighlight()
 ```
 
 *Inherited from [Button](Button.md)*
@@ -1771,8 +1844,24 @@ Registers a button to receive mouse clicks
 **Signature:**
 
 ```lua
-CheckButton:RegisterForClicks(...)
+Button:RegisterForClicks(...)
 ```
+
+**Arguments:**
+
+- `...` - A list of strings, each the combination of a button name and click action for which the button's click-related [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) handlers should be run. Possible values: (`list`)
+  - `Button4Down`
+  - `Button4Up`
+  - `Button5Down`
+  - `Button5Up`
+  - `LeftButtonDown`
+  - `LeftButtonUp`
+  - `MiddleButtonDown`
+  - `MiddleButtonUp`
+  - `RightButtonDown`
+  - `RightButtonUp`
+  - `AnyDown` - Responds to the down action of any mouse button
+  - `AnyUp` - Responds to the up action of any mouse button
 
 *Inherited from [Button](Button.md)*
 
@@ -1780,13 +1869,22 @@ CheckButton:RegisterForClicks(...)
 
 ### Frame:RegisterForDrag
 
-Registers the frame for dragging
+Registers the frame for dragging. Once the frame is registered for dragging (and [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse)), the frame's [`OnDragStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStart) and [`OnDragStop`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStop) scripts will be called when the specified mouse button(s) are clicked and dragged starting from within the frame (or its mouse-interactive area).
 
 **Signature:**
 
 ```lua
-CheckButton:RegisterForDrag(...)
+Frame:RegisterForDrag(...)
 ```
+
+**Arguments:**
+
+- `...` - A list of strings, each the name of a mouse button for which the frame should respond to drag actions (`list`)
+  - `Button4`
+  - `Button5`
+  - `LeftButton`
+  - `MiddleButton`
+  - `RightButton`
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1831,13 +1929,18 @@ VisibleRegion:SetAlpha(alpha)
 
 ### Frame:SetAttribute
 
-Sets a secure frame attribute
+Sets a secure frame attribute. See the [secure template documentation](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/secure_template) for more information about frame attributes.
 
 **Signature:**
 
 ```lua
-CheckButton:SetAttribute("name", value)
+Frame:SetAttribute("name", value)
 ```
+
+**Arguments:**
+
+- `name` - Name of an attribute, case insensitive (`string`)
+- `value` - New value to set for the attribute (`value`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1845,12 +1948,28 @@ CheckButton:SetAttribute("name", value)
 
 ### Frame:SetBackdrop
 
-Sets a backdrop graphic for the frame
+Sets a frame's backdrop as defined by a table.
+
+This function accepts the return from the Frame:GetBackdrop() function.  The format of the backdropTbl argument is as follows:
+
+{
+ bgFile = "bgFile", 
+ edgeFile = "edgeFile", 
+ tile = false, 
+ tileSize = 0, 
+ edgeSize = 32,
+ insets = { 
+ left = 0, 
+ right = 0, 
+ top = 0, 
+ bottom = 0 
+ }
+}
 
 **Signature:**
 
 ```lua
-CheckButton:SetBackdrop(backdrop)
+Frame:SetBackdrop()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1859,13 +1978,20 @@ CheckButton:SetBackdrop(backdrop)
 
 ### Frame:SetBackdropBorderColor
 
-Sets a shading color for the frame's border graphic
+Sets a shading color for the frame's border graphic. As with [`Texture:SetVertexColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Texture/SetVertexColor), this color is a shading applied to the colors of the texture image; a color of `(1, 1, 1)` allows the image's original colors to show.
 
 **Signature:**
 
 ```lua
-CheckButton:SetBackdropBorderColor(red, green, blue [, alpha])
+Frame:SetBackdropBorderColor(red, green, blue [, alpha])
 ```
+
+**Arguments:**
+
+- `red` - Red component of the color (0.0 - 1.0) (`number`)
+- `green` - Green component of the color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the color (0.0 - 1.0) (`number`)
+- `alpha` - Alpha (opacity) for the graphic (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1923,6 +2049,10 @@ Sets whether the check button is checked
 ```lua
 CheckButton:SetChecked(enable)
 ```
+
+**Arguments:**
+
+- `enable` - True to check the button; false to uncheck (`boolean`)
 
 ---
 
@@ -2024,8 +2154,12 @@ Sets the font object used for the button's disabled state
 **Signature:**
 
 ```lua
-CheckButton:SetDisabledFontObject(font)
+Button:SetDisabledFontObject(font)
 ```
+
+**Arguments:**
+
+- `font` - Reference to a `Font` object to be used when the button is disabled (`font`)
 
 *Inherited from [Button](Button.md)*
 
@@ -2038,8 +2172,13 @@ Sets the texture used when the button is disabled
 **Signature:**
 
 ```lua
-CheckButton:SetDisabledTexture(texture) or CheckButton:SetDisabledTexture("filename")
+Button:SetDisabledTexture(texture) or Button:SetDisabledTexture("filename")
 ```
+
+**Arguments:**
+
+- `texture` - Reference to an existing `Texture` object (`texture`)
+- `filename` - Path to a texture image file (`string`)
 
 *Inherited from [Button](Button.md)*
 
@@ -2200,8 +2339,15 @@ Sets the insets from the frame's edges which determine its mouse-interactable ar
 **Signature:**
 
 ```lua
-CheckButton:SetHitRectInsets(left, right, top, bottom)
+Frame:SetHitRectInsets(left, right, top, bottom)
 ```
+
+**Arguments:**
+
+- `left` - Distance from the left edge of the frame to the left edge of its mouse-interactive area (in pixels) (`number`)
+- `right` - Distance from the right edge of the frame to the right edge of its mouse-interactive area (in pixels) (`number`)
+- `top` - Distance from the top edge of the frame to the top edge of its mouse-interactive area (in pixels) (`number`)
+- `bottom` - Distance from the bottom edge of the frame to the bottom edge of its mouse-interactive area (in pixels) (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2209,13 +2355,17 @@ CheckButton:SetHitRectInsets(left, right, top, bottom)
 
 ### Frame:SetID
 
-Sets a numeric identifier for the frame
+Sets a numeric identifier for the frame. Frame IDs have no effect on frame behavior, but can be a useful way to keep track of multiple similar frames, especially in cases where a list of frames is created from a template (such as for action buttons, loot slots, or lines in a FauxScrollFrame).
 
 **Signature:**
 
 ```lua
-CheckButton:SetID(id)
+Frame:SetID(id)
 ```
+
+**Arguments:**
+
+- `id` - A numeric identifier for the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2582,7 +2732,7 @@ Begins repositioning the frame via mouse movement
 **Signature:**
 
 ```lua
-CheckButton:StartMoving()
+Frame:StartMoving()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2610,7 +2760,7 @@ Stops any active animations involving the region or its children
 **Signature:**
 
 ```lua
-CheckButton:StopAnimating()
+Region:StopAnimating()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -2619,12 +2769,12 @@ CheckButton:StopAnimating()
 
 ### Frame:StopMovingOrSizing
 
-Ends movement or resizing of the frame initiated with [[docs/widgets/Frame/StartMoving|`:StartMoving()`]] or [[docs/widgets/Frame/StartSizing|`:StartSizing()`]]
+Ends movement or resizing of the frame initiated with [`:StartMoving()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartMoving) or [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing)
 
 **Signature:**
 
 ```lua
-CheckButton:StopMovingOrSizing()
+Frame:StopMovingOrSizing()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2647,12 +2797,12 @@ Button:UnlockHighlight()
 
 ### Frame:UnregisterAllEvents
 
-Unregisters the frame from any [[docs/events|events]] for which it is registered
+Unregisters the frame from any [events](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) for which it is registered
 
 **Signature:**
 
 ```lua
-CheckButton:UnregisterAllEvents()
+Frame:UnregisterAllEvents()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2661,13 +2811,19 @@ CheckButton:UnregisterAllEvents()
 
 ### Frame:UnregisterEvent
 
-Unregisters the frame for an event
+Unregisters the frame for an event. Once unregistered, the frame's [`OnEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnEvent) script handler will not be called for that event.
+
+Unregistering from notifications for an event can be useful for improving addon performance at times when it's not necessary to process the event. For example, a frame which monitors target health does not need to receive the [`UNIT_HEALTH`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_HEALTH) event while the player has no target. An addon that sorts the contents of the player's bags can register for the [`BAG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/BAG_UPDATE) event to keep track of when items are picked up, but unregister from the event while it performs its sorting.
 
 **Signature:**
 
 ```lua
-CheckButton:UnregisterEvent("event")
+Frame:UnregisterEvent("event")
 ```
+
+**Arguments:**
+
+- `event` - Name of an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) (`string`)
 
 *Inherited from [Frame](Frame.md)*
 

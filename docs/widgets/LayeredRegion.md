@@ -32,12 +32,12 @@ canChange = Region:CanChangeProtectedState()
 
 ### Region:ClearAllPoints
 
-Removes all anchor points from the region
+Clear all anchor point for the given region
 
 **Signature:**
 
 ```lua
-LayeredRegion:ClearAllPoints()
+Region:ClearAllPoints()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -46,13 +46,18 @@ LayeredRegion:ClearAllPoints()
 
 ### Region:CreateAnimationGroup
 
-Creates a new AnimationGroup as a child of the region
+Create and return a new AnimationGroup as a child of this Region
 
 **Signature:**
 
 ```lua
-animationGroup = LayeredRegion:CreateAnimationGroup(["name" [, "inheritsFrom"]])
+Region:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new animation group (`string`)
+- `inheritsFrom` - A template from which the new animation group should inherit (`string`)
 
 *Inherited from [Region](Region.md)*
 
@@ -78,13 +83,17 @@ alpha = VisibleRegion:GetAlpha()
 
 ### Region:GetAnimationGroups
 
-Returns a list of animation groups belonging to the region
+Returns a list of animation groups belonging to this region
 
 **Signature:**
 
 ```lua
-... = LayeredRegion:GetAnimationGroups()
+... = Region:GetAnimationGroups()
 ```
+
+**Returns:**
+
+- `...` - The list of animation groups belonging to this region (`list of AnimationGroup`)
 
 *Inherited from [Region](Region.md)*
 
@@ -110,12 +119,12 @@ bottom = Region:GetBottom()
 
 ### Region:GetCenter
 
-Returns the screen coordinates of the region's center
+Returns the screen coordinates of the Region's center.
 
 **Signature:**
 
 ```lua
-x, y = LayeredRegion:GetCenter()
+Region:GetCenter()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -145,12 +154,12 @@ layer = LayeredRegion:GetDrawLayer()
 
 ### Region:GetHeight
 
-Returns the height of the region
+Returns the height of the region.
 
 **Signature:**
 
 ```lua
-height = LayeredRegion:GetHeight()
+Region:GetHeight()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -543,6 +552,15 @@ Sets the layer at which the region's graphics are drawn relative to others in it
 LayeredRegion:SetDrawLayer("layer")
 ```
 
+**Arguments:**
+
+- `layer` - String identifying a graphics layer; one of the following values: (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+  - `ARTWORK`
+  - `BACKGROUND`
+  - `BORDER`
+  - `HIGHLIGHT`
+  - `OVERLAY`
+
 ---
 
 ### Region:SetHeight
@@ -625,13 +643,24 @@ Region:SetSize(width, height)
 
 ### LayeredRegion:SetVertexColor
 
-Sets a color shading for the region's graphics
+Sets a color shading for the region's graphics. The effect of changing this property differs by the type of region:
+
+For `FontString`s, this color overrides the normal text color (as set by [`FontInstance:SetTextColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetTextColor)).
+
+For `Texture`s, this color acts as a filter applied to the texture image: each color component value is a factor by which the corresponding component values in the image are multiplied. (See examples.)
 
 **Signature:**
 
 ```lua
 LayeredRegion:SetVertexColor(red, green, blue [, alpha])
 ```
+
+**Arguments:**
+
+- `red` - Red component of the color (0.0 - 1.0) (`number`)
+- `green` - Green component of the color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the color (0.0 - 1.0) (`number`)
+- `alpha` - Alpha (opacity) for the graphic (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 ---
 
@@ -674,7 +703,7 @@ Stops any active animations involving the region or its children
 **Signature:**
 
 ```lua
-LayeredRegion:StopAnimating()
+Region:StopAnimating()
 ```
 
 *Inherited from [Region](Region.md)*

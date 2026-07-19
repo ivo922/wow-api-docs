@@ -36,12 +36,12 @@ canChange = Region:CanChangeProtectedState()
 
 ### Region:ClearAllPoints
 
-Removes all anchor points from the region
+Clear all anchor point for the given region
 
 **Signature:**
 
 ```lua
-Texture:ClearAllPoints()
+Region:ClearAllPoints()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -50,13 +50,18 @@ Texture:ClearAllPoints()
 
 ### Region:CreateAnimationGroup
 
-Creates a new AnimationGroup as a child of the region
+Create and return a new AnimationGroup as a child of this Region
 
 **Signature:**
 
 ```lua
-animationGroup = Texture:CreateAnimationGroup(["name" [, "inheritsFrom"]])
+Region:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new animation group (`string`)
+- `inheritsFrom` - A template from which the new animation group should inherit (`string`)
 
 *Inherited from [Region](Region.md)*
 
@@ -82,13 +87,17 @@ alpha = VisibleRegion:GetAlpha()
 
 ### Region:GetAnimationGroups
 
-Returns a list of animation groups belonging to the region
+Returns a list of animation groups belonging to this region
 
 **Signature:**
 
 ```lua
-... = Texture:GetAnimationGroups()
+... = Region:GetAnimationGroups()
 ```
+
+**Returns:**
+
+- `...` - The list of animation groups belonging to this region (`list of AnimationGroup`)
 
 *Inherited from [Region](Region.md)*
 
@@ -135,12 +144,12 @@ bottom = Region:GetBottom()
 
 ### Region:GetCenter
 
-Returns the screen coordinates of the region's center
+Returns the screen coordinates of the Region's center.
 
 **Signature:**
 
 ```lua
-x, y = Texture:GetCenter()
+Region:GetCenter()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -172,12 +181,12 @@ layer = LayeredRegion:GetDrawLayer()
 
 ### Region:GetHeight
 
-Returns the height of the region
+Returns the height of the region.
 
 **Signature:**
 
 ```lua
-height = Texture:GetHeight()
+Region:GetHeight()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -419,6 +428,12 @@ Returns the path to the texture's image file
 texture = Texture:GetTexture()
 ```
 
+**Returns:**
+
+- `texture` - Path to the texture image file, or one of the following values: (`string`)
+  - `Portrait1` - Texture is set to a generated image (e.g. via [`SetPortraitTexture()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetPortraitTexture))
+  - `SolidTexture` - Texture is set to a solid color instead of an image
+
 ---
 
 ### Region:GetTop
@@ -453,13 +468,20 @@ Texture:GetVertTile()
 
 ### Texture:GetVertexColor
 
-Returns the shading color of the texture
+Returns the shading color of the texture. For details about vertex color shading, see [`LayeredRegion:SetVertexColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/LayeredRegion/SetVertexColor).
 
 **Signature:**
 
 ```lua
 red, green, blue, alpha = Texture:GetVertexColor()
 ```
+
+**Returns:**
+
+- `red` - Red component of the color (0.0 - 1.0) (`number`)
+- `green` - Green component of the color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the color (0.0 - 1.0) (`number`)
+- `alpha` - Alpha (opacity) for the texture (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 ---
 
@@ -497,13 +519,17 @@ VisibleRegion:Hide()
 
 ### Texture:IsDesaturated
 
-Returns whether the texture image should be displayed with zero saturation (i.e. converted to grayscale)
+Returns whether the texture image should be displayed with zero saturation (i.e. converted to grayscale). The texture may not actually be displayed in grayscale if the current display hardware doesn't support that feature; see [`Texture:SetDesaturated()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Texture/SetDesaturated) for details.
 
 **Signature:**
 
 ```lua
 desaturated = Texture:IsDesaturated()
 ```
+
+**Returns:**
+
+- `desaturated` - `1` if the texture should be displayed in grayscale; otherwise `nil` (`1nil`)
 
 ---
 
@@ -707,8 +733,17 @@ Sets the layer at which the region's graphics are drawn relative to others in it
 **Signature:**
 
 ```lua
-Texture:SetDrawLayer("layer")
+LayeredRegion:SetDrawLayer("layer")
 ```
+
+**Arguments:**
+
+- `layer` - String identifying a graphics layer; one of the following values: (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+  - `ARTWORK`
+  - `BACKGROUND`
+  - `BORDER`
+  - `HIGHLIGHT`
+  - `OVERLAY`
 
 *Inherited from [LayeredRegion](LayeredRegion.md)*
 
@@ -716,13 +751,25 @@ Texture:SetDrawLayer("layer")
 
 ### Texture:SetGradient
 
-Sets a gradient color shading for the texture
+Sets a gradient color shading for the texture. Gradient color shading does not change the underlying color of the texture image, but acts as a filter: see [`LayeredRegion:SetVertexColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/LayeredRegion/SetVertexColor) for details.
 
 **Signature:**
 
 ```lua
 Texture:SetGradient("orientation", startR, startG, startB, endR, endG, endB)
 ```
+
+**Arguments:**
+
+- `orientation` - Token identifying the direction of the gradient (`string`)
+  - `HORIZONTAL` - Start color on the left, end color on the right
+  - `VERTICAL` - Start color at the bottom, end color at the top
+- `startR` - Red component of the start color (0.0 - 1.0) (`number`)
+- `startG` - Green component of the start color (0.0 - 1.0) (`number`)
+- `startB` - Blue component of the start color (0.0 - 1.0) (`number`)
+- `endR` - Red component of the end color (0.0 - 1.0) (`number`)
+- `endG` - Green component of the end color (0.0 - 1.0) (`number`)
+- `endB` - Blue component of the end color (0.0 - 1.0) (`number`)
 
 ---
 
@@ -784,13 +831,17 @@ Texture:SetHorizTile()
 
 ### Texture:SetNonBlocking
 
-Sets whether the texture object loads its image file in the background
+Sets whether the texture object loads its image file in the background. Texture loading is normally synchronous, so that UI objects are not shown partially textured while loading; however, non-blocking (asynchronous) texture loading may be desirable in some cases where large numbers of textures need to be loaded in a short time. This feature is used in the default UI's icon chooser window for macros and equipment sets, allowing a large number of icon textures to be loaded without causing the game's frame rate to stagger.
 
 **Signature:**
 
 ```lua
 Texture:SetNonBlocking(nonBlocking)
 ```
+
+**Arguments:**
+
+- `nonBlocking` - True to allow the texture object to load its image file in the background; false (default) to halt the game engine while the texture loads (`boolean`)
 
 ---
 
@@ -837,13 +888,17 @@ Region:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]
 
 ### Texture:SetRotation
 
-Rotates the texture image
+Rotates the texture image. This is an efficient shorthand for the more complex `Texture:SetTexCoord()`.
 
 **Signature:**
 
 ```lua
 Texture:SetRotation(radians)
 ```
+
+**Arguments:**
+
+- `radians` - Amount by which the texture image should be rotated (in radians; positive values for counter-clockwise rotation, negative for clockwise) (`number`)
 
 ---
 
@@ -868,7 +923,7 @@ Region:SetSize(width, height)
 
 ### Texture:SetTexCoord
 
-Sets corner coordinates for scaling or cropping the texture image
+Sets corner coordinates for scaling or cropping the texture image. See example for details.
 
 **Signature:**
 
@@ -876,17 +931,44 @@ Sets corner coordinates for scaling or cropping the texture image
 Texture:SetTexCoord(left, right, top, bottom) or Texture:SetTexCoord(ULx, ULy, LLx, LLy, URx, URy, LRx, LRy)
 ```
 
+**Arguments:**
+
+- `left` - Left edge of the scaled/cropped image, as a fraction of the image's width from the left (`number`)
+- `right` - Right edge of the scaled/cropped image, as a fraction of the image's width from the left (`number`)
+- `top` - Top edge of the scaled/cropped image, as a fraction of the image's height from the top (`number`)
+- `bottom` - Bottom edge of the scaled/cropped image, as a fraction of the image's height from the top (`number`)
+- `ULx` - Upper left corner X position, as a fraction of the image's width from the left (`number`)
+- `ULy` - Upper left corner Y position, as a fraction of the image's height from the top (`number`)
+- `LLx` - Lower left corner X position, as a fraction of the image's width from the left (`number`)
+- `LLy` - Lower left corner Y position, as a fraction of the image's height from the top (`number`)
+- `URx` - Upper right corner X position, as a fraction of the image's width from the left (`number`)
+- `URy` - Upper right corner Y position, as a fraction of the image's height from the top (`number`)
+- `LRx` - Lower right corner X position, as a fraction of the image's width from the left (`number`)
+- `LRy` - Lower right corner Y position, as a fraction of the image's height from the top (`number`)
+
 ---
 
 ### Texture:SetTexture
 
-Sets the texture object's image or color
+Sets the texture object's image or color. Returns `nil` if the texture could not be set (e.g. if the file path is invalid or points to a file which cannot be used as a texture).
 
 **Signature:**
 
 ```lua
 visible = Texture:SetTexture("texture") or Texture:SetTexture(red, green, blue [, alpha])
 ```
+
+**Arguments:**
+
+- `texture` - Path to a texture image (`string`)
+- `red` - Red component of the color (0.0 - 1.0) (`number`)
+- `green` - Green component of the color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the color (0.0 - 1.0) (`number`)
+- `alpha` - Alpha (opacity) for the color (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
+
+**Returns:**
+
+- `visible` - `1` if the texture was successfully changed; otherwise `nil` (`1nil`)
 
 ---
 
@@ -904,13 +986,24 @@ Texture:SetVertTile()
 
 ### LayeredRegion:SetVertexColor
 
-Sets a color shading for the region's graphics
+Sets a color shading for the region's graphics. The effect of changing this property differs by the type of region:
+
+For `FontString`s, this color overrides the normal text color (as set by [`FontInstance:SetTextColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetTextColor)).
+
+For `Texture`s, this color acts as a filter applied to the texture image: each color component value is a factor by which the corresponding component values in the image are multiplied. (See examples.)
 
 **Signature:**
 
 ```lua
-Texture:SetVertexColor(red, green, blue [, alpha])
+LayeredRegion:SetVertexColor(red, green, blue [, alpha])
 ```
+
+**Arguments:**
+
+- `red` - Red component of the color (0.0 - 1.0) (`number`)
+- `green` - Green component of the color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the color (0.0 - 1.0) (`number`)
+- `alpha` - Alpha (opacity) for the graphic (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 *Inherited from [LayeredRegion](LayeredRegion.md)*
 
@@ -955,7 +1048,7 @@ Stops any active animations involving the region or its children
 **Signature:**
 
 ```lua
-Texture:StopAnimating()
+Region:StopAnimating()
 ```
 
 *Inherited from [Region](Region.md)*

@@ -30,7 +30,7 @@ canChange = Region:CanChangeProtectedState()
 
 ### Region:ClearAllPoints
 
-Removes all anchor points from the region
+Clear all anchor point for the given region
 
 **Signature:**
 
@@ -42,25 +42,34 @@ Region:ClearAllPoints()
 
 ### Region:CreateAnimationGroup
 
-Creates a new AnimationGroup as a child of the region
+Create and return a new AnimationGroup as a child of this Region
 
 **Signature:**
 
 ```lua
-animationGroup = Region:CreateAnimationGroup(["name" [, "inheritsFrom"]])
+Region:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new animation group (`string`)
+- `inheritsFrom` - A template from which the new animation group should inherit (`string`)
 
 ---
 
 ### Region:GetAnimationGroups
 
-Returns a list of animation groups belonging to the region
+Returns a list of animation groups belonging to this region
 
 **Signature:**
 
 ```lua
 ... = Region:GetAnimationGroups()
 ```
+
+**Returns:**
+
+- `...` - The list of animation groups belonging to this region (`list of AnimationGroup`)
 
 ---
 
@@ -82,24 +91,24 @@ bottom = Region:GetBottom()
 
 ### Region:GetCenter
 
-Returns the screen coordinates of the region's center
+Returns the screen coordinates of the Region's center.
 
 **Signature:**
 
 ```lua
-x, y = Region:GetCenter()
+Region:GetCenter()
 ```
 
 ---
 
 ### Region:GetHeight
 
-Returns the height of the region
+Returns the height of the region.
 
 **Signature:**
 
 ```lua
-height = Region:GetHeight()
+Region:GetHeight()
 ```
 
 ---

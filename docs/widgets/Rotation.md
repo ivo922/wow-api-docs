@@ -154,13 +154,19 @@ order = Animation:GetOrder()
 
 ### Rotation:GetOrigin
 
-Returns the rotation animation's origin point
+Returns the rotation animation's origin point. During a rotation animation, the origin point remains in place while the positions of all other points in the scaled region are moved according to the rotation amount.
 
 **Signature:**
 
 ```lua
 point, xOffset, yOffset = Rotation:GetOrigin()
 ```
+
+**Returns:**
+
+- `point` - Anchor point for the rotation origin (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `xOffset` - Horizontal distance from the anchor point to the rotation origin (in pixels) (`number`)
+- `yOffset` - Vertical distance from the anchor point to the rotation origin (in pixels) (`number`)
 
 ---
 
@@ -339,8 +345,16 @@ Returns whether the widget supports a script handler
 **Signature:**
 
 ```lua
-hasScript = Rotation:HasScript("scriptType")
+hasScript = ScriptObject:HasScript("scriptType")
 ```
+
+**Arguments:**
+
+- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+
+**Returns:**
+
+- `hasScript` - `1` if the widget can handle the script, otherwise `nil` (`1nil`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
 
@@ -519,6 +533,10 @@ Sets the animation's rotation amount (in degrees)
 Rotation:SetDegrees(degrees)
 ```
 
+**Arguments:**
+
+- `degrees` - Amount by which the region should rotate over the animation's duration (in degrees; positive values for counter-clockwise rotation, negative for clockwise) (`number`)
+
 ---
 
 ### Animation:SetDuration
@@ -591,13 +609,19 @@ Animation:SetOrder(order)
 
 ### Rotation:SetOrigin
 
-Sets the rotation animation's origin point
+Sets the rotation animation's origin point. During a rotation animation, the origin point remains in place while the positions of all other points in the scaled region are moved according to the rotation amount.
 
 **Signature:**
 
 ```lua
 Rotation:SetOrigin("point", xOffset, yOffset)
 ```
+
+**Arguments:**
+
+- `point` - Anchor point for the rotation origin (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `xOffset` - Horizontal distance from the anchor point to the rotation origin (in pixels) (`number`)
+- `yOffset` - Vertical distance from the anchor point to the rotation origin (in pixels) (`number`)
 
 ---
 
@@ -629,6 +653,10 @@ Sets the animation's rotation amount (in radians)
 ```lua
 Rotation:SetRadians(radians)
 ```
+
+**Arguments:**
+
+- `radians` - Amount by which the region should rotate over the animation's duration (in radians; positive values for counter-clockwise rotation, negative for clockwise) (`number`)
 
 ---
 

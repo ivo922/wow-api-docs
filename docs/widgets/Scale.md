@@ -138,13 +138,19 @@ order = Animation:GetOrder()
 
 ### Scale:GetOrigin
 
-Returns the scale animation's origin point
+Returns the scale animation's origin point. During a scale animation, the origin point remains in place while the positions of all other points in the scaled region are moved according to the scale factor.
 
 **Signature:**
 
 ```lua
 point, xOffset, yOffset = Scale:GetOrigin()
 ```
+
+**Returns:**
+
+- `point` - Anchor point for the scale origin (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `xOffset` - Horizontal distance from the anchor point to the scale origin (in pixels) (`number`)
+- `yOffset` - Vertical distance from the anchor point to the scale origin (in pixels) (`number`)
 
 ---
 
@@ -222,13 +228,18 @@ region = Animation:GetRegionParent()
 
 ### Scale:GetScale
 
-Returns the animation's scaling factors
+Returns the animation's scaling factors. At the end of the scale animation, the animated region's dimensions are equal to its initial dimensions multiplied by its scaling factors.
 
 **Signature:**
 
 ```lua
 xFactor, yFactor = Scale:GetScale()
 ```
+
+**Returns:**
+
+- `xFactor` - Horizontal scaling factor (`number`)
+- `yFactor` - Vertical scaling factor (`number`)
 
 ---
 
@@ -319,8 +330,16 @@ Returns whether the widget supports a script handler
 **Signature:**
 
 ```lua
-hasScript = Scale:HasScript("scriptType")
+hasScript = ScriptObject:HasScript("scriptType")
 ```
+
+**Arguments:**
+
+- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+
+**Returns:**
+
+- `hasScript` - `1` if the widget can handle the script, otherwise `nil` (`1nil`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
 
@@ -559,13 +578,19 @@ Animation:SetOrder(order)
 
 ### Scale:SetOrigin
 
-Sets the scale animation's origin point
+Sets the scale animation's origin point. During a scale animation, the origin point remains in place while the positions of all other points in the scaled region are moved according to the scale factor.
 
 **Signature:**
 
 ```lua
 Scale:SetOrigin("point", xOffset, yOffset)
 ```
+
+**Arguments:**
+
+- `point` - Anchor point for the scale origin (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `xOffset` - Horizontal distance from the anchor point to the scale origin (in pixels) (`number`)
+- `yOffset` - Vertical distance from the anchor point to the scale origin (in pixels) (`number`)
 
 ---
 
@@ -590,13 +615,18 @@ Animation:SetParent(animGroup) or Animation:SetParent("animGroupName")
 
 ### Scale:SetScale
 
-Sets the animation's scaling factors
+Sets the animation's scaling factors. At the end of the scale animation, the animated region's dimensions are equal to its initial dimensions multiplied by its scaling factors.
 
 **Signature:**
 
 ```lua
 Scale:SetScale(xFactor, yFactor)
 ```
+
+**Arguments:**
+
+- `xFactor` - Horizontal scaling factor (`number`)
+- `yFactor` - Vertical scaling factor (`number`)
 
 ---
 

@@ -968,13 +968,17 @@ Button:IsDragging()
 
 ### Button:IsEnabled
 
-Returns if the button is enabled
+Returns whether user interaction with the button is allowed
 
 **Signature:**
 
 ```lua
-isEnabled = Button:IsEnabled()
+enabled = Button:IsEnabled()
 ```
+
+**Returns:**
+
+- `enabled` - `1` if user interaction with the button is allowed; otherwise `nil` (`1nil`)
 
 ---
 
@@ -1184,7 +1188,7 @@ Button:IsVisible()
 
 ### Button:LockHighlight
 
-Locks the button's highlight state, so it is always drawn as highlighted
+Locks the button in its highlight state. When the highlight state is locked, the button will always appear highlighted regardless of whether it is moused over.
 
 **Signature:**
 
@@ -1249,8 +1253,24 @@ Registers a button to receive mouse clicks
 **Signature:**
 
 ```lua
-Button:RegisterForClicks("...")
+Button:RegisterForClicks(...)
 ```
+
+**Arguments:**
+
+- `...` - A list of strings, each the combination of a button name and click action for which the button's click-related [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) handlers should be run. Possible values: (`list`)
+  - `Button4Down`
+  - `Button4Up`
+  - `Button5Down`
+  - `Button5Up`
+  - `LeftButtonDown`
+  - `LeftButtonUp`
+  - `MiddleButtonDown`
+  - `MiddleButtonUp`
+  - `RightButtonDown`
+  - `RightButtonUp`
+  - `AnyDown` - Responds to the down action of any mouse button
+  - `AnyUp` - Responds to the up action of any mouse button
 
 ---
 
@@ -1396,7 +1416,7 @@ Button:SetDepth()
 
 ### Button:SetDisabledFontObject
 
-Sets the font object to be used when the button is disabled
+Sets the font object used for the button's disabled state
 
 **Signature:**
 
@@ -1404,17 +1424,26 @@ Sets the font object to be used when the button is disabled
 Button:SetDisabledFontObject(font)
 ```
 
+**Arguments:**
+
+- `font` - Reference to a `Font` object to be used when the button is disabled (`font`)
+
 ---
 
 ### Button:SetDisabledTexture
 
-Sets the texture to be used when the button is disabled
+Sets the texture used when the button is disabled
 
 **Signature:**
 
 ```lua
-Button:SetDisabledTexture(texture)
+Button:SetDisabledTexture(texture) or Button:SetDisabledTexture("filename")
 ```
+
+**Arguments:**
+
+- `texture` - Reference to an existing `Texture` object (`texture`)
+- `filename` - Path to a texture image file (`string`)
 
 ---
 

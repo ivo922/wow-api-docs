@@ -35,13 +35,17 @@ filename, fontHeight, flags = FontInstance:GetFont()
 
 ### FontInstance:GetFontObject
 
-Returns the `Font` object from which the font instance's properties are inherited
+Returns the `Font` object from which the font instance's properties are inherited. See [`FontInstance:SetFontObject()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetFontObject) for details.
 
 **Signature:**
 
 ```lua
 font = FontInstance:GetFontObject()
 ```
+
+**Returns:**
+
+- `font` - Reference to the `Font` object from which the font instance's properties are inherited, or `nil` if the font instance has no inherited properties (`font`)
 
 ---
 
@@ -73,6 +77,13 @@ Returns the font instance's vertical text alignment style
 ```lua
 justify = FontInstance:GetJustifyV()
 ```
+
+**Returns:**
+
+- `justify` - Vertical text alignment style (`string`, [justifyV](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyV))
+  - `BOTTOM`
+  - `MIDDLE`
+  - `TOP`
 
 ---
 
@@ -141,6 +152,11 @@ Returns the offset of the font instance's text shadow from its text
 xOffset, yOffset = FontInstance:GetShadowOffset()
 ```
 
+**Returns:**
+
+- `xOffset` - Horizontal distance between the text and its shadow (in pixels) (`number`)
+- `yOffset` - Vertical distance between the text and its shadow (in pixels) (`number`)
+
 ---
 
 ### FontInstance:GetSpacing
@@ -153,6 +169,10 @@ Returns the font instance's amount of spacing between lines
 spacing = FontInstance:GetSpacing()
 ```
 
+**Returns:**
+
+- `spacing` - Amount of space between lines of text (in pixels) (`number`)
+
 ---
 
 ### FontInstance:GetTextColor
@@ -164,6 +184,13 @@ Returns the font instance's default text color
 ```lua
 textR, textG, textB, textAlpha = FontInstance:GetTextColor()
 ```
+
+**Returns:**
+
+- `textR` - Red component of the text color (0.0 - 1.0) (`number`)
+- `textG` - Green component of the text color (0.0 - 1.0) (`number`)
+- `textB` - Blue component of the text color (0.0 - 1.0) (`number`)
+- `textAlpha` - Alpha (opacity) of the text (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 ---
 
@@ -191,7 +218,14 @@ isType = UIObject:IsObjectType("type")
 
 ### FontInstance:SetFont
 
-Sets the font instance's basic font properties
+Sets the font instance's basic font properties. Font files included with the default WoW client:
+
+- `Fonts\\FRIZQT__.TTF` - Friz Quadrata, used by default for player names and most UI text
+- `Fonts\\ARIALN.TTF` - Arial Narrow, used by default for chat windows, action button numbers, etc.
+- `Fonts\\skurri.ttf` - Skurri, used by default for incoming damage/parry/miss/etc indicators on the Player and Pet frames
+- `Fonts\\MORPHEUS.ttf` - Morpheus, used by default for quest title headers, mail, and readable in-game objects.
+
+Font files can also be included in addons.
 
 **Signature:**
 
@@ -199,17 +233,35 @@ Sets the font instance's basic font properties
 isValid = FontInstance:SetFont("filename", fontHeight, "flags")
 ```
 
+**Arguments:**
+
+- `filename` - Path to a font file (`string`)
+- `fontHeight` - Height (point size) of the font to be displayed (in pixels) (`number`)
+- `flags` - Additional properties for the font specified by one or more (separated by commas) of the following tokens: (`string`)
+  - `MONOCHROME` - Font is rendered without antialiasing
+  - `OUTLINE` - Font is displayed with a black outline
+  - `THICKOUTLINE` - Font is displayed with a thick black outline
+
+**Returns:**
+
+- `isValid` - `1` if `filename` refers to a valid font file; otherwise `nil` (`1nil`)
+
 ---
 
 ### FontInstance:SetFontObject
 
-Sets the `Font` object from which the font instance's properties are inherited
+Sets the `Font` object from which the font instance's properties are inherited. This method allows for easy standardization and reuse of font styles. For example, a button's normal font can be set to appear in the same style as many default UI elements by setting its font to `"GameFontNormal"` -- if Blizzard changes the main UI font in a future patch, or if the user installs another addon which changes the main UI font, the button's font will automatically change to match.
 
 **Signature:**
 
 ```lua
 FontInstance:SetFontObject(object) or FontInstance:SetFontObject("name")
 ```
+
+**Arguments:**
+
+- `object` - Reference to a `Font` object (`font`)
+- `name` - Global name of a `Font` object (`string`)
 
 ---
 

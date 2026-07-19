@@ -39,12 +39,12 @@ ScrollingMessageFrame:AddMessage("text" [, red [, green [, blue [, id [, addToTo
 
 ### Frame:AllowAttributeChanges
 
-Temporarily allows insecure code to modify the frame's attributes during combat
+Temporarily allows insecure code to modify the frame's attributes during combat. This permission is automatically rescinded when the frame's [`OnUpdate`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnUpdate) script next runs.
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:AllowAttributeChanges()
+Frame:AllowAttributeChanges()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -133,12 +133,12 @@ ScrollingMessageFrame:Clear()
 
 ### Region:ClearAllPoints
 
-Removes all anchor points from the region
+Clear all anchor point for the given region
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:ClearAllPoints()
+Region:ClearAllPoints()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -147,13 +147,18 @@ ScrollingMessageFrame:ClearAllPoints()
 
 ### Region:CreateAnimationGroup
 
-Creates a new AnimationGroup as a child of the region
+Create and return a new AnimationGroup as a child of this Region
 
 **Signature:**
 
 ```lua
-animationGroup = ScrollingMessageFrame:CreateAnimationGroup(["name" [, "inheritsFrom"]])
+Region:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new animation group (`string`)
+- `inheritsFrom` - A template from which the new animation group should inherit (`string`)
 
 *Inherited from [Region](Region.md)*
 
@@ -161,13 +166,19 @@ animationGroup = ScrollingMessageFrame:CreateAnimationGroup(["name" [, "inherits
 
 ### Frame:CreateFontString
 
-Creates a new [[docs/widgets/FontString|`FontString`]] as a child of the frame
+Creates a new FontString for the Frame on a given layer, possibly inheriting from a template
 
 **Signature:**
 
 ```lua
-fontstring = ScrollingMessageFrame:CreateFontString(["name" [, "layer" [, "inherits"]]])
+Frame:CreateFontString(["name" [, "layer" [, "inherits"]]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new font string (`string`)
+- `layer` - The graphic layer on which to create the font string. Default value is `ARTWORK`. (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `inherits` - A template from which the new front string should inherit (`string`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -175,13 +186,24 @@ fontstring = ScrollingMessageFrame:CreateFontString(["name" [, "layer" [, "inher
 
 ### Frame:CreateTexture
 
-Creates a new [[docs/widgets/Texture|`Texture`]] as a child of the frame
+Creates a new [`Texture`](Texture.md) as a child of the frame. The `sublevel` argument can be used to provide layering of textures within a draw layer. As it can be difficult to compute the proper layering, addon authors should avoid using this option, and it's XML equivalent `textureSubLevel` without reason. It should also be noted that `FontStrings` will always appear on top of all textures in a given draw layer.
 
 **Signature:**
 
 ```lua
-texture = ScrollingMessageFrame:CreateTexture(["name" [, "layer" [, "inherits"]]])
+texture = Frame:CreateTexture(["name" [, "layer" [, "inherits" [, sublevel]]]])
 ```
+
+**Arguments:**
+
+- `name` - Global name for the new texture (`string`)
+- `layer` - Graphic layer on which to create the texture; defaults to `ARTWORK` if not specified (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `inherits` - Name of a template from which the new texture should inherit (`string`)
+- `sublevel` - The sub-level on the given graphics layer ranging from `-8`- to `7`. The default value of this argument is `0` (`number`)
+
+**Returns:**
+
+- `texture` - Reference to the new `Texture` object (`texture`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -189,13 +211,17 @@ texture = ScrollingMessageFrame:CreateTexture(["name" [, "layer" [, "inherits"]]
 
 ### Frame:CreateTitleRegion
 
-Creates a title region for dragging the frame
+Creates a title region for dragging the frame. Creating a title region allows a frame to be repositioned by the user (by clicking and dragging in the region) without requiring additional scripts. (This behavior only applies if the frame is [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse).)
 
 **Signature:**
 
 ```lua
-region = ScrollingMessageFrame:CreateTitleRegion()
+region = Frame:CreateTitleRegion()
 ```
+
+**Returns:**
+
+- `region` - Reference to the new `Region` object (`region`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -208,8 +234,12 @@ Prevents display of all child objects of the frame on a specified graphics layer
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:DisableDrawLayer("layer")
+Frame:DisableDrawLayer("layer")
 ```
+
+**Arguments:**
+
+- `layer` - Name of a graphics layer (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
 
 *Inherited from [Frame](Frame.md)*
 
@@ -235,13 +265,19 @@ Frame:EnableDrawLayer("layer")
 
 ### Frame:EnableJoystick
 
-Enables or disables joystick interactivity
+Enables or disables joystick interactivity. Joystick interactivity must be enabled in order for a frame's joystick-related [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) handlers to be run.
+
+(As of this writing, joystick support is partially implemented but not enabled in the current version of World of Warcraft.)
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:EnableJoystick(enable)
+Frame:EnableJoystick(enable)
 ```
+
+**Arguments:**
+
+- `enable` - True to enable joystick interactivity; false to disable (`boolean`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -321,13 +357,17 @@ alpha = VisibleRegion:GetAlpha()
 
 ### Region:GetAnimationGroups
 
-Returns a list of animation groups belonging to the region
+Returns a list of animation groups belonging to this region
 
 **Signature:**
 
 ```lua
-... = ScrollingMessageFrame:GetAnimationGroups()
+... = Region:GetAnimationGroups()
 ```
+
+**Returns:**
+
+- `...` - The list of animation groups belonging to this region (`list of AnimationGroup`)
 
 *Inherited from [Region](Region.md)*
 
@@ -456,12 +496,12 @@ left, bottom, width, height = Frame:GetBoundsRect()
 
 ### Region:GetCenter
 
-Returns the screen coordinates of the region's center
+Returns the screen coordinates of the Region's center.
 
 **Signature:**
 
 ```lua
-x, y = ScrollingMessageFrame:GetCenter()
+Region:GetCenter()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -591,13 +631,17 @@ alpha = Frame:GetEffectiveAlpha()
 
 ### Frame:GetEffectiveDepth
 
-Returns the overall 3D depth of the frame (for stereoscopic 3D configurations)
+Returns the overall 3D depth of the frame (for stereoscopic 3D configurations). Unlike [`:GetDepth()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/GetDepth) which returns the apparent depth of the frame relative to its parent, this function returns the absolute depth of the frame, taking into account the relative depths of parent frames.
 
 **Signature:**
 
 ```lua
-depth = ScrollingMessageFrame:GetEffectiveDepth()
+depth = Frame:GetEffectiveDepth()
 ```
+
+**Returns:**
+
+- `depth` - Apparent 3D depth of this frame relative to the screen (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -605,12 +649,12 @@ depth = ScrollingMessageFrame:GetEffectiveDepth()
 
 ### Frame:GetEffectiveScale
 
-Returns the overall scale factor of the frame
+Returns the frame's effective scale
 
 **Signature:**
 
 ```lua
-scale = ScrollingMessageFrame:GetEffectiveScale()
+Frame:GetEffectiveScale()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -674,13 +718,17 @@ filename, fontHeight, flags = FontInstance:GetFont()
 
 ### FontInstance:GetFontObject
 
-Returns the `Font` object from which the font instance's properties are inherited
+Returns the `Font` object from which the font instance's properties are inherited. See [`FontInstance:SetFontObject()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetFontObject) for details.
 
 **Signature:**
 
 ```lua
-font = ScrollingMessageFrame:GetFontObject()
+font = FontInstance:GetFontObject()
 ```
+
+**Returns:**
+
+- `font` - Reference to the `Font` object from which the font instance's properties are inherited, or `nil` if the font instance has no inherited properties (`font`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -733,12 +781,12 @@ strata = Frame:GetFrameStrata()
 
 ### Region:GetHeight
 
-Returns the height of the region
+Returns the height of the region.
 
 **Signature:**
 
 ```lua
-height = ScrollingMessageFrame:GetHeight()
+Region:GetHeight()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -747,12 +795,12 @@ height = ScrollingMessageFrame:GetHeight()
 
 ### Frame:GetHitRectInsets
 
-Returns the insets from the frame's edges which determine its mouse-interactable area
+Returns the inserts for the frame's HitRect
 
 **Signature:**
 
 ```lua
-left, right, top, bottom = ScrollingMessageFrame:GetHitRectInsets()
+Frame:GetHitRectInsets()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -855,8 +903,15 @@ Returns the font instance's vertical text alignment style
 **Signature:**
 
 ```lua
-justify = ScrollingMessageFrame:GetJustifyV()
+justify = FontInstance:GetJustifyV()
 ```
+
+**Returns:**
+
+- `justify` - Vertical text alignment style (`string`, [justifyV](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyV))
+  - `BOTTOM`
+  - `MIDDLE`
+  - `TOP`
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -898,13 +953,18 @@ ScrollingMessageFrame:GetMaxLines(maxLines)
 
 ### Frame:GetMaxResize
 
-Returns the maximum size of the frame for user resizing
+Returns the maximum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing).
 
 **Signature:**
 
 ```lua
-maxWidth, maxHeight = ScrollingMessageFrame:GetMaxResize()
+maxWidth, maxHeight = Frame:GetMaxResize()
 ```
+
+**Returns:**
+
+- `maxWidth` - Maximum width of the frame (in pixels), or `0` for no limit (`number`)
+- `maxHeight` - Maximum height of the frame (in pixels), or `0` for no limit (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -966,8 +1026,12 @@ Returns the number of child frames belonging to the frame
 **Signature:**
 
 ```lua
-numChildren = ScrollingMessageFrame:GetNumChildren()
+numChildren = Frame:GetNumChildren()
 ```
+
+**Returns:**
+
+- `numChildren` - Number of child frames belonging to the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -991,13 +1055,17 @@ count = ScrollingMessageFrame:GetNumLinesDisplayed()
 
 ### ScrollingMessageFrame:GetNumMessages
 
-Returns the number of messages currently kept in the frame's message history
+Returns the number of messages currently kept in the frame's message history. This number reflects the list of messages which can be seen by scrolling the frame, including (but not limited to) the list of messages currently displayed.
 
 **Signature:**
 
 ```lua
 count = ScrollingMessageFrame:GetNumMessages()
 ```
+
+**Returns:**
+
+- `count` - Number of messages currently kept in the frame's message history (`number`)
 
 ---
 
@@ -1026,8 +1094,12 @@ Returns the number of non-Frame child regions belonging to the frame
 **Signature:**
 
 ```lua
-numRegions = ScrollingMessageFrame:GetNumRegions()
+numRegions = Frame:GetNumRegions()
 ```
+
+**Returns:**
+
+- `numRegions` - Number of non-Frame child regions (`FontString`s and `Texture`s) belonging to the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1123,8 +1195,12 @@ Returns a list of non-Frame child regions belonging to the frame
 **Signature:**
 
 ```lua
-... = ScrollingMessageFrame:GetRegions()
+... = Frame:GetRegions()
 ```
+
+**Returns:**
+
+- `...` - A list of each non-Frame child region (`FontString` or `Texture`) belonging to the frame (`list`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1150,12 +1226,12 @@ right = Region:GetRight()
 
 ### Frame:GetScale
 
-Returns the frame's scale factor
+Returns the scale of the frame
 
 **Signature:**
 
 ```lua
-scale = ScrollingMessageFrame:GetScale()
+Frame:GetScale()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1212,8 +1288,13 @@ Returns the offset of the font instance's text shadow from its text
 **Signature:**
 
 ```lua
-xOffset, yOffset = ScrollingMessageFrame:GetShadowOffset()
+xOffset, yOffset = FontInstance:GetShadowOffset()
 ```
+
+**Returns:**
+
+- `xOffset` - Horizontal distance between the text and its shadow (in pixels) (`number`)
+- `yOffset` - Vertical distance between the text and its shadow (in pixels) (`number`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -1245,8 +1326,12 @@ Returns the font instance's amount of spacing between lines
 **Signature:**
 
 ```lua
-spacing = ScrollingMessageFrame:GetSpacing()
+spacing = FontInstance:GetSpacing()
 ```
+
+**Returns:**
+
+- `spacing` - Amount of space between lines of text (in pixels) (`number`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -1259,8 +1344,15 @@ Returns the font instance's default text color
 **Signature:**
 
 ```lua
-textR, textG, textB, textAlpha = ScrollingMessageFrame:GetTextColor()
+textR, textG, textB, textAlpha = FontInstance:GetTextColor()
 ```
+
+**Returns:**
+
+- `textR` - Red component of the text color (0.0 - 1.0) (`number`)
+- `textG` - Green component of the text color (0.0 - 1.0) (`number`)
+- `textB` - Blue component of the text color (0.0 - 1.0) (`number`)
+- `textAlpha` - Alpha (opacity) of the text (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -1275,6 +1367,10 @@ Returns the amount of time for which a message remains visible before beginning 
 ```lua
 time = ScrollingMessageFrame:GetTimeVisible()
 ```
+
+**Returns:**
+
+- `time` - Amount of time for which a message remains visible before beginning to fade out (in seconds) (`number`)
 
 ---
 
@@ -1339,8 +1435,16 @@ Returns whether the widget supports a script handler
 **Signature:**
 
 ```lua
-hasScript = ScrollingMessageFrame:HasScript("scriptType")
+hasScript = ScriptObject:HasScript("scriptType")
 ```
+
+**Arguments:**
+
+- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+
+**Returns:**
+
+- `hasScript` - `1` if the widget can handle the script, otherwise `nil` (`1nil`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
 
@@ -1403,12 +1507,12 @@ Frame:IgnoreDepth(enable)
 
 ### Frame:IsClampedToScreen
 
-Returns whether the frame's boundaries are limited to those of the screen
+Returns whether or not the frame is clamped to the screen
 
 **Signature:**
 
 ```lua
-enabled = ScrollingMessageFrame:IsClampedToScreen()
+Frame:IsClampedToScreen()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1435,12 +1539,12 @@ isDragging = Region:IsDragging()
 
 ### Frame:IsEventRegistered
 
-Returns whether the frame is registered for a given [[docs/events|event]]
+Returns whether or not the frame is registered for the given event
 
 **Signature:**
 
 ```lua
-registered = ScrollingMessageFrame:IsEventRegistered("event")
+Frame:IsEventRegistered()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1481,12 +1585,12 @@ enabled = ScrollingMessageFrame:IsJoystickEnabled()
 
 ### Frame:IsKeyboardEnabled
 
-Returns whether keyboard interactivity is enabled for the frame
+Returns whether or not the frame is keyboard enabled
 
 **Signature:**
 
 ```lua
-enabled = ScrollingMessageFrame:IsKeyboardEnabled()
+Frame:IsKeyboardEnabled()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1714,7 +1818,7 @@ Frame:Lower()
 
 ### ScrollingMessageFrame:PageDown
 
-Scrolls the message frame's contents down by one page
+Scrolls the message frame's contents down by one page. One "page" is slightly less than the [number of lines](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/ScrollingMessageFrame/GetNumLinesDisplayed) displayed in the frame.
 
 **Signature:**
 
@@ -1726,7 +1830,7 @@ ScrollingMessageFrame:PageDown()
 
 ### ScrollingMessageFrame:PageUp
 
-Scrolls the message frame's contents up by one page
+Scrolls the message frame's contents up by one page. One "page" is slightly less than the [number of lines](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/ScrollingMessageFrame/GetNumLinesDisplayed) displayed in the frame.
 
 **Signature:**
 
@@ -1784,13 +1888,22 @@ Frame:RegisterEvent("event")
 
 ### Frame:RegisterForDrag
 
-Registers the frame for dragging
+Registers the frame for dragging. Once the frame is registered for dragging (and [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse)), the frame's [`OnDragStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStart) and [`OnDragStop`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStop) scripts will be called when the specified mouse button(s) are clicked and dragged starting from within the frame (or its mouse-interactive area).
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:RegisterForDrag(...)
+Frame:RegisterForDrag(...)
 ```
+
+**Arguments:**
+
+- `...` - A list of strings, each the name of a mouse button for which the frame should respond to drag actions (`list`)
+  - `Button4`
+  - `Button5`
+  - `LeftButton`
+  - `MiddleButton`
+  - `RightButton`
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1895,13 +2008,18 @@ VisibleRegion:SetAlpha(alpha)
 
 ### Frame:SetAttribute
 
-Sets a secure frame attribute
+Sets a secure frame attribute. See the [secure template documentation](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/secure_template) for more information about frame attributes.
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:SetAttribute("name", value)
+Frame:SetAttribute("name", value)
 ```
+
+**Arguments:**
+
+- `name` - Name of an attribute, case insensitive (`string`)
+- `value` - New value to set for the attribute (`value`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1909,12 +2027,28 @@ ScrollingMessageFrame:SetAttribute("name", value)
 
 ### Frame:SetBackdrop
 
-Sets a backdrop graphic for the frame
+Sets a frame's backdrop as defined by a table.
+
+This function accepts the return from the Frame:GetBackdrop() function.  The format of the backdropTbl argument is as follows:
+
+{
+ bgFile = "bgFile", 
+ edgeFile = "edgeFile", 
+ tile = false, 
+ tileSize = 0, 
+ edgeSize = 32,
+ insets = { 
+ left = 0, 
+ right = 0, 
+ top = 0, 
+ bottom = 0 
+ }
+}
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:SetBackdrop(backdrop)
+Frame:SetBackdrop()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1923,13 +2057,20 @@ ScrollingMessageFrame:SetBackdrop(backdrop)
 
 ### Frame:SetBackdropBorderColor
 
-Sets a shading color for the frame's border graphic
+Sets a shading color for the frame's border graphic. As with [`Texture:SetVertexColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Texture/SetVertexColor), this color is a shading applied to the colors of the texture image; a color of `(1, 1, 1)` allows the image's original colors to show.
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:SetBackdropBorderColor(red, green, blue [, alpha])
+Frame:SetBackdropBorderColor(red, green, blue [, alpha])
 ```
+
+**Arguments:**
+
+- `red` - Red component of the color (0.0 - 1.0) (`number`)
+- `green` - Green component of the color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the color (0.0 - 1.0) (`number`)
+- `alpha` - Alpha (opacity) for the graphic (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2061,13 +2202,33 @@ ScrollingMessageFrame:SetFading(fading)
 
 ### FontInstance:SetFont
 
-Sets the font instance's basic font properties
+Sets the font instance's basic font properties. Font files included with the default WoW client:
+
+- `Fonts\\FRIZQT__.TTF` - Friz Quadrata, used by default for player names and most UI text
+- `Fonts\\ARIALN.TTF` - Arial Narrow, used by default for chat windows, action button numbers, etc.
+- `Fonts\\skurri.ttf` - Skurri, used by default for incoming damage/parry/miss/etc indicators on the Player and Pet frames
+- `Fonts\\MORPHEUS.ttf` - Morpheus, used by default for quest title headers, mail, and readable in-game objects.
+
+Font files can also be included in addons.
 
 **Signature:**
 
 ```lua
-isValid = ScrollingMessageFrame:SetFont("filename", fontHeight, "flags")
+isValid = FontInstance:SetFont("filename", fontHeight, "flags")
 ```
+
+**Arguments:**
+
+- `filename` - Path to a font file (`string`)
+- `fontHeight` - Height (point size) of the font to be displayed (in pixels) (`number`)
+- `flags` - Additional properties for the font specified by one or more (separated by commas) of the following tokens: (`string`)
+  - `MONOCHROME` - Font is rendered without antialiasing
+  - `OUTLINE` - Font is displayed with a black outline
+  - `THICKOUTLINE` - Font is displayed with a thick black outline
+
+**Returns:**
+
+- `isValid` - `1` if `filename` refers to a valid font file; otherwise `nil` (`1nil`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -2075,13 +2236,18 @@ isValid = ScrollingMessageFrame:SetFont("filename", fontHeight, "flags")
 
 ### FontInstance:SetFontObject
 
-Sets the `Font` object from which the font instance's properties are inherited
+Sets the `Font` object from which the font instance's properties are inherited. This method allows for easy standardization and reuse of font styles. For example, a button's normal font can be set to appear in the same style as many default UI elements by setting its font to `"GameFontNormal"` -- if Blizzard changes the main UI font in a future patch, or if the user installs another addon which changes the main UI font, the button's font will automatically change to match.
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:SetFontObject(object) or ScrollingMessageFrame:SetFontObject("name")
+FontInstance:SetFontObject(object) or FontInstance:SetFontObject("name")
 ```
+
+**Arguments:**
+
+- `object` - Reference to a `Font` object (`font`)
+- `name` - Global name of a `Font` object (`string`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -2148,8 +2314,15 @@ Sets the insets from the frame's edges which determine its mouse-interactable ar
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:SetHitRectInsets(left, right, top, bottom)
+Frame:SetHitRectInsets(left, right, top, bottom)
 ```
+
+**Arguments:**
+
+- `left` - Distance from the left edge of the frame to the left edge of its mouse-interactive area (in pixels) (`number`)
+- `right` - Distance from the right edge of the frame to the right edge of its mouse-interactive area (in pixels) (`number`)
+- `top` - Distance from the top edge of the frame to the top edge of its mouse-interactive area (in pixels) (`number`)
+- `bottom` - Distance from the bottom edge of the frame to the bottom edge of its mouse-interactive area (in pixels) (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2157,7 +2330,7 @@ ScrollingMessageFrame:SetHitRectInsets(left, right, top, bottom)
 
 ### ScrollingMessageFrame:SetHyperlinksEnabled
 
-Enables or disables hyperlink interactivity in the frame
+Enables or disables hyperlink interactivity in the frame. The frame's hyperlink-related [script handlers](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) will only be run if hyperlinks are enabled.
 
 **Signature:**
 
@@ -2165,17 +2338,25 @@ Enables or disables hyperlink interactivity in the frame
 ScrollingMessageFrame:SetHyperlinksEnabled(enable)
 ```
 
+**Arguments:**
+
+- `enable` - True to enable hyperlink interactivity in the frame; false to disable (`boolean`)
+
 ---
 
 ### Frame:SetID
 
-Sets a numeric identifier for the frame
+Sets a numeric identifier for the frame. Frame IDs have no effect on frame behavior, but can be a useful way to keep track of multiple similar frames, especially in cases where a list of frames is created from a template (such as for action buttons, loot slots, or lines in a FauxScrollFrame).
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:SetID(id)
+Frame:SetID(id)
 ```
+
+**Arguments:**
+
+- `id` - A numeric identifier for the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2190,6 +2371,10 @@ Sets whether long lines of text are indented when wrapping
 ```lua
 ScrollingMessageFrame:SetIndentedWordWrap(indent)
 ```
+
+**Arguments:**
+
+- `indent` - True to indent wrapped lines of text; false otherwise (`boolean`)
 
 ---
 
@@ -2248,13 +2433,17 @@ FontInstance:SetJustifyV()
 
 ### ScrollingMessageFrame:SetMaxLines
 
-Sets the maximum number of messages to be kept in the frame
+Sets the maximum number of messages to be kept in the frame. If additional messages are added beyond this number, the oldest lines are discarded and can no longer be seen by scrolling.
 
 **Signature:**
 
 ```lua
 ScrollingMessageFrame:SetMaxLines(maxLines)
 ```
+
+**Arguments:**
+
+- `maxLines` - Maximum number of messages to be kept in the frame (`number`)
 
 ---
 
@@ -2528,13 +2717,17 @@ FontInstance:SetTextColor(textR, textG, textB, textAlpha)
 
 ### ScrollingMessageFrame:SetTimeVisible
 
-Sets the amount of time for which a message remains visible before beginning to fade out
+Sets the amount of time for which a message remains visible before beginning to fade out. For the duration of the fade-out animation, see [`:SetFadeDuration()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/ScrollingMessageFrame/SetFadeDuration).
 
 **Signature:**
 
 ```lua
 ScrollingMessageFrame:SetTimeVisible(time)
 ```
+
+**Arguments:**
+
+- `time` - Amount of time for which a message remains visible before beginning to fade out (in seconds) (`number`)
 
 ---
 
@@ -2615,7 +2808,7 @@ Begins repositioning the frame via mouse movement
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:StartMoving()
+Frame:StartMoving()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2643,7 +2836,7 @@ Stops any active animations involving the region or its children
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:StopAnimating()
+Region:StopAnimating()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -2652,12 +2845,12 @@ ScrollingMessageFrame:StopAnimating()
 
 ### Frame:StopMovingOrSizing
 
-Ends movement or resizing of the frame initiated with [[docs/widgets/Frame/StartMoving|`:StartMoving()`]] or [[docs/widgets/Frame/StartSizing|`:StartSizing()`]]
+Ends movement or resizing of the frame initiated with [`:StartMoving()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartMoving) or [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing)
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:StopMovingOrSizing()
+Frame:StopMovingOrSizing()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2666,12 +2859,12 @@ ScrollingMessageFrame:StopMovingOrSizing()
 
 ### Frame:UnregisterAllEvents
 
-Unregisters the frame from any [[docs/events|events]] for which it is registered
+Unregisters the frame from any [events](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) for which it is registered
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:UnregisterAllEvents()
+Frame:UnregisterAllEvents()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2680,13 +2873,19 @@ ScrollingMessageFrame:UnregisterAllEvents()
 
 ### Frame:UnregisterEvent
 
-Unregisters the frame for an event
+Unregisters the frame for an event. Once unregistered, the frame's [`OnEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnEvent) script handler will not be called for that event.
+
+Unregistering from notifications for an event can be useful for improving addon performance at times when it's not necessary to process the event. For example, a frame which monitors target health does not need to receive the [`UNIT_HEALTH`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_HEALTH) event while the player has no target. An addon that sorts the contents of the player's bags can register for the [`BAG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/BAG_UPDATE) event to keep track of when items are picked up, but unregister from the event while it performs its sorting.
 
 **Signature:**
 
 ```lua
-ScrollingMessageFrame:UnregisterEvent("event")
+Frame:UnregisterEvent("event")
 ```
+
+**Arguments:**
+
+- `event` - Name of an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) (`string`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2694,13 +2893,20 @@ ScrollingMessageFrame:UnregisterEvent("event")
 
 ### ScrollingMessageFrame:UpdateColorByID
 
-Updates the color of a set of messages already added to the frame
+Updates the color of a set of messages already added to the frame. Used in the default UI to allow customization of chat window message colors by type: each type of chat window message (party, raid, emote, system message, etc.) has a numeric identifier found in the global table `ChatTypeInfo`; this is passed as the fifth argument to [`:AddMessage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/ScrollingMessageFrame/AddMessage) when messages are added to the frame, allowing them to be identified for recoloring via this method.
 
 **Signature:**
 
 ```lua
 ScrollingMessageFrame:UpdateColorByID(id, red, green, blue)
 ```
+
+**Arguments:**
+
+- `id` - Identifier for a message's type (as set when the messages were [added](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/ScrollingMessageFrame/AddMessage) to the frame) (`number`)
+- `red` - Red component of the new text color (0.0 - 1.0) (`number`)
+- `green` - Green component of the new text color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the new text color (0.0 - 1.0) (`number`)
 
 ---
 

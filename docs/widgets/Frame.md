@@ -12,7 +12,7 @@
 
 ### Frame:AllowAttributeChanges
 
-Temporarily allows insecure code to modify attributes on the Frame during combat.
+Temporarily allows insecure code to modify the frame's attributes during combat. This permission is automatically rescinded when the frame's [`OnUpdate`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnUpdate) script next runs.
 
 **Signature:**
 
@@ -47,7 +47,7 @@ Clear all anchor point for the given region
 **Signature:**
 
 ```lua
-Frame:ClearAllPoints()
+Region:ClearAllPoints()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -56,13 +56,18 @@ Frame:ClearAllPoints()
 
 ### Region:CreateAnimationGroup
 
-This function is not yet documented
+Create and return a new AnimationGroup as a child of this Region
 
 **Signature:**
 
 ```lua
-Frame:CreateAnimationGroup()
+Region:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new animation group (`string`)
+- `inheritsFrom` - A template from which the new animation group should inherit (`string`)
 
 *Inherited from [Region](Region.md)*
 
@@ -70,49 +75,74 @@ Frame:CreateAnimationGroup()
 
 ### Frame:CreateFontString
 
-Creates a new FontString for the Frame on the given layer, optionally inheriting from a template.
+Creates a new FontString for the Frame on a given layer, possibly inheriting from a template
 
 **Signature:**
 
 ```lua
-Frame:CreateFontString(name[, layer[, inherits]])
+Frame:CreateFontString(["name" [, "layer" [, "inherits"]]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new font string (`string`)
+- `layer` - The graphic layer on which to create the font string. Default value is `ARTWORK`. (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `inherits` - A template from which the new front string should inherit (`string`)
 
 ---
 
 ### Frame:CreateTexture
 
-Creates a new Texture for the Frame on the given layer, optionally inheriting from a template.
+Creates a new [`Texture`](Texture.md) as a child of the frame. The `sublevel` argument can be used to provide layering of textures within a draw layer. As it can be difficult to compute the proper layering, addon authors should avoid using this option, and it's XML equivalent `textureSubLevel` without reason. It should also be noted that `FontStrings` will always appear on top of all textures in a given draw layer.
 
 **Signature:**
 
 ```lua
-Frame:CreateTexture(name[, layer[, inherits]])
+texture = Frame:CreateTexture(["name" [, "layer" [, "inherits" [, sublevel]]]])
 ```
+
+**Arguments:**
+
+- `name` - Global name for the new texture (`string`)
+- `layer` - Graphic layer on which to create the texture; defaults to `ARTWORK` if not specified (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `inherits` - Name of a template from which the new texture should inherit (`string`)
+- `sublevel` - The sub-level on the given graphics layer ranging from `-8`- to `7`. The default value of this argument is `0` (`number`)
+
+**Returns:**
+
+- `texture` - Reference to the new `Texture` object (`texture`)
 
 ---
 
 ### Frame:CreateTitleRegion
 
-Creates a title region for the frame
+Creates a title region for dragging the frame. Creating a title region allows a frame to be repositioned by the user (by clicking and dragging in the region) without requiring additional scripts. (This behavior only applies if the frame is [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse).)
 
 **Signature:**
 
 ```lua
-Frame:CreateTitleRegion()
+region = Frame:CreateTitleRegion()
 ```
+
+**Returns:**
+
+- `region` - Reference to the new `Region` object (`region`)
 
 ---
 
 ### Frame:DisableDrawLayer
 
-Disables rendering of the Frame's specified layer.
+Prevents display of all child objects of the frame on a specified graphics layer
 
 **Signature:**
 
 ```lua
-Frame:DisableDrawLayer(layer)
+Frame:DisableDrawLayer("layer")
 ```
+
+**Arguments:**
+
+- `layer` - Name of a graphics layer (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
 
 ---
 
@@ -134,13 +164,19 @@ Frame:EnableDrawLayer("layer")
 
 ### Frame:EnableJoystick
 
-This function is not yet documented
+Enables or disables joystick interactivity. Joystick interactivity must be enabled in order for a frame's joystick-related [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) handlers to be run.
+
+(As of this writing, joystick support is partially implemented but not enabled in the current version of World of Warcraft.)
 
 **Signature:**
 
 ```lua
-Frame:EnableJoystick()
+Frame:EnableJoystick(enable)
 ```
+
+**Arguments:**
+
+- `enable` - True to enable joystick interactivity; false to disable (`boolean`)
 
 ---
 
@@ -212,13 +248,17 @@ alpha = VisibleRegion:GetAlpha()
 
 ### Region:GetAnimationGroups
 
-This function is not yet documented
+Returns a list of animation groups belonging to this region
 
 **Signature:**
 
 ```lua
-Frame:GetAnimationGroups()
+... = Region:GetAnimationGroups()
 ```
+
+**Returns:**
+
+- `...` - The list of animation groups belonging to this region (`list of AnimationGroup`)
 
 *Inherited from [Region](Region.md)*
 
@@ -342,7 +382,7 @@ Returns the screen coordinates of the Region's center.
 **Signature:**
 
 ```lua
-Frame:GetCenter()
+Region:GetCenter()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -418,13 +458,17 @@ alpha = Frame:GetEffectiveAlpha()
 
 ### Frame:GetEffectiveDepth
 
-This function is not yet documented
+Returns the overall 3D depth of the frame (for stereoscopic 3D configurations). Unlike [`:GetDepth()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/GetDepth) which returns the apparent depth of the frame relative to its parent, this function returns the absolute depth of the frame, taking into account the relative depths of parent frames.
 
 **Signature:**
 
 ```lua
-Frame:GetEffectiveDepth()
+depth = Frame:GetEffectiveDepth()
 ```
+
+**Returns:**
+
+- `depth` - Apparent 3D depth of this frame relative to the screen (`number`)
 
 ---
 
@@ -500,7 +544,7 @@ Returns the height of the region.
 **Signature:**
 
 ```lua
-Frame:GetHeight()
+Region:GetHeight()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -555,13 +599,18 @@ left = Region:GetLeft()
 
 ### Frame:GetMaxResize
 
-Returns the maximum resize width and height
+Returns the maximum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing).
 
 **Signature:**
 
 ```lua
-Frame:GetMaxResize()
+maxWidth, maxHeight = Frame:GetMaxResize()
 ```
+
+**Returns:**
+
+- `maxWidth` - Maximum width of the frame (in pixels), or `0` for no limit (`number`)
+- `maxHeight` - Maximum height of the frame (in pixels), or `0` for no limit (`number`)
 
 ---
 
@@ -602,13 +651,17 @@ name = UIObject:GetName()
 
 ### Frame:GetNumChildren
 
-Returns the number of children this frame has
+Returns the number of child frames belonging to the frame
 
 **Signature:**
 
 ```lua
-Frame:GetNumChildren()
+numChildren = Frame:GetNumChildren()
 ```
+
+**Returns:**
+
+- `numChildren` - Number of child frames belonging to the frame (`number`)
 
 ---
 
@@ -632,13 +685,17 @@ numPoints = Region:GetNumPoints()
 
 ### Frame:GetNumRegions
 
-Returns the number of regions belonging to this frame
+Returns the number of non-Frame child regions belonging to the frame
 
 **Signature:**
 
 ```lua
-Frame:GetNumRegions()
+numRegions = Frame:GetNumRegions()
 ```
+
+**Returns:**
+
+- `numRegions` - Number of non-Frame child regions (`FontString`s and `Texture`s) belonging to the frame (`number`)
 
 ---
 
@@ -723,13 +780,17 @@ left, bottom, width, height = Region:GetRect()
 
 ### Frame:GetRegions
 
-Returns the regions (fontstrings, textures) that belong to this frame
+Returns a list of non-Frame child regions belonging to the frame
 
 **Signature:**
 
 ```lua
-Frame:GetRegions()
+... = Frame:GetRegions()
 ```
+
+**Returns:**
+
+- `...` - A list of each non-Frame child region (`FontString` or `Texture`) belonging to the frame (`list`)
 
 ---
 
@@ -918,7 +979,7 @@ Returns whether or not the frame is registered for the given event
 **Signature:**
 
 ```lua
-Frame:IsEventRegistered("event")
+Frame:IsEventRegistered()
 ```
 
 ---
@@ -1228,13 +1289,22 @@ Frame:RegisterEvent("event")
 
 ### Frame:RegisterForDrag
 
-Registers the frame for dragging via specific mouse buttons
+Registers the frame for dragging. Once the frame is registered for dragging (and [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse)), the frame's [`OnDragStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStart) and [`OnDragStop`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStop) scripts will be called when the specified mouse button(s) are clicked and dragged starting from within the frame (or its mouse-interactive area).
 
 **Signature:**
 
 ```lua
 Frame:RegisterForDrag(...)
 ```
+
+**Arguments:**
+
+- `...` - A list of strings, each the name of a mouse button for which the frame should respond to drag actions (`list`)
+  - `Button4`
+  - `Button5`
+  - `LeftButton`
+  - `MiddleButton`
+  - `RightButton`
 
 ---
 
@@ -1277,7 +1347,7 @@ VisibleRegion:SetAlpha(alpha)
 
 ### Frame:SetAttribute
 
-Sets an attribute on the given frame
+Sets a secure frame attribute. See the [secure template documentation](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/secure_template) for more information about frame attributes.
 
 **Signature:**
 
@@ -1285,29 +1355,57 @@ Sets an attribute on the given frame
 Frame:SetAttribute("name", value)
 ```
 
+**Arguments:**
+
+- `name` - Name of an attribute, case insensitive (`string`)
+- `value` - New value to set for the attribute (`value`)
+
 ---
 
 ### Frame:SetBackdrop
 
-Sets a frame's backdrop as defined by a table
+Sets a frame's backdrop as defined by a table.
+
+This function accepts the return from the Frame:GetBackdrop() function.  The format of the backdropTbl argument is as follows:
+
+{
+ bgFile = "bgFile", 
+ edgeFile = "edgeFile", 
+ tile = false, 
+ tileSize = 0, 
+ edgeSize = 32,
+ insets = { 
+ left = 0, 
+ right = 0, 
+ top = 0, 
+ bottom = 0 
+ }
+}
 
 **Signature:**
 
 ```lua
-Frame:SetBackdrop(backdropTbl)
+Frame:SetBackdrop()
 ```
 
 ---
 
 ### Frame:SetBackdropBorderColor
 
-Sets the color of the frame's backdrop border
+Sets a shading color for the frame's border graphic. As with [`Texture:SetVertexColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Texture/SetVertexColor), this color is a shading applied to the colors of the texture image; a color of `(1, 1, 1)` allows the image's original colors to show.
 
 **Signature:**
 
 ```lua
 Frame:SetBackdropBorderColor(red, green, blue [, alpha])
 ```
+
+**Arguments:**
+
+- `red` - Red component of the color (0.0 - 1.0) (`number`)
+- `green` - Green component of the color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the color (0.0 - 1.0) (`number`)
+- `alpha` - Alpha (opacity) for the graphic (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 ---
 
@@ -1433,7 +1531,7 @@ Region:SetHeight(height)
 
 ### Frame:SetHitRectInsets
 
-Sets the frame's HitRectInsets, which define where the mouse can interact with the frame
+Sets the insets from the frame's edges which determine its mouse-interactable area
 
 **Signature:**
 
@@ -1441,17 +1539,28 @@ Sets the frame's HitRectInsets, which define where the mouse can interact with t
 Frame:SetHitRectInsets(left, right, top, bottom)
 ```
 
+**Arguments:**
+
+- `left` - Distance from the left edge of the frame to the left edge of its mouse-interactive area (in pixels) (`number`)
+- `right` - Distance from the right edge of the frame to the right edge of its mouse-interactive area (in pixels) (`number`)
+- `top` - Distance from the top edge of the frame to the top edge of its mouse-interactive area (in pixels) (`number`)
+- `bottom` - Distance from the bottom edge of the frame to the bottom edge of its mouse-interactive area (in pixels) (`number`)
+
 ---
 
 ### Frame:SetID
 
-Sets the numeric identifier for the frame
+Sets a numeric identifier for the frame. Frame IDs have no effect on frame behavior, but can be a useful way to keep track of multiple similar frames, especially in cases where a list of frames is created from a template (such as for action buttons, loot slots, or lines in a FauxScrollFrame).
 
 **Signature:**
 
 ```lua
-Frame:SetID(ID)
+Frame:SetID(id)
 ```
+
+**Arguments:**
+
+- `id` - A numeric identifier for the frame (`number`)
 
 ---
 
@@ -1740,7 +1849,7 @@ VisibleRegion:Show()
 
 ### Frame:StartMoving
 
-Start moving the frame
+Begins repositioning the frame via mouse movement
 
 **Signature:**
 
@@ -1764,12 +1873,12 @@ Frame:StartSizing()
 
 ### Region:StopAnimating
 
-This function is not yet documented
+Stops any active animations involving the region or its children
 
 **Signature:**
 
 ```lua
-Frame:StopAnimating()
+Region:StopAnimating()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -1778,7 +1887,7 @@ Frame:StopAnimating()
 
 ### Frame:StopMovingOrSizing
 
-Stops the frame from being moved or resized, and saves the position in layout-cache.txt
+Ends movement or resizing of the frame initiated with [`:StartMoving()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartMoving) or [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing)
 
 **Signature:**
 
@@ -1790,7 +1899,7 @@ Frame:StopMovingOrSizing()
 
 ### Frame:UnregisterAllEvents
 
-Unregisters all events for the frame
+Unregisters the frame from any [events](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) for which it is registered
 
 **Signature:**
 
@@ -1802,13 +1911,19 @@ Frame:UnregisterAllEvents()
 
 ### Frame:UnregisterEvent
 
-Unregistered the frame for the given event
+Unregisters the frame for an event. Once unregistered, the frame's [`OnEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnEvent) script handler will not be called for that event.
+
+Unregistering from notifications for an event can be useful for improving addon performance at times when it's not necessary to process the event. For example, a frame which monitors target health does not need to receive the [`UNIT_HEALTH`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_HEALTH) event while the player has no target. An addon that sorts the contents of the player's bags can register for the [`BAG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/BAG_UPDATE) event to keep track of when items are picked up, but unregister from the event while it performs its sorting.
 
 **Signature:**
 
 ```lua
 Frame:UnregisterEvent("event")
 ```
+
+**Arguments:**
+
+- `event` - Name of an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) (`string`)
 
 ---
 

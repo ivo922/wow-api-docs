@@ -53,7 +53,7 @@ GameTooltip:AddFontStrings()
 
 ### GameTooltip:AddLine
 
-Adds a line of text to the tooltip
+Adds a line of text to the tooltip. The tooltip is not automatically resized to fit the added line (and wrap it, if applicable); to do so, call the tooltip's [`:Show()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/VisibleRegion/Show) method after adding lines.
 
 **Signature:**
 
@@ -61,11 +61,19 @@ Adds a line of text to the tooltip
 GameTooltip:AddLine("text" [, r [, g [, b [, wrap]]]])
 ```
 
+**Arguments:**
+
+- `text` - Text to be added as a new line in the tooltip (`string`)
+- `r` - Red component of the text color (0.0 - 1.0) (`number`)
+- `g` - Green component of the text color (0.0 - 1.0) (`number`)
+- `b` - Blue component of the text color (0.0 - 1.0) (`number`)
+- `wrap` - True to cause the line to wrap if it is longer than other, non-wrapping lines in the tooltip or longer than the tooltip's forced width (`boolean`)
+
 ---
 
 ### GameTooltip:AddTexture
 
-Adds a texture to the last tooltip line
+Adds a texture to the last tooltip line. The texture is sized to match the height of the line's text and positioned to the left of the text (indenting the text to provide room).
 
 **Signature:**
 
@@ -73,16 +81,20 @@ Adds a texture to the last tooltip line
 GameTooltip:AddTexture("texture")
 ```
 
+**Arguments:**
+
+- `texture` - Path to a texture image file (`string`)
+
 ---
 
 ### Frame:AllowAttributeChanges
 
-Temporarily allows insecure code to modify the frame's attributes during combat
+Temporarily allows insecure code to modify the frame's attributes during combat. This permission is automatically rescinded when the frame's [`OnUpdate`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnUpdate) script next runs.
 
 **Signature:**
 
 ```lua
-GameTooltip:AllowAttributeChanges()
+Frame:AllowAttributeChanges()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -98,6 +110,10 @@ Adds text to the first line of the tooltip
 ```lua
 GameTooltip:AppendText("text")
 ```
+
+**Arguments:**
+
+- `text` - Text to be appended to the tooltip's first line (`string`)
 
 ---
 
@@ -139,12 +155,12 @@ canChange = Region:CanChangeProtectedState()
 
 ### Region:ClearAllPoints
 
-Removes all anchor points from the region
+Clear all anchor point for the given region
 
 **Signature:**
 
 ```lua
-GameTooltip:ClearAllPoints()
+Region:ClearAllPoints()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -153,7 +169,7 @@ GameTooltip:ClearAllPoints()
 
 ### GameTooltip:ClearLines
 
-Clears the tooltip's contents
+Clears the tooltip's contents. Scripts scanning the tooltip contents should be aware that this method clears the text of all the tooltip's left-side font strings but hides the right-side font strings without clearing their text.
 
 **Signature:**
 
@@ -165,13 +181,18 @@ GameTooltip:ClearLines()
 
 ### Region:CreateAnimationGroup
 
-Creates a new AnimationGroup as a child of the region
+Create and return a new AnimationGroup as a child of this Region
 
 **Signature:**
 
 ```lua
-animationGroup = GameTooltip:CreateAnimationGroup(["name" [, "inheritsFrom"]])
+Region:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new animation group (`string`)
+- `inheritsFrom` - A template from which the new animation group should inherit (`string`)
 
 *Inherited from [Region](Region.md)*
 
@@ -179,13 +200,19 @@ animationGroup = GameTooltip:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 
 ### Frame:CreateFontString
 
-Creates a new [[docs/widgets/FontString|`FontString`]] as a child of the frame
+Creates a new FontString for the Frame on a given layer, possibly inheriting from a template
 
 **Signature:**
 
 ```lua
-fontstring = GameTooltip:CreateFontString(["name" [, "layer" [, "inherits"]]])
+Frame:CreateFontString(["name" [, "layer" [, "inherits"]]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new font string (`string`)
+- `layer` - The graphic layer on which to create the font string. Default value is `ARTWORK`. (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `inherits` - A template from which the new front string should inherit (`string`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -193,13 +220,24 @@ fontstring = GameTooltip:CreateFontString(["name" [, "layer" [, "inherits"]]])
 
 ### Frame:CreateTexture
 
-Creates a new [[docs/widgets/Texture|`Texture`]] as a child of the frame
+Creates a new [`Texture`](Texture.md) as a child of the frame. The `sublevel` argument can be used to provide layering of textures within a draw layer. As it can be difficult to compute the proper layering, addon authors should avoid using this option, and it's XML equivalent `textureSubLevel` without reason. It should also be noted that `FontStrings` will always appear on top of all textures in a given draw layer.
 
 **Signature:**
 
 ```lua
-texture = GameTooltip:CreateTexture(["name" [, "layer" [, "inherits"]]])
+texture = Frame:CreateTexture(["name" [, "layer" [, "inherits" [, sublevel]]]])
 ```
+
+**Arguments:**
+
+- `name` - Global name for the new texture (`string`)
+- `layer` - Graphic layer on which to create the texture; defaults to `ARTWORK` if not specified (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `inherits` - Name of a template from which the new texture should inherit (`string`)
+- `sublevel` - The sub-level on the given graphics layer ranging from `-8`- to `7`. The default value of this argument is `0` (`number`)
+
+**Returns:**
+
+- `texture` - Reference to the new `Texture` object (`texture`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -207,13 +245,17 @@ texture = GameTooltip:CreateTexture(["name" [, "layer" [, "inherits"]]])
 
 ### Frame:CreateTitleRegion
 
-Creates a title region for dragging the frame
+Creates a title region for dragging the frame. Creating a title region allows a frame to be repositioned by the user (by clicking and dragging in the region) without requiring additional scripts. (This behavior only applies if the frame is [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse).)
 
 **Signature:**
 
 ```lua
-region = GameTooltip:CreateTitleRegion()
+region = Frame:CreateTitleRegion()
 ```
+
+**Returns:**
+
+- `region` - Reference to the new `Region` object (`region`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -226,8 +268,12 @@ Prevents display of all child objects of the frame on a specified graphics layer
 **Signature:**
 
 ```lua
-GameTooltip:DisableDrawLayer("layer")
+Frame:DisableDrawLayer("layer")
 ```
+
+**Arguments:**
+
+- `layer` - Name of a graphics layer (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
 
 *Inherited from [Frame](Frame.md)*
 
@@ -253,13 +299,19 @@ Frame:EnableDrawLayer("layer")
 
 ### Frame:EnableJoystick
 
-Enables or disables joystick interactivity
+Enables or disables joystick interactivity. Joystick interactivity must be enabled in order for a frame's joystick-related [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) handlers to be run.
+
+(As of this writing, joystick support is partially implemented but not enabled in the current version of World of Warcraft.)
 
 **Signature:**
 
 ```lua
-GameTooltip:EnableJoystick(enable)
+Frame:EnableJoystick(enable)
 ```
+
+**Arguments:**
+
+- `enable` - True to enable joystick interactivity; false to disable (`boolean`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -359,17 +411,33 @@ Returns the method for anchoring the tooltip relative to its owner
 anchor = GameTooltip:GetAnchorType()
 ```
 
+**Returns:**
+
+- `anchor` - Token identifying the method for anchoring the tooltip relative to its owner frame (`string`)
+  - `ANCHOR_BOTTOMLEFT` - Align the top right of the tooltip with the bottom left of the owner
+  - `ANCHOR_CURSOR` - Toolip follows the mouse cursor
+  - `ANCHOR_LEFT` - Align the bottom right of the tooltip with the top left of the owner
+  - `ANCHOR_NONE` - Tooltip appears in the default position
+  - `ANCHOR_PRESERVE` - Tooltip's position is saved between sessions (useful if the tooltip is made user-movable)
+  - `ANCHOR_RIGHT` - Align the bottom left of the tooltip with the top right of the owner
+  - `ANCHOR_TOPLEFT` - Align the bottom left of the tooltip with the top left of the owner
+  - `ANCHOR_TOPRIGHT` - Align the bottom right of the tooltip with the top right of the owner
+
 ---
 
 ### Region:GetAnimationGroups
 
-Returns a list of animation groups belonging to the region
+Returns a list of animation groups belonging to this region
 
 **Signature:**
 
 ```lua
-... = GameTooltip:GetAnimationGroups()
+... = Region:GetAnimationGroups()
 ```
+
+**Returns:**
+
+- `...` - The list of animation groups belonging to this region (`list of AnimationGroup`)
 
 *Inherited from [Region](Region.md)*
 
@@ -498,12 +566,12 @@ left, bottom, width, height = Frame:GetBoundsRect()
 
 ### Region:GetCenter
 
-Returns the screen coordinates of the region's center
+Returns the screen coordinates of the Region's center.
 
 **Signature:**
 
 ```lua
-x, y = GameTooltip:GetCenter()
+Region:GetCenter()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -601,13 +669,17 @@ alpha = Frame:GetEffectiveAlpha()
 
 ### Frame:GetEffectiveDepth
 
-Returns the overall 3D depth of the frame (for stereoscopic 3D configurations)
+Returns the overall 3D depth of the frame (for stereoscopic 3D configurations). Unlike [`:GetDepth()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/GetDepth) which returns the apparent depth of the frame relative to its parent, this function returns the absolute depth of the frame, taking into account the relative depths of parent frames.
 
 **Signature:**
 
 ```lua
-depth = GameTooltip:GetEffectiveDepth()
+depth = Frame:GetEffectiveDepth()
 ```
+
+**Returns:**
+
+- `depth` - Apparent 3D depth of this frame relative to the screen (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -615,12 +687,12 @@ depth = GameTooltip:GetEffectiveDepth()
 
 ### Frame:GetEffectiveScale
 
-Returns the overall scale factor of the frame
+Returns the frame's effective scale
 
 **Signature:**
 
 ```lua
-scale = GameTooltip:GetEffectiveScale()
+Frame:GetEffectiveScale()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -674,12 +746,12 @@ strata = Frame:GetFrameStrata()
 
 ### Region:GetHeight
 
-Returns the height of the region
+Returns the height of the region.
 
 **Signature:**
 
 ```lua
-height = GameTooltip:GetHeight()
+Region:GetHeight()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -688,12 +760,12 @@ height = GameTooltip:GetHeight()
 
 ### Frame:GetHitRectInsets
 
-Returns the insets from the frame's edges which determine its mouse-interactable area
+Returns the inserts for the frame's HitRect
 
 **Signature:**
 
 ```lua
-left, right, top, bottom = GameTooltip:GetHitRectInsets()
+Frame:GetHitRectInsets()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -755,13 +827,18 @@ left = Region:GetLeft()
 
 ### Frame:GetMaxResize
 
-Returns the maximum size of the frame for user resizing
+Returns the maximum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing).
 
 **Signature:**
 
 ```lua
-maxWidth, maxHeight = GameTooltip:GetMaxResize()
+maxWidth, maxHeight = Frame:GetMaxResize()
 ```
+
+**Returns:**
+
+- `maxWidth` - Maximum width of the frame (in pixels), or `0` for no limit (`number`)
+- `maxHeight` - Maximum height of the frame (in pixels), or `0` for no limit (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -827,8 +904,12 @@ Returns the number of child frames belonging to the frame
 **Signature:**
 
 ```lua
-numChildren = GameTooltip:GetNumChildren()
+numChildren = Frame:GetNumChildren()
 ```
+
+**Returns:**
+
+- `numChildren` - Number of child frames belonging to the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -859,8 +940,12 @@ Returns the number of non-Frame child regions belonging to the frame
 **Signature:**
 
 ```lua
-numRegions = GameTooltip:GetNumRegions()
+numRegions = Frame:GetNumRegions()
 ```
+
+**Returns:**
+
+- `numRegions` - Number of non-Frame child regions (`FontString`s and `Texture`s) belonging to the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -894,6 +979,10 @@ Returns the frame to which the tooltip refers and is anchored
 owner = GameTooltip:GetOwner()
 ```
 
+**Returns:**
+
+- `owner` - Reference to the `Frame` object to which the tooltip is anchored (`frame`)
+
 ---
 
 ### GameTooltip:GetPadding
@@ -905,6 +994,10 @@ Returns the amount of space between tooltip's text and its right-side edge
 ```lua
 padding = GameTooltip:GetPadding()
 ```
+
+**Returns:**
+
+- `padding` - Amount of space between the right-side edge of the tooltip's text and the right-side edge of the tooltip frame (in pixels) (`number`)
 
 ---
 
@@ -980,8 +1073,12 @@ Returns a list of non-Frame child regions belonging to the frame
 **Signature:**
 
 ```lua
-... = GameTooltip:GetRegions()
+... = Frame:GetRegions()
 ```
+
+**Returns:**
+
+- `...` - A list of each non-Frame child region (`FontString` or `Texture`) belonging to the frame (`list`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1007,12 +1104,12 @@ right = Region:GetRight()
 
 ### Frame:GetScale
 
-Returns the frame's scale factor
+Returns the scale of the frame
 
 **Signature:**
 
 ```lua
-scale = GameTooltip:GetScale()
+Frame:GetScale()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1156,8 +1253,16 @@ Returns whether the widget supports a script handler
 **Signature:**
 
 ```lua
-hasScript = GameTooltip:HasScript("scriptType")
+hasScript = ScriptObject:HasScript("scriptType")
 ```
+
+**Arguments:**
+
+- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+
+**Returns:**
+
+- `hasScript` - `1` if the widget can handle the script, otherwise `nil` (`1nil`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
 
@@ -1220,12 +1325,12 @@ Frame:IgnoreDepth(enable)
 
 ### Frame:IsClampedToScreen
 
-Returns whether the frame's boundaries are limited to those of the screen
+Returns whether or not the frame is clamped to the screen
 
 **Signature:**
 
 ```lua
-enabled = GameTooltip:IsClampedToScreen()
+Frame:IsClampedToScreen()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1268,12 +1373,12 @@ enabled = GameTooltip:IsEquippedItem()
 
 ### Frame:IsEventRegistered
 
-Returns whether the frame is registered for a given [[docs/events|event]]
+Returns whether or not the frame is registered for the given event
 
 **Signature:**
 
 ```lua
-registered = GameTooltip:IsEventRegistered("event")
+Frame:IsEventRegistered()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1314,12 +1419,12 @@ enabled = GameTooltip:IsJoystickEnabled()
 
 ### Frame:IsKeyboardEnabled
 
-Returns whether keyboard interactivity is enabled for the frame
+Returns whether or not the frame is keyboard enabled
 
 **Signature:**
 
 ```lua
-enabled = GameTooltip:IsKeyboardEnabled()
+Frame:IsKeyboardEnabled()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1645,13 +1750,22 @@ Frame:RegisterEvent("event")
 
 ### Frame:RegisterForDrag
 
-Registers the frame for dragging
+Registers the frame for dragging. Once the frame is registered for dragging (and [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse)), the frame's [`OnDragStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStart) and [`OnDragStop`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStop) scripts will be called when the specified mouse button(s) are clicked and dragged starting from within the frame (or its mouse-interactive area).
 
 **Signature:**
 
 ```lua
-GameTooltip:RegisterForDrag(...)
+Frame:RegisterForDrag(...)
 ```
+
+**Arguments:**
+
+- `...` - A list of strings, each the name of a mouse button for which the frame should respond to drag actions (`list`)
+  - `Button4`
+  - `Button5`
+  - `LeftButton`
+  - `MiddleButton`
+  - `RightButton`
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1738,13 +1852,18 @@ GameTooltip:SetAnchorType("anchor" [, xOffset [, yOffset]])
 
 ### Frame:SetAttribute
 
-Sets a secure frame attribute
+Sets a secure frame attribute. See the [secure template documentation](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/secure_template) for more information about frame attributes.
 
 **Signature:**
 
 ```lua
-GameTooltip:SetAttribute("name", value)
+Frame:SetAttribute("name", value)
 ```
+
+**Arguments:**
+
+- `name` - Name of an attribute, case insensitive (`string`)
+- `value` - New value to set for the attribute (`value`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1784,12 +1903,28 @@ GameTooltip:SetAuctionSellItem()
 
 ### Frame:SetBackdrop
 
-Sets a backdrop graphic for the frame
+Sets a frame's backdrop as defined by a table.
+
+This function accepts the return from the Frame:GetBackdrop() function.  The format of the backdropTbl argument is as follows:
+
+{
+ bgFile = "bgFile", 
+ edgeFile = "edgeFile", 
+ tile = false, 
+ tileSize = 0, 
+ edgeSize = 32,
+ insets = { 
+ left = 0, 
+ right = 0, 
+ top = 0, 
+ bottom = 0 
+ }
+}
 
 **Signature:**
 
 ```lua
-GameTooltip:SetBackdrop(backdrop)
+Frame:SetBackdrop()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -1798,13 +1933,20 @@ GameTooltip:SetBackdrop(backdrop)
 
 ### Frame:SetBackdropBorderColor
 
-Sets a shading color for the frame's border graphic
+Sets a shading color for the frame's border graphic. As with [`Texture:SetVertexColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Texture/SetVertexColor), this color is a shading applied to the colors of the texture image; a color of `(1, 1, 1)` allows the image's original colors to show.
 
 **Signature:**
 
 ```lua
-GameTooltip:SetBackdropBorderColor(red, green, blue [, alpha])
+Frame:SetBackdropBorderColor(red, green, blue [, alpha])
 ```
+
+**Arguments:**
+
+- `red` - Red component of the color (0.0 - 1.0) (`number`)
+- `green` - Green component of the color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the color (0.0 - 1.0) (`number`)
+- `alpha` - Alpha (opacity) for the graphic (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -1914,13 +2056,17 @@ Frame:SetClampedToScreen(enable)
 
 ### GameTooltip:SetCurrencyToken
 
-Fills the tooltip with information about a special currency type
+Fills the tooltip with information about a special currency type. Note that passing the index of a header will crash the client.
 
 **Signature:**
 
 ```lua
 GameTooltip:SetCurrencyToken(index)
 ```
+
+**Arguments:**
+
+- `index` - Index of a currency type in the currency list (between 1 and [`GetCurrencyListSize()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCurrencyListSize)) (`number`)
 
 ---
 
@@ -2009,13 +2155,17 @@ Frame:SetFrameLevel(level)
 
 ### GameTooltip:SetFrameStack
 
-Fills the tooltip with a list of frames under the mouse cursor
+Fills the tooltip with a list of frames under the mouse cursor. Not relevant outside of addon development and debugging.
 
 **Signature:**
 
 ```lua
 GameTooltip:SetFrameStack(includeHidden)
 ```
+
+**Arguments:**
+
+- `includeHidden` - True to include hidden frames in the list; false to list only visible frames (`boolean`)
 
 ---
 
@@ -2047,17 +2197,30 @@ Fills the tooltip with information about one of the player's glyphs
 GameTooltip:SetGlyph(socket, talentGroup)
 ```
 
+**Arguments:**
+
+- `socket` - Which socket's glyph to display (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#glyphIndex))
+- `talentGroup` - Which set of glyphs to display, if the player has Dual Talent Specialization enabled (`number`)
+  - `1` - Primary Talents
+  - `2` - Secondary Talents
+  - `nil` - Currently active talents
+
 ---
 
 ### GameTooltip:SetGuildBankItem
 
-Fills the tooltip with information about an item in the guild bank
+Fills the tooltip with information about an item in the guild bank. Information is only available if the guild bank tab has been opened in the current play session.
 
 **Signature:**
 
 ```lua
 GameTooltip:SetGuildBankItem(tab, slot)
 ```
+
+**Arguments:**
+
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `slot` - Index of an item slot in the guild bank tab (between 1 and `MAX_GUILDBANK_SLOTS_PER_TAB`) (`number`)
 
 ---
 
@@ -2086,8 +2249,15 @@ Sets the insets from the frame's edges which determine its mouse-interactable ar
 **Signature:**
 
 ```lua
-GameTooltip:SetHitRectInsets(left, right, top, bottom)
+Frame:SetHitRectInsets(left, right, top, bottom)
 ```
+
+**Arguments:**
+
+- `left` - Distance from the left edge of the frame to the left edge of its mouse-interactive area (in pixels) (`number`)
+- `right` - Distance from the right edge of the frame to the right edge of its mouse-interactive area (in pixels) (`number`)
+- `top` - Distance from the top edge of the frame to the top edge of its mouse-interactive area (in pixels) (`number`)
+- `bottom` - Distance from the bottom edge of the frame to the bottom edge of its mouse-interactive area (in pixels) (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2103,6 +2273,10 @@ Fills the tooltip with information about an item, quest, spell, or other entity 
 GameTooltip:SetHyperlink("hyperlink")
 ```
 
+**Arguments:**
+
+- `hyperlink` - A full hyperlink, or the `linktype:linkdata` portion thereof (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+
 ---
 
 ### GameTooltip:SetHyperlinkCompareItem
@@ -2115,17 +2289,30 @@ Fills the tooltip with information about the item currently equipped in the slot
 success = GameTooltip:SetHyperlinkCompareItem("hyperlink" [, index])
 ```
 
+**Arguments:**
+
+- `hyperlink` - A full hyperlink, or the `linktype:linkdata` portion thereof, for an item to compare against the player's equipped similar item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `index` - Index of the slot to compare against (1, 2, or 3), if more than one item of the equipment type can be equipped at once (e.g. rings and trinkets) (`number`)
+
+**Returns:**
+
+- `success` - `1` if an item's information was loaded into the tooltip; otherwise `nil` (`number`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
+
 ---
 
 ### Frame:SetID
 
-Sets a numeric identifier for the frame
+Sets a numeric identifier for the frame. Frame IDs have no effect on frame behavior, but can be a useful way to keep track of multiple similar frames, especially in cases where a list of frames is created from a template (such as for action buttons, loot slots, or lines in a FauxScrollFrame).
 
 **Signature:**
 
 ```lua
-GameTooltip:SetID(id)
+Frame:SetID(id)
 ```
+
+**Arguments:**
+
+- `id` - A numeric identifier for the frame (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2141,6 +2328,11 @@ Fills the tooltip with information about an item attached to a message in the pl
 GameTooltip:SetInboxItem(mailID, attachmentIndex)
 ```
 
+**Arguments:**
+
+- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `attachmentIndex` - Index of an attachment to the message (between 1 and `select(8,`[`GetInboxHeaderInfo(mailID)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxHeaderInfo)`)`) (`number`)
+
 ---
 
 ### GameTooltip:SetInventoryItem
@@ -2152,6 +2344,18 @@ Fills the tooltip with information about an equipped item
 ```lua
 hasItem, hasCooldown, repairCost = GameTooltip:SetInventoryItem("unit", slot [, nameOnly])
 ```
+
+**Arguments:**
+
+- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `nameOnly` - True to omit much of the item's information (stat bonuses, sockets, and binding) from the tooltip; false to show all of the item's information (`boolean`)
+
+**Returns:**
+
+- `hasItem` - `1` if the unit has an item in the given slot; otherwise `nil` (`number`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
+- `hasCooldown` - `1` if the item is currently on cooldown; otherwise `nil` (`number`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
+- `repairCost` - Cost to repair the item (in copper, ignoring faction discounts) (`number`)
 
 ---
 
@@ -2189,6 +2393,10 @@ Fills the tooltip with information about an item available as loot
 GameTooltip:SetLootItem(slot)
 ```
 
+**Arguments:**
+
+- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumLootItems)) (`number`)
+
 ---
 
 ### GameTooltip:SetLootRollItem
@@ -2200,6 +2408,10 @@ Fills the tooltip with information about an item currently up for loot rolling
 ```lua
 GameTooltip:SetLootRollItem(id)
 ```
+
+**Arguments:**
+
+- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/START_LOOT_ROLL) event) (`number`)
 
 ---
 
@@ -2322,6 +2534,21 @@ Sets the frame to which the tooltip refers and is anchored
 GameTooltip:SetOwner(frame [, "anchorType" [, xOffset [, yOffset]]])
 ```
 
+**Arguments:**
+
+- `frame` - Reference to the `Frame` to which the tooltip refers (`frame`)
+- `anchorType` - Token identifying the positioning method for the tooltip relative to its owner frame (`string`)
+  - `ANCHOR_BOTTOMLEFT` - Align the top right of the tooltip with the bottom left of the owner
+  - `ANCHOR_CURSOR` - Toolip follows the mouse cursor
+  - `ANCHOR_LEFT` - Align the bottom right of the tooltip with the top left of the owner
+  - `ANCHOR_NONE` - Tooltip appears in the default position
+  - `ANCHOR_PRESERVE` - Tooltip's position is saved between sessions (useful if the tooltip is made user-movable)
+  - `ANCHOR_RIGHT` - Align the bottom left of the tooltip with the top right of the owner
+  - `ANCHOR_TOPLEFT` - Align the bottom left of the tooltip with the top left of the owner
+  - `ANCHOR_TOPRIGHT` - Align the bottom right of the tooltip with the top right of the owner
+- `xOffset` - The horizontal offset for the tooltip anchor (`number`)
+- `yOffset` - The vertical offset for the tooltip anchor (`number`)
+
 ---
 
 ### GameTooltip:SetPadding
@@ -2406,6 +2633,10 @@ Fills the tooltip with information about one of the special actions available wh
 ```lua
 GameTooltip:SetPossession(index)
 ```
+
+**Arguments:**
+
+- `index` - Index of a possession bar action (between 1 and `NUM_POSSESS_SLOTS`) (`number`)
 
 ---
 
@@ -2552,6 +2783,10 @@ Fills the tooltip with information about an item attached to the outgoing mail m
 ```lua
 GameTooltip:SetSendMailItem(slot)
 ```
+
+**Arguments:**
+
+- `slot` - Index of an outgoing attachment slot (between 1 and `ATTACHMENTS_MAX_SEND`) (`number`)
 
 ---
 
@@ -2709,13 +2944,21 @@ Frame:SetToplevel(enable)
 
 ### GameTooltip:SetTotem
 
-Fills the tooltip with information about one of the player's active totems.
+Fills the tooltip with information about one of the player's active totems.. Totem functions are also used for ghouls summoned by a Death Knight's Raise Dead ability (if the ghoul is not made a controllable pet by the Master of Ghouls talent).
 
 **Signature:**
 
 ```lua
 GameTooltip:SetTotem(slot)
 ```
+
+**Arguments:**
+
+- `slot` - Which totem to query (`number`)
+  - `1` - Fire (or Death Knight's ghoul)
+  - `2` - Earth
+  - `3` - Water
+  - `4` - Air
 
 ---
 
@@ -2757,17 +3000,26 @@ Fills the tooltip with information about an item created by a trade skill recipe
 GameTooltip:SetTradeSkillItem(skillIndex [, reagentIndex])
 ```
 
+**Arguments:**
+
+- `skillIndex` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `reagentIndex` - Index of a reagent in the recipe (between 1 and [`GetTradeSkillNumReagents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillNumReagents)); if omitted, displays a tooltip for the item created by the recipe (`number`)
+
 ---
 
 ### GameTooltip:SetTradeTargetItem
 
-Fills the tooltip with information about an item offered for trade by the target
+Fills the tooltip with information about an item offered for trade by the target. See [`:SetTradePlayerItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/GameTooltip/SetTradePlayerItem) for items to be traded away by the player.
 
 **Signature:**
 
 ```lua
 GameTooltip:SetTradeTargetItem(index)
 ```
+
+**Arguments:**
+
+- `index` - Index of an item offered for trade by the target (between 1 and `MAX_TRADE_ITEMS`) (`number`)
 
 ---
 
@@ -2797,6 +3049,10 @@ Fills the tooltip with information about a unit
 GameTooltip:SetUnit("unit")
 ```
 
+**Arguments:**
+
+- `unit` - A unit to query (`string`, [unitid](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitid))
+
 ---
 
 ### GameTooltip:SetUnitAura
@@ -2808,6 +3064,18 @@ Fills the tooltip with information about a buff or debuff on a unit
 ```lua
 GameTooltip:SetUnitAura("unit", index [, "filter"])
 ```
+
+**Arguments:**
+
+- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `index` - Index of a buff or debuff on the unit (`number`)
+- `filter` - A list of filters to use when resolving the index, separated by the pipe '|' character; e.g. `"RAID|PLAYER"` will query group buffs cast by the player (`string`)
+  - `CANCELABLE` - Show auras that can be cancelled
+  - `HARMFUL` - Show debuffs only
+  - `HELPFUL` - Show buffs only
+  - `NOT_CANCELABLE` - Show auras that cannot be cancelled
+  - `PLAYER` - Show auras the player has cast
+  - `RAID` - Show auras the player can cast on party/raid members (as opposed to self buffs)
 
 ---
 
@@ -2914,7 +3182,7 @@ Begins repositioning the frame via mouse movement
 **Signature:**
 
 ```lua
-GameTooltip:StartMoving()
+Frame:StartMoving()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2942,7 +3210,7 @@ Stops any active animations involving the region or its children
 **Signature:**
 
 ```lua
-GameTooltip:StopAnimating()
+Region:StopAnimating()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -2951,12 +3219,12 @@ GameTooltip:StopAnimating()
 
 ### Frame:StopMovingOrSizing
 
-Ends movement or resizing of the frame initiated with [[docs/widgets/Frame/StartMoving|`:StartMoving()`]] or [[docs/widgets/Frame/StartSizing|`:StartSizing()`]]
+Ends movement or resizing of the frame initiated with [`:StartMoving()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartMoving) or [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing)
 
 **Signature:**
 
 ```lua
-GameTooltip:StopMovingOrSizing()
+Frame:StopMovingOrSizing()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2965,12 +3233,12 @@ GameTooltip:StopMovingOrSizing()
 
 ### Frame:UnregisterAllEvents
 
-Unregisters the frame from any [[docs/events|events]] for which it is registered
+Unregisters the frame from any [events](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) for which it is registered
 
 **Signature:**
 
 ```lua
-GameTooltip:UnregisterAllEvents()
+Frame:UnregisterAllEvents()
 ```
 
 *Inherited from [Frame](Frame.md)*
@@ -2979,13 +3247,19 @@ GameTooltip:UnregisterAllEvents()
 
 ### Frame:UnregisterEvent
 
-Unregisters the frame for an event
+Unregisters the frame for an event. Once unregistered, the frame's [`OnEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnEvent) script handler will not be called for that event.
+
+Unregistering from notifications for an event can be useful for improving addon performance at times when it's not necessary to process the event. For example, a frame which monitors target health does not need to receive the [`UNIT_HEALTH`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_HEALTH) event while the player has no target. An addon that sorts the contents of the player's bags can register for the [`BAG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/BAG_UPDATE) event to keep track of when items are picked up, but unregister from the event while it performs its sorting.
 
 **Signature:**
 
 ```lua
-GameTooltip:UnregisterEvent("event")
+Frame:UnregisterEvent("event")
 ```
+
+**Arguments:**
+
+- `event` - Name of an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) (`string`)
 
 *Inherited from [Frame](Frame.md)*
 

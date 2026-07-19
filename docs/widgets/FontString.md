@@ -66,12 +66,12 @@ enabled = FontString:CanWordWrap()
 
 ### Region:ClearAllPoints
 
-Removes all anchor points from the region
+Clear all anchor point for the given region
 
 **Signature:**
 
 ```lua
-FontString:ClearAllPoints()
+Region:ClearAllPoints()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -80,13 +80,18 @@ FontString:ClearAllPoints()
 
 ### Region:CreateAnimationGroup
 
-Creates a new AnimationGroup as a child of the region
+Create and return a new AnimationGroup as a child of this Region
 
 **Signature:**
 
 ```lua
-animationGroup = FontString:CreateAnimationGroup(["name" [, "inheritsFrom"]])
+Region:CreateAnimationGroup(["name" [, "inheritsFrom"]])
 ```
+
+**Arguments:**
+
+- `name` - A global name to use for the new animation group (`string`)
+- `inheritsFrom` - A template from which the new animation group should inherit (`string`)
 
 *Inherited from [Region](Region.md)*
 
@@ -112,13 +117,17 @@ alpha = VisibleRegion:GetAlpha()
 
 ### Region:GetAnimationGroups
 
-Returns a list of animation groups belonging to the region
+Returns a list of animation groups belonging to this region
 
 **Signature:**
 
 ```lua
-... = FontString:GetAnimationGroups()
+... = Region:GetAnimationGroups()
 ```
+
+**Returns:**
+
+- `...` - The list of animation groups belonging to this region (`list of AnimationGroup`)
 
 *Inherited from [Region](Region.md)*
 
@@ -144,12 +153,12 @@ bottom = Region:GetBottom()
 
 ### Region:GetCenter
 
-Returns the screen coordinates of the region's center
+Returns the screen coordinates of the Region's center.
 
 **Signature:**
 
 ```lua
-x, y = FontString:GetCenter()
+Region:GetCenter()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -216,13 +225,17 @@ filename, fontHeight, flags = FontInstance:GetFont()
 
 ### FontInstance:GetFontObject
 
-Returns the `Font` object from which the font instance's properties are inherited
+Returns the `Font` object from which the font instance's properties are inherited. See [`FontInstance:SetFontObject()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetFontObject) for details.
 
 **Signature:**
 
 ```lua
-font = FontString:GetFontObject()
+font = FontInstance:GetFontObject()
 ```
+
+**Returns:**
+
+- `font` - Reference to the `Font` object from which the font instance's properties are inherited, or `nil` if the font instance has no inherited properties (`font`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -230,12 +243,12 @@ font = FontString:GetFontObject()
 
 ### Region:GetHeight
 
-Returns the height of the region
+Returns the height of the region.
 
 **Signature:**
 
 ```lua
-height = FontString:GetHeight()
+Region:GetHeight()
 ```
 
 *Inherited from [Region](Region.md)*
@@ -282,8 +295,15 @@ Returns the font instance's vertical text alignment style
 **Signature:**
 
 ```lua
-justify = FontString:GetJustifyV()
+justify = FontInstance:GetJustifyV()
 ```
+
+**Returns:**
+
+- `justify` - Vertical text alignment style (`string`, [justifyV](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyV))
+  - `BOTTOM`
+  - `MIDDLE`
+  - `TOP`
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -472,8 +492,13 @@ Returns the offset of the font instance's text shadow from its text
 **Signature:**
 
 ```lua
-xOffset, yOffset = FontString:GetShadowOffset()
+xOffset, yOffset = FontInstance:GetShadowOffset()
 ```
+
+**Returns:**
+
+- `xOffset` - Horizontal distance between the text and its shadow (in pixels) (`number`)
+- `yOffset` - Vertical distance between the text and its shadow (in pixels) (`number`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -505,8 +530,12 @@ Returns the font instance's amount of spacing between lines
 **Signature:**
 
 ```lua
-spacing = FontString:GetSpacing()
+spacing = FontInstance:GetSpacing()
 ```
+
+**Returns:**
+
+- `spacing` - Amount of space between lines of text (in pixels) (`number`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -567,8 +596,15 @@ Returns the font instance's default text color
 **Signature:**
 
 ```lua
-textR, textG, textB, textAlpha = FontString:GetTextColor()
+textR, textG, textB, textAlpha = FontInstance:GetTextColor()
 ```
+
+**Returns:**
+
+- `textR` - Red component of the text color (0.0 - 1.0) (`number`)
+- `textG` - Green component of the text color (0.0 - 1.0) (`number`)
+- `textB` - Blue component of the text color (0.0 - 1.0) (`number`)
+- `textAlpha` - Alpha (opacity) of the text (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -800,8 +836,17 @@ Sets the layer at which the region's graphics are drawn relative to others in it
 **Signature:**
 
 ```lua
-FontString:SetDrawLayer("layer")
+LayeredRegion:SetDrawLayer("layer")
 ```
+
+**Arguments:**
+
+- `layer` - String identifying a graphics layer; one of the following values: (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+  - `ARTWORK`
+  - `BACKGROUND`
+  - `BORDER`
+  - `HIGHLIGHT`
+  - `OVERLAY`
 
 *Inherited from [LayeredRegion](LayeredRegion.md)*
 
@@ -809,13 +854,33 @@ FontString:SetDrawLayer("layer")
 
 ### FontInstance:SetFont
 
-Sets the font instance's basic font properties
+Sets the font instance's basic font properties. Font files included with the default WoW client:
+
+- `Fonts\\FRIZQT__.TTF` - Friz Quadrata, used by default for player names and most UI text
+- `Fonts\\ARIALN.TTF` - Arial Narrow, used by default for chat windows, action button numbers, etc.
+- `Fonts\\skurri.ttf` - Skurri, used by default for incoming damage/parry/miss/etc indicators on the Player and Pet frames
+- `Fonts\\MORPHEUS.ttf` - Morpheus, used by default for quest title headers, mail, and readable in-game objects.
+
+Font files can also be included in addons.
 
 **Signature:**
 
 ```lua
-isValid = FontString:SetFont("filename", fontHeight, "flags")
+isValid = FontInstance:SetFont("filename", fontHeight, "flags")
 ```
+
+**Arguments:**
+
+- `filename` - Path to a font file (`string`)
+- `fontHeight` - Height (point size) of the font to be displayed (in pixels) (`number`)
+- `flags` - Additional properties for the font specified by one or more (separated by commas) of the following tokens: (`string`)
+  - `MONOCHROME` - Font is rendered without antialiasing
+  - `OUTLINE` - Font is displayed with a black outline
+  - `THICKOUTLINE` - Font is displayed with a thick black outline
+
+**Returns:**
+
+- `isValid` - `1` if `filename` refers to a valid font file; otherwise `nil` (`1nil`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -823,13 +888,18 @@ isValid = FontString:SetFont("filename", fontHeight, "flags")
 
 ### FontInstance:SetFontObject
 
-Sets the `Font` object from which the font instance's properties are inherited
+Sets the `Font` object from which the font instance's properties are inherited. This method allows for easy standardization and reuse of font styles. For example, a button's normal font can be set to appear in the same style as many default UI elements by setting its font to `"GameFontNormal"` -- if Blizzard changes the main UI font in a future patch, or if the user installs another addon which changes the main UI font, the button's font will automatically change to match.
 
 **Signature:**
 
 ```lua
-FontString:SetFontObject(object) or FontString:SetFontObject("name")
+FontInstance:SetFontObject(object) or FontInstance:SetFontObject("name")
 ```
+
+**Arguments:**
+
+- `object` - Reference to a `Font` object (`font`)
+- `name` - Global name of a `Font` object (`string`)
 
 *Inherited from [FontInstance](FontInstance.md)*
 
@@ -1058,7 +1128,7 @@ Sets the text to be displayed in the font string
 **Signature:**
 
 ```lua
-FontString:SetText("text")
+FontString:SetText()
 ```
 
 ---
@@ -1086,7 +1156,7 @@ FontInstance:SetTextColor(textR, textG, textB, textAlpha)
 
 ### FontString:SetTextHeight
 
-Scales the font string's rendered text to a different height
+Scales the font string's rendered text to a different height. This method scales the image of the text as already rendered at its existing height by the game's graphics engine -- producing an effect which is efficient enough for use in fast animations, but with reduced visual quality in the text. To re-render the text at a new point size, see [`:SetFont()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetFont).
 
 **Signature:**
 
@@ -1094,17 +1164,32 @@ Scales the font string's rendered text to a different height
 FontString:SetTextHeight(height)
 ```
 
+**Arguments:**
+
+- `height` - Height (point size) to which the text should be scaled (in pixels) (`number`)
+
 ---
 
 ### LayeredRegion:SetVertexColor
 
-Sets a color shading for the region's graphics
+Sets a color shading for the region's graphics. The effect of changing this property differs by the type of region:
+
+For `FontString`s, this color overrides the normal text color (as set by [`FontInstance:SetTextColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetTextColor)).
+
+For `Texture`s, this color acts as a filter applied to the texture image: each color component value is a factor by which the corresponding component values in the image are multiplied. (See examples.)
 
 **Signature:**
 
 ```lua
-FontString:SetVertexColor(red, green, blue [, alpha])
+LayeredRegion:SetVertexColor(red, green, blue [, alpha])
 ```
+
+**Arguments:**
+
+- `red` - Red component of the color (0.0 - 1.0) (`number`)
+- `green` - Green component of the color (0.0 - 1.0) (`number`)
+- `blue` - Blue component of the color (0.0 - 1.0) (`number`)
+- `alpha` - Alpha (opacity) for the graphic (0.0 = fully transparent, 1.0 = fully opaque) (`number`)
 
 *Inherited from [LayeredRegion](LayeredRegion.md)*
 
@@ -1138,6 +1223,10 @@ Sets whether long lines of text in the font string can wrap onto subsequent line
 FontString:SetWordWrap(enable)
 ```
 
+**Arguments:**
+
+- `enable` - True to allow long lines of text in the font string to wrap onto subsequent lines; false to disallow (`boolean`)
+
 ---
 
 ### VisibleRegion:Show
@@ -1161,7 +1250,7 @@ Stops any active animations involving the region or its children
 **Signature:**
 
 ```lua
-FontString:StopAnimating()
+Region:StopAnimating()
 ```
 
 *Inherited from [Region](Region.md)*

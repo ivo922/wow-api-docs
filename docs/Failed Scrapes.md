@@ -54,3 +54,16 @@ API function pages that could not be retrieved from the Wayback Machine archive.
 | `UnitCharacterPoints` | fetch failed |
 | `UnstablePet` | fetch failed |
 | `UpdateSpells` | fetch failed |
+
+## Widget methods
+
+Method detail pages with no Wayback capture (listing stub only in `docs/widgets/`).
+
+**4** of **578** unique method pages.
+
+| Method | Status |
+| --- | --- |
+| `Animation:GetMaxFramerate` | never archived |
+| `Animation:SetMaxFramerate` | never archived |
+| `GameTooltip:SetSpell` | never archived |
+| `GameTooltip:SetTracking` | never archived |
