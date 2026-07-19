@@ -127,7 +127,7 @@ ChannelSilenceAll("channelName", ["unit"] or ["name"]) or ChannelSilenceAll(chan
 
 - `channelName` - Name of a channel (`string`)
 - `channelId` - Index of a channel (`number`)
-- `unit` - Unit to silence (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to silence (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to silence (`string`)
 
 ---
@@ -146,7 +146,7 @@ ChannelSilenceVoice("channelName", ["unit"] or ["name"]) or ChannelSilenceVoice(
 
 - `channelName` - Name of a channel (`string`)
 - `channelId` - Index of a channel (`number`)
-- `unit` - Unit to silence (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to silence (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to silence (`string`)
 
 ---
@@ -181,7 +181,7 @@ ChannelUnSilenceAll("channelName", ["unit"] or ["name"]) or ChannelUnSilenceAll(
 
 - `channelName` - Name of a channel (`string`)
 - `channelId` - Index of a channel (`number`)
-- `unit` - Unit to unsilence (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to unsilence (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to unsilence (`string`)
 
 ---
@@ -200,7 +200,7 @@ ChannelUnSilenceVoice("channelName", ["unit"] or ["name"]) or ChannelUnSilenceVo
 
 - `channelName` - Name of a channel (`string`)
 - `channelId` - Index of a channel (`number`)
-- `unit` - Unit to unsilence (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to unsilence (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to unsilence (`string`)
 
 ---
@@ -313,7 +313,7 @@ CollapseChannelHeader(index)
 
 **Arguments:**
 
-- `index` - Index of a header in the display channel list (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of a header in the display channel list (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 ---
 
@@ -362,7 +362,7 @@ DisplayChannelVoiceOff(index)
 
 **Arguments:**
 
-- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100105224853/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 ---
 
@@ -378,7 +378,7 @@ DisplayChannelVoiceOn(index)
 
 **Arguments:**
 
-- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 ---
 
@@ -410,7 +410,7 @@ ExpandChannelHeader(index)
 
 **Arguments:**
 
-- `index` - Index of a header in the display channel list (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of a header in the display channel list (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 ---
 
@@ -426,7 +426,7 @@ index = GetActiveVoiceChannel()
 
 **Returns:**
 
-- `index` - Index of the active voice channel in the chat display window (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)), or nil if no channel is active (`number`)
+- `index` - Index of the active voice channel in the chat display window (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)), or nil if no channel is active (`number`)
 
 ---
 
@@ -442,14 +442,14 @@ name, header, collapsed, channelNumber, count, active, category, voiceEnabled, v
 
 **Arguments:**
 
-- `index` - Index of an entry in the channel list display (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of an entry in the channel list display (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 **Returns:**
 
 - `name` - Name of the channel or header (`string`)
 - `header` - 1 if the entry is a group header; otherwise nil (`1nil`)
 - `collapsed` - 1 if the entry is a collapsed group header; otherwise nil (`1nil`)
-- `channelNumber` - Number identifying the channel (as returned by [`GetChannelList()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetChannelList) and used by [`SendChatMessage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SendChatMessage) and other channel functions) (`number`)
+- `channelNumber` - Number identifying the channel (as returned by [`GetChannelList()`](Channel.md#getchannellist) and used by [`SendChatMessage()`](Chat.md#sendchatmessage-server) and other channel functions) (`number`)
 - `count` - Number of characters in the channel (`number`)
 - `active` - 1 if the channel is currently active; otherwise nil. (Used for special server channels, e.g. "Trade" and "LookingForGroup", which can only be used under certain conditions) (`1nil`)
 - `category` - Category to which the chat channel belongs (`string`)
@@ -514,8 +514,8 @@ name, owner, moderator, muted, active, enabled = GetChannelRosterInfo(index, ros
 
 **Arguments:**
 
-- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
-- `rosterIndex` - Index of a participant in the channel (between 1 and `count`, where `count = select(5,`[`GetChannelDisplayInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetChannelDisplayInfo)`(index)`) (`number`)
+- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
+- `rosterIndex` - Index of a participant in the channel (between 1 and `count`, where `count = select(5,`[`GetChannelDisplayInfo`](Channel.md#getchanneldisplayinfo)`(index)`) (`number`)
 
 **Returns:**
 
@@ -598,7 +598,7 @@ index = GetSelectedDisplayChannel()
 
 **Returns:**
 
-- `index` - Index of the selected channel in the display channel list (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of the selected channel in the display channel list (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 ---
 
@@ -775,7 +775,7 @@ SetActiveVoiceChannel(index)
 
 **Arguments:**
 
-- `index` - Index of a channel in the chat display window (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of a channel in the chat display window (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 ---
 
@@ -791,7 +791,7 @@ SetActiveVoiceChannelBySessionID(session)
 
 **Arguments:**
 
-- `session` - Index of a voice session (between 1 and [`GetNumVoiceSessions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumVoiceSessions)) (`number`)
+- `session` - Index of a voice session (between 1 and [`GetNumVoiceSessions()`](Voice.md#getnumvoicesessions)) (`number`)
 
 ---
 
@@ -841,7 +841,7 @@ SetSelectedDisplayChannel(index)
 
 **Arguments:**
 
-- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 ---
 

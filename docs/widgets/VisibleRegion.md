@@ -282,7 +282,7 @@ isProtected, explicit = VisibleRegion:IsProtected()
 
 ### VisibleRegion:IsShown
 
-Returns whether the region is shown. Indicates only whether the region has been explicitly shown or hidden -- a region may be explicitly shown but not appear on screen because its parent region is hidden. See [`VisibleRegion:IsVisible()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/VisibleRegion/IsVisible) to test for actual visibility.
+Returns whether the region is shown. Indicates only whether the region has been explicitly shown or hidden -- a region may be explicitly shown but not appear on screen because its parent region is hidden. See [`VisibleRegion:IsVisible()`](VisibleRegion.md#visibleregionisvisible) to test for actual visibility.
 
 **Signature:**
 

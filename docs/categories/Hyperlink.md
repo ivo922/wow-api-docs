@@ -48,7 +48,7 @@ link = GetAuctionItemLink("list", index)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -64,11 +64,11 @@ link = GetBuybackItemLink(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the buyback listing (between 1 and [`GetNumBuybackItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBuybackItems)) (`number`)
+- `index` - Index of an item in the buyback listing (between 1 and [`GetNumBuybackItems()`](Merchant.md#getnumbuybackitems)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -84,12 +84,12 @@ link = GetContainerItemLink(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -118,14 +118,14 @@ type, data, subType = GetCursorInfo()
   - `companion` - Index of the companion in the non-combat pet or mount list (`number`)
   - `equipmentset` - Name of the equipment set (`string`)
   - `guildbankmoney` - Amount of the money from the guild bank (in copper) (`number`)
-  - `item` - Numeric identifier for the item (`number`, [`itemID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemID))
-  - `macro` - Index of the macro in the macro listing (`number`, [`macroID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+  - `item` - Numeric identifier for the item (`number`, [`itemID`](../types/itemID.md))
+  - `macro` - Index of the macro in the macro listing (`number`, [`macroID`](../types/macroID.md))
   - `merchant` - Index of the item in the vendor's listings (`number`)
   - `money` - Amount of the player's money (in copper) (`number`)
-  - `spell` - Index of the spell in the player's spellbook (`number`, [`spellbookID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+  - `spell` - Index of the spell in the player's spellbook (`number`, [`spellbookID`](../types/spellbookID.md))
 - `subType` - Secondary identifier for the data on the cursor; used only for certain types: (`string`)
   - `companion` - `"CRITTER"` or `"MOUNT"`, indicating whether the returned `data` is an index in the non-combat pet or mount list
-  - `item` - A complete [`hyperlink`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink) for the item
+  - `item` - A complete [`hyperlink`](../types/hyperlink.md) for the item
   - `spell` - `"spell"` or `"pet"`, indicating whether the returned `data` is an index in the player's or pet's spellbook
 
 ---
@@ -144,11 +144,11 @@ link = GetExistingSocketLink(index)
 
 **Arguments:**
 
-- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSockets)) (`number`)
+- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](Socketing.md#getnumsockets)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the socketed gem (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the socketed gem (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -166,7 +166,7 @@ link = GetGlyphLink(socket, talentGroup)
 
 **Arguments:**
 
-- `socket` - Which glyph socket to query (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#glyphIndex))
+- `socket` - Which glyph socket to query (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](../types/glyphIndex.md))
 - `talentGroup` - Which set of glyphs to query, if the player has Dual Talent Specialization enabled (`number`)
   - `1` - Primary Talents
   - `2` - Secondary Talents
@@ -174,7 +174,7 @@ link = GetGlyphLink(socket, talentGroup)
 
 **Returns:**
 
-- `link` - A hyperlink for the glyph socket's contents, or "" if the socket is empty (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the glyph socket's contents, or "" if the socket is empty (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -190,18 +190,18 @@ item = GetGuildBankItemLink(tab, slot)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 - `slot` - Index of an item slot in the guild bank tab (between 1 and `MAX_GUILDBANK_SLOTS_PER_TAB`) (`number`)
 
 **Returns:**
 
-- `item` - A hyperlink for the contents of the slot (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `item` - A hyperlink for the contents of the slot (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
 ## GetGuildBankTransaction
 
-Returns information about a transaction in the log for a guild bank tab. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANKLOG_UPDATE) event which fires after calling [`QueryGuildBankLog()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/QueryGuildBankLog).
+Returns information about a transaction in the log for a guild bank tab. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANKLOG_UPDATE) event which fires after calling [`QueryGuildBankLog()`](Guild bank.md#queryguildbanklog-server).
 
 **Signature:**
 
@@ -211,8 +211,8 @@ type, name, itemLink, count, tab1, tab2, year, month, day, hour = GetGuildBankTr
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
-- `index` - Index of a log entry (between 1 and [`GetNumGuildBankTransactions(tab)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTransactions)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
+- `index` - Index of a log entry (between 1 and [`GetNumGuildBankTransactions(tab)`](Guild bank.md#getnumguildbanktransactions)) (`number`)
 
 **Returns:**
 
@@ -222,7 +222,7 @@ type, name, itemLink, count, tab1, tab2, year, month, day, hour = GetGuildBankTr
   - `repair`
   - `withdraw`
 - `name` - Name of the guild member responsible for the transaction (`string`)
-- `itemLink` - A hyperlink for the item involved in the transaction (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `itemLink` - A hyperlink for the item involved in the transaction (`string`, [hyperlink](../types/hyperlink.md))
 - `count` - Number of stacked items involved in the transaction (`number`)
 - `tab1` - Index of the source tab, if the item was moved between tabs (`number`)
 - `tab2` - Index of the destination tab, if the item was moved between tabs (`number`)
@@ -245,12 +245,12 @@ itemlink = GetInboxItemLink(mailID, attachmentIndex)
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 - `attachmentIndex` - Index of an attachment to the mail (between 1 and `ATTACHMENTS_MAX_RECEIVE`) (`number`)
 
 **Returns:**
 
-- `itemlink` - A hyperlink for the attachment item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `itemlink` - A hyperlink for the attachment item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -266,12 +266,12 @@ link = GetInventoryItemLink("unit", slot)
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](../types/unitID.md))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
-- `link` - An item link for the given item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - An item link for the given item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -289,13 +289,13 @@ name, link = GetItemGem(itemID, index) or GetItemGem("itemName", index) or GetIt
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 - `index` - Index of a socket on the item (`number`)
 
 **Returns:**
 
 - `name` - Name of the gem in the socket (`string`)
-- `link` - A hyperlink for the gem in the socket (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the gem in the socket (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -315,7 +315,7 @@ link = GetLootRollItemLink(id)
 
 **Returns:**
 
-- `link` - A hyperlink for the loot roll item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the loot roll item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -331,7 +331,7 @@ link = GetLootSlotLink(slot)
 
 **Arguments:**
 
-- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumLootItems)) (`number`)
+- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](Loot.md#getnumlootitems)) (`number`)
 
 **Returns:**
 
@@ -351,13 +351,13 @@ name, link = GetMacroItem(index) or GetMacroItem("name")
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 
 **Returns:**
 
 - `name` - Name of the item (`string`)
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -373,11 +373,11 @@ link = GetMerchantItemLink(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantNumItems)) (`number`)
+- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](Merchant.md#getmerchantnumitems)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -395,11 +395,11 @@ link = GetNewSocketLink(index)
 
 **Arguments:**
 
-- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSockets)) (`number`)
+- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](Socketing.md#getnumsockets)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the gem added to the socket (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the gem added to the socket (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -439,11 +439,11 @@ link = GetQuestLink(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the quest (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the quest (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -482,7 +482,7 @@ itemlink = GetSendMailItemLink(slot)
 
 **Returns:**
 
-- `itemlink` - A hyperlink for the attachment item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `itemlink` - A hyperlink for the attachment item (`string`, [hyperlink](../types/hyperlink.md))
 
 **Examples:**
 
@@ -510,16 +510,16 @@ link, tradeLink = GetSpellLink(index, "bookType") or GetSpellLink("name") or Get
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100823090329/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
 - `name` - Name of a spell, optionally including secondary text (e.g. "Mana Burn" to find the player's highest rank, or "Mana Burn(Rank 2)" -- no space before the parenthesis -- for a specific rank) (`string`)
-- `id` - Numeric ID of a spell (`number`, [spellID](https://web.archive.org/web/20100823090329/http://wowprogramming.com/docs/api_types#spellID))
+- `id` - Numeric ID of a spell (`number`, [spellID](../types/spellID.md))
 
 **Returns:**
 
-- `link` - A hyperlink for the spell (`string`, [hyperlink](https://web.archive.org/web/20100823090329/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the spell (`string`, [hyperlink](../types/hyperlink.md))
 - `tradeLink` - A hyperlink representing the player's list of trade skill recipes, if the spell is a trade skill (i.e. if "casting" the spell opens a trade skill window) (`string`)
 
 ---
@@ -536,8 +536,8 @@ link = GetTalentLink(tabIndex, talentIndex, inspect, pet, talentGroup)
 
 **Arguments:**
 
-- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](https://web.archive.org/web/20100105230815/http://wowprogramming.com/docs/api/GetNumTalentTabs)) (`number`)
-- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](https://web.archive.org/web/20100105230815/http://wowprogramming.com/docs/api/GetNumTalents)) (`number`)
+- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](Talent.md#getnumtalenttabs)) (`number`)
+- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](Talent.md#getnumtalents)) (`number`)
 - `inspect` - true to return information for the currently inspected unit; false to return information for the player (`boolean`)
 - `pet` - true to return information for the player's pet; false to return information for the player (`boolean`)
 - `talentGroup` - Which set of talents to edit, if the player has Dual Talent Specialization enabled (`number`)
@@ -547,7 +547,7 @@ link = GetTalentLink(tabIndex, talentIndex, inspect, pet, talentGroup)
 
 **Returns:**
 
-- `link` - A hyperlink representing the talent and the number of points spent in it (`string`, [hyperlink](https://web.archive.org/web/20100105230815/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink representing the talent and the number of points spent in it (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -567,15 +567,15 @@ link = GetTradePlayerItemLink(index)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
 ## GetTradeSkillItemLink
 
-Returns a hyperlink for the item created by a tradeskill recipe. The tooltip produced when resolving the link describes only the item created by the recipe. For a link which describes the recipe itself (its reagents and description), see [`GetTradeSkillRecipeLink()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillRecipeLink).
+Returns a hyperlink for the item created by a tradeskill recipe. The tooltip produced when resolving the link describes only the item created by the recipe. For a link which describes the recipe itself (its reagents and description), see [`GetTradeSkillRecipeLink()`](Hyperlink.md#gettradeskillrecipelink).
 
-If the recipe does not create an item, this function returns the same hyperlink as does [`GetTradeSkillRecipeLink()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillRecipeLink) (though the text of the link may differ).
+If the recipe does not create an item, this function returns the same hyperlink as does [`GetTradeSkillRecipeLink()`](Hyperlink.md#gettradeskillrecipelink) (though the text of the link may differ).
 
 **Signature:**
 
@@ -585,7 +585,7 @@ link = GetTradeSkillItemLink(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -605,7 +605,7 @@ link = GetTradeSkillListLink()
 
 **Returns:**
 
-- `link` - A hyperlink other players can resolve to see the player's full list of tradeskill recipes (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink other players can resolve to see the player's full list of tradeskill recipes (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -621,18 +621,18 @@ link = GetTradeSkillReagentItemLink(skillIndex, reagentIndex)
 
 **Arguments:**
 
-- `skillIndex` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
-- `reagentIndex` - Index of a reagent in the recipe (between 1 and [`GetTradeSkillNumReagents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillNumReagents)) (`number`)
+- `skillIndex` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
+- `reagentIndex` - Index of a reagent in the recipe (between 1 and [`GetTradeSkillNumReagents()`](Tradeskill.md#gettradeskillnumreagents)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the reagent item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the reagent item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
 ## GetTradeSkillRecipeLink
 
-Returns hyperlink for a tradeskill recipe. The tooltip produced when resolving the link describes the recipe itself -- its reagents and (if present) description -- in addition to (if applicable) the item created. For a link which only describes the created item, see [`GetTradeSkillItemLink()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillItemLink).
+Returns hyperlink for a tradeskill recipe. The tooltip produced when resolving the link describes the recipe itself -- its reagents and (if present) description -- in addition to (if applicable) the item created. For a link which only describes the created item, see [`GetTradeSkillItemLink()`](Hyperlink.md#gettradeskillitemlink).
 
 **Signature:**
 
@@ -642,7 +642,7 @@ link = GetTradeSkillRecipeLink(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -666,7 +666,7 @@ link = GetTradeTargetItemLink(index)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -682,11 +682,11 @@ link = GetTrainerServiceItemLink(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the item associated with a trainer service (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item associated with a trainer service (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 

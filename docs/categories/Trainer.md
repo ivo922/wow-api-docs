@@ -18,7 +18,7 @@ BuyTrainerService(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 ---
 
@@ -110,7 +110,7 @@ selectionIndex = GetTrainerSelectionIndex()
 
 **Returns:**
 
-- `selectionIndex` - Index of the selected entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20111212194616/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `selectionIndex` - Index of the selected entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 ---
 
@@ -126,8 +126,8 @@ ability, hasReq = GetTrainerServiceAbilityReq(index, abilityIndex)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100106001637/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
-- `abilityIndex` - Index of one of the service's ability requirements (between 1 and [`GetTrainerServiceNumAbilityReq(index)`](https://web.archive.org/web/20100106001637/http://wowprogramming.com/docs/api/GetTrainerServiceNumAbilityReq)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
+- `abilityIndex` - Index of one of the service's ability requirements (between 1 and [`GetTrainerServiceNumAbilityReq(index)`](Trainer.md#gettrainerservicenumabilityreq)) (`number`)
 
 **Returns:**
 
@@ -148,7 +148,7 @@ moneyCost, talentCost, skillCost = GetTrainerServiceCost(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 **Returns:**
 
@@ -170,7 +170,7 @@ text = GetTrainerServiceDescription(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 **Returns:**
 
@@ -190,7 +190,7 @@ icon = GetTrainerServiceIcon(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 **Returns:**
 
@@ -210,7 +210,7 @@ serviceName, serviceSubText, serviceType, isExpanded = GetTrainerServiceInfo(ind
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 **Returns:**
 
@@ -237,11 +237,11 @@ link = GetTrainerServiceItemLink(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the item associated with a trainer service (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item associated with a trainer service (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -257,7 +257,7 @@ reqLevel = GetTrainerServiceLevelReq(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 **Returns:**
 
@@ -267,7 +267,7 @@ reqLevel = GetTrainerServiceLevelReq(index)
 
 ## GetTrainerServiceNumAbilityReq
 
-Returns the number of ability requirements for purchasing a trainer service. Ability requirements are often used for ranked class spells purchased from the trainer: e.g. learning Blood Strike (Rank 3) requires having learned Blood Strike (Rank 2). See [`GetTrainerServiceAbilityReq()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTrainerServiceAbilityReq) for information about specific ability requirements.
+Returns the number of ability requirements for purchasing a trainer service. Ability requirements are often used for ranked class spells purchased from the trainer: e.g. learning Blood Strike (Rank 3) requires having learned Blood Strike (Rank 2). See [`GetTrainerServiceAbilityReq()`](Trainer.md#gettrainerserviceabilityreq) for information about specific ability requirements.
 
 **Signature:**
 
@@ -277,7 +277,7 @@ numRequirements = GetTrainerServiceNumAbilityReq(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 **Returns:**
 
@@ -297,7 +297,7 @@ skillLine = GetTrainerServiceSkillLine(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 **Returns:**
 
@@ -317,7 +317,7 @@ skill, rank, hasReq = GetTrainerServiceSkillReq(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 **Returns:**
 
@@ -418,7 +418,7 @@ SelectTrainerService(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrainerServices)) (`number`)
+- `index` - Index of an entry in the trainer service listing (between 1 and [`GetNumTrainerServices()`](Trainer.md#getnumtrainerservices)) (`number`)
 
 ---
 
@@ -455,7 +455,7 @@ SetTrainerSkillLineFilter("type" [, enable [, exclusive]])
 
 **Arguments:**
 
-- `type` - Index of a skill line filter (in the list returned by [`GetTrainerSkillLines()`](https://web.archive.org/web/20100105234637/http://wowprogramming.com/docs/api/GetTrainerSkillLines)) (`string`)
+- `type` - Index of a skill line filter (in the list returned by [`GetTrainerSkillLines()`](Trainer.md#gettrainerskilllines)) (`string`)
 - `enable` - 1 to show services matching the given skill line in the filtered list; 0 to hide them (`number`)
 - `exclusive` - 1 to disable other skill line filters when enabling this one; otherwise nil (`1nil`)
 

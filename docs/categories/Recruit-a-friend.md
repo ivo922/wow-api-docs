@@ -30,7 +30,7 @@ canGrant = CanGrantLevel("unit")
 
 **Arguments:**
 
-- `unit` - Unit to gift a level (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to gift a level (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -51,7 +51,7 @@ canSummon = CanSummonFriend("name") or CanSummonFriend("unit")
 **Arguments:**
 
 - `name` - Exact name of a player to summon (`string`)
-- `unit` - A unit to summon (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to summon (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -83,7 +83,7 @@ start, duration = GetSummonFriendCooldown()
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the ability is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the ability is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the ability is ready (`number`)
 
 ---
@@ -100,7 +100,7 @@ GrantLevel("unit")
 
 **Arguments:**
 
-- `unit` - Unit to gift a level (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to gift a level (`string`, [unitID](../types/unitID.md))
 
 ---
 
@@ -116,7 +116,7 @@ isLinked = IsReferAFriendLinked("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -137,7 +137,7 @@ SummonFriend("name") or SummonFriend("unit")
 **Arguments:**
 
 - `name` - Exact name of a player to summon (only applies to units in the player's party or raid) (`string`)
-- `unit` - A unit to summon (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to summon (`string`, [unitID](../types/unitID.md))
 
 ---
 

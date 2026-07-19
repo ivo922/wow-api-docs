@@ -24,7 +24,7 @@ canChange = Region:CanChangeProtectedState()
 
 **Returns:**
 
-- `canChange` - `1` if addon scripts are currently allowed to change protected properties of the region (e.g. showing or hiding it, changing its position, or altering frame attributes); otherwise `nil` (`value`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
+- `canChange` - `1` if addon scripts are currently allowed to change protected properties of the region (e.g. showing or hiding it, changing its position, or altering frame attributes); otherwise `nil` (`value`, [1nil](../types/1nil.md))
 
 ---
 
@@ -211,13 +211,13 @@ point, relativeTo, relativePoint, xOffset, yOffset = Region:GetPoint(index)
 
 **Arguments:**
 
-- `index` - Index of an anchor point defined for the region (between `1` and `region:`[`GetNumPoints()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Region/GetNumPoints)) (`number`)
+- `index` - Index of an anchor point defined for the region (between `1` and `region:`[`GetNumPoints()`](Region.md#regiongetnumpoints)) (`number`)
 
 **Returns:**
 
-- `point` - Point on this region at which it is anchored to another (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `point` - Point on this region at which it is anchored to another (`string`, [anchorPoint](../types/anchorPoint.md))
 - `relativeTo` - Reference to the other region to which this region is anchored (`region`)
-- `relativePoint` - Point on the other region to which this region is anchored (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `relativePoint` - Point on the other region to which this region is anchored (`string`, [anchorPoint](../types/anchorPoint.md))
 - `xOffset` - Horizontal distance between `point` and `relativePoint` (in pixels; positive values put `point` to the right of `relativePoint`) (`number`)
 - `yOffset` - Vertical distance between `point` and `relativePoint` (in pixels; positive values put `point` below `relativePoint`) (`number`)
 
@@ -373,8 +373,8 @@ isProtected, explicit = Region:IsProtected()
 
 **Returns:**
 
-- `isProtected` - `1` if the region is protected; otherwise `nil` (`value`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
-- `explicit` - `1` if the region is explicitly protected; `nil` if the frame is only protected due to relationship with a protected region (`value`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
+- `isProtected` - `1` if the region is protected; otherwise `nil` (`value`, [1nil](../types/1nil.md))
+- `explicit` - `1` if the region is explicitly protected; `nil` if the frame is only protected due to relationship with a protected region (`value`, [1nil](../types/1nil.md))
 
 ---
 
@@ -440,9 +440,9 @@ Region:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]
 
 **Arguments:**
 
-- `point` - Point on this region at which it is to be anchored to another (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `point` - Point on this region at which it is to be anchored to another (`string`, [anchorPoint](../types/anchorPoint.md))
 - `relativeTo` - Reference to the other region to which this region is to be anchored; if `nil` or omitted, anchors the region relative to its parent (or to the screen dimensions if the region has no parent) (`region`)
-- `relativePoint` - Point on the other region to which this region is to be anchored; if `nil` or omitted, defaults to the same value as `point` (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `relativePoint` - Point on the other region to which this region is to be anchored; if `nil` or omitted, defaults to the same value as `point` (`string`, [anchorPoint](../types/anchorPoint.md))
 - `xOffset` - Horizontal distance between `point` and `relativePoint` (in pixels; positive values put `point` to the right of `relativePoint`); if `nil` or omitted, defaults to `0` (`number`)
 - `yOffset` - Vertical distance between `point` and `relativePoint` (in pixels; positive values put `point` below `relativePoint`); if `nil` or omitted, defaults to `0` (`number`)
 

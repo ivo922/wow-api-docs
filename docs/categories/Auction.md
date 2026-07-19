@@ -8,7 +8,7 @@
 
 ## CalculateAuctionDeposit
 
-Returns the deposit amount for the item currently being set up for auction. Only returns useful information once an item has been placed in the Create Auction UI's "auction item" slot (see [`ClickAuctionSellItemButton()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClickAuctionSellItemButton)).
+Returns the deposit amount for the item currently being set up for auction. Only returns useful information once an item has been placed in the Create Auction UI's "auction item" slot (see [`ClickAuctionSellItemButton()`](Auction.md#clickauctionsellitembutton)).
 
 Deposit amount for an auction varies based on the item being auction, the auction's proposed run time, and the auction house being used (i.e. faction or neutral).
 
@@ -119,7 +119,7 @@ CloseAuctionHouse()
 
 ## GetAuctionHouseDepositRate `deprecated`
 
-Returns the deposit rate for the current auction house. Obsolete (returns different values for faction and neutral auction houses, but these values do not describe the ratio of auction deposit to an item's vendor buy or sell price); use [`CalculateAuctionDeposit()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalculateAuctionDeposit) instead.
+Returns the deposit rate for the current auction house. Obsolete (returns different values for faction and neutral auction houses, but these values do not describe the ratio of auction deposit to an item's vendor buy or sell price); use [`CalculateAuctionDeposit()`](Auction.md#calculateauctiondeposit) instead.
 
 **Signature:**
 
@@ -147,8 +147,8 @@ token, display, ... = GetAuctionInvTypes(classIndex, subClassIndex)
 
 **Arguments:**
 
-- `classIndex` - Index of an item class (in the list returned by [`GetAuctionItemClasses()`](https://web.archive.org/web/20110524013705/http://wowprogramming.com/docs/api/GetAuctionItemClasses)); currently, inventory types are only applicable in class `2` (armor) (`number`)
-- `subClassIndex` - Index of an item subclass (in the list returned by [`GetAuctionItemSubClasses(classIndex)`](https://web.archive.org/web/20110524013705/http://wowprogramming.com/docs/api/GetAuctionItemSubClasses)); currently, inventory types are only applicable in the armor subclasses listed below: (`number`)
+- `classIndex` - Index of an item class (in the list returned by [`GetAuctionItemClasses()`](Auction.md#getauctionitemclasses)); currently, inventory types are only applicable in class `2` (armor) (`number`)
+- `subClassIndex` - Index of an item subclass (in the list returned by [`GetAuctionItemSubClasses(classIndex)`](Auction.md#getauctionitemsubclasses)); currently, inventory types are only applicable in the armor subclasses listed below: (`number`)
   - `1` - Miscellaneous
   - `2` - Cloth
   - `3` - Leather
@@ -204,7 +204,7 @@ name, texture, count, quality, canUse, level, minBid, minIncrement, buyoutPrice,
 - `name` - Name of the item (`string`)
 - `texture` - Path to an icon texture for the item (`string`)
 - `count` - Number of items in the stack (`number`)
-- `quality` - The quality (rarity) level of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - The quality (rarity) level of the item (`number`, [itemQuality](../types/itemQuality.md))
 - `canUse` - 1 if the player character can use or equip the item; otherwise nil (`1nil`)
 - `level` - Required character level to use or equip the item (`number`)
 - `minBid` - Minimum cost to bid on the item (in copper) (`number`)
@@ -237,7 +237,7 @@ link = GetAuctionItemLink("list", index)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -255,7 +255,7 @@ This function still returns valid information if the player is not interacting w
 
 **Arguments:**
 
-- `classIndex` - Index of an item class (in the list returned by [`GetAuctionItemClasses()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemClasses)) (`number`)
+- `classIndex` - Index of an item class (in the list returned by [`GetAuctionItemClasses()`](Auction.md#getauctionitemclasses)) (`number`)
 
 **Returns:**
 
@@ -305,7 +305,7 @@ duration = GetAuctionItemTimeLeft("list", index)
 
 ## GetAuctionSellItemInfo
 
-Returns information about the item currently being set up for auction. Only returns useful information once an item has been placed in the Create Auction UI's "auction item" slot (see [`ClickAuctionSellItemButton()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClickAuctionSellItemButton)).
+Returns information about the item currently being set up for auction. Only returns useful information once an item has been placed in the Create Auction UI's "auction item" slot (see [`ClickAuctionSellItemButton()`](Auction.md#clickauctionsellitembutton)).
 
 **Signature:**
 
@@ -318,7 +318,7 @@ name, texture, count, quality, canUse, price = GetAuctionSellItemInfo()
 - `name` - Name of the item (`string`)
 - `texture` - Path to an icon texture for the item (`string`)
 - `count` - Number of items in the stack (`number`)
-- `quality` - Quality (rarity) level of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality (rarity) level of the item (`number`, [itemQuality](../types/itemQuality.md))
 - `canUse` - 1 if the player character can use or equip the item; otherwise nil (`1nil`)
 - `price` - Price to sell the item to a vendor (in copper) (`number`)
 
@@ -326,7 +326,7 @@ name, texture, count, quality, canUse, price = GetAuctionSellItemInfo()
 
 ## GetAuctionSort
 
-Returns the current sort settings for auction data. The `index` argument describes priority order for sort criteria: e.g. if `GetAuctionSort("list",1)` returns `quality` and `GetAuctionSort("list",2)` returns `level,1`, items are sorted first by [`itemQuality`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality) and items with the same quality are sorted by required level.
+Returns the current sort settings for auction data. The `index` argument describes priority order for sort criteria: e.g. if `GetAuctionSort("list",1)` returns `quality` and `GetAuctionSort("list",2)` returns `level,1`, items are sorted first by [`itemQuality`](../types/itemQuality.md) and items with the same quality are sorted by required level.
 
 **Signature:**
 
@@ -351,7 +351,7 @@ criterion, reverse = GetAuctionSort("list", index)
 
 ## GetBidderAuctionItems `server`
 
-Requests data from the server for the list of auctions bid on by the player. The [`AUCTION_BIDDER_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_BIDDER_LIST_UPDATE) event fires if new data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemInfo) or other Auction APIs.
+Requests data from the server for the list of auctions bid on by the player. The [`AUCTION_BIDDER_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_BIDDER_LIST_UPDATE) event fires if new data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
 
 **Signature:**
 
@@ -373,7 +373,7 @@ invoiceType, itemName, playerName, bid, buyout, deposit, consignment, moneyDelay
 
 **Arguments:**
 
-- `index` - Index of the mail message in the inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `index` - Index of the mail message in the inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 **Returns:**
 
@@ -419,7 +419,7 @@ numBatchAuctions, totalAuctions = GetNumAuctionItems("list")
 
 ## GetOwnerAuctionItems `server`
 
-Requests data from the server for the list of auctions created by the player. The [`AUCTION_OWNED_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_OWNED_LIST_UPDATE) event fires if new data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemInfo) or other Auction APIs.
+Requests data from the server for the list of auctions created by the player. The [`AUCTION_OWNED_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_OWNED_LIST_UPDATE) event fires if new data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
 
 **Signature:**
 
@@ -454,7 +454,7 @@ index = GetSelectedAuctionItem("list")
 
 ## IsAuctionSortReversed `deprecated`
 
-Returns whether a sort criterion is applied in reverse order. No longer used in the default UI; see [`GetAuctionSort()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionSort) instead.
+Returns whether a sort criterion is applied in reverse order. No longer used in the default UI; see [`GetAuctionSort()`](Auction.md#getauctionsort) instead.
 
 **Signature:**
 
@@ -504,7 +504,7 @@ Requests data from the server for the list of auctions meeting given search crit
 
 Search queries are throttled, preventing abuse of the server by clients sending too many queries in short succession. Normal queries can be sent once every few seconds; mass queries return all results in the auction house instead of one "page" at a time, and can only be sent once every several minutes.
 
-Query results are not returned immediately: the [`AUCTION_ITEM_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_ITEM_LIST_UPDATE) event fires once data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemInfo) or other Auction APIs.
+Query results are not returned immediately: the [`AUCTION_ITEM_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_ITEM_LIST_UPDATE) event fires once data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
 
 **Signature:**
 
@@ -517,9 +517,9 @@ QueryAuctionItems(["name" [, minLevel [, maxLevel [, invTypeIndex [, classIndex 
 - `name` - Full or partial item name to limit search results; will match any item whose name contains this string (`string`)
 - `minLevel` - Minimum required character level of items to limit search results (`number`)
 - `maxLevel` - Maximum required character level of items to limit search results (`number`)
-- `invTypeIndex` - Index of an item inventory type to limit search results (note that [`GetAuctionInvTypes(classIndex, subClassIndex)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionInvTypes) returns a list of `token, display` pairs for each inventory type; thus, to convert a token index from that list for use here, divide by 2 and round up) (`number`)
-- `classIndex` - Index of an item class to limit search results (in the list returned by [`GetAuctionItemClasses()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemClasses)) (`number`)
-- `subClassIndex` - Index of an item subclass to limit search results (in the list returned by [`GetAuctionItemSubClasses(classIndex)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemSubClasses)) (`number`)
+- `invTypeIndex` - Index of an item inventory type to limit search results (note that [`GetAuctionInvTypes(classIndex, subClassIndex)`](Auction.md#getauctioninvtypes) returns a list of `token, display` pairs for each inventory type; thus, to convert a token index from that list for use here, divide by 2 and round up) (`number`)
+- `classIndex` - Index of an item class to limit search results (in the list returned by [`GetAuctionItemClasses()`](Auction.md#getauctionitemclasses)) (`number`)
+- `subClassIndex` - Index of an item subclass to limit search results (in the list returned by [`GetAuctionItemSubClasses(classIndex)`](Auction.md#getauctionitemsubclasses)) (`number`)
 - `page` - Which "page" of search results to list, if more than `NUM_AUCTION_ITEMS_PER_PAGE` (50) auctions are available; nil to query the first (or only) page (`number`)
 - `isUsable` - True to limit search results to only items which can be used or equipped by the player character; otherwise false (`boolean`)
 - `minQuality` - Minimum quality (rarity) level of items to limit search results (`itemQuality`)
@@ -549,9 +549,9 @@ SetSelectedAuctionItem("list", index)
 
 ## SortAuctionApplySort
 
-Applies a set of auction listing sort criteria set via [`SortAuctionSetSort`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SortAuctionSetSort). Sort criteria are applied server-side, affecting not only the order of items within one "page" of listings but the order in which items are collected into pages.
+Applies a set of auction listing sort criteria set via [`SortAuctionSetSort`](Auction.md#sortauctionsetsort). Sort criteria are applied server-side, affecting not only the order of items within one "page" of listings but the order in which items are collected into pages.
 
-Any currently displayed listings are re-sorted server-side: the [`AUCTION_ITEM_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_ITEM_LIST_UPDATE), [`AUCTION_BIDDER_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_BIDDER_LIST_UPDATE), or [`AUCTION_OWNED_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_OWNED_LIST_UPDATE) event fires once the re-sorted data is available to the client; listing information can then be retrieved using [`GetAuctionItemInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemInfo) or other Auction APIs.
+Any currently displayed listings are re-sorted server-side: the [`AUCTION_ITEM_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_ITEM_LIST_UPDATE), [`AUCTION_BIDDER_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_BIDDER_LIST_UPDATE), or [`AUCTION_OWNED_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_OWNED_LIST_UPDATE) event fires once the re-sorted data is available to the client; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
 
 **Signature:**
 
@@ -589,7 +589,7 @@ SortAuctionClearSort("list")
 
 ## SortAuctionItems `deprecated`
 
-Sorts the auction house listing. No longer used in the default UI; see [`SortAuctionClearSort()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SortAuctionClearSort), [`SortAuctionSetSort()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SortAuctionSetSort), and [`SortAuctionApplySort()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SortAuctionApplySort) instead.
+Sorts the auction house listing. No longer used in the default UI; see [`SortAuctionClearSort()`](Auction.md#sortauctionclearsort), [`SortAuctionSetSort()`](Auction.md#sortauctionsetsort), and [`SortAuctionApplySort()`](Auction.md#sortauctionapplysort) instead.
 
 **Signature:**
 
@@ -610,7 +610,7 @@ SortAuctionItems("type", "sort")
   - `level` - Required character level to use or equip the item
   - `minbidbuyout` - Buyout price, or minimum bid if no buyout price is available
   - `name` - Name of the item
-  - `quality` - [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality) of the item
+  - `quality` - [itemQuality](../types/itemQuality.md) of the item
   - `quantity` - Number of stacked items in the auction
   - `seller` - Name of the character who created of the auction (or in the `owner` listing, the current high bidder)
   - `status` - Status of the auction (e.g. in the `bidder` listing, whether the player has been outbid)
@@ -619,7 +619,7 @@ SortAuctionItems("type", "sort")
 
 ## SortAuctionSetSort
 
-Builds a list of sort criteria for auction listings. Has no effect until [`SortAuctionApplySort(type)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SortAuctionApplySort) is called; thus, this function can be called repeatedly to build a complex set of sort criteria. Sort criteria are applied server-side, affecting not only the order of items within one "page" of listings but the order in which items are collected into pages.
+Builds a list of sort criteria for auction listings. Has no effect until [`SortAuctionApplySort(type)`](Auction.md#sortauctionapplysort) is called; thus, this function can be called repeatedly to build a complex set of sort criteria. Sort criteria are applied server-side, affecting not only the order of items within one "page" of listings but the order in which items are collected into pages.
 
 Criteria are applied in the order set by this function; i.e. the last criterion set becomes the primary sort criterion (see example).
 
@@ -642,7 +642,7 @@ SortAuctionSetSort("list", "sort", reversed)
   - `level` - Required character level to use or equip the item
   - `minbidbuyout` - Buyout price, or minimum bid if no buyout price is available
   - `name` - Name of the item
-  - `quality` - [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality) of the item
+  - `quality` - [itemQuality](../types/itemQuality.md) of the item
   - `quantity` - Number of stacked items in the auction
   - `seller` - Name of the character who created of the auction (or in the `owner` listing, the current high bidder)
   - `status` - Status of the auction (e.g. in the `bidder` listing, whether the player has been outbid)
@@ -652,7 +652,7 @@ SortAuctionSetSort("list", "sort", reversed)
 
 ## StartAuction
 
-Creates an auction for the item currently in the "auction item" slot. Has no effect unless an item has been placed in the Create Auction UI's "auction item" slot (see [`ClickAuctionSellItemButton()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClickAuctionSellItemButton)). With patch 3.3.3 the runTime arg was changed from minutes to an index and the stackSize/numStacks args were added for batch posting.
+Creates an auction for the item currently in the "auction item" slot. Has no effect unless an item has been placed in the Create Auction UI's "auction item" slot (see [`ClickAuctionSellItemButton()`](Auction.md#clickauctionsellitembutton)). With patch 3.3.3 the runTime arg was changed from minutes to an index and the stackSize/numStacks args were added for batch posting.
 
 **Signature:**
 

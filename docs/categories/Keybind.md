@@ -18,7 +18,7 @@ ClearOverrideBindings(owner)
 
 **Arguments:**
 
-- `owner` - A Frame (or other [widget](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets)) object for which override bindings are registered (`table`)
+- `owner` - A Frame (or other [widget](../Widgets.md)) object for which override bindings are registered (`table`)
 
 ---
 
@@ -34,13 +34,13 @@ commandName, binding1, binding2 = GetBinding(index)
 
 **Arguments:**
 
-- `index` - Index in the key bindings list (between 1 and [`GetNumBindings()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBindings)) (`number`)
+- `index` - Index in the key bindings list (between 1 and [`GetNumBindings()`](Keybind.md#getnumbindings)) (`number`)
 
 **Returns:**
 
 - `commandName` - Name of the binding command (`string`)
-- `binding1` - First key binding for the command, or nil if no key is bound (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
-- `binding2` - Second key binding for the command, or nil if no key is bound (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
+- `binding1` - First key binding for the command, or nil if no key is bound (`string`, [binding](../types/binding.md))
+- `binding2` - Second key binding for the command, or nil if no key is bound (`string`, [binding](../types/binding.md))
 
 ---
 
@@ -56,7 +56,7 @@ action = GetBindingAction("key" [, checkOverride])
 
 **Arguments:**
 
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20111212192105/http://wowprogramming.com/docs/api_types#binding))
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
 - `checkOverride` - True to check possible override bindings for the `key`, false or omitted to check only normal bindings (`boolean`)
 
 **Returns:**
@@ -77,7 +77,7 @@ action = GetBindingByKey("key")
 
 **Arguments:**
 
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
 
 **Returns:**
 
@@ -101,8 +101,8 @@ key1, ... = GetBindingKey("COMMAND")
 
 **Returns:**
 
-- `key1` - First key binding for the command, or nil if no key is bound (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
-- `...` - A list of additional [bindings](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#bindings) for the command (`list`)
+- `key1` - First key binding for the command, or nil if no key is bound (`string`, [binding](../types/binding.md))
+- `...` - A list of additional [bindings](../types/binding.md) for the command (`list`)
 
 ---
 
@@ -205,7 +205,7 @@ success = SetBinding("key" [, "command"])
 
 **Arguments:**
 
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
 - `command` - Name of a key binding command, or nil to unbind the key (`string`)
 
 **Returns:**
@@ -226,8 +226,8 @@ success = SetBindingClick("key", "buttonName" [, "mouseButton"])
 
 **Arguments:**
 
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
-- `buttonName` - Name of a [Button](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Button) object on which the binding simulates a click (`string`)
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
+- `buttonName` - Name of a [Button](../widgets/Button.md) object on which the binding simulates a click (`string`)
 - `mouseButton` - Name of the mouse button with which the binding simulates a click (`string`)
 
 **Returns:**
@@ -248,10 +248,10 @@ success = SetBindingItem("key", itemID) or SetBindingItem("key", "itemName") or 
 
 **Arguments:**
 
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -271,8 +271,8 @@ success = SetBindingMacro("key", index) or SetBindingMacro("key", "name")
 
 **Arguments:**
 
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 
 **Returns:**
@@ -293,7 +293,7 @@ success = SetBindingSpell("key", "spellname")
 
 **Arguments:**
 
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
 - `spellname` - Name of a spell to bind (`string`)
 
 **Returns:**
@@ -325,7 +325,7 @@ SetMouselookOverrideBinding("key", "binding")
 
 Sets an override binding for a binding command. Override bindings are temporary. The bound key will revert to its normal setting once the override is removed. Priority overrides work the same way but will revert to the previous override binding (if present) rather than the base binding for the key.
 
-Call with a fourth argument of `nil` to remove the override binding for a specific key, or see [`ClearOverrideBindings()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClearOverrideBindings) to remove all bindings associated with a given `owner`.
+Call with a fourth argument of `nil` to remove the override binding for a specific key, or see [`ClearOverrideBindings()`](Keybind.md#clearoverridebindings) to remove all bindings associated with a given `owner`.
 
 **Signature:**
 
@@ -335,9 +335,9 @@ SetOverrideBinding(owner, isPriority, "key", "command")
 
 **Arguments:**
 
-- `owner` - The Frame (or other [widget](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets)) object responsible for this override (`table`)
+- `owner` - The Frame (or other [widget](../Widgets.md)) object responsible for this override (`table`)
 - `isPriority` - True if this binding takes higher priority than other override bindings; false otherwise (`boolean`)
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
 - `command` - Name of a key binding command, or nil to remove the override binding (`string`)
 
 ---
@@ -346,7 +346,7 @@ SetOverrideBinding(owner, isPriority, "key", "command")
 
 Sets an override binding to "click" a Button object. Override bindings are temporary. The bound key will revert to its normal setting once the override is removed. Priority overrides work the same way but will revert to the previous override binding (if present) rather than the base binding for the key.
 
-Call with a fourth argument of `nil` to remove the override binding for a specific key, or see [`ClearOverrideBindings()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClearOverrideBindings) to remove all bindings associated with a given `owner`.
+Call with a fourth argument of `nil` to remove the override binding for a specific key, or see [`ClearOverrideBindings()`](Keybind.md#clearoverridebindings) to remove all bindings associated with a given `owner`.
 
 **Signature:**
 
@@ -356,10 +356,10 @@ SetOverrideBindingClick(owner, isPriority, "key", "buttonName" [, "mouseButton"]
 
 **Arguments:**
 
-- `owner` - The Frame (or other [widget](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets)) object responsible for this override (`table`)
+- `owner` - The Frame (or other [widget](../Widgets.md)) object responsible for this override (`table`)
 - `isPriority` - True if this binding takes higher priority than other override bindings; false otherwise (`boolean`)
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
-- `buttonName` - Name of a [Button](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Button) object on which the binding simulates a click (`string`)
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
+- `buttonName` - Name of a [Button](../widgets/Button.md) object on which the binding simulates a click (`string`)
 - `mouseButton` - Name of the mouse button with which the binding simulates a click (`string`)
 
 ---
@@ -368,7 +368,7 @@ SetOverrideBindingClick(owner, isPriority, "key", "buttonName" [, "mouseButton"]
 
 Sets an override binding to use an item in the player's possession. Override bindings are temporary. The bound key will revert to its normal setting once the override is removed. Priority overrides work the same way but will revert to the previous override binding (if present) rather than the base binding for the key.
 
-Call with a fourth argument of `nil` to remove the override binding for a specific key, or see [`ClearOverrideBindings()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClearOverrideBindings) to remove all bindings associated with a given `owner`.
+Call with a fourth argument of `nil` to remove the override binding for a specific key, or see [`ClearOverrideBindings()`](Keybind.md#clearoverridebindings) to remove all bindings associated with a given `owner`.
 
 **Signature:**
 
@@ -378,12 +378,12 @@ SetOverrideBindingItem(owner, isPriority, "key", itemID) or SetOverrideBindingIt
 
 **Arguments:**
 
-- `owner` - The Frame (or other [widget](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets)) object responsible for this override (`table`)
+- `owner` - The Frame (or other [widget](../Widgets.md)) object responsible for this override (`table`)
 - `isPriority` - True if this binding takes higher priority than other override bindings; false otherwise (`boolean`)
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 ---
 
@@ -391,7 +391,7 @@ SetOverrideBindingItem(owner, isPriority, "key", itemID) or SetOverrideBindingIt
 
 Sets an override binding to run a macro. Override bindings are temporary. The bound key will revert to its normal setting once the override is removed. Priority overrides work the same way but will revert to the previous override binding (if present) rather than the base binding for the key.
 
-Call with a fourth argument of `nil` to remove the override binding for a specific key, or see [`ClearOverrideBindings()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClearOverrideBindings) to remove all bindings associated with a given `owner`.
+Call with a fourth argument of `nil` to remove the override binding for a specific key, or see [`ClearOverrideBindings()`](Keybind.md#clearoverridebindings) to remove all bindings associated with a given `owner`.
 
 **Signature:**
 
@@ -401,17 +401,17 @@ SetOverrideBindingMacro(owner, isPriority, "key", index) or SetOverrideBindingMa
 
 **Arguments:**
 
-- `owner` - The Frame (or other [widget](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets)) object responsible for this override (`table`)
+- `owner` - The Frame (or other [widget](../Widgets.md)) object responsible for this override (`table`)
 - `isPriority` - True if this binding takes higher priority than other override bindings; false otherwise (`boolean`)
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 
 ---
 
 ## SetOverrideBindingSpell
 
-Set an override binding to a specific spell. Override bindings are temporary. The bound key will revert to its normal setting once the override is removed. Priority overrides work the same way but will revert to the previous override binding (if present) rather than the base binding for the key. See [`ClearOverrideBindings()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClearOverrideBindings) to remove bindings associated with a given `owner`.
+Set an override binding to a specific spell. Override bindings are temporary. The bound key will revert to its normal setting once the override is removed. Priority overrides work the same way but will revert to the previous override binding (if present) rather than the base binding for the key. See [`ClearOverrideBindings()`](Keybind.md#clearoverridebindings) to remove bindings associated with a given `owner`.
 
 **Signature:**
 
@@ -421,9 +421,9 @@ SetOverrideBindingSpell(owner, isPriority, "key", "spellname")
 
 **Arguments:**
 
-- `owner` - The Frame (or other [widget](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets)) object responsible for this override (`table`)
+- `owner` - The Frame (or other [widget](../Widgets.md)) object responsible for this override (`table`)
 - `isPriority` - True if this binding takes higher priority than other override bindings; false otherwise (`boolean`)
-- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
+- `key` - A key or key combination (e.g. "CTRL-2") (`string`, [binding](../types/binding.md))
 - `spellname` - Name of a spell, or nil to remove the override binding (`string`)
 
 ---

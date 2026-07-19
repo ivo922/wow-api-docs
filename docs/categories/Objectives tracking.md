@@ -18,7 +18,7 @@ AddQuestWatch(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 
@@ -82,11 +82,11 @@ questIndex = GetQuestIndexForWatch(index)
 
 **Arguments:**
 
-- `index` - Index of a quest in the list of quests on the objectives tracker (between 1 and [`GetNumQuestWatches()`](https://web.archive.org/web/20111212163624/http://wowprogramming.com/docs/api/GetNumQuestWatches)) (`number`)
+- `index` - Index of a quest in the list of quests on the objectives tracker (between 1 and [`GetNumQuestWatches()`](Objectives tracking.md#getnumquestwatches)) (`number`)
 
 **Returns:**
 
-- `questIndex` - Index of the quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20111212163624/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of the quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 
@@ -102,11 +102,11 @@ start, duration, enable = GetQuestLogSpecialItemCooldown(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the item is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the item is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the item is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the item is ready.) (`number`)
 
@@ -124,11 +124,11 @@ link, icon, charges = GetQuestLogSpecialItemInfo(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 - `icon` - Path to an icon texture for the item (`string`)
 - `charges` - Number of times the item can be used, or 0 if no limit (`number`)
 
@@ -162,7 +162,7 @@ inRange = IsQuestLogSpecialItemInRange(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
@@ -182,7 +182,7 @@ isWatched = IsQuestWatched(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
@@ -222,7 +222,7 @@ RemoveQuestWatch(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100105230011/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 
@@ -254,7 +254,7 @@ UseQuestLogSpecialItem(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 

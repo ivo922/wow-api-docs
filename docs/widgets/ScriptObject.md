@@ -24,7 +24,7 @@ handler = ScriptObject:GetScript("scriptType")
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts reference](Frame.md#script-handlers) for details (`string`)
 
 **Returns:**
 
@@ -44,7 +44,7 @@ hasScript = ScriptObject:HasScript("scriptType")
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts reference](Frame.md#script-handlers) for details (`string`)
 
 **Returns:**
 
@@ -54,7 +54,7 @@ hasScript = ScriptObject:HasScript("scriptType")
 
 ### ScriptObject:HookScript
 
-Securely hooks a script handler. Equivalent to [`hooksecurefunc()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/hooksecurefunc) for script handlers; allows one to "post-hook" a secure handler without tainting the original.
+Securely hooks a script handler. Equivalent to [`hooksecurefunc()`](../categories/Secure execution utility.md#hooksecurefunc) for script handlers; allows one to "post-hook" a secure handler without tainting the original.
 
 The original handler will still be called, but the handler supplied will also be called after the original, with the same arguments. Return values from the supplied handler are discarded. Note that there is no API to remove a hook from a handler: any hooks applied will remain in place until the UI is reloaded.
 
@@ -68,7 +68,7 @@ ScriptObject:HookScript("scriptType", handler)
 
 **Arguments:**
 
-- `scriptType` - Name of the [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) whose handler should be hooked (`string`)
+- `scriptType` - Name of the [script](Frame.md#script-handlers) whose handler should be hooked (`string`)
 - `handler` - A function to be called whenever the script handler is run (`function`)
 
 ---
@@ -85,7 +85,7 @@ ScriptObject:SetScript("scriptType", handler)
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts](Frame.md#script-handlers) for details (`string`)
 - `handler` - A function to become the widget's handler for the script type (`function`)
 
 ---

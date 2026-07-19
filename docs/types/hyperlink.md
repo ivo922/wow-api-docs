@@ -8,7 +8,7 @@ A string containing markup allowing the client to present it as a link, which th
 
 Hyperlinks take the form `|H(linktype):(linkdata)|h(text)|h`, where `(linktype)` determines the type of link, `(linkdata)` is a code referencing the linked information, and `(text)` is the text visible to the player. Some API functions which operate on links do not require a full `hyperlink`, only its `linktype:linkdata` portion.
 
-Links are often encapsulated in a [`colorString`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api_types/colorString) -- in such cases, the full `colorString`-wrapped link is the only form of the link allowed to be used in chat; attempting to transmit an invalid link may cause the player to be disconnected from the server.
+Links are often encapsulated in a [`colorString`](colorString.md) -- in such cases, the full `colorString`-wrapped link is the only form of the link allowed to be used in chat; attempting to transmit an invalid link may cause the player to be disconnected from the server.
 
 The WoW client recognizes several kinds of hyperlinks, identified by their `linktype`. For `linkdata` elements noted as optional below, the client can still resolve the link if they are omitted:
 
@@ -24,10 +24,10 @@ The WoW client recognizes several kinds of hyperlinks, identified by their `link
 - `glyphID` - A unique identifier for the glyph effect; not used elsewhere in the API.
 
 `spell` (example: `|cff71d5ff|Hspell:46584|h[Raise Dead]|h|r`) - Represents a spell. Clicking a spell link in the default UI shows a tooltip with its description.
- The `linkdata` for a spell link consists solely of the [`spellID`](spellID.md) number uniquely identifying the spell, usable with APIs such as [`GetSpellInfo()`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api/GetSpellInfo).
+ The `linkdata` for a spell link consists solely of the [`spellID`](spellID.md) number uniquely identifying the spell, usable with APIs such as [`GetSpellInfo()`](../categories/Spell.md#getspellinfo).
 
 `enchant` (example: `|cffffd000|Henchant:59387|h[Certificate of Ownership]|h|r`) - Represents a trade skill recipe (originally used only for Enchanting, but now applies to all trade skills). Clicking a spell link in the default UI shows a tooltip with its description (and that of the item it creates, if applicable).
- The `linkdata` for a spell link consists solely of the [`spellID`](spellID.md) number uniquely identifying the trade skill recipe, usable with APIs such as [`GetSpellInfo()`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api/GetSpellInfo).
+ The `linkdata` for a spell link consists solely of the [`spellID`](spellID.md) number uniquely identifying the trade skill recipe, usable with APIs such as [`GetSpellInfo()`](../categories/Spell.md#getspellinfo).
 
 `quest` (example: `|cffffff00|Hquest:982:17|h[Deep Ocean, Vast Sea]|h|r`) - Represents a quest from a character's quest log. Clicking a quest link in the default UI shows a tooltip with a brief description of the quest and its objectives. When the client displays a quest link sent by another character, it automatically alters the enclosing `colorString` to reflect the difficulty of the quest relative to the player's level.
  The `linkdata` for a quest link follows the format `questID:level`:

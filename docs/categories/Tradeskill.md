@@ -30,7 +30,7 @@ CollapseTradeSkillSubClass(index)
 
 **Arguments:**
 
-- `index` - Index of a header in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100105215013/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a header in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 ---
 
@@ -46,7 +46,7 @@ DoTradeSkill(index [, repeat])
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 - `repeat` - Number of times to repeat the recipe (`number`)
 
 ---
@@ -63,7 +63,7 @@ ExpandTradeSkillSubClass(index)
 
 **Arguments:**
 
-- `index` - Index of a header in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a header in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 ---
 
@@ -113,7 +113,7 @@ cooldown = GetTradeSkillCooldown(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -133,7 +133,7 @@ description = GetTradeSkillDescription(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -153,7 +153,7 @@ texturePath = GetTradeSkillIcon(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -173,7 +173,7 @@ skillName, skillType, numAvailable, isExpanded, serviceType = GetTradeSkillInfo(
 
 **Arguments:**
 
-- `index` - Index of an entry in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100105220318/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of an entry in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -210,7 +210,7 @@ enabled = GetTradeSkillInvSlotFilter(index)
 
 **Arguments:**
 
-- `index` - Index of an item equipment slot (in the list returned by [`GetTradeSkillInvSlots()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillInvSlots)), or `0` for the "All" filter (`number`)
+- `index` - Index of an item equipment slot (in the list returned by [`GetTradeSkillInvSlots()`](Tradeskill.md#gettradeskillinvslots)), or `0` for the "All" filter (`number`)
 
 **Returns:**
 
@@ -220,7 +220,7 @@ enabled = GetTradeSkillInvSlotFilter(index)
 
 ## GetTradeSkillInvSlots
 
-Returns a list of recipe equipment slots for the current trade skill. These inventory types correspond to those of the items produced (see [`GetItemInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetItemInfo) and [`GetAuctionItemInvTypes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemInvTypes)) and can be used to filter the recipe list.
+Returns a list of recipe equipment slots for the current trade skill. These inventory types correspond to those of the items produced (see [`GetItemInfo()`](Item.md#getiteminfo) and [`GetAuctionItemInvTypes()`](Auction.md#getauctioninvtypes)) and can be used to filter the recipe list.
 
 **Signature:**
 
@@ -253,9 +253,9 @@ minLevel, maxLevel = GetTradeSkillItemLevelFilter()
 
 ## GetTradeSkillItemLink
 
-Returns a hyperlink for the item created by a tradeskill recipe. The tooltip produced when resolving the link describes only the item created by the recipe. For a link which describes the recipe itself (its reagents and description), see [`GetTradeSkillRecipeLink()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillRecipeLink).
+Returns a hyperlink for the item created by a tradeskill recipe. The tooltip produced when resolving the link describes only the item created by the recipe. For a link which describes the recipe itself (its reagents and description), see [`GetTradeSkillRecipeLink()`](Hyperlink.md#gettradeskillrecipelink).
 
-If the recipe does not create an item, this function returns the same hyperlink as does [`GetTradeSkillRecipeLink()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillRecipeLink) (though the text of the link may differ).
+If the recipe does not create an item, this function returns the same hyperlink as does [`GetTradeSkillRecipeLink()`](Hyperlink.md#gettradeskillrecipelink) (though the text of the link may differ).
 
 **Signature:**
 
@@ -265,7 +265,7 @@ link = GetTradeSkillItemLink(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -319,7 +319,7 @@ link = GetTradeSkillListLink()
 
 **Returns:**
 
-- `link` - A hyperlink other players can resolve to see the player's full list of tradeskill recipes (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink other players can resolve to see the player's full list of tradeskill recipes (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -335,7 +335,7 @@ minMade, maxMade = GetTradeSkillNumMade(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -356,7 +356,7 @@ numReagents = GetTradeSkillNumReagents(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -376,8 +376,8 @@ reagentName, reagentTexture, reagentCount, playerReagentCount = GetTradeSkillRea
 
 **Arguments:**
 
-- `skillIndex` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
-- `reagentIndex` - Index of a reagent in the recipe (between 1 and [`GetTradeSkillNumReagents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillNumReagents)) (`number`)
+- `skillIndex` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
+- `reagentIndex` - Index of a reagent in the recipe (between 1 and [`GetTradeSkillNumReagents()`](Tradeskill.md#gettradeskillnumreagents)) (`number`)
 
 **Returns:**
 
@@ -400,18 +400,18 @@ link = GetTradeSkillReagentItemLink(skillIndex, reagentIndex)
 
 **Arguments:**
 
-- `skillIndex` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
-- `reagentIndex` - Index of a reagent in the recipe (between 1 and [`GetTradeSkillNumReagents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillNumReagents)) (`number`)
+- `skillIndex` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
+- `reagentIndex` - Index of a reagent in the recipe (between 1 and [`GetTradeSkillNumReagents()`](Tradeskill.md#gettradeskillnumreagents)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the reagent item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the reagent item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
 ## GetTradeSkillRecipeLink
 
-Returns hyperlink for a tradeskill recipe. The tooltip produced when resolving the link describes the recipe itself -- its reagents and (if present) description -- in addition to (if applicable) the item created. For a link which only describes the created item, see [`GetTradeSkillItemLink()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillItemLink).
+Returns hyperlink for a tradeskill recipe. The tooltip produced when resolving the link describes the recipe itself -- its reagents and (if present) description -- in addition to (if applicable) the item created. For a link which only describes the created item, see [`GetTradeSkillItemLink()`](Hyperlink.md#gettradeskillitemlink).
 
 **Signature:**
 
@@ -421,7 +421,7 @@ link = GetTradeSkillRecipeLink(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -441,7 +441,7 @@ index = GetTradeSkillSelectionIndex()
 
 **Returns:**
 
-- `index` - Index of the selected recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of the selected recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 ---
 
@@ -457,7 +457,7 @@ enabled = GetTradeSkillSubClassFilter(index)
 
 **Arguments:**
 
-- `index` - Index of an item subclass (in the list returned by [`GetTradeSkillSubClasses()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillSubClasses)), or `0` for the "All" filter (`number`)
+- `index` - Index of an item subclass (in the list returned by [`GetTradeSkillSubClasses()`](Tradeskill.md#gettradeskillsubclasses)), or `0` for the "All" filter (`number`)
 
 **Returns:**
 
@@ -467,7 +467,7 @@ enabled = GetTradeSkillSubClassFilter(index)
 
 ## GetTradeSkillSubClasses
 
-Returns a list of recipe subclasses for the current trade skill. These subclasses correspond to those of the items produced (see [`GetItemInfo()`](https://web.archive.org/web/20111212170042/http://wowprogramming.com/docs/api/GetItemInfo) and [`GetAuctionItemSubClasses()`](https://web.archive.org/web/20111212170042/http://wowprogramming.com/docs/api/GetAuctionItemSubClasses)) and can be used to filter the recipe list.
+Returns a list of recipe subclasses for the current trade skill. These subclasses correspond to those of the items produced (see [`GetItemInfo()`](Item.md#getiteminfo) and [`GetAuctionItemSubClasses()`](Auction.md#getauctionitemsubclasses)) and can be used to filter the recipe list.
 
 **Signature:**
 
@@ -493,7 +493,7 @@ toolName, hasTool, ... = GetTradeSkillTools(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 **Returns:**
 
@@ -505,7 +505,7 @@ toolName, hasTool, ... = GetTradeSkillTools(index)
 
 ## GetTradeskillRepeatCount
 
-Returns the number of times the trade skill recipe currently being performed will repeat. Returns 1 if a recipe is not being performed; after [`DoTradeSkill()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/DoTradeSkill) is called, returns the number of repetitions queued (which decrements as each repetition is finished).
+Returns the number of times the trade skill recipe currently being performed will repeat. Returns 1 if a recipe is not being performed; after [`DoTradeSkill()`](Tradeskill.md#dotradeskill) is called, returns the number of repetitions queued (which decrements as each repetition is finished).
 
 **Signature:**
 
@@ -548,7 +548,7 @@ SelectTradeSkill(index)
 
 **Arguments:**
 
-- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTradeSkills)) (`number`)
+- `index` - Index of a recipe in the trade skill list (between 1 and [`GetNumTradeSkills()`](Tradeskill.md#getnumtradeskills)) (`number`)
 
 ---
 
@@ -564,7 +564,7 @@ SetTradeSkillInvSlotFilter(index [, enable [, exclusive]])
 
 **Arguments:**
 
-- `index` - Index of an item equipment slot (in the list returned by [`GetTradeSkillInvSlots()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillInvSlots)), or `0` for no filter (`number`)
+- `index` - Index of an item equipment slot (in the list returned by [`GetTradeSkillInvSlots()`](Tradeskill.md#gettradeskillinvslots)), or `0` for no filter (`number`)
 - `enable` - 1 to show recipes matching inventory type `index` in the filtered list; 0 to hide them (`number`)
 - `exclusive` - 1 to disable other subclass filters when enabling this one; otherwise nil (`1nil`)
 
@@ -615,7 +615,7 @@ SetTradeSkillSubClassFilter(index [, enable [, exclusive]])
 
 **Arguments:**
 
-- `index` - Index of an item subclass (in the list returned by [`GetTradeSkillSubClasses()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTradeSkillSubClasses)), or `0` for no filter (`number`)
+- `index` - Index of an item subclass (in the list returned by [`GetTradeSkillSubClasses()`](Tradeskill.md#gettradeskillsubclasses)), or `0` for no filter (`number`)
 - `enable` - 1 to show recipes matching subclass `index` in the filtered list; 0 to hide them (`number`)
 - `exclusive` - 1 to disable other subclass filters when enabling this one; otherwise nil (`1nil`)
 

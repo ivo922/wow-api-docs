@@ -33,7 +33,7 @@ ClearPartyAssignment("assignment" [, "unit"]) or ClearPartyAssignment("assignmen
 - `assignment` - A group role to assign to the unit (`string`)
   - `MAINASSIST` - Remove the main assist role
   - `MAINTANK` - Remove the main tank role
-- `unit` - A unit in the player's party or raid (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the player's party or raid (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit in the player's party or raid (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 
@@ -122,7 +122,7 @@ isAssigned = GetPartyAssignment("assignment", "unit") or GetPartyAssignment("ass
 - `assignment` - A group role assignment (`string`)
   - `MAINASSIST` - Return whether the unit is assigned the main assist role
   - `MAINTANK` - Return whether the unit is assigned the main tank role
-- `unit` - A unit in the player's party or raid (`string`, [unitID](https://web.archive.org/web/20100712064245/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the player's party or raid (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit in the player's party or raid (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 
@@ -144,7 +144,7 @@ index = GetPartyLeaderIndex()
 
 **Returns:**
 
-- `index` - Numeric portion of the `party` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID) for the party leader (e.g. 3 = `party3`) (`number`)
+- `index` - Numeric portion of the `party` [`unitID`](../types/unitID.md) for the party leader (e.g. 3 = `party3`) (`number`)
 
 ---
 
@@ -160,7 +160,7 @@ hasMember = GetPartyMember(index)
 
 **Arguments:**
 
-- `index` - Index of a party member (between 1 and `MAX_PARTY_MEMBERS`), or the numeric portion of a `party` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID) (e.g. 3 = `party3`) (`number`)
+- `index` - Index of a party member (between 1 and `MAX_PARTY_MEMBERS`), or the numeric portion of a `party` [`unitID`](../types/unitID.md) (e.g. 3 = `party3`) (`number`)
 
 **Returns:**
 
@@ -180,7 +180,7 @@ status = GetReadyCheckStatus("unit")
 
 **Arguments:**
 
-- `unit` - A unit in the player's party or raid (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the player's party or raid (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -300,7 +300,7 @@ PromoteToLeader("unit") or PromoteToLeader("name" [, exactMatch])
 
 **Arguments:**
 
-- `unit` - A unit in the party or raid (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the party or raid (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a party member (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 
@@ -321,7 +321,7 @@ SetPartyAssignment("assignment", "unit") or SetPartyAssignment("assignment", "na
 - `assignment` - A group role to assign to the unit (`string`)
   - `MAINASSIST` - Assign the main assist role
   - `MAINTANK` - Assign the main tank role
-- `unit` - A unit in the player's party or raid (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the player's party or raid (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit in the player's party or raid (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 
@@ -358,7 +358,7 @@ inParty = UnitInParty("unit") or UnitInParty("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -379,7 +379,7 @@ leader = UnitIsPartyLeader("unit") or UnitIsPartyLeader("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -400,7 +400,7 @@ inParty = UnitPlayerOrPetInParty("unit") or UnitPlayerOrPetInParty("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**

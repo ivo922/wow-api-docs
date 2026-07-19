@@ -36,7 +36,7 @@ AddOrDelMute("unit") or AddOrDelMute("name")
 
 **Arguments:**
 
-- `unit` - A unit to mute (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to mute (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to mute (`string`)
 
 ---
@@ -55,7 +55,7 @@ ChannelSilenceAll("channelName", ["unit"] or ["name"]) or ChannelSilenceAll(chan
 
 - `channelName` - Name of a channel (`string`)
 - `channelId` - Index of a channel (`number`)
-- `unit` - Unit to silence (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to silence (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to silence (`string`)
 
 ---
@@ -74,7 +74,7 @@ ChannelSilenceVoice("channelName", ["unit"] or ["name"]) or ChannelSilenceVoice(
 
 - `channelName` - Name of a channel (`string`)
 - `channelId` - Index of a channel (`number`)
-- `unit` - Unit to silence (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to silence (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to silence (`string`)
 
 ---
@@ -93,7 +93,7 @@ ChannelUnSilenceAll("channelName", ["unit"] or ["name"]) or ChannelUnSilenceAll(
 
 - `channelName` - Name of a channel (`string`)
 - `channelId` - Index of a channel (`number`)
-- `unit` - Unit to unsilence (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to unsilence (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to unsilence (`string`)
 
 ---
@@ -112,7 +112,7 @@ ChannelUnSilenceVoice("channelName", ["unit"] or ["name"]) or ChannelUnSilenceVo
 
 - `channelName` - Name of a channel (`string`)
 - `channelId` - Index of a channel (`number`)
-- `unit` - Unit to unsilence (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to unsilence (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to unsilence (`string`)
 
 ---
@@ -179,7 +179,7 @@ DisplayChannelVoiceOff(index)
 
 **Arguments:**
 
-- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100105224853/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 ---
 
@@ -195,7 +195,7 @@ DisplayChannelVoiceOn(index)
 
 **Arguments:**
 
-- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of a channel in the channel list display (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 ---
 
@@ -211,7 +211,7 @@ index = GetActiveVoiceChannel()
 
 **Returns:**
 
-- `index` - Index of the active voice channel in the chat display window (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)), or nil if no channel is active (`number`)
+- `index` - Index of the active voice channel in the chat display window (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)), or nil if no channel is active (`number`)
 
 ---
 
@@ -227,7 +227,7 @@ name = GetMuteName(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the mute listing (between 1 and [`GetNumMutes()`](https://web.archive.org/web/20111212195150/http://wowprogramming.com/docs/api/GetNumMutes)) (`number`)
+- `index` - Index of an entry in the mute listing (between 1 and [`GetNumMutes()`](Voice.md#getnummutes)) (`number`)
 
 **Returns:**
 
@@ -247,7 +247,7 @@ muteStatus = GetMuteStatus("unit" [, "channel"]) or GetMuteStatus("name" [, "cha
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to query (`string`)
 - `channel` - Name of a voice channel (`string`)
 
@@ -285,7 +285,7 @@ numMembers = GetNumVoiceSessionMembersBySessionID(sessionId)
 
 **Arguments:**
 
-- `sessionId` - Index of a voice session (between 1 and [`GetNumVoiceSessions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumVoiceSessions)) (`number`)
+- `sessionId` - Index of a voice session (between 1 and [`GetNumVoiceSessions()`](Voice.md#getnumvoicesessions)) (`number`)
 
 **Returns:**
 
@@ -321,7 +321,7 @@ selectedMute = GetSelectedMute()
 
 **Returns:**
 
-- `selectedMute` - Index of the selected entry in the mute listing (between 1 and [`GetNumMutes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumMutes)), or 0 if no entry is selected (`number`)
+- `selectedMute` - Index of the selected entry in the mute listing (between 1 and [`GetNumMutes()`](Voice.md#getnummutes)), or 0 if no entry is selected (`number`)
 
 ---
 
@@ -337,7 +337,7 @@ id = GetVoiceCurrentSessionID()
 
 **Returns:**
 
-- `id` - Index of the active voice session (between 1 and [`GetNumVoiceSessions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumVoiceSessions)), or nil if no session is active (`number`)
+- `id` - Index of the active voice session (between 1 and [`GetNumVoiceSessions()`](Voice.md#getnumvoicesessions)), or nil if no session is active (`number`)
 
 ---
 
@@ -353,7 +353,7 @@ name, active = GetVoiceSessionInfo(session)
 
 **Arguments:**
 
-- `session` - Index of a voice session (between 1 and [`GetNumVoiceSessions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumVoiceSessions)) (`number`)
+- `session` - Index of a voice session (between 1 and [`GetNumVoiceSessions()`](Voice.md#getnumvoicesessions)) (`number`)
 
 **Returns:**
 
@@ -374,8 +374,8 @@ name, voiceActive, sessionActive, muted, squelched = GetVoiceSessionMemberInfoBy
 
 **Arguments:**
 
-- `session` - Index of a voice session (between 1 and [`GetNumVoiceSessions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumVoiceSessions)) (`number`)
-- `index` - Index of a member in the voice session (between 1 and [`GetNumVoiceSessionMembersBySessionID(session)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumVoiceSessionMembersBySessionID)) (`number`)
+- `session` - Index of a voice session (between 1 and [`GetNumVoiceSessions()`](Voice.md#getnumvoicesessions)) (`number`)
+- `index` - Index of a member in the voice session (between 1 and [`GetNumVoiceSessionMembersBySessionID(session)`](Voice.md#getnumvoicesessionmembersbysessionid)) (`number`)
 
 **Returns:**
 
@@ -421,7 +421,7 @@ isIgnoredOrMuted = IsIgnoredOrMuted("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20111212154639/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -441,7 +441,7 @@ muted = IsMuted("unit") or IsMuted("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -527,7 +527,7 @@ SetActiveVoiceChannel(index)
 
 **Arguments:**
 
-- `index` - Index of a channel in the chat display window (between 1 and [`GetNumDisplayChannels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDisplayChannels)) (`number`)
+- `index` - Index of a channel in the chat display window (between 1 and [`GetNumDisplayChannels()`](Channel.md#getnumdisplaychannels)) (`number`)
 
 ---
 
@@ -543,7 +543,7 @@ SetActiveVoiceChannelBySessionID(session)
 
 **Arguments:**
 
-- `session` - Index of a voice session (between 1 and [`GetNumVoiceSessions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumVoiceSessions)) (`number`)
+- `session` - Index of a voice session (between 1 and [`GetNumVoiceSessions()`](Voice.md#getnumvoicesessions)) (`number`)
 
 ---
 
@@ -559,7 +559,7 @@ SetSelectedMute(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the mute listing (between 1 and [`GetNumMutes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumMutes)) (`number`)
+- `index` - Index of an entry in the mute listing (between 1 and [`GetNumMutes()`](Voice.md#getnummutes)) (`number`)
 
 ---
 
@@ -746,7 +746,7 @@ deviceName = VoiceEnumerateCaptureDevices(deviceIndex)
 
 **Arguments:**
 
-- `deviceIndex` - Index of the device (between 1 and [`Sound_ChatSystem_GetNumInputDrivers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Sound_ChatSystem_GetNumInputDrivers)) (`number`)
+- `deviceIndex` - Index of the device (between 1 and [`Sound_ChatSystem_GetNumInputDrivers()`](Sound.md#sound_chatsystem_getnuminputdrivers)) (`number`)
 
 **Returns:**
 
@@ -766,7 +766,7 @@ device = VoiceEnumerateOutputDevices(deviceIndex)
 
 **Arguments:**
 
-- `deviceIndex` - Index of the device (between 1 and [`Sound_ChatSystem_GetNumOutputDrivers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Sound_ChatSystem_GetNumOutputDrivers)) (`number`)
+- `deviceIndex` - Index of the device (between 1 and [`Sound_ChatSystem_GetNumOutputDrivers()`](Sound.md#sound_chatsystem_getnumoutputdrivers)) (`number`)
 
 **Returns:**
 
@@ -786,7 +786,7 @@ index = VoiceGetCurrentCaptureDevice()
 
 **Returns:**
 
-- `index` - Index of the current voice capture device (between 1 and [`Sound_ChatSystem_GetNumInputDrivers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Sound_ChatSystem_GetNumInputDrivers)) (`number`)
+- `index` - Index of the current voice capture device (between 1 and [`Sound_ChatSystem_GetNumInputDrivers()`](Sound.md#sound_chatsystem_getnuminputdrivers)) (`number`)
 
 ---
 
@@ -802,7 +802,7 @@ index = VoiceGetCurrentOutputDevice()
 
 **Returns:**
 
-- `index` - Index of the current voice output device (between 1 and [`Sound_ChatSystem_GetNumOutputDrivers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Sound_ChatSystem_GetNumOutputDrivers)) (`number`)
+- `index` - Index of the current voice output device (between 1 and [`Sound_ChatSystem_GetNumOutputDrivers()`](Sound.md#sound_chatsystem_getnumoutputdrivers)) (`number`)
 
 ---
 
@@ -858,7 +858,7 @@ VoiceSelectCaptureDevice("deviceName")
 
 **Arguments:**
 
-- `deviceName` - Name of an audio input device, as returned from [`VoiceEnumerateCaptureDevices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/VoiceEnumerateCaptureDevices) (`string`)
+- `deviceName` - Name of an audio input device, as returned from [`VoiceEnumerateCaptureDevices()`](Sound.md#voiceenumeratecapturedevices) (`string`)
 
 ---
 
@@ -874,7 +874,7 @@ VoiceSelectOutputDevice("deviceName")
 
 **Arguments:**
 
-- `deviceName` - Name of an audio output device, as returned from [`VoiceEnumerateOutputDevices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/VoiceEnumerateOutputDevices) (`string`)
+- `deviceName` - Name of an audio output device, as returned from [`VoiceEnumerateOutputDevices()`](Sound.md#voiceenumerateoutputdevices) (`string`)
 
 ---
 

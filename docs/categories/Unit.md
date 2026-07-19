@@ -18,7 +18,7 @@ canInspect = CanInspect("unit", showError)
 
 **Arguments:**
 
-- `unit` - A unit to inspect (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to inspect (`string`, [unitID](../types/unitID.md))
 - `showError` - True to fire a [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event (causing the default UI to display an error message) if the unit cannot be inspected; otherwise false (`boolean`)
 
 **Returns:**
@@ -39,7 +39,7 @@ canInteract = CheckInteractDistance("unit", distIndex)
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `distIndex` - Number identifying one of the following action types (`number`)
   - `1` - Inspect
   - `2` - Trade
@@ -64,7 +64,7 @@ guildName, guildRankName, guildRankIndex = GetGuildInfo("unit") or GetGuildInfo(
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -87,7 +87,7 @@ muteStatus = GetMuteStatus("unit" [, "channel"]) or GetMuteStatus("name" [, "cha
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a character to query (`string`)
 - `channel` - Name of a voice channel (`string`)
 
@@ -109,7 +109,7 @@ class, classFilename, race, raceFilename, sex, name, realm = GetPlayerInfoByGUID
 
 **Arguments:**
 
-- `guid` - Globally unique identifier of a player unit (`string`, [guid](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#guid))
+- `guid` - Globally unique identifier of a player unit (`string`, [guid](../types/guid.md))
 
 **Returns:**
 
@@ -138,7 +138,7 @@ nameString = GetUnitName("unit", showServerName)
 
 **Arguments:**
 
-- `unit` - Unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to query (`string`, [unitID](../types/unitID.md))
 - `showServerName` - True to include the server name in the return value if the unit is not from the same server as the player; false to only include a short label in such circumstances (`boolean`)
 
 **Returns:**
@@ -181,7 +181,7 @@ isIgnoredOrMuted = IsIgnoredOrMuted("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20111212154639/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -201,7 +201,7 @@ muted = IsMuted("unit") or IsMuted("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -244,7 +244,7 @@ SetPortraitTexture(texture, "unit")
 **Arguments:**
 
 - `texture` - A Texture object (`table`)
-- `unit` - A unit for which to display a portrait (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit for which to display a portrait (`string`, [unitID](../types/unitID.md))
 
 ---
 
@@ -260,7 +260,7 @@ inCombat = UnitAffectingCombat("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -280,7 +280,7 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `index` - Index of an aura to query (`number`)
 - `name` - Name of an aura to query (`string`)
 - `rank` - Secondary text of an aura to query (often a rank; e.g. "Rank 7") (`string`)
@@ -304,8 +304,8 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
   - `Magic`
   - `Poison`
 - `duration` - Total duration of the aura (in seconds). Zero if the unit is phased or out of range. (`number`)
-- `expires` - Time at which the aura will expire; can be compared to [GetTime()](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
-- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `expires` - Time at which the aura will expire; can be compared to [GetTime()](Utility.md#gettime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
+- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](../types/unitID.md))
 - `isStealable` - true if the aura can be transferred to a player using the Spellsteal spell (`boolean`)
 - `nameplateShowPersonal` - true if the aura should be visible above nameplates of affected targets, but only for the player that casted it (`boolean`)
 - `spellID` - spellID of the aura (`number`)
@@ -322,7 +322,7 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
 
 ## UnitBuff
 
-Returns information about a buff on a unit. This function is an alias for [`UnitAura()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitAura) with a built-in `HELPFUL` filter (which cannot be removed or negated with the `HARMFUL` filter).
+Returns information about a buff on a unit. This function is an alias for [`UnitAura()`](Buff.md#unitaura) with a built-in `HELPFUL` filter (which cannot be removed or negated with the `HARMFUL` filter).
 
 **Signature:**
 
@@ -332,7 +332,7 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `index` - Index of an aura to query (`number`)
 - `name` - Name of an aura to query (`string`)
 - `rank` - Secondary text of an aura to query (often a rank; e.g. "Rank 7") (`string`)
@@ -354,8 +354,8 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
   - `Magic`
   - `Poison`
 - `duration` - Total duration of the aura (in seconds). Zero if the unit is phased or out of range. (`number`)
-- `expires` - Time at which the aura will expire; can be compared to [GetTime()](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
-- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `expires` - Time at which the aura will expire; can be compared to [GetTime()](Utility.md#gettime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
+- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](../types/unitID.md))
 - `isStealable` - true if the aura can be transferred to a player using the Spellsteal spell (`boolean`)
 - `nameplateShowPersonal` - true if the aura should be visible above nameplates of affected targets, but only for the player that casted it (`boolean`)
 - `spellID` - spellID of the aura (`number`)
@@ -382,8 +382,8 @@ canAssist = UnitCanAssist("unit", "unit")
 
 **Arguments:**
 
-- `unit` - A unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `unit` - Another unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit (`string`, [unitID](../types/unitID.md))
+- `unit` - Another unit (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -403,8 +403,8 @@ canAttack = UnitCanAttack("unit", "unit")
 
 **Arguments:**
 
-- `unit` - A unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `unit` - Another unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit (`string`, [unitID](../types/unitID.md))
+- `unit` - Another unit (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -424,8 +424,8 @@ canCooperate = UnitCanCooperate("unit", "unit")
 
 **Arguments:**
 
-- `unit` - A unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `unit` - Another unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit (`string`, [unitID](../types/unitID.md))
+- `unit` - Another unit (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -445,7 +445,7 @@ name, subText, text, texture, startTime, endTime, isTradeSkill, castID, notInter
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -453,8 +453,8 @@ name, subText, text, texture, startTime, endTime, isTradeSkill, castID, notInter
 - `subText` - Secondary text associated with the spell (e.g."Rank 5", "Racial", etc.) (`string`)
 - `text` - Text to be displayed on a casting bar (`string`)
 - `texture` - Path to an icon texture for the spell (`string`)
-- `startTime` - Time at which the cast was started (in milliseconds; can be compared to [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) `* 1000`) (`number`)
-- `endTime` - Time at which the cast will finish (in milliseconds; can be compared to [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) `* 1000`) (`number`)
+- `startTime` - Time at which the cast was started (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
+- `endTime` - Time at which the cast will finish (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
 - `isTradeSkill` - 1 if the spell being cast is a trade skill recipe; otherwise nil (`1nil`)
 - `castID` - Reference number for this spell; matches the 4th argument of `UNIT_SPELLCAST_*` events for the same spellcast (`number`)
 - `notInterruptible` - 1 if the spell can be interrupted; otherwise nil. See the [`UNIT_SPELLCAST_NOT_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_NOT_INTERRUPTIBLE) and [`UNIT_SPELLCAST_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_INTERRUPTIBLE) events for changes to this status. (`1nil`)
@@ -473,7 +473,7 @@ name, subText, text, texture, startTime, endTime, isTradeSkill, notInterruptible
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -481,8 +481,8 @@ name, subText, text, texture, startTime, endTime, isTradeSkill, notInterruptible
 - `subText` - Secondary text associated with the spell (e.g."Rank 5", "Racial", etc.) (`string`)
 - `text` - Text to be displayed on a casting bar (`string`)
 - `texture` - Path to an icon texture for the spell (`string`)
-- `startTime` - Time at which the cast was started (in milliseconds; can be compared to [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) `* 1000`) (`number`)
-- `endTime` - Time at which the cast will finish (in milliseconds; can be compared to [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) `* 1000`) (`number`)
+- `startTime` - Time at which the cast was started (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
+- `endTime` - Time at which the cast will finish (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
 - `isTradeSkill` - 1 if the spell being cast is a trade skill recipe; otherwise nil (`1nil`)
 - `notInterruptible` - Indicates that the spell cannot be interrupted, [`UNIT_SPELLCAST_NOT_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_NOT_INTERRUPTIBLE) and [`UNIT_SPELLCAST_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_INTERRUPTIBLE) are fired to indicate changes in the interruptible status. (`boolean`)
 
@@ -495,7 +495,7 @@ Returns a unit's class. The second return (`classFileName`) can be used for loca
 - `RAID_CLASS_COLORS` provides a standard color for each class (as seen in the default who, guild, calendar, and raid UIs)
 - `CLASS_ICON_TCOORDS` provides coordinates to locate each class' icon within the "Interface\Glues\CharacterCreate\UI-CharacterCreate-Classes" texture
 
-For non-player units, the first return (`class`) will be the unit's name; to always get a localized class name regardless of unit type, use [`UnitClassBase`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitClassBase) instead.
+For non-player units, the first return (`class`) will be the unit's name; to always get a localized class name regardless of unit type, use [`UnitClassBase`](Unit.md#unitclassbase) instead.
 
 **Signature:**
 
@@ -505,7 +505,7 @@ class, classFileName, classIndex = UnitClass("unit") or UnitClass("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -523,7 +523,7 @@ Returns a unit's class. The second return (`classFileName`) can be used for loca
 - `RAID_CLASS_COLORS` provides a standard color for each class (as seen in the default who, guild, calendar, and raid UIs)
 - `CLASS_ICON_TCOORDS` provides coordinates to locate each class' icon within the "Interface\Glues\CharacterCreate\UI-CharacterCreate-Classes" texture
 
-Unlike [`UnitClass`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitClass), this function returns the same values for NPCs as for players.
+Unlike [`UnitClass`](Unit.md#unitclass), this function returns the same values for NPCs as for players.
 
 **Signature:**
 
@@ -533,7 +533,7 @@ class, classFileName = UnitClassBase("unit") or UnitClassBase("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -555,7 +555,7 @@ classification = UnitClassification("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -582,7 +582,7 @@ family = UnitCreatureFamily("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -602,7 +602,7 @@ type = UnitCreatureType("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -612,7 +612,7 @@ type = UnitCreatureType("unit")
 
 ## UnitDebuff
 
-Returns information about a debuff on a unit. This function is an alias for [`UnitAura()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitAura) with a built-in `HARMFUL` filter (which cannot be removed or negated with the `HELPFUL` filter).
+Returns information about a debuff on a unit. This function is an alias for [`UnitAura()`](Buff.md#unitaura) with a built-in `HARMFUL` filter (which cannot be removed or negated with the `HELPFUL` filter).
 
 **Signature:**
 
@@ -622,7 +622,7 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `index` - Index of an aura to query (`number`)
 - `name` - Name of an aura to query (`string`)
 - `rank` - Secondary text of an aura to query (often a rank; e.g. "Rank 7") (`string`)
@@ -644,8 +644,8 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
   - `Magic`
   - `Poison`
 - `duration` - Total duration of the aura (in seconds). Zero if the unit is phased or out of range. (`number`)
-- `expires` - Time at which the aura will expire; can be compared to [GetTime()](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
-- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `expires` - Time at which the aura will expire; can be compared to [GetTime()](Utility.md#gettime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
+- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](../types/unitID.md))
 - `isStealable` - true if the aura can be transferred to a player using the Spellsteal spell (`boolean`)
 - `nameplateShowPersonal` - true if the aura should be visible above nameplates of affected targets, but only for the player that casted it (`boolean`)
 - `spellID` - spellID of the aura (`number`)
@@ -672,7 +672,7 @@ exists = UnitExists("unit") or UnitExists("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, `npc`, and party/raid members (`string`)
 
 **Returns:**
@@ -693,7 +693,7 @@ factionGroup, factionName = UnitFactionGroup("unit") or UnitFactionGroup("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -715,11 +715,11 @@ guid = UnitGUID("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
-- `guid` - The unit's GUID (`string`, [guid](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#guid))
+- `guid` - The unit's GUID (`string`, [guid](../types/guid.md))
 
 ---
 
@@ -735,7 +735,7 @@ hasRelic = UnitHasRelicSlot("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -755,7 +755,7 @@ health = UnitHealth("unit") or UnitHealth("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -776,7 +776,7 @@ maxValue = UnitHealthMax("unit") or UnitHealthMax("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -797,11 +797,11 @@ raidNum = UnitInBattleground("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
-- `raidNum` - Numeric portion of the unit's `raid` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID) (e.g. 13 for `raid13`) (`number`)
+- `raidNum` - Numeric portion of the unit's `raid` [`unitID`](../types/unitID.md) (e.g. 13 for `raid13`) (`number`)
 
 ---
 
@@ -817,7 +817,7 @@ inParty = UnitInParty("unit") or UnitInParty("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -838,11 +838,11 @@ inRaid = UnitInRaid("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
-- `inRaid` - Index of the unit in the raid (matches the numeric part of the unit's `raid` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID) minus 1; e.g. returns 0 for `raid1`, 12 for `raid13`, etc) (`number`)
+- `inRaid` - Index of the unit in the raid (matches the numeric part of the unit's `raid` [`unitID`](../types/unitID.md) minus 1; e.g. returns 0 for `raid1`, 12 for `raid13`, etc) (`number`)
 
 ---
 
@@ -860,7 +860,7 @@ inRange = UnitInRange("unit") or UnitInRange("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for party/raid members and their pets (`string`)
 
 **Returns:**
@@ -881,7 +881,7 @@ isAFK = UnitIsAFK("unit") or UnitIsAFK("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -902,7 +902,7 @@ isCharmed = UnitIsCharmed("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -922,7 +922,7 @@ isConnected = UnitIsConnected("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -942,7 +942,7 @@ isControlling = UnitIsControlling("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -962,7 +962,7 @@ isCorpse = UnitIsCorpse("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -982,7 +982,7 @@ isDND = UnitIsDND("unit") or UnitIsDND("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -993,7 +993,7 @@ isDND = UnitIsDND("unit") or UnitIsDND("name")
 
 ## UnitIsDead
 
-Returns whether a unit is dead. Only returns 1 while the unit is dead and has not yet released his or her spirit. See [`UnitIsGhost()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitIsGhost) for after the unit has released.
+Returns whether a unit is dead. Only returns 1 while the unit is dead and has not yet released his or her spirit. See [`UnitIsGhost()`](Unit.md#unitisghost) for after the unit has released.
 
 **Signature:**
 
@@ -1003,7 +1003,7 @@ isDead = UnitIsDead("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1023,7 +1023,7 @@ isDeadOrGhost = UnitIsDeadOrGhost("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1043,8 +1043,8 @@ isEnemy = UnitIsEnemy("unit", "unit")
 
 **Arguments:**
 
-- `unit` - A unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `unit` - Another unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit (`string`, [unitID](../types/unitID.md))
+- `unit` - Another unit (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1064,7 +1064,7 @@ isFeign = UnitIsFeignDeath("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1084,8 +1084,8 @@ isFriends = UnitIsFriend("unit", "unit")
 
 **Arguments:**
 
-- `unit` - A unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `unit` - Another unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit (`string`, [unitID](../types/unitID.md))
+- `unit` - Another unit (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1105,7 +1105,7 @@ isGhost = UnitIsGhost("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1125,7 +1125,7 @@ inGuild = UnitIsInMyGuild("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1145,7 +1145,7 @@ isPVP = UnitIsPVP("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1165,7 +1165,7 @@ isFreeForAll = UnitIsPVPFreeForAll("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1185,7 +1185,7 @@ state = UnitIsPVPSanctuary("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1205,7 +1205,7 @@ leader = UnitIsPartyLeader("unit") or UnitIsPartyLeader("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -1226,7 +1226,7 @@ isPlayer = UnitIsPlayer("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1246,7 +1246,7 @@ isPossessed = UnitIsPossessed("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1266,7 +1266,7 @@ leader = UnitIsRaidOfficer("unit") or UnitIsRaidOfficer("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -1287,8 +1287,8 @@ isSame = UnitIsSameServer("unit", "unit")
 
 **Arguments:**
 
-- `unit` - A unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `unit` - Another unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit (`string`, [unitID](../types/unitID.md))
+- `unit` - Another unit (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1326,7 +1326,7 @@ allTapped = UnitIsTappedByAllThreatList("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1366,7 +1366,7 @@ isTrivial = UnitIsTrivial("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1376,7 +1376,7 @@ isTrivial = UnitIsTrivial("unit")
 
 ## UnitIsUnit
 
-Returns whether two unit references are to the same unit. Useful for determining whether a composite [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID) (such as `raid19target`) also refers to a basic `unitID`; see example.
+Returns whether two unit references are to the same unit. Useful for determining whether a composite [`unitID`](../types/unitID.md) (such as `raid19target`) also refers to a basic `unitID`; see example.
 
 **Signature:**
 
@@ -1386,8 +1386,8 @@ isSame = UnitIsUnit("unit", "unit")
 
 **Arguments:**
 
-- `unit` - A unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `unit` - Another unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit (`string`, [unitID](../types/unitID.md))
+- `unit` - Another unit (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1407,7 +1407,7 @@ isVisible = UnitIsVisible("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1427,7 +1427,7 @@ level = UnitLevel("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1459,7 +1459,7 @@ name, realm = UnitName("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1480,7 +1480,7 @@ onTaxi = UnitOnTaxi("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1500,7 +1500,7 @@ name = UnitPVPName("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1520,7 +1520,7 @@ rank = UnitPVPRank("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1540,7 +1540,7 @@ isPlayer = UnitPlayerControlled("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1560,7 +1560,7 @@ inParty = UnitPlayerOrPetInParty("unit") or UnitPlayerOrPetInParty("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -1581,7 +1581,7 @@ inParty = UnitPlayerOrPetInRaid("unit") or UnitPlayerOrPetInRaid("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -1602,8 +1602,8 @@ power = UnitPower("unitID" [, powerType])
 
 **Arguments:**
 
-- `unitID` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `powerType` - A specific power type to query (`number`, [powerType](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#powerType))
+- `unitID` - A unit to query (`string`, [unitID](../types/unitID.md))
+- `powerType` - A specific power type to query (`number`, [powerType](../types/powerType.md))
 
 **Returns:**
 
@@ -1624,8 +1624,8 @@ maxValue = UnitPowerMax("unitID" [, powerType])
 
 **Arguments:**
 
-- `unitID` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `powerType` - Specific power type to query for the unit (`number`, [powerType](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#powerType))
+- `unitID` - A unit to query (`string`, [unitID](../types/unitID.md))
+- `powerType` - Specific power type to query for the unit (`number`, [powerType](../types/powerType.md))
 
 **Returns:**
 
@@ -1645,7 +1645,7 @@ powerType, powerToken, altR, altG, altB = UnitPowerType("unit") or UnitPowerType
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -1675,7 +1675,7 @@ race, fileName = UnitRace("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1696,8 +1696,8 @@ reaction = UnitReaction("unit", "unit")
 
 **Arguments:**
 
-- `unit` - A unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `unit` - Another unit (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit (`string`, [unitID](../types/unitID.md))
+- `unit` - Another unit (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -1725,7 +1725,7 @@ red, green, blue, alpha = UnitSelectionColor("unit") or UnitSelectionColor("name
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -1749,7 +1749,7 @@ gender = UnitSex("unit") or UnitSex("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -1773,7 +1773,7 @@ usingVehicle = UnitUsingVehicle("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 

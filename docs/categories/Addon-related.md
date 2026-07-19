@@ -8,7 +8,7 @@
 
 ## DisableAddOn
 
-Marks an addon as disabled. The addon will remain active until the player logs out and back in or reloads the UI (see [`ReloadUI()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ReloadUI)). Changes to the enabled/disabled state of addons while in-game are saved on a per-character basis.
+Marks an addon as disabled. The addon will remain active until the player logs out and back in or reloads the UI (see [`ReloadUI()`](Client control and information.md#reloadui-hardware)). Changes to the enabled/disabled state of addons while in-game are saved on a per-character basis.
 
 **Signature:**
 
@@ -19,13 +19,13 @@ DisableAddOn("name") or DisableAddOn(index)
 **Arguments:**
 
 - `name` - Name of an addon (name of the addon's folder and TOC file, not the Title found in the TOC) (`string`)
-- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAddOns)) (`number`)
+- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](Addon-related.md#getnumaddons)) (`number`)
 
 ---
 
 ## DisableAllAddOns
 
-Marks all addons as disabled. Addons will remain active until the player logs out and back in or reloads the UI (see [`ReloadUI()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ReloadUI)).
+Marks all addons as disabled. Addons will remain active until the player logs out and back in or reloads the UI (see [`ReloadUI()`](Client control and information.md#reloadui-hardware)).
 
 Changes to the enabled/disabled state of addons while in-game are saved on a per-character basis.
 
@@ -39,7 +39,7 @@ DisableAllAddOns()
 
 ## EnableAddOn
 
-Marks an addon as enabled. The addon will remain inactive until the player logs out and back in or reloads the UI (see [`ReloadUI()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ReloadUI)).
+Marks an addon as enabled. The addon will remain inactive until the player logs out and back in or reloads the UI (see [`ReloadUI()`](Client control and information.md#reloadui-hardware)).
 
 Changes to the enabled/disabled state of addons while in-game are saved on a per-character basis.
 
@@ -58,7 +58,7 @@ EnableAddOn(index) or EnableAddOn("name")
 
 ## EnableAllAddOns
 
-Marks all addons as enabled. Addons will remain inactive until the player logs out and back in or reloads the UI (see [`ReloadUI()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ReloadUI)).
+Marks all addons as enabled. Addons will remain inactive until the player logs out and back in or reloads the UI (see [`ReloadUI()`](Client control and information.md#reloadui-hardware)).
 
 Changes to the enabled/disabled state of addons while in-game are saved on a per-character basis.
 
@@ -83,7 +83,7 @@ Returns a list of addons a given addon is dependent upon
 **Arguments:**
 
 - `name` - Name of an addon (name of the addon's folder and TOC file, not the Title found in the TOC) (`string`)
-- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAddOns)) (`number`)
+- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](Addon-related.md#getnumaddons)) (`number`)
 
 **Returns:**
 
@@ -219,7 +219,7 @@ isLod = IsAddOnLoadOnDemand("name") or IsAddOnLoadOnDemand(index)
 **Arguments:**
 
 - `name` - Name of an addon (name of the addon's folder and TOC file, not the Title found in the TOC) (`string`)
-- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAddOns)) (`number`)
+- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](Addon-related.md#getnumaddons)) (`number`)
 
 **Returns:**
 
@@ -240,7 +240,7 @@ loaded = IsAddOnLoaded("name") or IsAddOnLoaded(index)
 **Arguments:**
 
 - `name` - Name of an addon (name of the addon's folder and TOC file, not the Title found in the TOC) (`string`)
-- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](https://web.archive.org/web/20100105223616/http://wowprogramming.com/docs/api/GetNumAddOns)) (`number`)
+- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](Addon-related.md#getnumaddons)) (`number`)
 
 **Returns:**
 
@@ -261,7 +261,7 @@ loaded, reason = LoadAddOn("name") or LoadAddOn(index)
 **Arguments:**
 
 - `name` - Name of an addon (name of the addon's folder and TOC file, not the Title found in the TOC) (`string`)
-- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAddOns)) (`number`)
+- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](Addon-related.md#getnumaddons)) (`number`)
 
 **Returns:**
 
@@ -302,7 +302,7 @@ ResetDisabledAddOns()
 
 Sends a chat-like message receivable by other addons. Allows for client-to-client addon communication.
 
-Unlike with [`SendChatMessage`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SendChatMessage), messages sent via `SendAddonMessage`:
+Unlike with [`SendChatMessage`](Chat.md#sendchatmessage-server), messages sent via `SendAddonMessage`:
 
 - do not appear in receiving players' chat windows (unless an addon explicitly prints them)
 - are not subject to strict server-side spam filtering/throttling (sending too many messages at once can still disconnect the user)

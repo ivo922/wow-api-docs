@@ -30,7 +30,7 @@ CastShapeshiftForm(index)
 
 **Arguments:**
 
-- `index` - Index of an ability on the stance/shapeshift bar (between 1 and [`GetNumShapeshiftForms()`](https://web.archive.org/web/20100105231313/http://wowprogramming.com/docs/api/GetNumShapeshiftForms)) (`number`)
+- `index` - Index of an ability on the stance/shapeshift bar (between 1 and [`GetNumShapeshiftForms()`](StanceShapeshift.md#getnumshapeshiftforms)) (`number`)
 
 ---
 
@@ -62,7 +62,7 @@ index = GetShapeshiftForm()
 
 **Returns:**
 
-- `index` - Index of the active ability on the stance/shapeshift bar (between 1 and [`GetNumShapeshiftForms()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumShapeshiftForms)) (`number`)
+- `index` - Index of the active ability on the stance/shapeshift bar (between 1 and [`GetNumShapeshiftForms()`](StanceShapeshift.md#getnumshapeshiftforms)) (`number`)
 
 ---
 
@@ -78,11 +78,11 @@ start, duration, enable = GetShapeshiftFormCooldown(index)
 
 **Arguments:**
 
-- `index` - Index of an ability on the stance/shapeshift bar (between 1 and [`GetNumShapeshiftForms()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumShapeshiftForms)) (`number`)
+- `index` - Index of an ability on the stance/shapeshift bar (between 1 and [`GetNumShapeshiftForms()`](StanceShapeshift.md#getnumshapeshiftforms)) (`number`)
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the ability is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the ability is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the ability is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the ability is ready.) (`number`)
 

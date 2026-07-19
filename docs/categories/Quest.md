@@ -8,7 +8,7 @@
 
 ## AbandonQuest `confirmation`
 
-Confirms abandoning a quest. Use [`SetAbandonQuest()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetAbandonQuest) first to select the quest to abandon.
+Confirms abandoning a quest. Use [`SetAbandonQuest()`](Quest.md#setabandonquest) first to select the quest to abandon.
 
 **Signature:**
 
@@ -40,7 +40,7 @@ AddQuestWatch(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 
@@ -68,7 +68,7 @@ CollapseQuestHeader(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a header in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20111212152310/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)), or 0 to collapse all headers (`number`)
+- `questIndex` - Index of a header in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)), or 0 to collapse all headers (`number`)
 
 ---
 
@@ -76,7 +76,7 @@ CollapseQuestHeader(questIndex)
 
 Begins turning in a quest to a questgiver. Usable following the [`QUEST_PROGRESS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_PROGRESS) event in which it is determined whether the player can complete the quest.
 
-Does not complete the quest turn-in process; after calling this function, the [`QUEST_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_COMPLETE) event fires as the questgiver presents rewards (or sometimes only closure to the quest narrative); following that event, the [`GetQuestReward()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetQuestReward) function finishes the turn-in.
+Does not complete the quest turn-in process; after calling this function, the [`QUEST_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_COMPLETE) event fires as the questgiver presents rewards (or sometimes only closure to the quest narrative); following that event, the [`GetQuestReward()`](Quest.md#getquestreward) function finishes the turn-in.
 
 **Signature:**
 
@@ -122,13 +122,13 @@ ExpandQuestHeader(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a header in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)), or 0 to expand all headers (`number`)
+- `questIndex` - Index of a header in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)), or 0 to expand all headers (`number`)
 
 ---
 
 ## GetAbandonQuestItems
 
-Returns information about items that would be destroyed by abandoning a quest. Usable after calling [`SetAbandonQuest()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetAbandonQuest) but before calling [`AbandonQuest()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/AbandonQuest).
+Returns information about items that would be destroyed by abandoning a quest. Usable after calling [`SetAbandonQuest()`](Quest.md#setabandonquest) but before calling [`AbandonQuest()`](Quest.md#abandonquest-confirmation).
 
 **Signature:**
 
@@ -144,7 +144,7 @@ items = GetAbandonQuestItems()
 
 ## GetAbandonQuestName
 
-Returns the name of the quest being abandoned. Usable after calling [`SetAbandonQuest()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetAbandonQuest) but before calling [`AbandonQuest()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/AbandonQuest).
+Returns the name of the quest being abandoned. Usable after calling [`SetAbandonQuest()`](Quest.md#setabandonquest) but before calling [`AbandonQuest()`](Quest.md#abandonquest-confirmation).
 
 **Signature:**
 
@@ -162,7 +162,7 @@ name = GetAbandonQuestName()
 
 Returns the level of a quest which can be turned in to the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
 
-Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipActiveQuests) instead of this function.
+Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests) instead of this function.
 
 **Signature:**
 
@@ -172,7 +172,7 @@ level = GetActiveLevel(index)
 
 **Arguments:**
 
-- `index` - Index of a quest which can be turned in to the current Quest NPC (between 1 and [`GetNumActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumActiveQuests)) (`number`)
+- `index` - Index of a quest which can be turned in to the current Quest NPC (between 1 and [`GetNumActiveQuests()`](Quest.md#getnumactivequests)) (`number`)
 
 **Returns:**
 
@@ -184,7 +184,7 @@ level = GetActiveLevel(index)
 
 Returns the name of a quest which can be turned in to the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
 
-Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipActiveQuests) instead of this function.
+Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests) instead of this function.
 
 **Signature:**
 
@@ -194,7 +194,7 @@ title = GetActiveTitle(index)
 
 **Arguments:**
 
-- `index` - Index of a quest which can be turned in to the current Quest NPC (between 1 and [`GetNumActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumActiveQuests)) (`number`)
+- `index` - Index of a quest which can be turned in to the current Quest NPC (between 1 and [`GetNumActiveQuests()`](Quest.md#getnumactivequests)) (`number`)
 
 **Returns:**
 
@@ -206,7 +206,7 @@ title = GetActiveTitle(index)
 
 Returns the level of a quest available from the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
 
-Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipAvailableQuests) instead of this function.
+Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](NPC Gossip Dialog.md#getgossipavailablequests) instead of this function.
 
 **Signature:**
 
@@ -216,7 +216,7 @@ level = GetAvailableLevel(index)
 
 **Arguments:**
 
-- `index` - Index of a quest available from the current Quest NPC (between 1 and [`GetNumAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAvailableQuests)) (`number`)
+- `index` - Index of a quest available from the current Quest NPC (between 1 and [`GetNumAvailableQuests()`](Quest.md#getnumavailablequests)) (`number`)
 
 **Returns:**
 
@@ -228,7 +228,7 @@ level = GetAvailableLevel(index)
 
 Returns the name of a quest available from the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
 
-Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipAvailableQuests) instead of this function.
+Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](NPC Gossip Dialog.md#getgossipavailablequests) instead of this function.
 
 **Signature:**
 
@@ -238,7 +238,7 @@ title = GetAvailableTitle(index)
 
 **Arguments:**
 
-- `index` - Index of a quest available from the current Quest NPC (between 1 and [`GetNumAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAvailableQuests)) (`number`)
+- `index` - Index of a quest available from the current Quest NPC (between 1 and [`GetNumAvailableQuests()`](Quest.md#getnumavailablequests)) (`number`)
 
 **Returns:**
 
@@ -283,7 +283,7 @@ name, level, isTrivial, ... = GetGossipActiveQuests()
 
 ## GetGossipAvailableQuests
 
-Returns a list of quests available from the current Gossip NPC. For quests which can be turned in to the NPC, see [`GetGossipActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipActiveQuests).
+Returns a list of quests available from the current Gossip NPC. For quests which can be turned in to the NPC, see [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests).
 
 **Signature:**
 
@@ -304,7 +304,7 @@ name, level, isTrivial, isDaily, isRepeatable, ... = GetGossipAvailableQuests()
 
 ## GetGreetingText
 
-Returns the greeting text displayed for quest NPCs with multiple quests. Not used often; most quest NPCs offering multiple quests (and/or other options) use the Gossip functions to provide a greeting (see [`GetGossipText()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipText)).
+Returns the greeting text displayed for quest NPCs with multiple quests. Not used often; most quest NPCs offering multiple quests (and/or other options) use the Gossip functions to provide a greeting (see [`GetGossipText()`](NPC Gossip Dialog.md#getgossiptext)).
 
 **Signature:**
 
@@ -338,7 +338,7 @@ max = GetMaxDailyQuests()
 
 Returns the number of quests which can be turned in to the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
 
-Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipActiveQuests) instead of this function.
+Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests) instead of this function.
 
 **Signature:**
 
@@ -356,7 +356,7 @@ numActiveQuests = GetNumActiveQuests()
 
 Returns the number quests available from the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
 
-Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipAvailableQuests) instead of this function.
+Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](NPC Gossip Dialog.md#getgossipavailablequests) instead of this function.
 
 **Signature:**
 
@@ -446,7 +446,7 @@ numObjectives = GetNumQuestLeaderBoards([questIndex])
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)); if omitted, defaults to the selected quest (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)); if omitted, defaults to the selected quest (`number`)
 
 **Returns:**
 
@@ -456,7 +456,7 @@ numObjectives = GetNumQuestLeaderBoards([questIndex])
 
 ## GetNumQuestLogChoices
 
-Returns the number of available item reward choices for the selected quest in the quest log. This function refers to quest rewards for which the player is allowed to choose one item from among several; for items always awarded upon quest completion, see [GetNumQuestLogRewards](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogRewards).
+Returns the number of available item reward choices for the selected quest in the quest log. This function refers to quest rewards for which the player is allowed to choose one item from among several; for items always awarded upon quest completion, see [GetNumQuestLogRewards](Quest.md#getnumquestlogrewards).
 
 **Signature:**
 
@@ -489,7 +489,7 @@ numEntries, numQuests = GetNumQuestLogEntries()
 
 ## GetNumQuestLogRewards
 
-Returns the number of item rewards for the selected quest in the quest log. This function refers to items always awarded upon quest completion; for quest rewards for which the player is allowed to choose one item from among several, see [GetNumQuestLogChoices](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogChoices).
+Returns the number of item rewards for the selected quest in the quest log. This function refers to items always awarded upon quest completion; for quest rewards for which the player is allowed to choose one item from among several, see [GetNumQuestLogChoices](Quest.md#getnumquestlogchoices).
 
 **Signature:**
 
@@ -679,11 +679,11 @@ questIndex = GetQuestIndexForTimer(index)
 
 **Arguments:**
 
-- `index` - Index of a timer (in the list returned by [`GetQuestTimers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetQuestTimers)) (`number`)
+- `index` - Index of a timer (in the list returned by [`GetQuestTimers()`](Quest.md#getquesttimers)) (`number`)
 
 **Returns:**
 
-- `questIndex` - Index of the quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of the quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 
@@ -699,11 +699,11 @@ questIndex = GetQuestIndexForWatch(index)
 
 **Arguments:**
 
-- `index` - Index of a quest in the list of quests on the objectives tracker (between 1 and [`GetNumQuestWatches()`](https://web.archive.org/web/20111212163624/http://wowprogramming.com/docs/api/GetNumQuestWatches)) (`number`)
+- `index` - Index of a quest in the list of quests on the objectives tracker (between 1 and [`GetNumQuestWatches()`](Objectives tracking.md#getnumquestwatches)) (`number`)
 
 **Returns:**
 
-- `questIndex` - Index of the quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20111212163624/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of the quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 
@@ -778,17 +778,17 @@ link = GetQuestLink(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the quest (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the quest (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
 ## GetQuestLogChoiceInfo
 
-Returns information about available item rewards for the selected quest in the quest log. This function refers to quest rewards for which the player is allowed to choose one item from among several; for items always awarded upon quest completion, see [GetQuestLogRewardInfo](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetQuestLogRewardInfo).
+Returns information about available item rewards for the selected quest in the quest log. This function refers to quest rewards for which the player is allowed to choose one item from among several; for items always awarded upon quest completion, see [GetQuestLogRewardInfo](Quest.md#getquestlogrewardinfo).
 
 **Signature:**
 
@@ -805,7 +805,7 @@ name, texture, numItems, quality, isUsable = GetQuestLogChoiceInfo(index)
 - `name` - Name of the item (`string`)
 - `texture` - Path to an icon texture for the item (`string`)
 - `numItems` - Number of items in the stack (`number`)
-- `quality` - Quality of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality of the item (`number`, [itemQuality](../types/itemQuality.md))
 - `isUsable` - 1 if the player can use or equip the item; otherwise nil (`1nil`)
 
 ---
@@ -873,8 +873,8 @@ text, type, finished = GetQuestLogLeaderBoard(objective [, questIndex])
 
 **Arguments:**
 
-- `objective` - Index of a quest objective (between 1 and [`GetNumQuestLeaderBoards()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLeaderBoards)) (`number`)
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)); if omitted, defaults to the selected quest (`number`)
+- `objective` - Index of a quest objective (between 1 and [`GetNumQuestLeaderBoards()`](Quest.md#getnumquestleaderboards)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)); if omitted, defaults to the selected quest (`number`)
 
 **Returns:**
 
@@ -946,7 +946,7 @@ Returns the honor reward for the selected quest in the quest log
 
 ## GetQuestLogRewardInfo
 
-Returns information about item rewards for the selected quest in the quest log. This function refers to items always awarded upon quest completion; for quest rewards for which the player is allowed to choose one item from among several, see [GetQuestLogChoiceInfo](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetQuestLogChoiceInfo).
+Returns information about item rewards for the selected quest in the quest log. This function refers to items always awarded upon quest completion; for quest rewards for which the player is allowed to choose one item from among several, see [GetQuestLogChoiceInfo](Quest.md#getquestlogchoiceinfo).
 
 **Signature:**
 
@@ -963,7 +963,7 @@ name, texture, numItems, quality, isUsable = GetQuestLogRewardInfo(index)
 - `name` - Name of the item (`string`)
 - `texture` - Path to an icon texture for the item (`string`)
 - `numItems` - Number of items in the stack (`number`)
-- `quality` - Quality of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality of the item (`number`, [itemQuality](../types/itemQuality.md))
 - `isUsable` - 1 if the player can use or equip the item; otherwise nil (`1nil`)
 
 ---
@@ -1049,7 +1049,7 @@ questIndex = GetQuestLogSelection()
 
 **Returns:**
 
-- `questIndex` - Index of the selected quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of the selected quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 
@@ -1065,11 +1065,11 @@ start, duration, enable = GetQuestLogSpecialItemCooldown(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the item is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the item is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the item is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the item is ready.) (`number`)
 
@@ -1087,11 +1087,11 @@ link, icon, charges = GetQuestLogSpecialItemInfo(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 - `icon` - Path to an icon texture for the item (`string`)
 - `charges` - Number of times the item can be used, or 0 if no limit (`number`)
 
@@ -1109,7 +1109,7 @@ link = GetQuestLogSpellLink()
 
 **Returns:**
 
-- `link` - A hyperlink for the spell or tradeskill recipe (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the spell or tradeskill recipe (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -1141,7 +1141,7 @@ questLogTitleText, level, questTag, suggestedGroup, isHeader, isCollapsed, isCom
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
@@ -1218,7 +1218,7 @@ GetQuestReward(choice)
 
 **Arguments:**
 
-- `choice` - Index of a quest reward choice (between 1 and [`GetNumQuestChoices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestChoices)), or nil if the quest does not offer a choice of item rewards (`number`)
+- `choice` - Index of a quest reward choice (between 1 and [`GetNumQuestChoices()`](Quest.md#getnumquestchoices)), or nil if the quest does not offer a choice of item rewards (`number`)
 
 ---
 
@@ -1234,7 +1234,7 @@ link = GetQuestSpellLink()
 
 **Returns:**
 
-- `link` - A hyperlink for the spell or tradeskill recipe (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the spell or tradeskill recipe (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -1272,7 +1272,7 @@ Returns a list of the times remaining for any active timed quests
 
 ## GetQuestsCompleted
 
-Gets a table containing the quests the player has completed. This function will only return data after [QueryQuestsCompleted()](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/QueryQuestsCompleted) has been called and the [`QUEST_QUERY_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_QUERY_COMPLETE) event has fired. The keys in the returned table are the numeric questIds, with a value of true for each set key.
+Gets a table containing the quests the player has completed. This function will only return data after [QueryQuestsCompleted()](Quest.md#queryquestscompleted-server) has been called and the [`QUEST_QUERY_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_QUERY_COMPLETE) event has fired. The keys in the returned table are the numeric questIds, with a value of true for each set key.
 
 **Signature:**
 
@@ -1449,7 +1449,7 @@ uiType, state, text, icon, dynamicIcon, tooltip, dynamicTooltip, extendedUI, ext
 
 **Arguments:**
 
-- `index` - Index of a world state UI element (between 1 and [`GetNumWorldStateUI()`](https://web.archive.org/web/20100106001949/http://wowprogramming.com/docs/api/GetNumWorldStateUI)) (`number`)
+- `index` - Index of a world state UI element (between 1 and [`GetNumWorldStateUI()`](Instance.md#getnumworldstateui)) (`number`)
 
 **Returns:**
 
@@ -1473,7 +1473,7 @@ uiType, state, text, icon, dynamicIcon, tooltip, dynamicTooltip, extendedUI, ext
 
 Returns whether a quest which can be turned in to the current Quest NPC is trivial at the player's level. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event. Used in the default UI to display "(low level)" when listing the quest.
 
-Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipActiveQuests) instead of this function.
+Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests) instead of this function.
 
 **Signature:**
 
@@ -1483,7 +1483,7 @@ trivial = IsActiveQuestTrivial(index)
 
 **Arguments:**
 
-- `index` - Index of a quest which can be turned in to the current Quest NPC (between 1 and [`GetNumActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumActiveQuests)) (`number`)
+- `index` - Index of a quest which can be turned in to the current Quest NPC (between 1 and [`GetNumActiveQuests()`](Quest.md#getnumactivequests)) (`number`)
 
 **Returns:**
 
@@ -1495,7 +1495,7 @@ trivial = IsActiveQuestTrivial(index)
 
 Returns whether a quest available from the current Quest NPC is trivial at the player's level. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event. Used in the default UI to display "(low level)" when listing the quest.
 
-Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipAvailableQuests) instead of this function.
+Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](NPC Gossip Dialog.md#getgossipavailablequests) instead of this function.
 
 **Signature:**
 
@@ -1505,7 +1505,7 @@ trivial = IsAvailableQuestTrivial(index)
 
 **Arguments:**
 
-- `index` - Index of a quest available from the current Quest NPC (between 1 and [`GetNumAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAvailableQuests)) (`number`)
+- `index` - Index of a quest available from the current Quest NPC (between 1 and [`GetNumAvailableQuests()`](Quest.md#getnumavailablequests)) (`number`)
 
 **Returns:**
 
@@ -1557,7 +1557,7 @@ inRange = IsQuestLogSpecialItemInRange(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
@@ -1577,7 +1577,7 @@ isWatched = IsQuestWatched(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
@@ -1608,7 +1608,7 @@ state = IsUnitOnQuest(index, "unit")
 
 ## QueryQuestsCompleted `server`
 
-Queries the server for the player's completed quest information. This function is throttled by the server and can currently only be called every 15 minutes. This function will return immediately, and the [`QUEST_QUERY_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_QUERY_COMPLETE) will fire when the information is available from the server. At that point, it can be obtained using the [GetQuestsCompleted](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetQuestsCompleted) function.
+Queries the server for the player's completed quest information. This function is throttled by the server and can currently only be called every 15 minutes. This function will return immediately, and the [`QUEST_QUERY_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_QUERY_COMPLETE) will fire when the information is available from the server. At that point, it can be obtained using the [GetQuestsCompleted](Quest.md#getquestscompleted) function.
 
 **Signature:**
 
@@ -1664,7 +1664,7 @@ QuestLogPushQuest([questIndex])
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)); if omitted, defaults to the selected quest (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)); if omitted, defaults to the selected quest (`number`)
 
 ---
 
@@ -1680,7 +1680,7 @@ RemoveQuestWatch(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100105230011/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 
@@ -1688,7 +1688,7 @@ RemoveQuestWatch(questIndex)
 
 Selects a quest which can be turned in to the current Quest NPC. Usable after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event. Causes the [`QUEST_PROGRESS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_PROGRESS) event to fire, in which it is determined whether the player can complete the quest.
 
-Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipActiveQuests) instead of this function.
+Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests) instead of this function.
 
 **Signature:**
 
@@ -1698,7 +1698,7 @@ SelectActiveQuest(index)
 
 **Arguments:**
 
-- `index` - Index of a quest which can be turned in to the current Quest NPC (between 1 and [`GetNumActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumActiveQuests)) (`number`)
+- `index` - Index of a quest which can be turned in to the current Quest NPC (between 1 and [`GetNumActiveQuests()`](Quest.md#getnumactivequests)) (`number`)
 
 ---
 
@@ -1706,7 +1706,7 @@ SelectActiveQuest(index)
 
 Chooses a quest available from the current Quest NPC. Causes the [`QUEST_DETAIL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_DETAIL) event to fire, in which the questgiver presents the player with the details of a quest and the option to accept or decline.
 
-Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipAvailableQuests) instead of this function.
+Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](NPC Gossip Dialog.md#getgossipavailablequests) instead of this function.
 
 **Signature:**
 
@@ -1716,7 +1716,7 @@ SelectAvailableQuest(index)
 
 **Arguments:**
 
-- `index` - Index of a quest available from the current Quest NPC (between 1 and [`GetNumAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAvailableQuests)) (`number`)
+- `index` - Index of a quest available from the current Quest NPC (between 1 and [`GetNumAvailableQuests()`](Quest.md#getnumavailablequests)) (`number`)
 
 ---
 
@@ -1732,7 +1732,7 @@ SelectGossipActiveQuest(index)
 
 **Arguments:**
 
-- `index` - Index of a quest which can be turned in to the current Gossip NPC (between 1 and [`GetNumGossipActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGossipActiveQuests)) (`number`)
+- `index` - Index of a quest which can be turned in to the current Gossip NPC (between 1 and [`GetNumGossipActiveQuests()`](NPC Gossip Dialog.md#getnumgossipactivequests)) (`number`)
 
 ---
 
@@ -1748,13 +1748,13 @@ SelectGossipAvailableQuest(index)
 
 **Arguments:**
 
-- `index` - Index of a quest available from the current Gossip NPC (between 1 and [`GetNumGossipAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGossipAvailableQuests)) (`number`)
+- `index` - Index of a quest available from the current Gossip NPC (between 1 and [`GetNumGossipAvailableQuests()`](NPC Gossip Dialog.md#getnumgossipavailablequests)) (`number`)
 
 ---
 
 ## SelectQuestLogEntry
 
-Selects a quest from the quest log. The selected quest is used by other functions which do not take a quest index as argument (e.g. [`GetQuestLogQuestText()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetQuestLogQuestText)).
+Selects a quest from the quest log. The selected quest is used by other functions which do not take a quest index as argument (e.g. [`GetQuestLogQuestText()`](Quest.md#getquestlogquesttext)).
 
 **Signature:**
 
@@ -1764,15 +1764,15 @@ SelectQuestLogEntry(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 
 ## SetAbandonQuest
 
-Begins the process of abandoning a quest in the player's quest log. To finish abandoning the quest, call [`AbandonQuest()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/AbanonQuest).
+Begins the process of abandoning a quest in the player's quest log. To finish abandoning the quest, call [`AbandonQuest()`](Quest.md#abandonquest-confirmation).
 
-This function must be called to select a quest in order for [`GetAbandonQuestItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAbandonQuestItems) or [`GetAbandonQuestName()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAbandonQuestName) to return valid data.
+This function must be called to select a quest in order for [`GetAbandonQuestItems()`](Quest.md#getabandonquestitems) or [`GetAbandonQuestName()`](Quest.md#getabandonquestname) to return valid data.
 
 **Signature:**
 
@@ -1782,7 +1782,7 @@ SetAbandonQuest(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 
@@ -1798,7 +1798,7 @@ UseQuestLogSpecialItem(questIndex)
 
 **Arguments:**
 
-- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questIndex` - Index of a quest log entry with an associated usable item (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 ---
 

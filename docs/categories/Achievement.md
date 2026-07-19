@@ -581,7 +581,7 @@ info = GetStatistic(id)
 
 **Arguments:**
 
-- `id` - The numeric ID of a statistic (`number`, [blizzid](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#blizzid))
+- `id` - The numeric ID of a statistic (`number`, [blizzid](../types/blizzid.md))
 
 **Returns:**
 

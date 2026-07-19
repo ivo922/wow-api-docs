@@ -22,7 +22,7 @@ binding = GetModifiedClick("name")
 
 **Returns:**
 
-- `binding` - The set of modifiers (and mouse button, if applicable) registered for the action (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
+- `binding` - The set of modifiers (and mouse button, if applicable) registered for the action (`string`, [binding](../types/binding.md))
 
 ---
 
@@ -38,7 +38,7 @@ action = GetModifiedClickAction(index)
 
 **Arguments:**
 
-- `index` - Index of a modified click action (between 1 and [`GetNumModifiedClickActions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumModifiedClickActions)) (`number`)
+- `index` - Index of a modified click action (between 1 and [`GetNumModifiedClickActions()`](Modified click.md#getnummodifiedclickactions)) (`number`)
 
 **Returns:**
 
@@ -95,7 +95,7 @@ SetModifiedClick("action", "binding")
 **Arguments:**
 
 - `action` - Token identifying the modified click action (`string`)
-- `binding` - The set of modifiers (and mouse button, if applicable) to register for the action (`string`, [binding](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#binding))
+- `binding` - The set of modifiers (and mouse button, if applicable) to register for the action (`string`, [binding](../types/binding.md))
 
 ---
 

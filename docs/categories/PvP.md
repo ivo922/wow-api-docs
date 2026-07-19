@@ -139,7 +139,7 @@ rankName, rankNumber = GetPVPRankInfo(index [, "unit"])
 **Arguments:**
 
 - `index` - Index of a rank (begins at 1, corresponding to a never-used "Pariah" rank; actual ranks start at 5) (`number`)
-- `unit` - A unit to use as basis for the rank name (i.e. to return Horde rank names for Horde units and Alliance rank names for Alliance units); if omitted, uses the player's faction (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to use as basis for the rank name (i.e. to return Horde rank names for Horde units and Alliance rank names for Alliance units); if omitted, uses the player's faction (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -235,7 +235,7 @@ status, mapName, queueID = GetWorldPVPQueueStatus(index)
   - `none` - No world pvp queue at this index
   - `queued` - The player is queued for this pvp zone
 - `mapName` - Map name they are queued for (e.g Wintergrasp) (`string`)
-- `queueID` - Queue ID, used for [BattlefieldMgrExitRequest()](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/BattlefieldMgrExitRequest) and [BattlefieldMgrEntryInviteResponse()](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/BattlefieldMgrEntryInviteResponse) (`number`)
+- `queueID` - Queue ID, used for [BattlefieldMgrExitRequest()](Uncategorized.md#battlefieldmgrexitrequest) and [BattlefieldMgrEntryInviteResponse()](Uncategorized.md#battlefieldmgrentryinviteresponse) (`number`)
 
 ---
 
@@ -251,7 +251,7 @@ uiType, state, text, icon, dynamicIcon, tooltip, dynamicTooltip, extendedUI, ext
 
 **Arguments:**
 
-- `index` - Index of a world state UI element (between 1 and [`GetNumWorldStateUI()`](https://web.archive.org/web/20100106001949/http://wowprogramming.com/docs/api/GetNumWorldStateUI)) (`number`)
+- `index` - Index of a world state UI element (between 1 and [`GetNumWorldStateUI()`](Instance.md#getnumworldstateui)) (`number`)
 
 **Returns:**
 
@@ -400,7 +400,7 @@ isFreeForAll = UnitIsPVPFreeForAll("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -420,7 +420,7 @@ state = UnitIsPVPSanctuary("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -440,7 +440,7 @@ name = UnitPVPName("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -460,7 +460,7 @@ rank = UnitPVPRank("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 

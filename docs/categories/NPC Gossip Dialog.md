@@ -39,7 +39,7 @@ name, level, isTrivial, ... = GetGossipActiveQuests()
 
 ## GetGossipAvailableQuests
 
-Returns a list of quests available from the current Gossip NPC. For quests which can be turned in to the NPC, see [`GetGossipActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGossipActiveQuests).
+Returns a list of quests available from the current Gossip NPC. For quests which can be turned in to the NPC, see [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests).
 
 **Signature:**
 
@@ -160,7 +160,7 @@ SelectGossipActiveQuest(index)
 
 **Arguments:**
 
-- `index` - Index of a quest which can be turned in to the current Gossip NPC (between 1 and [`GetNumGossipActiveQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGossipActiveQuests)) (`number`)
+- `index` - Index of a quest which can be turned in to the current Gossip NPC (between 1 and [`GetNumGossipActiveQuests()`](NPC Gossip Dialog.md#getnumgossipactivequests)) (`number`)
 
 ---
 
@@ -176,7 +176,7 @@ SelectGossipAvailableQuest(index)
 
 **Arguments:**
 
-- `index` - Index of a quest available from the current Gossip NPC (between 1 and [`GetNumGossipAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGossipAvailableQuests)) (`number`)
+- `index` - Index of a quest available from the current Gossip NPC (between 1 and [`GetNumGossipAvailableQuests()`](NPC Gossip Dialog.md#getnumgossipavailablequests)) (`number`)
 
 ---
 

@@ -164,7 +164,7 @@ point, xOffset, yOffset = Rotation:GetOrigin()
 
 **Returns:**
 
-- `point` - Anchor point for the rotation origin (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `point` - Anchor point for the rotation origin (`string`, [anchorPoint](../types/anchorPoint.md))
 - `xOffset` - Horizontal distance from the anchor point to the rotation origin (in pixels) (`number`)
 - `yOffset` - Vertical distance from the anchor point to the rotation origin (in pixels) (`number`)
 
@@ -190,7 +190,7 @@ parent = ParentedObject:GetParent()
 
 ### Animation:GetProgress
 
-Returns the progress of an animation, ignoring smoothing effects. The value returned by this method increases linearly with time while the animation is playing, while the value returned by [`Animation:GetSmoothProgress()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Animation/GetSmoothProgress) may change at a different rate if the animation's smoothing type is set to a value other than `NONE`.
+Returns the progress of an animation, ignoring smoothing effects. The value returned by this method increases linearly with time while the animation is playing, while the value returned by [`Animation:GetSmoothProgress()`](Animation.md#animationgetsmoothprogress) may change at a different rate if the animation's smoothing type is set to a value other than `NONE`.
 
 **Signature:**
 
@@ -252,7 +252,7 @@ region = Animation:GetRegionParent()
 
 **Returns:**
 
-- `region` - Reference to the `Region` object on which the animation operates (i.e. the parent of the animation's parent `AnimationGroup`). (`region`, [Region](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#Region))
+- `region` - Reference to the `Region` object on which the animation operates (i.e. the parent of the animation's parent `AnimationGroup`). (`region`, [Region](Region.md))
 
 *Inherited from [Animation](Animation.md)*
 
@@ -270,7 +270,7 @@ handler = ScriptObject:GetScript("scriptType")
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts reference](#script-handlers) for details (`string`)
 
 **Returns:**
 
@@ -350,7 +350,7 @@ hasScript = ScriptObject:HasScript("scriptType")
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts reference](#script-handlers) for details (`string`)
 
 **Returns:**
 
@@ -362,7 +362,7 @@ hasScript = ScriptObject:HasScript("scriptType")
 
 ### ScriptObject:HookScript
 
-Securely hooks a script handler. Equivalent to [`hooksecurefunc()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/hooksecurefunc) for script handlers; allows one to "post-hook" a secure handler without tainting the original.
+Securely hooks a script handler. Equivalent to [`hooksecurefunc()`](../categories/Secure execution utility.md#hooksecurefunc) for script handlers; allows one to "post-hook" a secure handler without tainting the original.
 
 The original handler will still be called, but the handler supplied will also be called after the original, with the same arguments. Return values from the supplied handler are discarded. Note that there is no API to remove a hook from a handler: any hooks applied will remain in place until the UI is reloaded.
 
@@ -376,7 +376,7 @@ ScriptObject:HookScript("scriptType", handler)
 
 **Arguments:**
 
-- `scriptType` - Name of the [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) whose handler should be hooked (`string`)
+- `scriptType` - Name of the [script](#script-handlers) whose handler should be hooked (`string`)
 - `handler` - A function to be called whenever the script handler is run (`function`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
@@ -497,7 +497,7 @@ stopped = Animation:IsStopped()
 
 ### Animation:Pause
 
-Pauses the animation. Unlike with [`Animation:Stop()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Animation/Stop), the animation is paused at its current progress state (e.g. in a fade-out-fade-in animation, the element will be at partial opacity) instead of reset to the initial state; animation can be resumed with [`Animation:Play()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Animation/Play).
+Pauses the animation. Unlike with [`Animation:Stop()`](Animation.md#animationstop), the animation is paused at its current progress state (e.g. in a fade-out-fade-in animation, the element will be at partial opacity) instead of reset to the initial state; animation can be resumed with [`Animation:Play()`](Animation.md#animationplay).
 
 **Signature:**
 
@@ -619,7 +619,7 @@ Rotation:SetOrigin("point", xOffset, yOffset)
 
 **Arguments:**
 
-- `point` - Anchor point for the rotation origin (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `point` - Anchor point for the rotation origin (`string`, [anchorPoint](../types/anchorPoint.md))
 - `xOffset` - Horizontal distance from the anchor point to the rotation origin (in pixels) (`number`)
 - `yOffset` - Vertical distance from the anchor point to the rotation origin (in pixels) (`number`)
 
@@ -637,7 +637,7 @@ Animation:SetParent(animGroup) or Animation:SetParent("animGroupName")
 
 **Arguments:**
 
-- `animGroup` - The animation group to set as the parent of this animation (`animgroup`, [AnimationGroup](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#AnimationGroup))
+- `animGroup` - The animation group to set as the parent of this animation (`animgroup`, [AnimationGroup](AnimationGroup.md))
 - `animGroupName` - The name of the animation group to set as the parent of this animation (`string`)
 
 *Inherited from [Animation](Animation.md)*
@@ -672,7 +672,7 @@ ScriptObject:SetScript("scriptType", handler)
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts](#script-handlers) for details (`string`)
 - `handler` - A function to become the widget's handler for the script type (`function`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*

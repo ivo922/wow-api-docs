@@ -35,7 +35,7 @@ filename, fontHeight, flags = FontInstance:GetFont()
 
 ### FontInstance:GetFontObject
 
-Returns the `Font` object from which the font instance's properties are inherited. See [`FontInstance:SetFontObject()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetFontObject) for details.
+Returns the `Font` object from which the font instance's properties are inherited. See [`FontInstance:SetFontObject()`](FontInstance.md#fontinstancesetfontobject) for details.
 
 **Signature:**
 
@@ -61,7 +61,7 @@ justify = FontInstance:GetJustifyH()
 
 **Returns:**
 
-- `justify` - Horizontal text alignment style (`string`, [justifyH](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyH))
+- `justify` - Horizontal text alignment style (`string`, [justifyH](../types/justifyH.md))
   - `CENTER`
   - `LEFT`
   - `RIGHT`
@@ -80,7 +80,7 @@ justify = FontInstance:GetJustifyV()
 
 **Returns:**
 
-- `justify` - Vertical text alignment style (`string`, [justifyV](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyV))
+- `justify` - Vertical text alignment style (`string`, [justifyV](../types/justifyV.md))
   - `BOTTOM`
   - `MIDDLE`
   - `TOP`
@@ -277,7 +277,7 @@ FontInstance:SetJustifyH("justify")
 
 **Arguments:**
 
-- `justify` - Horizontal text alignment style (`string`, [justifyH](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyH))
+- `justify` - Horizontal text alignment style (`string`, [justifyH](../types/justifyH.md))
   - `CENTER`
   - `LEFT`
   - `RIGHT`
@@ -350,7 +350,7 @@ FontInstance:SetSpacing(spacing)
 
 ### FontInstance:SetTextColor
 
-Sets the font instance's default text color. This color is used for otherwise unformatted text displayed using the font instance; however, portions of the text may be colored differently using the [`colorString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#colorString) format (commonly seen in [`hyperlink`s](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink)).
+Sets the font instance's default text color. This color is used for otherwise unformatted text displayed using the font instance; however, portions of the text may be colored differently using the [`colorString`](../types/colorString.md) format (commonly seen in [`hyperlink`s](../types/hyperlink.md)).
 
 **Signature:**
 

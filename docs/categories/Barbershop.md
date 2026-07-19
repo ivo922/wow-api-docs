@@ -50,7 +50,7 @@ canAlter = CanAlterSkin()
 
 ## CancelBarberShop
 
-Exits a barber shop session. Causes the player character to stand up, returning to the normal world, and fires the `BARBER_SHOP_CLOSE` event. Any style changes already paid for (with [`ApplyBarberShopStyle()`](https://web.archive.org/web/20111212170217/http://wowprogramming.com/docs/api/ApplyBarberShopStyle)) are kept; any changes since are discarded.
+Exits a barber shop session. Causes the player character to stand up, returning to the normal world, and fires the `BARBER_SHOP_CLOSE` event. Any style changes already paid for (with [`ApplyBarberShopStyle()`](Barbershop.md#applybarbershopstyle)) are kept; any changes since are discarded.
 
 **Signature:**
 

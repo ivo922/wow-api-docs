@@ -40,7 +40,7 @@ AddChatWindowMessages(index, "messageGroup")
 **Arguments:**
 
 - `index` - Index of a chat frame (between `1` and `NUM_CHAT_WINDOWS`) (`number`)
-- `messageGroup` - Token identifying a message type (`string`, [chatMsgType](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#chatMsgType))
+- `messageGroup` - Token identifying a message type (`string`, [chatMsgType](../types/chatMsgType.md))
 
 ---
 
@@ -139,7 +139,7 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_LOOT", addLootIcons)
 
 ## ChatFrame_GetMessageEventFilters `blizzardui`
 
-Returns the list of filters registered for a chat event. See [`ChatFrame_AddMessageEventFilter()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ChatFrame_AddMessageEventFilter) for details about chat message filters.
+Returns the list of filters registered for a chat event. See [`ChatFrame_AddMessageEventFilter()`](Chat.md#chatframe_addmessageeventfilter-blizzardui) for details about chat message filters.
 
 **Signature:**
 
@@ -159,7 +159,7 @@ filterTable = ChatFrame_GetMessageEventFilters("event")
 
 ## ChatFrame_RemoveMessageEventFilter `blizzardui`
 
-Removes a previously set chat message filter. See [`ChatFrame_AddMessageEventFilter()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ChatFrame_AddMessageEventFilter) for details about chat message filters.
+Removes a previously set chat message filter. See [`ChatFrame_AddMessageEventFilter()`](Chat.md#chatframe_addmessageeventfilter-blizzardui) for details about chat message filters.
 
 **Signature:**
 
@@ -196,7 +196,7 @@ ComplainChat(lineID) or ComplainChat("name" [, "text"])
 
 Performs a preset emote (with optional target). The list of built-in emote tokens can be found in global variables whose names follow the format `"EMOTE"..num.."_TOKEN"`, where `num` is a number between `1` and `MAXEMOTEINDEX` (a variable local to ChatFrame.lua.)
 
-For custom emotes (as performed using the `/emote` or `/me` commands in the default UI), see [`SendChatMessage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SendChatMessage).
+For custom emotes (as performed using the `/emote` or `/me` commands in the default UI), see [`SendChatMessage()`](Chat.md#sendchatmessage-server).
 
 **Signature:**
 
@@ -224,7 +224,7 @@ index = GetChatTypeIndex("messageGroup")
 
 **Arguments:**
 
-- `messageGroup` - Token identifying a message type (`string`, [chatMsgType](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#chatMsgType))
+- `messageGroup` - Token identifying a message type (`string`, [chatMsgType](../types/chatMsgType.md))
 
 **Returns:**
 
@@ -299,7 +299,7 @@ Returns the saved list of messages to which a chat window is subscribed
 
 **Returns:**
 
-- `...` - A list of [`chatMsgType`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#chatMsgType)s for which the chat window is subscribed (`list`)
+- `...` - A list of [`chatMsgType`](../types/chatMsgType.md)s for which the chat window is subscribed (`list`)
 
 ---
 
@@ -331,7 +331,7 @@ language = GetLanguageByIndex(index)
 
 **Arguments:**
 
-- `index` - Index of a player character language (between 1 and [`GetNumLanguages()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumLanguages_) (`number`)
+- `index` - Index of a player character language (between 1 and [`GetNumLanguages()`](Chat.md#getnumlanguages) (`number`)
 
 **Returns:**
 
@@ -460,7 +460,7 @@ RemoveChatWindowMessages(index, "messageGroup")
 **Arguments:**
 
 - `index` - Index of a chat frame (between 1 and `NUM_CHAT_WINDOWS`) (`number`)
-- `messageGroup` - Token identifying a message type (`string`, [chatMsgType](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#chatMsgType))
+- `messageGroup` - Token identifying a message type (`string`, [chatMsgType](../types/chatMsgType.md))
 
 ---
 
@@ -514,7 +514,7 @@ SendChatMessage("text" [, "chatType" [, languageIndex [, "channel"]]])
   - `SAY` - Speech to nearby players (sent with `/s` in the default UI)
   - `WHISPER` - Message to a specific character (sent with `/w` in the default UI); requires name of the character for `channel` argument
   - `YELL` - Yell to not-so-nearby players (sent with `/y` in the default UI)
-- `languageIndex` - Language in which to send the message; defaults to Common (for Alliance players) or Orcish (for Horde players) if omitted. Language indices can be retrieved from [`GetLanguageByIndex()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetLanguageByIndex). (`number`)
+- `languageIndex` - Language in which to send the message; defaults to Common (for Alliance players) or Orcish (for Horde players) if omitted. Language indices can be retrieved from [`GetLanguageByIndex()`](Chat.md#getlanguagebyindex). (`number`)
 - `channel` - If `chatType` is `WHISPER`, name of the target character; if `chatType` is `CHANNEL`, number identifying the target channel; ignored otherwise (`string`)
 
 ---

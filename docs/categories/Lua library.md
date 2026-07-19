@@ -104,7 +104,7 @@ dateValue = date(["format" [, time]])
 **Arguments:**
 
 - `format` - A string describing the formatting of time values (as in the ANSI C `strftime()`function), or `*t` to return the time as a table; optionally preceded by `!` for Coordinated Universal Time instead of the local time zone; omitted for a date printed in the default format (`string`)
-- `time` - Time value to be formatted (see [`time()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/time) for description); if omitted, uses the current time (`number`)
+- `time` - Time value to be formatted (see [`time()`](Lua library.md#time-luaapi) for description); if omitted, uses the current time (`number`)
 
 **Returns:**
 
@@ -144,8 +144,8 @@ seconds = difftime(time2, time1)
 
 **Arguments:**
 
-- `time2` - A time value (see [`time()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/time) for description) (`number`)
-- `time1` - A time value (see [`time()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/time) for description) (`number`)
+- `time2` - A time value (see [`time()`](Lua library.md#time-luaapi) for description) (`number`)
+- `time1` - A time value (see [`time()`](Lua library.md#time-luaapi) for description) (`number`)
 
 **Returns:**
 
@@ -592,7 +592,7 @@ iterator, t, index = pairs(t)
 
 **Returns:**
 
-- `iterator` - The [`next()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/next) function (`function`)
+- `iterator` - The [`next()`](Lua library.md#next-luaapi) function (`function`)
 - `t` - The table provided (`table`)
 - `index` - Always nil; used internally (`number`)
 
@@ -1045,7 +1045,7 @@ Returns the numeric time value for a described date/time (or the current time). 
 
 According to the Lua manual, the returned value may vary across different systems; however, the Lua libraries included with current WoW clients on both Mac and Windows share the same implementation.
 
-For higher-precision time measurements not convertible to a date, see [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime).
+For higher-precision time measurements not convertible to a date, see [`GetTime()`](Utility.md#gettime).
 
 **Signature:**
 
@@ -1055,7 +1055,7 @@ t = time([timeDesc])
 
 **Arguments:**
 
-- `timeDesc` - Table describing a date and time, as returned by [`date("*t")`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/date); if omitted, uses the current time (`table`)
+- `timeDesc` - Table describing a date and time, as returned by [`date("*t")`](Lua library.md#date-luaapi); if omitted, uses the current time (`table`)
 
 **Returns:**
 

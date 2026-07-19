@@ -18,7 +18,7 @@ hasRange = ActionHasRange(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -39,7 +39,7 @@ CastPetAction(index [, "unit"])
 **Arguments:**
 
 - `index` - Index of a pet action button (between 1 and `NUM_PET_ACTION_SLOTS`) (`number`)
-- `unit` - A unit to be used as target for the action (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to be used as target for the action (`string`, [unitID](../types/unitID.md))
 
 ---
 
@@ -55,7 +55,7 @@ autocastAllowed, autocastEnabled = GetActionAutocast(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -76,11 +76,11 @@ start, duration, enable = GetActionCooldown(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the action is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the action is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the action is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the action is ready.) (`number`)
 
@@ -116,7 +116,7 @@ end
 
 Returns the number of uses remaining for the given action slot. Applies to spells that require reagents, items that stack, or items with charges; used in the default UI to display the count on action buttons.
 
-Returns 0 for any action that does not use a count. To distinguish between actions which do not use a count and actions which do but whose current count is 0, see [`IsConsumableAction`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/IsConsumableAction).
+Returns 0 for any action that does not use a count. To distinguish between actions which do not use a count and actions which do but whose current count is 0, see [`IsConsumableAction`](Action.md#isconsumableaction).
 
 **Signature:**
 
@@ -126,7 +126,7 @@ count = GetActionCount(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -159,14 +159,14 @@ type, id, subType, spellID = GetActionInfo(slot)
 - `id` - An identifier for the action; varies by type: (`number or string`)
   - `companion` - The companion's index in the mount or minipet list
   - `equipmentset` - Name of the equipment set
-  - `item` - The item's [itemID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemID)
-  - `macro` - The macro's index in the macro list ([macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
-  - `spell` - The spell's index in the player's spellboook ([spellbookID)](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID)
+  - `item` - The item's [itemID](../types/itemID.md)
+  - `macro` - The macro's index in the macro list ([macroID](../types/macroID.md))
+  - `spell` - The spell's index in the player's spellboook ([spellbookID)](../types/spellbookID.md)
 - `subType` - Subtype of the action (or `nil` if not applicable) (`string`)
   - `CRITTER` - For `companion` actions: indicates `id` is as an index in the non-combat pets list
   - `MOUNT` - For `companion` actions: indicates `id` is an index in the mounts list
   - `spell` - For `spell` actions: indicates `id` is an index in the player's spellbook (as opposed to the pet's)
-- `spellID` - For `spell` and `companion` actions, the global ID of the spell (or the summoning "spell" for a companion) (`string`, [spellID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellID))
+- `spellID` - For `spell` and `companion` actions, the global ID of the spell (or the summoning "spell" for a companion) (`string`, [spellID](../types/spellID.md))
 
 **Examples:**
 
@@ -211,7 +211,7 @@ text = GetActionText(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -231,7 +231,7 @@ texture = GetActionTexture(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -255,7 +255,7 @@ start, duration, enable = GetPetActionCooldown(index)
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the action is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the action is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the action is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the action is ready.) (`number`)
 
@@ -309,7 +309,7 @@ usable = GetPetActionSlotUsable(index)
 
 ## GetPetActionsUsable
 
-Returns whether the pet's actions are usable. Note: [`GetPetActionSlotUsable`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetPetActionSlotUsable) can return nil for individual actions even if `GetPetActionsUsable` returns 1 (though not the other way around).
+Returns whether the pet's actions are usable. Note: [`GetPetActionSlotUsable`](Action.md#getpetactionslotusable) can return nil for individual actions even if `GetPetActionsUsable` returns 1 (though not the other way around).
 
 **Signature:**
 
@@ -335,7 +335,7 @@ hasAction = HasAction(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -355,7 +355,7 @@ inRange = IsActionInRange(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -365,7 +365,7 @@ inRange = IsActionInRange(slot)
 
 ## IsAttackAction
 
-Returns whether an action is the standard melee Attack action. Used in the default UI to flash the action button while auto-attack is active. Does not apply to other repeating actions such as Auto Shot (for hunters) and Shoot (for wand users); for those, see [`IsAutoRepeatAction`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/IsAutoRepeatAction).
+Returns whether an action is the standard melee Attack action. Used in the default UI to flash the action button while auto-attack is active. Does not apply to other repeating actions such as Auto Shot (for hunters) and Shoot (for wand users); for those, see [`IsAutoRepeatAction`](Action.md#isautorepeataction).
 
 **Signature:**
 
@@ -375,7 +375,7 @@ isAttack = IsAttackAction(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -385,7 +385,7 @@ isAttack = IsAttackAction(slot)
 
 ## IsAutoRepeatAction
 
-Returns whether an action is an automatically repeating action. Used in the default UI to flash the action button while the action is repeating. Applies to actions such as Auto Shot (for hunters) and Shoot (for wand and other ranged weapon users) but not to the standard melee Attack action; for it, see [`IsAttackAction`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/IsAttackAction).
+Returns whether an action is an automatically repeating action. Used in the default UI to flash the action button while the action is repeating. Applies to actions such as Auto Shot (for hunters) and Shoot (for wand and other ranged weapon users) but not to the standard melee Attack action; for it, see [`IsAttackAction`](Action.md#isattackaction).
 
 **Signature:**
 
@@ -395,7 +395,7 @@ isRepeating = IsAutoRepeatAction(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -415,7 +415,7 @@ isConsumable = IsConsumableAction(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -435,7 +435,7 @@ isCurrent = IsCurrentAction(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -455,7 +455,7 @@ isEquipped = IsEquippedAction(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -465,7 +465,7 @@ isEquipped = IsEquippedAction(slot)
 
 ## IsStackableAction
 
-Returns whether an action uses stackable items. Applies to consumable items such as potions, wizard oils, food and drink; not used for spells which consume reagents (for those, see [`IsConsumableAction`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/IsConsumableAction)).
+Returns whether an action uses stackable items. Applies to consumable items such as potions, wizard oils, food and drink; not used for spells which consume reagents (for those, see [`IsConsumableAction`](Action.md#isconsumableaction)).
 
 **Signature:**
 
@@ -475,7 +475,7 @@ isStackable = IsStackableAction(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -495,7 +495,7 @@ isUsable, notEnoughMana = IsUsableAction(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 **Returns:**
 
@@ -506,7 +506,7 @@ isUsable, notEnoughMana = IsUsableAction(slot)
 
 ## PickupAction `nocombat`
 
-Puts the contents of an action bar slot onto the cursor or the cursor contents into an action bar slot. After an action is picked up via this function, it can only be placed into other action bar slots (with [`PlaceAction()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PlaceAction) or by calling `PickupAction()` again), even if the action is an item which could otherwise be placed elsewhere. Unlike many other "pickup" cursor functions, this function removes the picked-up action from the source slot -- an action slot can be emptied by calling this function followed by [`ClearCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClearCursor).
+Puts the contents of an action bar slot onto the cursor or the cursor contents into an action bar slot. After an action is picked up via this function, it can only be placed into other action bar slots (with [`PlaceAction()`](Action.md#placeaction-nocombat) or by calling `PickupAction()` again), even if the action is an item which could otherwise be placed elsewhere. Unlike many other "pickup" cursor functions, this function removes the picked-up action from the source slot -- an action slot can be emptied by calling this function followed by [`ClearCursor()`](Cursor.md#clearcursor).
 
 If the action slot is empty and the cursor already holds an action, a spell, a companion (mount or non-combat pet), a macro, an equipment set, or an item (with a "Use:" effect), it is put into the action slot. If both the cursor and the slot hold an action (or any of the above data types), the contents of the cursor and the slot are exchanged.
 
@@ -518,7 +518,7 @@ PickupAction(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 ---
 
@@ -554,7 +554,7 @@ PlaceAction(slot)
 
 **Arguments:**
 
-- `slot` - Destination action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - Destination action bar slot (`number`, [actionID](../types/actionID.md))
 
 ---
 
@@ -586,8 +586,8 @@ UseAction(slot [, "target" [, "button"]])
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
-- `target` - A unit to be used as target for the action (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
+- `target` - A unit to be used as target for the action (`string`, [unitID](../types/unitID.md))
 - `button` - Mouse button used to activate the action (`string`)
   - `Button4` - Fourth mouse button
   - `Button5` - Fifth mouse button

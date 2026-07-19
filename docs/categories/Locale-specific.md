@@ -25,7 +25,7 @@ genitive, dative, accusative, instrumental, prepositional = DeclineName("name", 
   - `1or nil` - Neuter
   - `2` - Male
   - `3` - Female
-- `declensionSet` - Index of a set of suggested declensions (between 1 and [`GetNumDeclensionSets(name,gender)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDeclensionSets). Lower indices correspond to "better" suggestions for the given name. (`number`)
+- `declensionSet` - Index of a set of suggested declensions (between 1 and [`GetNumDeclensionSets(name,gender)`](Locale-specific.md#getnumdeclensionsets). Lower indices correspond to "better" suggestions for the given name. (`number`)
 
 **Returns:**
 
@@ -69,7 +69,7 @@ end
 
 ## GetNumDeclensionSets
 
-Returns the number of suggested declension sets for a name. Used in the Russian localized World of Warcraft client; see [`DeclineName`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/DeclineName) for further details. Returns 0 in other locales.
+Returns the number of suggested declension sets for a name. Used in the Russian localized World of Warcraft client; see [`DeclineName`](Locale-specific.md#declinename) for further details. Returns 0 in other locales.
 
 **Signature:**
 
@@ -87,7 +87,7 @@ numSets = GetNumDeclensionSets("name", gender)
 
 **Returns:**
 
-- `numSets` - Number of available declension sets usable with [`DeclineName`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/DeclineName) (`number`)
+- `numSets` - Number of available declension sets usable with [`DeclineName`](Locale-specific.md#declinename) (`number`)
 
 ---
 

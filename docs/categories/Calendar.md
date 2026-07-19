@@ -8,7 +8,7 @@
 
 ## CalendarAddEvent
 
-Saves the event recently created (and selected for editing) to the calendar. Until this function is called, an event created with [`CalendarNewEvent()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewEvent), [`CalendarNewGuildEvent()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewGuildEvent), or [`CalendarNewGuildAnnouncement()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewGuildAnnoucement) will not exist on the calendar -- that is, guild members or invitees will not see it, and it will not persist if the player closes the calendar, reloads the UI, or goes to view or edit another event.
+Saves the event recently created (and selected for editing) to the calendar. Until this function is called, an event created with [`CalendarNewEvent()`](Calendar.md#calendarnewevent), [`CalendarNewGuildEvent()`](Calendar.md#calendarnewguildevent), or [`CalendarNewGuildAnnouncement()`](Calendar.md#calendarnewguildannouncement) will not exist on the calendar -- that is, guild members or invitees will not see it, and it will not persist if the player closes the calendar, reloads the UI, or goes to view or edit another event.
 
 **Signature:**
 
@@ -64,7 +64,7 @@ CalendarCloseEvent()
 
 ## CalendarContextDeselectEvent
 
-Clears the event selection used only for `CalendarContext` functions. The selection state cleared by this function is used only by other `CalendarContext` functions; other calendar event functions use the selection state set by [`CalendarOpenEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarOpenEvent), [`CalendarNewEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewEvent), [`CalendarNewGuildEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewGuildEvent), or [`CalendarNewGuildAnnouncement`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewGuildAnnouncement) (if they use a selection state at all).
+Clears the event selection used only for `CalendarContext` functions. The selection state cleared by this function is used only by other `CalendarContext` functions; other calendar event functions use the selection state set by [`CalendarOpenEvent`](Calendar.md#calendaropenevent), [`CalendarNewEvent`](Calendar.md#calendarnewevent), [`CalendarNewGuildEvent`](Calendar.md#calendarnewguildevent), or [`CalendarNewGuildAnnouncement`](Calendar.md#calendarnewguildannouncement) (if they use a selection state at all).
 
 **Signature:**
 
@@ -76,7 +76,7 @@ CalendarContextDeselectEvent()
 
 ## CalendarContextEventCanComplain
 
-Returns whether the player can report an event invitation as spam. If all arguments are omitted, uses the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent).
+Returns whether the player can report an event invitation as spam. If all arguments are omitted, uses the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent).
 
 **Signature:**
 
@@ -90,7 +90,7 @@ canReport = CalendarContextEventCanComplain([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from `1` to `CalendarGetNumDayEvents()`) (`number`)
 
@@ -116,7 +116,7 @@ canEdit = CalendarContextEventCanEdit([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from `1` to `CalendarGetNumDayEvents()`) (`number`)
 
@@ -138,7 +138,7 @@ canPaste = CalendarContextEventClipboard()
 
 **Returns:**
 
-- `canPaste` - `true` if an event has been copied via [`CalendarContextEventCopy`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextEventCopy); otherwise `false` (`boolean`)
+- `canPaste` - `true` if an event has been copied via [`CalendarContextEventCopy`](Calendar.md#calendarcontexteventcopy); otherwise `false` (`boolean`)
 
 ---
 
@@ -158,7 +158,7 @@ CalendarContextEventComplain([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from `1` to `CalendarGetNumDayEvents()`) (`number`)
 
@@ -180,7 +180,7 @@ CalendarContextEventCopy([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from `1` to `CalendarGetNumDayEvents()`) (`number`)
 
@@ -188,7 +188,7 @@ CalendarContextEventCopy([monthOffset,] day, index)
 
 ## CalendarContextEventGetCalendarType
 
-Returns the type of a calendar event. If all arguments are omitted, uses the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20111212191726/http://wowprogramming.com/docs/api/CalendarContextSelectEvent).
+Returns the type of a calendar event. If all arguments are omitted, uses the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent).
 
 **Signature:**
 
@@ -202,7 +202,7 @@ calendarType = CalendarContextEventGetCalendarType([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20111212191726/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from `1` to `CalendarGetNumDayEvents()`) (`number`)
 
@@ -221,7 +221,7 @@ calendarType = CalendarContextEventGetCalendarType([monthOffset,] day, index)
 
 ## CalendarContextEventPaste
 
-Pastes a copied event into a given date. Does nothing if no event has been copied via [`CalendarContextEventCopy`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextEventCopy).
+Pastes a copied event into a given date. Does nothing if no event has been copied via [`CalendarContextEventCopy`](Calendar.md#calendarcontexteventcopy).
 
 **Signature:**
 
@@ -255,7 +255,7 @@ CalendarContextEventRemove([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from `1` to `CalendarGetNumDayEvents()`) (`number`)
 
@@ -277,7 +277,7 @@ CalendarContextEventSignUp([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from 1 to CalendarGetNumDayEvents()) (`number`)
 
@@ -285,7 +285,7 @@ CalendarContextEventSignUp([monthOffset,] day, index)
 
 ## CalendarContextGetEventIndex
 
-Returns the month, day, and index of the event selection used only for `CalendarContext` functions. The selection state referenced by this function is used only by other `CalendarContext` functions; other calendar event functions use the selection state set by [`CalendarOpenEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarOpenEvent), [`CalendarNewEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewEvent), [`CalendarNewGuildEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewGuildEvent), or [`CalendarNewGuildAnnouncement`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewGuildAnnouncement) (if they use a selection state at all).
+Returns the month, day, and index of the event selection used only for `CalendarContext` functions. The selection state referenced by this function is used only by other `CalendarContext` functions; other calendar event functions use the selection state set by [`CalendarOpenEvent`](Calendar.md#calendaropenevent), [`CalendarNewEvent`](Calendar.md#calendarnewevent), [`CalendarNewGuildEvent`](Calendar.md#calendarnewguildevent), or [`CalendarNewGuildAnnouncement`](Calendar.md#calendarnewguildannouncement) (if they use a selection state at all).
 
 Used in the default UI to implement the calendar's context menu (on right-click).
 
@@ -322,7 +322,7 @@ CalendarContextInviteAvailable([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from 1 to CalendarGetNumDayEvents()) (`number`)
 
@@ -344,7 +344,7 @@ CalendarContextInviteDecline([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from 1 to CalendarGetNumDayEvents()) (`number`)
 
@@ -366,7 +366,7 @@ pendingInvite = CalendarContextInviteIsPending([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from 1 to CalendarGetNumDayEvents()) (`number`)
 
@@ -392,7 +392,7 @@ modStatus = CalendarContextInviteModeratorStatus([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from 1 to CalendarGetNumDayEvents()) (`number`)
 
@@ -420,7 +420,7 @@ CalendarContextInviteRemove([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from 1 to CalendarGetNumDayEvents()) (`number`)
 
@@ -442,7 +442,7 @@ inviteStatus = CalendarContextInviteStatus([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from 1 to CalendarGetNumDayEvents()) (`number`)
 
@@ -476,7 +476,7 @@ inviteType = CalendarContextInviteType([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from 1 to CalendarGetNumDayEvents()) (`number`)
 
@@ -490,7 +490,7 @@ inviteType = CalendarContextInviteType([monthOffset,] day, index)
 
 ## CalendarContextSelectEvent
 
-Selects an event for use only with other `CalendarContext` functions. The selection state set by this function is used only by other `CalendarContext` functions; other calendar event functions use the selection state set by [`CalendarOpenEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarOpenEvent), [`CalendarNewEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewEvent), [`CalendarNewGuildEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewGuildEvent), or [`CalendarNewGuildAnnouncement`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarNewGuildAnnouncement) (if they use a selection state at all).
+Selects an event for use only with other `CalendarContext` functions. The selection state set by this function is used only by other `CalendarContext` functions; other calendar event functions use the selection state set by [`CalendarOpenEvent`](Calendar.md#calendaropenevent), [`CalendarNewEvent`](Calendar.md#calendarnewevent), [`CalendarNewGuildEvent`](Calendar.md#calendarnewguildevent), or [`CalendarNewGuildAnnouncement`](Calendar.md#calendarnewguildannouncement) (if they use a selection state at all).
 
 Used in the default UI to implement the calendar's context menu (on right-click).
 
@@ -506,7 +506,7 @@ CalendarContextSelectEvent([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from 1 to CalendarGetNumDayEvents()) (`number`)
 
@@ -570,7 +570,7 @@ canModerate = CalendarEventCanModerate(index)
 
 **Arguments:**
 
-- `index` - Index of a character on the event's invite list (between 1 and [`CalendarEventGetNumInvites()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarEventGetNumInvites)) (`number`)
+- `index` - Index of a character on the event's invite list (between 1 and [`CalendarEventGetNumInvites()`](Calendar.md#calendareventgetnuminvites)) (`number`)
 
 **Returns:**
 
@@ -661,7 +661,7 @@ name, level, className, classFileName, inviteStatus, modStatus, inviteIsMine, in
 
 **Arguments:**
 
-- `index` - Index of a character on the event's invite list (between 1 and [`CalendarEventGetNumInvites()`](https://web.archive.org/web/20100105213501/http://wowprogramming.com/docs/api/CalendarEventGetNumInvites)) (`number`)
+- `index` - Index of a character on the event's invite list (between 1 and [`CalendarEventGetNumInvites()`](Calendar.md#calendareventgetnuminvites)) (`number`)
 
 **Returns:**
 
@@ -1090,9 +1090,9 @@ CalendarEventSetStatus(index, inviteStatus)
 
 ## CalendarEventSetTextureID
 
-Changes the raid or dungeon instance for the selected event. Only applicable if the event's `eventType` is set to 1 or 2 (see [`CalendarEventSetType`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarEventSetType)).
+Changes the raid or dungeon instance for the selected event. Only applicable if the event's `eventType` is set to 1 or 2 (see [`CalendarEventSetType`](Calendar.md#calendareventsettype)).
 
-A list of dungeon or raid instances can be found by calling [`CalendarEventGetTextures`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarEventGetTextures) with the current `eventType`. That function returns three values (`name`, `icon`, and `expansion`) for each instance in the list; e.g. to get the `index` for use with this function, find the index of the instance's name in that list and divide by 3.
+A list of dungeon or raid instances can be found by calling [`CalendarEventGetTextures`](Calendar.md#calendareventgettextures) with the current `eventType`. That function returns three values (`name`, `icon`, and `expansion`) for each instance in the list; e.g. to get the `index` for use with this function, find the index of the instance's name in that list and divide by 3.
 
 **Signature:**
 
@@ -1237,7 +1237,7 @@ weekday, month, day, year = CalendarGetDate()
 
 ## CalendarGetDayEvent
 
-Returns information about a calendar event on a given day. Information can only be retrieved for events which might be visible in the calendar's current month -- i.e. those in the current month as well as those in (roughly) the last week of the previous month and (roughly) the first two weeks of the following month. To reliably retrieve information for events outside the calendar's current month, first change the calendar's month with [`CalendarSetMonth`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarSetMonth).
+Returns information about a calendar event on a given day. Information can only be retrieved for events which might be visible in the calendar's current month -- i.e. those in the current month as well as those in (roughly) the last week of the previous month and (roughly) the first two weeks of the following month. To reliably retrieve information for events outside the calendar's current month, first change the calendar's month with [`CalendarSetMonth`](Calendar.md#calendarsetmonth).
 
 **Signature:**
 
@@ -1405,7 +1405,7 @@ index = CalendarGetFirstPendingInvite(monthOffset, day)
 
 ## CalendarGetHolidayInfo
 
-Returns additional information about a holiday event. Information can only be retrieved for events which might be visible in the calendar's current month -- i.e. those in the current month as well as those in (roughly) the last week of the previous month and (roughly) the first two weeks of the following month. To reliably retrieve information for events outside the calendar's current month, first change the calendar's month with [`CalendarSetMonth`](https://web.archive.org/web/20100105231706/http://wowprogramming.com/docs/api/CalendarSetMonth).
+Returns additional information about a holiday event. Information can only be retrieved for events which might be visible in the calendar's current month -- i.e. those in the current month as well as those in (roughly) the last week of the previous month and (roughly) the first two weeks of the following month. To reliably retrieve information for events outside the calendar's current month, first change the calendar's month with [`CalendarSetMonth`](Calendar.md#calendarsetmonth).
 
 **Signature:**
 
@@ -1581,7 +1581,7 @@ numInvites = CalendarGetNumPendingInvites()
 
 ## CalendarGetRaidInfo
 
-Returns information about a raid lockout or scheduled raid reset event. Information can only be retrieved for events which might be visible in the calendar's current month -- i.e. those in the current month as well as those in (roughly) the last week of the previous month and (roughly) the first two weeks of the following month. To reliably retrieve information for events outside the calendar's current month, first change the calendar's month with [`CalendarSetMonth`](https://web.archive.org/web/20100105234128/http://wowprogramming.com/docs/api/CalendarSetMonth).
+Returns information about a raid lockout or scheduled raid reset event. Information can only be retrieved for events which might be visible in the calendar's current month -- i.e. those in the current month as well as those in (roughly) the last week of the previous month and (roughly) the first two weeks of the following month. To reliably retrieve information for events outside the calendar's current month, first change the calendar's month with [`CalendarSetMonth`](Calendar.md#calendarsetmonth).
 
 **Signature:**
 
@@ -1785,7 +1785,7 @@ CalendarSetMonth(monthOffset)
 
 Saves changes made to the selected event. Until this function is called, changes made to an event will not be saved -- they will not propagate to guild members or invitees, and the event will revert to its previous state if the player closes the calendar, reloads the UI, or goes to view or edit another event.
 
-Only applies to existing events; for newly created events use [`CalendarAddEvent()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarAddEvent) once the event's attributes and initial invite list are set.
+Only applies to existing events; for newly created events use [`CalendarAddEvent()`](Calendar.md#calendaraddevent) once the event's attributes and initial invite list are set.
 
 **Signature:**
 

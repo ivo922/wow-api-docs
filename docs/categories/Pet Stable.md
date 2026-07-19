@@ -8,7 +8,7 @@
 
 ## BuyStableSlot `confirmation`
 
-Purchases the next available stable slot, without confirmation. Only available while interacting with a Stable Master NPC (between the `PET_STABLE_SHOW` and `PET_STABLE_CLOSED` events and only if [`IsAtStableMaster()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/IsAtStableMaster) returns true).
+Purchases the next available stable slot, without confirmation. Only available while interacting with a Stable Master NPC (between the `PET_STABLE_SHOW` and `PET_STABLE_CLOSED` events and only if [`IsAtStableMaster()`](Pet Stable.md#isatstablemaster) returns true).
 
 **Signature:**
 
@@ -171,7 +171,7 @@ isAtNPC = IsAtStableMaster()
 
 ## PickupStablePet
 
-Puts a pet from the stables onto the cursor. Use with [`ClickStablePet`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClickStablePet) to move pets between stabled and active status.
+Puts a pet from the stables onto the cursor. Use with [`ClickStablePet`](Pet Stable.md#clickstablepet) to move pets between stabled and active status.
 
 **Signature:**
 

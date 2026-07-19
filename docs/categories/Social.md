@@ -99,7 +99,7 @@ name, level, class, area, connected, status, note, RAF = GetFriendInfo(index)
 
 **Arguments:**
 
-- `index` - Index of a character in the Friends list (between 1 and [`GetNumFriends()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumFriends)) (`number`)
+- `index` - Index of a character in the Friends list (between 1 and [`GetNumFriends()`](Social.md#getnumfriends)) (`number`)
 
 **Returns:**
 
@@ -126,7 +126,7 @@ name = GetIgnoreName("index")
 
 **Arguments:**
 
-- `index` - Index of an entry in the ignore list (between 1 and [`GetNumIgnores()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumIgnores)) (`string`)
+- `index` - Index of an entry in the ignore list (between 1 and [`GetNumIgnores()`](Social.md#getnumignores)) (`string`)
 
 **Returns:**
 
@@ -195,7 +195,7 @@ index = GetSelectedFriend()
 
 **Returns:**
 
-- `index` - Index of the selected character in the Friends list (between 1 and [`GetNumFriends()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumFriends)) (`number`)
+- `index` - Index of the selected character in the Friends list (between 1 and [`GetNumFriends()`](Social.md#getnumfriends)) (`number`)
 
 ---
 
@@ -211,7 +211,7 @@ index = GetSelectedIgnore()
 
 **Returns:**
 
-- `index` - Index of the selected character in the Ignore list (between 1 and [`GetNumIgnores()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumIgnores)) (`number`)
+- `index` - Index of the selected character in the Ignore list (between 1 and [`GetNumIgnores()`](Social.md#getnumignores)) (`number`)
 
 ---
 
@@ -227,7 +227,7 @@ name, guild, level, race, class, zone, filename = GetWhoInfo(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the Who system query results (between 1 and [`GetNumWhoResults()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumWhoResults)) (`number`)
+- `index` - Index of an entry in the Who system query results (between 1 and [`GetNumWhoResults()`](Social.md#getnumwhoresults)) (`number`)
 
 **Returns:**
 
@@ -253,7 +253,7 @@ isIgnored = IsIgnored("unit") or IsIgnored("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -292,7 +292,7 @@ Requests a list of characters meeting given search criteria from the server. Tex
 - `-X` - Search for characters of level `X` or lower
 - `X-Y` - Search for characters between levels `X` and `Y` (inclusive)
 
-Results are not available immediately; the [`CHAT_MSG_SYSTEM`](https://web.archive.org/web/20111212160325/http://wowprogramming.com/docs/events/CHAT_MSG_SYSTEM) or [`WHO_LIST_UPDATE`](https://web.archive.org/web/20111212160325/http://wowprogramming.com/docs/events/WHO_LIST_UPDATE) event fires when data is available, as determined by the [`SetWhoToUI()`](https://web.archive.org/web/20111212160325/http://wowprogramming.com/docs/api/SetWhoToUI) function.
+Results are not available immediately; the [`CHAT_MSG_SYSTEM`](https://web.archive.org/web/20111212160325/http://wowprogramming.com/docs/events/CHAT_MSG_SYSTEM) or [`WHO_LIST_UPDATE`](https://web.archive.org/web/20111212160325/http://wowprogramming.com/docs/events/WHO_LIST_UPDATE) event fires when data is available, as determined by the [`SetWhoToUI()`](Social.md#setwhotoui) function.
 
 **Signature:**
 
@@ -318,7 +318,7 @@ SetFriendNotes(index, "note") or SetFriendNotes("name", "note")
 
 **Arguments:**
 
-- `index` - Index of a friends list entry (between 1 and [`GetNumFriends()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumFriends)) (`number`)
+- `index` - Index of a friends list entry (between 1 and [`GetNumFriends()`](Social.md#getnumfriends)) (`number`)
 - `name` - Name of friend to modify (`string`)
 - `note` - The note to set (`string`)
 
@@ -336,7 +336,7 @@ SetSelectedFriend(index)
 
 **Arguments:**
 
-- `index` - Index of a character in the Friends list (between 1 and [`GetNumFriends()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumFriends)) (`number`)
+- `index` - Index of a character in the Friends list (between 1 and [`GetNumFriends()`](Social.md#getnumfriends)) (`number`)
 
 ---
 
@@ -352,13 +352,13 @@ SetSelectedIgnore(index)
 
 **Arguments:**
 
-- `index` - Index of a character in the Ignore list (between 1 and [`GetNumIgnores()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumIgnores)) (`number`)
+- `index` - Index of a character in the Ignore list (between 1 and [`GetNumIgnores()`](Social.md#getnumignores)) (`number`)
 
 ---
 
 ## SetWhoToUI
 
-Changes the delivery method for results from [`SendWho()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SendWho) queries. In the default UI, results delivered in [`CHAT_MSG_SYSTEM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CHAT_MSG_SYSTEM) are printed in the main chat window; results delivered in a [`WHO_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/WHO_LIST_UPDATE) event cause the FriendsFrame to be shown, displaying the results in its "Who" tab.
+Changes the delivery method for results from [`SendWho()`](Social.md#sendwho-server) queries. In the default UI, results delivered in [`CHAT_MSG_SYSTEM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CHAT_MSG_SYSTEM) are printed in the main chat window; results delivered in a [`WHO_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/WHO_LIST_UPDATE) event cause the FriendsFrame to be shown, displaying the results in its "Who" tab.
 
 **Signature:**
 

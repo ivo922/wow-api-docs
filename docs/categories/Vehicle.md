@@ -44,7 +44,7 @@ canExit = CanExitVehicle()
 
 ## CanSwitchVehicleSeat
 
-Returns whether the player can change vehicle seats. Tells you if the player can switch seats in general, whereas [UnitVehicleSeatInfo](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitVehicleSeatInfo)() tells you if the player can switch into a specific seat.
+Returns whether the player can change vehicle seats. Tells you if the player can switch seats in general, whereas [UnitVehicleSeatInfo](Vehicle.md#unitvehicleseatinfo)() tells you if the player can switch into a specific seat.
 
 **Signature:**
 
@@ -148,7 +148,7 @@ isControlling = UnitControllingVehicle("unit") or UnitControllingVehicle("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -159,7 +159,7 @@ isControlling = UnitControllingVehicle("unit") or UnitControllingVehicle("name")
 
 ## UnitHasVehicleUI
 
-Returns whether a unit is controlling a vehicle or vehicle weapon. Used in the default UI to show the vehicle's health and power status bars in place of the controlling unit's. Returns false for passengers riding in but not controlling part of a vehicle; to find out whether a unit is riding in a vehicle, use [`UnitInVehicle`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitInVehicle). Also note that in some vehicles the player can command a vehicle weapon (e.g. gun turret) without controlling the vehicle itself; to find out whether a unit is controlling a vehicle, use [`UnitControllingVehicle`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitControllingVehicle).
+Returns whether a unit is controlling a vehicle or vehicle weapon. Used in the default UI to show the vehicle's health and power status bars in place of the controlling unit's. Returns false for passengers riding in but not controlling part of a vehicle; to find out whether a unit is riding in a vehicle, use [`UnitInVehicle`](Vehicle.md#unitinvehicle). Also note that in some vehicles the player can command a vehicle weapon (e.g. gun turret) without controlling the vehicle itself; to find out whether a unit is controlling a vehicle, use [`UnitControllingVehicle`](Vehicle.md#unitcontrollingvehicle).
 
 **Signature:**
 
@@ -169,7 +169,7 @@ hasVehicle = UnitHasVehicleUI("unit") or UnitHasVehicleUI("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -180,7 +180,7 @@ hasVehicle = UnitHasVehicleUI("unit") or UnitHasVehicleUI("name")
 
 ## UnitInVehicle
 
-Returns whether a unit is in a vehicle. A unit can be riding in a vehicle without controlling it: to test whether a unit is controlling a vehicle, use [`UnitControllingVehicle`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitControllingVehicle) or [`UnitHasVehicleUI`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitHasVehicleUI).
+Returns whether a unit is in a vehicle. A unit can be riding in a vehicle without controlling it: to test whether a unit is controlling a vehicle, use [`UnitControllingVehicle`](Vehicle.md#unitcontrollingvehicle) or [`UnitHasVehicleUI`](Vehicle.md#unithasvehicleui).
 
 Note: multi-passenger mounts appear as vehicles for passengers but not for the owner.
 
@@ -192,7 +192,7 @@ inVehicle = UnitInVehicle("unit") or UnitInVehicle("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -229,7 +229,7 @@ isControlling = UnitIsControlling("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -249,7 +249,7 @@ UnitSwitchToVehicleSeat("unit", seat)
 
 **Arguments:**
 
-- `unit` - Unit to move (only valid for `player`) (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to move (only valid for `player`) (`string`, [unitID](../types/unitID.md))
 - `seat` - Index of a seat to switch to (`number`)
 
 ---
@@ -266,7 +266,7 @@ targetVehicle = UnitTargetsVehicleInRaidUI("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -286,7 +286,7 @@ usingVehicle = UnitUsingVehicle("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -306,7 +306,7 @@ numSeats = UnitVehicleSeatCount("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -326,7 +326,7 @@ controlType, occupantName, occupantRealm, canEject, canSwitchSeats = UnitVehicle
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `seat` - Index of a seat in the unit's vehicle (`number`)
 
 **Returns:**
@@ -354,7 +354,7 @@ skin = UnitVehicleSkin("unit") or UnitVehicleSkin("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**

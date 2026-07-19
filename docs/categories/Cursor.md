@@ -20,7 +20,7 @@ AddTradeMoney()
 
 ## AutoEquipCursorItem
 
-Equips the item on the cursor. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/EquipCursorItem).
+Equips the item on the cursor. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](Cursor.md#equipcursoritem).
 
 Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
 
@@ -34,7 +34,7 @@ AutoEquipCursorItem()
 
 ## ClearCursor
 
-Clears any contents attached to the cursor. If the cursor contains an item picked up from inventory (equipment slots) or a container, the item returns to its point of origin and the inventory or container slot is unlocked. (To destroy an item, see [`DeleteCursorItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/DeleteCursorItem)).
+Clears any contents attached to the cursor. If the cursor contains an item picked up from inventory (equipment slots) or a container, the item returns to its point of origin and the inventory or container slot is unlocked. (To destroy an item, see [`DeleteCursorItem()`](Cursor.md#deletecursoritem-confirmation)).
 
 If the cursor contains an action, that action is deleted (but not the spell, item, macro, etc that it represents).
 
@@ -95,7 +95,7 @@ ClickSocketButton(index)
 
 **Arguments:**
 
-- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSockets)) (`number`)
+- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](Socketing.md#getnumsockets)) (`number`)
 
 **Examples:**
 
@@ -149,7 +149,7 @@ canBePlaced = CursorCanGoInSlot(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -159,7 +159,7 @@ canBePlaced = CursorCanGoInSlot(slot)
 
 ## CursorHasItem
 
-Returns whether an item is on the cursor. See [`GetCursorInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCursorInfo) for more detailed information.
+Returns whether an item is on the cursor. See [`GetCursorInfo()`](Cursor.md#getcursorinfo) for more detailed information.
 
 **Signature:**
 
@@ -175,7 +175,7 @@ hasItem = CursorHasItem()
 
 ## CursorHasMacro
 
-Returns whether a macro is on the cursor. See [`GetCursorInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCursorInfo) for more detailed information.
+Returns whether a macro is on the cursor. See [`GetCursorInfo()`](Cursor.md#getcursorinfo) for more detailed information.
 
 **Signature:**
 
@@ -191,7 +191,7 @@ hasMacro = CursorHasMacro()
 
 ## CursorHasMoney
 
-Returns whether an amount of the player's money is on the cursor. Returns `nil` if the cursor holds guild bank money. See [`GetCursorInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCursorInfo) for more detailed information.
+Returns whether an amount of the player's money is on the cursor. Returns `nil` if the cursor holds guild bank money. See [`GetCursorInfo()`](Cursor.md#getcursorinfo) for more detailed information.
 
 **Signature:**
 
@@ -207,7 +207,7 @@ hasMoney = CursorHasMoney()
 
 ## CursorHasSpell
 
-Returns whether a spell is on the cursor. See [`GetCursorInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCursorInfo) for more detailed information.
+Returns whether a spell is on the cursor. See [`GetCursorInfo()`](Cursor.md#getcursorinfo) for more detailed information.
 
 **Signature:**
 
@@ -257,14 +257,14 @@ DropItemOnUnit("unit") or DropItemOnUnit("name")
 
 **Arguments:**
 
-- `unit` - A unit to receive the item (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to receive the item (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit to receive the item; only valid for `player`, `pet`, and party/raid members (`string`)
 
 ---
 
 ## EquipCursorItem
 
-Puts the item on the cursor into a specific equipment slot. If the item on the cursor can be equipped but does not fit in the given slot, the item is automatically equipped in the first available slot in which it fits (as with [`AutoEquipCursorItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/AutoEquipCursorItem)). Thus, this function is most useful when dealing with items which can be equipped in more than one slot: containers, rings, trinkets, and (for dual-wielding characters) one-handed weapons.
+Puts the item on the cursor into a specific equipment slot. If the item on the cursor can be equipped but does not fit in the given slot, the item is automatically equipped in the first available slot in which it fits (as with [`AutoEquipCursorItem()`](Cursor.md#autoequipcursoritem)). Thus, this function is most useful when dealing with items which can be equipped in more than one slot: containers, rings, trinkets, and (for dual-wielding characters) one-handed weapons.
 
 Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
 
@@ -276,7 +276,7 @@ EquipCursorItem(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
@@ -305,14 +305,14 @@ type, data, subType = GetCursorInfo()
   - `companion` - Index of the companion in the non-combat pet or mount list (`number`)
   - `equipmentset` - Name of the equipment set (`string`)
   - `guildbankmoney` - Amount of the money from the guild bank (in copper) (`number`)
-  - `item` - Numeric identifier for the item (`number`, [`itemID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemID))
-  - `macro` - Index of the macro in the macro listing (`number`, [`macroID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+  - `item` - Numeric identifier for the item (`number`, [`itemID`](../types/itemID.md))
+  - `macro` - Index of the macro in the macro listing (`number`, [`macroID`](../types/macroID.md))
   - `merchant` - Index of the item in the vendor's listings (`number`)
   - `money` - Amount of the player's money (in copper) (`number`)
-  - `spell` - Index of the spell in the player's spellbook (`number`, [`spellbookID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+  - `spell` - Index of the spell in the player's spellbook (`number`, [`spellbookID`](../types/spellbookID.md))
 - `subType` - Secondary identifier for the data on the cursor; used only for certain types: (`string`)
   - `companion` - `"CRITTER"` or `"MOUNT"`, indicating whether the returned `data` is an index in the non-combat pet or mount list
-  - `item` - A complete [`hyperlink`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink) for the item
+  - `item` - A complete [`hyperlink`](../types/hyperlink.md) for the item
   - `spell` - `"spell"` or `"pet"`, indicating whether the returned `data` is an index in the player's or pet's spellbook
 
 ---
@@ -393,7 +393,7 @@ HideRepairCursor()
 
 ## InRepairMode
 
-Returns whether the item repair cursor mode is currently active. Repair mode is entered by calling [`ShowRepairCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/ShowRepairCursor) and exited by calling [`HideRepairCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/HideRepairCursor); while in repair mode, calling [`PickupContainerItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PickupContainerItem) or [`PickupInventoryItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PickupInventoryItem) will attempt to repair the item (and deduct the cost of such from the player's savings) instead of putting it on the cursor.
+Returns whether the item repair cursor mode is currently active. Repair mode is entered by calling [`ShowRepairCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/ShowRepairCursor) and exited by calling [`HideRepairCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/HideRepairCursor); while in repair mode, calling [`PickupContainerItem()`](Container.md#pickupcontaineritem) or [`PickupInventoryItem()`](Cursor.md#pickupinventoryitem) will attempt to repair the item (and deduct the cost of such from the player's savings) instead of putting it on the cursor.
 
 **Signature:**
 
@@ -409,7 +409,7 @@ inRepair = InRepairMode()
 
 ## PickupAction `nocombat`
 
-Puts the contents of an action bar slot onto the cursor or the cursor contents into an action bar slot. After an action is picked up via this function, it can only be placed into other action bar slots (with [`PlaceAction()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PlaceAction) or by calling `PickupAction()` again), even if the action is an item which could otherwise be placed elsewhere. Unlike many other "pickup" cursor functions, this function removes the picked-up action from the source slot -- an action slot can be emptied by calling this function followed by [`ClearCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClearCursor).
+Puts the contents of an action bar slot onto the cursor or the cursor contents into an action bar slot. After an action is picked up via this function, it can only be placed into other action bar slots (with [`PlaceAction()`](Action.md#placeaction-nocombat) or by calling `PickupAction()` again), even if the action is an item which could otherwise be placed elsewhere. Unlike many other "pickup" cursor functions, this function removes the picked-up action from the source slot -- an action slot can be emptied by calling this function followed by [`ClearCursor()`](Cursor.md#clearcursor).
 
 If the action slot is empty and the cursor already holds an action, a spell, a companion (mount or non-combat pet), a macro, an equipment set, or an item (with a "Use:" effect), it is put into the action slot. If both the cursor and the slot hold an action (or any of the above data types), the contents of the cursor and the slot are exchanged.
 
@@ -421,7 +421,7 @@ PickupAction(slot)
 
 **Arguments:**
 
-- `slot` - An action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - An action bar slot (`number`, [actionID](../types/actionID.md))
 
 ---
 
@@ -437,7 +437,7 @@ PickupBagFromSlot(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot containing a bag (see [`GetInventorySlotInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo), [`ContainerIDToInventoryID()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ContainerIDToInventoryID)) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot containing a bag (see [`GetInventorySlotInfo()`](Inventory.md#getinventoryslotinfo), [`ContainerIDToInventoryID()`](Container.md#containeridtoinventoryid)) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
@@ -456,7 +456,7 @@ PickupCompanion("type", index)
 - `type` - Type of companion (`string`)
   - `CRITTER` - A non-combat pet
   - `MOUNT` - A mount
-- `index` - Index of a companion (between 1 and [`GetNumCompanions(type)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumCompanions)) (`number`)
+- `index` - Index of a companion (between 1 and [`GetNumCompanions(type)`](Companion.md#getnumcompanions)) (`number`)
 
 ---
 
@@ -474,8 +474,8 @@ PickupContainerItem(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 ---
 
@@ -498,7 +498,7 @@ PickupGuildBankItem(tab, slot)
 
 ## PickupGuildBankMoney
 
-Puts money from the guild bank onto the cursor. Money is not actually withdrawn from the guild bank; in the default UI, when the cursor "puts" the money into one of the player's bags, it calls [`WithdrawGuildBankMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/WithdrawGuildBankMoney).
+Puts money from the guild bank onto the cursor. Money is not actually withdrawn from the guild bank; in the default UI, when the cursor "puts" the money into one of the player's bags, it calls [`WithdrawGuildBankMoney()`](Guild bank.md#withdrawguildbankmoney-confirmation).
 
 **Signature:**
 
@@ -526,13 +526,13 @@ PickupInventoryItem(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
 ## PickupItem
 
-Puts an arbitrary item onto the cursor. Puts an item onto the cursor regardless of its location (equipped, bags, bank or not even in the player's possession); can be used to put an item into an action slot (see [`PlaceAction()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PlaceAction)) even if the player does not currently hold the item. Since the item is not picked up from a specific location, this function cannot be used to move an item to another bag, trade it to another player, attach it to a mail message, destroyed, etc.
+Puts an arbitrary item onto the cursor. Puts an item onto the cursor regardless of its location (equipped, bags, bank or not even in the player's possession); can be used to put an item into an action slot (see [`PlaceAction()`](Action.md#placeaction-nocombat)) even if the player does not currently hold the item. Since the item is not picked up from a specific location, this function cannot be used to move an item to another bag, trade it to another player, attach it to a mail message, destroyed, etc.
 
 **Signature:**
 
@@ -544,7 +544,7 @@ PickupItem(itemID) or PickupItem("itemName") or PickupItem("itemLink")
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 ---
 
@@ -560,7 +560,7 @@ PickupMacro(index) or PickupMacro("name")
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 
 ---
@@ -577,7 +577,7 @@ PickupMerchantItem(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantNumItems)) (`number`)
+- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](Merchant.md#getmerchantnumitems)) (`number`)
 
 ---
 
@@ -601,7 +601,7 @@ PickupPetAction(index)
 
 ## PickupPlayerMoney
 
-Puts an amount of the player's money onto the cursor. Money is not immediately deducted from the player's total savings (though it appears such on the default UI's money displays, which generally show [`GetMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMoney)`-`[`GetCursorMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCursorMoney)).
+Puts an amount of the player's money onto the cursor. Money is not immediately deducted from the player's total savings (though it appears such on the default UI's money displays, which generally show [`GetMoney()`](Money.md#getmoney)`-`[`GetCursorMoney()`](Cursor.md#getcursormoney)).
 
 **Signature:**
 
@@ -627,13 +627,13 @@ PickupSpell(spellID)
 
 **Arguments:**
 
-- `spellID` - The spellID of the spell (`number`, [spellID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellID))
+- `spellID` - The spellID of the spell (`number`, [spellID](../types/spellID.md))
 
 ---
 
 ## PickupStablePet
 
-Puts a pet from the stables onto the cursor. Use with [`ClickStablePet`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClickStablePet) to move pets between stabled and active status.
+Puts a pet from the stables onto the cursor. Use with [`ClickStablePet`](Pet Stable.md#clickstablepet) to move pets between stabled and active status.
 
 **Signature:**
 
@@ -651,7 +651,7 @@ PickupStablePet(index)
 
 ## PickupTradeMoney
 
-Puts money offered by the player for trade onto the cursor. Money put onto the cursor is subtracted from the amount offered for trade (see [`GetPlayerTradeMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetPlayerTradeMoney)).
+Puts money offered by the player for trade onto the cursor. Money put onto the cursor is subtracted from the amount offered for trade (see [`GetPlayerTradeMoney()`](Money.md#getplayertrademoney)).
 
 **Signature:**
 
@@ -679,13 +679,13 @@ PlaceAction(slot)
 
 **Arguments:**
 
-- `slot` - Destination action bar slot (`number`, [actionID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID))
+- `slot` - Destination action bar slot (`number`, [actionID](../types/actionID.md))
 
 ---
 
 ## PutItemInBackpack
 
-Puts the item on the cursor into the player's backpack. The item will be placed in the lowest numbered slot ([`containerSlotID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID)) in the player's backpack.
+Puts the item on the cursor into the player's backpack. The item will be placed in the lowest numbered slot ([`containerSlotID`](../types/containerSlotID.md)) in the player's backpack.
 
 Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the backpack is full.
 
@@ -703,9 +703,9 @@ hadItem = PutItemInBackpack()
 
 ## PutItemInBag
 
-Puts the item on the cursor into one of the player's bags or other containers. The item will be placed in the lowest numbered slot ([`containerSlotID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID)) in the container.
+Puts the item on the cursor into one of the player's bags or other containers. The item will be placed in the lowest numbered slot ([`containerSlotID`](../types/containerSlotID.md)) in the container.
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the container is full. Cannot be used to place an item into the player's backpack; see [`PutItemInBackpack()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PutItemInBackpack).
+Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the container is full. Cannot be used to place an item into the player's backpack; see [`PutItemInBackpack()`](Container.md#putiteminbackpack).
 
 **Signature:**
 
@@ -715,7 +715,7 @@ hadItem = PutItemInBag(inventory)
 
 **Arguments:**
 
-- `inventory` - Index of one of the player's equipment or container slots (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `inventory` - Index of one of the player's equipment or container slots (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -725,7 +725,7 @@ hadItem = PutItemInBag(inventory)
 
 ## ResetCursor
 
-Returns the cursor to its normal appearance (the glove pointer) and behavior. Has effect after the cursor image/mode has been changed via [`SetCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetCursor), [`ShowContainerSellCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ShowContainerSellCursor), or similar. Has no immediately visible effect if the cursor is holding an item, spell, or other data.
+Returns the cursor to its normal appearance (the glove pointer) and behavior. Has effect after the cursor image/mode has been changed via [`SetCursor()`](Cursor.md#setcursor), [`ShowContainerSellCursor()`](Cursor.md#showcontainersellcursor), or similar. Has no immediately visible effect if the cursor is holding an item, spell, or other data.
 
 **Signature:**
 
@@ -765,7 +765,7 @@ ShowBuybackSellCursor(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the buyback listing (between 1 and [`GetNumBuybackItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBuybackItems)) (`number`)
+- `index` - Index of an item in the buyback listing (between 1 and [`GetNumBuybackItems()`](Merchant.md#getnumbuybackitems)) (`number`)
 
 ---
 
@@ -773,7 +773,7 @@ ShowBuybackSellCursor(index)
 
 Changes the cursor to prepare for selling an item in the player's bags to a vendor. Only changes the cursor image and mode if the given `container` and `slot` contain an item.
 
-While the cursor is in "sell" mode, [`UseContainerItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UseContainerItem) sells the item to the vendor instead of using it.
+While the cursor is in "sell" mode, [`UseContainerItem()`](Container.md#usecontaineritem-protected) sells the item to the vendor instead of using it.
 
 **Signature:**
 
@@ -783,8 +783,8 @@ ShowContainerSellCursor(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 ---
 
@@ -792,7 +792,7 @@ ShowContainerSellCursor(container, slot)
 
 Changes the cursor to prepare for selling an equipped item to a vendor. Only changes the cursor image and mode if the given `slot` contains an item.
 
-(Unlike [`ShowContainerSellCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ShowContainerSellCursor), does not change the behavior of other functions to enable selling of items. Unused in the default UI.)
+(Unlike [`ShowContainerSellCursor()`](Cursor.md#showcontainersellcursor), does not change the behavior of other functions to enable selling of items. Unused in the default UI.)
 
 **Signature:**
 
@@ -802,7 +802,7 @@ ShowInventorySellCursor(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
@@ -818,15 +818,15 @@ ShowMerchantSellCursor(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantNumItems)) (`number`)
+- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](Merchant.md#getmerchantnumitems)) (`number`)
 
 ---
 
 ## ShowRepairCursor
 
-Puts the cursor in item repair mode. Unlike most other cursor functions, this functions changes the behavior as well as the appearance of the mouse cursor: while repair mode is active, calling [`PickupContainerItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PickupContainerItem) or [`PickupInventoryItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PickupInventoryItem) will attempt to repair the item (and deduct the cost of such from the player's savings) instead of putting it on the cursor.
+Puts the cursor in item repair mode. Unlike most other cursor functions, this functions changes the behavior as well as the appearance of the mouse cursor: while repair mode is active, calling [`PickupContainerItem()`](Container.md#pickupcontaineritem) or [`PickupInventoryItem()`](Cursor.md#pickupinventoryitem) will attempt to repair the item (and deduct the cost of such from the player's savings) instead of putting it on the cursor.
 
-Only has effect while the player is interacting with a vendor which can perform repairs; i.e. between the [`MERCHANT_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_SHOW) and [`MERCHANT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_CLOSED) events, and only if [`CanMerchantRepair()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CanMerchantRepair) returns `1`.
+Only has effect while the player is interacting with a vendor which can perform repairs; i.e. between the [`MERCHANT_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_SHOW) and [`MERCHANT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_CLOSED) events, and only if [`CanMerchantRepair()`](Merchant.md#canmerchantrepair) returns `1`.
 
 **Signature:**
 
@@ -848,8 +848,8 @@ SplitContainerItem(container, slot, amount)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 - `amount` - Number of items from the stack to pick up (`number`)
 
 ---

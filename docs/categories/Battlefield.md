@@ -129,7 +129,7 @@ flagX, flagY, flagToken = GetBattlefieldFlagPosition(index)
 
 **Arguments:**
 
-- `index` - Index of a flag (between 1 and [`GetNumBattlefieldFlagPositions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefieldFlagPositions)) (`number`)
+- `index` - Index of a flag (between 1 and [`GetNumBattlefieldFlagPositions()`](Battlefield.md#getnumbattlefieldflagpositions)) (`number`)
 
 **Returns:**
 
@@ -173,7 +173,7 @@ instanceID = GetBattlefieldInstanceInfo(index)
 
 **Arguments:**
 
-- `index` - Index in the battleground queue listing (1 for the first available instance, or between 2 and [`GetNumBattlefields()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefields) for other instances) (`number`)
+- `index` - Index in the battleground queue listing (1 for the first available instance, or between 2 and [`GetNumBattlefields()`](Battlefield.md#getnumbattlefields) for other instances) (`number`)
 
 **Returns:**
 
@@ -235,7 +235,7 @@ expiration = GetBattlefieldPortExpiration(index)
 
 ## GetBattlefieldPosition
 
-Returns the position of a battleground team member not in the player's group. Still used in the default UI but no longer useful; as all team members in a battleground match are automatically joined into a raid group. See [`GetPlayerMapPosition()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetPlayerMapPosition) instead.
+Returns the position of a battleground team member not in the player's group. Still used in the default UI but no longer useful; as all team members in a battleground match are automatically joined into a raid group. See [`GetPlayerMapPosition()`](Map.md#getplayermapposition) instead.
 
 **Signature:**
 
@@ -245,7 +245,7 @@ unitX, unitY, name = GetBattlefieldPosition(index)
 
 **Arguments:**
 
-- `index` - Index of a team member (between 1 and [`GetNumBattlefieldPositions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefieldPositions)) (`number`)
+- `index` - Index of a team member (between 1 and [`GetNumBattlefieldPositions()`](Battlefield.md#getnumbattlefieldpositions)) (`number`)
 
 **Returns:**
 
@@ -257,7 +257,7 @@ unitX, unitY, name = GetBattlefieldPosition(index)
 
 ## GetBattlefieldScore
 
-Returns basic scoreboard information for a battleground/arena participant. Does not include battleground-specific score data (e.g. flags captured in Warsong Gulch, towers assaulted in Alterac Valley, etc); see [`GetBattlefieldStatData()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBattlefieldStatData) for such information.
+Returns basic scoreboard information for a battleground/arena participant. Does not include battleground-specific score data (e.g. flags captured in Warsong Gulch, towers assaulted in Alterac Valley, etc); see [`GetBattlefieldStatData()`](Battlefield.md#getbattlefieldstatdata) for such information.
 
 **Signature:**
 
@@ -267,7 +267,7 @@ name, killingBlows, honorableKills, deaths, honorGained, faction, race, class, c
 
 **Arguments:**
 
-- `index` - Index of a participant in the battleground/arena scoreboard (between 1 and [`GetNumBattlefieldScores()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefieldScores)) (`number`)
+- `index` - Index of a participant in the battleground/arena scoreboard (between 1 and [`GetNumBattlefieldScores()`](Battlefield.md#getnumbattlefieldscores)) (`number`)
 
 **Returns:**
 
@@ -294,7 +294,7 @@ name, killingBlows, honorableKills, deaths, honorGained, faction, race, class, c
 
 ## GetBattlefieldStatData
 
-Returns battleground-specific scoreboard information for a battleground participant. Battleground-specific statistics include flags captured in Warsong Gulch, towers assaulted in Alterac Valley, etc. For the name and icon associated with each statistic, see [`GetBattlefieldStatInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBattlefieldStatInfo). For basic battleground score information, see [`GetBattlefieldScore()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBattlefieldScore).
+Returns battleground-specific scoreboard information for a battleground participant. Battleground-specific statistics include flags captured in Warsong Gulch, towers assaulted in Alterac Valley, etc. For the name and icon associated with each statistic, see [`GetBattlefieldStatInfo()`](Battlefield.md#getbattlefieldstatinfo). For basic battleground score information, see [`GetBattlefieldScore()`](Battlefield.md#getbattlefieldscore).
 
 **Signature:**
 
@@ -304,8 +304,8 @@ columnData = GetBattlefieldStatData(index, statIndex)
 
 **Arguments:**
 
-- `index` - Index of a participant in the battleground/arena scoreboard (between 1 and [`GetNumBattlefieldScores()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefieldScores)) (`number`)
-- `statIndex` - Index of a battleground-specific statistic (between 1 and [`GetNumBattlefieldStats()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefieldStats)) (`number`)
+- `index` - Index of a participant in the battleground/arena scoreboard (between 1 and [`GetNumBattlefieldScores()`](Battlefield.md#getnumbattlefieldscores)) (`number`)
+- `statIndex` - Index of a battleground-specific statistic (between 1 and [`GetNumBattlefieldStats()`](Battlefield.md#getnumbattlefieldstats)) (`number`)
 
 **Returns:**
 
@@ -325,7 +325,7 @@ text, icon, tooltip = GetBattlefieldStatInfo(statIndex)
 
 **Arguments:**
 
-- `statIndex` - Index of a battleground-specific statistic (between 1 and [`GetNumBattlefieldStats()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefieldStats)) (`number`)
+- `statIndex` - Index of a battleground-specific statistic (between 1 and [`GetNumBattlefieldStats()`](Battlefield.md#getnumbattlefieldstats)) (`number`)
 
 **Returns:**
 
@@ -425,7 +425,7 @@ vehicleX, vehicleY, unitName, isPossessed, vehicleType, orientation, isPlayer, i
 
 **Arguments:**
 
-- `index` - Index of a special vehicle (between 1 and [`GetNumBattlefieldVehicles()`](https://web.archive.org/web/20100105220937/http://wowprogramming.com/docs/api/GetNumBattlefieldVehicles)) (`number`)
+- `index` - Index of a special vehicle (between 1 and [`GetNumBattlefieldVehicles()`](Battlefield.md#getnumbattlefieldvehicles)) (`number`)
 
 **Returns:**
 
@@ -536,7 +536,7 @@ numScores = GetNumBattlefieldScores()
 
 ## GetNumBattlefieldStats
 
-Returns the number of battleground-specific statistics on the current battleground's scoreboard. Battleground-specific statistics include flags captured in Warsong Gulch, towers assaulted in Alterac Valley, etc. For the name and icon associated with each statistic, see [`GetBattlefieldStatInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBattlefieldStatInfo).
+Returns the number of battleground-specific statistics on the current battleground's scoreboard. Battleground-specific statistics include flags captured in Warsong Gulch, towers assaulted in Alterac Valley, etc. For the name and icon associated with each statistic, see [`GetBattlefieldStatInfo()`](Battlefield.md#getbattlefieldstatinfo).
 
 **Signature:**
 
@@ -588,7 +588,7 @@ numBattlefields = GetNumBattlefields([index])
 
 ## GetNumBattlegroundTypes
 
-Returns the number of different battlegrounds available. Refers to distinct battlegrounds, not battleground instances. Does not indicate the number of battlegrounds the player can enter: for that, see [`GetBattlegroundInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBattlegroundInfo).
+Returns the number of different battlegrounds available. Refers to distinct battlegrounds, not battleground instances. Does not indicate the number of battlegrounds the player can enter: for that, see [`GetBattlegroundInfo`](Battlefield.md#getbattlegroundinfo).
 
 As of WoW 3.2, should always return 6: for Alterac Valley, Warsong Gulch, Arathi Basin, Eye of the Storm, Strand of the Ancients, and Isle of Conquest. If a future patch adds a new battleground, this function will reflect that.
 
@@ -648,7 +648,7 @@ index = GetSelectedBattlefield()
 
 **Returns:**
 
-- `index` - Index of the selection in the battleground queue listing (1 for the first available instance, or between 2 and [`GetNumBattlefields()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefields) for other instances) (`number`)
+- `index` - Index of the selection in the battleground queue listing (1 for the first available instance, or between 2 and [`GetNumBattlefields()`](Battlefield.md#getnumbattlefields) for other instances) (`number`)
 
 ---
 
@@ -719,7 +719,7 @@ JoinBattlefield(index, asGroup)
 
 **Arguments:**
 
-- `index` - Index in the battleground queue listing (1 for the first available instance, or between 2 and [`GetNumBattlefields()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefields) for other instances) (`number`)
+- `index` - Index in the battleground queue listing (1 for the first available instance, or between 2 and [`GetNumBattlefields()`](Battlefield.md#getnumbattlefields) for other instances) (`number`)
 - `asGroup` - True to enter the player's entire party/raid in the queue; false to enter the player only (`boolean`)
 
 ---
@@ -749,7 +749,7 @@ isInactive = PlayerIsPVPInactive("name") or PlayerIsPVPInactive("unit")
 **Arguments:**
 
 - `name` - Name of a friendly player unit in the current battleground (`string`)
-- `unit` - A friendly player unit in the current battleground (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A friendly player unit in the current battleground (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -770,7 +770,7 @@ ReportPlayerIsPVPAFK("name") or ReportPlayerIsPVPAFK("unit")
 **Arguments:**
 
 - `name` - Name of a friendly player unit in the current battleground (`string`)
-- `unit` - A friendly player unit in the current battleground (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A friendly player unit in the current battleground (`string`, [unitID](../types/unitID.md))
 
 ---
 
@@ -788,7 +788,7 @@ RequestBattlefieldPositions()
 
 ## RequestBattlefieldScoreData `server`
 
-Requests battlefield score data from the server. Score data is not returned immediately; the [`UPDATE_BATTLEFIELD_SCORE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UPDATE_BATTLEFIELD_SCORE) event fires once information is available and can be retrieved by calling [`GetBattlefieldScore()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBattlefieldScore) and related functions.
+Requests battlefield score data from the server. Score data is not returned immediately; the [`UPDATE_BATTLEFIELD_SCORE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UPDATE_BATTLEFIELD_SCORE) event fires once information is available and can be retrieved by calling [`GetBattlefieldScore()`](Battlefield.md#getbattlefieldscore) and related functions.
 
 **Signature:**
 
@@ -800,7 +800,7 @@ RequestBattlefieldScoreData()
 
 ## RequestBattlegroundInstanceInfo `server`
 
-Requests information about available instances of a battleground from the server. The [`PVPQUEUE_ANYWHERE_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PVPQUEUE_ANYWHERE_SHOW) event fires once information is available; data can then be retrieved by calling [`GetNumBattlefields()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefields) and [`GetBattlefieldInstanceInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBattlefieldInstanceInfo).
+Requests information about available instances of a battleground from the server. The [`PVPQUEUE_ANYWHERE_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PVPQUEUE_ANYWHERE_SHOW) event fires once information is available; data can then be retrieved by calling [`GetNumBattlefields()`](Battlefield.md#getnumbattlefields) and [`GetBattlefieldInstanceInfo()`](Battlefield.md#getbattlefieldinstanceinfo).
 
 **Signature:**
 
@@ -845,7 +845,7 @@ SetSelectedBattlefield(index)
 
 **Arguments:**
 
-- `index` - Index in the battleground queue listing (1 for the first available instance, or between 2 and [`GetNumBattlefields()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBattlefields) for other instances) (`number`)
+- `index` - Index in the battleground queue listing (1 for the first available instance, or between 2 and [`GetNumBattlefields()`](Battlefield.md#getnumbattlefields) for other instances) (`number`)
 
 ---
 
@@ -867,7 +867,7 @@ ShowMiniWorldMapArrowFrame(show)
 
 ## SortBattlefieldScoreData
 
-Sorts the battleground scoreboard. Battleground-specific statistics include flags captured in Warsong Gulch, towers assaulted in Alterac Valley, etc. For the name and icon associated with each statistic, see [`GetBattlefieldStatInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBattlefieldStatInfo).
+Sorts the battleground scoreboard. Battleground-specific statistics include flags captured in Warsong Gulch, towers assaulted in Alterac Valley, etc. For the name and icon associated with each statistic, see [`GetBattlefieldStatInfo()`](Battlefield.md#getbattlefieldstatinfo).
 
 **Signature:**
 
@@ -909,11 +909,11 @@ raidNum = UnitInBattleground("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
-- `raidNum` - Numeric portion of the unit's `raid` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID) (e.g. 13 for `raid13`) (`number`)
+- `raidNum` - Numeric portion of the unit's `raid` [`unitID`](../types/unitID.md) (e.g. 13 for `raid13`) (`number`)
 
 ---
 

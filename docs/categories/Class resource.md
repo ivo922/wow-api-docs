@@ -48,7 +48,7 @@ start, duration, runeReady = GetRuneCooldown(slot)
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the rune is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the rune is ready (`number`)
 - `duration` - The length of the cooldown (regardless of whether the rune is currently cooling down) (`number`)
 - `runeReady` - True if the rune can be used; false if the rune is cooling down (`boolean`)
 

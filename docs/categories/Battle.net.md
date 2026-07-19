@@ -18,7 +18,7 @@ presenceID, givenName, surname, toonName, toonID, client, isOnline, lastOnline, 
 
 **Arguments:**
 
-- `friendIndex` - Index (between 1 and [`BNGetNumFriends()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/BNGetNumFriends)) (`number`)
+- `friendIndex` - Index (between 1 and [`BNGetNumFriends()`](Battle.net.md#bngetnumfriends)) (`number`)
 
 **Returns:**
 
@@ -84,8 +84,8 @@ unknown, toonName, client, realmName, faction, race, class, unknown, zoneName, l
 
 **Arguments:**
 
-- `friendIndex` - Index (between 1 and [`BNGetNumFriends()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/BNGetNumFriends)) (`number`)
-- `toonIndex` - Index (between 1 and [`BNGetNumFriendToons(friendIndex)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/BNGetNumFriendToons)) (`number`)
+- `friendIndex` - Index (between 1 and [`BNGetNumFriends()`](Battle.net.md#bngetnumfriends)) (`number`)
+- `toonIndex` - Index (between 1 and [`BNGetNumFriendToons(friendIndex)`](Battle.net.md#bngetnumfriendtoons)) (`number`)
 
 **Returns:**
 

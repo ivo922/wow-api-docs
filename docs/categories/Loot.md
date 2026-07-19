@@ -52,7 +52,7 @@ ConfirmLootSlot(slot)
 
 **Arguments:**
 
-- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumLootItems)) (`number`)
+- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](Loot.md#getnumlootitems)) (`number`)
 
 ---
 
@@ -74,8 +74,8 @@ method, partyMaster, raidMaster = GetLootMethod()
   - `master` - Master Looter - like Round Robin, but items above a quality threshold are left for a designated loot master to
   - `needbeforegreed` - Need before Greed - like Group Loot, but members automatically pass on items
   - `roundrobin` - Round Robin - group members take turns being able to loot
-- `partyMaster` - Numeric portion of the `party` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID) of the loot master (e.g. if `2`, the loot master's unitID is `party2`); nil if not using the Master Looter method or if the player is in a raid whose loot master is not in the player's subgroup. If the player is the master looter, this value will return 0. (`number`)
-- `raidMaster` - Numeric portion of the `raid` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID) of the loot master (e.g. if `17`, the loot master's unitID is `raid17`); nil if not using the Master Looter method or not in a raid group (`number`)
+- `partyMaster` - Numeric portion of the `party` [`unitID`](../types/unitID.md) of the loot master (e.g. if `2`, the loot master's unitID is `party2`); nil if not using the Master Looter method or if the player is in a raid whose loot master is not in the player's subgroup. If the player is the master looter, this value will return 0. (`number`)
+- `raidMaster` - Numeric portion of the `raid` [`unitID`](../types/unitID.md) of the loot master (e.g. if `17`, the loot master's unitID is `raid17`); nil if not using the Master Looter method or not in a raid group (`number`)
 
 ---
 
@@ -98,7 +98,7 @@ texture, name, count, quality, bindOnPickUp = GetLootRollItemInfo(id)
 - `texture` - Path to an icon texture for the item (`string`)
 - `name` - Name of the item (`string`)
 - `count` - Number of stacked items (`number`)
-- `quality` - Quality (rarity) of the item. (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality (rarity) of the item. (`number`, [itemQuality](../types/itemQuality.md))
 - `bindOnPickUp` - 1 if the item is bind on pickup; otherwise nil (`1nil`)
 
 ---
@@ -119,7 +119,7 @@ link = GetLootRollItemLink(id)
 
 **Returns:**
 
-- `link` - A hyperlink for the loot roll item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the loot roll item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -155,14 +155,14 @@ texture, item, quantity, quality, locked = GetLootSlotInfo(slot)
 
 **Arguments:**
 
-- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumLootItems)) (`number`)
+- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](Loot.md#getnumlootitems)) (`number`)
 
 **Returns:**
 
 - `texture` - Path to an icon texture for the item or amount of money (`string`)
 - `item` - Name of the item, or description of the amount of money (`string`)
 - `quantity` - Number of stacked items, or 0 for money (`number`)
-- `quality` - Quality (rarity) of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality (rarity) of the item (`number`, [itemQuality](../types/itemQuality.md))
 - `locked` - 1 if the item is locked (preventing the player from looting it); otherwise nil (`1nil`)
 
 ---
@@ -179,7 +179,7 @@ link = GetLootSlotLink(slot)
 
 **Arguments:**
 
-- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumLootItems)) (`number`)
+- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](Loot.md#getnumlootitems)) (`number`)
 
 **Returns:**
 
@@ -199,7 +199,7 @@ threshold = GetLootThreshold()
 
 **Returns:**
 
-- `threshold` - Minimum item quality to trigger the loot method (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `threshold` - Minimum item quality to trigger the loot method (`number`, [itemQuality](../types/itemQuality.md))
 
 ---
 
@@ -219,7 +219,7 @@ candidate = GetMasterLootCandidate(index)
 
 **Arguments:**
 
-- `index` - Index of a member of the party or raid (*not* equivalent to the numeric part of a `party` or `raid` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID)) (`number`)
+- `index` - Index of a member of the party or raid (*not* equivalent to the numeric part of a `party` or `raid` [`unitID`](../types/unitID.md)) (`number`)
 
 **Returns:**
 
@@ -271,8 +271,8 @@ GiveMasterLoot(slot, index)
 
 **Arguments:**
 
-- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumLootItems)) (`number`)
-- `index` - Index of a loot candidate (see [`GetMasterLootCandidate()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMasterLootCandidate)) (`number`)
+- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](Loot.md#getnumlootitems)) (`number`)
+- `index` - Index of a loot candidate (see [`GetMasterLootCandidate()`](Loot.md#getmasterlootcandidate)) (`number`)
 
 ---
 
@@ -294,7 +294,7 @@ isFishing = IsFishingLoot()
 
 ## LootSlot
 
-Attempts to pick up an item available as loot. If the item in the loot slot binds on pickup, the [`LOOT_BIND_CONFIRM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_BIND_CONFIRM) event fires, indicating that [`ConfirmLootSlot(slot)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ConfirmLootSlot) must be called in order to actually loot the item. Please note: if you call this while processing a [`LOOT_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_OPENED) event and it is the last item to be looted from the corpse, can cause [`LOOT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_CLOSED) to fire and be processed before your `LOOT_OPENED` event handler completes.
+Attempts to pick up an item available as loot. If the item in the loot slot binds on pickup, the [`LOOT_BIND_CONFIRM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_BIND_CONFIRM) event fires, indicating that [`ConfirmLootSlot(slot)`](Loot.md#confirmlootslot-confirmation) must be called in order to actually loot the item. Please note: if you call this while processing a [`LOOT_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_OPENED) event and it is the last item to be looted from the corpse, can cause [`LOOT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_CLOSED) to fire and be processed before your `LOOT_OPENED` event handler completes.
 
 **Signature:**
 
@@ -304,7 +304,7 @@ LootSlot(slot)
 
 **Arguments:**
 
-- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumLootItems)) (`number`)
+- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](Loot.md#getnumlootitems)) (`number`)
 
 ---
 
@@ -320,7 +320,7 @@ isCoin = LootSlotIsCoin(slot)
 
 **Arguments:**
 
-- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumLootItems)) (`number`)
+- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](Loot.md#getnumlootitems)) (`number`)
 
 **Returns:**
 
@@ -340,7 +340,7 @@ isItem = LootSlotIsItem(slot)
 
 **Arguments:**
 
-- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumLootItems)) (`number`)
+- `slot` - Index of a loot slot (between 1 and [`GetNumLootItems()`](Loot.md#getnumlootitems)) (`number`)
 
 **Returns:**
 
@@ -352,7 +352,7 @@ isItem = LootSlotIsItem(slot)
 
 Register the player's intent regarding an item up for loot rolling. Rolls are not actually performed until all eligible group members have registered their intent or the time period for rolling expires.
 
-If the item binds on pickup, the [`CONFIRM_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_LOOT_ROLL) event fires, indicating that [`ConfirmLootRoll(id)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ConfirmLootRoll) must be called in order to actually roll on the item.
+If the item binds on pickup, the [`CONFIRM_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_LOOT_ROLL) event fires, indicating that [`ConfirmLootRoll(id)`](Loot.md#confirmlootroll-confirmation) must be called in order to actually roll on the item.
 
 **Signature:**
 
@@ -375,7 +375,7 @@ RollOnLoot(id, rollType)
 
 Sets the loot method for a party or raid group. Has no effect if the player is not the party or raid leader.
 
-See [`SetLootThreshold`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetLootThreshold) for the quality threshold used by Master Looter, Group Loot, and Need Before Greed methods.
+See [`SetLootThreshold`](Loot.md#setlootthreshold) for the quality threshold used by Master Looter, Group Loot, and Need Before Greed methods.
 
 **Signature:**
 
@@ -391,7 +391,7 @@ SetLootMethod("method" [, "master"])
   - `master` - Master Looter - like Round Robin, but items above a quality threshold are left for a designated loot master to
   - `needbeforegreed` - Need before Greed - like Group Loot, but members automatically pass on items
   - `roundrobin` - Round Robin - group members take turns being able to loot
-- `master` - Name or [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID) of the master looter (`string`)
+- `master` - Name or [`unitID`](../types/unitID.md) of the master looter (`string`)
 
 ---
 
@@ -427,7 +427,7 @@ SetLootThreshold(threshold)
 
 **Arguments:**
 
-- `threshold` - Minimum item quality to trigger the loot method (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `threshold` - Minimum item quality to trigger the loot method (`number`, [itemQuality](../types/itemQuality.md))
 
 ---
 

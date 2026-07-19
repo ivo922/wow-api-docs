@@ -151,7 +151,7 @@ name, texture, numItems, quality, isUsable, enchantment = GetTradePlayerItemInfo
 - `name` - Name of the item (`string`)
 - `texture` - Path to an icon texture for the item (`string`)
 - `numItems` - Number of stacked items in the slot (`number`)
-- `quality` - Quality (rarity) level of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality (rarity) level of the item (`number`, [itemQuality](../types/itemQuality.md))
 - `isUsable` - 1 if the player character can use or equip the item; otherwise nil (`1nil`)
 - `enchantment` - Name of the enchantment being applied to the item through trade; otherwise nil (`string`)
 
@@ -173,7 +173,7 @@ link = GetTradePlayerItemLink(index)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -196,7 +196,7 @@ name, texture, numItems, quality, isUsable, enchantment = GetTradeTargetItemInfo
 - `name` - Name of the item (`string`)
 - `texture` - Path to an icon texture for the item (`string`)
 - `numItems` - Number of stacked items in the slot (`number`)
-- `quality` - Quality (rarity) level of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality (rarity) level of the item (`number`, [itemQuality](../types/itemQuality.md))
 - `isUsable` - 1 if the player character can use or equip the item; otherwise nil (`1nil`)
 - `enchantment` - Name of the enchantment being applied to the item through trade; otherwise nil (`string`)
 
@@ -218,7 +218,7 @@ link = GetTradeTargetItemLink(index)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -234,14 +234,14 @@ InitiateTrade("unit") or InitiateTrade("name")
 
 **Arguments:**
 
-- `unit` - A unit with which to trade (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit with which to trade (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit with which to trade; only valid for nearby units in the player's party/raid (`string`)
 
 ---
 
 ## PickupTradeMoney
 
-Puts money offered by the player for trade onto the cursor. Money put onto the cursor is subtracted from the amount offered for trade (see [`GetPlayerTradeMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetPlayerTradeMoney)).
+Puts money offered by the player for trade onto the cursor. Money put onto the cursor is subtracted from the amount offered for trade (see [`GetPlayerTradeMoney()`](Money.md#getplayertrademoney)).
 
 **Signature:**
 

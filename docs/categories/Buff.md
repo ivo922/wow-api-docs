@@ -44,7 +44,7 @@ CancelUnitBuff("unit", index [, "filter"]) or CancelUnitBuff("unit", "name" [, "
 
 **Arguments:**
 
-- `unit` - A unit to query (only valid for 'player') (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (only valid for 'player') (`string`, [unitID](../types/unitID.md))
 - `index` - Index of an aura to query (`number`)
 - `name` - Name of an aura to query (`string`)
 - `rank` - Secondary text of an aura to query (often a rank; e.g. "Rank 7") (`string`)
@@ -91,7 +91,7 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `index` - Index of an aura to query (`number`)
 - `name` - Name of an aura to query (`string`)
 - `rank` - Secondary text of an aura to query (often a rank; e.g. "Rank 7") (`string`)
@@ -115,8 +115,8 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
   - `Magic`
   - `Poison`
 - `duration` - Total duration of the aura (in seconds). Zero if the unit is phased or out of range. (`number`)
-- `expires` - Time at which the aura will expire; can be compared to [GetTime()](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
-- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `expires` - Time at which the aura will expire; can be compared to [GetTime()](Utility.md#gettime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
+- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](../types/unitID.md))
 - `isStealable` - true if the aura can be transferred to a player using the Spellsteal spell (`boolean`)
 - `nameplateShowPersonal` - true if the aura should be visible above nameplates of affected targets, but only for the player that casted it (`boolean`)
 - `spellID` - spellID of the aura (`number`)
@@ -133,7 +133,7 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
 
 ## UnitBuff
 
-Returns information about a buff on a unit. This function is an alias for [`UnitAura()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitAura) with a built-in `HELPFUL` filter (which cannot be removed or negated with the `HARMFUL` filter).
+Returns information about a buff on a unit. This function is an alias for [`UnitAura()`](Buff.md#unitaura) with a built-in `HELPFUL` filter (which cannot be removed or negated with the `HARMFUL` filter).
 
 **Signature:**
 
@@ -143,7 +143,7 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `index` - Index of an aura to query (`number`)
 - `name` - Name of an aura to query (`string`)
 - `rank` - Secondary text of an aura to query (often a rank; e.g. "Rank 7") (`string`)
@@ -165,8 +165,8 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
   - `Magic`
   - `Poison`
 - `duration` - Total duration of the aura (in seconds). Zero if the unit is phased or out of range. (`number`)
-- `expires` - Time at which the aura will expire; can be compared to [GetTime()](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
-- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `expires` - Time at which the aura will expire; can be compared to [GetTime()](Utility.md#gettime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
+- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](../types/unitID.md))
 - `isStealable` - true if the aura can be transferred to a player using the Spellsteal spell (`boolean`)
 - `nameplateShowPersonal` - true if the aura should be visible above nameplates of affected targets, but only for the player that casted it (`boolean`)
 - `spellID` - spellID of the aura (`number`)
@@ -183,7 +183,7 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
 
 ## UnitDebuff
 
-Returns information about a debuff on a unit. This function is an alias for [`UnitAura()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitAura) with a built-in `HARMFUL` filter (which cannot be removed or negated with the `HELPFUL` filter).
+Returns information about a debuff on a unit. This function is an alias for [`UnitAura()`](Buff.md#unitaura) with a built-in `HARMFUL` filter (which cannot be removed or negated with the `HELPFUL` filter).
 
 **Signature:**
 
@@ -193,7 +193,7 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `index` - Index of an aura to query (`number`)
 - `name` - Name of an aura to query (`string`)
 - `rank` - Secondary text of an aura to query (often a rank; e.g. "Rank 7") (`string`)
@@ -215,8 +215,8 @@ name, rank, icon, count, dispelType, duration, expires, caster, isStealable, nam
   - `Magic`
   - `Poison`
 - `duration` - Total duration of the aura (in seconds). Zero if the unit is phased or out of range. (`number`)
-- `expires` - Time at which the aura will expire; can be compared to [GetTime()](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
-- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `expires` - Time at which the aura will expire; can be compared to [GetTime()](Utility.md#gettime) to determine time remaining. Zero if the unit is phased or out of range. (`number`)
+- `caster` - Unit which applied the aura. If the aura was applied by a unit that does not have a token but is controlled by one that does (e.g. a totem or another player's vehicle), returns the controlling unit. Returns nil if the casting unit (or its controller) has no unitID. (`string`, [unitID](../types/unitID.md))
 - `isStealable` - true if the aura can be transferred to a player using the Spellsteal spell (`boolean`)
 - `nameplateShowPersonal` - true if the aura should be visible above nameplates of affected targets, but only for the player that casted it (`boolean`)
 - `spellID` - spellID of the aura (`number`)

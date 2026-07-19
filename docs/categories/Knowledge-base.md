@@ -42,7 +42,7 @@ id, subject, subjectAlt, text, keywords, languageId, isHot = KBArticle_GetData()
 - `subjectAlt` - Alternate text for the article subject (`string`)
 - `text` - The body of the article (`string`)
 - `keywords` - A comma separated list of keywords for the article (`string`)
-- `languageId` - Identifier for the article's language (ee [`KBSetup_GetLanguageData`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/KBSetup_GetLanguageData)) (`number`)
+- `languageId` - Identifier for the article's language (ee [`KBSetup_GetLanguageData`](Knowledge-base.md#kbsetup_getlanguagedata)) (`number`)
 - `isHot` - true if the article is a "Hot Item", otherwise false (`boolean`)
 
 ---
@@ -275,7 +275,7 @@ languageId, name = KBSetup_GetLanguageData(index)
 
 **Arguments:**
 
-- `index` - Index of a language to query (between 1 and [`KBSetup_GetLanguageCount()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/KBSetup_GetLanguageCount) (`number`)
+- `index` - Index of a language to query (between 1 and [`KBSetup_GetLanguageCount()`](Knowledge-base.md#kbsetup_getlanguagecount) (`number`)
 
 **Returns:**
 

@@ -8,7 +8,7 @@
 
 ## PlayMusic
 
-Plays an audio file as background music. Any other background music that is currently playing will be faded out as the new music begins; if the `Sound_ZoneMusicNoDelay` is set, music will loop continuously until [`StopMusic()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/StopMusic) is called.
+Plays an audio file as background music. Any other background music that is currently playing will be faded out as the new music begins; if the `Sound_ZoneMusicNoDelay` is set, music will loop continuously until [`StopMusic()`](Sound.md#stopmusic) is called.
 
 WoW supports WAV, MP3 and Ogg audio formats.
 
@@ -26,7 +26,7 @@ PlayMusic("musicfile")
 
 ## PlaySound
 
-Plays one of WoW's built-in sound effects. Only supports sounds found in the `Sound\Interface` directory within WoW's MPQ files; to play other built-in sounds or sounds in an addon directory, use [`PlaySoundFile()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PlaySoundFile).
+Plays one of WoW's built-in sound effects. Only supports sounds found in the `Sound\Interface` directory within WoW's MPQ files; to play other built-in sounds or sounds in an addon directory, use [`PlaySoundFile()`](Sound.md#playsoundfile).
 
 **Signature:**
 
@@ -48,7 +48,7 @@ PlaySound("AuctionWindowOpen");
 
 ## PlaySoundFile
 
-Plays an audio file at a given path. For a shorter way to specify one of WoW's built-in UI sound effects, see [`PlaySound()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PlaySound).
+Plays an audio file at a given path. For a shorter way to specify one of WoW's built-in UI sound effects, see [`PlaySound()`](Sound.md#playsound).
 
 WoW supports custom sound files using Ogg or MP3 audio format. MP3 support was dropped in patch 6.0.2, but added again in patch 6.0.3
 
@@ -213,7 +213,7 @@ deviceName = VoiceEnumerateCaptureDevices(deviceIndex)
 
 **Arguments:**
 
-- `deviceIndex` - Index of the device (between 1 and [`Sound_ChatSystem_GetNumInputDrivers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Sound_ChatSystem_GetNumInputDrivers)) (`number`)
+- `deviceIndex` - Index of the device (between 1 and [`Sound_ChatSystem_GetNumInputDrivers()`](Sound.md#sound_chatsystem_getnuminputdrivers)) (`number`)
 
 **Returns:**
 
@@ -233,7 +233,7 @@ device = VoiceEnumerateOutputDevices(deviceIndex)
 
 **Arguments:**
 
-- `deviceIndex` - Index of the device (between 1 and [`Sound_ChatSystem_GetNumOutputDrivers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Sound_ChatSystem_GetNumOutputDrivers)) (`number`)
+- `deviceIndex` - Index of the device (between 1 and [`Sound_ChatSystem_GetNumOutputDrivers()`](Sound.md#sound_chatsystem_getnumoutputdrivers)) (`number`)
 
 **Returns:**
 
@@ -253,7 +253,7 @@ index = VoiceGetCurrentCaptureDevice()
 
 **Returns:**
 
-- `index` - Index of the current voice capture device (between 1 and [`Sound_ChatSystem_GetNumInputDrivers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Sound_ChatSystem_GetNumInputDrivers)) (`number`)
+- `index` - Index of the current voice capture device (between 1 and [`Sound_ChatSystem_GetNumInputDrivers()`](Sound.md#sound_chatsystem_getnuminputdrivers)) (`number`)
 
 ---
 
@@ -269,7 +269,7 @@ index = VoiceGetCurrentOutputDevice()
 
 **Returns:**
 
-- `index` - Index of the current voice output device (between 1 and [`Sound_ChatSystem_GetNumOutputDrivers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Sound_ChatSystem_GetNumOutputDrivers)) (`number`)
+- `index` - Index of the current voice output device (between 1 and [`Sound_ChatSystem_GetNumOutputDrivers()`](Sound.md#sound_chatsystem_getnumoutputdrivers)) (`number`)
 
 ---
 
@@ -285,7 +285,7 @@ VoiceSelectCaptureDevice("deviceName")
 
 **Arguments:**
 
-- `deviceName` - Name of an audio input device, as returned from [`VoiceEnumerateCaptureDevices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/VoiceEnumerateCaptureDevices) (`string`)
+- `deviceName` - Name of an audio input device, as returned from [`VoiceEnumerateCaptureDevices()`](Sound.md#voiceenumeratecapturedevices) (`string`)
 
 ---
 
@@ -301,7 +301,7 @@ VoiceSelectOutputDevice("deviceName")
 
 **Arguments:**
 
-- `deviceName` - Name of an audio output device, as returned from [`VoiceEnumerateOutputDevices()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/VoiceEnumerateOutputDevices) (`string`)
+- `deviceName` - Name of an audio output device, as returned from [`VoiceEnumerateOutputDevices()`](Sound.md#voiceenumerateoutputdevices) (`string`)
 
 ---
 

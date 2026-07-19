@@ -10,7 +10,7 @@
 
 Summons a non-combat pet or mount.
 
-If called referencing the current non-combat pet, dismisses it. Does nothing if given an index greater than [`GetNumCompanions(type)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumCompanions).
+If called referencing the current non-combat pet, dismisses it. Does nothing if given an index greater than [`GetNumCompanions(type)`](Companion.md#getnumcompanions).
 
 **Signature:**
 
@@ -23,7 +23,7 @@ CallCompanion("type", index)
 - `type` - Type of companion (`string`)
   - `CRITTER` - A non-combat pet
   - `MOUNT` - A mount
-- `index` - Index of a companion (between 1 and [`GetNumCompanions(type)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumCompanions)) (`number`)
+- `index` - Index of a companion (between 1 and [`GetNumCompanions(type)`](Companion.md#getnumcompanions)) (`number`)
 
 ---
 
@@ -60,11 +60,11 @@ start, duration, enable = GetCompanionCooldown("type", index)
 - `type` - Type of companion (`string`)
   - `CRITTER` - A non-combat pet
   - `MOUNT` - A mount
-- `index` - Index of a companion (between 1 and [`GetNumCompanions(type)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumCompanions)) (`number`)
+- `index` - Index of a companion (between 1 and [`GetNumCompanions(type)`](Companion.md#getnumcompanions)) (`number`)
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the companion is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the companion is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the companion is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the companion is ready.) (`number`)
 
@@ -85,13 +85,13 @@ creatureID, creatureName, spellID, icon, active = GetCompanionInfo("type", index
 - `type` - Type of companion (`string`)
   - `CRITTER` - A non-combat pet
   - `MOUNT` - A mount
-- `index` - Index of a companion (between 1 and [`GetNumCompanions(type)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumCompanions)) (`number`)
+- `index` - Index of a companion (between 1 and [`GetNumCompanions(type)`](Companion.md#getnumcompanions)) (`number`)
 
 **Returns:**
 
-- `creatureID` - Unique ID of the companion (usable with [`PlayerModel:SetCreature`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/PlayerModel/SetCreature)) (`number`)
+- `creatureID` - Unique ID of the companion (usable with [`PlayerModel:SetCreature`](../widgets/PlayerModel.md#playermodelsetcreature)) (`number`)
 - `creatureName` - Localized name of the companion (`string`)
-- `spellID` - The "spell" for summoning the companion (usable with [`GetSpellLink`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetSpellLink) et al) (`number`)
+- `spellID` - The "spell" for summoning the companion (usable with [`GetSpellLink`](Hyperlink.md#getspelllink) et al) (`number`)
 - `icon` - Path to an icon texture for the companion (`string`)
 - `active` - 1 if the companion queried is currently summoned; otherwise nil (`1nil`)
 
@@ -134,7 +134,7 @@ PickupCompanion("type", index)
 - `type` - Type of companion (`string`)
   - `CRITTER` - A non-combat pet
   - `MOUNT` - A mount
-- `index` - Index of a companion (between 1 and [`GetNumCompanions(type)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumCompanions)) (`number`)
+- `index` - Index of a companion (between 1 and [`GetNumCompanions(type)`](Companion.md#getnumcompanions)) (`number`)
 
 ---
 

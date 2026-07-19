@@ -8,7 +8,7 @@
 
 ## CameraOrSelectOrMoveStart `protected`
 
-Begins camera movement or selection (equivalent to left-clicking in the 3-D world). After calling this function (i.e. while the left mouse button is held), cursor movement rotates the camera. Final results vary by context and are determined when calling [`CameraOrSelectOrMoveStop()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CameraOrSelectOrMoveStop) (i.e. releasing the left mouse button).
+Begins camera movement or selection (equivalent to left-clicking in the 3-D world). After calling this function (i.e. while the left mouse button is held), cursor movement rotates the camera. Final results vary by context and are determined when calling [`CameraOrSelectOrMoveStop()`](Camera.md#cameraorselectormovestop-protected) (i.e. releasing the left mouse button).
 
 Used by the `CAMERAORSELECTORMOVE` binding (not customizable in the default UI), which is bound to the left mouse button by default.
 
@@ -22,7 +22,7 @@ CameraOrSelectOrMoveStart()
 
 ## CameraOrSelectOrMoveStop `protected`
 
-Ends action initiated by [`CameraOrSelectOrMoveStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CameraOrSelectOrMoveStart). After calling this function (i.e. releasing the left mouse button), camera movement stops and normal cursor movement resumes. If the cursor has not moved significantly since calling [`CameraOrSelectOrMoveStart()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CameraOrSelectOrMoveStart) (i.e. pressing the left mouse button) and is over a unit, that unit becomes the player's target; if the cursor has not moved significantly and is not over a unit, clears the player's target unless the "Sticky Targeting" option is enabled (i.e. the "deselectOnClick" CVar is 0).
+Ends action initiated by [`CameraOrSelectOrMoveStart`](Camera.md#cameraorselectormovestart-protected). After calling this function (i.e. releasing the left mouse button), camera movement stops and normal cursor movement resumes. If the cursor has not moved significantly since calling [`CameraOrSelectOrMoveStart()`](Camera.md#cameraorselectormovestart-protected) (i.e. pressing the left mouse button) and is over a unit, that unit becomes the player's target; if the cursor has not moved significantly and is not over a unit, clears the player's target unless the "Sticky Targeting" option is enabled (i.e. the "deselectOnClick" CVar is 0).
 
 Used by the `CAMERAORSELECTORMOVE` binding (not customizable in the default UI), which is bound to the left mouse button by default.
 
@@ -161,7 +161,7 @@ MoveViewDownStart()
 
 ## MoveViewDownStop
 
-Ends camera movement initiated by [`MoveViewDownStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/MoveViewDownStart)
+Ends camera movement initiated by [`MoveViewDownStart`](Camera.md#moveviewdownstart)
 
 **Signature:**
 
@@ -185,7 +185,7 @@ MoveViewInStart()
 
 ## MoveViewInStop
 
-Ends camera movement initiated by [`MoveViewInStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/MoveViewInStart)
+Ends camera movement initiated by [`MoveViewInStart`](Camera.md#moveviewinstart)
 
 **Signature:**
 
@@ -209,7 +209,7 @@ MoveViewLeftStart()
 
 ## MoveViewLeftStop
 
-Ends camera movement initiated by [`MoveViewLeftStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/MoveViewLeftStart)
+Ends camera movement initiated by [`MoveViewLeftStart`](Camera.md#moveviewleftstart)
 
 **Signature:**
 
@@ -233,7 +233,7 @@ MoveViewOutStart()
 
 ## MoveViewOutStop
 
-Ends camera movement initiated by [`MoveViewOutStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/MoveViewOutStart)
+Ends camera movement initiated by [`MoveViewOutStart`](Camera.md#moveviewoutstart)
 
 **Signature:**
 
@@ -257,7 +257,7 @@ MoveViewRightStart()
 
 ## MoveViewRightStop
 
-Ends camera movement initiated by [`MoveViewRightStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/MoveViewRightStart)
+Ends camera movement initiated by [`MoveViewRightStart`](Camera.md#moveviewrightstart)
 
 **Signature:**
 
@@ -281,7 +281,7 @@ MoveViewUpStart()
 
 ## MoveViewUpStop
 
-Ends camera movement initiated by [`MoveViewUpStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/MoveViewUpStart)
+Ends camera movement initiated by [`MoveViewUpStart`](Camera.md#moveviewupstart)
 
 **Signature:**
 
@@ -293,7 +293,7 @@ MoveViewUpStop()
 
 ## NextView
 
-Moves the camera to the next predefined setting. There are five "slots" for saved camera settings, indexed 1-5. These views can be set and accessed directly using [`SaveView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SaveView) and [`SetView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetView), and cycled through using [`NextView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NextView) and [`PrevView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PrevView).
+Moves the camera to the next predefined setting. There are five "slots" for saved camera settings, indexed 1-5. These views can be set and accessed directly using [`SaveView()`](Camera.md#saveview) and [`SetView()`](Camera.md#setview), and cycled through using [`NextView()`](Camera.md#nextview) and [`PrevView()`](Camera.md#prevview).
 
 **Signature:**
 
@@ -305,7 +305,7 @@ NextView()
 
 ## PrevView
 
-Moves the camera to the previous predefined setting. There are five "slots" for saved camera settings, indexed 1-5. These views can be set and accessed directly using [`SaveView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SaveView) and [`SetView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetView), and cycled through using [`NextView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NextView) and [`PrevView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PrevView).
+Moves the camera to the previous predefined setting. There are five "slots" for saved camera settings, indexed 1-5. These views can be set and accessed directly using [`SaveView()`](Camera.md#saveview) and [`SetView()`](Camera.md#setview), and cycled through using [`NextView()`](Camera.md#nextview) and [`PrevView()`](Camera.md#prevview).
 
 **Signature:**
 
@@ -317,7 +317,7 @@ PrevView()
 
 ## ResetView
 
-Resets a saved camera setting to default values. There are five "slots" for saved camera settings, indexed 1-5. These views can be set and accessed directly using [`SaveView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SaveView) and [`SetView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetView), and cycled through using [`NextView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NextView) and [`PrevView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PrevView).
+Resets a saved camera setting to default values. There are five "slots" for saved camera settings, indexed 1-5. These views can be set and accessed directly using [`SaveView()`](Camera.md#saveview) and [`SetView()`](Camera.md#setview), and cycled through using [`NextView()`](Camera.md#nextview) and [`PrevView()`](Camera.md#prevview).
 
 **Signature:**
 
@@ -333,7 +333,7 @@ ResetView(index)
 
 ## SaveView
 
-Saves the current camera settings. There are five "slots" for saved camera settings, indexed 1-5. These views can be set and accessed directly using [`SaveView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SaveView) and [`SetView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetView), and cycled through using [`NextView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NextView) and [`PrevView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PrevView).
+Saves the current camera settings. There are five "slots" for saved camera settings, indexed 1-5. These views can be set and accessed directly using [`SaveView()`](Camera.md#saveview) and [`SetView()`](Camera.md#setview), and cycled through using [`NextView()`](Camera.md#nextview) and [`PrevView()`](Camera.md#prevview).
 
 **Signature:**
 
@@ -349,7 +349,7 @@ SaveView(index)
 
 ## SetView
 
-Moves the camera to a saved camera setting. There are five "slots" for saved camera settings, indexed 1-5. These views can be set and accessed directly using [`SaveView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SaveView) and [`SetView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetView), and cycled through using [`NextView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NextView) and [`PrevView()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PrevView).
+Moves the camera to a saved camera setting. There are five "slots" for saved camera settings, indexed 1-5. These views can be set and accessed directly using [`SaveView()`](Camera.md#saveview) and [`SetView()`](Camera.md#setview), and cycled through using [`NextView()`](Camera.md#nextview) and [`PrevView()`](Camera.md#prevview).
 
 **Signature:**
 

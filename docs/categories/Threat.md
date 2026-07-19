@@ -18,7 +18,7 @@ red, green, blue = GetThreatStatusColor(status)
 
 **Arguments:**
 
-- `status` - A threat status category, as returned by [`UnitThreatSituation`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitThreatSituation) or [`UnitDetailedThreatSituation`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitDetailedThreatSituation) (`number`)
+- `status` - A threat status category, as returned by [`UnitThreatSituation`](Threat.md#unitthreatsituation) or [`UnitDetailedThreatSituation`](Threat.md#unitdetailedthreatsituation) (`number`)
 
 **Returns:**
 
@@ -90,7 +90,7 @@ isTanking, status, scaledPercent, rawPercent, threatValue = UnitDetailedThreatSi
 
 ## UnitThreatSituation
 
-Returns the general threat status of a unit. See [`UnitDetailedThreatSituation`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitDetailedThreatSituation) for details about threat values.
+Returns the general threat status of a unit. See [`UnitDetailedThreatSituation`](Threat.md#unitdetailedthreatsituation) for details about threat values.
 
 Threat information for a pair of units is only returned if the player has threat against the NPC unit in question. (For example, no threat data is provided if the player's pet is attacking an NPC but the player himself has taken no action, even though the pet has threat against the NPC.)
 

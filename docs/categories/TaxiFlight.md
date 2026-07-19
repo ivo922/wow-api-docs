@@ -30,7 +30,7 @@ numHops = GetNumRoutes(index)
 
 **Arguments:**
 
-- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
+- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
 
 **Returns:**
 
@@ -114,13 +114,13 @@ TakeTaxiNode(index)
 
 **Arguments:**
 
-- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
+- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
 
 ---
 
 ## TaxiGetDestX
 
-Returns the horizontal coordinate of a taxi flight's destination node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TaxiNodeSetCurrent) should be called first so the client can compute routes.
+Returns the horizontal coordinate of a taxi flight's destination node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](TaxiFlight.md#taxinodesetcurrent) should be called first so the client can compute routes.
 
 Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
 
@@ -132,8 +132,8 @@ dX = TaxiGetDestX(source, dest)
 
 **Arguments:**
 
-- `source` - Index of the source flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
-- `dest` - Index of the destination flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
+- `source` - Index of the source flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
+- `dest` - Index of the destination flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
 
 **Returns:**
 
@@ -143,7 +143,7 @@ dX = TaxiGetDestX(source, dest)
 
 ## TaxiGetDestY
 
-Returns the vertical coordinate of a taxi flight's destination node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TaxiNodeSetCurrent) should be called first so the client can compute routes.
+Returns the vertical coordinate of a taxi flight's destination node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](TaxiFlight.md#taxinodesetcurrent) should be called first so the client can compute routes.
 
 Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
 
@@ -155,8 +155,8 @@ dY = TaxiGetDestY(source, dest)
 
 **Arguments:**
 
-- `source` - Index of the source flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
-- `dest` - Index of the destination flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
+- `source` - Index of the source flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
+- `dest` - Index of the destination flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
 
 **Returns:**
 
@@ -166,7 +166,7 @@ dY = TaxiGetDestY(source, dest)
 
 ## TaxiGetSrcX
 
-Returns the horizontal coordinate of a taxi flight's source node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TaxiNodeSetCurrent) should be called first so the client can compute routes.
+Returns the horizontal coordinate of a taxi flight's source node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](TaxiFlight.md#taxinodesetcurrent) should be called first so the client can compute routes.
 
 Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
 
@@ -178,8 +178,8 @@ sX = TaxiGetSrcX(source, dest)
 
 **Arguments:**
 
-- `source` - Index of the source flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
-- `dest` - Index of the destination flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
+- `source` - Index of the source flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
+- `dest` - Index of the destination flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
 
 **Returns:**
 
@@ -189,7 +189,7 @@ sX = TaxiGetSrcX(source, dest)
 
 ## TaxiGetSrcY
 
-Returns the vertical coordinate of a taxi flight's source node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TaxiNodeSetCurrent) should be called first so the client can compute routes.
+Returns the vertical coordinate of a taxi flight's source node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](TaxiFlight.md#taxinodesetcurrent) should be called first so the client can compute routes.
 
 Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
 
@@ -201,8 +201,8 @@ sY = TaxiGetSrcY(source, dest)
 
 **Arguments:**
 
-- `source` - Index of the source flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
-- `dest` - Index of the destination flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
+- `source` - Index of the source flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
+- `dest` - Index of the destination flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
 
 **Returns:**
 
@@ -222,7 +222,7 @@ cost = TaxiNodeCost(index)
 
 **Arguments:**
 
-- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
+- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
 
 **Returns:**
 
@@ -242,7 +242,7 @@ type = TaxiNodeGetType(index)
 
 **Arguments:**
 
-- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
+- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
 
 **Returns:**
 
@@ -266,7 +266,7 @@ name = TaxiNodeName(index)
 
 **Arguments:**
 
-- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
+- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
 
 **Returns:**
 
@@ -286,7 +286,7 @@ x, y = TaxiNodePosition(index)
 
 **Arguments:**
 
-- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/NumTaxiNodes)) (`number`)
+- `index` - Index of a flight point (between 1 and [`NumTaxiNodes()`](TaxiFlight.md#numtaxinodes)) (`number`)
 
 **Returns:**
 
@@ -297,7 +297,7 @@ x, y = TaxiNodePosition(index)
 
 ## TaxiNodeSetCurrent
 
-Sets the "current" flight path node. Used in the default UI when mousing over a node; tells the client to compute the route paths involving the node (see [`TaxiGetSrcX()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TaxiGetSrcX) et al).
+Sets the "current" flight path node. Used in the default UI when mousing over a node; tells the client to compute the route paths involving the node (see [`TaxiGetSrcX()`](TaxiFlight.md#taxigetsrcx) et al).
 
 **Signature:**
 
@@ -323,7 +323,7 @@ onTaxi = UnitOnTaxi("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 

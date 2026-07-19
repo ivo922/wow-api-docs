@@ -8,7 +8,7 @@
 
 ## AutoEquipCursorItem
 
-Equips the item on the cursor. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/EquipCursorItem).
+Equips the item on the cursor. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](Cursor.md#equipcursoritem).
 
 Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
 
@@ -22,7 +22,7 @@ AutoEquipCursorItem()
 
 ## BankButtonIDToInvSlotID
 
-Returns the [`inventoryID`](https://web.archive.org/web/20100105232007/http://wowprogramming.com/docs/api_types#inventoryID) corresponding to a bank item or bag slot
+Returns the [`inventoryID`](../types/inventoryID.md) corresponding to a bank item or bag slot
 
 **Signature:**
 
@@ -37,7 +37,7 @@ inventoryID = BankButtonIDToInvSlotID(buttonID [, isBag])
 
 **Returns:**
 
-- `inventoryID` - An inventory slot ID usable with various Inventory API functions (`number`, [inventoryID](https://web.archive.org/web/20100105232007/http://wowprogramming.com/docs/api_types#inventoryID))
+- `inventoryID` - An inventory slot ID usable with various Inventory API functions (`number`, [inventoryID](../types/inventoryID.md))
 
 **Examples:**
 
@@ -67,7 +67,7 @@ CancelPendingEquip(index)
 
 ## ContainerIDToInventoryID
 
-Returns the [`inventoryID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID) corresponding to a given [`containerID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID)
+Returns the [`inventoryID`](../types/inventoryID.md) corresponding to a given [`containerID`](../types/containerID.md)
 
 **Signature:**
 
@@ -77,11 +77,11 @@ inventoryID = ContainerIDToInventoryID(container)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
 
 **Returns:**
 
-- `inventoryID` - Identifier for the container usable with Inventory APIs (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `inventoryID` - Identifier for the container usable with Inventory APIs (`number`, [inventoryID](../types/inventoryID.md))
 
 **Examples:**
 
@@ -108,7 +108,7 @@ canBePlaced = CursorCanGoInSlot(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -118,7 +118,7 @@ canBePlaced = CursorCanGoInSlot(slot)
 
 ## EquipCursorItem
 
-Puts the item on the cursor into a specific equipment slot. If the item on the cursor can be equipped but does not fit in the given slot, the item is automatically equipped in the first available slot in which it fits (as with [`AutoEquipCursorItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/AutoEquipCursorItem)). Thus, this function is most useful when dealing with items which can be equipped in more than one slot: containers, rings, trinkets, and (for dual-wielding characters) one-handed weapons.
+Puts the item on the cursor into a specific equipment slot. If the item on the cursor can be equipped but does not fit in the given slot, the item is automatically equipped in the first available slot in which it fits (as with [`AutoEquipCursorItem()`](Cursor.md#autoequipcursoritem)). Thus, this function is most useful when dealing with items which can be equipped in more than one slot: containers, rings, trinkets, and (for dual-wielding characters) one-handed weapons.
 
 Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
 
@@ -130,13 +130,13 @@ EquipCursorItem(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
 ## EquipItemByName
 
-Attempts to equip an arbitrary item. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/EquipCursorItem).
+Attempts to equip an arbitrary item. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](Cursor.md#equipcursoritem).
 
 Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the specified item cannot be equipped. Does nothing if the specified item does not exist or is not in the player's possession.
 
@@ -150,7 +150,7 @@ EquipItemByName(itemID) or EquipItemByName("itemName") or EquipItemByName("itemL
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 ---
 
@@ -182,7 +182,7 @@ player, bank, bags, location or slot, bag = EquipmentManager_UnpackLocation(loca
 
 **Arguments:**
 
-- `location` - A bit field that represents an item's location in the player's possession. This bit field can be obtained using the [`GetInventoryItemsForSlot`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventoryItemsForSlot) function. (`number`)
+- `location` - A bit field that represents an item's location in the player's possession. This bit field can be obtained using the [`GetInventoryItemsForSlot`](Inventory.md#getinventoryitemsforslot) function. (`number`)
 
 **Returns:**
 
@@ -206,7 +206,7 @@ status = GetInventoryAlertStatus(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -229,8 +229,8 @@ isBroken = GetInventoryItemBroken("unit", slot)
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](../types/unitID.md))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -250,12 +250,12 @@ start, duration, enable = GetInventoryItemCooldown("unit", slot)
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for 'player' (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `unit` - A unit to query; only valid for 'player' (`string`, [unitID](../types/unitID.md))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the item is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the item is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the item is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the item is ready.) (`number`)
 
@@ -275,8 +275,8 @@ count = GetInventoryItemCount("unit", slot)
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](../types/unitID.md))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -296,7 +296,7 @@ durability, max = GetInventoryItemDurability(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -317,7 +317,7 @@ gem1, gem2, gem3 = GetInventoryItemGems(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -339,8 +339,8 @@ id = GetInventoryItemID("unit", slot)
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](../types/unitID.md))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -360,12 +360,12 @@ link = GetInventoryItemLink("unit", slot)
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](../types/unitID.md))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
-- `link` - An item link for the given item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - An item link for the given item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -381,12 +381,12 @@ quality = GetInventoryItemQuality("unit", slot)
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](../types/unitID.md))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
-- `quality` - The quality level of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - The quality level of the item (`number`, [itemQuality](../types/itemQuality.md))
 
 ---
 
@@ -402,8 +402,8 @@ texture = GetInventoryItemTexture("unit", slot)
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `unit` - A unit to query; only valid for 'player' or the unit currently being inspected (`string`, [unitID](../types/unitID.md))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -423,11 +423,11 @@ availableItems = GetInventoryItemsForSlot(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
-- `availableItems` - A table listing [`itemID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemID)s of items which can be equipped in the slot, keyed by [`itemLocation`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemLocation) (`table`)
+- `availableItems` - A table listing [`itemID`](../types/itemID.md)s of items which can be equipped in the slot, keyed by [`itemLocation`](../types/itemLocation.md) (`table`)
 
 ---
 
@@ -473,7 +473,7 @@ id, texture, checkRelic = GetInventorySlotInfo("slotName")
 
 - `id` - The numeric slotId usable in other Inventory functions (`number`)
 - `texture` - The path to the texture to be displayed when this slot is empty (`string`)
-- `checkRelic` - 1 if the slot might be the relic slot; otherwise nil. The ranged slot token is re-used for the relic slot; if this return is 1, [`UnitHasRelicSlot`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitHasRelicSlot) should be used to determine how the slot should be displayed. (`1nil`)
+- `checkRelic` - 1 if the slot might be the relic slot; otherwise nil. The ranged slot token is re-used for the relic slot; if this return is 1, [`UnitHasRelicSlot`](Unit.md#unithasrelicslot) should be used to determine how the slot should be displayed. (`1nil`)
 
 ---
 
@@ -491,7 +491,7 @@ isEquipped = IsEquippedItem(itemID) or IsEquippedItem("itemName") or IsEquippedI
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -519,7 +519,7 @@ end
 
 ## IsEquippedItemType
 
-Returns whether any items of a given type are currently equipped. Possible arguments include the localized names of item classes (as returned from [`GetAuctionItemClasses`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemClasses); e.g. "Weapon", "Armor"), subclasses (as returned from [`GetAuctionItemSubClasses`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemSubClasses); e.g. "One-handed axes", "Shields", "Cloth"), and the global tokens or localized names for equip locations (as returned from [`GetAuctionInvTypes`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionInvTypes); e.g. "INVTYPE_WEAPONMAINHAND", "Off Hand").
+Returns whether any items of a given type are currently equipped. Possible arguments include the localized names of item classes (as returned from [`GetAuctionItemClasses`](Auction.md#getauctionitemclasses); e.g. "Weapon", "Armor"), subclasses (as returned from [`GetAuctionItemSubClasses`](Auction.md#getauctionitemsubclasses); e.g. "One-handed axes", "Shields", "Cloth"), and the global tokens or localized names for equip locations (as returned from [`GetAuctionInvTypes`](Auction.md#getauctioninvtypes); e.g. "INVTYPE_WEAPONMAINHAND", "Off Hand").
 
 **Signature:**
 
@@ -561,7 +561,7 @@ isLocked = IsInventoryItemLocked(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -571,7 +571,7 @@ isLocked = IsInventoryItemLocked(slot)
 
 ## KeyRingButtonIDToInvSlotID
 
-Returns the [`inventoryID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID) corresponding to a slot in the keyring. The results of this function can be used with [`GetInventorySlotInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) and other related inventory functions.
+Returns the [`inventoryID`](../types/inventoryID.md) corresponding to a slot in the keyring. The results of this function can be used with [`GetInventorySlotInfo()`](Inventory.md#getinventoryslotinfo) and other related inventory functions.
 
 **Signature:**
 
@@ -581,11 +581,11 @@ slot = KeyRingButtonIDToInvSlotID(slot)
 
 **Arguments:**
 
-- `slot` - Index of a key slot within the keyring (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `slot` - Index of a key slot within the keyring (`number`, [containerSlotID](../types/containerSlotID.md))
 
 **Returns:**
 
-- `slot` - Identifier for the key slot usable with Inventory APIs (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - Identifier for the key slot usable with Inventory APIs (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
@@ -603,7 +603,7 @@ PickupInventoryItem(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
@@ -620,8 +620,8 @@ SetInventoryPortraitTexture(texture, "unit", slot)
 **Arguments:**
 
 - `texture` - A Texture object (`table`)
-- `unit` - A unit whose item should be displayed; only valid for `player` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `unit` - A unit whose item should be displayed; only valid for `player` (`string`, [unitID](../types/unitID.md))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
@@ -637,7 +637,7 @@ SocketInventoryItem(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
@@ -659,7 +659,7 @@ UseInventoryItem(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 

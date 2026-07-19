@@ -8,7 +8,7 @@
 
 ## ContainerIDToInventoryID
 
-Returns the [`inventoryID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID) corresponding to a given [`containerID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID)
+Returns the [`inventoryID`](../types/inventoryID.md) corresponding to a given [`containerID`](../types/containerID.md)
 
 **Signature:**
 
@@ -18,11 +18,11 @@ inventoryID = ContainerIDToInventoryID(container)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
 
 **Returns:**
 
-- `inventoryID` - Identifier for the container usable with Inventory APIs (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `inventoryID` - Identifier for the container usable with Inventory APIs (`number`, [inventoryID](../types/inventoryID.md))
 
 **Examples:**
 
@@ -49,8 +49,8 @@ ContainerRefundItemPurchase(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 ---
 
@@ -66,7 +66,7 @@ player, bank, bags, location or slot, bag = EquipmentManager_UnpackLocation(loca
 
 **Arguments:**
 
-- `location` - A bit field that represents an item's location in the player's possession. This bit field can be obtained using the [`GetInventoryItemsForSlot`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventoryItemsForSlot) function. (`number`)
+- `location` - A bit field that represents an item's location in the player's possession. This bit field can be obtained using the [`GetInventoryItemsForSlot`](Inventory.md#getinventoryitemsforslot) function. (`number`)
 
 **Returns:**
 
@@ -90,7 +90,7 @@ name = GetBagName(container)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
 
 **Returns:**
 
@@ -112,7 +112,7 @@ end
 
 ## GetContainerFreeSlots
 
-Returns a list of open slots in a container. The optional argument `returnTable` allows for performance optimization in cases where this function is expected to be called repeatedly. Rather than creating new tables each time the function is called (eventually requiring garbage collection), an existing table can be recycled. (Note, however, that this function does not clear the table's contents; use [`wipe()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/wipe) first to guarantee consistent results.)
+Returns a list of open slots in a container. The optional argument `returnTable` allows for performance optimization in cases where this function is expected to be called repeatedly. Rather than creating new tables each time the function is called (eventually requiring garbage collection), an existing table can be recycled. (Note, however, that this function does not clear the table's contents; use [`wipe()`](Utility.md#wipe) first to guarantee consistent results.)
 
 **Signature:**
 
@@ -122,7 +122,7 @@ slotTable = GetContainerFreeSlots(container [, returnTable])
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
 - `returnTable` - Reference to a table to be filled with return values (`table`)
 
 **Returns:**
@@ -143,12 +143,12 @@ start, duration, enable = GetContainerItemCooldown(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the item is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the item is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the item is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the item is ready.) (`number`)
 
@@ -166,8 +166,8 @@ durability, max = GetContainerItemDurability(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 **Returns:**
 
@@ -211,8 +211,8 @@ id = GetContainerItemID(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 **Returns:**
 
@@ -232,15 +232,15 @@ texture, count, locked, quality, readable, lootable, link = GetContainerItemInfo
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 **Returns:**
 
 - `texture` - Path to the icon texture for the item (`string`)
 - `count` - Number of items in the slot (`number`)
 - `locked` - 1 if the item is locked; otherwise nil. Items become locked while being moved, split, or placed into other UI elements (such as the mail, trade, and auction windows). (`1nil`)
-- `quality` - Quality (or rarity) of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality (or rarity) of the item (`number`, [itemQuality](../types/itemQuality.md))
 - `readable` - 1 if the item is readable; otherwise nil. This value is used by the default UI to show a special cursor over items such as books and scrolls which can be read by right-clicking. (`1nil`)
 - `lootable` - 1 if the item is a temporary container containing items that can be looted; otherwise nil. Examples include the Bag of Fishing Treasures and Small Spice Bag rewarded by daily quests, lockboxes (once unlocked), and the trunks occasionally found while fishing. (`1nil`)
 - `link` - A hyperlink for the item (`itemLink`)
@@ -259,12 +259,12 @@ link = GetContainerItemLink(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -284,8 +284,8 @@ money, itemCount, refundSec, currecycount, hasEnchants = GetContainerItemPurchas
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 - `IsEquipped` - wheather to get an equipped item info (`boolean`)
 
 **Returns:**
@@ -300,7 +300,7 @@ money, itemCount, refundSec, currecycount, hasEnchants = GetContainerItemPurchas
 
 ## GetContainerItemPurchaseItem
 
-Returns information about a specific currency refunded for returning an item to vendors. See [`GetContainerItemPurchaseInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetContainerItemPurchaseInfo) for more information about alternate currency refunds.
+Returns information about a specific currency refunded for returning an item to vendors. See [`GetContainerItemPurchaseInfo`](Container.md#getcontaineritempurchaseinfo) for more information about alternate currency refunds.
 
 **Signature:**
 
@@ -310,8 +310,8 @@ texture, quantity, link = GetContainerItemPurchaseItem(container, slot, index)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 - `index` - Index of the currency type; between 1 and `itemCount`, where `itemCount` is the 4th return from `GetContainerItemPurchaseInfo()` for the same container and slot (`number`)
 
 **Returns:**
@@ -334,12 +334,12 @@ freeSlots, bagType = GetContainerNumFreeSlots(container)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
 
 **Returns:**
 
 - `freeSlots` - Number of empty slots in the bag (`number`)
-- `bagType` - Bitwise OR of the item families that can be put into the container; see [`GetItemFamily`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetItemFamily) for details (`number`, [bitfield](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#bitfield))
+- `bagType` - Bitwise OR of the item families that can be put into the container; see [`GetItemFamily`](Container.md#getitemfamily) for details (`number`, [bitfield](../types/bitfield.md))
 
 ---
 
@@ -355,7 +355,7 @@ numSlots = GetContainerNumSlots(container)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
 
 **Returns:**
 
@@ -380,11 +380,11 @@ bagType = GetItemFamily(itemID) or GetItemFamily("itemName") or GetItemFamily("i
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
-- `bagType` - Bitwise OR of bag type flags: (`number`, [bitfield](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#bitfield))
+- `bagType` - Bitwise OR of bag type flags: (`number`, [bitfield](../types/bitfield.md))
   - `0x0001` - Quiver
   - `0x0002` - Ammo Pouch
   - `0x0004` - Soul Bag
@@ -413,7 +413,7 @@ PickupBagFromSlot(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot containing a bag (see [`GetInventorySlotInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo), [`ContainerIDToInventoryID()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ContainerIDToInventoryID)) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot containing a bag (see [`GetInventorySlotInfo()`](Inventory.md#getinventoryslotinfo), [`ContainerIDToInventoryID()`](Container.md#containeridtoinventoryid)) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
@@ -431,14 +431,14 @@ PickupContainerItem(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 ---
 
 ## PutItemInBackpack
 
-Puts the item on the cursor into the player's backpack. The item will be placed in the lowest numbered slot ([`containerSlotID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID)) in the player's backpack.
+Puts the item on the cursor into the player's backpack. The item will be placed in the lowest numbered slot ([`containerSlotID`](../types/containerSlotID.md)) in the player's backpack.
 
 Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the backpack is full.
 
@@ -456,9 +456,9 @@ hadItem = PutItemInBackpack()
 
 ## PutItemInBag
 
-Puts the item on the cursor into one of the player's bags or other containers. The item will be placed in the lowest numbered slot ([`containerSlotID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID)) in the container.
+Puts the item on the cursor into one of the player's bags or other containers. The item will be placed in the lowest numbered slot ([`containerSlotID`](../types/containerSlotID.md)) in the container.
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the container is full. Cannot be used to place an item into the player's backpack; see [`PutItemInBackpack()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PutItemInBackpack).
+Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the container is full. Cannot be used to place an item into the player's backpack; see [`PutItemInBackpack()`](Container.md#putiteminbackpack).
 
 **Signature:**
 
@@ -468,7 +468,7 @@ hadItem = PutItemInBag(inventory)
 
 **Arguments:**
 
-- `inventory` - Index of one of the player's equipment or container slots (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `inventory` - Index of one of the player's equipment or container slots (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -489,7 +489,7 @@ SetBagPortraitTexture(texture, container)
 **Arguments:**
 
 - `texture` - A Texture object (`table`)
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
 
 ---
 
@@ -505,8 +505,8 @@ SocketContainerItem(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 ---
 
@@ -522,8 +522,8 @@ SplitContainerItem(container, slot, amount)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 - `amount` - Number of items from the stack to pick up (`number`)
 
 ---
@@ -550,9 +550,9 @@ UseContainerItem(container, slot [, "target" [, reagentBankAccessible]])
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
-- `target` - A unit to be used as target for the action (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
+- `target` - A unit to be used as target for the action (`string`, [unitID](../types/unitID.md))
 - `reagentBankAccessible` - Indicates if the reagent bank is accessible right now (so bank frame open and switched to reagent tab) (`boolean`)
 
 ---

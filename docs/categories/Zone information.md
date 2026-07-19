@@ -8,7 +8,7 @@
 
 ## GetMinimapZoneText
 
-Returns the name of the current area (as displayed in the Minimap). Matches [`GetSubZoneText()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetSubZoneText), [`GetRealZoneText()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetRealZoneText) or [`GetZoneText()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetZoneText).
+Returns the name of the current area (as displayed in the Minimap). Matches [`GetSubZoneText()`](Zone information.md#getsubzonetext), [`GetRealZoneText()`](Zone information.md#getrealzonetext) or [`GetZoneText()`](Zone information.md#getzonetext).
 
 **Signature:**
 
@@ -24,7 +24,7 @@ zoneText = GetMinimapZoneText()
 
 ## GetRealZoneText
 
-Returns the "official" name of the zone or instance in which the player is located. This name matches that seen in the Who, Guild, and Friends UIs when reporting character locations. It may differ from those the default UI displays in other locations ([`GetZoneText()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetZoneText) and [`GetMinimapZoneText()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMinimapZoneText)), especially if the player is in an instance: e.g. this function returns "The Stockade" when the others return "Stormwind Stockade".
+Returns the "official" name of the zone or instance in which the player is located. This name matches that seen in the Who, Guild, and Friends UIs when reporting character locations. It may differ from those the default UI displays in other locations ([`GetZoneText()`](Zone information.md#getzonetext) and [`GetMinimapZoneText()`](Zone information.md#getminimapzonetext)), especially if the player is in an instance: e.g. this function returns "The Stockade" when the others return "Stormwind Stockade".
 
 **Signature:**
 

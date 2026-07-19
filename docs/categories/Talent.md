@@ -18,8 +18,8 @@ AddPreviewTalentPoints(tabIndex, talentIndex, points, isPet, talentGroup)
 
 **Arguments:**
 
-- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTalentTabs)) (`number`)
-- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTalents)) (`number`)
+- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](Talent.md#getnumtalenttabs)) (`number`)
+- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](Talent.md#getnumtalents)) (`number`)
 - `points` - Number of points to spend on the talent, or a negative number to unspend points. Values larger than allowed for the talent will be clipped to the maximum value (e.g. attempting to spend ten points on a talent that has five ranks will only spend up to five points). (`number`)
 - `isPet` - True to edit talents for the player's pet, false to edit talents for the player (`boolean`)
 - `talentGroup` - Which set of talents to edit, if the player has Dual Talent Specialization enabled (`number`)
@@ -162,7 +162,7 @@ numTalents = GetNumTalents(tabIndex, inspect, pet)
 
 **Arguments:**
 
-- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTalentTabs)) (`number`)
+- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](Talent.md#getnumtalenttabs)) (`number`)
 - `inspect` - true to return information for the currently inspected unit; false to return information for the player (`boolean`)
 - `pet` - true to return information for the player's pet; false to return information for the player (`boolean`)
 
@@ -206,8 +206,8 @@ name, iconTexture, tier, column, rank, maxRank, isExceptional, meetsPrereq, prev
 
 **Arguments:**
 
-- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTalentTabs)) (`number`)
-- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTalents)) (`number`)
+- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](Talent.md#getnumtalenttabs)) (`number`)
+- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](Talent.md#getnumtalents)) (`number`)
 - `inspect` - true to return information for the currently inspected unit; false to return information for the player (`boolean`)
 - `pet` - true to return information for the player's pet; false to return information for the player (`boolean`)
 - `talentGroup` - Which set of talents to edit, if the player has Dual Talent Specialization enabled (`number`)
@@ -242,8 +242,8 @@ link = GetTalentLink(tabIndex, talentIndex, inspect, pet, talentGroup)
 
 **Arguments:**
 
-- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](https://web.archive.org/web/20100105230815/http://wowprogramming.com/docs/api/GetNumTalentTabs)) (`number`)
-- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](https://web.archive.org/web/20100105230815/http://wowprogramming.com/docs/api/GetNumTalents)) (`number`)
+- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](Talent.md#getnumtalenttabs)) (`number`)
+- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](Talent.md#getnumtalents)) (`number`)
 - `inspect` - true to return information for the currently inspected unit; false to return information for the player (`boolean`)
 - `pet` - true to return information for the player's pet; false to return information for the player (`boolean`)
 - `talentGroup` - Which set of talents to edit, if the player has Dual Talent Specialization enabled (`number`)
@@ -253,7 +253,7 @@ link = GetTalentLink(tabIndex, talentIndex, inspect, pet, talentGroup)
 
 **Returns:**
 
-- `link` - A hyperlink representing the talent and the number of points spent in it (`string`, [hyperlink](https://web.archive.org/web/20100105230815/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink representing the talent and the number of points spent in it (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -269,8 +269,8 @@ tier, column, isLearnable, isPreviewLearnable, ... = GetTalentPrereqs(tabIndex, 
 
 **Arguments:**
 
-- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTalentTabs)) (`number`)
-- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTalents)) (`number`)
+- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](Talent.md#getnumtalenttabs)) (`number`)
+- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](Talent.md#getnumtalents)) (`number`)
 - `inspect` - true to return information for the currently inspected unit; false to return information for the player (`boolean`)
 - `pet` - true to return information for the player's pet; false to return information for the player (`boolean`)
 - `talentGroup` - Which set of talents to edit, if the player has Dual Talent Specialization enabled (`number`)
@@ -300,7 +300,7 @@ id, name, description, icon, points, background, previewPoints, isUnlocked = Get
 
 **Arguments:**
 
-- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTalentTabs)) (`number`)
+- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](Talent.md#getnumtalenttabs)) (`number`)
 - `inspect` - true to return information for the currently inspected unit; false to return information for the player (`boolean`)
 - `pet` - true to return information for the player's pet; false to return information for the player (`boolean`)
 - `talentGroup` - Which set of talents to edit, if the player has Dual Talent Specialization enabled (`number`)
@@ -310,7 +310,7 @@ id, name, description, icon, points, background, previewPoints, isUnlocked = Get
 
 **Returns:**
 
-- `id` - ID of the talent tab (`number`, [blizzid](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#blizzid))
+- `id` - ID of the talent tab (`number`, [blizzid](../types/blizzid.md))
 - `name` - Name of the talent tab (`string`)
 - `description` - Localized summary of the talent tab (`string`)
 - `icon` - Path to an icon texture for the talent tab (`string`)
@@ -374,8 +374,8 @@ LearnTalent(tabIndex, talentIndex, isPet, talentGroup)
 
 **Arguments:**
 
-- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTalentTabs)) (`number`)
-- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTalents)) (`number`)
+- `tabIndex` - Index of a talent tab (between 1 and [`GetNumTalentTabs()`](Talent.md#getnumtalenttabs)) (`number`)
+- `talentIndex` - Index of a talent option (between 1 and [`GetNumTalents()`](Talent.md#getnumtalents)) (`number`)
 - `isPet` - True to edit talents for the player's pet, false to edit talents for the player (`boolean`)
 - `talentGroup` - Which set of talents to edit, if the player has Dual Talent Specialization enabled (`number`)
   - `1` - Primary Talents

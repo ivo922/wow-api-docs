@@ -10,7 +10,7 @@
 
 Returns the value of a configuration variable. Causes an error if the named CVar does not exist.
 
-Note that all values are returned as strings: use of `tonumber()` may be required if using a value in a numeric context. (See also [`GetCVarBool()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGVarBool) for binary values.)
+Note that all values are returned as strings: use of `tonumber()` may be required if using a value in a numeric context. (See also [`GetCVarBool()`](CVar.md#getcvarbool) for binary values.)
 
 **Signature:**
 

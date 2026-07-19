@@ -44,7 +44,7 @@ ForceLogout()
 
 ## ForceQuit
 
-Immediately exits World of Warcraft. Unlike [`Quit()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Quit), this function exits the game application regardless of current conditions.
+Immediately exits World of Warcraft. Unlike [`Quit()`](Client control and information.md#quit), this function exits the game application regardless of current conditions.
 
 Used in the default UI when the player chooses "Exit now" in the dialog that appears if the player attempts to quit while not in an inn, major city, or other "rest" area.
 
@@ -109,7 +109,7 @@ Returns a list of installed localization packs for the WoW client
 
 **Returns:**
 
-- `...` - A list of strings, each the four-letter locale code (see [`GetLocale()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetLocale)) for an installed localization (`list`)
+- `...` - A list of strings, each the four-letter locale code (see [`GetLocale()`](Client control and information.md#getlocale)) for an installed localization (`list`)
 
 ---
 
@@ -234,7 +234,7 @@ isWindows = IsWindowsClient()
 Attempts to log out and return to the character selection screen. Results vary based on current conditions:
 
 - If the player is in combat or under other temporary restrictions (e.g. falling), fires the [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event with a message indicating the player cannot log out at the moment.
-- If the player is not in an inn, major city, or other "rest" area (i.e. [`IsResting()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/IsResting) returns `nil`), fires the [`PLAYER_CAMPING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_CAMPING) event, causing the default UI to show a countdown, logging the player out after a period of time if not canceled.
+- If the player is not in an inn, major city, or other "rest" area (i.e. [`IsResting()`](Player information.md#isresting) returns `nil`), fires the [`PLAYER_CAMPING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_CAMPING) event, causing the default UI to show a countdown, logging the player out after a period of time if not canceled.
 - If the player is in a "rest" area, logs out immediately.
 
 **Signature:**
@@ -262,7 +262,7 @@ NotWhileDeadError()
 Attempts to exit the World of Warcraft client. Results vary based on current conditions:
 
 - If the player is in combat or under other temporary restrictions (e.g. falling), fires the [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event with a message indicating the player cannot log out at the moment.
-- If the player is not in an inn, major city, or other "rest" area (i.e. [`IsResting()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/IsResting) returns `nil`), fires the [`PLAYER_QUITING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_QUITING) event, causing the default UI to show a countdown, quitting WoW after a period of time if not canceled.
+- If the player is not in an inn, major city, or other "rest" area (i.e. [`IsResting()`](Player information.md#isresting) returns `nil`), fires the [`PLAYER_QUITING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_QUITING) event, causing the default UI to show a countdown, quitting WoW after a period of time if not canceled.
 - If the player is in a "rest" area, quits the game immediately.
 
 **Signature:**
@@ -275,7 +275,7 @@ Quit()
 
 ## ReloadUI `hardware`
 
-Reloads the user interface. Saved variables are written to disk, the default UI is reloaded, and all enabled non-LoadOnDemand addons are loaded, including any addons previously disabled which were enabled during the session (see [`EnableAddOn()`](https://web.archive.org/web/20100106000953/http://wowprogramming.com/docs/api/EnableAddOn) et al).
+Reloads the user interface. Saved variables are written to disk, the default UI is reloaded, and all enabled non-LoadOnDemand addons are loaded, including any addons previously disabled which were enabled during the session (see [`EnableAddOn()`](Addon-related.md#enableaddon) et al).
 
 **Signature:**
 
@@ -317,7 +317,7 @@ SetEuropeanNumbers(enable)
 
 ## SetUIVisibility
 
-Enables or disables display of UI elements in the 3-D world. Applies only to 2-D UI elements displayed in the 3-D world: nameplates and raid target icons (skull, circle, square, etc). Does not directly control nameplates and target icons -- only affects whether they are displayed (see the `nameplateShowEnemies`/`nameplateShowFriends` CVars and [`SetRaidTarget`](https://web.archive.org/web/20100105233916/http://wowprogramming.com/docs/api/SetRaidTarget) functions for direct control).
+Enables or disables display of UI elements in the 3-D world. Applies only to 2-D UI elements displayed in the 3-D world: nameplates and raid target icons (skull, circle, square, etc). Does not directly control nameplates and target icons -- only affects whether they are displayed (see the `nameplateShowEnemies`/`nameplateShowFriends` CVars and [`SetRaidTarget`](Raid.md#setraidtarget) functions for direct control).
 
 Does not apply to 3-D UI elements such as the selection circle, area-effect targeting indicator, vehicle weapon aim indicator, etc.
 

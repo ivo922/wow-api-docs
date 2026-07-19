@@ -258,7 +258,7 @@ cost = GetGuildCharterCost()
 
 ## GetGuildEventInfo
 
-Returns information about an entry in the guild event log. Only returns valid data after calling [`QueryGuildEventLog()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/QueryGuildEventLog) and the following [`GUILD_EVENT_LOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_EVENT_LOG_UPDATE) event has fired.
+Returns information about an entry in the guild event log. Only returns valid data after calling [`QueryGuildEventLog()`](Guild.md#queryguildeventlog-server) and the following [`GUILD_EVENT_LOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_EVENT_LOG_UPDATE) event has fired.
 
 **Signature:**
 
@@ -268,7 +268,7 @@ type, player1, player2, rank, year, month, day, hour = GetGuildEventInfo(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the guild event log (between 1 and [`GetNumGuildEvents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildEvents)) (`number`)
+- `index` - Index of an entry in the guild event log (between 1 and [`GetNumGuildEvents()`](Guild.md#getnumguildevents)) (`number`)
 
 **Returns:**
 
@@ -301,7 +301,7 @@ guildName, guildRankName, guildRankIndex = GetGuildInfo("unit") or GetGuildInfo(
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -314,7 +314,7 @@ guildName, guildRankName, guildRankIndex = GetGuildInfo("unit") or GetGuildInfo(
 
 ## GetGuildInfoText
 
-Returns guild information text. Only returns valid data after calling [`GuildRoster()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GuildRoster) and the following [`GUILD_ROSTER_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_ROSTER_UPDATE) event has fired.
+Returns guild information text. Only returns valid data after calling [`GuildRoster()`](Guild.md#guildroster-server) and the following [`GUILD_ROSTER_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_ROSTER_UPDATE) event has fired.
 
 This text appears when clicking the "Guild Information" button in the default UI's Guild window.
 
@@ -362,7 +362,7 @@ name, rank, rankIndex, level, class, zone, note, officernote, online, status, cl
 
 ## GetGuildRosterLastOnline
 
-Returns the amount of time since a guild member was last online. Only returns valid data after calling [`GuildRoster()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GuildRoster) and the following [`GUILD_ROSTER_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_ROSTER_UPDATE) event has fired.
+Returns the amount of time since a guild member was last online. Only returns valid data after calling [`GuildRoster()`](Guild.md#guildroster-server) and the following [`GUILD_ROSTER_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_ROSTER_UPDATE) event has fired.
 
 **Signature:**
 
@@ -372,7 +372,7 @@ years, months, days, hours = GetGuildRosterLastOnline(index)
 
 **Arguments:**
 
-- `index` - Index of a member in the guild roster (between 1 and [`GetNumGuildMembers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildMembers)), or 0 for no selection (`number`)
+- `index` - Index of a member in the guild roster (between 1 and [`GetNumGuildMembers()`](Guild.md#getnumguildmembers)), or 0 for no selection (`number`)
 
 **Returns:**
 
@@ -411,7 +411,7 @@ index = GetGuildRosterSelection()
 
 **Returns:**
 
-- `index` - Index of the selected member in the guild roster (between 1 and [`GetNumGuildMembers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildMembers)), or 0 for no selection (`number`)
+- `index` - Index of the selected member in the guild roster (between 1 and [`GetNumGuildMembers()`](Guild.md#getnumguildmembers)), or 0 for no selection (`number`)
 
 ---
 
@@ -454,7 +454,7 @@ tabardBackgroundUpper, tabardBackgroundLower, tabardEmblemUpper, tabardEmblemLow
 
 ## GetNumGuildEvents
 
-Returns the number of entries in the guild event log. Only returns valid data after calling [`QueryGuildEventLog()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/QueryGuildEventLog) and the following [`GUILD_EVENT_LOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_EVENT_LOG_UPDATE) event has fired.
+Returns the number of entries in the guild event log. Only returns valid data after calling [`QueryGuildEventLog()`](Guild.md#queryguildeventlog-server) and the following [`GUILD_EVENT_LOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_EVENT_LOG_UPDATE) event has fired.
 
 **Signature:**
 
@@ -590,7 +590,7 @@ rankName = GuildControlGetRankName(rank)
 
 **Arguments:**
 
-- `rank` - Index of a rank to edit (between 1 and [`GuildControlGetNumRanks()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GuildControlGetNumRanks)) (`number`)
+- `rank` - Index of a rank to edit (between 1 and [`GuildControlGetNumRanks()`](Guild.md#guildcontrolgetnumranks)) (`number`)
 
 **Returns:**
 
@@ -626,13 +626,13 @@ GuildControlSetRank(rank)
 
 **Arguments:**
 
-- `rank` - Index of a rank to edit (between 1 and [`GuildControlGetNumRanks()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GuildControlGetNumRanks)) (`number`)
+- `rank` - Index of a rank to edit (between 1 and [`GuildControlGetNumRanks()`](Guild.md#guildcontrolgetnumranks)) (`number`)
 
 ---
 
 ## GuildControlSetRankFlag
 
-Enables or disables a privilege for the guild rank being edited. Changes are not saved until a call is made to [`GuildControlSaveRank()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GuildControlSaveRank).
+Enables or disables a privilege for the guild rank being edited. Changes are not saved until a call is made to [`GuildControlSaveRank()`](Guild.md#guildcontrolsaverank).
 
 **Signature:**
 
@@ -665,7 +665,7 @@ GuildControlSetRankFlag(index, enabled)
 
 ## GuildDemote
 
-Reduces a guild member's rank by one. The player can only demote members whose rank is below the player's own, and only if the player has permission to demote (i.e. if [`CanGuildDemote()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CanGuildDemote) returns 1).
+Reduces a guild member's rank by one. The player can only demote members whose rank is below the player's own, and only if the player has permission to demote (i.e. if [`CanGuildDemote()`](Guild.md#canguilddemote) returns 1).
 
 **Signature:**
 
@@ -733,7 +733,7 @@ GuildLeave()
 
 ## GuildPromote
 
-Increases a guild member's rank by one. The player can only promote members up to the rank immediately below the player's own, and only if the player has permission to promote (i.e. if [`CanGuildPromote()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CanGuildPromote) returns 1).
+Increases a guild member's rank by one. The player can only promote members up to the rank immediately below the player's own, and only if the player has permission to promote (i.e. if [`CanGuildPromote()`](Guild.md#canguildpromote) returns 1).
 
 **Signature:**
 
@@ -749,7 +749,7 @@ GuildPromote("name")
 
 ## GuildRoster `server`
 
-Requests guild roster information from the server. Information is not returned immediately; the [`GUILD_ROSTER_UPDATE`](https://web.archive.org/web/20111212193423/http://wowprogramming.com/docs/events/GUILD_ROSTER_UPDATE) event fires when data is available for retrieval via [`GetGuildRosterInfo()`](https://web.archive.org/web/20111212193423/http://wowprogramming.com/docs/api/GetGuildRosterInfo) and related functions. Requests are throttled to reduce server load; the server will only respond to a new request approximately 10 seconds after a previous request.
+Requests guild roster information from the server. Information is not returned immediately; the [`GUILD_ROSTER_UPDATE`](https://web.archive.org/web/20111212193423/http://wowprogramming.com/docs/events/GUILD_ROSTER_UPDATE) event fires when data is available for retrieval via [`GetGuildRosterInfo()`](Guild.md#getguildrosterinfo) and related functions. Requests are throttled to reduce server load; the server will only respond to a new request approximately 10 seconds after a previous request.
 
 **Signature:**
 
@@ -771,7 +771,7 @@ GuildRosterSetOfficerNote(index, "note")
 
 **Arguments:**
 
-- `index` - Index of a member in the guild roster (between 1 and [`GetNumGuildMembers()`](https://web.archive.org/web/20111212194159/http://wowprogramming.com/docs/api/GetNumGuildMembers)), or 0 for no selection (`number`)
+- `index` - Index of a member in the guild roster (between 1 and [`GetNumGuildMembers()`](Guild.md#getnumguildmembers)), or 0 for no selection (`number`)
 - `note` - Note text to set for the guild member (up to 31 characters) (`string`)
 
 ---
@@ -788,7 +788,7 @@ GuildRosterSetPublicNote(index, "note")
 
 **Arguments:**
 
-- `index` - Index of a member in the guild roster (between 1 and [`GetNumGuildMembers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildMembers)), or 0 for no selection (`number`)
+- `index` - Index of a member in the guild roster (between 1 and [`GetNumGuildMembers()`](Guild.md#getnumguildmembers)), or 0 for no selection (`number`)
 - `note` - Note text to set for the guild member (up to 31 characters) (`string`)
 
 ---
@@ -923,7 +923,7 @@ SetGuildRosterSelection(index)
 
 **Arguments:**
 
-- `index` - Index of a member in the guild roster (between 1 and [`GetNumGuildMembers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildMembers)), or 0 for no selection (`number`)
+- `index` - Index of a member in the guild roster (between 1 and [`GetNumGuildMembers()`](Guild.md#getnumguildmembers)), or 0 for no selection (`number`)
 
 ---
 
@@ -990,7 +990,7 @@ inGuild = UnitIsInMyGuild("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 

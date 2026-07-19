@@ -19,7 +19,7 @@ CastPetAction(index [, "unit"])
 **Arguments:**
 
 - `index` - Index of a pet action button (between 1 and `NUM_PET_ACTION_SLOTS`) (`number`)
-- `unit` - A unit to be used as target for the action (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to be used as target for the action (`string`, [unitID](../types/unitID.md))
 
 ---
 
@@ -91,7 +91,7 @@ start, duration, enable = GetPetActionCooldown(index)
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the action is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the action is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the action is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the action is ready.) (`number`)
 
@@ -145,7 +145,7 @@ usable = GetPetActionSlotUsable(index)
 
 ## GetPetActionsUsable
 
-Returns whether the pet's actions are usable. Note: [`GetPetActionSlotUsable`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetPetActionSlotUsable) can return nil for individual actions even if `GetPetActionsUsable` returns 1 (though not the other way around).
+Returns whether the pet's actions are usable. Note: [`GetPetActionSlotUsable`](Action.md#getpetactionslotusable) can return nil for individual actions even if `GetPetActionsUsable` returns 1 (though not the other way around).
 
 **Signature:**
 
@@ -362,7 +362,7 @@ isActive = IsPetAttackActive()
 
 ## PetAbandon `confirmation`
 
-Releases the player's pet. For Hunter pets, this function sends the pet away, never to return (in the default UI, it's called when accepting the "Are you sure you want to permanently abandon your pet?" dialog). For other pets, this function is equivalent to [`PetDismiss()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PetDismiss).
+Releases the player's pet. For Hunter pets, this function sends the pet away, never to return (in the default UI, it's called when accepting the "Are you sure you want to permanently abandon your pet?" dialog). For other pets, this function is equivalent to [`PetDismiss()`](Pet.md#petdismiss).
 
 **Signature:**
 
@@ -396,7 +396,7 @@ PetAttack(["unit"]) or PetAttack(["name"])
 
 **Arguments:**
 
-- `unit` - A unit to attack (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to attack (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to attack (`string`)
 
 ---
@@ -419,7 +419,7 @@ canAbandon = PetCanBeAbandoned()
 
 ## PetCanBeDismissed
 
-Returns whether a Dismiss Pet command should be available for the player's pet. Returns 1 for hunter pets even though they use the Dismiss Pet (cast) spell instead of a Dismiss Pet (instant) command; the value of [`PetCanBeAbandoned()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PetCanBeAbandoned) overrides this in causing the default UI to hide the command. Currently unused, but may be used in the future for other pets.
+Returns whether a Dismiss Pet command should be available for the player's pet. Returns 1 for hunter pets even though they use the Dismiss Pet (cast) spell instead of a Dismiss Pet (instant) command; the value of [`PetCanBeAbandoned()`](Pet.md#petcanbeabandoned) overrides this in causing the default UI to hide the command. Currently unused, but may be used in the future for other pets.
 
 **Signature:**
 

@@ -104,7 +104,7 @@ name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtW
 
 - `name` - Name of the faction (`string`)
 - `description` - Brief description of the faction, as displayed in the default UI's detail window for a selected faction (`string`)
-- `standingID` - Current standing with the given faction (`number`, [standingID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#standingID))
+- `standingID` - Current standing with the given faction (`number`, [standingID](../types/standingID.md))
   - `1` - Hated
   - `2` - Hostile
   - `3` - Unfriendly
@@ -177,7 +177,7 @@ name, standingID, barMin, barMax, barValue = GetWatchedFactionInfo()
 **Returns:**
 
 - `name` - Name of the faction being watched (`string`)
-- `standingID` - The player's current standing with the faction (`number`, [standingID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#standingID))
+- `standingID` - The player's current standing with the faction (`number`, [standingID](../types/standingID.md))
   - `1` - Hated
   - `2` - Hostile
   - `3` - Unfriendly

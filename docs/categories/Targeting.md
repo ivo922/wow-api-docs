@@ -18,7 +18,7 @@ AssistUnit("unit") or AssistUnit("name")
 
 **Arguments:**
 
-- `unit` - A unit to assist (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to assist (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to assist (`string`)
 
 ---
@@ -59,7 +59,7 @@ FocusUnit("unit") or FocusUnit("name")
 
 **Arguments:**
 
-- `unit` - A unit to focus (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to focus (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to focus; only valid for `player`, `pet`, and party/raid members (`string`)
 
 ---
@@ -76,7 +76,7 @@ canTarget = SpellCanTargetUnit("unit") or SpellCanTargetUnit("name")
 
 **Arguments:**
 
-- `unit` - A unit to target (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to target (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to target; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -97,7 +97,7 @@ SpellTargetUnit("unit") or SpellTargetUnit("name")
 
 **Arguments:**
 
-- `unit` - A unit to target (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to target (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to target; only valid for `player`, `pet`, and party/raid members (`string`)
 
 ---
@@ -254,7 +254,7 @@ TargetNearestRaidMember(backward)
 
 ## TargetUnit `protected`
 
-Targets a unit. Passing `nil` is equivalent to calling [`ClearTarget()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClearTarget)).
+Targets a unit. Passing `nil` is equivalent to calling [`ClearTarget()`](Targeting.md#cleartarget-protected)).
 
 **Signature:**
 
@@ -264,7 +264,7 @@ TargetUnit("unit") or TargetUnit("name" [, exactMatch])
 
 **Arguments:**
 
-- `unit` - A unit to target (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to target (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit to target (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 

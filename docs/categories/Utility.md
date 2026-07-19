@@ -18,7 +18,7 @@ fontObject = CreateFont("name")
 
 **Arguments:**
 
-- `name` - Name to assign to the newly created object; used both as the name of the object (retrievable with [`Font:GetName()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/UIObject/GetName)) and as a global variable referencing the object (unless another global by that name already exists) (`string`)
+- `name` - Name to assign to the newly created object; used both as the name of the object (retrievable with [`Font:GetName()`](../widgets/UIObject.md#uiobjectgetname)) and as a global variable referencing the object (unless another global by that name already exists) (`string`)
 
 **Returns:**
 
@@ -38,8 +38,8 @@ frame = CreateFrame("frameType" [, "name" [, parent [, "template"]]])
 
 **Arguments:**
 
-- `frameType` - Type of frame to create; see [the widget documentation](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets_hierarchy) for details (`string`)
-- `name` - Name to assign to the newly created object; used both as the name of the object (retrievable via the [GetName](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/UIObject/GetName) method) and as a global variable referencing the object, unless another global by that name already exists (`string`)
+- `frameType` - Type of frame to create; see [the widget documentation](../Widgets.md) for details (`string`)
+- `name` - Name to assign to the newly created object; used both as the name of the object (retrievable via the [GetName](../widgets/UIObject.md#uiobjectgetname) method) and as a global variable referencing the object, unless another global by that name already exists (`string`)
 - `parent` - Reference to another frame to be the new frame's parent (`table`)
 - `template` - Name of a template to be used in creating the frame; if creating a frame from multiple templates, a comma-separated list of names (`string`)
 
@@ -92,7 +92,7 @@ Returns a list of character names which complete a given partial name prefix
 **Arguments:**
 
 - `inputString` - Partial name for which to return completions (`string`)
-- `includeBitfield` - One or more of the following flags (combined via `bit.bor()`), indicating which characters should be included in the result list: (`number`, [bitfield](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#bitfield))
+- `includeBitfield` - One or more of the following flags (combined via `bit.bor()`), indicating which characters should be included in the result list: (`number`, [bitfield](../types/bitfield.md))
   - `0x00000000` - `AUTOCOMPLETE_FLAG_NONE`: No characters
   - `0x00000001` - `AUTOCOMPLETE_FLAG_IN_GROUP`: Characters in the player's party or raid
   - `0x00000002` - `AUTOCOMPLETE_FLAG_IN_GUILD`: Characters in the player's guild
@@ -100,7 +100,7 @@ Returns a list of character names which complete a given partial name prefix
   - `0x00000010` - `AUTOCOMPLETE_FLAG_INTERACTED_WITH`: Characters with whom the player has recently interacted
   - `0x00000020` - `AUTOCOMPLETE_FLAG_ONLINE`: Currently online friends and guildmates
   - `0xffffffff` - `AUTOCOMPLETE_FLAG_ALL`: All characters
-- `excludeBitfield` - One or more of the following flags (combined via `bit.bor()`), indicating which characters should be excluded from the result list: (`number`, [bitfield](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#bitfield))
+- `excludeBitfield` - One or more of the following flags (combined via `bit.bor()`), indicating which characters should be excluded from the result list: (`number`, [bitfield](../types/bitfield.md))
   - `0x00000000` - `AUTOCOMPLETE_FLAG_NONE`: No characters
   - `0x00000001` - `AUTOCOMPLETE_FLAG_IN_GROUP`: Characters in the player's party or raid
   - `0x00000002` - `AUTOCOMPLETE_FLAG_IN_GUILD`: Characters in the player's guild
@@ -327,7 +327,7 @@ name = GetMuteName(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the mute listing (between 1 and [`GetNumMutes()`](https://web.archive.org/web/20111212195150/http://wowprogramming.com/docs/api/GetNumMutes)) (`number`)
+- `index` - Index of an entry in the mute listing (between 1 and [`GetNumMutes()`](Voice.md#getnummutes)) (`number`)
 
 **Returns:**
 
@@ -364,7 +364,7 @@ text = GetText("token" [, gender [, ordinal]])
 **Arguments:**
 
 - `token` - Base name of a localized string token (`string`)
-- `gender` - Gender of the string's subject (as returned by [`UnitSex()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UnitSex)) (`number`)
+- `gender` - Gender of the string's subject (as returned by [`UnitSex()`](Unit.md#unitsex)) (`number`)
 - `ordinal` - Currently unused (`number`)
 
 **Returns:**
@@ -375,7 +375,7 @@ text = GetText("token" [, gender [, ordinal]])
 
 ## GetTime
 
-Returns a number representing the current time (with millisecond precision). Unlike with [`time()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/time), the number returned by this function has no meaning of its own and may not be comparable across clients; however, since it also provides higher resolution it can be compared against itself for high-precision time measurements.
+Returns a number representing the current time (with millisecond precision). Unlike with [`time()`](Lua library.md#time-luaapi), the number returned by this function has no meaning of its own and may not be comparable across clients; however, since it also provides higher resolution it can be compared against itself for high-precision time measurements.
 
 **Signature:**
 

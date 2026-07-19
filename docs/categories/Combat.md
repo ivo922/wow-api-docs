@@ -30,7 +30,7 @@ StartAttack("unit") or StartAttack("name")
 
 **Arguments:**
 
-- `unit` - A unit to attack (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to attack (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to attack (`string`)
 
 ---
@@ -59,7 +59,7 @@ inCombat = UnitAffectingCombat("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 

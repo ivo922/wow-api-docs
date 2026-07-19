@@ -18,7 +18,7 @@ CastSpell(id, "bookType")
 
 **Arguments:**
 
-- `id` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `id` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -37,8 +37,8 @@ CastSpellByID(spellID [, "target"])
 
 **Arguments:**
 
-- `spellID` - ID of the spell to cast (`number`, [spellID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellID))
-- `target` - A unit to target with the spell (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `spellID` - ID of the spell to cast (`number`, [spellID](../types/spellID.md))
+- `target` - A unit to target with the spell (`string`, [unitID](../types/unitID.md))
 
 ---
 
@@ -55,13 +55,13 @@ CastSpellByName("name" [, "target"])
 **Arguments:**
 
 - `name` - Name of a spell to cast (`string`)
-- `target` - A unit to target with the spell (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `target` - A unit to target with the spell (`string`, [unitID](../types/unitID.md))
 
 ---
 
 ## CursorHasSpell
 
-Returns whether a spell is on the cursor. See [`GetCursorInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCursorInfo) for more detailed information.
+Returns whether a spell is on the cursor. See [`GetCursorInfo()`](Cursor.md#getcursorinfo) for more detailed information.
 
 **Signature:**
 
@@ -121,7 +121,7 @@ name, rank = GetItemSpell(itemID) or GetItemSpell("itemName") or GetItemSpell("i
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -228,7 +228,7 @@ autocastAllowed, autocastEnabled = GetSpellAutocast(id, "bookType")
 
 **Arguments:**
 
-- `id` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `id` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -252,16 +252,16 @@ start, duration, enable = GetSpellCooldown(index, "bookType") or GetSpellCooldow
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
 - `name` - Name of a spell (`string`)
-- `id` - Numeric ID of a spell (`number`, [spellID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellID))
+- `id` - Numeric ID of a spell (`number`, [spellID](../types/spellID.md))
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the spell is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the spell is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the spell is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the spell is ready.) (`number`)
 
@@ -279,7 +279,7 @@ numCasts = GetSpellCount(index, "bookType") or GetSpellCount("name")
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -320,12 +320,12 @@ name, rank, icon, powerCost, isFunnel, powerType, castingTime, minRange, maxRang
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20101202015637/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
 - `name` - Name of a spell, optionally including secondary text (e.g. "Mana Burn" to find the player's highest rank, or "Mana Burn(Rank 2)" -- no space before the parenthesis -- for a specific rank) (`string`)
-- `id` - Numeric ID of a spell (`number`, [spellID](https://web.archive.org/web/20101202015637/http://wowprogramming.com/docs/api_types#spellID))
+- `id` - Numeric ID of a spell (`number`, [spellID](../types/spellID.md))
 
 **Returns:**
 
@@ -360,16 +360,16 @@ link, tradeLink = GetSpellLink(index, "bookType") or GetSpellLink("name") or Get
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100823090329/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
 - `name` - Name of a spell, optionally including secondary text (e.g. "Mana Burn" to find the player's highest rank, or "Mana Burn(Rank 2)" -- no space before the parenthesis -- for a specific rank) (`string`)
-- `id` - Numeric ID of a spell (`number`, [spellID](https://web.archive.org/web/20100823090329/http://wowprogramming.com/docs/api_types#spellID))
+- `id` - Numeric ID of a spell (`number`, [spellID](../types/spellID.md))
 
 **Returns:**
 
-- `link` - A hyperlink for the spell (`string`, [hyperlink](https://web.archive.org/web/20100823090329/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the spell (`string`, [hyperlink](../types/hyperlink.md))
 - `tradeLink` - A hyperlink representing the player's list of trade skill recipes, if the spell is a trade skill (i.e. if "casting" the spell opens a trade skill window) (`string`)
 
 ---
@@ -386,7 +386,7 @@ spellName, subSpellName = GetSpellName(id, "bookType")
 
 **Arguments:**
 
-- `id` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `id` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -410,13 +410,13 @@ name, texture, offset, numSpells = GetSpellTabInfo(index)
 
 **Arguments:**
 
-- `index` - Index of a spellbook tab (between 1 and [`GetNumSpellTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSpellTabs)) (`number`)
+- `index` - Index of a spellbook tab (between 1 and [`GetNumSpellTabs()`](Spell.md#getnumspelltabs)) (`number`)
 
 **Returns:**
 
 - `name` - Name of the spellbook tab (`string`)
 - `texture` - Path to an icon texture for the spellbook tab (`string`)
-- `offset` - [`spellbookID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID) of the first spell to be listed under the tab (`number`)
+- `offset` - [`spellbookID`](../types/spellbookID.md) of the first spell to be listed under the tab (`number`)
 - `numSpells` - Number of spells listed under the tab (`number`)
 
 ---
@@ -433,7 +433,7 @@ texture = GetSpellTexture(index, "bookType") or GetSpellTexture("name")
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -476,7 +476,7 @@ isAttack = IsAttackSpell(index, "bookType") or IsAttackSpell("name")
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20111212163825/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -520,7 +520,7 @@ isConsumable = IsConsumableSpell(index, "bookType") or IsConsumableSpell("name")
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -544,7 +544,7 @@ isCurrent = IsCurrentSpell(index, "bookType") or IsCurrentSpell("name")
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -568,7 +568,7 @@ isHarmful = IsHarmfulSpell(index, "bookType") or IsHarmfulSpell("name")
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -609,7 +609,7 @@ isHarmful = IsHelpfulSpell(index, "bookType") or IsHelpfulSpell("name")
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -633,7 +633,7 @@ isPassive = IsPassiveSpell(index, "bookType") or IsPassiveSpell("name")
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -663,12 +663,12 @@ inRange = IsSpellInRange(index, "bookType", "unit") or IsSpellInRange("name", "u
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
 - `name` - Name of a spell (`string`)
-- `unit` - A unit to target with the spell (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to target with the spell (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -688,7 +688,7 @@ isKnown = IsSpellKnown(spellID [, isPet])
 
 **Arguments:**
 
-- `spellID` - Numeric ID of a spell (`number`, [spellID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellID))
+- `spellID` - Numeric ID of a spell (`number`, [spellID](../types/spellID.md))
 - `isPet` - True to check only spells known to the player's pet; false or omitted to check only spells known to the player (`boolean`)
 
 **Returns:**
@@ -699,7 +699,7 @@ isKnown = IsSpellKnown(spellID [, isPet])
 
 ## IsUsableSpell
 
-Returns whether or not a given spell is usable or cannot be used due to lack of mana. Does not account for spell cooldowns (see [`GetSpellCooldown()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetSpellCooldown) -- returns 1 if other conditions allow for casting the spell (e.g. if the spell can only be cast while outdoors).
+Returns whether or not a given spell is usable or cannot be used due to lack of mana. Does not account for spell cooldowns (see [`GetSpellCooldown()`](Spell.md#getspellcooldown) -- returns 1 if other conditions allow for casting the spell (e.g. if the spell can only be cast while outdoors).
 
 **Signature:**
 
@@ -709,7 +709,7 @@ isUsable, notEnoughMana = IsUsableSpell(index, "bookType") or IsUsableSpell("nam
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -734,7 +734,7 @@ PickupSpell(spellID)
 
 **Arguments:**
 
-- `spellID` - The spellID of the spell (`number`, [spellID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellID))
+- `spellID` - The spellID of the spell (`number`, [spellID](../types/spellID.md))
 
 ---
 
@@ -801,7 +801,7 @@ canTarget = SpellCanTargetUnit("unit") or SpellCanTargetUnit("name")
 
 **Arguments:**
 
-- `unit` - A unit to target (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to target (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to target; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -822,7 +822,7 @@ hasRange = SpellHasRange(index, "bookType") or SpellHasRange("name")
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -888,7 +888,7 @@ SpellTargetItem(itemID) or SpellTargetItem("itemName") or SpellTargetItem("itemL
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 ---
 
@@ -904,7 +904,7 @@ SpellTargetUnit("unit") or SpellTargetUnit("name")
 
 **Arguments:**
 
-- `unit` - A unit to target (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to target (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to target; only valid for `player`, `pet`, and party/raid members (`string`)
 
 ---
@@ -921,7 +921,7 @@ ToggleSpellAutocast(index, "bookType") or ToggleSpellAutocast("name")
 
 **Arguments:**
 
-- `index` - Index of a spell in the spellbook (`number`, [spellbookID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#spellbookID))
+- `index` - Index of a spell in the spellbook (`number`, [spellbookID](../types/spellbookID.md))
 - `bookType` - Type of spellbook (`string`)
   - `pet` - The pet's spellbook
   - `spell` - The player's spellbook
@@ -941,7 +941,7 @@ name, subText, text, texture, startTime, endTime, isTradeSkill, castID, notInter
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -949,8 +949,8 @@ name, subText, text, texture, startTime, endTime, isTradeSkill, castID, notInter
 - `subText` - Secondary text associated with the spell (e.g."Rank 5", "Racial", etc.) (`string`)
 - `text` - Text to be displayed on a casting bar (`string`)
 - `texture` - Path to an icon texture for the spell (`string`)
-- `startTime` - Time at which the cast was started (in milliseconds; can be compared to [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) `* 1000`) (`number`)
-- `endTime` - Time at which the cast will finish (in milliseconds; can be compared to [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) `* 1000`) (`number`)
+- `startTime` - Time at which the cast was started (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
+- `endTime` - Time at which the cast will finish (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
 - `isTradeSkill` - 1 if the spell being cast is a trade skill recipe; otherwise nil (`1nil`)
 - `castID` - Reference number for this spell; matches the 4th argument of `UNIT_SPELLCAST_*` events for the same spellcast (`number`)
 - `notInterruptible` - 1 if the spell can be interrupted; otherwise nil. See the [`UNIT_SPELLCAST_NOT_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_NOT_INTERRUPTIBLE) and [`UNIT_SPELLCAST_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_INTERRUPTIBLE) events for changes to this status. (`1nil`)
@@ -969,7 +969,7 @@ name, subText, text, texture, startTime, endTime, isTradeSkill, notInterruptible
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -977,8 +977,8 @@ name, subText, text, texture, startTime, endTime, isTradeSkill, notInterruptible
 - `subText` - Secondary text associated with the spell (e.g."Rank 5", "Racial", etc.) (`string`)
 - `text` - Text to be displayed on a casting bar (`string`)
 - `texture` - Path to an icon texture for the spell (`string`)
-- `startTime` - Time at which the cast was started (in milliseconds; can be compared to [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) `* 1000`) (`number`)
-- `endTime` - Time at which the cast will finish (in milliseconds; can be compared to [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) `* 1000`) (`number`)
+- `startTime` - Time at which the cast was started (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
+- `endTime` - Time at which the cast will finish (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
 - `isTradeSkill` - 1 if the spell being cast is a trade skill recipe; otherwise nil (`1nil`)
 - `notInterruptible` - Indicates that the spell cannot be interrupted, [`UNIT_SPELLCAST_NOT_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_NOT_INTERRUPTIBLE) and [`UNIT_SPELLCAST_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_INTERRUPTIBLE) are fired to indicate changes in the interruptible status. (`boolean`)
 

@@ -178,7 +178,7 @@ critChance = GetCritChanceFromAgility(["unit"])
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` and `pet`, defaults to `player` if omitted (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` and `pet`, defaults to `player` if omitted (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -466,7 +466,7 @@ critChance = GetSpellCritChanceFromIntellect(["unit"])
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` and `pet`, defaults to `player` if omitted (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` and `pet`, defaults to `player` if omitted (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -502,7 +502,7 @@ modifier = GetUnitHealthModifier("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -522,7 +522,7 @@ regen = GetUnitHealthRegenRateFromSpirit("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -542,7 +542,7 @@ regen = GetUnitManaRegenRateFromSpirit("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -562,7 +562,7 @@ modifier = GetUnitMaxHealthModifier("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -582,7 +582,7 @@ modifier = GetUnitPowerModifier("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -602,7 +602,7 @@ base, effectiveArmor, armor, posBuff, negBuff = UnitArmor("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -626,7 +626,7 @@ mainHandAttackBase, mainHandAttackMod, offHandHandAttackBase, offHandAttackMod =
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -649,7 +649,7 @@ base, posBuff, negBuff = UnitAttackPower("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -671,7 +671,7 @@ speed, offhandSpeed = UnitAttackSpeed("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -692,7 +692,7 @@ minDamage, maxDamage, minOffHandDamage, maxOffHandDamage, physicalBonusPos, phys
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -718,7 +718,7 @@ base, modifier = UnitDefense("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -739,7 +739,7 @@ rangedAttackBase, rangedAttackMod = UnitRangedAttack("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -760,7 +760,7 @@ base, posBuff, negBuff = UnitRangedAttackPower("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -782,7 +782,7 @@ rangedAttackSpeed, minDamage, maxDamage, physicalBonusPos, physicalBonusNeg, per
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -807,7 +807,7 @@ base, resistance, positive, negative = UnitResistance("unit", resistanceIndex)
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 - `resistanceIndex` - Index of a magic resistance type (`number`)
   - `1` - Fire
   - `2` - Nature
@@ -836,7 +836,7 @@ stat, effectiveStat, posBuff, negBuff = UnitStat("unit", statIndex)
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` or `pet` (`string`, [unitID](../types/unitID.md))
 - `statIndex` - Index of a basic statistic (`number`)
   - `1` - Strength
   - `2` - Agility

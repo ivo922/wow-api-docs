@@ -8,7 +8,7 @@
 
 ## BankButtonIDToInvSlotID
 
-Returns the [`inventoryID`](https://web.archive.org/web/20100105232007/http://wowprogramming.com/docs/api_types#inventoryID) corresponding to a bank item or bag slot
+Returns the [`inventoryID`](../types/inventoryID.md) corresponding to a bank item or bag slot
 
 **Signature:**
 
@@ -23,7 +23,7 @@ inventoryID = BankButtonIDToInvSlotID(buttonID [, isBag])
 
 **Returns:**
 
-- `inventoryID` - An inventory slot ID usable with various Inventory API functions (`number`, [inventoryID](https://web.archive.org/web/20100105232007/http://wowprogramming.com/docs/api_types#inventoryID))
+- `inventoryID` - An inventory slot ID usable with various Inventory API functions (`number`, [inventoryID](../types/inventoryID.md))
 
 **Examples:**
 
@@ -59,7 +59,7 @@ player, bank, bags, location or slot, bag = EquipmentManager_UnpackLocation(loca
 
 **Arguments:**
 
-- `location` - A bit field that represents an item's location in the player's possession. This bit field can be obtained using the [`GetInventoryItemsForSlot`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventoryItemsForSlot) function. (`number`)
+- `location` - A bit field that represents an item's location in the player's possession. This bit field can be obtained using the [`GetInventoryItemsForSlot`](Inventory.md#getinventoryitemsforslot) function. (`number`)
 
 **Returns:**
 

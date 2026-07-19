@@ -26,7 +26,7 @@ FrameXML_Debug(enable)
 
 Returns the amount of CPU time used by an addon. Only returns valid data if the `scriptProfile` CVar is set to 1; returns 0 otherwise.
 
-The value returned is from a cache only updated when calling [`UpdateAddOnCPUUsage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UpdateAddOnCPUUsage). This value is the sum of [`GetFunctionCPUUsage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetFunctionCPUUsage) for all functions created on the addon's behalf -- note that if the addon calls external functions which in turn create new functions, the new functions are considered to belong to the addon.
+The value returned is from a cache only updated when calling [`UpdateAddOnCPUUsage()`](Debugging and Profiling.md#updateaddoncpuusage). This value is the sum of [`GetFunctionCPUUsage()`](Debugging and Profiling.md#getfunctioncpuusage) for all functions created on the addon's behalf -- note that if the addon calls external functions which in turn create new functions, the new functions are considered to belong to the addon.
 
 **Signature:**
 
@@ -37,17 +37,17 @@ usage = GetAddOnCPUUsage("name") or GetAddOnCPUUsage(index)
 **Arguments:**
 
 - `name` - Name of an addon (name of the addon's folder and TOC file, not the Title found in the TOC) (`string`)
-- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAddOns)) (`number`)
+- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](Addon-related.md#getnumaddons)) (`number`)
 
 **Returns:**
 
-- `usage` - Amount of CPU time used by the addon (in milliseconds) since the UI was loaded or [`ResetCPUUsage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ResetCPUUsage) was last called (`number`)
+- `usage` - Amount of CPU time used by the addon (in milliseconds) since the UI was loaded or [`ResetCPUUsage()`](Debugging and Profiling.md#resetcpuusage) was last called (`number`)
 
 ---
 
 ## GetAddOnMemoryUsage
 
-Returns the amount of memory used by an addon. The value returned is from a cache only updated when calling [`UpdateAddOnMemoryUsage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UpdateAddOnMemoryUsage).
+Returns the amount of memory used by an addon. The value returned is from a cache only updated when calling [`UpdateAddOnMemoryUsage()`](Debugging and Profiling.md#updateaddonmemoryusage).
 
 **Signature:**
 
@@ -58,7 +58,7 @@ mem = GetAddOnMemoryUsage("name") or GetAddOnMemoryUsage(index)
 **Arguments:**
 
 - `name` - Name of an addon (name of the addon's folder and TOC file, not the Title found in the TOC) (`string`)
-- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAddOns)) (`number`)
+- `index` - Index of an addon in the addon list (between 1 and [`GetNumAddOns()`](Addon-related.md#getnumaddons)) (`number`)
 
 **Returns:**
 
@@ -82,7 +82,7 @@ usage, numEvents = GetEventCPUUsage(["event"])
 
 **Returns:**
 
-- `usage` - Amount of CPU time used by handlers for the event (in milliseconds) since the UI was loaded or [`ResetCPUUsage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ResetCPUUsage) was last called (`number`)
+- `usage` - Amount of CPU time used by handlers for the event (in milliseconds) since the UI was loaded or [`ResetCPUUsage()`](Debugging and Profiling.md#resetcpuusage) was last called (`number`)
 - `numEvents` - Number of times the event has fired this session (`number`)
 
 ---
@@ -104,7 +104,7 @@ usage, calls = GetFrameCPUUsage(frame, includeChildren)
 
 **Returns:**
 
-- `usage` - Amount of CPU time used by the frame's script handlers (in milliseconds) since the UI was loaded or [`ResetCPUUsage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ResetCPUUsage) was last called (`number`)
+- `usage` - Amount of CPU time used by the frame's script handlers (in milliseconds) since the UI was loaded or [`ResetCPUUsage()`](Debugging and Profiling.md#resetcpuusage) was last called (`number`)
 - `calls` - Number of function calls made from the frame's script handlers (`number`)
 
 ---
@@ -142,7 +142,7 @@ usage, calls = GetFunctionCPUUsage(function, includeSubroutines)
 
 **Returns:**
 
-- `usage` - Amount of CPU time used by the function (in milliseconds) since the UI was loaded or [`ResetCPUUsage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ResetCPUUsage) was last called (`number`)
+- `usage` - Amount of CPU time used by the function (in milliseconds) since the UI was loaded or [`ResetCPUUsage()`](Debugging and Profiling.md#resetcpuusage) was last called (`number`)
 - `calls` - Number times the function was called (`number`)
 
 ---
@@ -178,7 +178,7 @@ usage = GetScriptCPUUsage()
 
 **Returns:**
 
-- `usage` - Amount of CPU time used by the scripting system (in milliseconds) since the UI was loaded or [`ResetCPUUsage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ResetCPUUsage) was last called (`number`)
+- `usage` - Amount of CPU time used by the scripting system (in milliseconds) since the UI was loaded or [`ResetCPUUsage()`](Debugging and Profiling.md#resetcpuusage) was last called (`number`)
 
 ---
 
@@ -228,7 +228,7 @@ SetTaxiBenchmarkMode("arg")
 
 ## UpdateAddOnCPUUsage
 
-Updates addon CPU profiling information. Only has effect if the `scriptProfile` CVar is set to 1. See [`GetAddOnCPUUsage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAddOnCPUUsage) for the updated data.
+Updates addon CPU profiling information. Only has effect if the `scriptProfile` CVar is set to 1. See [`GetAddOnCPUUsage()`](Debugging and Profiling.md#getaddoncpuusage) for the updated data.
 
 **Signature:**
 
@@ -240,7 +240,7 @@ UpdateAddOnCPUUsage()
 
 ## UpdateAddOnMemoryUsage
 
-Updates addon memory usage information. See [`GetAddOnMemoryUsage()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAddOnMemoryUsage) for the updated data.
+Updates addon memory usage information. See [`GetAddOnMemoryUsage()`](Debugging and Profiling.md#getaddonmemoryusage) for the updated data.
 
 **Signature:**
 
@@ -252,7 +252,7 @@ UpdateAddOnMemoryUsage()
 
 ## debugprofilestart
 
-Starts/resets the high resolution profiling timer. Subsequent calls to [`debugprofilestop()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/debugprofilestop) will return the current value of the timer.
+Starts/resets the high resolution profiling timer. Subsequent calls to [`debugprofilestop()`](Debugging and Profiling.md#debugprofilestop) will return the current value of the timer.
 
 Note that debugprofilestart() is more of a global reset than a "start". It is not necessary to call it, ever. In fact, it is probably a much better idea to simply do 2 calls to stop() and calculate the difference, since calling start() will interrupt timing measurements done by other addons.
 

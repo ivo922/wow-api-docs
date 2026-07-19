@@ -32,7 +32,7 @@ ClickSocketButton(index)
 
 **Arguments:**
 
-- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSockets)) (`number`)
+- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](Socketing.md#getnumsockets)) (`number`)
 
 **Examples:**
 
@@ -70,7 +70,7 @@ name, texture, name = GetExistingSocketInfo(index)
 
 **Arguments:**
 
-- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSockets)) (`number`)
+- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](Socketing.md#getnumsockets)) (`number`)
 
 **Returns:**
 
@@ -94,11 +94,11 @@ link = GetExistingSocketLink(index)
 
 **Arguments:**
 
-- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSockets)) (`number`)
+- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](Socketing.md#getnumsockets)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the socketed gem (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the socketed gem (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -116,13 +116,13 @@ name, link = GetItemGem(itemID, index) or GetItemGem("itemName", index) or GetIt
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 - `index` - Index of a socket on the item (`number`)
 
 **Returns:**
 
 - `name` - Name of the gem in the socket (`string`)
-- `link` - A hyperlink for the gem in the socket (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the gem in the socket (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -140,7 +140,7 @@ name, texture, matches = GetNewSocketInfo(index)
 
 **Arguments:**
 
-- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSockets)) (`number`)
+- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](Socketing.md#getnumsockets)) (`number`)
 
 **Returns:**
 
@@ -164,11 +164,11 @@ link = GetNewSocketLink(index)
 
 **Arguments:**
 
-- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSockets)) (`number`)
+- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](Socketing.md#getnumsockets)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the gem added to the socket (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the gem added to the socket (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -218,7 +218,7 @@ name, icon, quality = GetSocketItemInfo()
 
 - `name` - Name of the item (`string`)
 - `icon` - Path to an icon texture for the item (`string`)
-- `quality` - Quality level of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality level of the item (`number`, [itemQuality](../types/itemQuality.md))
 
 ---
 
@@ -250,7 +250,7 @@ gemColor = GetSocketTypes(index)
 
 **Arguments:**
 
-- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSockets)) (`number`)
+- `index` - Index of a gem socket (between 1 and [`GetNumSockets()`](Socketing.md#getnumsockets)) (`number`)
 
 **Returns:**
 
@@ -275,8 +275,8 @@ SocketContainerItem(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 ---
 
@@ -292,7 +292,7 @@ SocketInventoryItem(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 

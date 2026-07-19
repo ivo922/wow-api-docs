@@ -34,7 +34,7 @@ name, texture, active, category = GetTrackingInfo(index)
 
 **Arguments:**
 
-- `index` - Index of a tracking ability to query (between 1 and [`GetNumTrackingTypes()`](https://web.archive.org/web/20100105222919/http://wowprogramming.com/docs/api/GetNumTrackingTypes)) (`number`)
+- `index` - Index of a tracking ability to query (between 1 and [`GetNumTrackingTypes()`](Tracking.md#getnumtrackingtypes)) (`number`)
 
 **Returns:**
 
@@ -65,7 +65,7 @@ SetTracking(index, enabled)
 
 **Arguments:**
 
-- `index` - Index of a tracking ability (between 1 and [`GetNumTrackingTypes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTrackingTypes)) (`number`)
+- `index` - Index of a tracking ability (between 1 and [`GetNumTrackingTypes()`](Tracking.md#getnumtrackingtypes)) (`number`)
 - `enabled` - pass true to enable, false to disable (`boolean`)
 
 ---

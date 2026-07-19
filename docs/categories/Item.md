@@ -48,7 +48,7 @@ ConfirmBindOnUse()
 
 ## CursorHasItem
 
-Returns whether an item is on the cursor. See [`GetCursorInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCursorInfo) for more detailed information.
+Returns whether an item is on the cursor. See [`GetCursorInfo()`](Cursor.md#getcursorinfo) for more detailed information.
 
 **Signature:**
 
@@ -108,7 +108,7 @@ EndRefund(id)
 
 ## EquipItemByName
 
-Attempts to equip an arbitrary item. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/EquipCursorItem).
+Attempts to equip an arbitrary item. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](Cursor.md#equipcursoritem).
 
 Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the specified item cannot be equipped. Does nothing if the specified item does not exist or is not in the player's possession.
 
@@ -122,7 +122,7 @@ EquipItemByName(itemID) or EquipItemByName("itemName") or EquipItemByName("itemL
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 ---
 
@@ -156,11 +156,11 @@ start, duration, enable = GetItemCooldown(itemID) or GetItemCooldown("itemName")
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the item is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the item is ready (`number`)
 - `duration` - The length of the cooldown, or 0 if the item is ready (`number`)
 - `enable` - 1 if a Cooldown UI element should be used to display the cooldown, otherwise 0. (Does not always correlate with whether the item is ready.) (`number`)
 
@@ -209,11 +209,11 @@ bagType = GetItemFamily(itemID) or GetItemFamily("itemName") or GetItemFamily("i
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
-- `bagType` - Bitwise OR of bag type flags: (`number`, [bitfield](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#bitfield))
+- `bagType` - Bitwise OR of bag type flags: (`number`, [bitfield](../types/bitfield.md))
   - `0x0001` - Quiver
   - `0x0002` - Ammo Pouch
   - `0x0004` - Soul Bag
@@ -244,19 +244,19 @@ name, link = GetItemGem(itemID, index) or GetItemGem("itemName", index) or GetIt
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 - `index` - Index of a socket on the item (`number`)
 
 **Returns:**
 
 - `name` - Name of the gem in the socket (`string`)
-- `link` - A hyperlink for the gem in the socket (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the gem in the socket (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
 ## GetItemIcon
 
-Returns the path to an icon texture for the item. Unlike [`GetItemInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetItemInfo), this function always returns icons for valid items, even if the item is not in the client's cache.
+Returns the path to an icon texture for the item. Unlike [`GetItemInfo`](Item.md#getiteminfo), this function always returns icons for valid items, even if the item is not in the client's cache.
 
 **Signature:**
 
@@ -268,7 +268,7 @@ texture = GetItemIcon(itemID) or GetItemIcon("itemName") or GetItemIcon("itemLin
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -288,21 +288,21 @@ name, link, quality, iLevel, reqLevel, class, subclass, maxStack, equipSlot, tex
 
 **Arguments:**
 
-- `itemID` - An item's ID (`number`, [itemID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemID))
+- `itemID` - An item's ID (`number`, [itemID](../types/itemID.md))
 - `itemName` - An item's name. This value will only work if the player has the item in their bags. (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
 - `name` - Name of the item (`string`)
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
-- `quality` - Quality (rarity) level of the item. (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
+- `quality` - Quality (rarity) level of the item. (`number`, [itemQuality](../types/itemQuality.md))
 - `iLevel` - Internal level of the item; (`number`)
 - `reqLevel` - Minimum character level required to use or equip the item (`number`)
-- `class` - Localized name of the item's class/type (as in the list returned by [`GetAuctionItemClasses()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemClasses)) (`string`)
-- `subclass` - Localized name of the item's subclass/subtype (as in the list returned by [`GetAuctionItemSubClasses()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemSubClasses)) (`string`)
+- `class` - Localized name of the item's class/type (as in the list returned by [`GetAuctionItemClasses()`](Auction.md#getauctionitemclasses)) (`string`)
+- `subclass` - Localized name of the item's subclass/subtype (as in the list returned by [`GetAuctionItemSubClasses()`](Auction.md#getauctionitemsubclasses)) (`string`)
 - `maxStack` - Maximum stack size for the item (i.e. largest number of items that can be held in a single bag slot) (`number`)
-- `equipSlot` - Non-localized token identifying the inventory type of the item (as in the list returned by [`GetAuctionItemInvTypes()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemInvTypes)); name of a global variable containing the localized name of the inventory type (`string`)
+- `equipSlot` - Non-localized token identifying the inventory type of the item (as in the list returned by [`GetAuctionItemInvTypes()`](Auction.md#getauctioninvtypes)); name of a global variable containing the localized name of the inventory type (`string`)
 - `texture` - Path to an icon texture for the item (`string`)
 - `vendorPrice` - Price an NPC vendor will pay to buy the item from the player. This value was added in patch 3.2. (`number`)
 
@@ -322,14 +322,14 @@ redComponent, greenComponent, blueComponent, hexColor = GetItemQualityColor(qual
 
 **Arguments:**
 
-- `quality` - An numeric item quality (rarity) value (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - An numeric item quality (rarity) value (`number`, [itemQuality](../types/itemQuality.md))
 
 **Returns:**
 
 - `redComponent` - Red component of the color (`number`)
 - `greenComponent` - Green component of the color (`number`)
 - `blueComponent` - Blue component of the color (`number`)
-- `hexColor` - Color value of a [`colorString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#colorString) for formatting text with the color (`string`)
+- `hexColor` - Color value of a [`colorString`](../types/colorString.md) for formatting text with the color (`string`)
 
 ---
 
@@ -347,7 +347,7 @@ name, rank = GetItemSpell(itemID) or GetItemSpell("itemName") or GetItemSpell("i
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -360,7 +360,7 @@ name, rank = GetItemSpell(itemID) or GetItemSpell("itemName") or GetItemSpell("i
 
 Returns a summary of the difference in stat bonuses between two items. Keys in the table returned are the names of global variables containing the localized names of the stats (e.g. `_G["ITEM_MOD_SPIRIT_SHORT"] = "Spirit"`, `_G["ITEM_MOD_HIT_RATING_SHORT"] = "Hit Rating"`).
 
-The optional argument `returnTable` allows for performance optimization in cases where this function is expected to be called repeatedly. Rather than creating new tables each time the function is called (eventually requiring garbage collection), an existing table can be recycled. (Note, however, that this function does not clear the table's contents; use [`wipe()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/wipe) first to guarantee consistent results.)
+The optional argument `returnTable` allows for performance optimization in cases where this function is expected to be called repeatedly. Rather than creating new tables each time the function is called (eventually requiring garbage collection), an existing table can be recycled. (Note, however, that this function does not clear the table's contents; use [`wipe()`](Utility.md#wipe) first to guarantee consistent results.)
 
 **Signature:**
 
@@ -370,8 +370,8 @@ statTable = GetItemStatDelta("item1Link", "item2Link" [, returnTable])
 
 **Arguments:**
 
-- `item1Link` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
-- `item2Link` - Another item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `item1Link` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`, [hyperlink](../types/hyperlink.md))
+- `item2Link` - Another item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`, [hyperlink](../types/hyperlink.md))
 - `returnTable` - Reference to a table to be filled with return values (`table`)
 
 **Returns:**
@@ -400,7 +400,7 @@ for stat, value in pairs(statDelta) do print(value, _G[stat]) end
 
 Returns a summary of an item's stat bonuses. Keys in the table returned are the names of global variables containing the localized names of the stats (e.g. `_G["ITEM_MOD_SPIRIT_SHORT"] = "Spirit"`, `_G["ITEM_MOD_HIT_RATING_SHORT"] = "Hit Rating"`).
 
-The optional argument `returnTable` allows for performance optimization in cases where this function is expected to be called repeatedly. Rather than creating new tables each time the function is called (eventually requiring garbage collection), an existing table can be recycled. (Note, however, that this function does not clear the table's contents; use [`wipe()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/wipe) first to guarantee consistent results.)
+The optional argument `returnTable` allows for performance optimization in cases where this function is expected to be called repeatedly. Rather than creating new tables each time the function is called (eventually requiring garbage collection), an existing table can be recycled. (Note, however, that this function does not clear the table's contents; use [`wipe()`](Utility.md#wipe) first to guarantee consistent results.)
 
 **Signature:**
 
@@ -410,7 +410,7 @@ statTable = GetItemStats("itemLink" [, returnTable])
 
 **Arguments:**
 
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`, [hyperlink](../types/hyperlink.md))
 - `returnTable` - Reference to a table to be filled with return values (`table`)
 
 **Returns:**
@@ -474,7 +474,7 @@ consumable = IsConsumableItem(itemID) or IsConsumableItem("itemName") or IsConsu
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -496,7 +496,7 @@ isItem = IsCurrentItem(itemID) or IsCurrentItem("itemName") or IsCurrentItem("it
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -518,7 +518,7 @@ isDressable = IsDressableItem(itemID) or IsDressableItem("itemName") or IsDressa
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -540,7 +540,7 @@ isEquippable = IsEquippableItem(itemID) or IsEquippableItem("itemName") or IsEqu
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -562,7 +562,7 @@ isEquipped = IsEquippedItem(itemID) or IsEquippedItem("itemName") or IsEquippedI
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -590,7 +590,7 @@ end
 
 ## IsEquippedItemType
 
-Returns whether any items of a given type are currently equipped. Possible arguments include the localized names of item classes (as returned from [`GetAuctionItemClasses`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemClasses); e.g. "Weapon", "Armor"), subclasses (as returned from [`GetAuctionItemSubClasses`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionItemSubClasses); e.g. "One-handed axes", "Shields", "Cloth"), and the global tokens or localized names for equip locations (as returned from [`GetAuctionInvTypes`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetAuctionInvTypes); e.g. "INVTYPE_WEAPONMAINHAND", "Off Hand").
+Returns whether any items of a given type are currently equipped. Possible arguments include the localized names of item classes (as returned from [`GetAuctionItemClasses`](Auction.md#getauctionitemclasses); e.g. "Weapon", "Armor"), subclasses (as returned from [`GetAuctionItemSubClasses`](Auction.md#getauctionitemsubclasses); e.g. "One-handed axes", "Shields", "Cloth"), and the global tokens or localized names for equip locations (as returned from [`GetAuctionInvTypes`](Auction.md#getauctioninvtypes); e.g. "INVTYPE_WEAPONMAINHAND", "Off Hand").
 
 **Signature:**
 
@@ -634,7 +634,7 @@ isHarmful = IsHarmfulItem(itemID) or IsHarmfulItem("itemName") or IsHarmfulItem(
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -656,7 +656,7 @@ isHarmful = IsHelpfulItem(itemID) or IsHelpfulItem("itemName") or IsHelpfulItem(
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -678,8 +678,8 @@ inRange = IsItemInRange(itemID, "unit") or IsItemInRange("itemName", "unit") or 
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
-- `unit` - A unit on which to use the item (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
+- `unit` - A unit on which to use the item (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -689,7 +689,7 @@ inRange = IsItemInRange(itemID, "unit") or IsItemInRange("itemName", "unit") or 
 
 ## IsUsableItem
 
-Returns whether an item can currently be used. Does not account for item cooldowns (see [`GetItemCooldown()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetItemCooldown) -- returns 1 if other conditions allow for using the item (e.g. if the item can only be used while outdoors).
+Returns whether an item can currently be used. Does not account for item cooldowns (see [`GetItemCooldown()`](Item.md#getitemcooldown) -- returns 1 if other conditions allow for using the item (e.g. if the item can only be used while outdoors).
 
 **Signature:**
 
@@ -724,7 +724,7 @@ hasRange = ItemHasRange(itemID) or ItemHasRange("itemName") or ItemHasRange("ite
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100105232702/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 **Returns:**
 
@@ -734,7 +734,7 @@ hasRange = ItemHasRange(itemID) or ItemHasRange("itemName") or ItemHasRange("ite
 
 ## PickupItem
 
-Puts an arbitrary item onto the cursor. Puts an item onto the cursor regardless of its location (equipped, bags, bank or not even in the player's possession); can be used to put an item into an action slot (see [`PlaceAction()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PlaceAction)) even if the player does not currently hold the item. Since the item is not picked up from a specific location, this function cannot be used to move an item to another bag, trade it to another player, attach it to a mail message, destroyed, etc.
+Puts an arbitrary item onto the cursor. Puts an item onto the cursor regardless of its location (equipped, bags, bank or not even in the player's possession); can be used to put an item into an action slot (see [`PlaceAction()`](Action.md#placeaction-nocombat)) even if the player does not currently hold the item. Since the item is not picked up from a specific location, this function cannot be used to move an item to another bag, trade it to another player, attach it to a mail message, destroyed, etc.
 
 **Signature:**
 
@@ -746,7 +746,7 @@ PickupItem(itemID) or PickupItem("itemName") or PickupItem("itemLink")
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 ---
 
@@ -792,7 +792,7 @@ SpellTargetItem(itemID) or SpellTargetItem("itemName") or SpellTargetItem("itemL
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
 
 ---
 
@@ -810,8 +810,8 @@ UseItemByName(itemID [, "target"]) or UseItemByName("itemName" [, "target"]) or 
 
 - `itemID` - An item's ID (`number`)
 - `itemName` - An item's name (`string`)
-- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemString) portion of an item link (`string`)
-- `target` - A unit on which to use the item, if applicable (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `itemLink` - An item's hyperlink, or any string containing the [`itemString`](../types/itemString.md) portion of an item link (`string`)
+- `target` - A unit on which to use the item, if applicable (`string`, [unitID](../types/unitID.md))
 
 ---
 

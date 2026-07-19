@@ -36,7 +36,7 @@ canWithdraw = CanWithdrawGuildBankMoney()
 
 ## CursorHasMoney
 
-Returns whether an amount of the player's money is on the cursor. Returns `nil` if the cursor holds guild bank money. See [`GetCursorInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCursorInfo) for more detailed information.
+Returns whether an amount of the player's money is on the cursor. Returns `nil` if the cursor holds guild bank money. See [`GetCursorInfo()`](Cursor.md#getcursorinfo) for more detailed information.
 
 **Signature:**
 
@@ -241,7 +241,7 @@ money = GetQuestLogRewardMoney()
 
 ## GetSendMailMoney
 
-Returns the amount of money to be sent with the outgoing message. Returns the amount set via [`SetSendMailMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetSendMailMoney), which in the default UI is only called once its Send button has been clicked (immediately before sending the message). Thus, does not return the Send Money amount set in the default UI's Send Mail window.
+Returns the amount of money to be sent with the outgoing message. Returns the amount set via [`SetSendMailMoney()`](Mail.md#setsendmailmoney), which in the default UI is only called once its Send button has been clicked (immediately before sending the message). Thus, does not return the Send Money amount set in the default UI's Send Mail window.
 
 **Signature:**
 
@@ -273,7 +273,7 @@ amount = GetTargetTradeMoney()
 
 ## PickupGuildBankMoney
 
-Puts money from the guild bank onto the cursor. Money is not actually withdrawn from the guild bank; in the default UI, when the cursor "puts" the money into one of the player's bags, it calls [`WithdrawGuildBankMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/WithdrawGuildBankMoney).
+Puts money from the guild bank onto the cursor. Money is not actually withdrawn from the guild bank; in the default UI, when the cursor "puts" the money into one of the player's bags, it calls [`WithdrawGuildBankMoney()`](Guild bank.md#withdrawguildbankmoney-confirmation).
 
 **Signature:**
 
@@ -289,7 +289,7 @@ PickupGuildBankMoney(amount)
 
 ## PickupPlayerMoney
 
-Puts an amount of the player's money onto the cursor. Money is not immediately deducted from the player's total savings (though it appears such on the default UI's money displays, which generally show [`GetMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMoney)`-`[`GetCursorMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCursorMoney)).
+Puts an amount of the player's money onto the cursor. Money is not immediately deducted from the player's total savings (though it appears such on the default UI's money displays, which generally show [`GetMoney()`](Money.md#getmoney)`-`[`GetCursorMoney()`](Cursor.md#getcursormoney)).
 
 **Signature:**
 
@@ -305,7 +305,7 @@ PickupPlayerMoney(amount)
 
 ## PickupTradeMoney
 
-Puts money offered by the player for trade onto the cursor. Money put onto the cursor is subtracted from the amount offered for trade (see [`GetPlayerTradeMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetPlayerTradeMoney)).
+Puts money offered by the player for trade onto the cursor. Money put onto the cursor is subtracted from the amount offered for trade (see [`GetPlayerTradeMoney()`](Money.md#getplayertrademoney)).
 
 **Signature:**
 
@@ -357,7 +357,7 @@ SetTradeMoney(amount)
 
 ## WithdrawGuildBankMoney `confirmation`
 
-Attempts to withdraw money from the guild bank. Causes a [`PLAYER_MONEY`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_MONEY) event to fire, indicating the amount withdrawn has been added to the player's total (see [`GetMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMoney)). Causes an error or system message if `amount` exceeds the amount of money in the guild bank or the player's allowed daily withdrawal amount.
+Attempts to withdraw money from the guild bank. Causes a [`PLAYER_MONEY`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_MONEY) event to fire, indicating the amount withdrawn has been added to the player's total (see [`GetMoney()`](Money.md#getmoney)). Causes an error or system message if `amount` exceeds the amount of money in the guild bank or the player's allowed daily withdrawal amount.
 
 **Signature:**
 

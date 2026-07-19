@@ -52,7 +52,7 @@ EquipmentManagerClearIgnoredSlotsForSave()
 
 ## EquipmentManagerIgnoreSlotForSave
 
-Adds an equipment slot to the list of those ignored when saving sets. Creating or saving a set with [`SaveEquipmentSet()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SaveEquipmentSet) will ignore any slots on the list, allowing the player to create sets which only switch certain items (e.g. to equip a fishing pole and hat while leaving non-fishing-related items equipped).
+Adds an equipment slot to the list of those ignored when saving sets. Creating or saving a set with [`SaveEquipmentSet()`](Equipment Manager.md#saveequipmentset-confirmation) will ignore any slots on the list, allowing the player to create sets which only switch certain items (e.g. to equip a fishing pole and hat while leaving non-fishing-related items equipped).
 
 **Signature:**
 
@@ -62,7 +62,7 @@ EquipmentManagerIgnoreSlotForSave(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
@@ -78,7 +78,7 @@ isIgnored = EquipmentManagerIsSlotIgnoredForSave(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 **Returns:**
 
@@ -88,7 +88,7 @@ isIgnored = EquipmentManagerIsSlotIgnoredForSave(slot)
 
 ## EquipmentManagerUnignoreSlotForSave
 
-Removes an equipment slot from the list of those ignored when saving sets. Creating or saving a set with [`SaveEquipmentSet()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SaveEquipmentSet) will ignore any slots on the list, allowing the player to create sets which only switch certain items (e.g. to equip a fishing pole and hat while leaving non-fishing-related items equipped).
+Removes an equipment slot from the list of those ignored when saving sets. Creating or saving a set with [`SaveEquipmentSet()`](Equipment Manager.md#saveequipmentset-confirmation) will ignore any slots on the list, allowing the player to create sets which only switch certain items (e.g. to equip a fishing pole and hat while leaving non-fishing-related items equipped).
 
 **Signature:**
 
@@ -98,7 +98,7 @@ EquipmentManagerUnignoreSlotForSave(slot)
 
 **Arguments:**
 
-- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventorySlotInfo) (`number`, [inventoryID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID))
+- `slot` - An inventory slot number, as can be obtained from [`GetInventorySlotInfo`](Inventory.md#getinventoryslotinfo) (`number`, [inventoryID](../types/inventoryID.md))
 
 ---
 
@@ -114,7 +114,7 @@ player, bank, bags, location or slot, bag = EquipmentManager_UnpackLocation(loca
 
 **Arguments:**
 
-- `location` - A bit field that represents an item's location in the player's possession. This bit field can be obtained using the [`GetInventoryItemsForSlot`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventoryItemsForSlot) function. (`number`)
+- `location` - A bit field that represents an item's location in the player's possession. This bit field can be obtained using the [`GetInventoryItemsForSlot`](Inventory.md#getinventoryitemsforslot) function. (`number`)
 
 **Returns:**
 
@@ -158,7 +158,7 @@ name, icon, setID = GetEquipmentSetInfo(index)
 
 **Arguments:**
 
-- `index` - Index of an equipment set (between 1 and [`GetNumEquipmentSets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumEquipmentSets)) (`number`)
+- `index` - Index of an equipment set (between 1 and [`GetNumEquipmentSets()`](Equipment Manager.md#getnumequipmentsets)) (`number`)
 
 **Returns:**
 
@@ -205,7 +205,7 @@ itemIDs = GetEquipmentSetItemIDs("name")
 
 **Returns:**
 
-- `itemIDs` - A table listing the [`itemID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemID)s of the set's contents, keyed by [`inventoryID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID) (`table`)
+- `itemIDs` - A table listing the [`itemID`](../types/itemID.md)s of the set's contents, keyed by [`inventoryID`](../types/inventoryID.md) (`table`)
 
 ---
 
@@ -225,7 +225,7 @@ itemIDs = GetEquipmentSetLocations("name")
 
 **Returns:**
 
-- `itemIDs` - A table listing the [`itemLocation`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemLocation)s of the set's contents, keyed by [`inventoryID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID) (`table`)
+- `itemIDs` - A table listing the [`itemLocation`](../types/itemLocation.md)s of the set's contents, keyed by [`inventoryID`](../types/inventoryID.md) (`table`)
 
 ---
 
@@ -257,7 +257,7 @@ PickupEquipmentSet(index)
 
 **Arguments:**
 
-- `index` - Index of an equipment set (between 1 and [`GetNumEquipmentSets()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumEquipmentSets)) (`number`)
+- `index` - Index of an equipment set (between 1 and [`GetNumEquipmentSets()`](Equipment Manager.md#getnumequipmentsets)) (`number`)
 
 ---
 
@@ -298,7 +298,7 @@ SaveEquipmentSet("name", icon)
 **Arguments:**
 
 - `name` - Name of the set (`string`)
-- `icon` - Index of an icon to associate with the set: between `1` and [`GetNumMacroIcons()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumMacroIcons) for an icon from the set of macro icons; values between `-INVSLOT_FIRST_EQUIPPED` and `-INVSLOT_LAST_EQUIPPED` for the icon of an item in the equipment set at that (negative) [`inventoryID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#inventoryID) (`number`)
+- `icon` - Index of an icon to associate with the set: between `1` and [`GetNumMacroIcons()`](Macro.md#getnummacroicons) for an icon from the set of macro icons; values between `-INVSLOT_FIRST_EQUIPPED` and `-INVSLOT_LAST_EQUIPPED` for the icon of an item in the equipment set at that (negative) [`inventoryID`](../types/inventoryID.md) (`number`)
 
 ---
 

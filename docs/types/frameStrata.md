@@ -4,7 +4,7 @@
 
 ---
 
-String identifying the general layering order of frames; where [frame level](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/widgets/Frame/SetFrameLevel) provides fine control over the layering of frames, frame strata provides a coarser level of layering control. Frames in a higher strata always appear "in front of" frames in lower strata regardless of frame level. Available frame strata are listed below in order from lowest to highest:
+String identifying the general layering order of frames; where [frame level](../widgets/Frame.md#framesetframelevel) provides fine control over the layering of frames, frame strata provides a coarser level of layering control. Frames in a higher strata always appear "in front of" frames in lower strata regardless of frame level. Available frame strata are listed below in order from lowest to highest:
 
 - `BACKGROUND` - Used by default for static UI elements such as the PlayerFrame and Minimap
 - `LOW` - Used by default for lower-priority UI elements such as the party member and target frames

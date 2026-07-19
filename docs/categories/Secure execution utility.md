@@ -40,7 +40,7 @@ Add a function to be called after execution of a secure function. Allows one to 
 
 The original function will still be called, but the function supplied will be called after the original, with the same arguments. Return values from the supplied function are discarded. Note that there is no API to remove a hook from a function: any hooks applied will remain in place until the UI is reloaded.
 
-Only allows hooking of functions named by a global variable; to hook a script handler on a Frame object, see [`Frame:HookScript()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/HookScript).
+Only allows hooking of functions named by a global variable; to hook a script handler on a Frame object, see [`Frame:HookScript()`](../widgets/Frame.md#framehookscript).
 
 **Signature:**
 

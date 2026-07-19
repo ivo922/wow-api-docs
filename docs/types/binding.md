@@ -4,7 +4,7 @@
 
 ---
 
-String identifying one or more keyboard keys or mouse buttons, used with [key binding](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api_categories#keybind) and [modified click](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api_categories#modclick) API functions and the [`OnKeyDown`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/scripts/OnKeyDown)/[`OnKeyUp`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/scripts/OnKeyUp) script handlers. Most letter, number, and symbol keys are identified by their (uppercase) letter, number, or symbol.
+String identifying one or more keyboard keys or mouse buttons, used with [key binding](../index.md) and [modified click](../index.md) API functions and the [`OnKeyDown`](../widgets/Frame.md#onkeydown)/[`OnKeyUp`](../widgets/Frame.md#onkeyup) script handlers. Most letter, number, and symbol keys are identified by their (uppercase) letter, number, or symbol.
 
 Other keys are identified by a series of global variables with names prefaced by `"KEY_"`: e.g. the localized name for the binding `NUMPAD0` can be found in `_G["KEY_NUMPAD0"]`. Some keys have platform-specific names: e.g. the localized name for the binding `PRINTSCREEN` can be found in `_G["KEY_PRINTSCREEN_MAC"]` (revealing that it refers to the F13 key found on Mac extended keyboards).
 

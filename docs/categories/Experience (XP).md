@@ -56,7 +56,7 @@ currXP = UnitXP("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -76,7 +76,7 @@ playerMaxXP = UnitXPMax("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 

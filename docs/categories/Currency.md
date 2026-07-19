@@ -72,8 +72,8 @@ money, itemCount, refundSec, currecycount, hasEnchants = GetContainerItemPurchas
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 - `IsEquipped` - wheather to get an equipped item info (`boolean`)
 
 **Returns:**
@@ -88,7 +88,7 @@ money, itemCount, refundSec, currecycount, hasEnchants = GetContainerItemPurchas
 
 ## GetContainerItemPurchaseItem
 
-Returns information about a specific currency refunded for returning an item to vendors. See [`GetContainerItemPurchaseInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetContainerItemPurchaseInfo) for more information about alternate currency refunds.
+Returns information about a specific currency refunded for returning an item to vendors. See [`GetContainerItemPurchaseInfo`](Container.md#getcontaineritempurchaseinfo) for more information about alternate currency refunds.
 
 **Signature:**
 
@@ -98,8 +98,8 @@ texture, quantity, link = GetContainerItemPurchaseItem(container, slot, index)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 - `index` - Index of the currency type; between 1 and `itemCount`, where `itemCount` is the 4th return from `GetContainerItemPurchaseInfo()` for the same container and slot (`number`)
 
 **Returns:**
@@ -122,7 +122,7 @@ name, isHeader, isExpanded, isUnused, isWatched, count, extraCurrencyType, icon,
 
 **Arguments:**
 
-- `index` - Index of a currency type in the currency list (between 1 and [`GetCurrencyListSize()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCurrencyListSize)) (`number`)
+- `index` - Index of a currency type in the currency list (between 1 and [`GetCurrencyListSize()`](Currency.md#getcurrencylistsize)) (`number`)
 
 **Returns:**
 

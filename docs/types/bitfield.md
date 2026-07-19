@@ -4,7 +4,7 @@
 
 ---
 
-A value combining several binary flags into one number; the flags can be inspected individually using bitlib functions. For example (using [`GetItemFamily`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api/GetItemFamily) and related constants):
+A value combining several binary flags into one number; the flags can be inspected individually using bitlib functions. For example (using [`GetItemFamily`](../categories/Container.md#getitemfamily) and related constants):
 
 ```lua
  GetItemFamily("Crystallized Air") 

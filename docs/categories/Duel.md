@@ -42,7 +42,7 @@ StartDuel("unit") or StartDuel("name" [, exactMatch])
 
 **Arguments:**
 
-- `unit` - A unit to target (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to target (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit to target (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 

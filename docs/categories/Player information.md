@@ -8,7 +8,7 @@
 
 ## AcceptResurrect
 
-Accepts an offered resurrection spell. Not used for self-resurrection; see [`UseSoulstone()`](https://web.archive.org/web/20111212183529/http://wowprogramming.com/docs/api/UseSoulstone) for such cases.
+Accepts an offered resurrection spell. Not used for self-resurrection; see [`UseSoulstone()`](Player information.md#usesoulstone) for such cases.
 
 **Signature:**
 
@@ -146,8 +146,8 @@ comboPoints = GetComboPoints("unit" [, "target"])
 
 **Arguments:**
 
-- `unit` - Either 'player' or 'vehicle' (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
-- `target` - Unit to check for combo points. (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Either 'player' or 'vehicle' (`string`, [unitID](../types/unitID.md))
+- `target` - Unit to check for combo points. (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -183,7 +183,7 @@ currentTitle = GetCurrentTitle()
 
 **Returns:**
 
-- `currentTitle` - Index of the player's current title (between 1 and [`GetNumTitles()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTitles)) (`integer`)
+- `currentTitle` - Index of the player's current title (between 1 and [`GetNumTitles()`](Player information.md#getnumtitles)) (`integer`)
 
 ---
 
@@ -253,7 +253,7 @@ realm = GetRealmName()
 
 ## GetReleaseTimeRemaining
 
-Returns the amount of time remaining until the player's spirit is automatically released when dead. Returns `-1` if the player died in a dungeon or raid instance; in such cases, the player's spirit will not be released automatically (see [`RepopMe()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/RepopMe) to release manually).
+Returns the amount of time remaining until the player's spirit is automatically released when dead. Returns `-1` if the player died in a dungeon or raid instance; in such cases, the player's spirit will not be released automatically (see [`RepopMe()`](Player information.md#repopme) to release manually).
 
 **Signature:**
 
@@ -327,7 +327,7 @@ start, duration, runeReady = GetRuneCooldown(slot)
 
 **Returns:**
 
-- `start` - The value of [`GetTime()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTime) at the moment the cooldown began, or 0 if the rune is ready (`number`)
+- `start` - The value of [`GetTime()`](Utility.md#gettime) at the moment the cooldown began, or 0 if the rune is ready (`number`)
 - `duration` - The length of the cooldown (regardless of whether the rune is currently cooling down) (`number`)
 - `runeReady` - True if the rune can be used; false if the rune is cooling down (`boolean`)
 
@@ -407,7 +407,7 @@ titleName = GetTitleName(titleIndex)
 
 **Arguments:**
 
-- `titleIndex` - Index of a title available to the player (between 1 and [`GetNumTitles()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTitles)) (`integer`)
+- `titleIndex` - Index of a title available to the player (between 1 and [`GetNumTitles()`](Player information.md#getnumtitles)) (`integer`)
 
 **Returns:**
 
@@ -429,7 +429,7 @@ pitch = GetUnitPitch("unit")
 
 **Arguments:**
 
-- `unit` - Unit to query; only valid for `player` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to query; only valid for `player` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -639,7 +639,7 @@ mounted = IsMounted()
 
 ## IsOutOfBounds
 
-Returns whether the player is currently outside the bounds of the world. Used in the default UI (in conjunction with [`IsFalling()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/IsFalling)) to allow the player to release to a graveyard if the character has encountered a bug and fallen underneath the world geometry.
+Returns whether the player is currently outside the bounds of the world. Used in the default UI (in conjunction with [`IsFalling()`](Player information.md#isfalling)) to allow the player to release to a graveyard if the character has encountered a bug and fallen underneath the world geometry.
 
 **Signature:**
 
@@ -729,7 +729,7 @@ isKnown = IsTitleKnown(titleIndex)
 
 **Arguments:**
 
-- `titleIndex` - Index of a title available to the player (between 1 and [`GetNumTitles()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTitles)) (`integer`)
+- `titleIndex` - Index of a title available to the player (between 1 and [`GetNumTitles()`](Player information.md#getnumtitles)) (`integer`)
 
 **Returns:**
 
@@ -831,7 +831,7 @@ hasSickness = ResurrectHasSickness()
 
 ## ResurrectHasTimer
 
-Returns whether the player must wait before resurrecting. Applies to resurrection spells offered by other units, resurrecting by returning to the player's corpse as a ghost, and to resurrecting at a graveyard's spirit healer, if the player has recently died several times in short succession. See [`GetCorpseRecoveryDelay()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCorpseRecoveryDelay) for the time remaining until the player can resurrect.
+Returns whether the player must wait before resurrecting. Applies to resurrection spells offered by other units, resurrecting by returning to the player's corpse as a ghost, and to resurrecting at a graveyard's spirit healer, if the player has recently died several times in short succession. See [`GetCorpseRecoveryDelay()`](Player information.md#getcorpserecoverydelay) for the time remaining until the player can resurrect.
 
 **Signature:**
 
@@ -869,7 +869,7 @@ SetCurrentTitle(titleIndex)
 
 **Arguments:**
 
-- `titleIndex` - Index of a title available to the player (between 1 and [`GetNumTitles()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumTitles)), or -1 to show no title (`integer`)
+- `titleIndex` - Index of a title available to the player (between 1 and [`GetNumTitles()`](Player information.md#getnumtitles)), or -1 to show no title (`integer`)
 
 ---
 
@@ -967,7 +967,7 @@ currXP = UnitXP("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -987,7 +987,7 @@ playerMaxXP = UnitXPMax("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query; only valid for `player` (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query; only valid for `player` (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 

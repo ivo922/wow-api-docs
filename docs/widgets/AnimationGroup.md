@@ -28,7 +28,7 @@ animation = AnimationGroup:CreateAnimation("animationType" [, "name" [, "inherit
 
 **Arguments:**
 
-- `animationType` - Type of `Animation` object to be created (see [widgets hierarchy](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets_hierarchy) for available subtypes) (`string`)
+- `animationType` - Type of `Animation` object to be created (see [widgets hierarchy](../Widgets.md) for available subtypes) (`string`)
 - `name` - Global name to use for the new animation (`string`)
 - `inheritsFrom` - A template from which to inherit (`string`)
 
@@ -42,7 +42,7 @@ animation = AnimationGroup:CreateAnimation("animationType" [, "name" [, "inherit
 
 Causes animations within the group to complete and stop. If the group is playing, animations will continue until the current loop cycle is complete before stopping. For example, in a group which manages a repeating fade-out-fade-in animation, the associated object will continue to fade completely back in, instead of the animation stopping and the object instantly switching from partial opacity to full opacity instantly. Does nothing if this group is not playing.
 
-To instantly stop an animation, see [`AnimationGroup:Stop()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/AnimationGroup/Stop).
+To instantly stop an animation, see [`AnimationGroup:Stop()`](AnimationGroup.md#animationgroupstop).
 
 **Signature:**
 
@@ -151,7 +151,7 @@ maxOrder = AnimationGroup:GetMaxOrder()
 
 **Returns:**
 
-- `maxOrder` - Highest ordering value (see [`Animation:GetOrder()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/Animation/GetOrder)) of the animations in the group (`number`)
+- `maxOrder` - Highest ordering value (see [`Animation:GetOrder()`](Animation.md#animationgetorder)) of the animations in the group (`number`)
 
 ---
 
@@ -237,7 +237,7 @@ handler = ScriptObject:GetScript("scriptType")
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts reference](#script-handlers) for details (`string`)
 
 **Returns:**
 
@@ -259,7 +259,7 @@ hasScript = ScriptObject:HasScript("scriptType")
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts reference](#script-handlers) for details (`string`)
 
 **Returns:**
 
@@ -271,7 +271,7 @@ hasScript = ScriptObject:HasScript("scriptType")
 
 ### ScriptObject:HookScript
 
-Securely hooks a script handler. Equivalent to [`hooksecurefunc()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/hooksecurefunc) for script handlers; allows one to "post-hook" a secure handler without tainting the original.
+Securely hooks a script handler. Equivalent to [`hooksecurefunc()`](../categories/Secure execution utility.md#hooksecurefunc) for script handlers; allows one to "post-hook" a secure handler without tainting the original.
 
 The original handler will still be called, but the handler supplied will also be called after the original, with the same arguments. Return values from the supplied handler are discarded. Note that there is no API to remove a hook from a handler: any hooks applied will remain in place until the UI is reloaded.
 
@@ -285,7 +285,7 @@ ScriptObject:HookScript("scriptType", handler)
 
 **Arguments:**
 
-- `scriptType` - Name of the [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) whose handler should be hooked (`string`)
+- `scriptType` - Name of the [script](#script-handlers) whose handler should be hooked (`string`)
 - `handler` - A function to be called whenever the script handler is run (`function`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
@@ -294,7 +294,7 @@ ScriptObject:HookScript("scriptType", handler)
 
 ### AnimationGroup:IsDone
 
-Returns whether the group has finished playing. Only valid in the [`OnFinished`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnFinished) and [`OnUpdate`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnUpdate) handlers, and only applies if the animation group does not loop.
+Returns whether the group has finished playing. Only valid in the [`OnFinished`](#onfinished) and [`OnUpdate`](#onupdate) handlers, and only applies if the animation group does not loop.
 
 **Signature:**
 
@@ -380,7 +380,7 @@ playing = AnimationGroup:IsPlaying()
 
 ### AnimationGroup:Pause
 
-Pauses animation of the group. Unlike with [`AnimationGroup:Stop()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/AnimationGroup/Stop), the animation is paused at its current progress state (e.g. in a fade-out-fade-in animation, the element will be at partial opacity) instead of reset to the initial state; animation can be resumed with [`AnimationGroup:Play()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/AnimationGroup/Play).
+Pauses animation of the group. Unlike with [`AnimationGroup:Stop()`](AnimationGroup.md#animationgroupstop), the animation is paused at its current progress state (e.g. in a fade-out-fade-in animation, the element will be at partial opacity) instead of reset to the initial state; animation can be resumed with [`AnimationGroup:Play()`](AnimationGroup.md#animationgroupplay).
 
 **Signature:**
 
@@ -452,7 +452,7 @@ ScriptObject:SetScript("scriptType", handler)
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts](#script-handlers) for details (`string`)
 - `handler` - A function to become the widget's handler for the script type (`function`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
@@ -461,7 +461,7 @@ ScriptObject:SetScript("scriptType", handler)
 
 ### AnimationGroup:Stop
 
-Stops animation of the group. Unlike with [`AnimationGroup:Pause()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/AnimationGroup/Pause), the animation is reset to the initial state (e.g. in a fade-out-fade-in animation, the element will be instantly returned to full opacity) instead of paused at its current progress state.
+Stops animation of the group. Unlike with [`AnimationGroup:Pause()`](AnimationGroup.md#animationgrouppause), the animation is reset to the initial state (e.g. in a fade-out-fade-in animation, the element will be instantly returned to full opacity) instead of paused at its current progress state.
 
 **Signature:**
 

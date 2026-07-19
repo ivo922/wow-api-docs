@@ -26,7 +26,7 @@ time = GetBillingTimeRested()
 
 ## NoPlayTime
 
-Returns whether the player has exceeded the allowed play time limit. When in this state, the player is unable to gain loot or XP or complete quests and cannot use trade skills; returning to normal requires logging out of the game for a period of time (see [`GetBillingTimeRested`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBillingTimeRested)).
+Returns whether the player has exceeded the allowed play time limit. When in this state, the player is unable to gain loot or XP or complete quests and cannot use trade skills; returning to normal requires logging out of the game for a period of time (see [`GetBillingTimeRested`](Limited play time.md#getbillingtimerested)).
 
 Only used in locales where the length of play sessions is restricted (e.g. mainland China).
 
@@ -44,7 +44,7 @@ hasNoTime = NoPlayTime()
 
 ## PartialPlayTime
 
-Returns whether the player is near the allowed play time limit. When in this state, the player receives half the normal amount of money and XP from kills and quests and cannot use trade skills; returning to normal requires logging out of the game for a period of time (see [`GetBillingTimeRested`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBillingTimeRested)).
+Returns whether the player is near the allowed play time limit. When in this state, the player receives half the normal amount of money and XP from kills and quests and cannot use trade skills; returning to normal requires logging out of the game for a period of time (see [`GetBillingTimeRested`](Limited play time.md#getbillingtimerested)).
 
 Only used in locales where the length of play sessions is restricted (e.g. mainland China).
 

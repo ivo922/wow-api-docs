@@ -18,7 +18,7 @@ canInspect = CanInspect("unit", showError)
 
 **Arguments:**
 
-- `unit` - A unit to inspect (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to inspect (`string`, [unitID](../types/unitID.md))
 - `showError` - True to fire a [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event (causing the default UI to display an error message) if the unit cannot be inspected; otherwise false (`boolean`)
 
 **Returns:**
@@ -43,7 +43,7 @@ ClearInspectPlayer()
 
 ## GetInspectArenaTeamData
 
-Returns arena team information about the currently inspected unit. Only available if data has been downloaded from the server; see [`HasInspectHonorData()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/HasInspectHonorData) and [`RequestInspectHonorData()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/RequestInspectHonorData).
+Returns arena team information about the currently inspected unit. Only available if data has been downloaded from the server; see [`HasInspectHonorData()`](Inspect.md#hasinspecthonordata) and [`RequestInspectHonorData()`](Inspect.md#requestinspecthonordata-server).
 
 **Signature:**
 
@@ -53,7 +53,7 @@ teamName, teamSize, teamRating, teamPlayed, teamWins, playerPlayed, playerRating
 
 **Arguments:**
 
-- `team` - Index of one of the unit's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `team` - Index of one of the unit's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
 
 **Returns:**
 
@@ -80,7 +80,7 @@ teamName, teamSize, teamRating, teamPlayed, teamWins, playerPlayed, playerRating
 
 ## GetInspectHonorData
 
-Returns PvP honor information about the currently inspected unit. Only available if data has been downloaded from the server; see [`HasInspectHonorData()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/HasInspectHonorData) and [`RequestInspectHonorData()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/RequestInspectHonorData).
+Returns PvP honor information about the currently inspected unit. Only available if data has been downloaded from the server; see [`HasInspectHonorData()`](Inspect.md#hasinspecthonordata) and [`RequestInspectHonorData()`](Inspect.md#requestinspecthonordata-server).
 
 **Signature:**
 
@@ -95,13 +95,13 @@ todayHK, todayHonor, yesterdayHK, yesterdayHonor, lifetimeHK, lifetimeRank = Get
 - `yesterdayHK` - Number of honorable kills on the previous day (`number`)
 - `yesterdayHonor` - Amount of honor points earned on the previous day (`number`)
 - `lifetimeHK` - Lifetime total of honorable kills scored (`number`)
-- `lifetimeRank` - Highest rank earned in the pre-2.0 PvP reward system; see [`GetPVPRankInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetPVPRankInfo) for rank display information (`number`)
+- `lifetimeRank` - Highest rank earned in the pre-2.0 PvP reward system; see [`GetPVPRankInfo()`](PvP.md#getpvprankinfo) for rank display information (`number`)
 
 ---
 
 ## HasInspectHonorData
 
-Returns whether PvP honor and arena data for the currently inspected unit has been downloaded from the server. See [`RequestInspectHonorData()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/RequestInspectHonorData) to request PvP data from the server.
+Returns whether PvP honor and arena data for the currently inspected unit has been downloaded from the server. See [`RequestInspectHonorData()`](Inspect.md#requestinspecthonordata-server) to request PvP data from the server.
 
 **Signature:**
 
@@ -117,7 +117,7 @@ hasData = HasInspectHonorData()
 
 ## NotifyInspect `server`
 
-Marks a unit for inspection and requests talent data from the server. Information about the inspected item's equipment can be retrieved immediately using Inventory APIs (e.g. [`GetInventoryItemLink("target",1)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInventoryItemLink)). Talent data is not available immediately; the [`INSPECT_READY`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/INSPECT_READY) event fires once the inspected unit's talent information can be retrieved using Talent APIs (e.g. [`GetTalentInfo(1,1,true)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetTalentInfo)).
+Marks a unit for inspection and requests talent data from the server. Information about the inspected item's equipment can be retrieved immediately using Inventory APIs (e.g. [`GetInventoryItemLink("target",1)`](Hyperlink.md#getinventoryitemlink)). Talent data is not available immediately; the [`INSPECT_READY`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/INSPECT_READY) event fires once the inspected unit's talent information can be retrieved using Talent APIs (e.g. [`GetTalentInfo(1,1,true)`](Talent.md#gettalentinfo)).
 
 **Signature:**
 
@@ -127,13 +127,13 @@ NotifyInspect("unit")
 
 **Arguments:**
 
-- `unit` - A unit to inspect (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to inspect (`string`, [unitID](../types/unitID.md))
 
 ---
 
 ## RequestInspectHonorData `server`
 
-Requests PvP honor and arena data from the server for the currently inspected unit. Once the [`INSPECT_HONOR_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/INSPECT_HONOR_UPDATE) event fires, PvP honor and arena information can be retrieved using [`GetInspectHonorData(team)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInspectHonorData) and [`GetInspectArenaTeamData()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInspectArenaTeamData).
+Requests PvP honor and arena data from the server for the currently inspected unit. Once the [`INSPECT_HONOR_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/INSPECT_HONOR_UPDATE) event fires, PvP honor and arena information can be retrieved using [`GetInspectHonorData(team)`](Inspect.md#getinspecthonordata) and [`GetInspectArenaTeamData()`](Inspect.md#getinspectarenateamdata).
 
 **Signature:**
 

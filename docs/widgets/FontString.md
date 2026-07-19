@@ -26,7 +26,7 @@ canChange = Region:CanChangeProtectedState()
 
 **Returns:**
 
-- `canChange` - `1` if addon scripts are currently allowed to change protected properties of the region (e.g. showing or hiding it, changing its position, or altering frame attributes); otherwise `nil` (`value`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
+- `canChange` - `1` if addon scripts are currently allowed to change protected properties of the region (e.g. showing or hiding it, changing its position, or altering frame attributes); otherwise `nil` (`value`, [1nil](../types/1nil.md))
 
 *Inherited from [Region](Region.md)*
 
@@ -177,7 +177,7 @@ layer = LayeredRegion:GetDrawLayer()
 
 **Returns:**
 
-- `layer` - String identifying a graphics layer; one of the following values: (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `layer` - String identifying a graphics layer; one of the following values: (`string`, [layer](../types/layer.md))
   - `ARTWORK`
   - `BACKGROUND`
   - `BORDER`
@@ -225,7 +225,7 @@ filename, fontHeight, flags = FontInstance:GetFont()
 
 ### FontInstance:GetFontObject
 
-Returns the `Font` object from which the font instance's properties are inherited. See [`FontInstance:SetFontObject()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetFontObject) for details.
+Returns the `Font` object from which the font instance's properties are inherited. See [`FontInstance:SetFontObject()`](FontInstance.md#fontinstancesetfontobject) for details.
 
 **Signature:**
 
@@ -279,7 +279,7 @@ justify = FontInstance:GetJustifyH()
 
 **Returns:**
 
-- `justify` - Horizontal text alignment style (`string`, [justifyH](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyH))
+- `justify` - Horizontal text alignment style (`string`, [justifyH](../types/justifyH.md))
   - `CENTER`
   - `LEFT`
   - `RIGHT`
@@ -300,7 +300,7 @@ justify = FontInstance:GetJustifyV()
 
 **Returns:**
 
-- `justify` - Vertical text alignment style (`string`, [justifyV](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyV))
+- `justify` - Vertical text alignment style (`string`, [justifyV](../types/justifyV.md))
   - `BOTTOM`
   - `MIDDLE`
   - `TOP`
@@ -411,13 +411,13 @@ point, relativeTo, relativePoint, xOffset, yOffset = Region:GetPoint(index)
 
 **Arguments:**
 
-- `index` - Index of an anchor point defined for the region (between `1` and `region:`[`GetNumPoints()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Region/GetNumPoints)) (`number`)
+- `index` - Index of an anchor point defined for the region (between `1` and `region:`[`GetNumPoints()`](Region.md#regiongetnumpoints)) (`number`)
 
 **Returns:**
 
-- `point` - Point on this region at which it is anchored to another (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `point` - Point on this region at which it is anchored to another (`string`, [anchorPoint](../types/anchorPoint.md))
 - `relativeTo` - Reference to the other region to which this region is anchored (`region`)
-- `relativePoint` - Point on the other region to which this region is anchored (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `relativePoint` - Point on the other region to which this region is anchored (`string`, [anchorPoint](../types/anchorPoint.md))
 - `xOffset` - Horizontal distance between `point` and `relativePoint` (in pixels; positive values put `point` to the right of `relativePoint`) (`number`)
 - `yOffset` - Vertical distance between `point` and `relativePoint` (in pixels; positive values put `point` below `relativePoint`) (`number`)
 
@@ -730,8 +730,8 @@ isProtected, explicit = Region:IsProtected()
 
 **Returns:**
 
-- `isProtected` - `1` if the region is protected; otherwise `nil` (`value`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
-- `explicit` - `1` if the region is explicitly protected; `nil` if the frame is only protected due to relationship with a protected region (`value`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
+- `isProtected` - `1` if the region is protected; otherwise `nil` (`value`, [1nil](../types/1nil.md))
+- `explicit` - `1` if the region is explicitly protected; `nil` if the frame is only protected due to relationship with a protected region (`value`, [1nil](../types/1nil.md))
 
 *Inherited from [Region](Region.md)*
 
@@ -739,7 +739,7 @@ isProtected, explicit = Region:IsProtected()
 
 ### VisibleRegion:IsShown
 
-Returns whether the region is shown. Indicates only whether the region has been explicitly shown or hidden -- a region may be explicitly shown but not appear on screen because its parent region is hidden. See [`VisibleRegion:IsVisible()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/VisibleRegion/IsVisible) to test for actual visibility.
+Returns whether the region is shown. Indicates only whether the region has been explicitly shown or hidden -- a region may be explicitly shown but not appear on screen because its parent region is hidden. See [`VisibleRegion:IsVisible()`](VisibleRegion.md#visibleregionisvisible) to test for actual visibility.
 
 **Signature:**
 
@@ -814,7 +814,7 @@ VisibleRegion:SetAlpha(alpha)
 
 ### FontString:SetAlphaGradient
 
-Creates an opacity gradient over the text in the font string. Seen in the default UI when quest text is presented by a questgiver (if the "Instant Quest Text" feature is not turned on): This method is used with a length of 30 to fade in the letters of the description, starting at the first character; then the start value is incremented in an [`OnUpdate`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnUpdate) script, creating the animated fade-in effect.
+Creates an opacity gradient over the text in the font string. Seen in the default UI when quest text is presented by a questgiver (if the "Instant Quest Text" feature is not turned on): This method is used with a length of 30 to fade in the letters of the description, starting at the first character; then the start value is incremented in an [`OnUpdate`](Frame.md#onupdate) script, creating the animated fade-in effect.
 
 **Signature:**
 
@@ -824,7 +824,7 @@ FontString:SetAlphaGradient(start, length)
 
 **Arguments:**
 
-- `start` - Character position in the font string's text at which the gradient should begin (between `0` and `string.len(fontString:`[`GetText()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontString/GetText)`) - 6`) (`number`)
+- `start` - Character position in the font string's text at which the gradient should begin (between `0` and `string.len(fontString:`[`GetText()`](FontString.md#fontstringgettext)`) - 6`) (`number`)
 - `length` - Width of the gradient in pixels, or `0` to restore the text to full opacity (`number`)
 
 ---
@@ -841,7 +841,7 @@ LayeredRegion:SetDrawLayer("layer")
 
 **Arguments:**
 
-- `layer` - String identifying a graphics layer; one of the following values: (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `layer` - String identifying a graphics layer; one of the following values: (`string`, [layer](../types/layer.md))
   - `ARTWORK`
   - `BACKGROUND`
   - `BORDER`
@@ -907,7 +907,7 @@ FontInstance:SetFontObject(object) or FontInstance:SetFontObject("name")
 
 ### FontString:SetFormattedText
 
-Sets the text displayed in the font string using format specifiers. Equivalent to `:SetText(`[`format(format, ...)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/format)`)`, but does not create a throwaway Lua string object, resulting in greater memory-usage efficiency.
+Sets the text displayed in the font string using format specifiers. Equivalent to `:SetText(`[`format(format, ...)`](../categories/Lua library.md#format-luaapi)`)`, but does not create a throwaway Lua string object, resulting in greater memory-usage efficiency.
 
 **Signature:**
 
@@ -917,7 +917,7 @@ FontString:SetFormattedText("formatString", ...)
 
 **Arguments:**
 
-- `formatString` - A string containing format specifiers (as with [`string.format()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/format)) (`string`)
+- `formatString` - A string containing format specifiers (as with [`string.format()`](../categories/Lua library.md#format-luaapi)) (`string`)
 - `...` - A list of values to be included in the formatted string (`list`)
 
 ---
@@ -964,7 +964,7 @@ FontInstance:SetJustifyH("justify")
 
 **Arguments:**
 
-- `justify` - Horizontal text alignment style (`string`, [justifyH](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyH))
+- `justify` - Horizontal text alignment style (`string`, [justifyH](../types/justifyH.md))
   - `CENTER`
   - `LEFT`
   - `RIGHT`
@@ -1034,9 +1034,9 @@ Region:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]
 
 **Arguments:**
 
-- `point` - Point on this region at which it is to be anchored to another (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `point` - Point on this region at which it is to be anchored to another (`string`, [anchorPoint](../types/anchorPoint.md))
 - `relativeTo` - Reference to the other region to which this region is to be anchored; if `nil` or omitted, anchors the region relative to its parent (or to the screen dimensions if the region has no parent) (`region`)
-- `relativePoint` - Point on the other region to which this region is to be anchored; if `nil` or omitted, defaults to the same value as `point` (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `relativePoint` - Point on the other region to which this region is to be anchored; if `nil` or omitted, defaults to the same value as `point` (`string`, [anchorPoint](../types/anchorPoint.md))
 - `xOffset` - Horizontal distance between `point` and `relativePoint` (in pixels; positive values put `point` to the right of `relativePoint`); if `nil` or omitted, defaults to `0` (`number`)
 - `yOffset` - Vertical distance between `point` and `relativePoint` (in pixels; positive values put `point` below `relativePoint`); if `nil` or omitted, defaults to `0` (`number`)
 
@@ -1135,7 +1135,7 @@ FontString:SetText()
 
 ### FontInstance:SetTextColor
 
-Sets the font instance's default text color. This color is used for otherwise unformatted text displayed using the font instance; however, portions of the text may be colored differently using the [`colorString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#colorString) format (commonly seen in [`hyperlink`s](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink)).
+Sets the font instance's default text color. This color is used for otherwise unformatted text displayed using the font instance; however, portions of the text may be colored differently using the [`colorString`](../types/colorString.md) format (commonly seen in [`hyperlink`s](../types/hyperlink.md)).
 
 **Signature:**
 
@@ -1156,7 +1156,7 @@ FontInstance:SetTextColor(textR, textG, textB, textAlpha)
 
 ### FontString:SetTextHeight
 
-Scales the font string's rendered text to a different height. This method scales the image of the text as already rendered at its existing height by the game's graphics engine -- producing an effect which is efficient enough for use in fast animations, but with reduced visual quality in the text. To re-render the text at a new point size, see [`:SetFont()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetFont).
+Scales the font string's rendered text to a different height. This method scales the image of the text as already rendered at its existing height by the game's graphics engine -- producing an effect which is efficient enough for use in fast animations, but with reduced visual quality in the text. To re-render the text at a new point size, see [`:SetFont()`](FontInstance.md#fontinstancesetfont).
 
 **Signature:**
 
@@ -1174,7 +1174,7 @@ FontString:SetTextHeight(height)
 
 Sets a color shading for the region's graphics. The effect of changing this property differs by the type of region:
 
-For `FontString`s, this color overrides the normal text color (as set by [`FontInstance:SetTextColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetTextColor)).
+For `FontString`s, this color overrides the normal text color (as set by [`FontInstance:SetTextColor()`](FontInstance.md#fontinstancesettextcolor)).
 
 For `Texture`s, this color acts as a filter applied to the texture image: each color component value is a factor by which the corresponding component values in the image are multiplied. (See examples.)
 

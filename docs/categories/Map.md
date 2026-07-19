@@ -36,7 +36,7 @@ vehicleX, vehicleY, unitName, isPossessed, vehicleType, orientation, isPlayer, i
 
 **Arguments:**
 
-- `index` - Index of a special vehicle (between 1 and [`GetNumBattlefieldVehicles()`](https://web.archive.org/web/20100105220937/http://wowprogramming.com/docs/api/GetNumBattlefieldVehicles)) (`number`)
+- `index` - Index of a special vehicle (between 1 and [`GetNumBattlefieldVehicles()`](Battlefield.md#getnumbattlefieldvehicles)) (`number`)
 
 **Returns:**
 
@@ -103,7 +103,7 @@ continent = GetCurrentMapContinent()
 
 **Returns:**
 
-- `continent` - Index of the world map's current continent (in the list returned by [`GetMapContinents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMapContinents), or one of the following values) (`number`)
+- `continent` - Index of the world map's current continent (in the list returned by [`GetMapContinents()`](Map.md#getmapcontinents), or one of the following values) (`number`)
   - `-1` - Cosmic map
   - `0` - Azeroth
   - `1` - Kalimdor
@@ -142,7 +142,7 @@ zone = GetCurrentMapZone()
 
 **Returns:**
 
-- `zone` - Index of a zone within the continent (in the list returned by [`GetMapZones`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMapZones)`(`[`GetCurrentMapContinent()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCurrentMapContinent)`)`), or 0 for the continent map (`number`)
+- `zone` - Index of a zone within the continent (in the list returned by [`GetMapZones`](Map.md#getmapzones)`(`[`GetCurrentMapContinent()`](Map.md#getcurrentmapcontinent)`)`), or 0 for the continent map (`number`)
 
 ---
 
@@ -181,7 +181,7 @@ Returns a list of map continents names
 
 ## GetMapInfo
 
-Returns information about the current world map texture. World map images are broken into several tiles; the full texture paths follow the format `"Interface\\WorldMap\\"..mapFileName.."\\"..mapFileName..i`, where `i` is a number between 1 and `NUM_WORLDMAP_DETAIL_TILES` (or in a zone with multiple area images, `"Interface\\WorldMap\\"..mapFileName.."\\"..mapFileName..dungeonLevel.."_"..i`, where `dungeonLevel` is a number between 1 and [`GetNumDungeonMapLevels()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumDungeonMapLevels)).
+Returns information about the current world map texture. World map images are broken into several tiles; the full texture paths follow the format `"Interface\\WorldMap\\"..mapFileName.."\\"..mapFileName..i`, where `i` is a number between 1 and `NUM_WORLDMAP_DETAIL_TILES` (or in a zone with multiple area images, `"Interface\\WorldMap\\"..mapFileName.."\\"..mapFileName..dungeonLevel.."_"..i`, where `dungeonLevel` is a number between 1 and [`GetNumDungeonMapLevels()`](Map.md#getnumdungeonmaplevels)).
 
 **Signature:**
 
@@ -235,7 +235,7 @@ textureName, textureWidth, textureHeight, offsetX, offsetY, mapPointX, mapPointY
 
 **Arguments:**
 
-- `index` - Index of a map overlay (between 1 and [`GetNumMapOverlays()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumMapOverlays)) (`number`)
+- `index` - Index of a map overlay (between 1 and [`GetNumMapOverlays()`](Map.md#getnummapoverlays)) (`number`)
 
 **Returns:**
 
@@ -261,7 +261,7 @@ Returns the map zones for a given continent
 
 **Arguments:**
 
-- `continentIndex` - Index of a continent (in the list returned by [`GetMapContinents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMapContinents)) (`number`)
+- `continentIndex` - Index of a continent (in the list returned by [`GetMapContinents()`](Map.md#getmapcontinents)) (`number`)
 
 **Returns:**
 
@@ -361,7 +361,7 @@ unitX, unitY = GetPlayerMapPosition("unit")
 
 **Arguments:**
 
-- `unit` - A unit in the player's party or raid (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the player's party or raid (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -445,7 +445,7 @@ SetMapZoom(continentIndex [, zoneIndex])
 
 **Arguments:**
 
-- `continentIndex` - Index of a continent to display (in the list returned by [`GetMapContinents()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMapContinents), or one of the following values) (`number`)
+- `continentIndex` - Index of a continent to display (in the list returned by [`GetMapContinents()`](Map.md#getmapcontinents), or one of the following values) (`number`)
   - `-1` - Cosmic map
   - `0` - Entire Azeroth map
   - `1` - Kalimdor
@@ -455,7 +455,7 @@ SetMapZoom(continentIndex [, zoneIndex])
   - `5` - The Maelstrom
   - `6` - Pandaria
   - `7` - Draenor
-- `zoneIndex` - Index of a zone within the continent to display (in the list returned by [`GetMapZones(continentIndex)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMapZones)), or omitted to show the continent map (`number`)
+- `zoneIndex` - Index of a zone within the continent to display (in the list returned by [`GetMapZones(continentIndex)`](Map.md#getmapzones)), or omitted to show the continent map (`number`)
 
 ---
 

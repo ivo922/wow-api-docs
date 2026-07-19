@@ -156,7 +156,7 @@ name = GetPetitionNameInfo(index)
 
 **Arguments:**
 
-- `index` - Index of a signature slot on the petition (between 1 and `minSignatures`, where `minSignatures = select(7,`[`GetPetitionInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetPetitionInfo)`)`) (`number`)
+- `index` - Index of a signature slot on the petition (between 1 and `minSignatures`, where `minSignatures = select(7,`[`GetPetitionInfo()`](Petition.md#getpetitioninfo)`)`) (`number`)
 
 **Returns:**
 

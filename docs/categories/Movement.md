@@ -8,7 +8,7 @@
 
 ## AscendStop `protected`
 
-Stops movement initiated by [`JumpOrAscendStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/JumpOrAscendStart). Used by the `JUMP` binding, which also controls ascent when swimming or flying. Has no meaningful effect if called while jumping (in which case movement is generally stopped by hitting the ground).
+Stops movement initiated by [`JumpOrAscendStart`](Movement.md#jumporascendstart-protected). Used by the `JUMP` binding, which also controls ascent when swimming or flying. Has no meaningful effect if called while jumping (in which case movement is generally stopped by hitting the ground).
 
 **Signature:**
 
@@ -20,7 +20,7 @@ AscendStop()
 
 ## DescendStop `protected`
 
-Stops movement initiated by [`SitStandOrDescendStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SitStandOrDescendStart). Used by the `SITORSTAND` binding, which also controls descent when swimming or flying. Has no meaningful effect if called while sitting/standing.
+Stops movement initiated by [`SitStandOrDescendStart`](Movement.md#sitstandordescendstart-protected). Used by the `SITORSTAND` binding, which also controls descent when swimming or flying. Has no meaningful effect if called while sitting/standing.
 
 **Signature:**
 
@@ -42,7 +42,7 @@ FollowUnit("unit") or FollowUnit("name" [, strict])
 
 **Arguments:**
 
-- `unit` - A unit to follow (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to follow (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit to follow (`string`)
 - `strict` - True if only an exact match for the given name should be allowed; false to allow partial matches (`boolean`)
 
@@ -80,7 +80,7 @@ JumpOrAscendStart()
 
 Begins moving the player character forward while steering via mouse movement. After calling this function, the player character begins moving forward while cursor movement rotates (or steers) the character, altering yaw (facing) and/or pitch (vertical movement angle) as well as camera position.
 
-Equivalent to calling both [`CameraOrSelectOrMoveStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CameraOrSelectOrMoveStart) and [`TurnOrActionStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TurnOrActionStart) without calling the respective `Stop` functions; i.e. holding both left and right mouse buttons down. Used by the `MOVEANDSTEER` binding, which can be customized to allow alternate access to this action if the player's system does not allow pressing multiple mouse buttons at once.
+Equivalent to calling both [`CameraOrSelectOrMoveStart`](Camera.md#cameraorselectormovestart-protected) and [`TurnOrActionStart`](Movement.md#turnoractionstart-protected) without calling the respective `Stop` functions; i.e. holding both left and right mouse buttons down. Used by the `MOVEANDSTEER` binding, which can be customized to allow alternate access to this action if the player's system does not allow pressing multiple mouse buttons at once.
 
 **Signature:**
 
@@ -92,7 +92,7 @@ MoveAndSteerStart()
 
 ## MoveAndSteerStop `protected`
 
-Ends movement initiated by [`MoveAndSteerStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/MoveAndSteerStart). After calling this function, forward movement and character steering stops and normal cursor movement resumes.
+Ends movement initiated by [`MoveAndSteerStart`](Movement.md#moveandsteerstart-protected). After calling this function, forward movement and character steering stops and normal cursor movement resumes.
 
 Used by the `MOVEANDSTEER` binding.
 
@@ -118,7 +118,7 @@ MoveBackwardStart()
 
 ## MoveBackwardStop `protected`
 
-Ends movement initiated by [`MoveBackwardStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/MoveBackwardStart)
+Ends movement initiated by [`MoveBackwardStart`](Movement.md#movebackwardstart-protected)
 
 **Signature:**
 
@@ -142,7 +142,7 @@ MoveForwardStart()
 
 ## MoveForwardStop `protected`
 
-Ends movement initiated by [`MoveForwardStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/MoveForwardStart)
+Ends movement initiated by [`MoveForwardStart`](Movement.md#moveforwardstart-protected)
 
 **Signature:**
 
@@ -154,7 +154,7 @@ MoveForwardStop()
 
 ## PitchDownStart `protected`
 
-Begins adjusting the player character's angle of vertical movement downward. Affects only the angle or slope of movement for swimming or flying; has no immediately visible effect if the player is not moving, but alters the trajectory followed as soon as the player begins moving. Continuously adjusts pitch until the minimum angle is reached or [`PitchDownStop()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PitchDownStop) is called.
+Begins adjusting the player character's angle of vertical movement downward. Affects only the angle or slope of movement for swimming or flying; has no immediately visible effect if the player is not moving, but alters the trajectory followed as soon as the player begins moving. Continuously adjusts pitch until the minimum angle is reached or [`PitchDownStop()`](Movement.md#pitchdownstop-protected) is called.
 
 Used by the `PITCHDOWN` binding.
 
@@ -168,7 +168,7 @@ PitchDownStart()
 
 ## PitchDownStop `protected`
 
-Ends movement initiated by [`PitchDownStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PitchDownStart)
+Ends movement initiated by [`PitchDownStart`](Movement.md#pitchdownstart-protected)
 
 **Signature:**
 
@@ -180,7 +180,7 @@ PitchDownStop()
 
 ## PitchUpStart `protected`
 
-Begins adjusting the player character's angle of vertical movement upward. Affects only the angle or slope of movement for swimming or flying; has no immediately visible effect if the player is not moving, but alters the trajectory followed as soon as the player begins moving. Continuously adjusts pitch until the maximum angle is reached or [`PitchUpStop()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PitchUpStop) is called.
+Begins adjusting the player character's angle of vertical movement upward. Affects only the angle or slope of movement for swimming or flying; has no immediately visible effect if the player is not moving, but alters the trajectory followed as soon as the player begins moving. Continuously adjusts pitch until the maximum angle is reached or [`PitchUpStop()`](Movement.md#pitchupstop-protected) is called.
 
 Used by the `PITCHUP` binding.
 
@@ -194,7 +194,7 @@ PitchUpStart()
 
 ## PitchUpStop `protected`
 
-Ends movement initiated by [`PitchUpStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PitchUpStart)
+Ends movement initiated by [`PitchUpStart`](Movement.md#pitchupstart-protected)
 
 **Signature:**
 
@@ -230,7 +230,7 @@ StrafeLeftStart()
 
 ## StrafeLeftStop `protected`
 
-Ends movement initiated by [`StrafeLeftStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/StrafeLeftStart)
+Ends movement initiated by [`StrafeLeftStart`](Movement.md#strafeleftstart-protected)
 
 **Signature:**
 
@@ -254,7 +254,7 @@ StrafeRightStart()
 
 ## StrafeRightStop `protected`
 
-Ends movement initiated by [`StrafeRightStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/StrafeRightStart)
+Ends movement initiated by [`StrafeRightStart`](Movement.md#straferightstart-protected)
 
 **Signature:**
 
@@ -304,7 +304,7 @@ TurnLeftStart()
 
 ## TurnLeftStop `protected`
 
-Ends movement initiated by [`TurnLeftStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TurnLeftStart)
+Ends movement initiated by [`TurnLeftStart`](Movement.md#turnleftstart-protected)
 
 **Signature:**
 
@@ -316,7 +316,7 @@ TurnLeftStop()
 
 ## TurnOrActionStart `protected`
 
-Begins character steering or interaction (equivalent to right-clicking in the 3-D world). After calling this function (i.e. while the right mouse button is held), cursor movement rotates (or steers) the player character, altering yaw (facing) and/or pitch (vertical movement angle) as well as camera position. Final results vary by context and are determined when calling [`TurnOrActionStop()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TurnOrActionStop) (i.e. releasing the right mouse button).
+Begins character steering or interaction (equivalent to right-clicking in the 3-D world). After calling this function (i.e. while the right mouse button is held), cursor movement rotates (or steers) the player character, altering yaw (facing) and/or pitch (vertical movement angle) as well as camera position. Final results vary by context and are determined when calling [`TurnOrActionStop()`](Movement.md#turnoractionstop-protected) (i.e. releasing the right mouse button).
 
 Used by the `TURNORACTION` binding (not customizable in the default UI), which is bound to the right mouse button by default.
 
@@ -330,7 +330,7 @@ TurnOrActionStart()
 
 ## TurnOrActionStop `protected`
 
-Ends action initiated by [`TurnOrActionStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TurnOrActionStart). After calling this function (i.e. releasing the right mouse button), character steering stops and normal cursor movement resumes. If the cursor has not moved significantly since calling [`TurnOrActionStart()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TurnOrActionStart_) (i.e. pressing the right mouse button), results vary by context:
+Ends action initiated by [`TurnOrActionStart`](Movement.md#turnoractionstart-protected). After calling this function (i.e. releasing the right mouse button), character steering stops and normal cursor movement resumes. If the cursor has not moved significantly since calling [`TurnOrActionStart()`](Movement.md#turnoractionstart-protected) (i.e. pressing the right mouse button), results vary by context:
 
 if the cursor is over a nearby unit, interacts with (or attacks) that unit, making it the player's target.
 
@@ -368,7 +368,7 @@ TurnRightStart()
 
 ## TurnRightStop `protected`
 
-Ends movement initiated by [`TurnRightStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/TurnRightStart)
+Ends movement initiated by [`TurnRightStart`](Movement.md#turnrightstart-protected)
 
 **Signature:**
 

@@ -567,7 +567,7 @@ isTrivial, isDaily, isRepeatable = GetAvailableQuestInfo(availableIndex)
 
 **Arguments:**
 
-- `availableIndex` - Number of an available quest in the dialog frame; 1..[`GetNumAvailableQuests()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumAvailableQuests) (`number`)
+- `availableIndex` - Number of an available quest in the dialog frame; 1..[`GetNumAvailableQuests()`](Quest.md#getnumavailablequests) (`number`)
 
 **Returns:**
 
@@ -607,8 +607,8 @@ isQuest, questId, isActive = GetContainerItemQuestInfo(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 **Returns:**
 
@@ -620,9 +620,9 @@ isQuest, questId, isActive = GetContainerItemQuestInfo(container, slot)
 
 ## GetFactionInfoByID
 
-Returns information about a faction or header listing. Returns information about a faction regardless of whether the faction is known to the player (indeed, even for factions only available to the opposing alliance); see [`GetFactionInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetFactionInfo) for information about factions listed in the player's Reputation UI.
+Returns information about a faction or header listing. Returns information about a faction regardless of whether the faction is known to the player (indeed, even for factions only available to the opposing alliance); see [`GetFactionInfo`](Faction.md#getfactioninfo) for information about factions listed in the player's Reputation UI.
 
-Faction IDs used by this function match those found on database sites (e.g. [Guardians of Hyjal](http://www.wowhead.com/faction=1158)) and are also returned by [`GetQuestLogRewardFactionInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetQuestLogRewardFactionInfo).
+Faction IDs used by this function match those found on database sites (e.g. [Guardians of Hyjal](http://www.wowhead.com/faction=1158)) and are also returned by [`GetQuestLogRewardFactionInfo`](Uncategorized.md#getquestlogrewardfactioninfo).
 
 **Signature:**
 
@@ -638,7 +638,7 @@ name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtW
 
 - `name` - Name of the faction (`string`)
 - `description` - Brief description of the faction, as displayed in the default UI's detail window for a selected faction (`string`)
-- `standingID` - Current standing with the given faction (`number`, [standingID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#standingID))
+- `standingID` - Current standing with the given faction (`number`, [standingID](../types/standingID.md))
   - `1` - Hated
   - `2` - Hostile
   - `3` - Unfriendly
@@ -976,11 +976,11 @@ questWatchIndex = GetQuestWatchIndex(questLogIndex)
 
 **Arguments:**
 
-- `questLogIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestLogEntries)) (`number`)
+- `questLogIndex` - Index of a quest in the quest log (between 1 and [`GetNumQuestLogEntries()`](Quest.md#getnumquestlogentries)) (`number`)
 
 **Returns:**
 
-- `questWatchIndex` - Index of a quest in the list of quests on the objectives tracker (between 1 and [`GetNumQuestWatches()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumQuestWatches)) (`number`)
+- `questWatchIndex` - Index of a quest in the list of quests on the objectives tracker (between 1 and [`GetNumQuestWatches()`](Objectives tracking.md#getnumquestwatches)) (`number`)
 
 ---
 
@@ -1387,7 +1387,7 @@ This function is not yet documented
 
 ## SetLFGDungeon
 
-Sets a flag indicating that the player would like to join a given dungeon/queue. This function simply indicates that the player would like to join a given dungeon or queue. Joining the queue is accomplished using the [`JoinLFG()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/JoinLFG) function. Clearing the dungeons that have been flagged is accomplished using the [`ClearAllLFGDungeons`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClearAllLFGDungeons) function.
+Sets a flag indicating that the player would like to join a given dungeon/queue. This function simply indicates that the player would like to join a given dungeon or queue. Joining the queue is accomplished using the [`JoinLFG()`](Uncategorized.md#joinlfg) function. Clearing the dungeons that have been flagged is accomplished using the [`ClearAllLFGDungeons`](Uncategorized.md#clearalllfgdungeons) function.
 
 **Signature:**
 
@@ -1563,7 +1563,7 @@ role = UnitGroupRolesAssigned("unit")
 
 **Arguments:**
 
-- `unit` - Unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - Unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 

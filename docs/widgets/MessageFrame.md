@@ -36,7 +36,7 @@ MessageFrame:AddMessage("text" [, red [, green [, blue [, alpha]]]])
 
 ### Frame:AllowAttributeChanges
 
-Temporarily allows insecure code to modify the frame's attributes during combat. This permission is automatically rescinded when the frame's [`OnUpdate`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnUpdate) script next runs.
+Temporarily allows insecure code to modify the frame's attributes during combat. This permission is automatically rescinded when the frame's [`OnUpdate`](#onupdate) script next runs.
 
 **Signature:**
 
@@ -50,7 +50,7 @@ Frame:AllowAttributeChanges()
 
 ### Frame:CanChangeAttribute
 
-Returns whether secure frame attributes can currently be changed. Applies only to protected frames inheriting from one of the [secure frame templates](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/secure_template); frame attributes may only be changed by non-Blizzard scripts while the player is not in combat (or for a short time after a secure script calls [`:AllowAttributeChanges()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/AllowAttributeChanges)).
+Returns whether secure frame attributes can currently be changed. Applies only to protected frames inheriting from one of the [secure frame templates](../categories/Secure execution utility.md); frame attributes may only be changed by non-Blizzard scripts while the player is not in combat (or for a short time after a secure script calls [`:AllowAttributeChanges()`](Frame.md#frameallowattributechanges)).
 
 **Signature:**
 
@@ -78,7 +78,7 @@ canChange = Region:CanChangeProtectedState()
 
 **Returns:**
 
-- `canChange` - `1` if addon scripts are currently allowed to change protected properties of the region (e.g. showing or hiding it, changing its position, or altering frame attributes); otherwise `nil` (`value`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
+- `canChange` - `1` if addon scripts are currently allowed to change protected properties of the region (e.g. showing or hiding it, changing its position, or altering frame attributes); otherwise `nil` (`value`, [1nil](../types/1nil.md))
 
 *Inherited from [Region](Region.md)*
 
@@ -142,7 +142,7 @@ Frame:CreateFontString(["name" [, "layer" [, "inherits"]]])
 **Arguments:**
 
 - `name` - A global name to use for the new font string (`string`)
-- `layer` - The graphic layer on which to create the font string. Default value is `ARTWORK`. (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `layer` - The graphic layer on which to create the font string. Default value is `ARTWORK`. (`string`, [layer](../types/layer.md))
 - `inherits` - A template from which the new front string should inherit (`string`)
 
 *Inherited from [Frame](Frame.md)*
@@ -162,7 +162,7 @@ texture = Frame:CreateTexture(["name" [, "layer" [, "inherits" [, sublevel]]]])
 **Arguments:**
 
 - `name` - Global name for the new texture (`string`)
-- `layer` - Graphic layer on which to create the texture; defaults to `ARTWORK` if not specified (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `layer` - Graphic layer on which to create the texture; defaults to `ARTWORK` if not specified (`string`, [layer](../types/layer.md))
 - `inherits` - Name of a template from which the new texture should inherit (`string`)
 - `sublevel` - The sub-level on the given graphics layer ranging from `-8`- to `7`. The default value of this argument is `0` (`number`)
 
@@ -176,7 +176,7 @@ texture = Frame:CreateTexture(["name" [, "layer" [, "inherits" [, sublevel]]]])
 
 ### Frame:CreateTitleRegion
 
-Creates a title region for dragging the frame. Creating a title region allows a frame to be repositioned by the user (by clicking and dragging in the region) without requiring additional scripts. (This behavior only applies if the frame is [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse).)
+Creates a title region for dragging the frame. Creating a title region allows a frame to be repositioned by the user (by clicking and dragging in the region) without requiring additional scripts. (This behavior only applies if the frame is [mouse enabled](Frame.md#frameenablemouse).)
 
 **Signature:**
 
@@ -204,7 +204,7 @@ Frame:DisableDrawLayer("layer")
 
 **Arguments:**
 
-- `layer` - Name of a graphics layer (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `layer` - Name of a graphics layer (`string`, [layer](../types/layer.md))
 
 *Inherited from [Frame](Frame.md)*
 
@@ -222,7 +222,7 @@ Frame:EnableDrawLayer("layer")
 
 **Arguments:**
 
-- `layer` - Name of a graphics layer (`string`, [layer](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#layer))
+- `layer` - Name of a graphics layer (`string`, [layer](../types/layer.md))
 
 *Inherited from [Frame](Frame.md)*
 
@@ -230,7 +230,7 @@ Frame:EnableDrawLayer("layer")
 
 ### Frame:EnableJoystick
 
-Enables or disables joystick interactivity. Joystick interactivity must be enabled in order for a frame's joystick-related [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) handlers to be run.
+Enables or disables joystick interactivity. Joystick interactivity must be enabled in order for a frame's joystick-related [script](#script-handlers) handlers to be run.
 
 (As of this writing, joystick support is partially implemented but not enabled in the current version of World of Warcraft.)
 
@@ -250,7 +250,7 @@ Frame:EnableJoystick(enable)
 
 ### Frame:EnableKeyboard
 
-Enables or disables keyboard interactivity for the frame. Keyboard interactivity must be enabled in order for a frame's [`OnKeyDown`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnKeyDown), [`OnKeyUp`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnKeyUp), or [`OnChar`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnChar) scripts to be run.
+Enables or disables keyboard interactivity for the frame. Keyboard interactivity must be enabled in order for a frame's [`OnKeyDown`](#onkeydown), [`OnKeyUp`](#onkeyup), or [`OnChar`](#onchar) scripts to be run.
 
 **Signature:**
 
@@ -268,7 +268,7 @@ Frame:EnableKeyboard(enable)
 
 ### Frame:EnableMouse
 
-Enables or disables mouse interactivity for the frame. Mouse interactivity must be enabled in order for a frame's mouse-related [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) handlers to be run.
+Enables or disables mouse interactivity for the frame. Mouse interactivity must be enabled in order for a frame's mouse-related [script](#script-handlers) handlers to be run.
 
 **Signature:**
 
@@ -286,7 +286,7 @@ Frame:EnableMouse(enable)
 
 ### Frame:EnableMouseWheel
 
-Enables or disables mouse wheel interactivity for the frame. Mouse wheel interactivity must be enabled in order for a frame's [`OnMouseWheel`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnMouseWheel) script handler to be run.
+Enables or disables mouse wheel interactivity for the frame. Mouse wheel interactivity must be enabled in order for a frame's [`OnMouseWheel`](#onmousewheel) script handler to be run.
 
 **Signature:**
 
@@ -340,7 +340,7 @@ Returns a list of animation groups belonging to this region
 
 ### Frame:GetAttribute
 
-Returns the value of a secure frame attribute. See the [secure template documentation](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/secure_template) for more information about frame attributes.
+Returns the value of a secure frame attribute. See the [secure template documentation](../categories/Secure execution utility.md) for more information about frame attributes.
 
 **Signature:**
 
@@ -362,7 +362,7 @@ value = Frame:GetAttribute("name")
 
 ### Frame:GetBackdrop
 
-Returns information about the frame's backdrop graphic. See [SetBackdrop](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/SetBackdrop).
+Returns information about the frame's backdrop graphic. See [SetBackdrop](Frame.md#framesetbackdrop).
 
 **Signature:**
 
@@ -372,7 +372,7 @@ backdrop = Frame:GetBackdrop()
 
 **Returns:**
 
-- `backdrop` - A table containing the backdrop settings, or `nil` if the frame has no backdrop (`table`, [backdrop](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#backdrop))
+- `backdrop` - A table containing the backdrop settings, or `nil` if the frame has no backdrop (`table`, [backdrop](../types/backdrop.md))
 
 *Inherited from [Frame](Frame.md)*
 
@@ -440,7 +440,7 @@ bottom = Region:GetBottom()
 
 ### Frame:GetBoundsRect
 
-Returns the position and dimension of the smallest area enclosing the frame and its children. This information may not match that returned by [`:GetRect()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Region/GetRect) if the frame contains textures, font strings, or child frames whose boundaries lie outside its own.
+Returns the position and dimension of the smallest area enclosing the frame and its children. This information may not match that returned by [`:GetRect()`](Region.md#regiongetrect) if the frame contains textures, font strings, or child frames whose boundaries lie outside its own.
 
 **Signature:**
 
@@ -546,7 +546,7 @@ MessageFrame:GetDontSavePosition()
 
 ### Frame:GetEffectiveAlpha
 
-Returns the overall opacity of the frame. Unlike [`:GetAlpha()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/GetAlpha) which returns the opacity of the frame relative to its parent, this function returns the absolute opacity of the frame, taking into account the relative opacity of parent frames.
+Returns the overall opacity of the frame. Unlike [`:GetAlpha()`](Frame.md#visibleregiongetalpha) which returns the opacity of the frame relative to its parent, this function returns the absolute opacity of the frame, taking into account the relative opacity of parent frames.
 
 **Signature:**
 
@@ -564,7 +564,7 @@ alpha = Frame:GetEffectiveAlpha()
 
 ### Frame:GetEffectiveDepth
 
-Returns the overall 3D depth of the frame (for stereoscopic 3D configurations). Unlike [`:GetDepth()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/GetDepth) which returns the apparent depth of the frame relative to its parent, this function returns the absolute depth of the frame, taking into account the relative depths of parent frames.
+Returns the overall 3D depth of the frame (for stereoscopic 3D configurations). Unlike [`:GetDepth()`](Frame.md#framegetdepth) which returns the apparent depth of the frame relative to its parent, this function returns the absolute depth of the frame, taking into account the relative depths of parent frames.
 
 **Signature:**
 
@@ -596,7 +596,7 @@ Frame:GetEffectiveScale()
 
 ### MessageFrame:GetFadeDuration
 
-Returns the duration of the fade-out animation for disappearing messages. For the amount of time a message remains in the frame before beginning to fade, see [`:GetTimeVisible()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/MessageFrame/GetTimeVisible).
+Returns the duration of the fade-out animation for disappearing messages. For the amount of time a message remains in the frame before beginning to fade, see [`:GetTimeVisible()`](MessageFrame.md#messageframegettimevisible).
 
 **Signature:**
 
@@ -651,7 +651,7 @@ filename, fontHeight, flags = FontInstance:GetFont()
 
 ### FontInstance:GetFontObject
 
-Returns the `Font` object from which the font instance's properties are inherited. See [`FontInstance:SetFontObject()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/FontInstance/SetFontObject) for details.
+Returns the `Font` object from which the font instance's properties are inherited. See [`FontInstance:SetFontObject()`](FontInstance.md#fontinstancesetfontobject) for details.
 
 **Signature:**
 
@@ -679,7 +679,7 @@ level = Frame:GetFrameLevel()
 
 **Returns:**
 
-- `level` - Layering level of the frame relative to others in its [`frameStrata`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#frameStrata) (`number`)
+- `level` - Layering level of the frame relative to others in its [`frameStrata`](../types/frameStrata.md) (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -697,7 +697,7 @@ strata = Frame:GetFrameStrata()
 
 **Returns:**
 
-- `strata` - Token identifying the strata in which the frame should be layered (`string`, [frameStrata](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#frameStrata))
+- `strata` - Token identifying the strata in which the frame should be layered (`string`, [frameStrata](../types/frameStrata.md))
   - `BACKGROUND`
   - `DIALOG`
   - `FULLSCREEN`
@@ -804,7 +804,7 @@ justify = FontInstance:GetJustifyH()
 
 **Returns:**
 
-- `justify` - Horizontal text alignment style (`string`, [justifyH](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyH))
+- `justify` - Horizontal text alignment style (`string`, [justifyH](../types/justifyH.md))
   - `CENTER`
   - `LEFT`
   - `RIGHT`
@@ -825,7 +825,7 @@ justify = FontInstance:GetJustifyV()
 
 **Returns:**
 
-- `justify` - Vertical text alignment style (`string`, [justifyV](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyV))
+- `justify` - Vertical text alignment style (`string`, [justifyV](../types/justifyV.md))
   - `BOTTOM`
   - `MIDDLE`
   - `TOP`
@@ -854,7 +854,7 @@ left = Region:GetLeft()
 
 ### Frame:GetMaxResize
 
-Returns the maximum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing).
+Returns the maximum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](Frame.md#framestartsizing).
 
 **Signature:**
 
@@ -873,7 +873,7 @@ maxWidth, maxHeight = Frame:GetMaxResize()
 
 ### Frame:GetMinResize
 
-Returns the minimum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing).
+Returns the minimum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](Frame.md#framestartsizing).
 
 **Signature:**
 
@@ -1010,13 +1010,13 @@ point, relativeTo, relativePoint, xOffset, yOffset = Region:GetPoint(index)
 
 **Arguments:**
 
-- `index` - Index of an anchor point defined for the region (between `1` and `region:`[`GetNumPoints()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Region/GetNumPoints)) (`number`)
+- `index` - Index of an anchor point defined for the region (between `1` and `region:`[`GetNumPoints()`](Region.md#regiongetnumpoints)) (`number`)
 
 **Returns:**
 
-- `point` - Point on this region at which it is anchored to another (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `point` - Point on this region at which it is anchored to another (`string`, [anchorPoint](../types/anchorPoint.md))
 - `relativeTo` - Reference to the other region to which this region is anchored (`region`)
-- `relativePoint` - Point on the other region to which this region is anchored (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `relativePoint` - Point on the other region to which this region is anchored (`string`, [anchorPoint](../types/anchorPoint.md))
 - `xOffset` - Horizontal distance between `point` and `relativePoint` (in pixels; positive values put `point` to the right of `relativePoint`) (`number`)
 - `yOffset` - Vertical distance between `point` and `relativePoint` (in pixels; positive values put `point` below `relativePoint`) (`number`)
 
@@ -1107,7 +1107,7 @@ handler = ScriptObject:GetScript("scriptType")
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts reference](#script-handlers) for details (`string`)
 
 **Returns:**
 
@@ -1217,7 +1217,7 @@ textR, textG, textB, textAlpha = FontInstance:GetTextColor()
 
 ### MessageFrame:GetTimeVisible
 
-Returns the amount of time for which a message remains visible before beginning to fade out. For the duration of the fade-out animation, see [`:GetFadeDuration()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/MessageFrame/GetFadeDuration).
+Returns the amount of time for which a message remains visible before beginning to fade out. For the duration of the fade-out animation, see [`:GetFadeDuration()`](MessageFrame.md#messageframegetfadeduration).
 
 **Signature:**
 
@@ -1233,7 +1233,7 @@ time = MessageFrame:GetTimeVisible()
 
 ### Frame:GetTitleRegion
 
-Returns the frame's TitleRegion object. See [`:CreateTitleRegion()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/CreateTitleRegion) for more information.
+Returns the frame's TitleRegion object. See [`:CreateTitleRegion()`](Frame.md#framecreatetitleregion) for more information.
 
 **Signature:**
 
@@ -1297,7 +1297,7 @@ hasScript = ScriptObject:HasScript("scriptType")
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts reference](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts reference](#script-handlers) for details (`string`)
 
 **Returns:**
 
@@ -1323,7 +1323,7 @@ VisibleRegion:Hide()
 
 ### ScriptObject:HookScript
 
-Securely hooks a script handler. Equivalent to [`hooksecurefunc()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/hooksecurefunc) for script handlers; allows one to "post-hook" a secure handler without tainting the original.
+Securely hooks a script handler. Equivalent to [`hooksecurefunc()`](../categories/Secure execution utility.md#hooksecurefunc) for script handlers; allows one to "post-hook" a secure handler without tainting the original.
 
 The original handler will still be called, but the handler supplied will also be called after the original, with the same arguments. Return values from the supplied handler are discarded. Note that there is no API to remove a hook from a handler: any hooks applied will remain in place until the UI is reloaded.
 
@@ -1337,7 +1337,7 @@ ScriptObject:HookScript("scriptType", handler)
 
 **Arguments:**
 
-- `scriptType` - Name of the [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) whose handler should be hooked (`string`)
+- `scriptType` - Name of the [script](#script-handlers) whose handler should be hooked (`string`)
 - `handler` - A function to be called whenever the script handler is run (`function`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
@@ -1560,8 +1560,8 @@ isProtected, explicit = Region:IsProtected()
 
 **Returns:**
 
-- `isProtected` - `1` if the region is protected; otherwise `nil` (`value`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
-- `explicit` - `1` if the region is explicitly protected; `nil` if the frame is only protected due to relationship with a protected region (`value`, [1nil](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#1nil))
+- `isProtected` - `1` if the region is protected; otherwise `nil` (`value`, [1nil](../types/1nil.md))
+- `explicit` - `1` if the region is explicitly protected; `nil` if the frame is only protected due to relationship with a protected region (`value`, [1nil](../types/1nil.md))
 
 *Inherited from [Region](Region.md)*
 
@@ -1587,7 +1587,7 @@ enabled = Frame:IsResizable()
 
 ### VisibleRegion:IsShown
 
-Returns whether the region is shown. Indicates only whether the region has been explicitly shown or hidden -- a region may be explicitly shown but not appear on screen because its parent region is hidden. See [`VisibleRegion:IsVisible()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/VisibleRegion/IsVisible) to test for actual visibility.
+Returns whether the region is shown. Indicates only whether the region has been explicitly shown or hidden -- a region may be explicitly shown but not appear on screen because its parent region is hidden. See [`VisibleRegion:IsVisible()`](VisibleRegion.md#visibleregionisvisible) to test for actual visibility.
 
 **Signature:**
 
@@ -1689,7 +1689,7 @@ Frame:Raise()
 
 ### Frame:RegisterAllEvents
 
-Registers the frame for all events. This method is recommended for debugging purposes only, as using it will cause the frame's [`OnEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnEvent) script handler to be run very frequently for likely irrelevant events. (For code that needs to be run very frequently, use an [`OnUpdate`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnUpdate) script handler.)
+Registers the frame for all events. This method is recommended for debugging purposes only, as using it will cause the frame's [`OnEvent`](#onevent) script handler to be run very frequently for likely irrelevant events. (For code that needs to be run very frequently, use an [`OnUpdate`](#onupdate) script handler.)
 
 **Signature:**
 
@@ -1703,7 +1703,7 @@ Frame:RegisterAllEvents()
 
 ### Frame:RegisterEvent
 
-Registers the frame for an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events). The frame's [`OnEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnEvent) script handler will be run whenever the event fires. See the event documentation for details on event arguments.
+Registers the frame for an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events). The frame's [`OnEvent`](#onevent) script handler will be run whenever the event fires. See the event documentation for details on event arguments.
 
 **Signature:**
 
@@ -1721,7 +1721,7 @@ Frame:RegisterEvent("event")
 
 ### Frame:RegisterForDrag
 
-Registers the frame for dragging. Once the frame is registered for dragging (and [mouse enabled](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/EnableMouse)), the frame's [`OnDragStart`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStart) and [`OnDragStop`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnDragStop) scripts will be called when the specified mouse button(s) are clicked and dragged starting from within the frame (or its mouse-interactive area).
+Registers the frame for dragging. Once the frame is registered for dragging (and [mouse enabled](Frame.md#frameenablemouse)), the frame's [`OnDragStart`](#ondragstart) and [`OnDragStop`](#ondragstop) scripts will be called when the specified mouse button(s) are clicked and dragged starting from within the frame (or its mouse-interactive area).
 
 **Signature:**
 
@@ -1781,7 +1781,7 @@ VisibleRegion:SetAlpha(alpha)
 
 ### Frame:SetAttribute
 
-Sets a secure frame attribute. See the [secure template documentation](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/secure_template) for more information about frame attributes.
+Sets a secure frame attribute. See the [secure template documentation](../categories/Secure execution utility.md) for more information about frame attributes.
 
 **Signature:**
 
@@ -1830,7 +1830,7 @@ Frame:SetBackdrop()
 
 ### Frame:SetBackdropBorderColor
 
-Sets a shading color for the frame's border graphic. As with [`Texture:SetVertexColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Texture/SetVertexColor), this color is a shading applied to the colors of the texture image; a color of `(1, 1, 1)` allows the image's original colors to show.
+Sets a shading color for the frame's border graphic. As with [`Texture:SetVertexColor()`](Texture.md#layeredregionsetvertexcolor), this color is a shading applied to the colors of the texture image; a color of `(1, 1, 1)` allows the image's original colors to show.
 
 **Signature:**
 
@@ -1851,7 +1851,7 @@ Frame:SetBackdropBorderColor(red, green, blue [, alpha])
 
 ### Frame:SetBackdropColor
 
-Sets a shading color for the frame's background graphic. As with [`Texture:SetVertexColor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Texture/SetVertexColor), this color is a shading applied to the colors of the texture image; a color of `(1, 1, 1)` allows the image's original colors to show.
+Sets a shading color for the frame's background graphic. As with [`Texture:SetVertexColor()`](Texture.md#layeredregionsetvertexcolor), this color is a shading applied to the colors of the texture image; a color of `(1, 1, 1)` allows the image's original colors to show.
 
 **Signature:**
 
@@ -1893,7 +1893,7 @@ Frame:SetClampRectInsets(left, right, top, bottom)
 
 ### Frame:SetClampedToScreen
 
-Sets whether the frame's boundaries should be limited to those of the screen. Applies to user moving/resizing of the frame (via [`:StartMoving()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartMoving), [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing), or [title region](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/SetTitleRegion)); attempting to move or resize the frame beyond the edges of the screen will move/resize it no further than the edge of the screen closest to the mouse position. Does not apply to programmatically setting the frame's position or size.
+Sets whether the frame's boundaries should be limited to those of the screen. Applies to user moving/resizing of the frame (via [`:StartMoving()`](Frame.md#framestartmoving), [`:StartSizing()`](Frame.md#framestartsizing), or [title region](Frame.md#framesettitleregion)); attempting to move or resize the frame beyond the edges of the screen will move/resize it no further than the edge of the screen closest to the mouse position. Does not apply to programmatically setting the frame's position or size.
 
 **Signature:**
 
@@ -1943,7 +1943,7 @@ MessageFrame:SetDontSavePosition()
 
 ### MessageFrame:SetFadeDuration
 
-Sets the duration of the fade-out animation for disappearing messages. For the amount of time a message remains in the frame before beginning to fade, see [`:SetTimeVisible()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/MessageFrame/SetTimeVisible).
+Sets the duration of the fade-out animation for disappearing messages. For the amount of time a message remains in the frame before beginning to fade, see [`:SetTimeVisible()`](MessageFrame.md#messageframesettimevisible).
 
 **Signature:**
 
@@ -2038,7 +2038,7 @@ Frame:SetFrameLevel(level)
 
 **Arguments:**
 
-- `level` - Layering level of the frame relative to others in its [`frameStrata`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#frameStrata) (`number`)
+- `level` - Layering level of the frame relative to others in its [`frameStrata`](../types/frameStrata.md) (`number`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2046,7 +2046,7 @@ Frame:SetFrameLevel(level)
 
 ### Frame:SetFrameStrata
 
-Sets the general layering strata of the frame. Where [frame level](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/SetFrameLevel) provides fine control over the layering of frames, frame strata provides a coarser level of layering control: frames in a higher strata always appear "in front of" frames in lower strata regardless of frame level.
+Sets the general layering strata of the frame. Where [frame level](Frame.md#framesetframelevel) provides fine control over the layering of frames, frame strata provides a coarser level of layering control: frames in a higher strata always appear "in front of" frames in lower strata regardless of frame level.
 
 **Signature:**
 
@@ -2056,7 +2056,7 @@ Frame:SetFrameStrata("strata")
 
 **Arguments:**
 
-- `strata` - Token identifying the strata in which the frame should be layered (`string`, [frameStrata](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#frameStrata))
+- `strata` - Token identifying the strata in which the frame should be layered (`string`, [frameStrata](../types/frameStrata.md))
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2165,7 +2165,7 @@ FontInstance:SetJustifyH("justify")
 
 **Arguments:**
 
-- `justify` - Horizontal text alignment style (`string`, [justifyH](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#justifyH))
+- `justify` - Horizontal text alignment style (`string`, [justifyH](../types/justifyH.md))
   - `CENTER`
   - `LEFT`
   - `RIGHT`
@@ -2190,7 +2190,7 @@ FontInstance:SetJustifyV()
 
 ### Frame:SetMaxResize
 
-Sets the maximum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing).
+Sets the maximum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](Frame.md#framestartsizing).
 
 **Signature:**
 
@@ -2209,7 +2209,7 @@ Frame:SetMaxResize(maxWidth, maxHeight)
 
 ### Frame:SetMinResize
 
-Sets the minimum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing).
+Sets the minimum size of the frame for user resizing. Applies when resizing the frame with the mouse via [`:StartSizing()`](Frame.md#framestartsizing).
 
 **Signature:**
 
@@ -2228,9 +2228,9 @@ Frame:SetMinResize(minWidth, minHeight)
 
 ### Frame:SetMovable
 
-Sets whether the frame can be moved by the user. Enabling this property does not automatically implement behaviors allowing the frame to be dragged by the user -- such behavior must be implemented in the frame's mouse script handlers. If this property is not enabled, [`Frame:StartMoving()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartMoving) causes a Lua error.
+Sets whether the frame can be moved by the user. Enabling this property does not automatically implement behaviors allowing the frame to be dragged by the user -- such behavior must be implemented in the frame's mouse script handlers. If this property is not enabled, [`Frame:StartMoving()`](Frame.md#framestartmoving) causes a Lua error.
 
-For simple automatic frame dragging behavior, see [`Frame:CreateTitleRegion()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/CreateTitleRegion).
+For simple automatic frame dragging behavior, see [`Frame:CreateTitleRegion()`](Frame.md#framecreatetitleregion).
 
 **Signature:**
 
@@ -2277,9 +2277,9 @@ Region:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]
 
 **Arguments:**
 
-- `point` - Point on this region at which it is to be anchored to another (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `point` - Point on this region at which it is to be anchored to another (`string`, [anchorPoint](../types/anchorPoint.md))
 - `relativeTo` - Reference to the other region to which this region is to be anchored; if `nil` or omitted, anchors the region relative to its parent (or to the screen dimensions if the region has no parent) (`region`)
-- `relativePoint` - Point on the other region to which this region is to be anchored; if `nil` or omitted, defaults to the same value as `point` (`string`, [anchorPoint](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#anchorPoint))
+- `relativePoint` - Point on the other region to which this region is to be anchored; if `nil` or omitted, defaults to the same value as `point` (`string`, [anchorPoint](../types/anchorPoint.md))
 - `xOffset` - Horizontal distance between `point` and `relativePoint` (in pixels; positive values put `point` to the right of `relativePoint`); if `nil` or omitted, defaults to `0` (`number`)
 - `yOffset` - Vertical distance between `point` and `relativePoint` (in pixels; positive values put `point` below `relativePoint`); if `nil` or omitted, defaults to `0` (`number`)
 
@@ -2289,7 +2289,7 @@ Region:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]
 
 ### Frame:SetResizable
 
-Sets whether the frame can be resized by the user. Enabling this property does not automatically implement behaviors allowing the frame to be drag-resized by the user -- such behavior must be implemented in the frame's mouse script handlers. If this property is not enabled, [`Frame:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing) causes a Lua error.
+Sets whether the frame can be resized by the user. Enabling this property does not automatically implement behaviors allowing the frame to be drag-resized by the user -- such behavior must be implemented in the frame's mouse script handlers. If this property is not enabled, [`Frame:StartSizing()`](Frame.md#framestartsizing) causes a Lua error.
 
 **Signature:**
 
@@ -2335,7 +2335,7 @@ ScriptObject:SetScript("scriptType", handler)
 
 **Arguments:**
 
-- `scriptType` - A script type; see [scripts](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) for details (`string`)
+- `scriptType` - A script type; see [scripts](#script-handlers) for details (`string`)
 - `handler` - A function to become the widget's handler for the script type (`function`)
 
 *Inherited from [ScriptObject](ScriptObject.md)*
@@ -2421,7 +2421,7 @@ FontInstance:SetSpacing(spacing)
 
 ### FontInstance:SetTextColor
 
-Sets the font instance's default text color. This color is used for otherwise unformatted text displayed using the font instance; however, portions of the text may be colored differently using the [`colorString`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#colorString) format (commonly seen in [`hyperlink`s](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink)).
+Sets the font instance's default text color. This color is used for otherwise unformatted text displayed using the font instance; however, portions of the text may be colored differently using the [`colorString`](../types/colorString.md) format (commonly seen in [`hyperlink`s](../types/hyperlink.md)).
 
 **Signature:**
 
@@ -2442,7 +2442,7 @@ FontInstance:SetTextColor(textR, textG, textB, textAlpha)
 
 ### MessageFrame:SetTimeVisible
 
-Sets the amount of time for which a message remains visible before beginning to fade out. For the duration of the fade-out animation, see [`:SetFadeDuration()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/MessageFrame/SetFadeDuration).
+Sets the amount of time for which a message remains visible before beginning to fade out. For the duration of the fade-out animation, see [`:SetFadeDuration()`](MessageFrame.md#messageframesetfadeduration).
 
 **Signature:**
 
@@ -2458,7 +2458,7 @@ MessageFrame:SetTimeVisible(time)
 
 ### Frame:SetToplevel
 
-Sets whether the frame should automatically come to the front when clicked. When a frame with `Toplevel` behavior enabled is clicked, it automatically changes its [frame level](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/SetFrameLevel) such that it is greater than (and therefore drawn "in front of") all other frames in its [strata](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/SetFrameStrata).
+Sets whether the frame should automatically come to the front when clicked. When a frame with `Toplevel` behavior enabled is clicked, it automatically changes its [frame level](Frame.md#framesetframelevel) such that it is greater than (and therefore drawn "in front of") all other frames in its [strata](Frame.md#framesetframestrata).
 
 **Signature:**
 
@@ -2570,7 +2570,7 @@ Region:StopAnimating()
 
 ### Frame:StopMovingOrSizing
 
-Ends movement or resizing of the frame initiated with [`:StartMoving()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartMoving) or [`:StartSizing()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widgets/Frame/StartSizing)
+Ends movement or resizing of the frame initiated with [`:StartMoving()`](Frame.md#framestartmoving) or [`:StartSizing()`](Frame.md#framestartsizing)
 
 **Signature:**
 
@@ -2598,7 +2598,7 @@ Frame:UnregisterAllEvents()
 
 ### Frame:UnregisterEvent
 
-Unregisters the frame for an event. Once unregistered, the frame's [`OnEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts/OnEvent) script handler will not be called for that event.
+Unregisters the frame for an event. Once unregistered, the frame's [`OnEvent`](#onevent) script handler will not be called for that event.
 
 Unregistering from notifications for an event can be useful for improving addon performance at times when it's not necessary to process the event. For example, a frame which monitors target health does not need to receive the [`UNIT_HEALTH`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_HEALTH) event while the player has no target. An addon that sorts the contents of the player's bags can register for the [`BAG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/BAG_UPDATE) event to keep track of when items are picked up, but unregister from the event while it performs its sorting.
 

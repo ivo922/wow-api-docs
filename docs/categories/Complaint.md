@@ -8,7 +8,7 @@
 
 ## CalendarContextEventCanComplain
 
-Returns whether the player can report an event invitation as spam. If all arguments are omitted, uses the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent).
+Returns whether the player can report an event invitation as spam. If all arguments are omitted, uses the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent).
 
 **Signature:**
 
@@ -22,7 +22,7 @@ canReport = CalendarContextEventCanComplain([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from `1` to `CalendarGetNumDayEvents()`) (`number`)
 
@@ -48,7 +48,7 @@ CalendarContextEventComplain([monthOffset,] day, index)
   - `-1` - Month preceding the calendar's current month
   - `0` - The calendar's current month (i.e. same month as CalendarGetMonth())
   - `1` - Month after the calendar's current month
-  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CalendarContextSelectEvent) and ignore further arguments
+  - `nil` - Use the event selected by [`CalendarContextSelectEvent`](Calendar.md#calendarcontextselectevent) and ignore further arguments
 - `day` - Day of the month containing an event (`number`)
 - `index` - Index of an event on the given day (from `1` to `CalendarGetNumDayEvents()`) (`number`)
 
@@ -88,7 +88,7 @@ complain = CanComplainInboxItem(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 **Returns:**
 
@@ -126,7 +126,7 @@ ComplainInboxItem(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 ---
 
@@ -143,7 +143,7 @@ isInactive = PlayerIsPVPInactive("name") or PlayerIsPVPInactive("unit")
 **Arguments:**
 
 - `name` - Name of a friendly player unit in the current battleground (`string`)
-- `unit` - A friendly player unit in the current battleground (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A friendly player unit in the current battleground (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -164,7 +164,7 @@ ReportPlayerIsPVPAFK("name") or ReportPlayerIsPVPAFK("unit")
 **Arguments:**
 
 - `name` - Name of a friendly player unit in the current battleground (`string`)
-- `unit` - A friendly player unit in the current battleground (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A friendly player unit in the current battleground (`string`, [unitID](../types/unitID.md))
 
 ---
 

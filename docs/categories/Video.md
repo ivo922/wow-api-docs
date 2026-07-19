@@ -30,7 +30,7 @@ index = GetCurrentMultisampleFormat()
 
 ## GetCurrentResolution
 
-Returns the index of the current resolution setting. For the dimensions of a resolution setting, use [`GetScreenResolutions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetScreenResolutions).
+Returns the index of the current resolution setting. For the dimensions of a resolution setting, use [`GetScreenResolutions()`](Video.md#getscreenresolutions).
 
 **Signature:**
 
@@ -107,7 +107,7 @@ gamma = GetGamma()
 
 Returns a list of available multisample settings. Used in the default UI to provide descriptions of multisample settings (e.g. "24-bit color 24-bit depth 6x multisample").
 
-Indices used by [`GetCurrentMultisampleFormat()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCurrentMultisampleFormat) and [`SetMultisampleFormat()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetMultisampleFormat) refer to the groups of `color`, `depth` and `multisample` values returned by this function; e.g. index 1 refers to values 1 through 3, index 2 to values 4 through 6, etc.
+Indices used by [`GetCurrentMultisampleFormat()`](Video.md#getcurrentmultisampleformat) and [`SetMultisampleFormat()`](Video.md#setmultisampleformat) refer to the groups of `color`, `depth` and `multisample` values returned by this function; e.g. index 1 refers to values 1 through 3, index 2 to values 4 through 6, etc.
 
 **Signature:**
 
@@ -364,7 +364,7 @@ SetGamma(value)
 
 ## SetMultisampleFormat
 
-Changes the multisample setting. The `index` argument corresponds to the individual settings described by [`GetMultisampleFormats()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMultisampleFormats) (each a set of three values).
+Changes the multisample setting. The `index` argument corresponds to the individual settings described by [`GetMultisampleFormats()`](Video.md#getmultisampleformats) (each a set of three values).
 
 **Signature:**
 
@@ -390,7 +390,7 @@ SetScreenResolution(index)
 
 **Arguments:**
 
-- `index` - Index of a resolution setting (between 1 and `select("#",`[`GetScreenResolutions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetScreenResolutions)`)`) (`number`)
+- `index` - Index of a resolution setting (between 1 and `select("#",`[`GetScreenResolutions()`](Video.md#getscreenresolutions)`)`) (`number`)
 
 ---
 

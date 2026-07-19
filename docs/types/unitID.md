@@ -23,7 +23,7 @@ A `unitID` can also be formed by appending `"target"` to an existing `unitID`, r
 
 You can also append `"pet"` to a `unitID` to refer to that unit's pet, although it should only be appended once because pets cannot have pets. The unit `pet` is a shorter (and more efficient) way to write `playerpet`, but both refer to the same unit. `raidpet1` is also the same as `raid1pet`. A very long `unitID` such as `targettargetpettarget` is valid, and will refer to the player's target if the player's target and the player's pet are targeting the player.
 
-Many (but not all) API functions that accept a `unitID` also accept the name of a unit (assuming that unit is in the player's party or raid). For example, [`UnitHealth("Cladhaire")`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api/UnitHealth) will return the same value as `UnitHealth("party1")` if the unit `party1` is the player named Cladhaire. In such situations, a unit's target can still be accessed by appending `"-target"`; e.g. `UnitHealth("Cladhaire-target")`.
+Many (but not all) API functions that accept a `unitID` also accept the name of a unit (assuming that unit is in the player's party or raid). For example, [`UnitHealth("Cladhaire")`](../categories/Unit.md#unithealth) will return the same value as `UnitHealth("party1")` if the unit `party1` is the player named Cladhaire. In such situations, a unit's target can still be accessed by appending `"-target"`; e.g. `UnitHealth("Cladhaire-target")`.
 
 ---
 

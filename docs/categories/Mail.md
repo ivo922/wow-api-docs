@@ -18,7 +18,7 @@ AutoLootMailItem(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 ---
 
@@ -36,7 +36,7 @@ complain = CanComplainInboxItem(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 **Returns:**
 
@@ -109,7 +109,7 @@ ComplainInboxItem(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 ---
 
@@ -125,7 +125,7 @@ DeleteInboxItem(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 ---
 
@@ -141,7 +141,7 @@ packageIcon, stationeryIcon, sender, subject, money, CODAmount, daysLeft, itemCo
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 **Returns:**
 
@@ -174,7 +174,7 @@ invoiceType, itemName, playerName, bid, buyout, deposit, consignment, moneyDelay
 
 **Arguments:**
 
-- `index` - Index of the mail message in the inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `index` - Index of the mail message in the inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 **Returns:**
 
@@ -206,15 +206,15 @@ name, itemTexture, count, quality, canUse = GetInboxItem(mailID, attachmentIndex
 
 **Arguments:**
 
-- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
-- `attachmentIndex` - Index of an attachment to the message (between 1 and `select(8,`[`GetInboxHeaderInfo(mailID)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxHeaderInfo)`)`) (`number`)
+- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
+- `attachmentIndex` - Index of an attachment to the message (between 1 and `select(8,`[`GetInboxHeaderInfo(mailID)`](Mail.md#getinboxheaderinfo)`)`) (`number`)
 
 **Returns:**
 
 - `name` - Name of the item (`string`)
 - `itemTexture` - Path to an icon texture for the item (`string`)
 - `count` - Number of stacked items (`number`)
-- `quality` - Quality (rarity) of the item (`number`, [itemQuality](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality (rarity) of the item (`number`, [itemQuality](../types/itemQuality.md))
 - `canUse` - 1 if the player can use or equip the item; otherwise nil (`1nil`)
 
 ---
@@ -231,12 +231,12 @@ itemlink = GetInboxItemLink(mailID, attachmentIndex)
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 - `attachmentIndex` - Index of an attachment to the mail (between 1 and `ATTACHMENTS_MAX_RECEIVE`) (`number`)
 
 **Returns:**
 
-- `itemlink` - A hyperlink for the attachment item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `itemlink` - A hyperlink for the attachment item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -269,7 +269,7 @@ bodyText, texture, isTakeable, isInvoice = GetInboxText(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 **Returns:**
 
@@ -338,13 +338,13 @@ index = GetSelectedStationeryTexture()
 
 **Returns:**
 
-- `index` - Index of the selected stationery type (between 1 and [`GetNumStationeries()`](https://web.archive.org/web/20111212195716/http://wowprogramming.com/docs/api/GetNumStationeries)) (`number`)
+- `index` - Index of the selected stationery type (between 1 and [`GetNumStationeries()`](Mail.md#getnumstationeries-internal)) (`number`)
 
 ---
 
 ## GetSendMailCOD
 
-Returns the Cash-On-Delivery cost of the outgoing message. Returns the amount set via [`SetSendMailCOD()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetSendMailCOD), which in the default UI is only called once its Send button has been clicked (immediately before sending the message). Thus, does not return the COD amount set in the default UI's Send Mail window.
+Returns the Cash-On-Delivery cost of the outgoing message. Returns the amount set via [`SetSendMailCOD()`](Mail.md#setsendmailcod), which in the default UI is only called once its Send button has been clicked (immediately before sending the message). Thus, does not return the COD amount set in the default UI's Send Mail window.
 
 **Signature:**
 
@@ -377,7 +377,7 @@ itemName, itemTexture, stackCount, quality = GetSendMailItem(slot)
 - `itemName` - Name of the attachment item (`string`)
 - `itemTexture` - Path to an icon texture for the attachment item (`string`)
 - `stackCount` - Number of stacked items (`string`)
-- `quality` - Quality (rarity) of the attachment item (`number`, [itemQuality](https://web.archive.org/web/20111212165552/http://wowprogramming.com/docs/api_types#itemQuality))
+- `quality` - Quality (rarity) of the attachment item (`number`, [itemQuality](../types/itemQuality.md))
 
 ---
 
@@ -397,7 +397,7 @@ itemlink = GetSendMailItemLink(slot)
 
 **Returns:**
 
-- `itemlink` - A hyperlink for the attachment item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `itemlink` - A hyperlink for the attachment item (`string`, [hyperlink](../types/hyperlink.md))
 
 **Examples:**
 
@@ -415,7 +415,7 @@ end
 
 ## GetSendMailMoney
 
-Returns the amount of money to be sent with the outgoing message. Returns the amount set via [`SetSendMailMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetSendMailMoney), which in the default UI is only called once its Send button has been clicked (immediately before sending the message). Thus, does not return the Send Money amount set in the default UI's Send Mail window.
+Returns the amount of money to be sent with the outgoing message. Returns the amount set via [`SetSendMailMoney()`](Mail.md#setsendmailmoney), which in the default UI is only called once its Send button has been clicked (immediately before sending the message). Thus, does not return the Send Money amount set in the default UI's Send Mail window.
 
 **Signature:**
 
@@ -457,7 +457,7 @@ name, texture, cost = GetStationeryInfo(index)
 
 **Arguments:**
 
-- `index` - Index of a stationery type (between 1 and [`GetNumStationeries()`](https://web.archive.org/web/20111212153707/http://wowprogramming.com/docs/api/GetNumStationeries)) (`number`)
+- `index` - Index of a stationery type (between 1 and [`GetNumStationeries()`](Mail.md#getnumstationeries-internal)) (`number`)
 
 **Returns:**
 
@@ -495,7 +495,7 @@ canDelete = InboxItemCanDelete(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 **Returns:**
 
@@ -515,7 +515,7 @@ ReturnInboxItem(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a message in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 ---
 
@@ -537,13 +537,13 @@ SelectStationery(index)
 
 **Arguments:**
 
-- `index` - Index of a stationery type (between 1 and [`GetNumStationeries()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumStationeries)) (`number`)
+- `index` - Index of a stationery type (between 1 and [`GetNumStationeries()`](Mail.md#getnumstationeries-internal)) (`number`)
 
 ---
 
 ## SendMail
 
-Sends the outgoing message. Any money or COD costs and attachments specified for the mail (via [`SetSendMailMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetSendMailMoney), [`SetSendMailCOD()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetSendMailCOD), and [`ClickSendMailItemButton()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/ClickSendMailItemButton)) are included with the mail (and the values for such are reset for the next outgoing mail).
+Sends the outgoing message. Any money or COD costs and attachments specified for the mail (via [`SetSendMailMoney()`](Mail.md#setsendmailmoney), [`SetSendMailCOD()`](Mail.md#setsendmailcod), and [`ClickSendMailItemButton()`](Cursor.md#clicksendmailitembutton)) are included with the mail (and the values for such are reset for the next outgoing mail).
 
 **Signature:**
 
@@ -597,7 +597,7 @@ success = SetSendMailMoney(amount)
 
 ## SetSendMailShowing
 
-Enables or disables shortcuts for attaching items to outgoing mail. When shortcuts are enabled, [`UseContainerItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UseContainerItem) (i.e. right-click in the default UI's container frames) attaches the item to the outgoing message instead of using it.
+Enables or disables shortcuts for attaching items to outgoing mail. When shortcuts are enabled, [`UseContainerItem()`](Container.md#usecontaineritem-protected) (i.e. right-click in the default UI's container frames) attaches the item to the outgoing message instead of using it.
 
 **Signature:**
 
@@ -623,8 +623,8 @@ TakeInboxItem(mailID, attachmentIndex)
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
-- `attachmentIndex` - Index of an attachment to the mail (between 1 and `select(8,`[`GetInboxHeaderInfo(mailID)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxHeaderInfo)`)`) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
+- `attachmentIndex` - Index of an attachment to the mail (between 1 and `select(8,`[`GetInboxHeaderInfo(mailID)`](Mail.md#getinboxheaderinfo)`)`) (`number`)
 
 ---
 
@@ -640,7 +640,7 @@ TakeInboxMoney(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 ---
 
@@ -656,7 +656,7 @@ TakeInboxTextItem(mailID)
 
 **Arguments:**
 
-- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetInboxNumItems)) (`number`)
+- `mailID` - Index of a mail in the player's inbox (between 1 and [`GetInboxNumItems()`](Mail.md#getinboxnumitems)) (`number`)
 
 ---
 

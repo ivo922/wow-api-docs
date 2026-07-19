@@ -47,10 +47,10 @@ If you choose to use these instead of the appropriate API, you should use the co
 
 The following are the convenience functions that can be used to obtain inventoryIds:
 
-- [`GetInventorySlotInfo`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api/GetInventorySlotInfo)
-- [`BankButtonIDToInvSlotID`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api/BankButtonIDToInvSlotID)
-- [`ContainerIDToInventoryID`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api/ContainerIDToInventoryID)
-- [`KeyRingButtonIDToInvSlotID`](https://web.archive.org/web/20110319023203/http://wowprogramming.com/docs/api/KeyRingButtonIDToInvSlotID)
+- [`GetInventorySlotInfo`](../categories/Inventory.md#getinventoryslotinfo)
+- [`BankButtonIDToInvSlotID`](../categories/Bank.md#bankbuttonidtoinvslotid)
+- [`ContainerIDToInventoryID`](../categories/Container.md#containeridtoinventoryid)
+- [`KeyRingButtonIDToInvSlotID`](../categories/Inventory.md#keyringbuttonidtoinvslotid)
 
 ---
 

@@ -30,7 +30,7 @@ ArenaTeamDisband(team)
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
 
 ---
 
@@ -46,7 +46,7 @@ ArenaTeamInviteByName(team, "name")
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
 - `name` - Name of a character to invite (`string`)
 
 ---
@@ -63,13 +63,13 @@ ArenaTeamLeave(team)
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
 
 ---
 
 ## ArenaTeamRoster `server`
 
-Requests arena team roster information from the server. Does not return information directly: the [`ARENA_TEAM_ROSTER_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/ARENA_TEAM_ROSTER_UPDATE) event fires when information from the server becomes available, which can then be retrieved using [`GetNumArenaTeamMembers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumArenaTeamMembers) and [`GetArenaTeamRosterInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetArenaTeamRosterInfo).
+Requests arena team roster information from the server. Does not return information directly: the [`ARENA_TEAM_ROSTER_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/ARENA_TEAM_ROSTER_UPDATE) event fires when information from the server becomes available, which can then be retrieved using [`GetNumArenaTeamMembers()`](Arena.md#getnumarenateammembers) and [`GetArenaTeamRosterInfo()`](Arena.md#getarenateamrosterinfo).
 
 Roster update requests are limited to once every 10 seconds *per team*. For example, calling `ArenaTeamRoster(1)` twice within ten seconds will not result in a second `ARENA_TEAM_ROSTER_UPDATE` event, but calling `ArenaTeamRoster(1)` and `ArenaTeamRoster(2)` within ten seconds will result in two `ARENA_TEAM_ROSTER_UPDATE` events (one for each team).
 
@@ -81,7 +81,7 @@ ArenaTeamRoster(team)
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
 
 ---
 
@@ -97,7 +97,7 @@ ArenaTeamSetLeaderByName(team, "name")
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
 - `name` - Name of a team member to promote (`string`)
 
 ---
@@ -114,7 +114,7 @@ ArenaTeamUninviteByName(team, "name")
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
 - `name` - Name of a team member to remove (`string`)
 
 ---
@@ -135,7 +135,7 @@ teamID = ArenaTeam_GetTeamSizeID(teamSize)
 
 **Returns:**
 
-- `teamID` - The numeric identifier for the arena team of the given size (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `teamID` - The numeric identifier for the arena team of the given size (`number`, [arenaTeamID](../types/arenaTeamID.md))
 
 ---
 
@@ -181,7 +181,7 @@ teamName, teamSize, teamRating, teamPlayed, teamWins, seasonTeamPlayed, seasonTe
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
 
 **Returns:**
 
@@ -228,8 +228,8 @@ name, rank, level, class, online, played, win, seasonPlayed, seasonWin, rating =
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20111212193208/http://wowprogramming.com/docs/api_types#arenaTeamID))
-- `index` - Index of a team member (between 1 and [`GetNumArenaTeamMembers(team)`](https://web.archive.org/web/20111212193208/http://wowprogramming.com/docs/api/GetNumArenaTeamMembers)) (`number`)
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
+- `index` - Index of a team member (between 1 and [`GetNumArenaTeamMembers(team)`](Arena.md#getnumarenateammembers)) (`number`)
 
 **Returns:**
 
@@ -260,7 +260,7 @@ index = GetArenaTeamRosterSelection(team)
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100105213510/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
 
 **Returns:**
 
@@ -398,7 +398,7 @@ isCaptain = IsArenaTeamCaptain(team)
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
 
 **Returns:**
 
@@ -440,8 +440,8 @@ SetArenaTeamRosterSelection(team, index)
 
 **Arguments:**
 
-- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#arenaTeamID))
-- `index` - Index of a team member to select (between 1 and [`GetNumArenaTeamMembers(team)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumArenaTeamMembers)) (`number`)
+- `team` - Index of one of the player's arena teams (`number`, [arenaTeamID](../types/arenaTeamID.md))
+- `index` - Index of a team member to select (between 1 and [`GetNumArenaTeamMembers(team)`](Arena.md#getnumarenateammembers)) (`number`)
 
 ---
 
@@ -463,7 +463,7 @@ SetArenaTeamRosterShowOffline(enable)
 
 ## SortArenaTeamRoster
 
-Sorts the selected arena team's roster. Affects the ordering of member information returned by [`GetArenaTeamRosterInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetArenaTeamRosterInfo). Sorting by the same criterion repeatedly reverses the sort order.
+Sorts the selected arena team's roster. Affects the ordering of member information returned by [`GetArenaTeamRosterInfo`](Arena.md#getarenateamrosterinfo). Sorting by the same criterion repeatedly reverses the sort order.
 
 **Signature:**
 

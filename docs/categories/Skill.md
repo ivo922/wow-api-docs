@@ -18,7 +18,7 @@ AbandonSkill(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the skills list (between `1` and [`GetNumSkillLines()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSkillLines)) (`number`)
+- `index` - Index of an entry in the skills list (between `1` and [`GetNumSkillLines()`](Skill.md#getnumskilllines)) (`number`)
 
 ---
 
@@ -40,7 +40,7 @@ ExpandSkillHeader(index)
 
 **Arguments:**
 
-- `index` - Index of an entry in the skills list (between 1 and [`GetNumSkillLines()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumSkillLines)) (`number`)
+- `index` - Index of an entry in the skills list (between 1 and [`GetNumSkillLines()`](Skill.md#getnumskilllines)) (`number`)
 
 ---
 

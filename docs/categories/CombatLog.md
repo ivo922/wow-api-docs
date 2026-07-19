@@ -19,16 +19,16 @@ CombatLogAddFilter("events", "srcGUID", ["destGUID"] or [destMask]) or CombatLog
 **Arguments:**
 
 - `events` - Name of a combat log event type to include in the filtered list, or a comma-separated list of multiple names (`string`)
-- `srcGUID` - GUID of the source unit (`string`, [guid](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#guid))
-- `srcMask` - Bit mask of the source unit (`number`, [bitfield](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#bitfield))
-- `destGUID` - GUID of the destination unit (`string`, [guid](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#guid))
-- `destMask` - Bit mask of the destination unit (`number`, [bitfield](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#bitfield))
+- `srcGUID` - GUID of the source unit (`string`, [guid](../types/guid.md))
+- `srcMask` - Bit mask of the source unit (`number`, [bitfield](../types/bitfield.md))
+- `destGUID` - GUID of the destination unit (`string`, [guid](../types/guid.md))
+- `destMask` - Bit mask of the destination unit (`number`, [bitfield](../types/bitfield.md))
 
 ---
 
 ## CombatLogAdvanceEntry
 
-Advances the "cursor" position used by other CombatLog functions. Information about the entry at the "cursor" position can be retrieved with [`CombatLogGetCurrentEntry()`](https://web.archive.org/web/20111212155156/http://wowprogramming.com/docs/api/CombatLogGetCurrentEntry). That function then advances the cursor to the next entry, so calling it repeatedly returns all information in the combat log -- this function can be used to "rewind" the combat log to retrieve information about earlier events or skip entries without retrieving their information.
+Advances the "cursor" position used by other CombatLog functions. Information about the entry at the "cursor" position can be retrieved with [`CombatLogGetCurrentEntry()`](CombatLog.md#combatloggetcurrententry). That function then advances the cursor to the next entry, so calling it repeatedly returns all information in the combat log -- this function can be used to "rewind" the combat log to retrieve information about earlier events or skip entries without retrieving their information.
 
 **Signature:**
 
@@ -63,7 +63,7 @@ CombatLogClearEntries()
 
 Returns the combat log event information for the current entry and advances to the next entry. See [`COMBAT_LOG_EVENT`](https://web.archive.org/web/20111212190929/http://wowprogramming.com/docs/event/COMBAT_LOG_EVENT) for details of the event information.
 
-The combat log maintains a "cursor" in the list of entries; this function returns information about the event at the cursor position and advances the cursor to the next entry. Since this function is used by the default UI's combat log display, the cursor position is usually at the end of the log -- calling it thus returns nothing. The function [`CombatLogSetCurrentEntry()`](https://web.archive.org/web/20111212190929/http://wowprogramming.com/docs/api/CombatLogSetCurrentEntry) can be used to "rewind" the combat log cursor, enabling retrieval of information about earlier events.
+The combat log maintains a "cursor" in the list of entries; this function returns information about the event at the cursor position and advances the cursor to the next entry. Since this function is used by the default UI's combat log display, the cursor position is usually at the end of the log -- calling it thus returns nothing. The function [`CombatLogSetCurrentEntry()`](CombatLog.md#combatlogsetcurrententry) can be used to "rewind" the combat log cursor, enabling retrieval of information about earlier events.
 
 **Signature:**
 
@@ -77,14 +77,14 @@ timestamp, event, srcGUID, srcName, srcFlags, destGUID, destName, destFlags, ...
 
 **Returns:**
 
-- `timestamp` - Time at which the event occurred (same format as [`time()`](https://web.archive.org/web/20111212190929/http://wowprogramming.com/docs/api/time) and [`date()`](https://web.archive.org/web/20111212190929/http://wowprogramming.com/docs/api/date), but with millisecond precision) (`number`)
+- `timestamp` - Time at which the event occurred (same format as [`time()`](Lua library.md#time-luaapi) and [`date()`](Lua library.md#date-luaapi), but with millisecond precision) (`number`)
 - `event` - Type of combat log event (`string`)
-- `srcGUID` - GUID of the unit that initiated the event (`string`, [guid](https://web.archive.org/web/20111212190929/http://wowprogramming.com/docs/api_types#guid))
+- `srcGUID` - GUID of the unit that initiated the event (`string`, [guid](../types/guid.md))
 - `srcName` - Name of the unit that initiated the event (`string`)
-- `srcFlags` - Flags indicating the nature of the source unit (`number`, [bitfield](https://web.archive.org/web/20111212190929/http://wowprogramming.com/docs/api_types#bitfield))
-- `destGUID` - GUID of the unit that was the target of the event (`string`, [guid](https://web.archive.org/web/20111212190929/http://wowprogramming.com/docs/api_types#guid))
+- `srcFlags` - Flags indicating the nature of the source unit (`number`, [bitfield](../types/bitfield.md))
+- `destGUID` - GUID of the unit that was the target of the event (`string`, [guid](../types/guid.md))
 - `destName` - Name of the unit that was the target of the event (`string`)
-- `destFlags` - Flags indicating the nature of the target unit (`number`, [bitfield](https://web.archive.org/web/20111212190929/http://wowprogramming.com/docs/api_types#bitfield))
+- `destFlags` - Flags indicating the nature of the target unit (`number`, [bitfield](../types/bitfield.md))
 - `...` - Additional arguments specific to the event type (`list`)
 
 ---
@@ -135,9 +135,9 @@ CombatLogResetFilter()
 
 ## CombatLogSetCurrentEntry
 
-Sets the "cursor" position used by other CombatLog functions. Information about the entry at the "cursor" position can be retrieved with [`CombatLogGetCurrentEntry()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CombatLogGetCurrentEntry). That function then advances the cursor to the next entry, so calling it repeatedly returns all information in the combat log -- this function can be used to "rewind" the combat log to retrieve information about earlier events.
+Sets the "cursor" position used by other CombatLog functions. Information about the entry at the "cursor" position can be retrieved with [`CombatLogGetCurrentEntry()`](CombatLog.md#combatloggetcurrententry). That function then advances the cursor to the next entry, so calling it repeatedly returns all information in the combat log -- this function can be used to "rewind" the combat log to retrieve information about earlier events.
 
-The argument `index` can be positive or negative: positive indices start at the beginning of the combat log (oldest events) and count up to the end (newest events); negative indices start at `-1` for the newest event and count backwards to to `-`[`CombatLogGetNumEntries(ignoreFilter)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CombatLogGetNumEntries) for the oldest.
+The argument `index` can be positive or negative: positive indices start at the beginning of the combat log (oldest events) and count up to the end (newest events); negative indices start at `-1` for the newest event and count backwards to to `-`[`CombatLogGetNumEntries(ignoreFilter)`](CombatLog.md#combatloggetnumentries) for the oldest.
 
 **Signature:**
 
@@ -147,7 +147,7 @@ CombatLogSetCurrentEntry(index [, ignoreFilter])
 
 **Arguments:**
 
-- `index` - Index of a combat log event (between `1` and [`CombatLogGetNumEntries(ignoreFilter)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CombatLogGetNumEntries), or between `-1` and `-`[`CombatLogGetNumEntries(ignoreFilter)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CombatLogGetNumEntries)) (`number`)
+- `index` - Index of a combat log event (between `1` and [`CombatLogGetNumEntries(ignoreFilter)`](CombatLog.md#combatloggetnumentries), or between `-1` and `-`[`CombatLogGetNumEntries(ignoreFilter)`](CombatLog.md#combatloggetnumentries)) (`number`)
 - `ignoreFilter` - True to use the entire saved combat log history; false or omitted to use only events matching the current filter (`boolean`)
 
 ---
@@ -180,8 +180,8 @@ isMatch = CombatLog_Object_IsA(unitFlags, mask)
 
 **Arguments:**
 
-- `unitFlags` - Source or destination unit flags from a combat log entry (`number`, [bitfield](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#bitfield))
-- `mask` - One of the following global constants: (`number`, [bitfield](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#bitfield))
+- `unitFlags` - Source or destination unit flags from a combat log entry (`number`, [bitfield](../types/bitfield.md))
+- `mask` - One of the following global constants: (`number`, [bitfield](../types/bitfield.md))
   - `COMBATLOG_FILTER_EVERYTHING` - Any entity
   - `COMBATLOG_FILTER_FRIENDLY_UNITS` - Entity is a friendly unit
   - `COMBATLOG_FILTER_HOSTILE_PLAYERS` - Entity is a hostile player unit
@@ -244,11 +244,11 @@ guid = UnitGUID("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
-- `guid` - The unit's GUID (`string`, [guid](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#guid))
+- `guid` - The unit's GUID (`string`, [guid](../types/guid.md))
 
 ---
 

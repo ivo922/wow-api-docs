@@ -18,8 +18,8 @@ BuyMerchantItem(index, quantity)
 
 **Arguments:**
 
-- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantNumItems)) (`number`)
-- `quantity` - Number of items to purchase (between 1 and [`GetMerchantItemMaxStack(index)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantItemMaxStack)) (`number`)
+- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](Merchant.md#getmerchantnumitems)) (`number`)
+- `quantity` - Number of items to purchase (between 1 and [`GetMerchantItemMaxStack(index)`](Merchant.md#getmerchantitemmaxstack)) (`number`)
 
 ---
 
@@ -35,7 +35,7 @@ BuybackItem(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the buyback listing (between 1 and [`GetNumBuybackItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBuybackItems)) (`number`)
+- `index` - Index of an item in the buyback listing (between 1 and [`GetNumBuybackItems()`](Merchant.md#getnumbuybackitems)) (`number`)
 
 ---
 
@@ -79,8 +79,8 @@ ContainerRefundItemPurchase(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 ---
 
@@ -128,7 +128,7 @@ name, texture, price, quantity, numAvailable, isUsable = GetBuybackItemInfo(inde
 
 **Arguments:**
 
-- `index` - Index of an item in the buyback listing (between 1 and [`GetNumBuybackItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBuybackItems)) (`number`)
+- `index` - Index of an item in the buyback listing (between 1 and [`GetNumBuybackItems()`](Merchant.md#getnumbuybackitems)) (`number`)
 
 **Returns:**
 
@@ -153,11 +153,11 @@ link = GetBuybackItemLink(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the buyback listing (between 1 and [`GetNumBuybackItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumBuybackItems)) (`number`)
+- `index` - Index of an item in the buyback listing (between 1 and [`GetNumBuybackItems()`](Merchant.md#getnumbuybackitems)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -177,8 +177,8 @@ money, itemCount, refundSec, currecycount, hasEnchants = GetContainerItemPurchas
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 - `IsEquipped` - wheather to get an equipped item info (`boolean`)
 
 **Returns:**
@@ -193,7 +193,7 @@ money, itemCount, refundSec, currecycount, hasEnchants = GetContainerItemPurchas
 
 ## GetContainerItemPurchaseItem
 
-Returns information about a specific currency refunded for returning an item to vendors. See [`GetContainerItemPurchaseInfo`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetContainerItemPurchaseInfo) for more information about alternate currency refunds.
+Returns information about a specific currency refunded for returning an item to vendors. See [`GetContainerItemPurchaseInfo`](Container.md#getcontaineritempurchaseinfo) for more information about alternate currency refunds.
 
 **Signature:**
 
@@ -203,8 +203,8 @@ texture, quantity, link = GetContainerItemPurchaseItem(container, slot, index)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 - `index` - Index of the currency type; between 1 and `itemCount`, where `itemCount` is the 4th return from `GetContainerItemPurchaseInfo()` for the same container and slot (`number`)
 
 **Returns:**
@@ -227,11 +227,11 @@ currencyCount = GetMerchantItemCostInfo(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantNumItems)) (`number`)
+- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](Merchant.md#getmerchantnumitems)) (`number`)
 
 **Returns:**
 
-- `currencyCount` - Number of different currencies required to purchase the item (see [`GetMerchantItemCostItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantItemCostItem) for amount of each item currency required) (`number`)
+- `currencyCount` - Number of different currencies required to purchase the item (see [`GetMerchantItemCostItem()`](Merchant.md#getmerchantitemcostitem) for amount of each item currency required) (`number`)
 
 ---
 
@@ -247,14 +247,14 @@ texture, value, link, name = GetMerchantItemCostItem(index, currency)
 
 **Arguments:**
 
-- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantNumItems)) (`number`)
-- `currency` - Index of one of the item currencies required to purchase the item (between 1 and [`GetMerchantItemCostInfo(index)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantItemCostInfo)) (`number`)
+- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](Merchant.md#getmerchantnumitems)) (`number`)
+- `currency` - Index of one of the item currencies required to purchase the item (between 1 and [`GetMerchantItemCostInfo(index)`](Merchant.md#getmerchantitemcostinfo)) (`number`)
 
 **Returns:**
 
 - `texture` - Path to an icon texture for the currency item (`string`)
 - `value` - Amount of the currency required for purchase (`number`)
-- `link` - A hyperlink for the currency item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the currency item (`string`, [hyperlink](../types/hyperlink.md))
 - `name` - The localized name of the currency (`string`)
 
 ---
@@ -271,7 +271,7 @@ name, texture, price, quantity, numAvailable, isUsable, extendedCost = GetMercha
 
 **Arguments:**
 
-- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantNumItems)) (`number`)
+- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](Merchant.md#getmerchantnumitems)) (`number`)
 
 **Returns:**
 
@@ -281,7 +281,7 @@ name, texture, price, quantity, numAvailable, isUsable, extendedCost = GetMercha
 - `quantity` - Number of stacked items per purchase (`number`)
 - `numAvailable` - Number of items available for purchase, if the vendor has a limited stock of the item; -1 if the vendor has an unlimited supply of the item (`number`)
 - `isUsable` - 1 if the player can use or equip the item; otherwise nil (`1nil`)
-- `extendedCost` - 1 if the item's price uses one or more alternate currencies (for which details can be found via [`GetMerchantItemCostInfo(index)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantItemCostInfo)); otherwise nil (`1nil`)
+- `extendedCost` - 1 if the item's price uses one or more alternate currencies (for which details can be found via [`GetMerchantItemCostInfo(index)`](Merchant.md#getmerchantitemcostinfo)); otherwise nil (`1nil`)
 
 ---
 
@@ -297,17 +297,17 @@ link = GetMerchantItemLink(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantNumItems)) (`number`)
+- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](Merchant.md#getmerchantnumitems)) (`number`)
 
 **Returns:**
 
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
 ## GetMerchantItemMaxStack
 
-Returns the maximum number of an item allowed in a single purchase. Determines the largest value usable for the second argument (`quantity`) of [`BuyMerchantItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/BuyMerchantItem) when purchasing the item. For most items, this is the same as the maximum stack size of the item.
+Returns the maximum number of an item allowed in a single purchase. Determines the largest value usable for the second argument (`quantity`) of [`BuyMerchantItem()`](Merchant.md#buymerchantitem-confirmation) when purchasing the item. For most items, this is the same as the maximum stack size of the item.
 
 **Signature:**
 
@@ -317,7 +317,7 @@ maxStack = GetMerchantItemMaxStack(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantNumItems)) (`number`)
+- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](Merchant.md#getmerchantnumitems)) (`number`)
 
 **Returns:**
 
@@ -359,7 +359,7 @@ numBuybackItems = GetNumBuybackItems()
 
 ## GetRepairAllCost
 
-Returns the cost to repair all of the player's damaged items. Returns `0, nil` if none of the player's items are damaged. Only returns valid data while interacting with a vendor which allows repairs (i.e. for whom [`CanMerchantRepair()`](https://web.archive.org/web/20100105233108/http://wowprogramming.com/docs/api/CanMerchantRepair) returns `1`).
+Returns the cost to repair all of the player's damaged items. Returns `0, nil` if none of the player's items are damaged. Only returns valid data while interacting with a vendor which allows repairs (i.e. for whom [`CanMerchantRepair()`](Merchant.md#canmerchantrepair) returns `1`).
 
 **Signature:**
 
@@ -376,7 +376,7 @@ repairAllCost, canRepair = GetRepairAllCost()
 
 ## InRepairMode
 
-Returns whether the item repair cursor mode is currently active. Repair mode is entered by calling [`ShowRepairCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/ShowRepairCursor) and exited by calling [`HideRepairCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/HideRepairCursor); while in repair mode, calling [`PickupContainerItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PickupContainerItem) or [`PickupInventoryItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PickupInventoryItem) will attempt to repair the item (and deduct the cost of such from the player's savings) instead of putting it on the cursor.
+Returns whether the item repair cursor mode is currently active. Repair mode is entered by calling [`ShowRepairCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/ShowRepairCursor) and exited by calling [`HideRepairCursor()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/HideRepairCursor); while in repair mode, calling [`PickupContainerItem()`](Container.md#pickupcontaineritem) or [`PickupInventoryItem()`](Cursor.md#pickupinventoryitem) will attempt to repair the item (and deduct the cost of such from the player's savings) instead of putting it on the cursor.
 
 **Signature:**
 
@@ -402,7 +402,7 @@ PickupMerchantItem(index)
 
 **Arguments:**
 
-- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMerchantNumItems)) (`number`)
+- `index` - Index of an item in the vendor's listing (between 1 and [`GetMerchantNumItems()`](Merchant.md#getmerchantnumitems)) (`number`)
 
 ---
 
@@ -426,7 +426,7 @@ RepairAllItems([useGuildMoney])
 
 Changes the cursor to prepare for selling an item in the player's bags to a vendor. Only changes the cursor image and mode if the given `container` and `slot` contain an item.
 
-While the cursor is in "sell" mode, [`UseContainerItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/UseContainerItem) sells the item to the vendor instead of using it.
+While the cursor is in "sell" mode, [`UseContainerItem()`](Container.md#usecontaineritem-protected) sells the item to the vendor instead of using it.
 
 **Signature:**
 
@@ -436,16 +436,16 @@ ShowContainerSellCursor(container, slot)
 
 **Arguments:**
 
-- `container` - Index of one of the player's bags or other containers (`number`, [containerID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerID))
-- `slot` - Index of an item slot within the container (`number`, [containerSlotID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#containerSlotID))
+- `container` - Index of one of the player's bags or other containers (`number`, [containerID](../types/containerID.md))
+- `slot` - Index of an item slot within the container (`number`, [containerSlotID](../types/containerSlotID.md))
 
 ---
 
 ## ShowRepairCursor
 
-Puts the cursor in item repair mode. Unlike most other cursor functions, this functions changes the behavior as well as the appearance of the mouse cursor: while repair mode is active, calling [`PickupContainerItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PickupContainerItem) or [`PickupInventoryItem()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/PickupInventoryItem) will attempt to repair the item (and deduct the cost of such from the player's savings) instead of putting it on the cursor.
+Puts the cursor in item repair mode. Unlike most other cursor functions, this functions changes the behavior as well as the appearance of the mouse cursor: while repair mode is active, calling [`PickupContainerItem()`](Container.md#pickupcontaineritem) or [`PickupInventoryItem()`](Cursor.md#pickupinventoryitem) will attempt to repair the item (and deduct the cost of such from the player's savings) instead of putting it on the cursor.
 
-Only has effect while the player is interacting with a vendor which can perform repairs; i.e. between the [`MERCHANT_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_SHOW) and [`MERCHANT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_CLOSED) events, and only if [`CanMerchantRepair()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/CanMerchantRepair) returns `1`.
+Only has effect while the player is interacting with a vendor which can perform repairs; i.e. between the [`MERCHANT_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_SHOW) and [`MERCHANT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_CLOSED) events, and only if [`CanMerchantRepair()`](Merchant.md#canmerchantrepair) returns `1`.
 
 **Signature:**
 

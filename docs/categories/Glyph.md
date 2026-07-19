@@ -20,7 +20,7 @@ link = GetGlyphLink(socket, talentGroup)
 
 **Arguments:**
 
-- `socket` - Which glyph socket to query (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#glyphIndex))
+- `socket` - Which glyph socket to query (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](../types/glyphIndex.md))
 - `talentGroup` - Which set of glyphs to query, if the player has Dual Talent Specialization enabled (`number`)
   - `1` - Primary Talents
   - `2` - Secondary Talents
@@ -28,7 +28,7 @@ link = GetGlyphLink(socket, talentGroup)
 
 **Returns:**
 
-- `link` - A hyperlink for the glyph socket's contents, or "" if the socket is empty (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the glyph socket's contents, or "" if the socket is empty (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -46,7 +46,7 @@ enabled, glyphType, glyphTooltipIndex, glyphSpell, icon = GetGlyphSocketInfo(soc
 
 **Arguments:**
 
-- `socket` - Which glyph socket to query (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#glyphIndex))
+- `socket` - Which glyph socket to query (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](../types/glyphIndex.md))
 - `talentGroup` - Which set of glyphs to query, if the player has Dual Talent Specialization enabled (`number`)
   - `1` - Primary Talents
   - `2` - Secondary Talents
@@ -88,7 +88,7 @@ match = GlyphMatchesSocket(socket)
 
 **Arguments:**
 
-- `socket` - Which glyph socket to query (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#glyphIndex))
+- `socket` - Which glyph socket to query (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](../types/glyphIndex.md))
 
 **Returns:**
 
@@ -110,7 +110,7 @@ PlaceGlyphInSocket(socket)
 
 **Arguments:**
 
-- `socket` - Which glyph socket to apply the glyph to (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#glyphIndex))
+- `socket` - Which glyph socket to apply the glyph to (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](../types/glyphIndex.md))
 
 ---
 
@@ -126,7 +126,7 @@ RemoveGlyphFromSocket(socket)
 
 **Arguments:**
 
-- `socket` - Which glyph socket to query (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#glyphIndex))
+- `socket` - Which glyph socket to query (between 1 and `NUM_GLYPH_SLOTS`) (`number`, [glyphIndex](../types/glyphIndex.md))
 
 ---
 

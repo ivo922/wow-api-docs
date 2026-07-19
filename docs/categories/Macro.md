@@ -19,13 +19,13 @@ index = CreateMacro("name", icon, "body", perCharacter)
 **Arguments:**
 
 - `name` - Name for the new macro (up to 16 characters); need not be unique, though duplicate names can cause issues for other Macro API functions (`string`)
-- `icon` - Index of a macro icon (between 1 and [`GetNumMacroIcons()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumMacroIcons)) (`number`)
+- `icon` - Index of a macro icon (between 1 and [`GetNumMacroIcons()`](Macro.md#getnummacroicons)) (`number`)
 - `body` - Body of the macro (up to 255 characters) (`string`)
 - `perCharacter` - 1 if the macro should be stored as a character-specific macro; otherwise nil (`1nil`)
 
 **Returns:**
 
-- `index` - Index of the newly created macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of the newly created macro (`number`, [macroID](../types/macroID.md))
 
 **Examples:**
 
@@ -41,7 +41,7 @@ local index = CreateMacro("Heal", 73, "/cast Flash Heal\n/say Let the light of E
 
 ## CursorHasMacro
 
-Returns whether a macro is on the cursor. See [`GetCursorInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetCursorInfo) for more detailed information.
+Returns whether a macro is on the cursor. See [`GetCursorInfo()`](Cursor.md#getcursorinfo) for more detailed information.
 
 **Signature:**
 
@@ -67,7 +67,7 @@ DeleteMacro(index) or DeleteMacro("name")
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 
 ---
@@ -86,14 +86,14 @@ newIndex = EditMacro(index, "name", "iconTexture", "body")
 
 **Arguments:**
 
-- `index` - Existing index of the macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Existing index of the macro (`number`, [macroID](../types/macroID.md))
 - `name` - New name for the macro (up to 16 characters); nil to keep an existing name (`string`)
 - `iconTexture` - name of icon texture; nil to keep an existing texture (`string`)
 - `body` - Body of the macro (up to 255 characters); nil to keep the existing body (`string`)
 
 **Returns:**
 
-- `newIndex` - Index at which the macro is now saved (may differ from input `index` if the macro's name was changed, as macros are saved in alphabetical order) (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `newIndex` - Index at which the macro is now saved (may differ from input `index` if the macro's name was changed, as macros are saved in alphabetical order) (`number`, [macroID](../types/macroID.md))
 
 ---
 
@@ -109,7 +109,7 @@ body = GetMacroBody(index) or GetMacroBody("name")
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 
 **Returns:**
@@ -130,7 +130,7 @@ texture = GetMacroIconInfo(index)
 
 **Arguments:**
 
-- `index` - Index of a macro icon option (between 1 and [`GetNumMacroIcons()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumMacroIcons)) (`number`)
+- `index` - Index of a macro icon option (between 1 and [`GetNumMacroIcons()`](Macro.md#getnummacroicons)) (`number`)
 
 **Returns:**
 
@@ -154,7 +154,7 @@ index = GetMacroIndexByName("name")
 
 **Returns:**
 
-- `index` - Index of the named macro, or 0 if no macro by that name exists (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of the named macro, or 0 if no macro by that name exists (`number`, [macroID](../types/macroID.md))
 
 ---
 
@@ -170,7 +170,7 @@ name, texture, body = GetMacroInfo(index) or GetMacroInfo("name")
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 
 **Returns:**
@@ -193,13 +193,13 @@ name, link = GetMacroItem(index) or GetMacroItem("name")
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 
 **Returns:**
 
 - `name` - Name of the item (`string`)
-- `link` - A hyperlink for the item (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `link` - A hyperlink for the item (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -215,7 +215,7 @@ texture = GetMacroItemIconInfo(index)
 
 **Arguments:**
 
-- `index` - Index of an item icon option (between 1 and [`GetNumMacroItemIcons()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumMacroItemIcons)) (`number`)
+- `index` - Index of an item icon option (between 1 and [`GetNumMacroItemIcons()`](Macro.md#getnummacroitemicons)) (`number`)
 
 **Returns:**
 
@@ -235,7 +235,7 @@ name, rank = GetMacroSpell(index) or GetMacroSpell("name")
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 
 **Returns:**
@@ -306,7 +306,7 @@ index = GetRunningMacro()
 
 **Returns:**
 
-- `index` - Index of the currently running macro, or nil if no macro is running (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of the currently running macro, or nil if no macro is running (`number`, [macroID](../types/macroID.md))
 
 ---
 
@@ -343,7 +343,7 @@ PickupMacro(index) or PickupMacro("name")
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 
 ---
@@ -360,7 +360,7 @@ RunMacro(index [, ""button""]) or RunMacro("name" [, ""button""])
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 - `"button"` - The mouse button used to click the macro; may be used by `[button:`*x*`]` options in the macro (`string`)
 
@@ -406,7 +406,7 @@ action, target = SecureCmdOptionParse("cmd")
 
 ## SetMacroItem
 
-Changes the item used for dynamic feedback for a macro. Normally a macro uses the item or spell specified by its commands to provide dynamic feedback when placed on an action button (through the Action APIs, e.g. [`IsActionUsable()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/IsActionUsable)): e.g. if the macro uses a consumable item, the button will show the number of items remaining; if the macro uses an item with a cooldown, the button will show the state of the cooldown. This function allows overriding the item or spell used by the macro with another item -- the given item's state will be used for such feedback instead of the item or spell used by the macro.
+Changes the item used for dynamic feedback for a macro. Normally a macro uses the item or spell specified by its commands to provide dynamic feedback when placed on an action button (through the Action APIs, e.g. [`IsActionUsable()`](Action.md#isusableaction)): e.g. if the macro uses a consumable item, the button will show the number of items remaining; if the macro uses an item with a cooldown, the button will show the state of the cooldown. This function allows overriding the item or spell used by the macro with another item -- the given item's state will be used for such feedback instead of the item or spell used by the macro.
 
 **Signature:**
 
@@ -416,7 +416,7 @@ SetMacroItem(index, "item" [, target]) or SetMacroItem("name", "item" [, target]
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 - `item` - Name of an item to use for the macro (`string`)
 - `target` - A unit to use as target of the item (affects the macro's range indicator) (`unitid`)
@@ -425,7 +425,7 @@ SetMacroItem(index, "item" [, target]) or SetMacroItem("name", "item" [, target]
 
 ## SetMacroSpell
 
-Changes the spell used for dynamic feedback for a macro. Normally a macro uses the item or spell specified by its commands to provide dynamic feedback when placed on an action button (through the Action APIs, e.g. [`IsActionUsable()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/IsActionUsable)): e.g. if the macro uses a consumable item, the button will show the number of items remaining; if the macro uses an item with a cooldown, the button will show the state of the cooldown. This function allows overriding the item or spell used by the macro with another item -- the given item's state will be used for such feedback instead of the item or spell used by the macro.
+Changes the spell used for dynamic feedback for a macro. Normally a macro uses the item or spell specified by its commands to provide dynamic feedback when placed on an action button (through the Action APIs, e.g. [`IsActionUsable()`](Action.md#isusableaction)): e.g. if the macro uses a consumable item, the button will show the number of items remaining; if the macro uses an item with a cooldown, the button will show the state of the cooldown. This function allows overriding the item or spell used by the macro with another item -- the given item's state will be used for such feedback instead of the item or spell used by the macro.
 
 **Signature:**
 
@@ -435,7 +435,7 @@ SetMacroSpell(index, "spell" [, target]) or SetMacroSpell("name", "spell" [, tar
 
 **Arguments:**
 
-- `index` - Index of a macro (`number`, [macroID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#macroID))
+- `index` - Index of a macro (`number`, [macroID](../types/macroID.md))
 - `name` - Name of a macro (`string`)
 - `spell` - Name of a spell to use for the macro (`string`)
 - `target` - A unit to use as target of the spell (affects the macro's range indicator) (`unitid`)

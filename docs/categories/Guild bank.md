@@ -18,7 +18,7 @@ AutoStoreGuildBankItem(tab, slot)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 - `slot` - Index of an item slot in the guild bank tab (between 1 and `MAX_GUILDBANK_SLOTS_PER_TAB`) (`number`)
 
 ---
@@ -47,7 +47,7 @@ canEdit = CanEditGuildTabInfo(tab)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 
 **Returns:**
 
@@ -127,7 +127,7 @@ GetCurrentGuildBankTab(currentTab)
 
 **Arguments:**
 
-- `currentTab` - Index of the selected guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `currentTab` - Index of the selected guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 
 ---
 
@@ -143,7 +143,7 @@ texture, count, locked = GetGuildBankItemInfo(tab, slot)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 - `slot` - Index of an item slot in the guild bank tab (between 1 and `MAX_GUILDBANK_SLOTS_PER_TAB`) (`number`)
 
 **Returns:**
@@ -166,12 +166,12 @@ item = GetGuildBankItemLink(tab, slot)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 - `slot` - Index of an item slot in the guild bank tab (between 1 and `MAX_GUILDBANK_SLOTS_PER_TAB`) (`number`)
 
 **Returns:**
 
-- `item` - A hyperlink for the contents of the slot (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `item` - A hyperlink for the contents of the slot (`string`, [hyperlink](../types/hyperlink.md))
 
 ---
 
@@ -203,7 +203,7 @@ type, name, year, month, day, hour = GetGuildBankMoneyTransaction(index)
 
 **Arguments:**
 
-- `index` - Index of a transaction in the money log (between 1 and [`GetNumGuildBankMoneyTransactions()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankMoneyTransactions)) (`number`)
+- `index` - Index of a transaction in the money log (between 1 and [`GetNumGuildBankMoneyTransactions()`](Guild bank.md#getnumguildbankmoneytransactions)) (`number`)
 
 **Returns:**
 
@@ -247,7 +247,7 @@ name, icon, isViewable, canDeposit, numWithdrawals, remainingWithdrawals = GetGu
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 
 **Returns:**
 
@@ -272,7 +272,7 @@ canView, canDeposit, canUpdateText, numWithdrawls = GetGuildBankTabPermissions(t
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 
 **Returns:**
 
@@ -285,7 +285,7 @@ canView, canDeposit, canUpdateText, numWithdrawls = GetGuildBankTabPermissions(t
 
 ## GetGuildBankText
 
-Returns text associated with a guild bank tab. Only returns valid data after [`QueryGuildBankText()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/QueryGuildBankText) has been called to retrieve the text from the server and the following [`GUILDBANK_UPDATE_TEXT`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANK_UPDATE_TEXT) event has fired.
+Returns text associated with a guild bank tab. Only returns valid data after [`QueryGuildBankText()`](Guild bank.md#queryguildbanktext-server) has been called to retrieve the text from the server and the following [`GUILDBANK_UPDATE_TEXT`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANK_UPDATE_TEXT) event has fired.
 
 **Signature:**
 
@@ -295,7 +295,7 @@ text = GetGuildBankText(tab)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 
 **Returns:**
 
@@ -305,7 +305,7 @@ text = GetGuildBankText(tab)
 
 ## GetGuildBankTransaction
 
-Returns information about a transaction in the log for a guild bank tab. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANKLOG_UPDATE) event which fires after calling [`QueryGuildBankLog()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/QueryGuildBankLog).
+Returns information about a transaction in the log for a guild bank tab. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANKLOG_UPDATE) event which fires after calling [`QueryGuildBankLog()`](Guild bank.md#queryguildbanklog-server).
 
 **Signature:**
 
@@ -315,8 +315,8 @@ type, name, itemLink, count, tab1, tab2, year, month, day, hour = GetGuildBankTr
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
-- `index` - Index of a log entry (between 1 and [`GetNumGuildBankTransactions(tab)`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTransactions)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
+- `index` - Index of a log entry (between 1 and [`GetNumGuildBankTransactions(tab)`](Guild bank.md#getnumguildbanktransactions)) (`number`)
 
 **Returns:**
 
@@ -326,7 +326,7 @@ type, name, itemLink, count, tab1, tab2, year, month, day, hour = GetGuildBankTr
   - `repair`
   - `withdraw`
 - `name` - Name of the guild member responsible for the transaction (`string`)
-- `itemLink` - A hyperlink for the item involved in the transaction (`string`, [hyperlink](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#hyperlink))
+- `itemLink` - A hyperlink for the item involved in the transaction (`string`, [hyperlink](../types/hyperlink.md))
 - `count` - Number of stacked items involved in the transaction (`number`)
 - `tab1` - Index of the source tab, if the item was moved between tabs (`number`)
 - `tab2` - Index of the destination tab, if the item was moved between tabs (`number`)
@@ -403,7 +403,7 @@ numTabs = GetNumGuildBankTabs()
 
 ## GetNumGuildBankTransactions
 
-Returns the number of entries in a guild bank tab's transaction log. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](https://web.archive.org/web/20111212161357/http://wowprogramming.com/docs/events/GUILDBANKLOG_UPDATE) event which fires after calling [`QueryGuildBankLog()`](https://web.archive.org/web/20111212161357/http://wowprogramming.com/docs/api/QueryGuildBankLog).
+Returns the number of entries in a guild bank tab's transaction log. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](https://web.archive.org/web/20111212161357/http://wowprogramming.com/docs/events/GUILDBANKLOG_UPDATE) event which fires after calling [`QueryGuildBankLog()`](Guild bank.md#queryguildbanklog-server).
 
 **Signature:**
 
@@ -413,7 +413,7 @@ numTransactions = GetNumGuildBankTransactions(tab)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20111212161357/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 
 **Returns:**
 
@@ -440,7 +440,7 @@ PickupGuildBankItem(tab, slot)
 
 ## PickupGuildBankMoney
 
-Puts money from the guild bank onto the cursor. Money is not actually withdrawn from the guild bank; in the default UI, when the cursor "puts" the money into one of the player's bags, it calls [`WithdrawGuildBankMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/WithdrawGuildBankMoney).
+Puts money from the guild bank onto the cursor. Money is not actually withdrawn from the guild bank; in the default UI, when the cursor "puts" the money into one of the player's bags, it calls [`WithdrawGuildBankMoney()`](Guild bank.md#withdrawguildbankmoney-confirmation).
 
 **Signature:**
 
@@ -466,7 +466,7 @@ QueryGuildBankLog(tab)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 
 ---
 
@@ -482,13 +482,13 @@ QueryGuildBankTab(tab)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 
 ---
 
 ## QueryGuildBankText `server`
 
-Requests guild bank tab info text from the server. The text is not returned immediately; the [`GUILDBANK_UPDATE_TEXT`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANK_UPDATE_TEXT) event fires when text is available for retrieval by the [`GetGuildBankText()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetGuildBankText) function.
+Requests guild bank tab info text from the server. The text is not returned immediately; the [`GUILDBANK_UPDATE_TEXT`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANK_UPDATE_TEXT) event fires when text is available for retrieval by the [`GetGuildBankText()`](Guild bank.md#getguildbanktext) function.
 
 **Signature:**
 
@@ -498,7 +498,7 @@ QueryGuildBankText(tab)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 
 ---
 
@@ -514,7 +514,7 @@ SetCurrentGuildBankTab(tab)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 
 ---
 
@@ -530,9 +530,9 @@ SetGuildBankTabInfo(tab, "name", iconIndex)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 - `name` - New name for the tab (`string`)
-- `iconIndex` - Index of an icon for the tab (between 1 and [`GetNumMacroItemIcons()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumMacroItemIcons)) (`number`)
+- `iconIndex` - Index of an icon for the tab (between 1 and [`GetNumMacroItemIcons()`](Macro.md#getnummacroitemicons)) (`number`)
 
 ---
 
@@ -548,7 +548,7 @@ SetGuildBankTabPermissions(tab, permission, enabled)
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 - `permission` - Index of a permission to edit (`number`)
   - `1` - View tab
   - `2` - Deposit items
@@ -574,7 +574,7 @@ SetGuildBankText(tab, "text")
 
 **Arguments:**
 
-- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumGuildBankTabs)) (`number`)
+- `tab` - Index of a guild bank tab (between 1 and [`GetNumGuildBankTabs()`](Guild bank.md#getnumguildbanktabs)) (`number`)
 - `text` - New info text for the tab (`string`)
 
 ---
@@ -605,7 +605,7 @@ SplitGuildBankItem(tab, slot, amount)
 
 ## WithdrawGuildBankMoney `confirmation`
 
-Attempts to withdraw money from the guild bank. Causes a [`PLAYER_MONEY`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_MONEY) event to fire, indicating the amount withdrawn has been added to the player's total (see [`GetMoney()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetMoney)). Causes an error or system message if `amount` exceeds the amount of money in the guild bank or the player's allowed daily withdrawal amount.
+Attempts to withdraw money from the guild bank. Causes a [`PLAYER_MONEY`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_MONEY) event to fire, indicating the amount withdrawn has been added to the player's total (see [`GetMoney()`](Money.md#getmoney)). Causes an error or system message if `amount` exceeds the amount of money in the guild bank or the player's allowed daily withdrawal amount.
 
 **Signature:**
 

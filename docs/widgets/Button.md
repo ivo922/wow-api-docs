@@ -48,7 +48,7 @@ Button:ClearAllPoints()
 
 ### Button:Click
 
-Performs a (virtual) mouse click on the button. Causes any of the button's mouse click-related [scripts](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) to be run as if the button were clicked by the user.
+Performs a (virtual) mouse click on the button. Causes any of the button's mouse click-related [scripts](#script-handlers) to be run as if the button were clicked by the user.
 
 Calling this method can result in an error if the button inherits from a secure frame template and performs protected actions.
 
@@ -1258,7 +1258,7 @@ Button:RegisterForClicks(...)
 
 **Arguments:**
 
-- `...` - A list of strings, each the combination of a button name and click action for which the button's click-related [script](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/scripts) handlers should be run. Possible values: (`list`)
+- `...` - A list of strings, each the combination of a button name and click action for which the button's click-related [script](#script-handlers) handlers should be run. Possible values: (`list`)
   - `Button4Down`
   - `Button4Up`
   - `Button5Down`
@@ -1880,7 +1880,7 @@ Button:StopMovingOrSizing()
 
 ### Button:UnlockHighlight
 
-Unlocks the button's highlight state. Can be used after a call to [`:LockHighlight()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/widget/Button/LockHighlight) to restore the button's normal mouseover behavior.
+Unlocks the button's highlight state. Can be used after a call to [`:LockHighlight()`](Button.md#buttonlockhighlight) to restore the button's normal mouseover behavior.
 
 **Signature:**
 

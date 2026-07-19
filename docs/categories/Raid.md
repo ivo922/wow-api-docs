@@ -33,7 +33,7 @@ ClearPartyAssignment("assignment" [, "unit"]) or ClearPartyAssignment("assignmen
 - `assignment` - A group role to assign to the unit (`string`)
   - `MAINASSIST` - Remove the main assist role
   - `MAINTANK` - Remove the main tank role
-- `unit` - A unit in the player's party or raid (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the player's party or raid (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit in the player's party or raid (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 
@@ -91,7 +91,7 @@ DemoteAssistant("unit") or DemoteAssistant("name" [, exactMatch])
 
 **Arguments:**
 
-- `unit` - A unit in the raid (`string`, [unitID](https://web.archive.org/web/20111212184456/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the raid (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit in the raid (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 
@@ -140,7 +140,7 @@ isAssigned = GetPartyAssignment("assignment", "unit") or GetPartyAssignment("ass
 - `assignment` - A group role assignment (`string`)
   - `MAINASSIST` - Return whether the unit is assigned the main assist role
   - `MAINTANK` - Return whether the unit is assigned the main tank role
-- `unit` - A unit in the player's party or raid (`string`, [unitID](https://web.archive.org/web/20100712064245/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the player's party or raid (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit in the player's party or raid (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 
@@ -204,7 +204,7 @@ raidIndex = GetRaidRosterSelection()
 
 **Returns:**
 
-- `raidIndex` - Index of the raid member (between 1 and [`GetNumRaidMembers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumRaidMembers)); matches the numeric part of the unit's `raid` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID), e.g. 21 for `raid21` (`number`)
+- `raidIndex` - Index of the raid member (between 1 and [`GetNumRaidMembers()`](Raid.md#getnumraidmembers)); matches the numeric part of the unit's `raid` [`unitID`](../types/unitID.md), e.g. 21 for `raid21` (`number`)
 
 ---
 
@@ -220,7 +220,7 @@ index = GetRaidTargetIndex("unit") or GetRaidTargetIndex("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query; only valid for `player`, `pet`, and party/raid members (`string`)
 
 **Returns:**
@@ -250,7 +250,7 @@ status = GetReadyCheckStatus("unit")
 
 **Arguments:**
 
-- `unit` - A unit in the player's party or raid (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the player's party or raid (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
@@ -382,7 +382,7 @@ PromoteToAssistant("unit") or PromoteToAssistant("name" [, exactMatch])
 
 **Arguments:**
 
-- `unit` - A unit in the raid (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the raid (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit in the raid (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 
@@ -400,7 +400,7 @@ PromoteToLeader("unit") or PromoteToLeader("name" [, exactMatch])
 
 **Arguments:**
 
-- `unit` - A unit in the party or raid (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the party or raid (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a party member (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 
@@ -421,7 +421,7 @@ SetPartyAssignment("assignment", "unit") or SetPartyAssignment("assignment", "na
 - `assignment` - A group role to assign to the unit (`string`)
   - `MAINASSIST` - Assign the main assist role
   - `MAINTANK` - Assign the main tank role
-- `unit` - A unit in the player's party or raid (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit in the player's party or raid (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit in the player's party or raid (`string`)
 - `exactMatch` - True to check only units whose name exactly matches the `name` given; false to allow partial matches (`boolean`)
 
@@ -439,13 +439,13 @@ SetRaidRosterSelection(index)
 
 **Arguments:**
 
-- `index` - Index of the raid member (between 1 and [`GetNumRaidMembers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumRaidMembers)); matches the numeric part of the unit's `raid` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID), e.g. 21 for `raid21` (`number`)
+- `index` - Index of the raid member (between 1 and [`GetNumRaidMembers()`](Raid.md#getnumraidmembers)); matches the numeric part of the unit's `raid` [`unitID`](../types/unitID.md), e.g. 21 for `raid21` (`number`)
 
 ---
 
 ## SetRaidSubgroup
 
-Moves a raid member to a non-full raid subgroup. Only has effect if the player is the raid leader or a raid assistant. To put a member into a full subgroup (switching places with a member of that group), see [`SwapRaidSubgroup()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SwapRaidSubgroup).
+Moves a raid member to a non-full raid subgroup. Only has effect if the player is the raid leader or a raid assistant. To put a member into a full subgroup (switching places with a member of that group), see [`SwapRaidSubgroup()`](Raid.md#swapraidsubgroup).
 
 **Signature:**
 
@@ -455,7 +455,7 @@ SetRaidSubgroup(index, subgroup)
 
 **Arguments:**
 
-- `index` - Index of the raid member (between 1 and [`GetNumRaidMembers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumRaidMembers)); matches the numeric part of the unit's `raid` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID), e.g. 21 for `raid21` (`number`)
+- `index` - Index of the raid member (between 1 and [`GetNumRaidMembers()`](Raid.md#getnumraidmembers)); matches the numeric part of the unit's `raid` [`unitID`](../types/unitID.md), e.g. 21 for `raid21` (`number`)
 - `subgroup` - Index of a raid subgroup (between 1 and `MAX_RAID_GROUPS`) (`number`)
 
 ---
@@ -472,7 +472,7 @@ SetRaidTarget("unit", index) or SetRaidTarget("name", index)
 
 **Arguments:**
 
-- `unit` - A unit to mark (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to mark (`string`, [unitID](../types/unitID.md))
 - `name` - Name of a unit to mark (`string`)
 - `index` - Index of a target marker (`number`)
   - `0` - Clear any raid target markers
@@ -489,7 +489,7 @@ SetRaidTarget("unit", index) or SetRaidTarget("name", index)
 
 ## SwapRaidSubgroup
 
-Swaps two raid members between subgroups in the raid. Only has effect if the player is the raid leader or a raid assistant. To move a member into a non-full subgroup without switching places with another member, see [`SetRaidSubgroup()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/SetRaidSubgroup).
+Swaps two raid members between subgroups in the raid. Only has effect if the player is the raid leader or a raid assistant. To move a member into a non-full subgroup without switching places with another member, see [`SetRaidSubgroup()`](Raid.md#setraidsubgroup).
 
 **Signature:**
 
@@ -499,7 +499,7 @@ SwapRaidSubgroup(index1, index2)
 
 **Arguments:**
 
-- `index1` - Index of the first raid member (between 1 and [`GetNumRaidMembers()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetNumRaidMembers)); matches the numeric part of the unit's `raid` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID), e.g. 21 for `raid21` (`number`)
+- `index1` - Index of the first raid member (between 1 and [`GetNumRaidMembers()`](Raid.md#getnumraidmembers)); matches the numeric part of the unit's `raid` [`unitID`](../types/unitID.md), e.g. 21 for `raid21` (`number`)
 - `index2` - Index of the other raid member (`number`)
 
 ---
@@ -535,11 +535,11 @@ inRaid = UnitInRaid("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 
-- `inRaid` - Index of the unit in the raid (matches the numeric part of the unit's `raid` [`unitID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID) minus 1; e.g. returns 0 for `raid1`, 12 for `raid13`, etc) (`number`)
+- `inRaid` - Index of the unit in the raid (matches the numeric part of the unit's `raid` [`unitID`](../types/unitID.md) minus 1; e.g. returns 0 for `raid1`, 12 for `raid13`, etc) (`number`)
 
 ---
 
@@ -555,7 +555,7 @@ leader = UnitIsPartyLeader("unit") or UnitIsPartyLeader("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -576,7 +576,7 @@ leader = UnitIsRaidOfficer("unit") or UnitIsRaidOfficer("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -597,7 +597,7 @@ inParty = UnitPlayerOrPetInRaid("unit") or UnitPlayerOrPetInRaid("name")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 - `name` - The name of a unit to query (`string`)
 
 **Returns:**
@@ -618,7 +618,7 @@ targetVehicle = UnitTargetsVehicleInRaidUI("unit")
 
 **Arguments:**
 
-- `unit` - A unit to query (`string`, [unitID](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#unitID))
+- `unit` - A unit to query (`string`, [unitID](../types/unitID.md))
 
 **Returns:**
 

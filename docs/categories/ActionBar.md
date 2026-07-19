@@ -79,7 +79,7 @@ offset = GetBonusBarOffset()
 
 Returns information about special actions available while the player possesses another unit. Used in the default UI to show additional special actions (e.g. canceling possession) while the player possesses another unit through an ability such as Eyes of the Beast or Mind Control.
 
-Does not apply to actions (spells) belonging to the possessed unit; those are regular actions (see [`GetActionInfo()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetActionInfo)) whose [`actionID`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_types#actionID)s begin at `((NUM_ACTIONBAR_PAGES - 1 +` [`GetBonusBarOffset()`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api/GetBonusBarOffset)`) * NUM_ACTIONBAR_BUTTONS + 1)`.
+Does not apply to actions (spells) belonging to the possessed unit; those are regular actions (see [`GetActionInfo()`](Action.md#getactioninfo)) whose [`actionID`](../types/actionID.md)s begin at `((NUM_ACTIONBAR_PAGES - 1 +` [`GetBonusBarOffset()`](ActionBar.md#getbonusbaroffset)`) * NUM_ACTIONBAR_BUTTONS + 1)`.
 
 **Signature:**
 
