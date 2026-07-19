@@ -106,8 +106,8 @@ def main() -> None:
     payload = {
         "meta": {
             "description": (
-                "Cataclysm-era World of Warcraft API reference "
-                "(wowprogramming.com archive, ~2010). Not retail/modern WoW."
+                "Late WotLK (≈3.3.5 / July 2010) World of Warcraft API reference "
+                "(wowprogramming.com archive). Not Cataclysm launch / not retail-modern WoW."
             ),
             "unique_functions": len(by_name),
             "function_entries": total,

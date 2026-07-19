@@ -2,7 +2,7 @@
 
 ← [Home](index.md)
 
-Cataclysm-era Widget API from the [wowprogramming.com Widgets listing](https://web.archive.org/web/20100726120937/http://wowprogramming.com/docs/widgets) (Wayback, July 2010).
+Late WotLK (≈3.3.5) Widget API from the [wowprogramming.com Widgets listing](https://web.archive.org/web/20100726120937/http://wowprogramming.com/docs/widgets) (Wayback, July 2010).
 
 **37** widget types.
 

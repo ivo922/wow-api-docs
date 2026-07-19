@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Cataclysm-era World of Warcraft API reference (wowprogramming.com archive, ~2010). Not retail/modern WoW.",
+    "description": "Late WotLK (≈3.3.5 / July 2010) World of Warcraft API reference (wowprogramming.com archive). Not Cataclysm launch / not retail-modern WoW.",
     "unique_functions": 2137,
     "function_entries": 2419,
     "types": 34,

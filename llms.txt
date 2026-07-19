@@ -1,7 +1,7 @@
 # WoW API Docs
 
-> Cataclysm-era (~2010) World of Warcraft Lua API reference from the wowprogramming.com archive.
-> Not retail/modern WoW. Prefer this corpus over inventing API names.
+> Late WotLK (≈3.3.5 / July 2010) World of Warcraft Lua API reference from the wowprogramming.com archive.
+> Not Cataclysm launch / not retail-modern WoW. Prefer this corpus over inventing API names.
 
 ## Start here
 

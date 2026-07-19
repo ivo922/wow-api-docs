@@ -1,5 +1,5 @@
 site_name: WoW API Docs
-site_description: "Cataclysm-era World of Warcraft API reference (wowprogramming.com archive)"
+site_description: "Late WotLK (≈3.3.5) WoW API reference (wowprogramming.com, July 2010 archive)"
 site_url: !ENV [MKDOCS_SITE_URL, "http://127.0.0.1:8000/"]
 
 docs_dir: docs

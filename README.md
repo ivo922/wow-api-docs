@@ -1,6 +1,6 @@
 # WoW API Docs
 
-Cataclysm-era World of Warcraft API reference, scraped from the [wowprogramming.com archive](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_categories).
+Late Wrath of the Lich King (≈3.3.5) World of Warcraft API reference, scraped from the [wowprogramming.com archive](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_categories) (July 2010 — still WotLK live; Cataclysm launched Dec 2010).
 
 ## Browse locally
 

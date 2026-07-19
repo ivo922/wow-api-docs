@@ -1,6 +1,6 @@
 # Agent guide — WoW API Docs
 
-Cataclysm-era (~2010) World of Warcraft Lua API reference, archived from wowprogramming.com. **Not** modern/retail WoW.
+Late WotLK (≈3.3.5 / July 2010) World of Warcraft Lua API reference, archived from wowprogramming.com. **Not** the Cataclysm launch client and **not** modern/retail WoW.
 
 ## Lookup recipe
 

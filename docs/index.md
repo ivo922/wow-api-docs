@@ -1,6 +1,6 @@
 # WoW API Docs
 
-Obsidian-style reference of World of Warcraft API functions, scraped from the [wowprogramming.com API Category Listing](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_categories) (archived July 26, 2010 — Cataclysm-era docs).
+Obsidian-style reference of World of Warcraft API functions, scraped from the [wowprogramming.com API Category Listing](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_categories) (archived July 26, 2010 — late WotLK / ≈3.3.5).
 
 **2419** function entries (2137 unique) across **100** categories.
 
