@@ -8,7 +8,7 @@
 
 ## CloseLoot
 
-Ends interaction with a lootable corpse or object. Causes the [`LOOT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_CLOSED) event to fire, indicating that Loot APIs may no longer have effects or return valid data.
+Ends interaction with a lootable corpse or object. Causes the [`LOOT_CLOSED`](../events/LOOT_CLOSED.md) event to fire, indicating that Loot APIs may no longer have effects or return valid data.
 
 If the corpse was designated as the player's loot (via the Round Robin, Group Loot, or Need Before Greed loot methods), the corpse's loot becomes available to the rest of the group. If (and only if) the loot was generated from Disenchanting, Prospecting, Milling or similar, all loot items are automatically picked up.
 
@@ -22,7 +22,7 @@ CloseLoot()
 
 ## ConfirmLootRoll `confirmation`
 
-Confirms the player's intent regarding an item up for loot rolling. Usable after the [`CONFIRM_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_LOOT_ROLL) event fires, warning that an item binds on pickup.
+Confirms the player's intent regarding an item up for loot rolling. Usable after the [`CONFIRM_LOOT_ROLL`](../events/CONFIRM_LOOT_ROLL.md) event fires, warning that an item binds on pickup.
 
 **Signature:**
 
@@ -32,7 +32,7 @@ ConfirmLootRoll(id, rollType)
 
 **Arguments:**
 
-- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/START_LOOT_ROLL) event) (`number`)
+- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](../events/START_LOOT_ROLL.md) event) (`number`)
 - `rollType` - Type of roll action to perform (`number`)
   - `0` - Pass (declines the loot)
   - `1` - Roll "need" (wins if highest roll)
@@ -42,7 +42,7 @@ ConfirmLootRoll(id, rollType)
 
 ## ConfirmLootSlot `confirmation`
 
-Confirms picking up an item available as loot. Usable after the [`LOOT_BIND_CONFIRM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_BIND_CONFIRM) event fires, warning that an item binds on pickup.
+Confirms picking up an item available as loot. Usable after the [`LOOT_BIND_CONFIRM`](../events/LOOT_BIND_CONFIRM.md) event fires, warning that an item binds on pickup.
 
 **Signature:**
 
@@ -91,7 +91,7 @@ texture, name, count, quality, bindOnPickUp = GetLootRollItemInfo(id)
 
 **Arguments:**
 
-- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/START_LOOT_ROLL) event) (`number`)
+- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](../events/START_LOOT_ROLL.md) event) (`number`)
 
 **Returns:**
 
@@ -115,7 +115,7 @@ link = GetLootRollItemLink(id)
 
 **Arguments:**
 
-- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/START_LOOT_ROLL) event) (`number`)
+- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](../events/START_LOOT_ROLL.md) event) (`number`)
 
 **Returns:**
 
@@ -135,7 +135,7 @@ timeLeft = GetLootRollTimeLeft(id)
 
 **Arguments:**
 
-- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/START_LOOT_ROLL) event) (`number`)
+- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](../events/START_LOOT_ROLL.md) event) (`number`)
 
 **Returns:**
 
@@ -294,7 +294,7 @@ isFishing = IsFishingLoot()
 
 ## LootSlot
 
-Attempts to pick up an item available as loot. If the item in the loot slot binds on pickup, the [`LOOT_BIND_CONFIRM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_BIND_CONFIRM) event fires, indicating that [`ConfirmLootSlot(slot)`](Loot.md#confirmlootslot-confirmation) must be called in order to actually loot the item. Please note: if you call this while processing a [`LOOT_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_OPENED) event and it is the last item to be looted from the corpse, can cause [`LOOT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LOOT_CLOSED) to fire and be processed before your `LOOT_OPENED` event handler completes.
+Attempts to pick up an item available as loot. If the item in the loot slot binds on pickup, the [`LOOT_BIND_CONFIRM`](../events/LOOT_BIND_CONFIRM.md) event fires, indicating that [`ConfirmLootSlot(slot)`](Loot.md#confirmlootslot-confirmation) must be called in order to actually loot the item. Please note: if you call this while processing a [`LOOT_OPENED`](../events/LOOT_OPENED.md) event and it is the last item to be looted from the corpse, can cause [`LOOT_CLOSED`](../events/LOOT_CLOSED.md) to fire and be processed before your `LOOT_OPENED` event handler completes.
 
 **Signature:**
 
@@ -352,7 +352,7 @@ isItem = LootSlotIsItem(slot)
 
 Register the player's intent regarding an item up for loot rolling. Rolls are not actually performed until all eligible group members have registered their intent or the time period for rolling expires.
 
-If the item binds on pickup, the [`CONFIRM_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_LOOT_ROLL) event fires, indicating that [`ConfirmLootRoll(id)`](Loot.md#confirmlootroll-confirmation) must be called in order to actually roll on the item.
+If the item binds on pickup, the [`CONFIRM_LOOT_ROLL`](../events/CONFIRM_LOOT_ROLL.md) event fires, indicating that [`ConfirmLootRoll(id)`](Loot.md#confirmlootroll-confirmation) must be called in order to actually roll on the item.
 
 **Signature:**
 
@@ -362,7 +362,7 @@ RollOnLoot(id, rollType)
 
 **Arguments:**
 
-- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/START_LOOT_ROLL) event) (`number`)
+- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](../events/START_LOOT_ROLL.md) event) (`number`)
 - `rollType` - Type of roll action to perform (`number`)
   - `0` - Pass (declines the loot)
   - `1` - Roll "need" (wins if highest roll)

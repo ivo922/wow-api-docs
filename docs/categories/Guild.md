@@ -8,7 +8,7 @@
 
 ## AcceptGuild
 
-Accepts an invitation to join a guild. Usable in response to the [`GUILD_INVITE_REQUEST`](https://web.archive.org/web/20111212162749/http://wowprogramming.com/docs/events/GUILD_INVITE_REQUEST) event, which fires when the player is invited to join a guild.
+Accepts an invitation to join a guild. Usable in response to the [`GUILD_INVITE_REQUEST`](../events/GUILD_INVITE_REQUEST.md) event, which fires when the player is invited to join a guild.
 
 **Signature:**
 
@@ -20,7 +20,7 @@ AcceptGuild()
 
 ## BuyGuildCharter
 
-Purchases a guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_SHOW) and [`GUILD_REGISTRAR_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_CLOSED) events).
+Purchases a guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](../events/GUILD_REGISTRAR_SHOW.md) and [`GUILD_REGISTRAR_CLOSED`](../events/GUILD_REGISTRAR_CLOSED.md) events).
 
 **Signature:**
 
@@ -196,7 +196,7 @@ canView = CanViewOfficerNote()
 
 ## CloseGuildRegistrar
 
-Ends interaction with a guild registrar. Fires the [`GUILD_REGISTRAR_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_CLOSED) event, indicating that guild registrar APIs may no longer have effects or return valid data.
+Ends interaction with a guild registrar. Fires the [`GUILD_REGISTRAR_CLOSED`](../events/GUILD_REGISTRAR_CLOSED.md) event, indicating that guild registrar APIs may no longer have effects or return valid data.
 
 **Signature:**
 
@@ -218,7 +218,7 @@ CloseGuildRoster()
 
 ## CloseTabardCreation
 
-Ends interaction with the guild tabard creator. Fires the [`CLOSE_TABARD_FRAME`](https://web.archive.org/web/20100106001314/http://wowprogramming.com/docs/events/CLOSE_TABARD_FRAME) event, indicating that tabard creation APIs may no longer have effects or return valid data.
+Ends interaction with the guild tabard creator. Fires the [`CLOSE_TABARD_FRAME`](../events/CLOSE_TABARD_FRAME.md) event, indicating that tabard creation APIs may no longer have effects or return valid data.
 
 **Signature:**
 
@@ -230,7 +230,7 @@ CloseTabardCreation()
 
 ## DeclineGuild
 
-Declines an offered guild invitation. Usable in response to the [`GUILD_INVITE_REQUEST`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_INVITE_REQUEST) event which fires when the player is invited to join a guild.
+Declines an offered guild invitation. Usable in response to the [`GUILD_INVITE_REQUEST`](../events/GUILD_INVITE_REQUEST.md) event which fires when the player is invited to join a guild.
 
 **Signature:**
 
@@ -242,7 +242,7 @@ DeclineGuild()
 
 ## GetGuildCharterCost
 
-Returns the cost to purchase a guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_SHOW) and [`GUILD_REGISTRAR_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_CLOSED) events).
+Returns the cost to purchase a guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](../events/GUILD_REGISTRAR_SHOW.md) and [`GUILD_REGISTRAR_CLOSED`](../events/GUILD_REGISTRAR_CLOSED.md) events).
 
 **Signature:**
 
@@ -258,7 +258,7 @@ cost = GetGuildCharterCost()
 
 ## GetGuildEventInfo
 
-Returns information about an entry in the guild event log. Only returns valid data after calling [`QueryGuildEventLog()`](Guild.md#queryguildeventlog-server) and the following [`GUILD_EVENT_LOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_EVENT_LOG_UPDATE) event has fired.
+Returns information about an entry in the guild event log. Only returns valid data after calling [`QueryGuildEventLog()`](Guild.md#queryguildeventlog-server) and the following [`GUILD_EVENT_LOG_UPDATE`](../events/GUILD_EVENT_LOG_UPDATE.md) event has fired.
 
 **Signature:**
 
@@ -314,7 +314,7 @@ guildName, guildRankName, guildRankIndex = GetGuildInfo("unit") or GetGuildInfo(
 
 ## GetGuildInfoText
 
-Returns guild information text. Only returns valid data after calling [`GuildRoster()`](Guild.md#guildroster-server) and the following [`GUILD_ROSTER_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_ROSTER_UPDATE) event has fired.
+Returns guild information text. Only returns valid data after calling [`GuildRoster()`](Guild.md#guildroster-server) and the following [`GUILD_ROSTER_UPDATE`](../events/GUILD_ROSTER_UPDATE.md) event has fired.
 
 This text appears when clicking the "Guild Information" button in the default UI's Guild window.
 
@@ -362,7 +362,7 @@ name, rank, rankIndex, level, class, zone, note, officernote, online, status, cl
 
 ## GetGuildRosterLastOnline
 
-Returns the amount of time since a guild member was last online. Only returns valid data after calling [`GuildRoster()`](Guild.md#guildroster-server) and the following [`GUILD_ROSTER_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_ROSTER_UPDATE) event has fired.
+Returns the amount of time since a guild member was last online. Only returns valid data after calling [`GuildRoster()`](Guild.md#guildroster-server) and the following [`GUILD_ROSTER_UPDATE`](../events/GUILD_ROSTER_UPDATE.md) event has fired.
 
 **Signature:**
 
@@ -454,7 +454,7 @@ tabardBackgroundUpper, tabardBackgroundLower, tabardEmblemUpper, tabardEmblemLow
 
 ## GetNumGuildEvents
 
-Returns the number of entries in the guild event log. Only returns valid data after calling [`QueryGuildEventLog()`](Guild.md#queryguildeventlog-server) and the following [`GUILD_EVENT_LOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_EVENT_LOG_UPDATE) event has fired.
+Returns the number of entries in the guild event log. Only returns valid data after calling [`QueryGuildEventLog()`](Guild.md#queryguildeventlog-server) and the following [`GUILD_EVENT_LOG_UPDATE`](../events/GUILD_EVENT_LOG_UPDATE.md) event has fired.
 
 **Signature:**
 
@@ -490,7 +490,7 @@ numGuildMembers = GetNumGuildMembers([includeOffline])
 
 ## GetTabardCreationCost
 
-Returns the cost to create a guild tabard. Only returns valid data if the player is interacting with a tabard designer (i.e. between the [`OPEN_TABARD_FRAME`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/OPEN_TABARD_FRAME) and [`CLOSE_TABARD_FRAME`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CLOSE_TABARD_FRAME) events).
+Returns the cost to create a guild tabard. Only returns valid data if the player is interacting with a tabard designer (i.e. between the [`OPEN_TABARD_FRAME`](../events/OPEN_TABARD_FRAME.md) and [`CLOSE_TABARD_FRAME`](../events/CLOSE_TABARD_FRAME.md) events).
 
 **Signature:**
 
@@ -693,7 +693,7 @@ GuildDisband()
 
 ## GuildInfo `server`
 
-Requests guild information from the server. Fires two [`CHAT_MSG_SYSTEM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CHAT_MSG_SYSTEM) events, one containing the name of the guild, followed by one containing the date the guild was created and how many players and accounts belong to the guild.
+Requests guild information from the server. Fires two [`CHAT_MSG_SYSTEM`](../events/CHAT_MSG_SYSTEM.md) events, one containing the name of the guild, followed by one containing the date the guild was created and how many players and accounts belong to the guild.
 
 **Signature:**
 
@@ -749,7 +749,7 @@ GuildPromote("name")
 
 ## GuildRoster `server`
 
-Requests guild roster information from the server. Information is not returned immediately; the [`GUILD_ROSTER_UPDATE`](https://web.archive.org/web/20111212193423/http://wowprogramming.com/docs/events/GUILD_ROSTER_UPDATE) event fires when data is available for retrieval via [`GetGuildRosterInfo()`](Guild.md#getguildrosterinfo) and related functions. Requests are throttled to reduce server load; the server will only respond to a new request approximately 10 seconds after a previous request.
+Requests guild roster information from the server. Information is not returned immediately; the [`GUILD_ROSTER_UPDATE`](../events/GUILD_ROSTER_UPDATE.md) event fires when data is available for retrieval via [`GetGuildRosterInfo()`](Guild.md#getguildrosterinfo) and related functions. Requests are throttled to reduce server load; the server will only respond to a new request approximately 10 seconds after a previous request.
 
 **Signature:**
 
@@ -885,7 +885,7 @@ inGuild = IsInGuild()
 
 ## QueryGuildEventLog `server`
 
-Requests guild event log information from the server. Fires the [`GUILD_EVENT_LOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_EVENT_LOG_UPDATE) event when event log information becomes available.
+Requests guild event log information from the server. Fires the [`GUILD_EVENT_LOG_UPDATE`](../events/GUILD_EVENT_LOG_UPDATE.md) event when event log information becomes available.
 
 **Signature:**
 
@@ -968,7 +968,7 @@ SortGuildRoster("type")
 
 ## TurnInGuildCharter
 
-Turns in a completed guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_SHOW) and [`GUILD_REGISTRAR_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_CLOSED) events).
+Turns in a completed guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](../events/GUILD_REGISTRAR_SHOW.md) and [`GUILD_REGISTRAR_CLOSED`](../events/GUILD_REGISTRAR_CLOSED.md) events).
 
 **Signature:**
 

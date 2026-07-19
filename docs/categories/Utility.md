@@ -391,7 +391,7 @@ time = GetTime()
 
 ## IsLoggedIn
 
-Returns whether the login process has completed. The [`PLAYER_LOGIN`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_LOGIN) event provides similar information; this function presents an alternative that can be used across UI reloads.
+Returns whether the login process has completed. The [`PLAYER_LOGIN`](../events/PLAYER_LOGIN.md) event provides similar information; this function presents an alternative that can be used across UI reloads.
 
 **Signature:**
 
@@ -460,7 +460,7 @@ RegisterForSavePerCharacter()
 
 ## RequestTimePlayed `server`
 
-Requests information from the server about the player character's total time spent online. Information is not returned immediately; the [`TIME_PLAYED_MSG`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TIME_PLAYED_MSG) event fires when the requested data is available.
+Requests information from the server about the player character's total time spent online. Information is not returned immediately; the [`TIME_PLAYED_MSG`](../events/TIME_PLAYED_MSG.md) event fires when the requested data is available.
 
 **Signature:**
 

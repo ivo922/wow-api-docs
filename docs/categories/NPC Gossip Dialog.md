@@ -8,7 +8,7 @@
 
 ## CloseGossip
 
-Ends an NPC "gossip" interaction. Causes the [`GOSSIP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GOSSIP_CLOSED) event to fire, indicating that Gossip APIs may no longer have effects or return valid data.
+Ends an NPC "gossip" interaction. Causes the [`GOSSIP_CLOSED`](../events/GOSSIP_CLOSED.md) event to fire, indicating that Gossip APIs may no longer have effects or return valid data.
 
 **Signature:**
 
@@ -150,7 +150,7 @@ numOptions = GetNumGossipOptions()
 
 ## SelectGossipActiveQuest
 
-Chooses a quest which can be turned in to the current Gossip NPC. Causes the [`QUEST_PROGRESS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_PROGRESS) event to fire, in which it is determined whether the player can complete the quest.
+Chooses a quest which can be turned in to the current Gossip NPC. Causes the [`QUEST_PROGRESS`](../events/QUEST_PROGRESS.md) event to fire, in which it is determined whether the player can complete the quest.
 
 **Signature:**
 
@@ -166,7 +166,7 @@ SelectGossipActiveQuest(index)
 
 ## SelectGossipAvailableQuest
 
-Chooses a quest available from the current Gossip NPC. Usable after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event. Causes the [`QUEST_DETAIL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_DETAIL) event to fire, in which the questgiver presents the player with the details of a quest and the option to accept or decline.
+Chooses a quest available from the current Gossip NPC. Usable after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event. Causes the [`QUEST_DETAIL`](../events/QUEST_DETAIL.md) event to fire, in which the questgiver presents the player with the details of a quest and the option to accept or decline.
 
 **Signature:**
 
@@ -182,9 +182,9 @@ SelectGossipAvailableQuest(index)
 
 ## SelectGossipOption
 
-Chooses and activates an NPC dialog option. Results may vary according to the gossip option chosen; may end the gossip (firing a [`GOSSIP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GOSSIP_CLOSED) event) and start another interaction (firing a [`MERCHANT_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_SHOW), [`TRAINER_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TRAINER_SHOW), [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED), or similar event) or may continue the gossip with new text and new options (firing another [`GOSSIP_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GOSSIP_SHOW) event).
+Chooses and activates an NPC dialog option. Results may vary according to the gossip option chosen; may end the gossip (firing a [`GOSSIP_CLOSED`](../events/GOSSIP_CLOSED.md) event) and start another interaction (firing a [`MERCHANT_SHOW`](../events/MERCHANT_SHOW.md), [`TRAINER_SHOW`](../events/TRAINER_SHOW.md), [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md), or similar event) or may continue the gossip with new text and new options (firing another [`GOSSIP_SHOW`](../events/GOSSIP_SHOW.md) event).
 
-Calling this function with only the first argument may cause the [`GOSSIP_CONFIRM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GOSSIP_CONFIRM) event to fire, indicating that the player needs to provide confirmation (or additional information) before the option will be activated. Confirmation is needed for certain options requiring the character to spend (e.g. when activating Dual Talent Specialization); additional information is needed for options such as those used when redeeming a Loot Card code from the WoW trading card game to receive an in-game item. In either case, the confirmation and additional information can be provided (as by the popup dialog in the default UI) by calling this function again with all three arguments.
+Calling this function with only the first argument may cause the [`GOSSIP_CONFIRM`](../events/GOSSIP_CONFIRM.md) event to fire, indicating that the player needs to provide confirmation (or additional information) before the option will be activated. Confirmation is needed for certain options requiring the character to spend (e.g. when activating Dual Talent Specialization); additional information is needed for options such as those used when redeeming a Loot Card code from the WoW trading card game to receive an in-game item. In either case, the confirmation and additional information can be provided (as by the popup dialog in the default UI) by calling this function again with all three arguments.
 
 **Signature:**
 

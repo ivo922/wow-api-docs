@@ -99,9 +99,22 @@ def load_types() -> dict[str, dict]:
     return types
 
 
+def load_events() -> dict[str, dict]:
+    events: dict[str, dict] = {}
+    for path in sorted((DOCS / "events").glob("*.md")):
+        rel = path.relative_to(DOCS).as_posix()
+        events[path.stem] = {
+            "name": path.stem,
+            "path": rel,
+            "anchor": "",
+        }
+    return events
+
+
 def main() -> None:
     by_name = load_functions()
     types = load_types()
+    events = load_events()
     total = sum(len(v) for v in by_name.values())
     payload = {
         "meta": {
@@ -112,13 +125,15 @@ def main() -> None:
             "unique_functions": len(by_name),
             "function_entries": total,
             "types": len(types),
+            "events": len(events),
             "lookup": (
                 "Use by_name[<FunctionName>][0].path and .anchor to open the "
-                "markdown file and jump to the ## heading."
+                "markdown file and jump to the ## heading. Events: events[<NAME>].path."
             ),
         },
         "by_name": by_name,
         "types": types,
+        "events": events,
     }
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
@@ -126,8 +141,12 @@ def main() -> None:
     assert total > 2000, total
     assert "CastSpell" in by_name, "CastSpell missing"
     assert by_name["CastSpell"][0]["signature"], "CastSpell signature missing"
+    assert "UNIT_HEALTH" in events, "UNIT_HEALTH event missing"
 
-    print(f"wrote {OUT.relative_to(ROOT)} ({len(by_name)} unique, {total} entries)")
+    print(
+        f"wrote {OUT.relative_to(ROOT)} "
+        f"({len(by_name)} unique funcs, {len(types)} types, {len(events)} events)"
+    )
 
 
 if __name__ == "__main__":

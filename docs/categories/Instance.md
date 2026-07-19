@@ -266,7 +266,7 @@ LFGTeleport(portOut)
 
 ## RequestRaidInfo `server`
 
-Requests information about saved instances from the server. Data is not returned immediately; the [`UPDATE_INSTANCE_INFO`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UPDATE_INSTANCE_INFO) event when the raid information is available for retrieval via [`GetSavedInstanceInfo()`](Instance.md#getsavedinstanceinfo) and related functions.
+Requests information about saved instances from the server. Data is not returned immediately; the [`UPDATE_INSTANCE_INFO`](../events/UPDATE_INSTANCE_INFO.md) event when the raid information is available for retrieval via [`GetSavedInstanceInfo()`](Instance.md#getsavedinstanceinfo) and related functions.
 
 **Signature:**
 

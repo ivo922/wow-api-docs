@@ -95,7 +95,7 @@ CancelAuction(index)
 
 Picks up an item from or puts an item into the "Create Auction" slot. If the cursor is empty and the slot contains an item, that item is put onto the cursor. If the cursor contains an item and the slot is empty, the item is placed into the slot. If both the cursor and the slot contain items, the contents of the cursor and the slot are exchanged.
 
-Only has effect if the player is interacting with an auctioneer (i.e. between the [`AUCTION_HOUSE_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_HOUSE_SHOW) and [`AUCTION_HOUSE_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_HOUSE_CLOSED) events). Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the item on the cursor cannot be put up for auction (e.g. if the item is soulbound).
+Only has effect if the player is interacting with an auctioneer (i.e. between the [`AUCTION_HOUSE_SHOW`](../events/AUCTION_HOUSE_SHOW.md) and [`AUCTION_HOUSE_CLOSED`](../events/AUCTION_HOUSE_CLOSED.md) events). Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the item on the cursor cannot be put up for auction (e.g. if the item is soulbound).
 
 **Signature:**
 
@@ -107,7 +107,7 @@ ClickAuctionSellItemButton()
 
 ## CloseAuctionHouse
 
-Ends interaction with the Auction House UI. Causes the [`AUCTION_HOUSE_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_HOUSE_CLOSED) event to fire, indicating that Auction-related APIs may be unavailable or no longer return valid data.
+Ends interaction with the Auction House UI. Causes the [`AUCTION_HOUSE_CLOSED`](../events/AUCTION_HOUSE_CLOSED.md) event to fire, indicating that Auction-related APIs may be unavailable or no longer return valid data.
 
 **Signature:**
 
@@ -351,7 +351,7 @@ criterion, reverse = GetAuctionSort("list", index)
 
 ## GetBidderAuctionItems `server`
 
-Requests data from the server for the list of auctions bid on by the player. The [`AUCTION_BIDDER_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_BIDDER_LIST_UPDATE) event fires if new data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
+Requests data from the server for the list of auctions bid on by the player. The [`AUCTION_BIDDER_LIST_UPDATE`](../events/AUCTION_BIDDER_LIST_UPDATE.md) event fires if new data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
 
 **Signature:**
 
@@ -419,7 +419,7 @@ numBatchAuctions, totalAuctions = GetNumAuctionItems("list")
 
 ## GetOwnerAuctionItems `server`
 
-Requests data from the server for the list of auctions created by the player. The [`AUCTION_OWNED_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_OWNED_LIST_UPDATE) event fires if new data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
+Requests data from the server for the list of auctions created by the player. The [`AUCTION_OWNED_LIST_UPDATE`](../events/AUCTION_OWNED_LIST_UPDATE.md) event fires if new data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
 
 **Signature:**
 
@@ -504,7 +504,7 @@ Requests data from the server for the list of auctions meeting given search crit
 
 Search queries are throttled, preventing abuse of the server by clients sending too many queries in short succession. Normal queries can be sent once every few seconds; mass queries return all results in the auction house instead of one "page" at a time, and can only be sent once every several minutes.
 
-Query results are not returned immediately: the [`AUCTION_ITEM_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_ITEM_LIST_UPDATE) event fires once data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
+Query results are not returned immediately: the [`AUCTION_ITEM_LIST_UPDATE`](../events/AUCTION_ITEM_LIST_UPDATE.md) event fires once data is available; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
 
 **Signature:**
 
@@ -551,7 +551,7 @@ SetSelectedAuctionItem("list", index)
 
 Applies a set of auction listing sort criteria set via [`SortAuctionSetSort`](Auction.md#sortauctionsetsort). Sort criteria are applied server-side, affecting not only the order of items within one "page" of listings but the order in which items are collected into pages.
 
-Any currently displayed listings are re-sorted server-side: the [`AUCTION_ITEM_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_ITEM_LIST_UPDATE), [`AUCTION_BIDDER_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_BIDDER_LIST_UPDATE), or [`AUCTION_OWNED_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_OWNED_LIST_UPDATE) event fires once the re-sorted data is available to the client; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
+Any currently displayed listings are re-sorted server-side: the [`AUCTION_ITEM_LIST_UPDATE`](../events/AUCTION_ITEM_LIST_UPDATE.md), [`AUCTION_BIDDER_LIST_UPDATE`](../events/AUCTION_BIDDER_LIST_UPDATE.md), or [`AUCTION_OWNED_LIST_UPDATE`](../events/AUCTION_OWNED_LIST_UPDATE.md) event fires once the re-sorted data is available to the client; listing information can then be retrieved using [`GetAuctionItemInfo()`](Auction.md#getauctioniteminfo) or other Auction APIs.
 
 **Signature:**
 

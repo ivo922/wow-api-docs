@@ -74,9 +74,9 @@ CollapseQuestHeader(questIndex)
 
 ## CompleteQuest
 
-Begins turning in a quest to a questgiver. Usable following the [`QUEST_PROGRESS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_PROGRESS) event in which it is determined whether the player can complete the quest.
+Begins turning in a quest to a questgiver. Usable following the [`QUEST_PROGRESS`](../events/QUEST_PROGRESS.md) event in which it is determined whether the player can complete the quest.
 
-Does not complete the quest turn-in process; after calling this function, the [`QUEST_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_COMPLETE) event fires as the questgiver presents rewards (or sometimes only closure to the quest narrative); following that event, the [`GetQuestReward()`](Quest.md#getquestreward) function finishes the turn-in.
+Does not complete the quest turn-in process; after calling this function, the [`QUEST_COMPLETE`](../events/QUEST_COMPLETE.md) event fires as the questgiver presents rewards (or sometimes only closure to the quest narrative); following that event, the [`GetQuestReward()`](Quest.md#getquestreward) function finishes the turn-in.
 
 **Signature:**
 
@@ -88,7 +88,7 @@ CompleteQuest()
 
 ## ConfirmAcceptQuest
 
-Accepts a quest started by another group member. Usable following the [`QUEST_ACCEPT_CONFIRM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_ACCEPT_CONFIRM) event which fires when another member of the player's party or raid starts certain quests (e.g. escort quests).
+Accepts a quest started by another group member. Usable following the [`QUEST_ACCEPT_CONFIRM`](../events/QUEST_ACCEPT_CONFIRM.md) event which fires when another member of the player's party or raid starts certain quests (e.g. escort quests).
 
 **Signature:**
 
@@ -100,7 +100,7 @@ ConfirmAcceptQuest()
 
 ## DeclineQuest
 
-Declines a quest.. Usable following the [`QUEST_DETAIL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_DETAIL) event in which the questgiver presents the player with the details of a quest and the option to accept or decline.
+Declines a quest.. Usable following the [`QUEST_DETAIL`](../events/QUEST_DETAIL.md) event in which the questgiver presents the player with the details of a quest and the option to accept or decline.
 
 **Signature:**
 
@@ -160,7 +160,7 @@ name = GetAbandonQuestName()
 
 ## GetActiveLevel
 
-Returns the level of a quest which can be turned in to the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
+Returns the level of a quest which can be turned in to the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event.
 
 Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests) instead of this function.
 
@@ -182,7 +182,7 @@ level = GetActiveLevel(index)
 
 ## GetActiveTitle
 
-Returns the name of a quest which can be turned in to the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
+Returns the name of a quest which can be turned in to the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event.
 
 Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests) instead of this function.
 
@@ -204,7 +204,7 @@ title = GetActiveTitle(index)
 
 ## GetAvailableLevel
 
-Returns the level of a quest available from the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
+Returns the level of a quest available from the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event.
 
 Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](NPC Gossip Dialog.md#getgossipavailablequests) instead of this function.
 
@@ -226,7 +226,7 @@ level = GetAvailableLevel(index)
 
 ## GetAvailableTitle
 
-Returns the name of a quest available from the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
+Returns the name of a quest available from the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event.
 
 Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](NPC Gossip Dialog.md#getgossipavailablequests) instead of this function.
 
@@ -336,7 +336,7 @@ max = GetMaxDailyQuests()
 
 ## GetNumActiveQuests
 
-Returns the number of quests which can be turned in to the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
+Returns the number of quests which can be turned in to the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event.
 
 Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests) instead of this function.
 
@@ -354,7 +354,7 @@ numActiveQuests = GetNumActiveQuests()
 
 ## GetNumAvailableQuests
 
-Returns the number quests available from the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event.
+Returns the number quests available from the current Quest NPC. Only returns valid information after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event.
 
 Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](NPC Gossip Dialog.md#getgossipavailablequests) instead of this function.
 
@@ -404,7 +404,7 @@ num = GetNumGossipAvailableQuests()
 
 ## GetNumQuestChoices
 
-Returns the number of available quest rewards from which the player must choose one upon completing the quest presented by a questgiver. Only valid during the accept/decline or completion stages of a quest dialog (following the [`QUEST_DETAIL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_DETAIL) or [`QUEST_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_COMPLETE) events); otherwise may return 0 or a value from the most recently displayed quest.
+Returns the number of available quest rewards from which the player must choose one upon completing the quest presented by a questgiver. Only valid during the accept/decline or completion stages of a quest dialog (following the [`QUEST_DETAIL`](../events/QUEST_DETAIL.md) or [`QUEST_COMPLETE`](../events/QUEST_COMPLETE.md) events); otherwise may return 0 or a value from the most recently displayed quest.
 
 **Signature:**
 
@@ -420,7 +420,7 @@ numQuestChoices = GetNumQuestChoices()
 
 ## GetNumQuestItems
 
-Returns the number of different items required to complete the quest presented by a questgiver. Usable following the [`QUEST_PROGRESS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_PROGRESS) event in which it is determined whether the player can complete the quest.
+Returns the number of different items required to complete the quest presented by a questgiver. Usable following the [`QUEST_PROGRESS`](../events/QUEST_PROGRESS.md) event in which it is determined whether the player can complete the quest.
 
 **Signature:**
 
@@ -505,7 +505,7 @@ numRewards = GetNumQuestLogRewards()
 
 ## GetNumQuestRewards
 
-Returns the number of different items always awarded upon completing the quest presented by a questgiver. Only valid during the accept/decline or completion stages of a quest dialog (following the [`QUEST_DETAIL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_DETAIL) or [`QUEST_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_COMPLETE) events); otherwise may return 0 or a value from the most recently displayed quest.
+Returns the number of different items always awarded upon completing the quest presented by a questgiver. Only valid during the accept/decline or completion stages of a quest dialog (following the [`QUEST_DETAIL`](../events/QUEST_DETAIL.md) or [`QUEST_COMPLETE`](../events/QUEST_COMPLETE.md) events); otherwise may return 0 or a value from the most recently displayed quest.
 
 **Signature:**
 
@@ -553,7 +553,7 @@ numUI = GetNumWorldStateUI()
 
 ## GetObjectiveText
 
-Returns a summary of objectives for the quest offered by a questgiver. Only valid when the questgiver UI is showing the accept/decline stage of a quest dialog (between the [`QUEST_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_COMPLETE) and [`QUEST_FINISHED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_FINISHED) events); otherwise may return the empty string or a value from the most recently displayed quest.
+Returns a summary of objectives for the quest offered by a questgiver. Only valid when the questgiver UI is showing the accept/decline stage of a quest dialog (between the [`QUEST_COMPLETE`](../events/QUEST_COMPLETE.md) and [`QUEST_FINISHED`](../events/QUEST_FINISHED.md) events); otherwise may return the empty string or a value from the most recently displayed quest.
 
 **Signature:**
 
@@ -569,7 +569,7 @@ questObjective = GetObjectiveText()
 
 ## GetProgressText
 
-Returns the quest progress text presented by a questgiver. Only valid when the questgiver UI is showing the progress stage of a quest dialog (between the [`QUEST_PROGRESS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_PROGRESS) and [`QUEST_FINISHED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_FINISHED) events); otherwise may return the empty string or a value from the most recently displayed quest.
+Returns the quest progress text presented by a questgiver. Only valid when the questgiver UI is showing the progress stage of a quest dialog (between the [`QUEST_PROGRESS`](../events/QUEST_PROGRESS.md) and [`QUEST_FINISHED`](../events/QUEST_FINISHED.md) events); otherwise may return the empty string or a value from the most recently displayed quest.
 
 **Signature:**
 
@@ -1169,7 +1169,7 @@ questLogTitleText, level, questTag, suggestedGroup, isHeader, isCollapsed, isCom
 
 ## GetQuestMoneyToGet
 
-Returns the amount of money required to complete the quest presented by a questgiver. Usable following the [`QUEST_PROGRESS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_PROGRESS) event in which it is determined whether the player can complete the quest.
+Returns the amount of money required to complete the quest presented by a questgiver. Usable following the [`QUEST_PROGRESS`](../events/QUEST_PROGRESS.md) event in which it is determined whether the player can complete the quest.
 
 **Signature:**
 
@@ -1208,7 +1208,7 @@ print("Daily quests reset in " .. SecondsToTime(GetQuestResetTime()))
 
 ## GetQuestReward
 
-Finishes turning in a quest to a questgiver, selecting an item reward if applicable. Usable following the [`QUEST_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_COMPLETE) event in which the questgiver presents the player with rewards.
+Finishes turning in a quest to a questgiver, selecting an item reward if applicable. Usable following the [`QUEST_COMPLETE`](../events/QUEST_COMPLETE.md) event in which the questgiver presents the player with rewards.
 
 **Signature:**
 
@@ -1240,7 +1240,7 @@ link = GetQuestSpellLink()
 
 ## GetQuestText
 
-Returns the text for the quest offered by a questgiver. Only valid when the questgiver UI is showing the accept/decline stage of a quest dialog (between the [`QUEST_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_COMPLETE) and [`QUEST_FINISHED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_FINISHED) events); otherwise may return the empty string or a value from the most recently displayed quest.
+Returns the text for the quest offered by a questgiver. Only valid when the questgiver UI is showing the accept/decline stage of a quest dialog (between the [`QUEST_COMPLETE`](../events/QUEST_COMPLETE.md) and [`QUEST_FINISHED`](../events/QUEST_FINISHED.md) events); otherwise may return the empty string or a value from the most recently displayed quest.
 
 **Signature:**
 
@@ -1272,7 +1272,7 @@ Returns a list of the times remaining for any active timed quests
 
 ## GetQuestsCompleted
 
-Gets a table containing the quests the player has completed. This function will only return data after [QueryQuestsCompleted()](Quest.md#queryquestscompleted-server) has been called and the [`QUEST_QUERY_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_QUERY_COMPLETE) event has fired. The keys in the returned table are the numeric questIds, with a value of true for each set key.
+Gets a table containing the quests the player has completed. This function will only return data after [QueryQuestsCompleted()](Quest.md#queryquestscompleted-server) has been called and the [`QUEST_QUERY_COMPLETE`](../events/QUEST_QUERY_COMPLETE.md) event has fired. The keys in the returned table are the numeric questIds, with a value of true for each set key.
 
 **Signature:**
 
@@ -1367,7 +1367,7 @@ talents = GetRewardTalents()
 
 ## GetRewardText
 
-Returns questgiver dialog to be displayed when completing a quest. Only valid when the questgiver UI is showing the completion stage of a quest dialog (between the [`QUEST_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_COMPLETE) and [`QUEST_FINISHED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_FINISHED) events); otherwise may return the empty string or a value from the most recently displayed quest.
+Returns questgiver dialog to be displayed when completing a quest. Only valid when the questgiver UI is showing the completion stage of a quest dialog (between the [`QUEST_COMPLETE`](../events/QUEST_COMPLETE.md) and [`QUEST_FINISHED`](../events/QUEST_FINISHED.md) events); otherwise may return the empty string or a value from the most recently displayed quest.
 
 **Signature:**
 
@@ -1407,7 +1407,7 @@ Returns the experience awarded when completing a quest
 
 ## GetSuggestedGroupNum
 
-Returns the suggested group size for attempting the quest currently offered by a questgiver. Usable following the [`QUEST_DETAIL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_DETAIL) event in which the questgiver presents the player with the details of a quest and the option to accept or decline.
+Returns the suggested group size for attempting the quest currently offered by a questgiver. Usable following the [`QUEST_DETAIL`](../events/QUEST_DETAIL.md) event in which the questgiver presents the player with the details of a quest and the option to accept or decline.
 
 **Signature:**
 
@@ -1423,7 +1423,7 @@ suggestedGroup = GetSuggestedGroupNum()
 
 ## GetTitleText
 
-Returns the title text for the quest presented by a questgiver. Only valid following the [`QUEST_DETAIL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_DETAIL), [`QUEST_PROGRESS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_PROGRESS), or [`QUEST_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_COMPLETE) events; otherwise may return nil or a value from the most recently displayed quest.
+Returns the title text for the quest presented by a questgiver. Only valid following the [`QUEST_DETAIL`](../events/QUEST_DETAIL.md), [`QUEST_PROGRESS`](../events/QUEST_PROGRESS.md), or [`QUEST_COMPLETE`](../events/QUEST_COMPLETE.md) events; otherwise may return nil or a value from the most recently displayed quest.
 
 **Signature:**
 
@@ -1471,7 +1471,7 @@ uiType, state, text, icon, dynamicIcon, tooltip, dynamicTooltip, extendedUI, ext
 
 ## IsActiveQuestTrivial
 
-Returns whether a quest which can be turned in to the current Quest NPC is trivial at the player's level. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event. Used in the default UI to display "(low level)" when listing the quest.
+Returns whether a quest which can be turned in to the current Quest NPC is trivial at the player's level. Only returns valid information after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event. Used in the default UI to display "(low level)" when listing the quest.
 
 Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests) instead of this function.
 
@@ -1493,7 +1493,7 @@ trivial = IsActiveQuestTrivial(index)
 
 ## IsAvailableQuestTrivial
 
-Returns whether a quest available from the current Quest NPC is trivial at the player's level. Only returns valid information after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event. Used in the default UI to display "(low level)" when listing the quest.
+Returns whether a quest available from the current Quest NPC is trivial at the player's level. Only returns valid information after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event. Used in the default UI to display "(low level)" when listing the quest.
 
 Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](NPC Gossip Dialog.md#getgossipavailablequests) instead of this function.
 
@@ -1608,7 +1608,7 @@ state = IsUnitOnQuest(index, "unit")
 
 ## QueryQuestsCompleted `server`
 
-Queries the server for the player's completed quest information. This function is throttled by the server and can currently only be called every 15 minutes. This function will return immediately, and the [`QUEST_QUERY_COMPLETE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_QUERY_COMPLETE) will fire when the information is available from the server. At that point, it can be obtained using the [GetQuestsCompleted](Quest.md#getquestscompleted) function.
+Queries the server for the player's completed quest information. This function is throttled by the server and can currently only be called every 15 minutes. This function will return immediately, and the [`QUEST_QUERY_COMPLETE`](../events/QUEST_QUERY_COMPLETE.md) will fire when the information is available from the server. At that point, it can be obtained using the [GetQuestsCompleted](Quest.md#getquestscompleted) function.
 
 **Signature:**
 
@@ -1620,7 +1620,7 @@ QueryQuestsCompleted()
 
 ## QuestChooseRewardError
 
-Causes the default UI to display an error message indicating that the player must choose a reward to complete the quest presented by a questgiver. Fires a [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event containing a localized message identified by the global variable `ERR_QUEST_MUST_CHOOSE`. Choose wisely.
+Causes the default UI to display an error message indicating that the player must choose a reward to complete the quest presented by a questgiver. Fires a [`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md) event containing a localized message identified by the global variable `ERR_QUEST_MUST_CHOOSE`. Choose wisely.
 
 **Signature:**
 
@@ -1686,7 +1686,7 @@ RemoveQuestWatch(questIndex)
 
 ## SelectActiveQuest
 
-Selects a quest which can be turned in to the current Quest NPC. Usable after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event. Causes the [`QUEST_PROGRESS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_PROGRESS) event to fire, in which it is determined whether the player can complete the quest.
+Selects a quest which can be turned in to the current Quest NPC. Usable after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event. Causes the [`QUEST_PROGRESS`](../events/QUEST_PROGRESS.md) event to fire, in which it is determined whether the player can complete the quest.
 
 Note: Most quest NPCs present active quests using the [`GetGossipActiveQuests()`](NPC Gossip Dialog.md#getgossipactivequests) instead of this function.
 
@@ -1704,7 +1704,7 @@ SelectActiveQuest(index)
 
 ## SelectAvailableQuest
 
-Chooses a quest available from the current Quest NPC. Causes the [`QUEST_DETAIL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_DETAIL) event to fire, in which the questgiver presents the player with the details of a quest and the option to accept or decline.
+Chooses a quest available from the current Quest NPC. Causes the [`QUEST_DETAIL`](../events/QUEST_DETAIL.md) event to fire, in which the questgiver presents the player with the details of a quest and the option to accept or decline.
 
 Note: Most quest NPCs present available quests using the [`GetGossipAvailableQuests()`](NPC Gossip Dialog.md#getgossipavailablequests) instead of this function.
 
@@ -1722,7 +1722,7 @@ SelectAvailableQuest(index)
 
 ## SelectGossipActiveQuest
 
-Chooses a quest which can be turned in to the current Gossip NPC. Causes the [`QUEST_PROGRESS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_PROGRESS) event to fire, in which it is determined whether the player can complete the quest.
+Chooses a quest which can be turned in to the current Gossip NPC. Causes the [`QUEST_PROGRESS`](../events/QUEST_PROGRESS.md) event to fire, in which it is determined whether the player can complete the quest.
 
 **Signature:**
 
@@ -1738,7 +1738,7 @@ SelectGossipActiveQuest(index)
 
 ## SelectGossipAvailableQuest
 
-Chooses a quest available from the current Gossip NPC. Usable after a [`QUEST_GREETING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_GREETING) event. Causes the [`QUEST_DETAIL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/QUEST_DETAIL) event to fire, in which the questgiver presents the player with the details of a quest and the option to accept or decline.
+Chooses a quest available from the current Gossip NPC. Usable after a [`QUEST_GREETING`](../events/QUEST_GREETING.md) event. Causes the [`QUEST_DETAIL`](../events/QUEST_DETAIL.md) event to fire, in which the questgiver presents the player with the details of a quest and the option to accept or decline.
 
 **Signature:**
 

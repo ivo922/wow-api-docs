@@ -68,7 +68,7 @@ MovieRecording_DeleteMovie("filename")
 
 **Arguments:**
 
-- `filename` - Path to an uncompressed movie (as provided in the [`MOVIE_UNCOMPRESSED_MOVIE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MOVIE_UNCOMPRESSED_MOVIE) event) (`string`)
+- `filename` - Path to an uncompressed movie (as provided in the [`MOVIE_UNCOMPRESSED_MOVIE`](../events/MOVIE_UNCOMPRESSED_MOVIE.md) event) (`string`)
 
 ---
 
@@ -279,13 +279,13 @@ MovieRecording_QueueMovieToCompress("filename")
 
 **Arguments:**
 
-- `filename` - Path to an uncompressed movie (as provided in the [`MOVIE_UNCOMPRESSED_MOVIE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MOVIE_UNCOMPRESSED_MOVIE) event) (`string`)
+- `filename` - Path to an uncompressed movie (as provided in the [`MOVIE_UNCOMPRESSED_MOVIE`](../events/MOVIE_UNCOMPRESSED_MOVIE.md) event) (`string`)
 
 ---
 
 ## MovieRecording_SearchUncompressedMovie `maconly`
 
-Enables or disables a search for uncompressed movies. After calling this function with `true`, a [`MOVIE_UNCOMPRESSED_MOVIE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MOVIE_UNCOMPRESSED_MOVIE) fires for the first uncompressed movie found (causing the default UI to prompt the user to choose whether to compress, ignore, or delete the movie). Calling this function with `false` ignores the movie, causing the search to continue (firing a `MOVIE_UNCOMPRESSED_MOVIE` event for the next uncompressed movie found, and so forth).
+Enables or disables a search for uncompressed movies. After calling this function with `true`, a [`MOVIE_UNCOMPRESSED_MOVIE`](../events/MOVIE_UNCOMPRESSED_MOVIE.md) fires for the first uncompressed movie found (causing the default UI to prompt the user to choose whether to compress, ignore, or delete the movie). Calling this function with `false` ignores the movie, causing the search to continue (firing a `MOVIE_UNCOMPRESSED_MOVIE` event for the next uncompressed movie found, and so forth).
 
 **Signature:**
 

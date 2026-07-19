@@ -8,6 +8,7 @@
 - Machine catalog: /api-index.json
 - Category index: /index.md
 - API types index: /API%20Types.md
+- Events index: /Events.md
 - Agent instructions (repo): AGENTS.md
 
 ## How to look up a function
@@ -16,12 +17,18 @@
 2. Use by_name["FunctionName"][0]
 3. Open the markdown at `path` and find heading `##` matching `heading` (HTML anchor: `anchor`)
 
+## How to look up an event
+
+1. Load /api-index.json
+2. Use events["UNIT_HEALTH"].path → events/UNIT_HEALTH.md
+
 ## Structure
 
 - docs/categories/*.md — one file per category; many ## FunctionName sections
 - docs/types/*.md — parameter/return type notes
+- docs/events/*.md — one page per game event
 - Each function: Signature (lua) + Arguments/Returns
 
 ## Optional full ingest
 
-The docs/ tree is ~1.6MB of Markdown (~43k lines). For targeted answers, use api-index.json instead of loading every file.
+The docs/ tree is Markdown. For targeted answers, use api-index.json instead of loading every file.

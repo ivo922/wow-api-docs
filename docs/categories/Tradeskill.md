@@ -8,7 +8,7 @@
 
 ## CloseTradeSkill
 
-Ends interaction with the Trade Skill UI. Fires the [`TRADE_SKILL_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TRADE_SKILL_CLOSE) event, indicating that TradeSkill APIs may no longer have effects or return valid data.
+Ends interaction with the Trade Skill UI. Fires the [`TRADE_SKILL_CLOSE`](../events/TRADE_SKILL_CLOSE.md) event, indicating that TradeSkill APIs may no longer have effects or return valid data.
 
 **Signature:**
 

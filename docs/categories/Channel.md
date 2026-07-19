@@ -319,7 +319,7 @@ CollapseChannelHeader(index)
 
 ## DeclineInvite
 
-Declines an invitation to a chat channel. Usable in response to the [`CHANNEL_INVITE_REQUEST`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CHANNEL_INVITE_REQUEST) event which fires when the player is invited to join a chat channel.
+Declines an invitation to a chat channel. Usable in response to the [`CHANNEL_INVITE_REQUEST`](../events/CHANNEL_INVITE_REQUEST.md) event which fires when the player is invited to join a chat channel.
 
 **Signature:**
 
@@ -719,7 +719,7 @@ LeaveChannelByName("name")
 
 ## ListChannelByName `server`
 
-Requests the list of participants in a chat channel. Fires the [`CHAT_MSG_CHANNEL_LIST`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CHAT_MSG_CHANNEL_LIST) event listing the names of all characters in the channel.
+Requests the list of participants in a chat channel. Fires the [`CHAT_MSG_CHANNEL_LIST`](../events/CHAT_MSG_CHANNEL_LIST.md) event listing the names of all characters in the channel.
 
 **Signature:**
 
@@ -736,7 +736,7 @@ ListChannelByName("channel") or ListChannelByName(channelIndex)
 
 ## ListChannels `server`
 
-Requests a list of channels joined by the player. Fires the [`CHAT_MSG_CHANNEL_LIST`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CHAT_MSG_CHANNEL_LIST) event listing the names and indices of all channels joined by the player.
+Requests a list of channels joined by the player. Fires the [`CHAT_MSG_CHANNEL_LIST`](../events/CHAT_MSG_CHANNEL_LIST.md) event listing the names and indices of all channels joined by the player.
 
 **Signature:**
 

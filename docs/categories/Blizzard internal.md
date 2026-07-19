@@ -32,7 +32,7 @@ This is a Blizzard internal function
 
 ## DetectWowMouse
 
-Detects the presence of a "WoW" compatible multi-button mouse. This function is used by the default user interface to enable or disable the configuration option for a many buttoned WoW mouse. If the mouse is not found, the [`WOW_MOUSE_NOT_FOUND`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/WOW_MOUSE_NOT_FOUND) event will fire.
+Detects the presence of a "WoW" compatible multi-button mouse. This function is used by the default user interface to enable or disable the configuration option for a many buttoned WoW mouse. If the mouse is not found, the [`WOW_MOUSE_NOT_FOUND`](../events/WOW_MOUSE_NOT_FOUND.md) event will fire.
 
 **Signature:**
 

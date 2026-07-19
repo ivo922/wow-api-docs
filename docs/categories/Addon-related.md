@@ -308,7 +308,7 @@ Unlike with [`SendChatMessage`](Chat.md#sendchatmessage-server), messages sent v
 - are not subject to strict server-side spam filtering/throttling (sending too many messages at once can still disconnect the user)
 - are not modified if the sending character is drunk
 
-Messages are received via the [`CHAT_MSG_ADDON`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CHAT_MSG_ADDON) event.
+Messages are received via the [`CHAT_MSG_ADDON`](../events/CHAT_MSG_ADDON.md) event.
 
 **Signature:**
 

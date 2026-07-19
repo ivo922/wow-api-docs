@@ -70,7 +70,7 @@ ClearSendMail()
 
 Picks up an item from or puts an item into an attachment slot for sending mail. If the cursor is empty and the mail attachment slot contains an item, that item is put onto the cursor. If the cursor contains an item and the slot is empty, the item is placed into the slot. If both the cursor and the slot contain items, the contents of the cursor and the mail attachment slot are exchanged.
 
-Only has effect if the player is interacting with a mailbox (i.e. between the [`MAIL_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MAIL_SHOW) and [`MAIL_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MAIL_CLOSED) events). Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if an invalid mail attachment slot is specified or if the item on the cursor cannot be mailed (e.g. if the item is soulbound).
+Only has effect if the player is interacting with a mailbox (i.e. between the [`MAIL_SHOW`](../events/MAIL_SHOW.md) and [`MAIL_CLOSED`](../events/MAIL_CLOSED.md) events). Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if an invalid mail attachment slot is specified or if the item on the cursor cannot be mailed (e.g. if the item is soulbound).
 
 **Signature:**
 
@@ -87,7 +87,7 @@ ClickSendMailItemButton(index, autoReturn)
 
 ## CloseMail
 
-Ends interaction with a mailbox. Fires the [`MAIL_CLOSED`](https://web.archive.org/web/20111212183539/http://wowprogramming.com/docs/events/MAIL_CLOSED) event, indicating that Mail/Inbox APIs may no longer have effects or return valid data.
+Ends interaction with a mailbox. Fires the [`MAIL_CLOSED`](../events/MAIL_CLOSED.md) event, indicating that Mail/Inbox APIs may no longer have effects or return valid data.
 
 **Signature:**
 

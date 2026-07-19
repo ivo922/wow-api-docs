@@ -47,6 +47,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - API Types: API Types.md
+  - Events: Events.md
   - Failed Scrapes: Failed Scrapes.md
   - Categories:
       - Achievement: categories/Achievement.md

@@ -338,7 +338,7 @@ if the cursor is over a nearby interactable world object (e.g. mailbox, treasure
 
 if the cursor is over a faraway unit or world object and the "Click-to-Move" option is enabled (i.e. the "autointeract" CVar is "1"), attempts to move the player character to the unit/object and interact with it once nearby.
 
-if the cursor is over a faraway world object and the "Click-to-Move" option is disabled, fires a [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event indicating the player is too far away to interact with the object.
+if the cursor is over a faraway world object and the "Click-to-Move" option is disabled, fires a [`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md) event indicating the player is too far away to interact with the object.
 
 otherwise, does nothing.
 

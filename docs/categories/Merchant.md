@@ -57,7 +57,7 @@ canRepair = CanMerchantRepair()
 
 ## CloseMerchant
 
-Ends interaction with a vendor. Causes the [`MERCHANT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_CLOSED) event to fire, indicating that Merchant APIs may no longer have effects or return valid data.
+Ends interaction with a vendor. Causes the [`MERCHANT_CLOSED`](../events/MERCHANT_CLOSED.md) event to fire, indicating that Merchant APIs may no longer have effects or return valid data.
 
 **Signature:**
 
@@ -96,7 +96,7 @@ EndBoundTradeable(id)
 
 **Arguments:**
 
-- `id` - Number identifying the item (as provided by the [`END_BOUND_TRADEABLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/END_BOUND_TRADEABLE) event) (`number`)
+- `id` - Number identifying the item (as provided by the [`END_BOUND_TRADEABLE`](../events/END_BOUND_TRADEABLE.md) event) (`number`)
 
 ---
 
@@ -112,7 +112,7 @@ EndRefund(id)
 
 **Arguments:**
 
-- `id` - Number identifying the item (as provided by the [`END_REFUND`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/END_REFUND) event) (`number`)
+- `id` - Number identifying the item (as provided by the [`END_REFUND`](../events/END_REFUND.md) event) (`number`)
 
 ---
 
@@ -445,7 +445,7 @@ ShowContainerSellCursor(container, slot)
 
 Puts the cursor in item repair mode. Unlike most other cursor functions, this functions changes the behavior as well as the appearance of the mouse cursor: while repair mode is active, calling [`PickupContainerItem()`](Container.md#pickupcontaineritem) or [`PickupInventoryItem()`](Cursor.md#pickupinventoryitem) will attempt to repair the item (and deduct the cost of such from the player's savings) instead of putting it on the cursor.
 
-Only has effect while the player is interacting with a vendor which can perform repairs; i.e. between the [`MERCHANT_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_SHOW) and [`MERCHANT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_CLOSED) events, and only if [`CanMerchantRepair()`](Merchant.md#canmerchantrepair) returns `1`.
+Only has effect while the player is interacting with a vendor which can perform repairs; i.e. between the [`MERCHANT_SHOW`](../events/MERCHANT_SHOW.md) and [`MERCHANT_CLOSED`](../events/MERCHANT_CLOSED.md) events, and only if [`CanMerchantRepair()`](Merchant.md#canmerchantrepair) returns `1`.
 
 **Signature:**
 

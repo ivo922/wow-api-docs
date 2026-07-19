@@ -8,7 +8,7 @@
 
 ## CloseTaxiMap
 
-Ends interaction with the Taxi (flight master) UI. Causes the [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) event to fire, indicating that Taxi APIs may no longer have effects or return valid data.
+Ends interaction with the Taxi (flight master) UI. Causes the [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) event to fire, indicating that Taxi APIs may no longer have effects or return valid data.
 
 **Signature:**
 
@@ -20,7 +20,7 @@ CloseTaxiMap()
 
 ## GetNumRoutes
 
-Returns the number of hops from the current location to another taxi node. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Returns the number of hops from the current location to another taxi node. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -56,7 +56,7 @@ isBenchmark = GetTaxiBenchmarkMode()
 
 ## NumTaxiNodes
 
-Returns the number of flight points on the taxi map. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Returns the number of flight points on the taxi map. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -88,7 +88,7 @@ SetTaxiBenchmarkMode("arg")
 
 ## SetTaxiMap
 
-Sets a Texture object to show the appropriate flight map texture. Only has effect while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Sets a Texture object to show the appropriate flight map texture. Only has effect while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -104,7 +104,7 @@ SetTaxiMap(texture)
 
 ## TakeTaxiNode
 
-Embarks on a taxi flight to a given destination. Only has effect while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Embarks on a taxi flight to a given destination. Only has effect while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -122,7 +122,7 @@ TakeTaxiNode(index)
 
 Returns the horizontal coordinate of a taxi flight's destination node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](TaxiFlight.md#taxinodesetcurrent) should be called first so the client can compute routes.
 
-Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -145,7 +145,7 @@ dX = TaxiGetDestX(source, dest)
 
 Returns the vertical coordinate of a taxi flight's destination node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](TaxiFlight.md#taxinodesetcurrent) should be called first so the client can compute routes.
 
-Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -168,7 +168,7 @@ dY = TaxiGetDestY(source, dest)
 
 Returns the horizontal coordinate of a taxi flight's source node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](TaxiFlight.md#taxinodesetcurrent) should be called first so the client can compute routes.
 
-Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -191,7 +191,7 @@ sX = TaxiGetSrcX(source, dest)
 
 Returns the vertical coordinate of a taxi flight's source node. Used in the default UI to draw lines between nodes; [`TaxiNodeSetCurrent()`](TaxiFlight.md#taxinodesetcurrent) should be called first so the client can compute routes.
 
-Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -212,7 +212,7 @@ sY = TaxiGetSrcY(source, dest)
 
 ## TaxiNodeCost
 
-Returns the cost to fly to a given taxi node. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Returns the cost to fly to a given taxi node. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -232,7 +232,7 @@ cost = TaxiNodeCost(index)
 
 ## TaxiNodeGetType
 
-Returns the type of a flight pont. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Returns the type of a flight pont. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -256,7 +256,7 @@ type = TaxiNodeGetType(index)
 
 ## TaxiNodeName
 
-Returns the name of a flight point. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Returns the name of a flight point. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 
@@ -276,7 +276,7 @@ name = TaxiNodeName(index)
 
 ## TaxiNodePosition
 
-Returns the position of a flight point on the taxi map. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_OPENED) and [`TAXIMAP_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TAXIMAP_CLOSED) events).
+Returns the position of a flight point on the taxi map. Only returns valid data while interacting with a flight master (i.e. between the [`TAXIMAP_OPENED`](../events/TAXIMAP_OPENED.md) and [`TAXIMAP_CLOSED`](../events/TAXIMAP_CLOSED.md) events).
 
 **Signature:**
 

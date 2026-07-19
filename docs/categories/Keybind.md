@@ -142,7 +142,7 @@ numBindings = GetNumBindings()
 
 ## LoadBindings
 
-Loads a set of key bindings. The [`UPDATE_BINDINGS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UPDATE_BINDINGS) event fires when the new bindings have taken effect.
+Loads a set of key bindings. The [`UPDATE_BINDINGS`](../events/UPDATE_BINDINGS.md) event fires when the new bindings have taken effect.
 
 **Signature:**
 

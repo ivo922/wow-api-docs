@@ -30,13 +30,13 @@ FlagTutorial("tutorial")
 
 **Arguments:**
 
-- `tutorial` - Numeric identifier for the tutorial step (as string); supplied in the [`TUTORIAL_TRIGGER`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TUTORIAL_TRIGGER) event (`string`)
+- `tutorial` - Numeric identifier for the tutorial step (as string); supplied in the [`TUTORIAL_TRIGGER`](../events/TUTORIAL_TRIGGER.md) event (`string`)
 
 ---
 
 ## ResetTutorials
 
-Enables contextual tutorial display and clears the list of already displayed tutorials. Tutorials that have already been shown to the player will appear again (via [`TUTORIAL_TRIGGER`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TUTORIAL_TRIGGER) events) once their conditions are met. The first tutorial will appear again immediately.
+Enables contextual tutorial display and clears the list of already displayed tutorials. Tutorials that have already been shown to the player will appear again (via [`TUTORIAL_TRIGGER`](../events/TUTORIAL_TRIGGER.md) events) once their conditions are met. The first tutorial will appear again immediately.
 
 **Signature:**
 

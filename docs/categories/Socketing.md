@@ -8,7 +8,7 @@
 
 ## AcceptSockets `confirmation`
 
-Accepts changes made in the Item Socketing UI. Any gems added are permanently socketed into the item, and any existing gems replaced by new gems are destroyed. This function only has effect while the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Accepts changes made in the Item Socketing UI. Any gems added are permanently socketed into the item, and any existing gems replaced by new gems are destroyed. This function only has effect while the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 
@@ -22,7 +22,7 @@ AcceptSockets()
 
 Picks up or places a gem in the Item Socketing UI. If the Item Socketing UI is open and the cursor contains a socketable gem, places the gem into socket `index`. If the cursor does not hold an item and socket `index` is not locked, picks up the gem in that socket.
 
-Only has an effect while the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Only has an effect while the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 
@@ -46,7 +46,7 @@ ClickSocketButton(1)
 
 ## CloseSocketInfo
 
-Ends interaction with the Item Socketing UI, discarding any changes made. Causes the [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) event to fire, indicating that Socket API functions may no longer have effects or return valid data.
+Ends interaction with the Item Socketing UI, discarding any changes made. Causes the [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) event to fire, indicating that Socket API functions may no longer have effects or return valid data.
 
 **Signature:**
 
@@ -60,7 +60,7 @@ CloseSocketInfo()
 
 Returns information about a permanently socketed gem. If the given socket contains a permanently socketed gem, returns information for that gem (even if a new gem has been dropped in the socket to overwrite the existing gem, but has not yet been confirmed). If the socket is empty, returns `nil`.
 
-Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 
@@ -84,7 +84,7 @@ name, texture, name = GetExistingSocketInfo(index)
 
 Returns a hyperlink for a permanently socketed gem. If the given socket contains a permanently socketed gem, returns an item link for that gem (even if a new gem has been dropped in the socket to overwrite the existing gem, but has not yet been confirmed). If the socket is empty, returns `nil`.
 
-Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 
@@ -130,7 +130,7 @@ name, link = GetItemGem(itemID, index) or GetItemGem("itemName", index) or GetIt
 
 Returns information about a gem added to a socket. If the given socket contains a new gem (one that has been placed in the UI, but not yet confirmed for permanently socketing into the item), returns information for that gem. If the socket is empty or has a permanently socketed gem but no new gem, returns `nil`.
 
-Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 
@@ -154,7 +154,7 @@ name, texture, matches = GetNewSocketInfo(index)
 
 Returns a hyperlink for a gem added to a socket. If the given socket contains a new gem (one that has been placed in the UI, but not yet confirmed for permanently socketing into the item), returns an item link for that gem. If the socket is empty or has a permanently socketed gem but no new gem, returns `nil`.
 
-Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 
@@ -174,7 +174,7 @@ link = GetNewSocketLink(index)
 
 ## GetNumSockets
 
-Returns the number of sockets on the item currently being socketed. Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Returns the number of sockets on the item currently being socketed. Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 
@@ -206,7 +206,7 @@ tradeable = GetSocketItemBoundTradeable()
 
 ## GetSocketItemInfo
 
-Returns information about the item currently being socketed. Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Returns information about the item currently being socketed. Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 
@@ -240,7 +240,7 @@ refundable = GetSocketItemRefundable()
 
 ## GetSocketTypes
 
-Returns information about the gem types usable in a socket. Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Returns information about the gem types usable in a socket. Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 

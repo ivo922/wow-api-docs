@@ -31,7 +31,7 @@ AddPreviewTalentPoints(tabIndex, talentIndex, points, isPet, talentGroup)
 
 ## CheckTalentMasterDist
 
-Returns whether the player is in range of an NPC that can reset talents. Usable following the [`CONFIRM_TALENT_WIPE`](https://web.archive.org/web/20111212183617/http://wowprogramming.com/docs/events/CONFIRM_TALENT_WIPE) event which fires when the player speaks to an trainer NPC and chooses to reset his or her talents. Used in the default UI to hide the confirmation window for such if the player moves too far away from the NPC.
+Returns whether the player is in range of an NPC that can reset talents. Usable following the [`CONFIRM_TALENT_WIPE`](../events/CONFIRM_TALENT_WIPE.md) event which fires when the player speaks to an trainer NPC and chooses to reset his or her talents. Used in the default UI to hide the confirmation window for such if the player moves too far away from the NPC.
 
 **Signature:**
 
@@ -47,7 +47,7 @@ inRange = CheckTalentMasterDist()
 
 ## ConfirmTalentWipe `confirmation`
 
-Resets the player's talents. Usable following the [`CONFIRM_TALENT_WIPE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_TALENT_WIPE) event which fires when the player speaks to an trainer NPC and chooses to reset his or her talents.
+Resets the player's talents. Usable following the [`CONFIRM_TALENT_WIPE`](../events/CONFIRM_TALENT_WIPE.md) event which fires when the player speaks to an trainer NPC and chooses to reset his or her talents.
 
 **Signature:**
 

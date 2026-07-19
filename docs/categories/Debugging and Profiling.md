@@ -78,7 +78,7 @@ usage, numEvents = GetEventCPUUsage(["event"])
 
 **Arguments:**
 
-- `event` - Name of an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events); if omitted, returns usage information for all events (`string`)
+- `event` - Name of an [event](../Events.md); if omitted, returns usage information for all events (`string`)
 
 **Returns:**
 

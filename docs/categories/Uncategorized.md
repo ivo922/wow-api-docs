@@ -1258,7 +1258,7 @@ This function is not yet documented
 
 Requests instance lockout and Call to Arms dungeon reward information.. When called the server will update the client on instance lockout and Call to Arms. The API will then return updated values instead of old once.
 
-Once [`LFG_UPDATE_RANDOM_INFO`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/LFG_UPDATE_RANDOM_INFO) event is received it means that updated Call to Arms data is finally available for the client.
+Once [`LFG_UPDATE_RANDOM_INFO`](../events/LFG_UPDATE_RANDOM_INFO.md) event is received it means that updated Call to Arms data is finally available for the client.
 
 **Signature:**
 

@@ -8,7 +8,7 @@
 
 ## AcceptAreaSpiritHeal
 
-Accepts the next upcoming periodic resurrection from a battleground spirit healer. Automatically called in the default UI in response to the [`AREA_SPIRIT_HEALER_IN_RANGE`](https://web.archive.org/web/20111212170856/http://wowprogramming.com/docs/events/AREA_SPIRIT_HEALER_IN_RANGE) event which fires when the player's ghost is near a battleground spirit healer.
+Accepts the next upcoming periodic resurrection from a battleground spirit healer. Automatically called in the default UI in response to the [`AREA_SPIRIT_HEALER_IN_RANGE`](../events/AREA_SPIRIT_HEALER_IN_RANGE.md) event which fires when the player's ghost is near a battleground spirit healer.
 
 **Signature:**
 
@@ -53,7 +53,7 @@ canGroupJoin = CanJoinBattlefieldAsGroup()
 
 ## CancelAreaSpiritHeal
 
-Declines the next upcoming periodic resurrection from a battleground spirit healer. Usable in response to the [`AREA_SPIRIT_HEALER_IN_RANGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AREA_SPIRIT_HEALER_IN_RANGE) event which fires when the player's ghost is near a battleground spirit healer.
+Declines the next upcoming periodic resurrection from a battleground spirit healer. Usable in response to the [`AREA_SPIRIT_HEALER_IN_RANGE`](../events/AREA_SPIRIT_HEALER_IN_RANGE.md) event which fires when the player's ghost is near a battleground spirit healer.
 
 **Signature:**
 
@@ -65,7 +65,7 @@ CancelAreaSpiritHeal()
 
 ## CloseBattlefield
 
-Ends interaction with the battleground queueing UI. Causes the [`BATTLEFIELDS_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/BATTLEFIELDS_CLOSED) event to fire, indicating that Battlefield queueing-related APIs may no longer have effects or return valid data.
+Ends interaction with the battleground queueing UI. Causes the [`BATTLEFIELDS_CLOSED`](../events/BATTLEFIELDS_CLOSED.md) event to fire, indicating that Battlefield queueing-related APIs may no longer have effects or return valid data.
 
 **Signature:**
 
@@ -371,7 +371,7 @@ status, mapName, instanceID, bracketMin, bracketMax, teamSize, registeredMatch =
 
 ## GetBattlefieldTeamInfo
 
-Returns info about teams and their ratings in a rated arena match.. Usable following the [`UPDATE_BATTLEFIELD_SCORE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UPDATE_BATTLEFIELD_SCORE) event.
+Returns info about teams and their ratings in a rated arena match.. Usable following the [`UPDATE_BATTLEFIELD_SCORE`](../events/UPDATE_BATTLEFIELD_SCORE.md) event.
 
 **Signature:**
 
@@ -788,7 +788,7 @@ RequestBattlefieldPositions()
 
 ## RequestBattlefieldScoreData `server`
 
-Requests battlefield score data from the server. Score data is not returned immediately; the [`UPDATE_BATTLEFIELD_SCORE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UPDATE_BATTLEFIELD_SCORE) event fires once information is available and can be retrieved by calling [`GetBattlefieldScore()`](Battlefield.md#getbattlefieldscore) and related functions.
+Requests battlefield score data from the server. Score data is not returned immediately; the [`UPDATE_BATTLEFIELD_SCORE`](../events/UPDATE_BATTLEFIELD_SCORE.md) event fires once information is available and can be retrieved by calling [`GetBattlefieldScore()`](Battlefield.md#getbattlefieldscore) and related functions.
 
 **Signature:**
 
@@ -800,7 +800,7 @@ RequestBattlefieldScoreData()
 
 ## RequestBattlegroundInstanceInfo `server`
 
-Requests information about available instances of a battleground from the server. The [`PVPQUEUE_ANYWHERE_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PVPQUEUE_ANYWHERE_SHOW) event fires once information is available; data can then be retrieved by calling [`GetNumBattlefields()`](Battlefield.md#getnumbattlefields) and [`GetBattlefieldInstanceInfo()`](Battlefield.md#getbattlefieldinstanceinfo).
+Requests information about available instances of a battleground from the server. The [`PVPQUEUE_ANYWHERE_SHOW`](../events/PVPQUEUE_ANYWHERE_SHOW.md) event fires once information is available; data can then be retrieved by calling [`GetNumBattlefields()`](Battlefield.md#getnumbattlefields) and [`GetBattlefieldInstanceInfo()`](Battlefield.md#getbattlefieldinstanceinfo).
 
 **Signature:**
 

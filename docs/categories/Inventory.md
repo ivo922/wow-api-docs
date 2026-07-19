@@ -10,7 +10,7 @@
 
 Equips the item on the cursor. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](Cursor.md#equipcursoritem).
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
+Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
 
 **Signature:**
 
@@ -120,7 +120,7 @@ canBePlaced = CursorCanGoInSlot(slot)
 
 Puts the item on the cursor into a specific equipment slot. If the item on the cursor can be equipped but does not fit in the given slot, the item is automatically equipped in the first available slot in which it fits (as with [`AutoEquipCursorItem()`](Cursor.md#autoequipcursoritem)). Thus, this function is most useful when dealing with items which can be equipped in more than one slot: containers, rings, trinkets, and (for dual-wielding characters) one-handed weapons.
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
+Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
 
 **Signature:**
 
@@ -138,7 +138,7 @@ EquipCursorItem(slot)
 
 Attempts to equip an arbitrary item. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](Cursor.md#equipcursoritem).
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the specified item cannot be equipped. Does nothing if the specified item does not exist or is not in the player's possession.
+Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the specified item cannot be equipped. Does nothing if the specified item does not exist or is not in the player's possession.
 
 **Signature:**
 
@@ -156,7 +156,7 @@ EquipItemByName(itemID) or EquipItemByName("itemName") or EquipItemByName("itemL
 
 ## EquipPendingItem `confirmation`
 
-Confirms equipping a bind-on-equip item. Usable following the [`EQUIP_BIND_CONFIRM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/EQUIP_BIND_CONFIRM) or [`AUTOEQUIP_BIND_CONFIRM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUTOEQUIP_BIND_CONFIRM), which fires when the player attempts to equip a bind-on-equip item
+Confirms equipping a bind-on-equip item. Usable following the [`EQUIP_BIND_CONFIRM`](../events/EQUIP_BIND_CONFIRM.md) or [`AUTOEQUIP_BIND_CONFIRM`](../events/AUTOEQUIP_BIND_CONFIRM.md), which fires when the player attempts to equip a bind-on-equip item
 
 **Signature:**
 
@@ -166,7 +166,7 @@ EquipPendingItem(index)
 
 **Arguments:**
 
-- `index` - Index provided by the [`EQUIP_BIND_CONFIRM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/EQUIP_BIND_CONFIRM) or [`AUTOEQUIP_BIND_CONFIRM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUTOEQUIP_BIND_CONFIRM) event; currently always 0 (`number`)
+- `index` - Index provided by the [`EQUIP_BIND_CONFIRM`](../events/EQUIP_BIND_CONFIRM.md) or [`AUTOEQUIP_BIND_CONFIRM`](../events/AUTOEQUIP_BIND_CONFIRM.md) event; currently always 0 (`number`)
 
 ---
 

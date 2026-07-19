@@ -292,7 +292,7 @@ Requests a list of characters meeting given search criteria from the server. Tex
 - `-X` - Search for characters of level `X` or lower
 - `X-Y` - Search for characters between levels `X` and `Y` (inclusive)
 
-Results are not available immediately; the [`CHAT_MSG_SYSTEM`](https://web.archive.org/web/20111212160325/http://wowprogramming.com/docs/events/CHAT_MSG_SYSTEM) or [`WHO_LIST_UPDATE`](https://web.archive.org/web/20111212160325/http://wowprogramming.com/docs/events/WHO_LIST_UPDATE) event fires when data is available, as determined by the [`SetWhoToUI()`](Social.md#setwhotoui) function.
+Results are not available immediately; the [`CHAT_MSG_SYSTEM`](../events/CHAT_MSG_SYSTEM.md) or [`WHO_LIST_UPDATE`](../events/WHO_LIST_UPDATE.md) event fires when data is available, as determined by the [`SetWhoToUI()`](Social.md#setwhotoui) function.
 
 **Signature:**
 
@@ -358,7 +358,7 @@ SetSelectedIgnore(index)
 
 ## SetWhoToUI
 
-Changes the delivery method for results from [`SendWho()`](Social.md#sendwho-server) queries. In the default UI, results delivered in [`CHAT_MSG_SYSTEM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CHAT_MSG_SYSTEM) are printed in the main chat window; results delivered in a [`WHO_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/WHO_LIST_UPDATE) event cause the FriendsFrame to be shown, displaying the results in its "Who" tab.
+Changes the delivery method for results from [`SendWho()`](Social.md#sendwho-server) queries. In the default UI, results delivered in [`CHAT_MSG_SYSTEM`](../events/CHAT_MSG_SYSTEM.md) are printed in the main chat window; results delivered in a [`WHO_LIST_UPDATE`](../events/WHO_LIST_UPDATE.md) event cause the FriendsFrame to be shown, displaying the results in its "Who" tab.
 
 **Signature:**
 
@@ -369,14 +369,14 @@ SetWhoToUI(state)
 **Arguments:**
 
 - `state` - Number identifying a delivery method (`number`)
-  - `0` - Send results of three entries or fewer in [`CHAT_MSG_SYSTEM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CHAT_MSG_SYSTEM) events and results of greater than three entries in a [`WHO_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/WHO_LIST_UPDATE) event
-  - `1` - Send all results in a [`WHO_LIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/WHO_LIST_UPDATE) event
+  - `0` - Send results of three entries or fewer in [`CHAT_MSG_SYSTEM`](../events/CHAT_MSG_SYSTEM.md) events and results of greater than three entries in a [`WHO_LIST_UPDATE`](../events/WHO_LIST_UPDATE.md) event
+  - `1` - Send all results in a [`WHO_LIST_UPDATE`](../events/WHO_LIST_UPDATE.md) event
 
 ---
 
 ## ShowFriends `server`
 
-Requests friends/ignore list information from the server. Information is not returned immediately; the [`FRIENDLIST_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/FRIENDLIST_UPDATE) event fires when data becomes available for use by Friends/Ignore API functions.
+Requests friends/ignore list information from the server. Information is not returned immediately; the [`FRIENDLIST_UPDATE`](../events/FRIENDLIST_UPDATE.md) event fires when data becomes available for use by Friends/Ignore API functions.
 
 **Signature:**
 

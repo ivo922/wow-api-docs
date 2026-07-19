@@ -89,7 +89,7 @@ canWithdraw = CanWithdrawGuildBankMoney()
 
 ## CloseGuildBankFrame
 
-Ends interaction with the guild bank vault. Fires the [`GUILDBANKFRAME_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANKFRAME_CLOSED) event, indicating that APIs related to the Guild Bank vault may no longer have effects or return valid data. (APIs related to guild bank permissions are still usable.)
+Ends interaction with the guild bank vault. Fires the [`GUILDBANKFRAME_CLOSED`](../events/GUILDBANKFRAME_CLOSED.md) event, indicating that APIs related to the Guild Bank vault may no longer have effects or return valid data. (APIs related to guild bank permissions are still usable.)
 
 **Signature:**
 
@@ -177,7 +177,7 @@ item = GetGuildBankItemLink(tab, slot)
 
 ## GetGuildBankMoney
 
-Returns the amount of money in the guild bank. The return value is cached and returns the last value seen when not interacting with a guild bank vault. This cache works across characters, and is updated when the [`GUILDBANK_UPDATE_MONEY`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANK_UPDATE_MONEY) or [`GUILDBANKFRAME_OPENED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANKFRAME_OPENED) event fires. If no player character has accessed a guild bank since the game client was launched, this function returns 0.
+Returns the amount of money in the guild bank. The return value is cached and returns the last value seen when not interacting with a guild bank vault. This cache works across characters, and is updated when the [`GUILDBANK_UPDATE_MONEY`](../events/GUILDBANK_UPDATE_MONEY.md) or [`GUILDBANKFRAME_OPENED`](../events/GUILDBANKFRAME_OPENED.md) event fires. If no player character has accessed a guild bank since the game client was launched, this function returns 0.
 
 **Signature:**
 
@@ -285,7 +285,7 @@ canView, canDeposit, canUpdateText, numWithdrawls = GetGuildBankTabPermissions(t
 
 ## GetGuildBankText
 
-Returns text associated with a guild bank tab. Only returns valid data after [`QueryGuildBankText()`](Guild bank.md#queryguildbanktext-server) has been called to retrieve the text from the server and the following [`GUILDBANK_UPDATE_TEXT`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANK_UPDATE_TEXT) event has fired.
+Returns text associated with a guild bank tab. Only returns valid data after [`QueryGuildBankText()`](Guild bank.md#queryguildbanktext-server) has been called to retrieve the text from the server and the following [`GUILDBANK_UPDATE_TEXT`](../events/GUILDBANK_UPDATE_TEXT.md) event has fired.
 
 **Signature:**
 
@@ -305,7 +305,7 @@ text = GetGuildBankText(tab)
 
 ## GetGuildBankTransaction
 
-Returns information about a transaction in the log for a guild bank tab. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANKLOG_UPDATE) event which fires after calling [`QueryGuildBankLog()`](Guild bank.md#queryguildbanklog-server).
+Returns information about a transaction in the log for a guild bank tab. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](../events/GUILDBANKLOG_UPDATE.md) event which fires after calling [`QueryGuildBankLog()`](Guild bank.md#queryguildbanklog-server).
 
 **Signature:**
 
@@ -403,7 +403,7 @@ numTabs = GetNumGuildBankTabs()
 
 ## GetNumGuildBankTransactions
 
-Returns the number of entries in a guild bank tab's transaction log. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](https://web.archive.org/web/20111212161357/http://wowprogramming.com/docs/events/GUILDBANKLOG_UPDATE) event which fires after calling [`QueryGuildBankLog()`](Guild bank.md#queryguildbanklog-server).
+Returns the number of entries in a guild bank tab's transaction log. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](../events/GUILDBANKLOG_UPDATE.md) event which fires after calling [`QueryGuildBankLog()`](Guild bank.md#queryguildbanklog-server).
 
 **Signature:**
 
@@ -456,7 +456,7 @@ PickupGuildBankMoney(amount)
 
 ## QueryGuildBankLog `server`
 
-Requests the item transaction log for a guild bank tab from the server. Fires the [`GUILDBANKLOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANKLOG_UPDATE) event when transaction log information becomes available.
+Requests the item transaction log for a guild bank tab from the server. Fires the [`GUILDBANKLOG_UPDATE`](../events/GUILDBANKLOG_UPDATE.md) event when transaction log information becomes available.
 
 **Signature:**
 
@@ -472,7 +472,7 @@ QueryGuildBankLog(tab)
 
 ## QueryGuildBankTab `server`
 
-Requests information about the contents of a guild bank tab from the server. Fires the [`GUILDBANKBAGSLOTS_CHANGED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANKBAGSLOTS_CHANGED) event when information about the tab's contents becomes available.
+Requests information about the contents of a guild bank tab from the server. Fires the [`GUILDBANKBAGSLOTS_CHANGED`](../events/GUILDBANKBAGSLOTS_CHANGED.md) event when information about the tab's contents becomes available.
 
 **Signature:**
 
@@ -488,7 +488,7 @@ QueryGuildBankTab(tab)
 
 ## QueryGuildBankText `server`
 
-Requests guild bank tab info text from the server. The text is not returned immediately; the [`GUILDBANK_UPDATE_TEXT`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANK_UPDATE_TEXT) event fires when text is available for retrieval by the [`GetGuildBankText()`](Guild bank.md#getguildbanktext) function.
+Requests guild bank tab info text from the server. The text is not returned immediately; the [`GUILDBANK_UPDATE_TEXT`](../events/GUILDBANK_UPDATE_TEXT.md) event fires when text is available for retrieval by the [`GetGuildBankText()`](Guild bank.md#getguildbanktext) function.
 
 **Signature:**
 
@@ -605,7 +605,7 @@ SplitGuildBankItem(tab, slot, amount)
 
 ## WithdrawGuildBankMoney `confirmation`
 
-Attempts to withdraw money from the guild bank. Causes a [`PLAYER_MONEY`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_MONEY) event to fire, indicating the amount withdrawn has been added to the player's total (see [`GetMoney()`](Money.md#getmoney)). Causes an error or system message if `amount` exceeds the amount of money in the guild bank or the player's allowed daily withdrawal amount.
+Attempts to withdraw money from the guild bank. Causes a [`PLAYER_MONEY`](../events/PLAYER_MONEY.md) event to fire, indicating the amount withdrawn has been added to the player's total (see [`GetMoney()`](Money.md#getmoney)). Causes an error or system message if `amount` exceeds the amount of money in the guild bank or the player's allowed daily withdrawal amount.
 
 **Signature:**
 

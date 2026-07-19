@@ -134,7 +134,7 @@ type, data, subType = GetCursorInfo()
 
 Returns a hyperlink for a permanently socketed gem. If the given socket contains a permanently socketed gem, returns an item link for that gem (even if a new gem has been dropped in the socket to overwrite the existing gem, but has not yet been confirmed). If the socket is empty, returns `nil`.
 
-Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 
@@ -201,7 +201,7 @@ item = GetGuildBankItemLink(tab, slot)
 
 ## GetGuildBankTransaction
 
-Returns information about a transaction in the log for a guild bank tab. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILDBANKLOG_UPDATE) event which fires after calling [`QueryGuildBankLog()`](Guild bank.md#queryguildbanklog-server).
+Returns information about a transaction in the log for a guild bank tab. Only returns valid information following the [`GUILDBANKLOG_UPDATE`](../events/GUILDBANKLOG_UPDATE.md) event which fires after calling [`QueryGuildBankLog()`](Guild bank.md#queryguildbanklog-server).
 
 **Signature:**
 
@@ -311,7 +311,7 @@ link = GetLootRollItemLink(id)
 
 **Arguments:**
 
-- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/START_LOOT_ROLL) event) (`number`)
+- `id` - Index of an item currently up for loot rolling (as provided in the [`START_LOOT_ROLL`](../events/START_LOOT_ROLL.md) event) (`number`)
 
 **Returns:**
 
@@ -385,7 +385,7 @@ link = GetMerchantItemLink(index)
 
 Returns a hyperlink for a gem added to a socket. If the given socket contains a new gem (one that has been placed in the UI, but not yet confirmed for permanently socketing into the item), returns an item link for that gem. If the socket is empty or has a permanently socketed gem but no new gem, returns `nil`.
 
-Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Only returns valid information when the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 

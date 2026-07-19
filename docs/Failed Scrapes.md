@@ -67,3 +67,24 @@ Method detail pages with no Wayback capture (listing stub only in `docs/widgets/
 | `Animation:SetMaxFramerate` | never archived |
 | `GameTooltip:SetSpell` | never archived |
 | `GameTooltip:SetTracking` | never archived |
+
+## Events
+
+Event detail pages with no Wayback capture (listing stub only in `docs/events/`).
+
+**12** of **605** events.
+
+| Event | Status |
+| --- | --- |
+| `HONOR_CURRENCY_UPDATE` | never archived |
+| `KNOWN_CURRENCY_TYPES_UPDATE` | never archived |
+| `UNIT_ENERGY` | never archived |
+| `UNIT_FOCUS` | never archived |
+| `UNIT_HAPPINESS` | never archived |
+| `UNIT_MAXENERGY` | never archived |
+| `UNIT_MAXFOCUS` | never archived |
+| `UNIT_MAXHAPPINESS` | never archived |
+| `UNIT_MAXMANA` | never archived |
+| `UNIT_MAXRAGE` | never archived |
+| `UNIT_MAXRUNIC_POWER` | never archived |
+| `UNIT_RUNIC_POWER` | never archived |

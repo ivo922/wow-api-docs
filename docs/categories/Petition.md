@@ -8,7 +8,7 @@
 
 ## BuyGuildCharter
 
-Purchases a guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_SHOW) and [`GUILD_REGISTRAR_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_CLOSED) events).
+Purchases a guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](../events/GUILD_REGISTRAR_SHOW.md) and [`GUILD_REGISTRAR_CLOSED`](../events/GUILD_REGISTRAR_CLOSED.md) events).
 
 **Signature:**
 
@@ -56,7 +56,7 @@ ClickPetitionButton()
 
 ## ClosePetition
 
-Ends interaction with a petition. Fires the [`PETITION_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PETITION_CLOSED) event, indicating that Petition APIs may no longer have effects or return valid data.
+Ends interaction with a petition. Fires the [`PETITION_CLOSED`](../events/PETITION_CLOSED.md) event, indicating that Petition APIs may no longer have effects or return valid data.
 
 **Signature:**
 
@@ -74,7 +74,7 @@ Ends interaction with an arena registrar
 
 ## GetGuildCharterCost
 
-Returns the cost to purchase a guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_SHOW) and [`GUILD_REGISTRAR_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_CLOSED) events).
+Returns the cost to purchase a guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](../events/GUILD_REGISTRAR_SHOW.md) and [`GUILD_REGISTRAR_CLOSED`](../events/GUILD_REGISTRAR_CLOSED.md) events).
 
 **Signature:**
 
@@ -218,7 +218,7 @@ Turns in a petition creating an arena team
 
 ## TurnInGuildCharter
 
-Turns in a completed guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_SHOW) and [`GUILD_REGISTRAR_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/GUILD_REGISTRAR_CLOSED) events).
+Turns in a completed guild charter. Usable if the player is interacting with a guild registrar (i.e. between the [`GUILD_REGISTRAR_SHOW`](../events/GUILD_REGISTRAR_SHOW.md) and [`GUILD_REGISTRAR_CLOSED`](../events/GUILD_REGISTRAR_CLOSED.md) events).
 
 **Signature:**
 

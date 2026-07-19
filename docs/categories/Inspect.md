@@ -19,7 +19,7 @@ canInspect = CanInspect("unit", showError)
 **Arguments:**
 
 - `unit` - A unit to inspect (`string`, [unitID](../types/unitID.md))
-- `showError` - True to fire a [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event (causing the default UI to display an error message) if the unit cannot be inspected; otherwise false (`boolean`)
+- `showError` - True to fire a [`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md) event (causing the default UI to display an error message) if the unit cannot be inspected; otherwise false (`boolean`)
 
 **Returns:**
 
@@ -133,7 +133,7 @@ NotifyInspect("unit")
 
 ## RequestInspectHonorData `server`
 
-Requests PvP honor and arena data from the server for the currently inspected unit. Once the [`INSPECT_HONOR_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/INSPECT_HONOR_UPDATE) event fires, PvP honor and arena information can be retrieved using [`GetInspectHonorData(team)`](Inspect.md#getinspecthonordata) and [`GetInspectArenaTeamData()`](Inspect.md#getinspectarenateamdata).
+Requests PvP honor and arena data from the server for the currently inspected unit. Once the [`INSPECT_HONOR_UPDATE`](../events/INSPECT_HONOR_UPDATE.md) event fires, PvP honor and arena information can be retrieved using [`GetInspectHonorData(team)`](Inspect.md#getinspecthonordata) and [`GetInspectArenaTeamData()`](Inspect.md#getinspectarenateamdata).
 
 **Signature:**
 

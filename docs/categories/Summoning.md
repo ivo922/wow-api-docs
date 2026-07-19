@@ -8,7 +8,7 @@
 
 ## CancelSummon
 
-Declines an offered summons. Usable between when the [`CONFIRM_SUMMON`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_SUMMON) event fires (due to a summoning spell cast by another player) and when the value returned by [`GetSummonConfirmTimeLeft()`](Summoning.md#getsummonconfirmtimeleft) reaches zero.
+Declines an offered summons. Usable between when the [`CONFIRM_SUMMON`](../events/CONFIRM_SUMMON.md) event fires (due to a summoning spell cast by another player) and when the value returned by [`GetSummonConfirmTimeLeft()`](Summoning.md#getsummonconfirmtimeleft) reaches zero.
 
 **Signature:**
 
@@ -20,7 +20,7 @@ CancelSummon()
 
 ## ConfirmSummon
 
-Accepts an offered summons, teleporting the player to the summoner's location. Usable between when the [`CONFIRM_SUMMON`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_SUMMON) event fires (due to a summoning spell cast by another player) and when the value returned by [`GetSummonConfirmTimeLeft()`](Summoning.md#getsummonconfirmtimeleft) reaches zero.
+Accepts an offered summons, teleporting the player to the summoner's location. Usable between when the [`CONFIRM_SUMMON`](../events/CONFIRM_SUMMON.md) event fires (due to a summoning spell cast by another player) and when the value returned by [`GetSummonConfirmTimeLeft()`](Summoning.md#getsummonconfirmtimeleft) reaches zero.
 
 **Signature:**
 
@@ -34,7 +34,7 @@ ConfirmSummon()
 
 Returns the destination area of an offered summons. The name returned is generally that of the subzone in which the summoner performed the spell.
 
-Usable between when the [`CONFIRM_SUMMON`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_SUMMON) event fires (due to a summoning spell cast by another player) and when the value returned by [`GetSummonConfirmTimeLeft()`](Summoning.md#getsummonconfirmtimeleft) reaches zero.
+Usable between when the [`CONFIRM_SUMMON`](../events/CONFIRM_SUMMON.md) event fires (due to a summoning spell cast by another player) and when the value returned by [`GetSummonConfirmTimeLeft()`](Summoning.md#getsummonconfirmtimeleft) reaches zero.
 
 **Signature:**
 
@@ -50,7 +50,7 @@ area = GetSummonConfirmAreaName()
 
 ## GetSummonConfirmSummoner
 
-Returns the name of the unit offering a summons to the player. Usable between when the [`CONFIRM_SUMMON`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_SUMMON) event fires (due to a summoning spell cast by another player) and when the value returned by [`GetSummonConfirmTimeLeft()`](Summoning.md#getsummonconfirmtimeleft) reaches zero.
+Returns the name of the unit offering a summons to the player. Usable between when the [`CONFIRM_SUMMON`](../events/CONFIRM_SUMMON.md) event fires (due to a summoning spell cast by another player) and when the value returned by [`GetSummonConfirmTimeLeft()`](Summoning.md#getsummonconfirmtimeleft) reaches zero.
 
 **Signature:**
 

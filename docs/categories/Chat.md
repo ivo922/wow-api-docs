@@ -97,7 +97,7 @@ ChatFrame_AddMessageEventFilter("event", filter)
 
 **Arguments:**
 
-- `event` - A `CHAT_MSG_` [Event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) for which the filter should be used (`string`)
+- `event` - A `CHAT_MSG_` [Event](../Events.md) for which the filter should be used (`string`)
 - `filter` - A function to filter incoming messages (`function`)
 
 **Examples:**
@@ -149,7 +149,7 @@ filterTable = ChatFrame_GetMessageEventFilters("event")
 
 **Arguments:**
 
-- `event` - A `CHAT_MSG_` [Event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) (`string`)
+- `event` - A `CHAT_MSG_` [Event](../Events.md) (`string`)
 
 **Returns:**
 
@@ -169,7 +169,7 @@ ChatFrame_RemoveMessageEventFilter("event", filter)
 
 **Arguments:**
 
-- `event` - `CHAT_MSG_` [Event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) from which to remove a filter (`string`)
+- `event` - `CHAT_MSG_` [Event](../Events.md) from which to remove a filter (`string`)
 - `filter` - A filter function registered for the event (`function`)
 
 ---
@@ -413,7 +413,7 @@ isLogging = LoggingCombat(toggle)
 
 ## RandomRoll `server`
 
-Initiates a public, server-side "dice roll". Used in the default UI to implement the `/roll` chat command; when called, the server generates a random integer and sends it to the player and all others nearby (or in the same party/raid) via a [`CHAT_MSG_SYSTEM`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CHAT_MSG_SYSTEM) event. (The server message is formatted according to the global `RANDOM_ROLL_RESULT`; e.g. "Leeroy rolls 3 (1-100)".)
+Initiates a public, server-side "dice roll". Used in the default UI to implement the `/roll` chat command; when called, the server generates a random integer and sends it to the player and all others nearby (or in the same party/raid) via a [`CHAT_MSG_SYSTEM`](../events/CHAT_MSG_SYSTEM.md) event. (The server message is formatted according to the global `RANDOM_ROLL_RESULT`; e.g. "Leeroy rolls 3 (1-100)".)
 
 For random number generation that does not involve the server or send visible messages to other clients, see `math.random`.
 

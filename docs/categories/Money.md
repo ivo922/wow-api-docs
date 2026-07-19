@@ -357,7 +357,7 @@ SetTradeMoney(amount)
 
 ## WithdrawGuildBankMoney `confirmation`
 
-Attempts to withdraw money from the guild bank. Causes a [`PLAYER_MONEY`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_MONEY) event to fire, indicating the amount withdrawn has been added to the player's total (see [`GetMoney()`](Money.md#getmoney)). Causes an error or system message if `amount` exceeds the amount of money in the guild bank or the player's allowed daily withdrawal amount.
+Attempts to withdraw money from the guild bank. Causes a [`PLAYER_MONEY`](../events/PLAYER_MONEY.md) event to fire, indicating the amount withdrawn has been added to the player's total (see [`GetMoney()`](Money.md#getmoney)). Causes an error or system message if `amount` exceeds the amount of money in the guild bank or the player's allowed daily withdrawal amount.
 
 **Signature:**
 

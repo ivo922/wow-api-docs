@@ -4,7 +4,8 @@
     "unique_functions": 2137,
     "function_entries": 2419,
     "types": 34,
-    "lookup": "Use by_name[<FunctionName>][0].path and .anchor to open the markdown file and jump to the ## heading."
+    "events": 605,
+    "lookup": "Use by_name[<FunctionName>][0].path and .anchor to open the markdown file and jump to the ## heading. Events: events[<NAME>].path."
   },
   "by_name": {
     "AddTrackedAchievement": [
@@ -27077,6 +27078,3033 @@
     "unitID": {
       "name": "unitID",
       "path": "types/unitID.md",
+      "anchor": ""
+    }
+  },
+  "events": {
+    "ACHIEVEMENT_EARNED": {
+      "name": "ACHIEVEMENT_EARNED",
+      "path": "events/ACHIEVEMENT_EARNED.md",
+      "anchor": ""
+    },
+    "ACTIONBAR_HIDEGRID": {
+      "name": "ACTIONBAR_HIDEGRID",
+      "path": "events/ACTIONBAR_HIDEGRID.md",
+      "anchor": ""
+    },
+    "ACTIONBAR_PAGE_CHANGED": {
+      "name": "ACTIONBAR_PAGE_CHANGED",
+      "path": "events/ACTIONBAR_PAGE_CHANGED.md",
+      "anchor": ""
+    },
+    "ACTIONBAR_SHOWGRID": {
+      "name": "ACTIONBAR_SHOWGRID",
+      "path": "events/ACTIONBAR_SHOWGRID.md",
+      "anchor": ""
+    },
+    "ACTIONBAR_SLOT_CHANGED": {
+      "name": "ACTIONBAR_SLOT_CHANGED",
+      "path": "events/ACTIONBAR_SLOT_CHANGED.md",
+      "anchor": ""
+    },
+    "ACTIONBAR_UPDATE_COOLDOWN": {
+      "name": "ACTIONBAR_UPDATE_COOLDOWN",
+      "path": "events/ACTIONBAR_UPDATE_COOLDOWN.md",
+      "anchor": ""
+    },
+    "ACTIONBAR_UPDATE_STATE": {
+      "name": "ACTIONBAR_UPDATE_STATE",
+      "path": "events/ACTIONBAR_UPDATE_STATE.md",
+      "anchor": ""
+    },
+    "ACTIONBAR_UPDATE_USABLE": {
+      "name": "ACTIONBAR_UPDATE_USABLE",
+      "path": "events/ACTIONBAR_UPDATE_USABLE.md",
+      "anchor": ""
+    },
+    "ACTIVE_TALENT_GROUP_CHANGED": {
+      "name": "ACTIVE_TALENT_GROUP_CHANGED",
+      "path": "events/ACTIVE_TALENT_GROUP_CHANGED.md",
+      "anchor": ""
+    },
+    "ADDON_ACTION_BLOCKED": {
+      "name": "ADDON_ACTION_BLOCKED",
+      "path": "events/ADDON_ACTION_BLOCKED.md",
+      "anchor": ""
+    },
+    "ADDON_ACTION_FORBIDDEN": {
+      "name": "ADDON_ACTION_FORBIDDEN",
+      "path": "events/ADDON_ACTION_FORBIDDEN.md",
+      "anchor": ""
+    },
+    "ADDON_LOADED": {
+      "name": "ADDON_LOADED",
+      "path": "events/ADDON_LOADED.md",
+      "anchor": ""
+    },
+    "AREA_SPIRIT_HEALER_IN_RANGE": {
+      "name": "AREA_SPIRIT_HEALER_IN_RANGE",
+      "path": "events/AREA_SPIRIT_HEALER_IN_RANGE.md",
+      "anchor": ""
+    },
+    "AREA_SPIRIT_HEALER_OUT_OF_RANGE": {
+      "name": "AREA_SPIRIT_HEALER_OUT_OF_RANGE",
+      "path": "events/AREA_SPIRIT_HEALER_OUT_OF_RANGE.md",
+      "anchor": ""
+    },
+    "ARENA_OPPONENT_UPDATE": {
+      "name": "ARENA_OPPONENT_UPDATE",
+      "path": "events/ARENA_OPPONENT_UPDATE.md",
+      "anchor": ""
+    },
+    "ARENA_SEASON_WORLD_STATE": {
+      "name": "ARENA_SEASON_WORLD_STATE",
+      "path": "events/ARENA_SEASON_WORLD_STATE.md",
+      "anchor": ""
+    },
+    "ARENA_TEAM_INVITE_REQUEST": {
+      "name": "ARENA_TEAM_INVITE_REQUEST",
+      "path": "events/ARENA_TEAM_INVITE_REQUEST.md",
+      "anchor": ""
+    },
+    "ARENA_TEAM_ROSTER_UPDATE": {
+      "name": "ARENA_TEAM_ROSTER_UPDATE",
+      "path": "events/ARENA_TEAM_ROSTER_UPDATE.md",
+      "anchor": ""
+    },
+    "ARENA_TEAM_UPDATE": {
+      "name": "ARENA_TEAM_UPDATE",
+      "path": "events/ARENA_TEAM_UPDATE.md",
+      "anchor": ""
+    },
+    "AUCTION_BIDDER_LIST_UPDATE": {
+      "name": "AUCTION_BIDDER_LIST_UPDATE",
+      "path": "events/AUCTION_BIDDER_LIST_UPDATE.md",
+      "anchor": ""
+    },
+    "AUCTION_HOUSE_CLOSED": {
+      "name": "AUCTION_HOUSE_CLOSED",
+      "path": "events/AUCTION_HOUSE_CLOSED.md",
+      "anchor": ""
+    },
+    "AUCTION_HOUSE_DISABLED": {
+      "name": "AUCTION_HOUSE_DISABLED",
+      "path": "events/AUCTION_HOUSE_DISABLED.md",
+      "anchor": ""
+    },
+    "AUCTION_HOUSE_SHOW": {
+      "name": "AUCTION_HOUSE_SHOW",
+      "path": "events/AUCTION_HOUSE_SHOW.md",
+      "anchor": ""
+    },
+    "AUCTION_ITEM_LIST_UPDATE": {
+      "name": "AUCTION_ITEM_LIST_UPDATE",
+      "path": "events/AUCTION_ITEM_LIST_UPDATE.md",
+      "anchor": ""
+    },
+    "AUCTION_MULTISELL_FAILURE": {
+      "name": "AUCTION_MULTISELL_FAILURE",
+      "path": "events/AUCTION_MULTISELL_FAILURE.md",
+      "anchor": ""
+    },
+    "AUCTION_MULTISELL_START": {
+      "name": "AUCTION_MULTISELL_START",
+      "path": "events/AUCTION_MULTISELL_START.md",
+      "anchor": ""
+    },
+    "AUCTION_MULTISELL_UPDATE": {
+      "name": "AUCTION_MULTISELL_UPDATE",
+      "path": "events/AUCTION_MULTISELL_UPDATE.md",
+      "anchor": ""
+    },
+    "AUCTION_OWNED_LIST_UPDATE": {
+      "name": "AUCTION_OWNED_LIST_UPDATE",
+      "path": "events/AUCTION_OWNED_LIST_UPDATE.md",
+      "anchor": ""
+    },
+    "AUTOEQUIP_BIND_CONFIRM": {
+      "name": "AUTOEQUIP_BIND_CONFIRM",
+      "path": "events/AUTOEQUIP_BIND_CONFIRM.md",
+      "anchor": ""
+    },
+    "AUTOFOLLOW_BEGIN": {
+      "name": "AUTOFOLLOW_BEGIN",
+      "path": "events/AUTOFOLLOW_BEGIN.md",
+      "anchor": ""
+    },
+    "AUTOFOLLOW_END": {
+      "name": "AUTOFOLLOW_END",
+      "path": "events/AUTOFOLLOW_END.md",
+      "anchor": ""
+    },
+    "BAG_CLOSED": {
+      "name": "BAG_CLOSED",
+      "path": "events/BAG_CLOSED.md",
+      "anchor": ""
+    },
+    "BAG_OPEN": {
+      "name": "BAG_OPEN",
+      "path": "events/BAG_OPEN.md",
+      "anchor": ""
+    },
+    "BAG_UPDATE": {
+      "name": "BAG_UPDATE",
+      "path": "events/BAG_UPDATE.md",
+      "anchor": ""
+    },
+    "BAG_UPDATE_COOLDOWN": {
+      "name": "BAG_UPDATE_COOLDOWN",
+      "path": "events/BAG_UPDATE_COOLDOWN.md",
+      "anchor": ""
+    },
+    "BANKFRAME_CLOSED": {
+      "name": "BANKFRAME_CLOSED",
+      "path": "events/BANKFRAME_CLOSED.md",
+      "anchor": ""
+    },
+    "BANKFRAME_OPENED": {
+      "name": "BANKFRAME_OPENED",
+      "path": "events/BANKFRAME_OPENED.md",
+      "anchor": ""
+    },
+    "BARBER_SHOP_APPEARANCE_APPLIED": {
+      "name": "BARBER_SHOP_APPEARANCE_APPLIED",
+      "path": "events/BARBER_SHOP_APPEARANCE_APPLIED.md",
+      "anchor": ""
+    },
+    "BARBER_SHOP_CLOSE": {
+      "name": "BARBER_SHOP_CLOSE",
+      "path": "events/BARBER_SHOP_CLOSE.md",
+      "anchor": ""
+    },
+    "BARBER_SHOP_OPEN": {
+      "name": "BARBER_SHOP_OPEN",
+      "path": "events/BARBER_SHOP_OPEN.md",
+      "anchor": ""
+    },
+    "BARBER_SHOP_SUCCESS": {
+      "name": "BARBER_SHOP_SUCCESS",
+      "path": "events/BARBER_SHOP_SUCCESS.md",
+      "anchor": ""
+    },
+    "BATTLEFIELDS_CLOSED": {
+      "name": "BATTLEFIELDS_CLOSED",
+      "path": "events/BATTLEFIELDS_CLOSED.md",
+      "anchor": ""
+    },
+    "BATTLEFIELDS_SHOW": {
+      "name": "BATTLEFIELDS_SHOW",
+      "path": "events/BATTLEFIELDS_SHOW.md",
+      "anchor": ""
+    },
+    "BATTLEFIELD_MGR_EJECTED": {
+      "name": "BATTLEFIELD_MGR_EJECTED",
+      "path": "events/BATTLEFIELD_MGR_EJECTED.md",
+      "anchor": ""
+    },
+    "BATTLEFIELD_MGR_EJECT_PENDING": {
+      "name": "BATTLEFIELD_MGR_EJECT_PENDING",
+      "path": "events/BATTLEFIELD_MGR_EJECT_PENDING.md",
+      "anchor": ""
+    },
+    "BATTLEFIELD_MGR_ENTERED": {
+      "name": "BATTLEFIELD_MGR_ENTERED",
+      "path": "events/BATTLEFIELD_MGR_ENTERED.md",
+      "anchor": ""
+    },
+    "BATTLEFIELD_MGR_ENTRY_INVITE": {
+      "name": "BATTLEFIELD_MGR_ENTRY_INVITE",
+      "path": "events/BATTLEFIELD_MGR_ENTRY_INVITE.md",
+      "anchor": ""
+    },
+    "BATTLEFIELD_MGR_QUEUE_INVITE": {
+      "name": "BATTLEFIELD_MGR_QUEUE_INVITE",
+      "path": "events/BATTLEFIELD_MGR_QUEUE_INVITE.md",
+      "anchor": ""
+    },
+    "BATTLEFIELD_MGR_QUEUE_REQUEST_RESPONSE": {
+      "name": "BATTLEFIELD_MGR_QUEUE_REQUEST_RESPONSE",
+      "path": "events/BATTLEFIELD_MGR_QUEUE_REQUEST_RESPONSE.md",
+      "anchor": ""
+    },
+    "BATTLEFIELD_MGR_STATE_CHANGE": {
+      "name": "BATTLEFIELD_MGR_STATE_CHANGE",
+      "path": "events/BATTLEFIELD_MGR_STATE_CHANGE.md",
+      "anchor": ""
+    },
+    "BILLING_NAG_DIALOG": {
+      "name": "BILLING_NAG_DIALOG",
+      "path": "events/BILLING_NAG_DIALOG.md",
+      "anchor": ""
+    },
+    "BIND_ENCHANT": {
+      "name": "BIND_ENCHANT",
+      "path": "events/BIND_ENCHANT.md",
+      "anchor": ""
+    },
+    "BN_BLOCK_LIST_UPDATED": {
+      "name": "BN_BLOCK_LIST_UPDATED",
+      "path": "events/BN_BLOCK_LIST_UPDATED.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_CLOSED": {
+      "name": "BN_CHAT_CHANNEL_CLOSED",
+      "path": "events/BN_CHAT_CHANNEL_CLOSED.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_CREATE_FAILED": {
+      "name": "BN_CHAT_CHANNEL_CREATE_FAILED",
+      "path": "events/BN_CHAT_CHANNEL_CREATE_FAILED.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_CREATE_SUCCEEDED": {
+      "name": "BN_CHAT_CHANNEL_CREATE_SUCCEEDED",
+      "path": "events/BN_CHAT_CHANNEL_CREATE_SUCCEEDED.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_INVITE_FAILED": {
+      "name": "BN_CHAT_CHANNEL_INVITE_FAILED",
+      "path": "events/BN_CHAT_CHANNEL_INVITE_FAILED.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_INVITE_SUCCEEDED": {
+      "name": "BN_CHAT_CHANNEL_INVITE_SUCCEEDED",
+      "path": "events/BN_CHAT_CHANNEL_INVITE_SUCCEEDED.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_JOINED": {
+      "name": "BN_CHAT_CHANNEL_JOINED",
+      "path": "events/BN_CHAT_CHANNEL_JOINED.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_LEFT": {
+      "name": "BN_CHAT_CHANNEL_LEFT",
+      "path": "events/BN_CHAT_CHANNEL_LEFT.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_MEMBER_JOINED": {
+      "name": "BN_CHAT_CHANNEL_MEMBER_JOINED",
+      "path": "events/BN_CHAT_CHANNEL_MEMBER_JOINED.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_MEMBER_LEFT": {
+      "name": "BN_CHAT_CHANNEL_MEMBER_LEFT",
+      "path": "events/BN_CHAT_CHANNEL_MEMBER_LEFT.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_MEMBER_UPDATED": {
+      "name": "BN_CHAT_CHANNEL_MEMBER_UPDATED",
+      "path": "events/BN_CHAT_CHANNEL_MEMBER_UPDATED.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_MESSAGE_BLOCKED": {
+      "name": "BN_CHAT_CHANNEL_MESSAGE_BLOCKED",
+      "path": "events/BN_CHAT_CHANNEL_MESSAGE_BLOCKED.md",
+      "anchor": ""
+    },
+    "BN_CHAT_CHANNEL_MESSAGE_UNDELIVERABLE": {
+      "name": "BN_CHAT_CHANNEL_MESSAGE_UNDELIVERABLE",
+      "path": "events/BN_CHAT_CHANNEL_MESSAGE_UNDELIVERABLE.md",
+      "anchor": ""
+    },
+    "BN_CHAT_WHISPER_UNDELIVERABLE": {
+      "name": "BN_CHAT_WHISPER_UNDELIVERABLE",
+      "path": "events/BN_CHAT_WHISPER_UNDELIVERABLE.md",
+      "anchor": ""
+    },
+    "BN_CONNECTED": {
+      "name": "BN_CONNECTED",
+      "path": "events/BN_CONNECTED.md",
+      "anchor": ""
+    },
+    "BN_CUSTOM_MESSAGE_CHANGED": {
+      "name": "BN_CUSTOM_MESSAGE_CHANGED",
+      "path": "events/BN_CUSTOM_MESSAGE_CHANGED.md",
+      "anchor": ""
+    },
+    "BN_CUSTOM_MESSAGE_LOADED": {
+      "name": "BN_CUSTOM_MESSAGE_LOADED",
+      "path": "events/BN_CUSTOM_MESSAGE_LOADED.md",
+      "anchor": ""
+    },
+    "BN_DISCONNECTED": {
+      "name": "BN_DISCONNECTED",
+      "path": "events/BN_DISCONNECTED.md",
+      "anchor": ""
+    },
+    "BN_FRIEND_ACCOUNT_OFFLINE": {
+      "name": "BN_FRIEND_ACCOUNT_OFFLINE",
+      "path": "events/BN_FRIEND_ACCOUNT_OFFLINE.md",
+      "anchor": ""
+    },
+    "BN_FRIEND_ACCOUNT_ONLINE": {
+      "name": "BN_FRIEND_ACCOUNT_ONLINE",
+      "path": "events/BN_FRIEND_ACCOUNT_ONLINE.md",
+      "anchor": ""
+    },
+    "BN_FRIEND_INFO_CHANGED": {
+      "name": "BN_FRIEND_INFO_CHANGED",
+      "path": "events/BN_FRIEND_INFO_CHANGED.md",
+      "anchor": ""
+    },
+    "BN_FRIEND_INVITE_ADDED": {
+      "name": "BN_FRIEND_INVITE_ADDED",
+      "path": "events/BN_FRIEND_INVITE_ADDED.md",
+      "anchor": ""
+    },
+    "BN_FRIEND_INVITE_LIST_INITIALIZED": {
+      "name": "BN_FRIEND_INVITE_LIST_INITIALIZED",
+      "path": "events/BN_FRIEND_INVITE_LIST_INITIALIZED.md",
+      "anchor": ""
+    },
+    "BN_FRIEND_INVITE_REMOVED": {
+      "name": "BN_FRIEND_INVITE_REMOVED",
+      "path": "events/BN_FRIEND_INVITE_REMOVED.md",
+      "anchor": ""
+    },
+    "BN_FRIEND_INVITE_SEND_RESULT": {
+      "name": "BN_FRIEND_INVITE_SEND_RESULT",
+      "path": "events/BN_FRIEND_INVITE_SEND_RESULT.md",
+      "anchor": ""
+    },
+    "BN_FRIEND_LIST_SIZE_CHANGED": {
+      "name": "BN_FRIEND_LIST_SIZE_CHANGED",
+      "path": "events/BN_FRIEND_LIST_SIZE_CHANGED.md",
+      "anchor": ""
+    },
+    "BN_FRIEND_TOON_OFFLINE": {
+      "name": "BN_FRIEND_TOON_OFFLINE",
+      "path": "events/BN_FRIEND_TOON_OFFLINE.md",
+      "anchor": ""
+    },
+    "BN_FRIEND_TOON_ONLINE": {
+      "name": "BN_FRIEND_TOON_ONLINE",
+      "path": "events/BN_FRIEND_TOON_ONLINE.md",
+      "anchor": ""
+    },
+    "BN_MATURE_LANGUAGE_FILTER": {
+      "name": "BN_MATURE_LANGUAGE_FILTER",
+      "path": "events/BN_MATURE_LANGUAGE_FILTER.md",
+      "anchor": ""
+    },
+    "BN_NEW_PRESENCE": {
+      "name": "BN_NEW_PRESENCE",
+      "path": "events/BN_NEW_PRESENCE.md",
+      "anchor": ""
+    },
+    "BN_REQUEST_FOF_FAILED": {
+      "name": "BN_REQUEST_FOF_FAILED",
+      "path": "events/BN_REQUEST_FOF_FAILED.md",
+      "anchor": ""
+    },
+    "BN_REQUEST_FOF_SUCCEEDED": {
+      "name": "BN_REQUEST_FOF_SUCCEEDED",
+      "path": "events/BN_REQUEST_FOF_SUCCEEDED.md",
+      "anchor": ""
+    },
+    "BN_SELF_OFFLINE": {
+      "name": "BN_SELF_OFFLINE",
+      "path": "events/BN_SELF_OFFLINE.md",
+      "anchor": ""
+    },
+    "BN_SELF_ONLINE": {
+      "name": "BN_SELF_ONLINE",
+      "path": "events/BN_SELF_ONLINE.md",
+      "anchor": ""
+    },
+    "BN_SYSTEM_MESSAGE": {
+      "name": "BN_SYSTEM_MESSAGE",
+      "path": "events/BN_SYSTEM_MESSAGE.md",
+      "anchor": ""
+    },
+    "BN_TOON_NAME_UPDATED": {
+      "name": "BN_TOON_NAME_UPDATED",
+      "path": "events/BN_TOON_NAME_UPDATED.md",
+      "anchor": ""
+    },
+    "CALENDAR_ACTION_PENDING": {
+      "name": "CALENDAR_ACTION_PENDING",
+      "path": "events/CALENDAR_ACTION_PENDING.md",
+      "anchor": ""
+    },
+    "CALENDAR_CLOSE_EVENT": {
+      "name": "CALENDAR_CLOSE_EVENT",
+      "path": "events/CALENDAR_CLOSE_EVENT.md",
+      "anchor": ""
+    },
+    "CALENDAR_EVENT_ALARM": {
+      "name": "CALENDAR_EVENT_ALARM",
+      "path": "events/CALENDAR_EVENT_ALARM.md",
+      "anchor": ""
+    },
+    "CALENDAR_NEW_EVENT": {
+      "name": "CALENDAR_NEW_EVENT",
+      "path": "events/CALENDAR_NEW_EVENT.md",
+      "anchor": ""
+    },
+    "CALENDAR_OPEN_EVENT": {
+      "name": "CALENDAR_OPEN_EVENT",
+      "path": "events/CALENDAR_OPEN_EVENT.md",
+      "anchor": ""
+    },
+    "CALENDAR_UPDATE_ERROR": {
+      "name": "CALENDAR_UPDATE_ERROR",
+      "path": "events/CALENDAR_UPDATE_ERROR.md",
+      "anchor": ""
+    },
+    "CALENDAR_UPDATE_EVENT": {
+      "name": "CALENDAR_UPDATE_EVENT",
+      "path": "events/CALENDAR_UPDATE_EVENT.md",
+      "anchor": ""
+    },
+    "CALENDAR_UPDATE_EVENT_LIST": {
+      "name": "CALENDAR_UPDATE_EVENT_LIST",
+      "path": "events/CALENDAR_UPDATE_EVENT_LIST.md",
+      "anchor": ""
+    },
+    "CALENDAR_UPDATE_INVITE_LIST": {
+      "name": "CALENDAR_UPDATE_INVITE_LIST",
+      "path": "events/CALENDAR_UPDATE_INVITE_LIST.md",
+      "anchor": ""
+    },
+    "CALENDAR_UPDATE_PENDING_INVITES": {
+      "name": "CALENDAR_UPDATE_PENDING_INVITES",
+      "path": "events/CALENDAR_UPDATE_PENDING_INVITES.md",
+      "anchor": ""
+    },
+    "CANCEL_LOOT_ROLL": {
+      "name": "CANCEL_LOOT_ROLL",
+      "path": "events/CANCEL_LOOT_ROLL.md",
+      "anchor": ""
+    },
+    "CANCEL_SUMMON": {
+      "name": "CANCEL_SUMMON",
+      "path": "events/CANCEL_SUMMON.md",
+      "anchor": ""
+    },
+    "CHANNEL_COUNT_UPDATE": {
+      "name": "CHANNEL_COUNT_UPDATE",
+      "path": "events/CHANNEL_COUNT_UPDATE.md",
+      "anchor": ""
+    },
+    "CHANNEL_FLAGS_UPDATED": {
+      "name": "CHANNEL_FLAGS_UPDATED",
+      "path": "events/CHANNEL_FLAGS_UPDATED.md",
+      "anchor": ""
+    },
+    "CHANNEL_INVITE_REQUEST": {
+      "name": "CHANNEL_INVITE_REQUEST",
+      "path": "events/CHANNEL_INVITE_REQUEST.md",
+      "anchor": ""
+    },
+    "CHANNEL_PASSWORD_REQUEST": {
+      "name": "CHANNEL_PASSWORD_REQUEST",
+      "path": "events/CHANNEL_PASSWORD_REQUEST.md",
+      "anchor": ""
+    },
+    "CHANNEL_ROSTER_UPDATE": {
+      "name": "CHANNEL_ROSTER_UPDATE",
+      "path": "events/CHANNEL_ROSTER_UPDATE.md",
+      "anchor": ""
+    },
+    "CHANNEL_UI_UPDATE": {
+      "name": "CHANNEL_UI_UPDATE",
+      "path": "events/CHANNEL_UI_UPDATE.md",
+      "anchor": ""
+    },
+    "CHANNEL_VOICE_UPDATE": {
+      "name": "CHANNEL_VOICE_UPDATE",
+      "path": "events/CHANNEL_VOICE_UPDATE.md",
+      "anchor": ""
+    },
+    "CHARACTER_POINTS_CHANGED": {
+      "name": "CHARACTER_POINTS_CHANGED",
+      "path": "events/CHARACTER_POINTS_CHANGED.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_ACHIEVEMENT": {
+      "name": "CHAT_MSG_ACHIEVEMENT",
+      "path": "events/CHAT_MSG_ACHIEVEMENT.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_ADDON": {
+      "name": "CHAT_MSG_ADDON",
+      "path": "events/CHAT_MSG_ADDON.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_AFK": {
+      "name": "CHAT_MSG_AFK",
+      "path": "events/CHAT_MSG_AFK.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BATTLEGROUND": {
+      "name": "CHAT_MSG_BATTLEGROUND",
+      "path": "events/CHAT_MSG_BATTLEGROUND.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BATTLEGROUND_LEADER": {
+      "name": "CHAT_MSG_BATTLEGROUND_LEADER",
+      "path": "events/CHAT_MSG_BATTLEGROUND_LEADER.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BG_SYSTEM_ALLIANCE": {
+      "name": "CHAT_MSG_BG_SYSTEM_ALLIANCE",
+      "path": "events/CHAT_MSG_BG_SYSTEM_ALLIANCE.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BG_SYSTEM_HORDE": {
+      "name": "CHAT_MSG_BG_SYSTEM_HORDE",
+      "path": "events/CHAT_MSG_BG_SYSTEM_HORDE.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BG_SYSTEM_NEUTRAL": {
+      "name": "CHAT_MSG_BG_SYSTEM_NEUTRAL",
+      "path": "events/CHAT_MSG_BG_SYSTEM_NEUTRAL.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BN_CONVERSATION": {
+      "name": "CHAT_MSG_BN_CONVERSATION",
+      "path": "events/CHAT_MSG_BN_CONVERSATION.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BN_CONVERSATION_LIST": {
+      "name": "CHAT_MSG_BN_CONVERSATION_LIST",
+      "path": "events/CHAT_MSG_BN_CONVERSATION_LIST.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BN_CONVERSATION_NOTICE": {
+      "name": "CHAT_MSG_BN_CONVERSATION_NOTICE",
+      "path": "events/CHAT_MSG_BN_CONVERSATION_NOTICE.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BN_INLINE_TOAST_ALERT": {
+      "name": "CHAT_MSG_BN_INLINE_TOAST_ALERT",
+      "path": "events/CHAT_MSG_BN_INLINE_TOAST_ALERT.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BN_INLINE_TOAST_BROADCAST": {
+      "name": "CHAT_MSG_BN_INLINE_TOAST_BROADCAST",
+      "path": "events/CHAT_MSG_BN_INLINE_TOAST_BROADCAST.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BN_INLINE_TOAST_BROADCAST_INFORM": {
+      "name": "CHAT_MSG_BN_INLINE_TOAST_BROADCAST_INFORM",
+      "path": "events/CHAT_MSG_BN_INLINE_TOAST_BROADCAST_INFORM.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BN_INLINE_TOAST_CONVERSATION": {
+      "name": "CHAT_MSG_BN_INLINE_TOAST_CONVERSATION",
+      "path": "events/CHAT_MSG_BN_INLINE_TOAST_CONVERSATION.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BN_WHISPER": {
+      "name": "CHAT_MSG_BN_WHISPER",
+      "path": "events/CHAT_MSG_BN_WHISPER.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_BN_WHISPER_INFORM": {
+      "name": "CHAT_MSG_BN_WHISPER_INFORM",
+      "path": "events/CHAT_MSG_BN_WHISPER_INFORM.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_CHANNEL": {
+      "name": "CHAT_MSG_CHANNEL",
+      "path": "events/CHAT_MSG_CHANNEL.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_CHANNEL_JOIN": {
+      "name": "CHAT_MSG_CHANNEL_JOIN",
+      "path": "events/CHAT_MSG_CHANNEL_JOIN.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_CHANNEL_LEAVE": {
+      "name": "CHAT_MSG_CHANNEL_LEAVE",
+      "path": "events/CHAT_MSG_CHANNEL_LEAVE.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_CHANNEL_LIST": {
+      "name": "CHAT_MSG_CHANNEL_LIST",
+      "path": "events/CHAT_MSG_CHANNEL_LIST.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_CHANNEL_NOTICE": {
+      "name": "CHAT_MSG_CHANNEL_NOTICE",
+      "path": "events/CHAT_MSG_CHANNEL_NOTICE.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_CHANNEL_NOTICE_USER": {
+      "name": "CHAT_MSG_CHANNEL_NOTICE_USER",
+      "path": "events/CHAT_MSG_CHANNEL_NOTICE_USER.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_COMBAT_FACTION_CHANGE": {
+      "name": "CHAT_MSG_COMBAT_FACTION_CHANGE",
+      "path": "events/CHAT_MSG_COMBAT_FACTION_CHANGE.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_COMBAT_HONOR_GAIN": {
+      "name": "CHAT_MSG_COMBAT_HONOR_GAIN",
+      "path": "events/CHAT_MSG_COMBAT_HONOR_GAIN.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_COMBAT_MISC_INFO": {
+      "name": "CHAT_MSG_COMBAT_MISC_INFO",
+      "path": "events/CHAT_MSG_COMBAT_MISC_INFO.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_COMBAT_XP_GAIN": {
+      "name": "CHAT_MSG_COMBAT_XP_GAIN",
+      "path": "events/CHAT_MSG_COMBAT_XP_GAIN.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_DND": {
+      "name": "CHAT_MSG_DND",
+      "path": "events/CHAT_MSG_DND.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_EMOTE": {
+      "name": "CHAT_MSG_EMOTE",
+      "path": "events/CHAT_MSG_EMOTE.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_FILTERED": {
+      "name": "CHAT_MSG_FILTERED",
+      "path": "events/CHAT_MSG_FILTERED.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_GUILD": {
+      "name": "CHAT_MSG_GUILD",
+      "path": "events/CHAT_MSG_GUILD.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_GUILD_ACHIEVEMENT": {
+      "name": "CHAT_MSG_GUILD_ACHIEVEMENT",
+      "path": "events/CHAT_MSG_GUILD_ACHIEVEMENT.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_IGNORED": {
+      "name": "CHAT_MSG_IGNORED",
+      "path": "events/CHAT_MSG_IGNORED.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_LOOT": {
+      "name": "CHAT_MSG_LOOT",
+      "path": "events/CHAT_MSG_LOOT.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_MONEY": {
+      "name": "CHAT_MSG_MONEY",
+      "path": "events/CHAT_MSG_MONEY.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_MONSTER_EMOTE": {
+      "name": "CHAT_MSG_MONSTER_EMOTE",
+      "path": "events/CHAT_MSG_MONSTER_EMOTE.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_MONSTER_PARTY": {
+      "name": "CHAT_MSG_MONSTER_PARTY",
+      "path": "events/CHAT_MSG_MONSTER_PARTY.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_MONSTER_SAY": {
+      "name": "CHAT_MSG_MONSTER_SAY",
+      "path": "events/CHAT_MSG_MONSTER_SAY.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_MONSTER_WHISPER": {
+      "name": "CHAT_MSG_MONSTER_WHISPER",
+      "path": "events/CHAT_MSG_MONSTER_WHISPER.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_MONSTER_YELL": {
+      "name": "CHAT_MSG_MONSTER_YELL",
+      "path": "events/CHAT_MSG_MONSTER_YELL.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_OFFICER": {
+      "name": "CHAT_MSG_OFFICER",
+      "path": "events/CHAT_MSG_OFFICER.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_OPENING": {
+      "name": "CHAT_MSG_OPENING",
+      "path": "events/CHAT_MSG_OPENING.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_PARTY": {
+      "name": "CHAT_MSG_PARTY",
+      "path": "events/CHAT_MSG_PARTY.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_PARTY_LEADER": {
+      "name": "CHAT_MSG_PARTY_LEADER",
+      "path": "events/CHAT_MSG_PARTY_LEADER.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_PET_INFO": {
+      "name": "CHAT_MSG_PET_INFO",
+      "path": "events/CHAT_MSG_PET_INFO.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_RAID": {
+      "name": "CHAT_MSG_RAID",
+      "path": "events/CHAT_MSG_RAID.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_RAID_BOSS_EMOTE": {
+      "name": "CHAT_MSG_RAID_BOSS_EMOTE",
+      "path": "events/CHAT_MSG_RAID_BOSS_EMOTE.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_RAID_BOSS_WHISPER": {
+      "name": "CHAT_MSG_RAID_BOSS_WHISPER",
+      "path": "events/CHAT_MSG_RAID_BOSS_WHISPER.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_RAID_LEADER": {
+      "name": "CHAT_MSG_RAID_LEADER",
+      "path": "events/CHAT_MSG_RAID_LEADER.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_RAID_WARNING": {
+      "name": "CHAT_MSG_RAID_WARNING",
+      "path": "events/CHAT_MSG_RAID_WARNING.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_RESTRICTED": {
+      "name": "CHAT_MSG_RESTRICTED",
+      "path": "events/CHAT_MSG_RESTRICTED.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_SAY": {
+      "name": "CHAT_MSG_SAY",
+      "path": "events/CHAT_MSG_SAY.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_SKILL": {
+      "name": "CHAT_MSG_SKILL",
+      "path": "events/CHAT_MSG_SKILL.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_SYSTEM": {
+      "name": "CHAT_MSG_SYSTEM",
+      "path": "events/CHAT_MSG_SYSTEM.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_TARGETICONS": {
+      "name": "CHAT_MSG_TARGETICONS",
+      "path": "events/CHAT_MSG_TARGETICONS.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_TEXT_EMOTE": {
+      "name": "CHAT_MSG_TEXT_EMOTE",
+      "path": "events/CHAT_MSG_TEXT_EMOTE.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_TRADESKILLS": {
+      "name": "CHAT_MSG_TRADESKILLS",
+      "path": "events/CHAT_MSG_TRADESKILLS.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_WHISPER": {
+      "name": "CHAT_MSG_WHISPER",
+      "path": "events/CHAT_MSG_WHISPER.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_WHISPER_INFORM": {
+      "name": "CHAT_MSG_WHISPER_INFORM",
+      "path": "events/CHAT_MSG_WHISPER_INFORM.md",
+      "anchor": ""
+    },
+    "CHAT_MSG_YELL": {
+      "name": "CHAT_MSG_YELL",
+      "path": "events/CHAT_MSG_YELL.md",
+      "anchor": ""
+    },
+    "CINEMATIC_START": {
+      "name": "CINEMATIC_START",
+      "path": "events/CINEMATIC_START.md",
+      "anchor": ""
+    },
+    "CINEMATIC_STOP": {
+      "name": "CINEMATIC_STOP",
+      "path": "events/CINEMATIC_STOP.md",
+      "anchor": ""
+    },
+    "CLOSE_INBOX_ITEM": {
+      "name": "CLOSE_INBOX_ITEM",
+      "path": "events/CLOSE_INBOX_ITEM.md",
+      "anchor": ""
+    },
+    "CLOSE_TABARD_FRAME": {
+      "name": "CLOSE_TABARD_FRAME",
+      "path": "events/CLOSE_TABARD_FRAME.md",
+      "anchor": ""
+    },
+    "CLOSE_WORLD_MAP": {
+      "name": "CLOSE_WORLD_MAP",
+      "path": "events/CLOSE_WORLD_MAP.md",
+      "anchor": ""
+    },
+    "COMBAT_LOG_EVENT": {
+      "name": "COMBAT_LOG_EVENT",
+      "path": "events/COMBAT_LOG_EVENT.md",
+      "anchor": ""
+    },
+    "COMBAT_LOG_EVENT_UNFILTERED": {
+      "name": "COMBAT_LOG_EVENT_UNFILTERED",
+      "path": "events/COMBAT_LOG_EVENT_UNFILTERED.md",
+      "anchor": ""
+    },
+    "COMBAT_RATING_UPDATE": {
+      "name": "COMBAT_RATING_UPDATE",
+      "path": "events/COMBAT_RATING_UPDATE.md",
+      "anchor": ""
+    },
+    "COMBAT_TEXT_UPDATE": {
+      "name": "COMBAT_TEXT_UPDATE",
+      "path": "events/COMBAT_TEXT_UPDATE.md",
+      "anchor": ""
+    },
+    "COMMENTATOR_ENTER_WORLD": {
+      "name": "COMMENTATOR_ENTER_WORLD",
+      "path": "events/COMMENTATOR_ENTER_WORLD.md",
+      "anchor": ""
+    },
+    "COMMENTATOR_MAP_UPDATE": {
+      "name": "COMMENTATOR_MAP_UPDATE",
+      "path": "events/COMMENTATOR_MAP_UPDATE.md",
+      "anchor": ""
+    },
+    "COMMENTATOR_PLAYER_UPDATE": {
+      "name": "COMMENTATOR_PLAYER_UPDATE",
+      "path": "events/COMMENTATOR_PLAYER_UPDATE.md",
+      "anchor": ""
+    },
+    "COMMENTATOR_SKIRMISH_MODE_REQUEST": {
+      "name": "COMMENTATOR_SKIRMISH_MODE_REQUEST",
+      "path": "events/COMMENTATOR_SKIRMISH_MODE_REQUEST.md",
+      "anchor": ""
+    },
+    "COMMENTATOR_SKIRMISH_QUEUE_REQUEST": {
+      "name": "COMMENTATOR_SKIRMISH_QUEUE_REQUEST",
+      "path": "events/COMMENTATOR_SKIRMISH_QUEUE_REQUEST.md",
+      "anchor": ""
+    },
+    "COMPANION_LEARNED": {
+      "name": "COMPANION_LEARNED",
+      "path": "events/COMPANION_LEARNED.md",
+      "anchor": ""
+    },
+    "COMPANION_UNLEARNED": {
+      "name": "COMPANION_UNLEARNED",
+      "path": "events/COMPANION_UNLEARNED.md",
+      "anchor": ""
+    },
+    "COMPANION_UPDATE": {
+      "name": "COMPANION_UPDATE",
+      "path": "events/COMPANION_UPDATE.md",
+      "anchor": ""
+    },
+    "CONFIRM_BINDER": {
+      "name": "CONFIRM_BINDER",
+      "path": "events/CONFIRM_BINDER.md",
+      "anchor": ""
+    },
+    "CONFIRM_DISENCHANT_ROLL": {
+      "name": "CONFIRM_DISENCHANT_ROLL",
+      "path": "events/CONFIRM_DISENCHANT_ROLL.md",
+      "anchor": ""
+    },
+    "CONFIRM_LOOT_ROLL": {
+      "name": "CONFIRM_LOOT_ROLL",
+      "path": "events/CONFIRM_LOOT_ROLL.md",
+      "anchor": ""
+    },
+    "CONFIRM_SUMMON": {
+      "name": "CONFIRM_SUMMON",
+      "path": "events/CONFIRM_SUMMON.md",
+      "anchor": ""
+    },
+    "CONFIRM_TALENT_WIPE": {
+      "name": "CONFIRM_TALENT_WIPE",
+      "path": "events/CONFIRM_TALENT_WIPE.md",
+      "anchor": ""
+    },
+    "CONFIRM_XP_LOSS": {
+      "name": "CONFIRM_XP_LOSS",
+      "path": "events/CONFIRM_XP_LOSS.md",
+      "anchor": ""
+    },
+    "CORPSE_IN_INSTANCE": {
+      "name": "CORPSE_IN_INSTANCE",
+      "path": "events/CORPSE_IN_INSTANCE.md",
+      "anchor": ""
+    },
+    "CORPSE_IN_RANGE": {
+      "name": "CORPSE_IN_RANGE",
+      "path": "events/CORPSE_IN_RANGE.md",
+      "anchor": ""
+    },
+    "CORPSE_OUT_OF_RANGE": {
+      "name": "CORPSE_OUT_OF_RANGE",
+      "path": "events/CORPSE_OUT_OF_RANGE.md",
+      "anchor": ""
+    },
+    "CRITERIA_UPDATE": {
+      "name": "CRITERIA_UPDATE",
+      "path": "events/CRITERIA_UPDATE.md",
+      "anchor": ""
+    },
+    "CURRENCY_DISPLAY_UPDATE": {
+      "name": "CURRENCY_DISPLAY_UPDATE",
+      "path": "events/CURRENCY_DISPLAY_UPDATE.md",
+      "anchor": ""
+    },
+    "CURRENT_SPELL_CAST_CHANGED": {
+      "name": "CURRENT_SPELL_CAST_CHANGED",
+      "path": "events/CURRENT_SPELL_CAST_CHANGED.md",
+      "anchor": ""
+    },
+    "CURSOR_UPDATE": {
+      "name": "CURSOR_UPDATE",
+      "path": "events/CURSOR_UPDATE.md",
+      "anchor": ""
+    },
+    "CVAR_UPDATE": {
+      "name": "CVAR_UPDATE",
+      "path": "events/CVAR_UPDATE.md",
+      "anchor": ""
+    },
+    "DELETE_ITEM_CONFIRM": {
+      "name": "DELETE_ITEM_CONFIRM",
+      "path": "events/DELETE_ITEM_CONFIRM.md",
+      "anchor": ""
+    },
+    "DISABLE_LOW_LEVEL_RAID": {
+      "name": "DISABLE_LOW_LEVEL_RAID",
+      "path": "events/DISABLE_LOW_LEVEL_RAID.md",
+      "anchor": ""
+    },
+    "DISABLE_TAXI_BENCHMARK": {
+      "name": "DISABLE_TAXI_BENCHMARK",
+      "path": "events/DISABLE_TAXI_BENCHMARK.md",
+      "anchor": ""
+    },
+    "DISABLE_XP_GAIN": {
+      "name": "DISABLE_XP_GAIN",
+      "path": "events/DISABLE_XP_GAIN.md",
+      "anchor": ""
+    },
+    "DISPLAY_SIZE_CHANGED": {
+      "name": "DISPLAY_SIZE_CHANGED",
+      "path": "events/DISPLAY_SIZE_CHANGED.md",
+      "anchor": ""
+    },
+    "DUEL_FINISHED": {
+      "name": "DUEL_FINISHED",
+      "path": "events/DUEL_FINISHED.md",
+      "anchor": ""
+    },
+    "DUEL_INBOUNDS": {
+      "name": "DUEL_INBOUNDS",
+      "path": "events/DUEL_INBOUNDS.md",
+      "anchor": ""
+    },
+    "DUEL_OUTOFBOUNDS": {
+      "name": "DUEL_OUTOFBOUNDS",
+      "path": "events/DUEL_OUTOFBOUNDS.md",
+      "anchor": ""
+    },
+    "DUEL_REQUESTED": {
+      "name": "DUEL_REQUESTED",
+      "path": "events/DUEL_REQUESTED.md",
+      "anchor": ""
+    },
+    "ENABLE_LOW_LEVEL_RAID": {
+      "name": "ENABLE_LOW_LEVEL_RAID",
+      "path": "events/ENABLE_LOW_LEVEL_RAID.md",
+      "anchor": ""
+    },
+    "ENABLE_TAXI_BENCHMARK": {
+      "name": "ENABLE_TAXI_BENCHMARK",
+      "path": "events/ENABLE_TAXI_BENCHMARK.md",
+      "anchor": ""
+    },
+    "ENABLE_XP_GAIN": {
+      "name": "ENABLE_XP_GAIN",
+      "path": "events/ENABLE_XP_GAIN.md",
+      "anchor": ""
+    },
+    "END_BOUND_TRADEABLE": {
+      "name": "END_BOUND_TRADEABLE",
+      "path": "events/END_BOUND_TRADEABLE.md",
+      "anchor": ""
+    },
+    "END_REFUND": {
+      "name": "END_REFUND",
+      "path": "events/END_REFUND.md",
+      "anchor": ""
+    },
+    "EQUIPMENT_SETS_CHANGED": {
+      "name": "EQUIPMENT_SETS_CHANGED",
+      "path": "events/EQUIPMENT_SETS_CHANGED.md",
+      "anchor": ""
+    },
+    "EQUIPMENT_SWAP_FINISHED": {
+      "name": "EQUIPMENT_SWAP_FINISHED",
+      "path": "events/EQUIPMENT_SWAP_FINISHED.md",
+      "anchor": ""
+    },
+    "EQUIPMENT_SWAP_PENDING": {
+      "name": "EQUIPMENT_SWAP_PENDING",
+      "path": "events/EQUIPMENT_SWAP_PENDING.md",
+      "anchor": ""
+    },
+    "EQUIP_BIND_CONFIRM": {
+      "name": "EQUIP_BIND_CONFIRM",
+      "path": "events/EQUIP_BIND_CONFIRM.md",
+      "anchor": ""
+    },
+    "EXECUTE_CHAT_LINE": {
+      "name": "EXECUTE_CHAT_LINE",
+      "path": "events/EXECUTE_CHAT_LINE.md",
+      "anchor": ""
+    },
+    "FRIENDLIST_UPDATE": {
+      "name": "FRIENDLIST_UPDATE",
+      "path": "events/FRIENDLIST_UPDATE.md",
+      "anchor": ""
+    },
+    "GLYPH_ADDED": {
+      "name": "GLYPH_ADDED",
+      "path": "events/GLYPH_ADDED.md",
+      "anchor": ""
+    },
+    "GLYPH_DISABLED": {
+      "name": "GLYPH_DISABLED",
+      "path": "events/GLYPH_DISABLED.md",
+      "anchor": ""
+    },
+    "GLYPH_ENABLED": {
+      "name": "GLYPH_ENABLED",
+      "path": "events/GLYPH_ENABLED.md",
+      "anchor": ""
+    },
+    "GLYPH_REMOVED": {
+      "name": "GLYPH_REMOVED",
+      "path": "events/GLYPH_REMOVED.md",
+      "anchor": ""
+    },
+    "GLYPH_UPDATED": {
+      "name": "GLYPH_UPDATED",
+      "path": "events/GLYPH_UPDATED.md",
+      "anchor": ""
+    },
+    "GMRESPONSE_RECEIVED": {
+      "name": "GMRESPONSE_RECEIVED",
+      "path": "events/GMRESPONSE_RECEIVED.md",
+      "anchor": ""
+    },
+    "GMSURVEY_DISPLAY": {
+      "name": "GMSURVEY_DISPLAY",
+      "path": "events/GMSURVEY_DISPLAY.md",
+      "anchor": ""
+    },
+    "GM_PLAYER_INFO": {
+      "name": "GM_PLAYER_INFO",
+      "path": "events/GM_PLAYER_INFO.md",
+      "anchor": ""
+    },
+    "GOSSIP_CLOSED": {
+      "name": "GOSSIP_CLOSED",
+      "path": "events/GOSSIP_CLOSED.md",
+      "anchor": ""
+    },
+    "GOSSIP_CONFIRM": {
+      "name": "GOSSIP_CONFIRM",
+      "path": "events/GOSSIP_CONFIRM.md",
+      "anchor": ""
+    },
+    "GOSSIP_CONFIRM_CANCEL": {
+      "name": "GOSSIP_CONFIRM_CANCEL",
+      "path": "events/GOSSIP_CONFIRM_CANCEL.md",
+      "anchor": ""
+    },
+    "GOSSIP_ENTER_CODE": {
+      "name": "GOSSIP_ENTER_CODE",
+      "path": "events/GOSSIP_ENTER_CODE.md",
+      "anchor": ""
+    },
+    "GOSSIP_SHOW": {
+      "name": "GOSSIP_SHOW",
+      "path": "events/GOSSIP_SHOW.md",
+      "anchor": ""
+    },
+    "GUILDBANKBAGSLOTS_CHANGED": {
+      "name": "GUILDBANKBAGSLOTS_CHANGED",
+      "path": "events/GUILDBANKBAGSLOTS_CHANGED.md",
+      "anchor": ""
+    },
+    "GUILDBANKFRAME_CLOSED": {
+      "name": "GUILDBANKFRAME_CLOSED",
+      "path": "events/GUILDBANKFRAME_CLOSED.md",
+      "anchor": ""
+    },
+    "GUILDBANKFRAME_OPENED": {
+      "name": "GUILDBANKFRAME_OPENED",
+      "path": "events/GUILDBANKFRAME_OPENED.md",
+      "anchor": ""
+    },
+    "GUILDBANKLOG_UPDATE": {
+      "name": "GUILDBANKLOG_UPDATE",
+      "path": "events/GUILDBANKLOG_UPDATE.md",
+      "anchor": ""
+    },
+    "GUILDBANK_ITEM_LOCK_CHANGED": {
+      "name": "GUILDBANK_ITEM_LOCK_CHANGED",
+      "path": "events/GUILDBANK_ITEM_LOCK_CHANGED.md",
+      "anchor": ""
+    },
+    "GUILDBANK_TEXT_CHANGED": {
+      "name": "GUILDBANK_TEXT_CHANGED",
+      "path": "events/GUILDBANK_TEXT_CHANGED.md",
+      "anchor": ""
+    },
+    "GUILDBANK_UPDATE_MONEY": {
+      "name": "GUILDBANK_UPDATE_MONEY",
+      "path": "events/GUILDBANK_UPDATE_MONEY.md",
+      "anchor": ""
+    },
+    "GUILDBANK_UPDATE_TABS": {
+      "name": "GUILDBANK_UPDATE_TABS",
+      "path": "events/GUILDBANK_UPDATE_TABS.md",
+      "anchor": ""
+    },
+    "GUILDBANK_UPDATE_TEXT": {
+      "name": "GUILDBANK_UPDATE_TEXT",
+      "path": "events/GUILDBANK_UPDATE_TEXT.md",
+      "anchor": ""
+    },
+    "GUILDBANK_UPDATE_WITHDRAWMONEY": {
+      "name": "GUILDBANK_UPDATE_WITHDRAWMONEY",
+      "path": "events/GUILDBANK_UPDATE_WITHDRAWMONEY.md",
+      "anchor": ""
+    },
+    "GUILDTABARD_UPDATE": {
+      "name": "GUILDTABARD_UPDATE",
+      "path": "events/GUILDTABARD_UPDATE.md",
+      "anchor": ""
+    },
+    "GUILD_EVENT_LOG_UPDATE": {
+      "name": "GUILD_EVENT_LOG_UPDATE",
+      "path": "events/GUILD_EVENT_LOG_UPDATE.md",
+      "anchor": ""
+    },
+    "GUILD_INVITE_CANCEL": {
+      "name": "GUILD_INVITE_CANCEL",
+      "path": "events/GUILD_INVITE_CANCEL.md",
+      "anchor": ""
+    },
+    "GUILD_INVITE_REQUEST": {
+      "name": "GUILD_INVITE_REQUEST",
+      "path": "events/GUILD_INVITE_REQUEST.md",
+      "anchor": ""
+    },
+    "GUILD_MOTD": {
+      "name": "GUILD_MOTD",
+      "path": "events/GUILD_MOTD.md",
+      "anchor": ""
+    },
+    "GUILD_REGISTRAR_CLOSED": {
+      "name": "GUILD_REGISTRAR_CLOSED",
+      "path": "events/GUILD_REGISTRAR_CLOSED.md",
+      "anchor": ""
+    },
+    "GUILD_REGISTRAR_SHOW": {
+      "name": "GUILD_REGISTRAR_SHOW",
+      "path": "events/GUILD_REGISTRAR_SHOW.md",
+      "anchor": ""
+    },
+    "GUILD_ROSTER_UPDATE": {
+      "name": "GUILD_ROSTER_UPDATE",
+      "path": "events/GUILD_ROSTER_UPDATE.md",
+      "anchor": ""
+    },
+    "HONOR_CURRENCY_UPDATE": {
+      "name": "HONOR_CURRENCY_UPDATE",
+      "path": "events/HONOR_CURRENCY_UPDATE.md",
+      "anchor": ""
+    },
+    "IGNORELIST_UPDATE": {
+      "name": "IGNORELIST_UPDATE",
+      "path": "events/IGNORELIST_UPDATE.md",
+      "anchor": ""
+    },
+    "IGR_BILLING_NAG_DIALOG": {
+      "name": "IGR_BILLING_NAG_DIALOG",
+      "path": "events/IGR_BILLING_NAG_DIALOG.md",
+      "anchor": ""
+    },
+    "INSPECT_ACHIEVEMENT_READY": {
+      "name": "INSPECT_ACHIEVEMENT_READY",
+      "path": "events/INSPECT_ACHIEVEMENT_READY.md",
+      "anchor": ""
+    },
+    "INSPECT_HONOR_UPDATE": {
+      "name": "INSPECT_HONOR_UPDATE",
+      "path": "events/INSPECT_HONOR_UPDATE.md",
+      "anchor": ""
+    },
+    "INSPECT_TALENT_READY": {
+      "name": "INSPECT_TALENT_READY",
+      "path": "events/INSPECT_TALENT_READY.md",
+      "anchor": ""
+    },
+    "INSTANCE_BOOT_START": {
+      "name": "INSTANCE_BOOT_START",
+      "path": "events/INSTANCE_BOOT_START.md",
+      "anchor": ""
+    },
+    "INSTANCE_BOOT_STOP": {
+      "name": "INSTANCE_BOOT_STOP",
+      "path": "events/INSTANCE_BOOT_STOP.md",
+      "anchor": ""
+    },
+    "INSTANCE_ENCOUNTER_ENGAGE_UNIT": {
+      "name": "INSTANCE_ENCOUNTER_ENGAGE_UNIT",
+      "path": "events/INSTANCE_ENCOUNTER_ENGAGE_UNIT.md",
+      "anchor": ""
+    },
+    "INSTANCE_LOCK_START": {
+      "name": "INSTANCE_LOCK_START",
+      "path": "events/INSTANCE_LOCK_START.md",
+      "anchor": ""
+    },
+    "INSTANCE_LOCK_STOP": {
+      "name": "INSTANCE_LOCK_STOP",
+      "path": "events/INSTANCE_LOCK_STOP.md",
+      "anchor": ""
+    },
+    "ITEM_LOCKED": {
+      "name": "ITEM_LOCKED",
+      "path": "events/ITEM_LOCKED.md",
+      "anchor": ""
+    },
+    "ITEM_LOCK_CHANGED": {
+      "name": "ITEM_LOCK_CHANGED",
+      "path": "events/ITEM_LOCK_CHANGED.md",
+      "anchor": ""
+    },
+    "ITEM_PUSH": {
+      "name": "ITEM_PUSH",
+      "path": "events/ITEM_PUSH.md",
+      "anchor": ""
+    },
+    "ITEM_TEXT_BEGIN": {
+      "name": "ITEM_TEXT_BEGIN",
+      "path": "events/ITEM_TEXT_BEGIN.md",
+      "anchor": ""
+    },
+    "ITEM_TEXT_CLOSED": {
+      "name": "ITEM_TEXT_CLOSED",
+      "path": "events/ITEM_TEXT_CLOSED.md",
+      "anchor": ""
+    },
+    "ITEM_TEXT_READY": {
+      "name": "ITEM_TEXT_READY",
+      "path": "events/ITEM_TEXT_READY.md",
+      "anchor": ""
+    },
+    "ITEM_TEXT_TRANSLATION": {
+      "name": "ITEM_TEXT_TRANSLATION",
+      "path": "events/ITEM_TEXT_TRANSLATION.md",
+      "anchor": ""
+    },
+    "ITEM_UNLOCKED": {
+      "name": "ITEM_UNLOCKED",
+      "path": "events/ITEM_UNLOCKED.md",
+      "anchor": ""
+    },
+    "KNOWLEDGE_BASE_ARTICLE_LOAD_FAILURE": {
+      "name": "KNOWLEDGE_BASE_ARTICLE_LOAD_FAILURE",
+      "path": "events/KNOWLEDGE_BASE_ARTICLE_LOAD_FAILURE.md",
+      "anchor": ""
+    },
+    "KNOWLEDGE_BASE_ARTICLE_LOAD_SUCCESS": {
+      "name": "KNOWLEDGE_BASE_ARTICLE_LOAD_SUCCESS",
+      "path": "events/KNOWLEDGE_BASE_ARTICLE_LOAD_SUCCESS.md",
+      "anchor": ""
+    },
+    "KNOWLEDGE_BASE_QUERY_LOAD_FAILURE": {
+      "name": "KNOWLEDGE_BASE_QUERY_LOAD_FAILURE",
+      "path": "events/KNOWLEDGE_BASE_QUERY_LOAD_FAILURE.md",
+      "anchor": ""
+    },
+    "KNOWLEDGE_BASE_QUERY_LOAD_SUCCESS": {
+      "name": "KNOWLEDGE_BASE_QUERY_LOAD_SUCCESS",
+      "path": "events/KNOWLEDGE_BASE_QUERY_LOAD_SUCCESS.md",
+      "anchor": ""
+    },
+    "KNOWLEDGE_BASE_SERVER_MESSAGE": {
+      "name": "KNOWLEDGE_BASE_SERVER_MESSAGE",
+      "path": "events/KNOWLEDGE_BASE_SERVER_MESSAGE.md",
+      "anchor": ""
+    },
+    "KNOWLEDGE_BASE_SETUP_LOAD_FAILURE": {
+      "name": "KNOWLEDGE_BASE_SETUP_LOAD_FAILURE",
+      "path": "events/KNOWLEDGE_BASE_SETUP_LOAD_FAILURE.md",
+      "anchor": ""
+    },
+    "KNOWLEDGE_BASE_SETUP_LOAD_SUCCESS": {
+      "name": "KNOWLEDGE_BASE_SETUP_LOAD_SUCCESS",
+      "path": "events/KNOWLEDGE_BASE_SETUP_LOAD_SUCCESS.md",
+      "anchor": ""
+    },
+    "KNOWLEDGE_BASE_SYSTEM_MOTD_UPDATED": {
+      "name": "KNOWLEDGE_BASE_SYSTEM_MOTD_UPDATED",
+      "path": "events/KNOWLEDGE_BASE_SYSTEM_MOTD_UPDATED.md",
+      "anchor": ""
+    },
+    "KNOWN_CURRENCY_TYPES_UPDATE": {
+      "name": "KNOWN_CURRENCY_TYPES_UPDATE",
+      "path": "events/KNOWN_CURRENCY_TYPES_UPDATE.md",
+      "anchor": ""
+    },
+    "KNOWN_TITLES_UPDATE": {
+      "name": "KNOWN_TITLES_UPDATE",
+      "path": "events/KNOWN_TITLES_UPDATE.md",
+      "anchor": ""
+    },
+    "LANGUAGE_LIST_CHANGED": {
+      "name": "LANGUAGE_LIST_CHANGED",
+      "path": "events/LANGUAGE_LIST_CHANGED.md",
+      "anchor": ""
+    },
+    "LEARNED_SPELL_IN_TAB": {
+      "name": "LEARNED_SPELL_IN_TAB",
+      "path": "events/LEARNED_SPELL_IN_TAB.md",
+      "anchor": ""
+    },
+    "LEVEL_GRANT_PROPOSED": {
+      "name": "LEVEL_GRANT_PROPOSED",
+      "path": "events/LEVEL_GRANT_PROPOSED.md",
+      "anchor": ""
+    },
+    "LFG_BOOT_PROPOSAL_UPDATE": {
+      "name": "LFG_BOOT_PROPOSAL_UPDATE",
+      "path": "events/LFG_BOOT_PROPOSAL_UPDATE.md",
+      "anchor": ""
+    },
+    "LFG_COMPLETION_REWARD": {
+      "name": "LFG_COMPLETION_REWARD",
+      "path": "events/LFG_COMPLETION_REWARD.md",
+      "anchor": ""
+    },
+    "LFG_LOCK_INFO_RECEIVED": {
+      "name": "LFG_LOCK_INFO_RECEIVED",
+      "path": "events/LFG_LOCK_INFO_RECEIVED.md",
+      "anchor": ""
+    },
+    "LFG_OFFER_CONTINUE": {
+      "name": "LFG_OFFER_CONTINUE",
+      "path": "events/LFG_OFFER_CONTINUE.md",
+      "anchor": ""
+    },
+    "LFG_OPEN_FROM_GOSSIP": {
+      "name": "LFG_OPEN_FROM_GOSSIP",
+      "path": "events/LFG_OPEN_FROM_GOSSIP.md",
+      "anchor": ""
+    },
+    "LFG_PROPOSAL_FAILED": {
+      "name": "LFG_PROPOSAL_FAILED",
+      "path": "events/LFG_PROPOSAL_FAILED.md",
+      "anchor": ""
+    },
+    "LFG_PROPOSAL_SHOW": {
+      "name": "LFG_PROPOSAL_SHOW",
+      "path": "events/LFG_PROPOSAL_SHOW.md",
+      "anchor": ""
+    },
+    "LFG_PROPOSAL_SUCCEEDED": {
+      "name": "LFG_PROPOSAL_SUCCEEDED",
+      "path": "events/LFG_PROPOSAL_SUCCEEDED.md",
+      "anchor": ""
+    },
+    "LFG_PROPOSAL_UPDATE": {
+      "name": "LFG_PROPOSAL_UPDATE",
+      "path": "events/LFG_PROPOSAL_UPDATE.md",
+      "anchor": ""
+    },
+    "LFG_QUEUE_STATUS_UPDATE": {
+      "name": "LFG_QUEUE_STATUS_UPDATE",
+      "path": "events/LFG_QUEUE_STATUS_UPDATE.md",
+      "anchor": ""
+    },
+    "LFG_ROLE_CHECK_HIDE": {
+      "name": "LFG_ROLE_CHECK_HIDE",
+      "path": "events/LFG_ROLE_CHECK_HIDE.md",
+      "anchor": ""
+    },
+    "LFG_ROLE_CHECK_ROLE_CHOSEN": {
+      "name": "LFG_ROLE_CHECK_ROLE_CHOSEN",
+      "path": "events/LFG_ROLE_CHECK_ROLE_CHOSEN.md",
+      "anchor": ""
+    },
+    "LFG_ROLE_CHECK_SHOW": {
+      "name": "LFG_ROLE_CHECK_SHOW",
+      "path": "events/LFG_ROLE_CHECK_SHOW.md",
+      "anchor": ""
+    },
+    "LFG_ROLE_CHECK_UPDATE": {
+      "name": "LFG_ROLE_CHECK_UPDATE",
+      "path": "events/LFG_ROLE_CHECK_UPDATE.md",
+      "anchor": ""
+    },
+    "LFG_ROLE_UPDATE": {
+      "name": "LFG_ROLE_UPDATE",
+      "path": "events/LFG_ROLE_UPDATE.md",
+      "anchor": ""
+    },
+    "LFG_UPDATE": {
+      "name": "LFG_UPDATE",
+      "path": "events/LFG_UPDATE.md",
+      "anchor": ""
+    },
+    "LFG_UPDATE_RANDOM_INFO": {
+      "name": "LFG_UPDATE_RANDOM_INFO",
+      "path": "events/LFG_UPDATE_RANDOM_INFO.md",
+      "anchor": ""
+    },
+    "LOCALPLAYER_PET_RENAMED": {
+      "name": "LOCALPLAYER_PET_RENAMED",
+      "path": "events/LOCALPLAYER_PET_RENAMED.md",
+      "anchor": ""
+    },
+    "LOGOUT_CANCEL": {
+      "name": "LOGOUT_CANCEL",
+      "path": "events/LOGOUT_CANCEL.md",
+      "anchor": ""
+    },
+    "LOOT_BIND_CONFIRM": {
+      "name": "LOOT_BIND_CONFIRM",
+      "path": "events/LOOT_BIND_CONFIRM.md",
+      "anchor": ""
+    },
+    "LOOT_CLOSED": {
+      "name": "LOOT_CLOSED",
+      "path": "events/LOOT_CLOSED.md",
+      "anchor": ""
+    },
+    "LOOT_OPENED": {
+      "name": "LOOT_OPENED",
+      "path": "events/LOOT_OPENED.md",
+      "anchor": ""
+    },
+    "LOOT_SLOT_CHANGED": {
+      "name": "LOOT_SLOT_CHANGED",
+      "path": "events/LOOT_SLOT_CHANGED.md",
+      "anchor": ""
+    },
+    "LOOT_SLOT_CLEARED": {
+      "name": "LOOT_SLOT_CLEARED",
+      "path": "events/LOOT_SLOT_CLEARED.md",
+      "anchor": ""
+    },
+    "MACRO_ACTION_BLOCKED": {
+      "name": "MACRO_ACTION_BLOCKED",
+      "path": "events/MACRO_ACTION_BLOCKED.md",
+      "anchor": ""
+    },
+    "MACRO_ACTION_FORBIDDEN": {
+      "name": "MACRO_ACTION_FORBIDDEN",
+      "path": "events/MACRO_ACTION_FORBIDDEN.md",
+      "anchor": ""
+    },
+    "MAIL_CLOSED": {
+      "name": "MAIL_CLOSED",
+      "path": "events/MAIL_CLOSED.md",
+      "anchor": ""
+    },
+    "MAIL_FAILED": {
+      "name": "MAIL_FAILED",
+      "path": "events/MAIL_FAILED.md",
+      "anchor": ""
+    },
+    "MAIL_INBOX_UPDATE": {
+      "name": "MAIL_INBOX_UPDATE",
+      "path": "events/MAIL_INBOX_UPDATE.md",
+      "anchor": ""
+    },
+    "MAIL_LOCK_SEND_ITEMS": {
+      "name": "MAIL_LOCK_SEND_ITEMS",
+      "path": "events/MAIL_LOCK_SEND_ITEMS.md",
+      "anchor": ""
+    },
+    "MAIL_SEND_INFO_UPDATE": {
+      "name": "MAIL_SEND_INFO_UPDATE",
+      "path": "events/MAIL_SEND_INFO_UPDATE.md",
+      "anchor": ""
+    },
+    "MAIL_SEND_SUCCESS": {
+      "name": "MAIL_SEND_SUCCESS",
+      "path": "events/MAIL_SEND_SUCCESS.md",
+      "anchor": ""
+    },
+    "MAIL_SHOW": {
+      "name": "MAIL_SHOW",
+      "path": "events/MAIL_SHOW.md",
+      "anchor": ""
+    },
+    "MAIL_SUCCESS": {
+      "name": "MAIL_SUCCESS",
+      "path": "events/MAIL_SUCCESS.md",
+      "anchor": ""
+    },
+    "MAIL_UNLOCK_SEND_ITEMS": {
+      "name": "MAIL_UNLOCK_SEND_ITEMS",
+      "path": "events/MAIL_UNLOCK_SEND_ITEMS.md",
+      "anchor": ""
+    },
+    "MERCHANT_CLOSED": {
+      "name": "MERCHANT_CLOSED",
+      "path": "events/MERCHANT_CLOSED.md",
+      "anchor": ""
+    },
+    "MERCHANT_SHOW": {
+      "name": "MERCHANT_SHOW",
+      "path": "events/MERCHANT_SHOW.md",
+      "anchor": ""
+    },
+    "MERCHANT_UPDATE": {
+      "name": "MERCHANT_UPDATE",
+      "path": "events/MERCHANT_UPDATE.md",
+      "anchor": ""
+    },
+    "MINIGAME_UPDATE": {
+      "name": "MINIGAME_UPDATE",
+      "path": "events/MINIGAME_UPDATE.md",
+      "anchor": ""
+    },
+    "MINIMAP_PING": {
+      "name": "MINIMAP_PING",
+      "path": "events/MINIMAP_PING.md",
+      "anchor": ""
+    },
+    "MINIMAP_UPDATE_TRACKING": {
+      "name": "MINIMAP_UPDATE_TRACKING",
+      "path": "events/MINIMAP_UPDATE_TRACKING.md",
+      "anchor": ""
+    },
+    "MINIMAP_UPDATE_ZOOM": {
+      "name": "MINIMAP_UPDATE_ZOOM",
+      "path": "events/MINIMAP_UPDATE_ZOOM.md",
+      "anchor": ""
+    },
+    "MIRROR_TIMER_PAUSE": {
+      "name": "MIRROR_TIMER_PAUSE",
+      "path": "events/MIRROR_TIMER_PAUSE.md",
+      "anchor": ""
+    },
+    "MIRROR_TIMER_START": {
+      "name": "MIRROR_TIMER_START",
+      "path": "events/MIRROR_TIMER_START.md",
+      "anchor": ""
+    },
+    "MIRROR_TIMER_STOP": {
+      "name": "MIRROR_TIMER_STOP",
+      "path": "events/MIRROR_TIMER_STOP.md",
+      "anchor": ""
+    },
+    "MODIFIER_STATE_CHANGED": {
+      "name": "MODIFIER_STATE_CHANGED",
+      "path": "events/MODIFIER_STATE_CHANGED.md",
+      "anchor": ""
+    },
+    "MOVIE_COMPRESSING_PROGRESS": {
+      "name": "MOVIE_COMPRESSING_PROGRESS",
+      "path": "events/MOVIE_COMPRESSING_PROGRESS.md",
+      "anchor": ""
+    },
+    "MOVIE_RECORDING_PROGRESS": {
+      "name": "MOVIE_RECORDING_PROGRESS",
+      "path": "events/MOVIE_RECORDING_PROGRESS.md",
+      "anchor": ""
+    },
+    "MOVIE_UNCOMPRESSED_MOVIE": {
+      "name": "MOVIE_UNCOMPRESSED_MOVIE",
+      "path": "events/MOVIE_UNCOMPRESSED_MOVIE.md",
+      "anchor": ""
+    },
+    "MUTELIST_UPDATE": {
+      "name": "MUTELIST_UPDATE",
+      "path": "events/MUTELIST_UPDATE.md",
+      "anchor": ""
+    },
+    "NEW_AUCTION_UPDATE": {
+      "name": "NEW_AUCTION_UPDATE",
+      "path": "events/NEW_AUCTION_UPDATE.md",
+      "anchor": ""
+    },
+    "NEW_TITLE_EARNED": {
+      "name": "NEW_TITLE_EARNED",
+      "path": "events/NEW_TITLE_EARNED.md",
+      "anchor": ""
+    },
+    "NPC_PVPQUEUE_ANYWHERE": {
+      "name": "NPC_PVPQUEUE_ANYWHERE",
+      "path": "events/NPC_PVPQUEUE_ANYWHERE.md",
+      "anchor": ""
+    },
+    "OLD_TITLE_LOST": {
+      "name": "OLD_TITLE_LOST",
+      "path": "events/OLD_TITLE_LOST.md",
+      "anchor": ""
+    },
+    "OPEN_MASTER_LOOT_LIST": {
+      "name": "OPEN_MASTER_LOOT_LIST",
+      "path": "events/OPEN_MASTER_LOOT_LIST.md",
+      "anchor": ""
+    },
+    "OPEN_TABARD_FRAME": {
+      "name": "OPEN_TABARD_FRAME",
+      "path": "events/OPEN_TABARD_FRAME.md",
+      "anchor": ""
+    },
+    "PARTY_CONVERTED_TO_RAID": {
+      "name": "PARTY_CONVERTED_TO_RAID",
+      "path": "events/PARTY_CONVERTED_TO_RAID.md",
+      "anchor": ""
+    },
+    "PARTY_INVITE_CANCEL": {
+      "name": "PARTY_INVITE_CANCEL",
+      "path": "events/PARTY_INVITE_CANCEL.md",
+      "anchor": ""
+    },
+    "PARTY_INVITE_REQUEST": {
+      "name": "PARTY_INVITE_REQUEST",
+      "path": "events/PARTY_INVITE_REQUEST.md",
+      "anchor": ""
+    },
+    "PARTY_LEADER_CHANGED": {
+      "name": "PARTY_LEADER_CHANGED",
+      "path": "events/PARTY_LEADER_CHANGED.md",
+      "anchor": ""
+    },
+    "PARTY_LFG_RESTRICTED": {
+      "name": "PARTY_LFG_RESTRICTED",
+      "path": "events/PARTY_LFG_RESTRICTED.md",
+      "anchor": ""
+    },
+    "PARTY_LOOT_METHOD_CHANGED": {
+      "name": "PARTY_LOOT_METHOD_CHANGED",
+      "path": "events/PARTY_LOOT_METHOD_CHANGED.md",
+      "anchor": ""
+    },
+    "PARTY_MEMBERS_CHANGED": {
+      "name": "PARTY_MEMBERS_CHANGED",
+      "path": "events/PARTY_MEMBERS_CHANGED.md",
+      "anchor": ""
+    },
+    "PARTY_MEMBER_DISABLE": {
+      "name": "PARTY_MEMBER_DISABLE",
+      "path": "events/PARTY_MEMBER_DISABLE.md",
+      "anchor": ""
+    },
+    "PARTY_MEMBER_ENABLE": {
+      "name": "PARTY_MEMBER_ENABLE",
+      "path": "events/PARTY_MEMBER_ENABLE.md",
+      "anchor": ""
+    },
+    "PETITION_CLOSED": {
+      "name": "PETITION_CLOSED",
+      "path": "events/PETITION_CLOSED.md",
+      "anchor": ""
+    },
+    "PETITION_SHOW": {
+      "name": "PETITION_SHOW",
+      "path": "events/PETITION_SHOW.md",
+      "anchor": ""
+    },
+    "PETITION_VENDOR_CLOSED": {
+      "name": "PETITION_VENDOR_CLOSED",
+      "path": "events/PETITION_VENDOR_CLOSED.md",
+      "anchor": ""
+    },
+    "PETITION_VENDOR_SHOW": {
+      "name": "PETITION_VENDOR_SHOW",
+      "path": "events/PETITION_VENDOR_SHOW.md",
+      "anchor": ""
+    },
+    "PETITION_VENDOR_UPDATE": {
+      "name": "PETITION_VENDOR_UPDATE",
+      "path": "events/PETITION_VENDOR_UPDATE.md",
+      "anchor": ""
+    },
+    "PET_ATTACK_START": {
+      "name": "PET_ATTACK_START",
+      "path": "events/PET_ATTACK_START.md",
+      "anchor": ""
+    },
+    "PET_ATTACK_STOP": {
+      "name": "PET_ATTACK_STOP",
+      "path": "events/PET_ATTACK_STOP.md",
+      "anchor": ""
+    },
+    "PET_BAR_HIDE": {
+      "name": "PET_BAR_HIDE",
+      "path": "events/PET_BAR_HIDE.md",
+      "anchor": ""
+    },
+    "PET_BAR_HIDEGRID": {
+      "name": "PET_BAR_HIDEGRID",
+      "path": "events/PET_BAR_HIDEGRID.md",
+      "anchor": ""
+    },
+    "PET_BAR_SHOWGRID": {
+      "name": "PET_BAR_SHOWGRID",
+      "path": "events/PET_BAR_SHOWGRID.md",
+      "anchor": ""
+    },
+    "PET_BAR_UPDATE": {
+      "name": "PET_BAR_UPDATE",
+      "path": "events/PET_BAR_UPDATE.md",
+      "anchor": ""
+    },
+    "PET_BAR_UPDATE_COOLDOWN": {
+      "name": "PET_BAR_UPDATE_COOLDOWN",
+      "path": "events/PET_BAR_UPDATE_COOLDOWN.md",
+      "anchor": ""
+    },
+    "PET_BAR_UPDATE_USABLE": {
+      "name": "PET_BAR_UPDATE_USABLE",
+      "path": "events/PET_BAR_UPDATE_USABLE.md",
+      "anchor": ""
+    },
+    "PET_DISMISS_START": {
+      "name": "PET_DISMISS_START",
+      "path": "events/PET_DISMISS_START.md",
+      "anchor": ""
+    },
+    "PET_FORCE_NAME_DECLENSION": {
+      "name": "PET_FORCE_NAME_DECLENSION",
+      "path": "events/PET_FORCE_NAME_DECLENSION.md",
+      "anchor": ""
+    },
+    "PET_RENAMEABLE": {
+      "name": "PET_RENAMEABLE",
+      "path": "events/PET_RENAMEABLE.md",
+      "anchor": ""
+    },
+    "PET_SPELL_POWER_UPDATE": {
+      "name": "PET_SPELL_POWER_UPDATE",
+      "path": "events/PET_SPELL_POWER_UPDATE.md",
+      "anchor": ""
+    },
+    "PET_STABLE_CLOSED": {
+      "name": "PET_STABLE_CLOSED",
+      "path": "events/PET_STABLE_CLOSED.md",
+      "anchor": ""
+    },
+    "PET_STABLE_SHOW": {
+      "name": "PET_STABLE_SHOW",
+      "path": "events/PET_STABLE_SHOW.md",
+      "anchor": ""
+    },
+    "PET_STABLE_UPDATE": {
+      "name": "PET_STABLE_UPDATE",
+      "path": "events/PET_STABLE_UPDATE.md",
+      "anchor": ""
+    },
+    "PET_STABLE_UPDATE_PAPERDOLL": {
+      "name": "PET_STABLE_UPDATE_PAPERDOLL",
+      "path": "events/PET_STABLE_UPDATE_PAPERDOLL.md",
+      "anchor": ""
+    },
+    "PET_TALENT_UPDATE": {
+      "name": "PET_TALENT_UPDATE",
+      "path": "events/PET_TALENT_UPDATE.md",
+      "anchor": ""
+    },
+    "PET_UI_CLOSE": {
+      "name": "PET_UI_CLOSE",
+      "path": "events/PET_UI_CLOSE.md",
+      "anchor": ""
+    },
+    "PET_UI_UPDATE": {
+      "name": "PET_UI_UPDATE",
+      "path": "events/PET_UI_UPDATE.md",
+      "anchor": ""
+    },
+    "PLAYERBANKBAGSLOTS_CHANGED": {
+      "name": "PLAYERBANKBAGSLOTS_CHANGED",
+      "path": "events/PLAYERBANKBAGSLOTS_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYERBANKSLOTS_CHANGED": {
+      "name": "PLAYERBANKSLOTS_CHANGED",
+      "path": "events/PLAYERBANKSLOTS_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYER_ALIVE": {
+      "name": "PLAYER_ALIVE",
+      "path": "events/PLAYER_ALIVE.md",
+      "anchor": ""
+    },
+    "PLAYER_AURAS_CHANGED": {
+      "name": "PLAYER_AURAS_CHANGED",
+      "path": "events/PLAYER_AURAS_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYER_CAMPING": {
+      "name": "PLAYER_CAMPING",
+      "path": "events/PLAYER_CAMPING.md",
+      "anchor": ""
+    },
+    "PLAYER_CONTROL_GAINED": {
+      "name": "PLAYER_CONTROL_GAINED",
+      "path": "events/PLAYER_CONTROL_GAINED.md",
+      "anchor": ""
+    },
+    "PLAYER_CONTROL_LOST": {
+      "name": "PLAYER_CONTROL_LOST",
+      "path": "events/PLAYER_CONTROL_LOST.md",
+      "anchor": ""
+    },
+    "PLAYER_DAMAGE_DONE_MODS": {
+      "name": "PLAYER_DAMAGE_DONE_MODS",
+      "path": "events/PLAYER_DAMAGE_DONE_MODS.md",
+      "anchor": ""
+    },
+    "PLAYER_DEAD": {
+      "name": "PLAYER_DEAD",
+      "path": "events/PLAYER_DEAD.md",
+      "anchor": ""
+    },
+    "PLAYER_DIFFICULTY_CHANGED": {
+      "name": "PLAYER_DIFFICULTY_CHANGED",
+      "path": "events/PLAYER_DIFFICULTY_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYER_ENTERING_BATTLEGROUND": {
+      "name": "PLAYER_ENTERING_BATTLEGROUND",
+      "path": "events/PLAYER_ENTERING_BATTLEGROUND.md",
+      "anchor": ""
+    },
+    "PLAYER_ENTERING_WORLD": {
+      "name": "PLAYER_ENTERING_WORLD",
+      "path": "events/PLAYER_ENTERING_WORLD.md",
+      "anchor": ""
+    },
+    "PLAYER_ENTER_COMBAT": {
+      "name": "PLAYER_ENTER_COMBAT",
+      "path": "events/PLAYER_ENTER_COMBAT.md",
+      "anchor": ""
+    },
+    "PLAYER_EQUIPMENT_CHANGED": {
+      "name": "PLAYER_EQUIPMENT_CHANGED",
+      "path": "events/PLAYER_EQUIPMENT_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYER_FARSIGHT_FOCUS_CHANGED": {
+      "name": "PLAYER_FARSIGHT_FOCUS_CHANGED",
+      "path": "events/PLAYER_FARSIGHT_FOCUS_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYER_FLAGS_CHANGED": {
+      "name": "PLAYER_FLAGS_CHANGED",
+      "path": "events/PLAYER_FLAGS_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYER_FOCUS_CHANGED": {
+      "name": "PLAYER_FOCUS_CHANGED",
+      "path": "events/PLAYER_FOCUS_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYER_GAINS_VEHICLE_DATA": {
+      "name": "PLAYER_GAINS_VEHICLE_DATA",
+      "path": "events/PLAYER_GAINS_VEHICLE_DATA.md",
+      "anchor": ""
+    },
+    "PLAYER_GUILD_UPDATE": {
+      "name": "PLAYER_GUILD_UPDATE",
+      "path": "events/PLAYER_GUILD_UPDATE.md",
+      "anchor": ""
+    },
+    "PLAYER_LEAVE_COMBAT": {
+      "name": "PLAYER_LEAVE_COMBAT",
+      "path": "events/PLAYER_LEAVE_COMBAT.md",
+      "anchor": ""
+    },
+    "PLAYER_LEAVING_WORLD": {
+      "name": "PLAYER_LEAVING_WORLD",
+      "path": "events/PLAYER_LEAVING_WORLD.md",
+      "anchor": ""
+    },
+    "PLAYER_LEVEL_UP": {
+      "name": "PLAYER_LEVEL_UP",
+      "path": "events/PLAYER_LEVEL_UP.md",
+      "anchor": ""
+    },
+    "PLAYER_LOGIN": {
+      "name": "PLAYER_LOGIN",
+      "path": "events/PLAYER_LOGIN.md",
+      "anchor": ""
+    },
+    "PLAYER_LOGOUT": {
+      "name": "PLAYER_LOGOUT",
+      "path": "events/PLAYER_LOGOUT.md",
+      "anchor": ""
+    },
+    "PLAYER_LOSES_VEHICLE_DATA": {
+      "name": "PLAYER_LOSES_VEHICLE_DATA",
+      "path": "events/PLAYER_LOSES_VEHICLE_DATA.md",
+      "anchor": ""
+    },
+    "PLAYER_MONEY": {
+      "name": "PLAYER_MONEY",
+      "path": "events/PLAYER_MONEY.md",
+      "anchor": ""
+    },
+    "PLAYER_PVP_KILLS_CHANGED": {
+      "name": "PLAYER_PVP_KILLS_CHANGED",
+      "path": "events/PLAYER_PVP_KILLS_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYER_PVP_RANK_CHANGED": {
+      "name": "PLAYER_PVP_RANK_CHANGED",
+      "path": "events/PLAYER_PVP_RANK_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYER_QUITING": {
+      "name": "PLAYER_QUITING",
+      "path": "events/PLAYER_QUITING.md",
+      "anchor": ""
+    },
+    "PLAYER_REGEN_DISABLED": {
+      "name": "PLAYER_REGEN_DISABLED",
+      "path": "events/PLAYER_REGEN_DISABLED.md",
+      "anchor": ""
+    },
+    "PLAYER_REGEN_ENABLED": {
+      "name": "PLAYER_REGEN_ENABLED",
+      "path": "events/PLAYER_REGEN_ENABLED.md",
+      "anchor": ""
+    },
+    "PLAYER_ROLES_ASSIGNED": {
+      "name": "PLAYER_ROLES_ASSIGNED",
+      "path": "events/PLAYER_ROLES_ASSIGNED.md",
+      "anchor": ""
+    },
+    "PLAYER_SKINNED": {
+      "name": "PLAYER_SKINNED",
+      "path": "events/PLAYER_SKINNED.md",
+      "anchor": ""
+    },
+    "PLAYER_TALENT_UPDATE": {
+      "name": "PLAYER_TALENT_UPDATE",
+      "path": "events/PLAYER_TALENT_UPDATE.md",
+      "anchor": ""
+    },
+    "PLAYER_TARGET_CHANGED": {
+      "name": "PLAYER_TARGET_CHANGED",
+      "path": "events/PLAYER_TARGET_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAYER_TOTEM_UPDATE": {
+      "name": "PLAYER_TOTEM_UPDATE",
+      "path": "events/PLAYER_TOTEM_UPDATE.md",
+      "anchor": ""
+    },
+    "PLAYER_TRADE_MONEY": {
+      "name": "PLAYER_TRADE_MONEY",
+      "path": "events/PLAYER_TRADE_MONEY.md",
+      "anchor": ""
+    },
+    "PLAYER_UNGHOST": {
+      "name": "PLAYER_UNGHOST",
+      "path": "events/PLAYER_UNGHOST.md",
+      "anchor": ""
+    },
+    "PLAYER_UPDATE_RESTING": {
+      "name": "PLAYER_UPDATE_RESTING",
+      "path": "events/PLAYER_UPDATE_RESTING.md",
+      "anchor": ""
+    },
+    "PLAYER_XP_UPDATE": {
+      "name": "PLAYER_XP_UPDATE",
+      "path": "events/PLAYER_XP_UPDATE.md",
+      "anchor": ""
+    },
+    "PLAYTIME_CHANGED": {
+      "name": "PLAYTIME_CHANGED",
+      "path": "events/PLAYTIME_CHANGED.md",
+      "anchor": ""
+    },
+    "PLAY_MOVIE": {
+      "name": "PLAY_MOVIE",
+      "path": "events/PLAY_MOVIE.md",
+      "anchor": ""
+    },
+    "PREVIEW_PET_TALENT_POINTS_CHANGED": {
+      "name": "PREVIEW_PET_TALENT_POINTS_CHANGED",
+      "path": "events/PREVIEW_PET_TALENT_POINTS_CHANGED.md",
+      "anchor": ""
+    },
+    "PREVIEW_TALENT_POINTS_CHANGED": {
+      "name": "PREVIEW_TALENT_POINTS_CHANGED",
+      "path": "events/PREVIEW_TALENT_POINTS_CHANGED.md",
+      "anchor": ""
+    },
+    "PVPQUEUE_ANYWHERE_SHOW": {
+      "name": "PVPQUEUE_ANYWHERE_SHOW",
+      "path": "events/PVPQUEUE_ANYWHERE_SHOW.md",
+      "anchor": ""
+    },
+    "PVPQUEUE_ANYWHERE_UPDATE_AVAILABLE": {
+      "name": "PVPQUEUE_ANYWHERE_UPDATE_AVAILABLE",
+      "path": "events/PVPQUEUE_ANYWHERE_UPDATE_AVAILABLE.md",
+      "anchor": ""
+    },
+    "QUEST_ACCEPTED": {
+      "name": "QUEST_ACCEPTED",
+      "path": "events/QUEST_ACCEPTED.md",
+      "anchor": ""
+    },
+    "QUEST_ACCEPT_CONFIRM": {
+      "name": "QUEST_ACCEPT_CONFIRM",
+      "path": "events/QUEST_ACCEPT_CONFIRM.md",
+      "anchor": ""
+    },
+    "QUEST_COMPLETE": {
+      "name": "QUEST_COMPLETE",
+      "path": "events/QUEST_COMPLETE.md",
+      "anchor": ""
+    },
+    "QUEST_DETAIL": {
+      "name": "QUEST_DETAIL",
+      "path": "events/QUEST_DETAIL.md",
+      "anchor": ""
+    },
+    "QUEST_FINISHED": {
+      "name": "QUEST_FINISHED",
+      "path": "events/QUEST_FINISHED.md",
+      "anchor": ""
+    },
+    "QUEST_GREETING": {
+      "name": "QUEST_GREETING",
+      "path": "events/QUEST_GREETING.md",
+      "anchor": ""
+    },
+    "QUEST_ITEM_UPDATE": {
+      "name": "QUEST_ITEM_UPDATE",
+      "path": "events/QUEST_ITEM_UPDATE.md",
+      "anchor": ""
+    },
+    "QUEST_LOG_UPDATE": {
+      "name": "QUEST_LOG_UPDATE",
+      "path": "events/QUEST_LOG_UPDATE.md",
+      "anchor": ""
+    },
+    "QUEST_POI_UPDATE": {
+      "name": "QUEST_POI_UPDATE",
+      "path": "events/QUEST_POI_UPDATE.md",
+      "anchor": ""
+    },
+    "QUEST_PROGRESS": {
+      "name": "QUEST_PROGRESS",
+      "path": "events/QUEST_PROGRESS.md",
+      "anchor": ""
+    },
+    "QUEST_QUERY_COMPLETE": {
+      "name": "QUEST_QUERY_COMPLETE",
+      "path": "events/QUEST_QUERY_COMPLETE.md",
+      "anchor": ""
+    },
+    "QUEST_WATCH_UPDATE": {
+      "name": "QUEST_WATCH_UPDATE",
+      "path": "events/QUEST_WATCH_UPDATE.md",
+      "anchor": ""
+    },
+    "RAID_INSTANCE_WELCOME": {
+      "name": "RAID_INSTANCE_WELCOME",
+      "path": "events/RAID_INSTANCE_WELCOME.md",
+      "anchor": ""
+    },
+    "RAID_ROSTER_UPDATE": {
+      "name": "RAID_ROSTER_UPDATE",
+      "path": "events/RAID_ROSTER_UPDATE.md",
+      "anchor": ""
+    },
+    "RAID_TARGET_UPDATE": {
+      "name": "RAID_TARGET_UPDATE",
+      "path": "events/RAID_TARGET_UPDATE.md",
+      "anchor": ""
+    },
+    "RAISED_AS_GHOUL": {
+      "name": "RAISED_AS_GHOUL",
+      "path": "events/RAISED_AS_GHOUL.md",
+      "anchor": ""
+    },
+    "READY_CHECK": {
+      "name": "READY_CHECK",
+      "path": "events/READY_CHECK.md",
+      "anchor": ""
+    },
+    "READY_CHECK_CONFIRM": {
+      "name": "READY_CHECK_CONFIRM",
+      "path": "events/READY_CHECK_CONFIRM.md",
+      "anchor": ""
+    },
+    "READY_CHECK_FINISHED": {
+      "name": "READY_CHECK_FINISHED",
+      "path": "events/READY_CHECK_FINISHED.md",
+      "anchor": ""
+    },
+    "RECEIVED_ACHIEVEMENT_LIST": {
+      "name": "RECEIVED_ACHIEVEMENT_LIST",
+      "path": "events/RECEIVED_ACHIEVEMENT_LIST.md",
+      "anchor": ""
+    },
+    "REPLACE_ENCHANT": {
+      "name": "REPLACE_ENCHANT",
+      "path": "events/REPLACE_ENCHANT.md",
+      "anchor": ""
+    },
+    "RESURRECT_REQUEST": {
+      "name": "RESURRECT_REQUEST",
+      "path": "events/RESURRECT_REQUEST.md",
+      "anchor": ""
+    },
+    "RUNE_POWER_UPDATE": {
+      "name": "RUNE_POWER_UPDATE",
+      "path": "events/RUNE_POWER_UPDATE.md",
+      "anchor": ""
+    },
+    "RUNE_TYPE_UPDATE": {
+      "name": "RUNE_TYPE_UPDATE",
+      "path": "events/RUNE_TYPE_UPDATE.md",
+      "anchor": ""
+    },
+    "SCREENSHOT_FAILED": {
+      "name": "SCREENSHOT_FAILED",
+      "path": "events/SCREENSHOT_FAILED.md",
+      "anchor": ""
+    },
+    "SCREENSHOT_SUCCEEDED": {
+      "name": "SCREENSHOT_SUCCEEDED",
+      "path": "events/SCREENSHOT_SUCCEEDED.md",
+      "anchor": ""
+    },
+    "SEND_MAIL_COD_CHANGED": {
+      "name": "SEND_MAIL_COD_CHANGED",
+      "path": "events/SEND_MAIL_COD_CHANGED.md",
+      "anchor": ""
+    },
+    "SEND_MAIL_MONEY_CHANGED": {
+      "name": "SEND_MAIL_MONEY_CHANGED",
+      "path": "events/SEND_MAIL_MONEY_CHANGED.md",
+      "anchor": ""
+    },
+    "SKILL_LINES_CHANGED": {
+      "name": "SKILL_LINES_CHANGED",
+      "path": "events/SKILL_LINES_CHANGED.md",
+      "anchor": ""
+    },
+    "SOCKET_INFO_CLOSE": {
+      "name": "SOCKET_INFO_CLOSE",
+      "path": "events/SOCKET_INFO_CLOSE.md",
+      "anchor": ""
+    },
+    "SOCKET_INFO_UPDATE": {
+      "name": "SOCKET_INFO_UPDATE",
+      "path": "events/SOCKET_INFO_UPDATE.md",
+      "anchor": ""
+    },
+    "SOUND_DEVICE_UPDATE": {
+      "name": "SOUND_DEVICE_UPDATE",
+      "path": "events/SOUND_DEVICE_UPDATE.md",
+      "anchor": ""
+    },
+    "SPELLS_CHANGED": {
+      "name": "SPELLS_CHANGED",
+      "path": "events/SPELLS_CHANGED.md",
+      "anchor": ""
+    },
+    "SPELL_UPDATE_COOLDOWN": {
+      "name": "SPELL_UPDATE_COOLDOWN",
+      "path": "events/SPELL_UPDATE_COOLDOWN.md",
+      "anchor": ""
+    },
+    "SPELL_UPDATE_USABLE": {
+      "name": "SPELL_UPDATE_USABLE",
+      "path": "events/SPELL_UPDATE_USABLE.md",
+      "anchor": ""
+    },
+    "START_AUTOREPEAT_SPELL": {
+      "name": "START_AUTOREPEAT_SPELL",
+      "path": "events/START_AUTOREPEAT_SPELL.md",
+      "anchor": ""
+    },
+    "START_LOOT_ROLL": {
+      "name": "START_LOOT_ROLL",
+      "path": "events/START_LOOT_ROLL.md",
+      "anchor": ""
+    },
+    "START_MINIGAME": {
+      "name": "START_MINIGAME",
+      "path": "events/START_MINIGAME.md",
+      "anchor": ""
+    },
+    "STOP_AUTOREPEAT_SPELL": {
+      "name": "STOP_AUTOREPEAT_SPELL",
+      "path": "events/STOP_AUTOREPEAT_SPELL.md",
+      "anchor": ""
+    },
+    "SYNCHRONIZE_SETTINGS": {
+      "name": "SYNCHRONIZE_SETTINGS",
+      "path": "events/SYNCHRONIZE_SETTINGS.md",
+      "anchor": ""
+    },
+    "TABARD_CANSAVE_CHANGED": {
+      "name": "TABARD_CANSAVE_CHANGED",
+      "path": "events/TABARD_CANSAVE_CHANGED.md",
+      "anchor": ""
+    },
+    "TABARD_SAVE_PENDING": {
+      "name": "TABARD_SAVE_PENDING",
+      "path": "events/TABARD_SAVE_PENDING.md",
+      "anchor": ""
+    },
+    "TALENTS_INVOLUNTARILY_RESET": {
+      "name": "TALENTS_INVOLUNTARILY_RESET",
+      "path": "events/TALENTS_INVOLUNTARILY_RESET.md",
+      "anchor": ""
+    },
+    "TAXIMAP_CLOSED": {
+      "name": "TAXIMAP_CLOSED",
+      "path": "events/TAXIMAP_CLOSED.md",
+      "anchor": ""
+    },
+    "TAXIMAP_OPENED": {
+      "name": "TAXIMAP_OPENED",
+      "path": "events/TAXIMAP_OPENED.md",
+      "anchor": ""
+    },
+    "TIME_PLAYED_MSG": {
+      "name": "TIME_PLAYED_MSG",
+      "path": "events/TIME_PLAYED_MSG.md",
+      "anchor": ""
+    },
+    "TRACKED_ACHIEVEMENT_UPDATE": {
+      "name": "TRACKED_ACHIEVEMENT_UPDATE",
+      "path": "events/TRACKED_ACHIEVEMENT_UPDATE.md",
+      "anchor": ""
+    },
+    "TRADE_ACCEPT_UPDATE": {
+      "name": "TRADE_ACCEPT_UPDATE",
+      "path": "events/TRADE_ACCEPT_UPDATE.md",
+      "anchor": ""
+    },
+    "TRADE_CLOSED": {
+      "name": "TRADE_CLOSED",
+      "path": "events/TRADE_CLOSED.md",
+      "anchor": ""
+    },
+    "TRADE_MONEY_CHANGED": {
+      "name": "TRADE_MONEY_CHANGED",
+      "path": "events/TRADE_MONEY_CHANGED.md",
+      "anchor": ""
+    },
+    "TRADE_PLAYER_ITEM_CHANGED": {
+      "name": "TRADE_PLAYER_ITEM_CHANGED",
+      "path": "events/TRADE_PLAYER_ITEM_CHANGED.md",
+      "anchor": ""
+    },
+    "TRADE_POTENTIAL_BIND_ENCHANT": {
+      "name": "TRADE_POTENTIAL_BIND_ENCHANT",
+      "path": "events/TRADE_POTENTIAL_BIND_ENCHANT.md",
+      "anchor": ""
+    },
+    "TRADE_REPLACE_ENCHANT": {
+      "name": "TRADE_REPLACE_ENCHANT",
+      "path": "events/TRADE_REPLACE_ENCHANT.md",
+      "anchor": ""
+    },
+    "TRADE_REQUEST": {
+      "name": "TRADE_REQUEST",
+      "path": "events/TRADE_REQUEST.md",
+      "anchor": ""
+    },
+    "TRADE_REQUEST_CANCEL": {
+      "name": "TRADE_REQUEST_CANCEL",
+      "path": "events/TRADE_REQUEST_CANCEL.md",
+      "anchor": ""
+    },
+    "TRADE_SHOW": {
+      "name": "TRADE_SHOW",
+      "path": "events/TRADE_SHOW.md",
+      "anchor": ""
+    },
+    "TRADE_SKILL_CLOSE": {
+      "name": "TRADE_SKILL_CLOSE",
+      "path": "events/TRADE_SKILL_CLOSE.md",
+      "anchor": ""
+    },
+    "TRADE_SKILL_FILTER_UPDATE": {
+      "name": "TRADE_SKILL_FILTER_UPDATE",
+      "path": "events/TRADE_SKILL_FILTER_UPDATE.md",
+      "anchor": ""
+    },
+    "TRADE_SKILL_SHOW": {
+      "name": "TRADE_SKILL_SHOW",
+      "path": "events/TRADE_SKILL_SHOW.md",
+      "anchor": ""
+    },
+    "TRADE_SKILL_UPDATE": {
+      "name": "TRADE_SKILL_UPDATE",
+      "path": "events/TRADE_SKILL_UPDATE.md",
+      "anchor": ""
+    },
+    "TRADE_TARGET_ITEM_CHANGED": {
+      "name": "TRADE_TARGET_ITEM_CHANGED",
+      "path": "events/TRADE_TARGET_ITEM_CHANGED.md",
+      "anchor": ""
+    },
+    "TRADE_UPDATE": {
+      "name": "TRADE_UPDATE",
+      "path": "events/TRADE_UPDATE.md",
+      "anchor": ""
+    },
+    "TRAINER_CLOSED": {
+      "name": "TRAINER_CLOSED",
+      "path": "events/TRAINER_CLOSED.md",
+      "anchor": ""
+    },
+    "TRAINER_DESCRIPTION_UPDATE": {
+      "name": "TRAINER_DESCRIPTION_UPDATE",
+      "path": "events/TRAINER_DESCRIPTION_UPDATE.md",
+      "anchor": ""
+    },
+    "TRAINER_SHOW": {
+      "name": "TRAINER_SHOW",
+      "path": "events/TRAINER_SHOW.md",
+      "anchor": ""
+    },
+    "TRAINER_UPDATE": {
+      "name": "TRAINER_UPDATE",
+      "path": "events/TRAINER_UPDATE.md",
+      "anchor": ""
+    },
+    "TUTORIAL_TRIGGER": {
+      "name": "TUTORIAL_TRIGGER",
+      "path": "events/TUTORIAL_TRIGGER.md",
+      "anchor": ""
+    },
+    "UI_ERROR_MESSAGE": {
+      "name": "UI_ERROR_MESSAGE",
+      "path": "events/UI_ERROR_MESSAGE.md",
+      "anchor": ""
+    },
+    "UI_INFO_MESSAGE": {
+      "name": "UI_INFO_MESSAGE",
+      "path": "events/UI_INFO_MESSAGE.md",
+      "anchor": ""
+    },
+    "UNIT_ATTACK": {
+      "name": "UNIT_ATTACK",
+      "path": "events/UNIT_ATTACK.md",
+      "anchor": ""
+    },
+    "UNIT_ATTACK_POWER": {
+      "name": "UNIT_ATTACK_POWER",
+      "path": "events/UNIT_ATTACK_POWER.md",
+      "anchor": ""
+    },
+    "UNIT_ATTACK_SPEED": {
+      "name": "UNIT_ATTACK_SPEED",
+      "path": "events/UNIT_ATTACK_SPEED.md",
+      "anchor": ""
+    },
+    "UNIT_AURA": {
+      "name": "UNIT_AURA",
+      "path": "events/UNIT_AURA.md",
+      "anchor": ""
+    },
+    "UNIT_CLASSIFICATION_CHANGED": {
+      "name": "UNIT_CLASSIFICATION_CHANGED",
+      "path": "events/UNIT_CLASSIFICATION_CHANGED.md",
+      "anchor": ""
+    },
+    "UNIT_COMBAT": {
+      "name": "UNIT_COMBAT",
+      "path": "events/UNIT_COMBAT.md",
+      "anchor": ""
+    },
+    "UNIT_COMBO_POINTS": {
+      "name": "UNIT_COMBO_POINTS",
+      "path": "events/UNIT_COMBO_POINTS.md",
+      "anchor": ""
+    },
+    "UNIT_DAMAGE": {
+      "name": "UNIT_DAMAGE",
+      "path": "events/UNIT_DAMAGE.md",
+      "anchor": ""
+    },
+    "UNIT_DEFENSE": {
+      "name": "UNIT_DEFENSE",
+      "path": "events/UNIT_DEFENSE.md",
+      "anchor": ""
+    },
+    "UNIT_DISPLAYPOWER": {
+      "name": "UNIT_DISPLAYPOWER",
+      "path": "events/UNIT_DISPLAYPOWER.md",
+      "anchor": ""
+    },
+    "UNIT_DYNAMIC_FLAGS": {
+      "name": "UNIT_DYNAMIC_FLAGS",
+      "path": "events/UNIT_DYNAMIC_FLAGS.md",
+      "anchor": ""
+    },
+    "UNIT_ENERGY": {
+      "name": "UNIT_ENERGY",
+      "path": "events/UNIT_ENERGY.md",
+      "anchor": ""
+    },
+    "UNIT_ENTERED_VEHICLE": {
+      "name": "UNIT_ENTERED_VEHICLE",
+      "path": "events/UNIT_ENTERED_VEHICLE.md",
+      "anchor": ""
+    },
+    "UNIT_ENTERING_VEHICLE": {
+      "name": "UNIT_ENTERING_VEHICLE",
+      "path": "events/UNIT_ENTERING_VEHICLE.md",
+      "anchor": ""
+    },
+    "UNIT_EXITED_VEHICLE": {
+      "name": "UNIT_EXITED_VEHICLE",
+      "path": "events/UNIT_EXITED_VEHICLE.md",
+      "anchor": ""
+    },
+    "UNIT_EXITING_VEHICLE": {
+      "name": "UNIT_EXITING_VEHICLE",
+      "path": "events/UNIT_EXITING_VEHICLE.md",
+      "anchor": ""
+    },
+    "UNIT_FACTION": {
+      "name": "UNIT_FACTION",
+      "path": "events/UNIT_FACTION.md",
+      "anchor": ""
+    },
+    "UNIT_FLAGS": {
+      "name": "UNIT_FLAGS",
+      "path": "events/UNIT_FLAGS.md",
+      "anchor": ""
+    },
+    "UNIT_FOCUS": {
+      "name": "UNIT_FOCUS",
+      "path": "events/UNIT_FOCUS.md",
+      "anchor": ""
+    },
+    "UNIT_HAPPINESS": {
+      "name": "UNIT_HAPPINESS",
+      "path": "events/UNIT_HAPPINESS.md",
+      "anchor": ""
+    },
+    "UNIT_HEALTH": {
+      "name": "UNIT_HEALTH",
+      "path": "events/UNIT_HEALTH.md",
+      "anchor": ""
+    },
+    "UNIT_INVENTORY_CHANGED": {
+      "name": "UNIT_INVENTORY_CHANGED",
+      "path": "events/UNIT_INVENTORY_CHANGED.md",
+      "anchor": ""
+    },
+    "UNIT_LEVEL": {
+      "name": "UNIT_LEVEL",
+      "path": "events/UNIT_LEVEL.md",
+      "anchor": ""
+    },
+    "UNIT_MANA": {
+      "name": "UNIT_MANA",
+      "path": "events/UNIT_MANA.md",
+      "anchor": ""
+    },
+    "UNIT_MAXENERGY": {
+      "name": "UNIT_MAXENERGY",
+      "path": "events/UNIT_MAXENERGY.md",
+      "anchor": ""
+    },
+    "UNIT_MAXFOCUS": {
+      "name": "UNIT_MAXFOCUS",
+      "path": "events/UNIT_MAXFOCUS.md",
+      "anchor": ""
+    },
+    "UNIT_MAXHAPPINESS": {
+      "name": "UNIT_MAXHAPPINESS",
+      "path": "events/UNIT_MAXHAPPINESS.md",
+      "anchor": ""
+    },
+    "UNIT_MAXHEALTH": {
+      "name": "UNIT_MAXHEALTH",
+      "path": "events/UNIT_MAXHEALTH.md",
+      "anchor": ""
+    },
+    "UNIT_MAXMANA": {
+      "name": "UNIT_MAXMANA",
+      "path": "events/UNIT_MAXMANA.md",
+      "anchor": ""
+    },
+    "UNIT_MAXRAGE": {
+      "name": "UNIT_MAXRAGE",
+      "path": "events/UNIT_MAXRAGE.md",
+      "anchor": ""
+    },
+    "UNIT_MAXRUNIC_POWER": {
+      "name": "UNIT_MAXRUNIC_POWER",
+      "path": "events/UNIT_MAXRUNIC_POWER.md",
+      "anchor": ""
+    },
+    "UNIT_MODEL_CHANGED": {
+      "name": "UNIT_MODEL_CHANGED",
+      "path": "events/UNIT_MODEL_CHANGED.md",
+      "anchor": ""
+    },
+    "UNIT_NAME_UPDATE": {
+      "name": "UNIT_NAME_UPDATE",
+      "path": "events/UNIT_NAME_UPDATE.md",
+      "anchor": ""
+    },
+    "UNIT_PET": {
+      "name": "UNIT_PET",
+      "path": "events/UNIT_PET.md",
+      "anchor": ""
+    },
+    "UNIT_PET_EXPERIENCE": {
+      "name": "UNIT_PET_EXPERIENCE",
+      "path": "events/UNIT_PET_EXPERIENCE.md",
+      "anchor": ""
+    },
+    "UNIT_PORTRAIT_UPDATE": {
+      "name": "UNIT_PORTRAIT_UPDATE",
+      "path": "events/UNIT_PORTRAIT_UPDATE.md",
+      "anchor": ""
+    },
+    "UNIT_QUEST_LOG_CHANGED": {
+      "name": "UNIT_QUEST_LOG_CHANGED",
+      "path": "events/UNIT_QUEST_LOG_CHANGED.md",
+      "anchor": ""
+    },
+    "UNIT_RAGE": {
+      "name": "UNIT_RAGE",
+      "path": "events/UNIT_RAGE.md",
+      "anchor": ""
+    },
+    "UNIT_RANGEDDAMAGE": {
+      "name": "UNIT_RANGEDDAMAGE",
+      "path": "events/UNIT_RANGEDDAMAGE.md",
+      "anchor": ""
+    },
+    "UNIT_RANGED_ATTACK_POWER": {
+      "name": "UNIT_RANGED_ATTACK_POWER",
+      "path": "events/UNIT_RANGED_ATTACK_POWER.md",
+      "anchor": ""
+    },
+    "UNIT_RESISTANCES": {
+      "name": "UNIT_RESISTANCES",
+      "path": "events/UNIT_RESISTANCES.md",
+      "anchor": ""
+    },
+    "UNIT_RUNIC_POWER": {
+      "name": "UNIT_RUNIC_POWER",
+      "path": "events/UNIT_RUNIC_POWER.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_CHANNEL_START": {
+      "name": "UNIT_SPELLCAST_CHANNEL_START",
+      "path": "events/UNIT_SPELLCAST_CHANNEL_START.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_CHANNEL_STOP": {
+      "name": "UNIT_SPELLCAST_CHANNEL_STOP",
+      "path": "events/UNIT_SPELLCAST_CHANNEL_STOP.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_CHANNEL_UPDATE": {
+      "name": "UNIT_SPELLCAST_CHANNEL_UPDATE",
+      "path": "events/UNIT_SPELLCAST_CHANNEL_UPDATE.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_DELAYED": {
+      "name": "UNIT_SPELLCAST_DELAYED",
+      "path": "events/UNIT_SPELLCAST_DELAYED.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_FAILED": {
+      "name": "UNIT_SPELLCAST_FAILED",
+      "path": "events/UNIT_SPELLCAST_FAILED.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_FAILED_QUIET": {
+      "name": "UNIT_SPELLCAST_FAILED_QUIET",
+      "path": "events/UNIT_SPELLCAST_FAILED_QUIET.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_INTERRUPTED": {
+      "name": "UNIT_SPELLCAST_INTERRUPTED",
+      "path": "events/UNIT_SPELLCAST_INTERRUPTED.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_INTERRUPTIBLE": {
+      "name": "UNIT_SPELLCAST_INTERRUPTIBLE",
+      "path": "events/UNIT_SPELLCAST_INTERRUPTIBLE.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_NOT_INTERRUPTIBLE": {
+      "name": "UNIT_SPELLCAST_NOT_INTERRUPTIBLE",
+      "path": "events/UNIT_SPELLCAST_NOT_INTERRUPTIBLE.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_SENT": {
+      "name": "UNIT_SPELLCAST_SENT",
+      "path": "events/UNIT_SPELLCAST_SENT.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_START": {
+      "name": "UNIT_SPELLCAST_START",
+      "path": "events/UNIT_SPELLCAST_START.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_STOP": {
+      "name": "UNIT_SPELLCAST_STOP",
+      "path": "events/UNIT_SPELLCAST_STOP.md",
+      "anchor": ""
+    },
+    "UNIT_SPELLCAST_SUCCEEDED": {
+      "name": "UNIT_SPELLCAST_SUCCEEDED",
+      "path": "events/UNIT_SPELLCAST_SUCCEEDED.md",
+      "anchor": ""
+    },
+    "UNIT_STATS": {
+      "name": "UNIT_STATS",
+      "path": "events/UNIT_STATS.md",
+      "anchor": ""
+    },
+    "UNIT_TARGET": {
+      "name": "UNIT_TARGET",
+      "path": "events/UNIT_TARGET.md",
+      "anchor": ""
+    },
+    "UNIT_THREAT_LIST_UPDATE": {
+      "name": "UNIT_THREAT_LIST_UPDATE",
+      "path": "events/UNIT_THREAT_LIST_UPDATE.md",
+      "anchor": ""
+    },
+    "UNIT_THREAT_SITUATION_UPDATE": {
+      "name": "UNIT_THREAT_SITUATION_UPDATE",
+      "path": "events/UNIT_THREAT_SITUATION_UPDATE.md",
+      "anchor": ""
+    },
+    "UPDATE_BATTLEFIELD_SCORE": {
+      "name": "UPDATE_BATTLEFIELD_SCORE",
+      "path": "events/UPDATE_BATTLEFIELD_SCORE.md",
+      "anchor": ""
+    },
+    "UPDATE_BATTLEFIELD_STATUS": {
+      "name": "UPDATE_BATTLEFIELD_STATUS",
+      "path": "events/UPDATE_BATTLEFIELD_STATUS.md",
+      "anchor": ""
+    },
+    "UPDATE_BINDINGS": {
+      "name": "UPDATE_BINDINGS",
+      "path": "events/UPDATE_BINDINGS.md",
+      "anchor": ""
+    },
+    "UPDATE_BONUS_ACTIONBAR": {
+      "name": "UPDATE_BONUS_ACTIONBAR",
+      "path": "events/UPDATE_BONUS_ACTIONBAR.md",
+      "anchor": ""
+    },
+    "UPDATE_CHAT_COLOR": {
+      "name": "UPDATE_CHAT_COLOR",
+      "path": "events/UPDATE_CHAT_COLOR.md",
+      "anchor": ""
+    },
+    "UPDATE_CHAT_COLOR_NAME_BY_CLASS": {
+      "name": "UPDATE_CHAT_COLOR_NAME_BY_CLASS",
+      "path": "events/UPDATE_CHAT_COLOR_NAME_BY_CLASS.md",
+      "anchor": ""
+    },
+    "UPDATE_CHAT_WINDOWS": {
+      "name": "UPDATE_CHAT_WINDOWS",
+      "path": "events/UPDATE_CHAT_WINDOWS.md",
+      "anchor": ""
+    },
+    "UPDATE_EXHAUSTION": {
+      "name": "UPDATE_EXHAUSTION",
+      "path": "events/UPDATE_EXHAUSTION.md",
+      "anchor": ""
+    },
+    "UPDATE_FACTION": {
+      "name": "UPDATE_FACTION",
+      "path": "events/UPDATE_FACTION.md",
+      "anchor": ""
+    },
+    "UPDATE_FLOATING_CHAT_WINDOWS": {
+      "name": "UPDATE_FLOATING_CHAT_WINDOWS",
+      "path": "events/UPDATE_FLOATING_CHAT_WINDOWS.md",
+      "anchor": ""
+    },
+    "UPDATE_GM_STATUS": {
+      "name": "UPDATE_GM_STATUS",
+      "path": "events/UPDATE_GM_STATUS.md",
+      "anchor": ""
+    },
+    "UPDATE_INSTANCE_INFO": {
+      "name": "UPDATE_INSTANCE_INFO",
+      "path": "events/UPDATE_INSTANCE_INFO.md",
+      "anchor": ""
+    },
+    "UPDATE_INVENTORY_ALERTS": {
+      "name": "UPDATE_INVENTORY_ALERTS",
+      "path": "events/UPDATE_INVENTORY_ALERTS.md",
+      "anchor": ""
+    },
+    "UPDATE_INVENTORY_DURABILITY": {
+      "name": "UPDATE_INVENTORY_DURABILITY",
+      "path": "events/UPDATE_INVENTORY_DURABILITY.md",
+      "anchor": ""
+    },
+    "UPDATE_LFG_LIST": {
+      "name": "UPDATE_LFG_LIST",
+      "path": "events/UPDATE_LFG_LIST.md",
+      "anchor": ""
+    },
+    "UPDATE_LFG_LIST_INCREMENTAL": {
+      "name": "UPDATE_LFG_LIST_INCREMENTAL",
+      "path": "events/UPDATE_LFG_LIST_INCREMENTAL.md",
+      "anchor": ""
+    },
+    "UPDATE_LFG_TYPES": {
+      "name": "UPDATE_LFG_TYPES",
+      "path": "events/UPDATE_LFG_TYPES.md",
+      "anchor": ""
+    },
+    "UPDATE_MACROS": {
+      "name": "UPDATE_MACROS",
+      "path": "events/UPDATE_MACROS.md",
+      "anchor": ""
+    },
+    "UPDATE_MASTER_LOOT_LIST": {
+      "name": "UPDATE_MASTER_LOOT_LIST",
+      "path": "events/UPDATE_MASTER_LOOT_LIST.md",
+      "anchor": ""
+    },
+    "UPDATE_MOUSEOVER_UNIT": {
+      "name": "UPDATE_MOUSEOVER_UNIT",
+      "path": "events/UPDATE_MOUSEOVER_UNIT.md",
+      "anchor": ""
+    },
+    "UPDATE_MULTI_CAST_ACTIONBAR": {
+      "name": "UPDATE_MULTI_CAST_ACTIONBAR",
+      "path": "events/UPDATE_MULTI_CAST_ACTIONBAR.md",
+      "anchor": ""
+    },
+    "UPDATE_PENDING_MAIL": {
+      "name": "UPDATE_PENDING_MAIL",
+      "path": "events/UPDATE_PENDING_MAIL.md",
+      "anchor": ""
+    },
+    "UPDATE_SHAPESHIFT_COOLDOWN": {
+      "name": "UPDATE_SHAPESHIFT_COOLDOWN",
+      "path": "events/UPDATE_SHAPESHIFT_COOLDOWN.md",
+      "anchor": ""
+    },
+    "UPDATE_SHAPESHIFT_FORM": {
+      "name": "UPDATE_SHAPESHIFT_FORM",
+      "path": "events/UPDATE_SHAPESHIFT_FORM.md",
+      "anchor": ""
+    },
+    "UPDATE_SHAPESHIFT_FORMS": {
+      "name": "UPDATE_SHAPESHIFT_FORMS",
+      "path": "events/UPDATE_SHAPESHIFT_FORMS.md",
+      "anchor": ""
+    },
+    "UPDATE_SHAPESHIFT_USABLE": {
+      "name": "UPDATE_SHAPESHIFT_USABLE",
+      "path": "events/UPDATE_SHAPESHIFT_USABLE.md",
+      "anchor": ""
+    },
+    "UPDATE_STEALTH": {
+      "name": "UPDATE_STEALTH",
+      "path": "events/UPDATE_STEALTH.md",
+      "anchor": ""
+    },
+    "UPDATE_TICKET": {
+      "name": "UPDATE_TICKET",
+      "path": "events/UPDATE_TICKET.md",
+      "anchor": ""
+    },
+    "UPDATE_TRADESKILL_RECAST": {
+      "name": "UPDATE_TRADESKILL_RECAST",
+      "path": "events/UPDATE_TRADESKILL_RECAST.md",
+      "anchor": ""
+    },
+    "UPDATE_WORLD_STATES": {
+      "name": "UPDATE_WORLD_STATES",
+      "path": "events/UPDATE_WORLD_STATES.md",
+      "anchor": ""
+    },
+    "USE_BIND_CONFIRM": {
+      "name": "USE_BIND_CONFIRM",
+      "path": "events/USE_BIND_CONFIRM.md",
+      "anchor": ""
+    },
+    "USE_GLYPH": {
+      "name": "USE_GLYPH",
+      "path": "events/USE_GLYPH.md",
+      "anchor": ""
+    },
+    "VARIABLES_LOADED": {
+      "name": "VARIABLES_LOADED",
+      "path": "events/VARIABLES_LOADED.md",
+      "anchor": ""
+    },
+    "VEHICLE_ANGLE_SHOW": {
+      "name": "VEHICLE_ANGLE_SHOW",
+      "path": "events/VEHICLE_ANGLE_SHOW.md",
+      "anchor": ""
+    },
+    "VEHICLE_ANGLE_UPDATE": {
+      "name": "VEHICLE_ANGLE_UPDATE",
+      "path": "events/VEHICLE_ANGLE_UPDATE.md",
+      "anchor": ""
+    },
+    "VEHICLE_PASSENGERS_CHANGED": {
+      "name": "VEHICLE_PASSENGERS_CHANGED",
+      "path": "events/VEHICLE_PASSENGERS_CHANGED.md",
+      "anchor": ""
+    },
+    "VEHICLE_POWER_SHOW": {
+      "name": "VEHICLE_POWER_SHOW",
+      "path": "events/VEHICLE_POWER_SHOW.md",
+      "anchor": ""
+    },
+    "VEHICLE_UPDATE": {
+      "name": "VEHICLE_UPDATE",
+      "path": "events/VEHICLE_UPDATE.md",
+      "anchor": ""
+    },
+    "VOICE_CHANNEL_STATUS_UPDATE": {
+      "name": "VOICE_CHANNEL_STATUS_UPDATE",
+      "path": "events/VOICE_CHANNEL_STATUS_UPDATE.md",
+      "anchor": ""
+    },
+    "VOICE_CHAT_ENABLED_UPDATE": {
+      "name": "VOICE_CHAT_ENABLED_UPDATE",
+      "path": "events/VOICE_CHAT_ENABLED_UPDATE.md",
+      "anchor": ""
+    },
+    "VOICE_LEFT_SESSION": {
+      "name": "VOICE_LEFT_SESSION",
+      "path": "events/VOICE_LEFT_SESSION.md",
+      "anchor": ""
+    },
+    "VOICE_PLATE_START": {
+      "name": "VOICE_PLATE_START",
+      "path": "events/VOICE_PLATE_START.md",
+      "anchor": ""
+    },
+    "VOICE_PLATE_STOP": {
+      "name": "VOICE_PLATE_STOP",
+      "path": "events/VOICE_PLATE_STOP.md",
+      "anchor": ""
+    },
+    "VOICE_PUSH_TO_TALK_START": {
+      "name": "VOICE_PUSH_TO_TALK_START",
+      "path": "events/VOICE_PUSH_TO_TALK_START.md",
+      "anchor": ""
+    },
+    "VOICE_PUSH_TO_TALK_STOP": {
+      "name": "VOICE_PUSH_TO_TALK_STOP",
+      "path": "events/VOICE_PUSH_TO_TALK_STOP.md",
+      "anchor": ""
+    },
+    "VOICE_SELF_MUTE": {
+      "name": "VOICE_SELF_MUTE",
+      "path": "events/VOICE_SELF_MUTE.md",
+      "anchor": ""
+    },
+    "VOICE_SESSIONS_UPDATE": {
+      "name": "VOICE_SESSIONS_UPDATE",
+      "path": "events/VOICE_SESSIONS_UPDATE.md",
+      "anchor": ""
+    },
+    "VOICE_START": {
+      "name": "VOICE_START",
+      "path": "events/VOICE_START.md",
+      "anchor": ""
+    },
+    "VOICE_STATUS_UPDATE": {
+      "name": "VOICE_STATUS_UPDATE",
+      "path": "events/VOICE_STATUS_UPDATE.md",
+      "anchor": ""
+    },
+    "VOICE_STOP": {
+      "name": "VOICE_STOP",
+      "path": "events/VOICE_STOP.md",
+      "anchor": ""
+    },
+    "VOTE_KICK_REASON_NEEDED": {
+      "name": "VOTE_KICK_REASON_NEEDED",
+      "path": "events/VOTE_KICK_REASON_NEEDED.md",
+      "anchor": ""
+    },
+    "WEAR_EQUIPMENT_SET": {
+      "name": "WEAR_EQUIPMENT_SET",
+      "path": "events/WEAR_EQUIPMENT_SET.md",
+      "anchor": ""
+    },
+    "WHO_LIST_UPDATE": {
+      "name": "WHO_LIST_UPDATE",
+      "path": "events/WHO_LIST_UPDATE.md",
+      "anchor": ""
+    },
+    "WORLD_MAP_NAME_UPDATE": {
+      "name": "WORLD_MAP_NAME_UPDATE",
+      "path": "events/WORLD_MAP_NAME_UPDATE.md",
+      "anchor": ""
+    },
+    "WORLD_MAP_UPDATE": {
+      "name": "WORLD_MAP_UPDATE",
+      "path": "events/WORLD_MAP_UPDATE.md",
+      "anchor": ""
+    },
+    "WORLD_STATE_UI_TIMER_UPDATE": {
+      "name": "WORLD_STATE_UI_TIMER_UPDATE",
+      "path": "events/WORLD_STATE_UI_TIMER_UPDATE.md",
+      "anchor": ""
+    },
+    "WOW_MOUSE_NOT_FOUND": {
+      "name": "WOW_MOUSE_NOT_FOUND",
+      "path": "events/WOW_MOUSE_NOT_FOUND.md",
+      "anchor": ""
+    },
+    "ZONE_CHANGED": {
+      "name": "ZONE_CHANGED",
+      "path": "events/ZONE_CHANGED.md",
+      "anchor": ""
+    },
+    "ZONE_CHANGED_INDOORS": {
+      "name": "ZONE_CHANGED_INDOORS",
+      "path": "events/ZONE_CHANGED_INDOORS.md",
+      "anchor": ""
+    },
+    "ZONE_CHANGED_NEW_AREA": {
+      "name": "ZONE_CHANGED_NEW_AREA",
+      "path": "events/ZONE_CHANGED_NEW_AREA.md",
       "anchor": ""
     }
   }

@@ -90,7 +90,7 @@ ClickTradeButton(index)
 
 ## CloseTrade
 
-Ends interaction with the Trade UI, canceling any trade in progress. Causes the [`TRADE_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/TRADE_CLOSED) event to fire, indicating that Trade APIs may no longer have effects or return valid data.
+Ends interaction with the Trade UI, canceling any trade in progress. Causes the [`TRADE_CLOSED`](../events/TRADE_CLOSED.md) event to fire, indicating that Trade APIs may no longer have effects or return valid data.
 
 **Signature:**
 
@@ -224,7 +224,7 @@ link = GetTradeTargetItemLink(index)
 
 ## InitiateTrade
 
-Offers to trade with a given unit. The trade process does not begin immediately; once the server has determined both clients can trade, the [`TRADE_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/event/TRADE_SHOW) event fires.
+Offers to trade with a given unit. The trade process does not begin immediately; once the server has determined both clients can trade, the [`TRADE_SHOW`](../events/TRADE_SHOW.md) event fires.
 
 **Signature:**
 

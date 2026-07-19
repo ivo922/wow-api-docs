@@ -8,7 +8,7 @@
 
 ## AcceptGroup
 
-Accepts an invitation to join a party or raid. Usable in response to the [`PARTY_INVITE_REQUEST`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PARTY_INVITE_REQUEST) event which fires when the player is invited to join a group. This function does not automatically hide the default UI's group invite dialog; doing such requires calling `StaticPopup_Hide("PARTY_INVITE")`, but only after the [`PARTY_MEMBERS_CHANGED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PARTY_MEMBERS_CHANGED) event fires indicating the player has successfully joined the group.
+Accepts an invitation to join a party or raid. Usable in response to the [`PARTY_INVITE_REQUEST`](../events/PARTY_INVITE_REQUEST.md) event which fires when the player is invited to join a group. This function does not automatically hide the default UI's group invite dialog; doing such requires calling `StaticPopup_Hide("PARTY_INVITE")`, but only after the [`PARTY_MEMBERS_CHANGED`](../events/PARTY_MEMBERS_CHANGED.md) event fires indicating the player has successfully joined the group.
 
 **Signature:**
 
@@ -69,7 +69,7 @@ ConvertToRaid()
 
 ## DeclineGroup
 
-Declines an invitation to join a party or raid. Usable in response to the [`PARTY_INVITE_REQUEST`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PARTY_INVITE_REQUEST) event which fires when the player is invited to join a group.
+Declines an invitation to join a party or raid. Usable in response to the [`PARTY_INVITE_REQUEST`](../events/PARTY_INVITE_REQUEST.md) event which fires when the player is invited to join a group.
 
 **Signature:**
 

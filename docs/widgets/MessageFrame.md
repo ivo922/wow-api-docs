@@ -1703,7 +1703,7 @@ Frame:RegisterAllEvents()
 
 ### Frame:RegisterEvent
 
-Registers the frame for an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events). The frame's [`OnEvent`](#onevent) script handler will be run whenever the event fires. See the event documentation for details on event arguments.
+Registers the frame for an [event](../Events.md). The frame's [`OnEvent`](#onevent) script handler will be run whenever the event fires. See the event documentation for details on event arguments.
 
 **Signature:**
 
@@ -1713,7 +1713,7 @@ Frame:RegisterEvent("event")
 
 **Arguments:**
 
-- `event` - Name of an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) (`string`)
+- `event` - Name of an [event](../Events.md) (`string`)
 
 *Inherited from [Frame](Frame.md)*
 
@@ -2584,7 +2584,7 @@ Frame:StopMovingOrSizing()
 
 ### Frame:UnregisterAllEvents
 
-Unregisters the frame from any [events](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) for which it is registered
+Unregisters the frame from any [events](../Events.md) for which it is registered
 
 **Signature:**
 
@@ -2600,7 +2600,7 @@ Frame:UnregisterAllEvents()
 
 Unregisters the frame for an event. Once unregistered, the frame's [`OnEvent`](#onevent) script handler will not be called for that event.
 
-Unregistering from notifications for an event can be useful for improving addon performance at times when it's not necessary to process the event. For example, a frame which monitors target health does not need to receive the [`UNIT_HEALTH`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_HEALTH) event while the player has no target. An addon that sorts the contents of the player's bags can register for the [`BAG_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/BAG_UPDATE) event to keep track of when items are picked up, but unregister from the event while it performs its sorting.
+Unregistering from notifications for an event can be useful for improving addon performance at times when it's not necessary to process the event. For example, a frame which monitors target health does not need to receive the [`UNIT_HEALTH`](../events/UNIT_HEALTH.md) event while the player has no target. An addon that sorts the contents of the player's bags can register for the [`BAG_UPDATE`](../events/BAG_UPDATE.md) event to keep track of when items are picked up, but unregister from the event while it performs its sorting.
 
 **Signature:**
 
@@ -2610,7 +2610,7 @@ Frame:UnregisterEvent("event")
 
 **Arguments:**
 
-- `event` - Name of an [event](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) (`string`)
+- `event` - Name of an [event](../Events.md) (`string`)
 
 *Inherited from [Frame](Frame.md)*
 

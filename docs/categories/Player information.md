@@ -52,7 +52,7 @@ status = CanHearthAndResurrectFromArea()
 
 ## CheckBinderDist
 
-Returns whether the player is in range of an NPC that can set the Hearthstone location. Usable following the [`CONFIRM_BINDER`](https://web.archive.org/web/20100105235302/http://wowprogramming.com/docs/events/CONFIRM_BINDER) event which fires when the player speaks to an Innkeeper (or similar) NPC and chooses to set his or her Hearthstone location. Used in the default UI to hide the confirmation window for such if the player moves too far away from the NPC.
+Returns whether the player is in range of an NPC that can set the Hearthstone location. Usable following the [`CONFIRM_BINDER`](../events/CONFIRM_BINDER.md) event which fires when the player speaks to an Innkeeper (or similar) NPC and chooses to set his or her Hearthstone location. Used in the default UI to hide the confirmation window for such if the player moves too far away from the NPC.
 
 **Signature:**
 
@@ -68,7 +68,7 @@ inRange = CheckBinderDist()
 
 ## CheckSpiritHealerDist
 
-Returns whether the player is in range of a spirit healer. Usable following the [`CONFIRM_XP_LOSS`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_XP_LOSS) event which fires upon speaking to a spirit healer while dead and choosing the option to immediately resurrect. Used in the default UI to hide the confirmation window for such if the player moves too far away from the spirit healer.
+Returns whether the player is in range of a spirit healer. Usable following the [`CONFIRM_XP_LOSS`](../events/CONFIRM_XP_LOSS.md) event which fires upon speaking to a spirit healer while dead and choosing the option to immediately resurrect. Used in the default UI to hide the confirmation window for such if the player moves too far away from the spirit healer.
 
 **Signature:**
 
@@ -84,7 +84,7 @@ inRange = CheckSpiritHealerDist()
 
 ## ConfirmBinder
 
-Sets the player's Hearthstone to the current location. Usable in response to the [`CONFIRM_BINDER`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CONFIRM_BINDER) event which fires upon speaking to an Innkeeper (or similar NPC) and choosing the Hearthstone option.
+Sets the player's Hearthstone to the current location. Usable in response to the [`CONFIRM_BINDER`](../events/CONFIRM_BINDER.md) event which fires upon speaking to an Innkeeper (or similar NPC) and choosing the Hearthstone option.
 
 **Signature:**
 

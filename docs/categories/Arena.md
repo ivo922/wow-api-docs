@@ -69,7 +69,7 @@ ArenaTeamLeave(team)
 
 ## ArenaTeamRoster `server`
 
-Requests arena team roster information from the server. Does not return information directly: the [`ARENA_TEAM_ROSTER_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/ARENA_TEAM_ROSTER_UPDATE) event fires when information from the server becomes available, which can then be retrieved using [`GetNumArenaTeamMembers()`](Arena.md#getnumarenateammembers) and [`GetArenaTeamRosterInfo()`](Arena.md#getarenateamrosterinfo).
+Requests arena team roster information from the server. Does not return information directly: the [`ARENA_TEAM_ROSTER_UPDATE`](../events/ARENA_TEAM_ROSTER_UPDATE.md) event fires when information from the server becomes available, which can then be retrieved using [`GetNumArenaTeamMembers()`](Arena.md#getnumarenateammembers) and [`GetArenaTeamRosterInfo()`](Arena.md#getarenateamrosterinfo).
 
 Roster update requests are limited to once every 10 seconds *per team*. For example, calling `ArenaTeamRoster(1)` twice within ten seconds will not result in a second `ARENA_TEAM_ROSTER_UPDATE` event, but calling `ArenaTeamRoster(1)` and `ArenaTeamRoster(2)` within ten seconds will result in two `ARENA_TEAM_ROSTER_UPDATE` events (one for each team).
 

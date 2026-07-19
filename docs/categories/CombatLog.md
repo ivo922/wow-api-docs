@@ -8,7 +8,7 @@
 
 ## CombatLogAddFilter
 
-Adds a filter to the combat log system. Each time this function is called a new filter is added to the combat log system. Any combat log entry that passes the filter will be fired as a [`COMBAT_LOG_EVENT`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/event/COMBAT_LOG_EVENT) event in order from oldest to newest.
+Adds a filter to the combat log system. Each time this function is called a new filter is added to the combat log system. Any combat log entry that passes the filter will be fired as a [`COMBAT_LOG_EVENT`](../events/COMBAT_LOG_EVENT.md) event in order from oldest to newest.
 
 **Signature:**
 
@@ -61,7 +61,7 @@ CombatLogClearEntries()
 
 ## CombatLogGetCurrentEntry
 
-Returns the combat log event information for the current entry and advances to the next entry. See [`COMBAT_LOG_EVENT`](https://web.archive.org/web/20111212190929/http://wowprogramming.com/docs/event/COMBAT_LOG_EVENT) for details of the event information.
+Returns the combat log event information for the current entry and advances to the next entry. See [`COMBAT_LOG_EVENT`](../events/COMBAT_LOG_EVENT.md) for details of the event information.
 
 The combat log maintains a "cursor" in the list of entries; this function returns information about the event at the cursor position and advances the cursor to the next entry. Since this function is used by the default UI's combat log display, the cursor position is usually at the end of the log -- calling it thus returns nothing. The function [`CombatLogSetCurrentEntry()`](CombatLog.md#combatlogsetcurrententry) can be used to "rewind" the combat log cursor, enabling retrieval of information about earlier events.
 

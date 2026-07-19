@@ -8,14 +8,17 @@ Late WotLK (≈3.3.5 / July 2010) World of Warcraft Lua API reference, archived 
 2. Read `by_name["ExactFunctionName"]` (array; usually one entry).
 3. Open `docs/<path>` and jump to heading anchor `anchor` (MkDocs slug of the `##` heading).
 4. For argument types, use `types["spellID"].path` → `docs/types/spellID.md` (prefer local files over Wayback links in the prose).
+5. For events, use `events["UNIT_HEALTH"].path` → `docs/events/UNIT_HEALTH.md`.
 
 ## Orientation
 
 | File | Use |
 |---|---|
-| [`docs/api-index.json`](docs/api-index.json) | Function/type catalog (start here) |
+| [`docs/api-index.json`](docs/api-index.json) | Function/type/event catalog (start here) |
 | [`docs/index.md`](docs/index.md) | Human category index |
 | [`docs/API Types.md`](docs/API%20Types.md) | Type list |
+| [`docs/Events.md`](docs/Events.md) | Event list |
+| [`docs/events/*.md`](docs/events/) | One page per event |
 | [`docs/Widgets.md`](docs/Widgets.md) | Widget type index |
 | [`docs/widgets/*.md`](docs/widgets/) | Widget methods / script handlers |
 | [`docs/categories/*.md`](docs/categories/) | Full function docs (many APIs per file) |

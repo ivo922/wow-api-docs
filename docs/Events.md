@@ -1,0 +1,619 @@
+# Events
+
+← [Home](index.md)
+
+Late WotLK (≈3.3.5) game events from the [wowprogramming.com Events listing](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events) (Wayback, July 2010).
+
+**605** events.
+
+## Events
+
+- [`ACHIEVEMENT_EARNED`](events/ACHIEVEMENT_EARNED.md) — Fires when the player earns an achievement
+- [`ACTIONBAR_HIDEGRID`](events/ACTIONBAR_HIDEGRID.md) — Fires when an item, spell or other entity that can be placed into an action bar slot is removed f…
+- [`ACTIONBAR_PAGE_CHANGED`](events/ACTIONBAR_PAGE_CHANGED.md) — Fires when the main action bar changes pages
+- [`ACTIONBAR_SHOWGRID`](events/ACTIONBAR_SHOWGRID.md) — Fires when an item, spell or other entity that can be placed into an action bar slot is picked up…
+- [`ACTIONBAR_SLOT_CHANGED`](events/ACTIONBAR_SLOT_CHANGED.md) — Fires when the contents of an action bar slot change
+- [`ACTIONBAR_UPDATE_COOLDOWN`](events/ACTIONBAR_UPDATE_COOLDOWN.md) — Fires when the cooldown for an action bar item begins or ends
+- [`ACTIONBAR_UPDATE_STATE`](events/ACTIONBAR_UPDATE_STATE.md) — Fires when the state of an action bar item changes
+- [`ACTIONBAR_UPDATE_USABLE`](events/ACTIONBAR_UPDATE_USABLE.md) — Fires when an action becomes usable or unusable
+- [`ACTIVE_TALENT_GROUP_CHANGED`](events/ACTIVE_TALENT_GROUP_CHANGED.md) — Fires when the player (with Dual Talent Specialization enabled) switches talent builds
+- [`ADDON_ACTION_BLOCKED`](events/ADDON_ACTION_BLOCKED.md) — Fires when a non-Blizzard addon attempts to use a protected API
+- [`ADDON_ACTION_FORBIDDEN`](events/ADDON_ACTION_FORBIDDEN.md) — Fires when a non-Blizzard addon attempts to use a protected API
+- [`ADDON_LOADED`](events/ADDON_LOADED.md) — Fires when an addon and its saved variables are loaded
+- [`AREA_SPIRIT_HEALER_IN_RANGE`](events/AREA_SPIRIT_HEALER_IN_RANGE.md) — Fires when the player enters into the area of effect of a spirit healer that periodically resurre…
+- [`AREA_SPIRIT_HEALER_OUT_OF_RANGE`](events/AREA_SPIRIT_HEALER_OUT_OF_RANGE.md) — Fires when the player enters leaves the area of effect of a spirit healer that periodically resur…
+- [`ARENA_OPPONENT_UPDATE`](events/ARENA_OPPONENT_UPDATE.md) — Fires when the availability of information about an arena opponent changes
+- [`ARENA_SEASON_WORLD_STATE`](events/ARENA_SEASON_WORLD_STATE.md) — Fires when the arena season changes
+- [`ARENA_TEAM_INVITE_REQUEST`](events/ARENA_TEAM_INVITE_REQUEST.md) — Fires when the player is invited to join an arena team
+- [`ARENA_TEAM_ROSTER_UPDATE`](events/ARENA_TEAM_ROSTER_UPDATE.md) — Fires when roster detail information for one of the player's arena teams becomes available
+- [`ARENA_TEAM_UPDATE`](events/ARENA_TEAM_UPDATE.md) — Fires when the player joins or leaves an arena team
+- [`AUCTION_BIDDER_LIST_UPDATE`](events/AUCTION_BIDDER_LIST_UPDATE.md) — Fires when information becomes available or changes for the list of auctions bid on by the player
+- [`AUCTION_HOUSE_CLOSED`](events/AUCTION_HOUSE_CLOSED.md) — Fires when the player ends interaction with an auction house
+- [`AUCTION_HOUSE_DISABLED`](events/AUCTION_HOUSE_DISABLED.md) — This event is not yet documented
+- [`AUCTION_HOUSE_SHOW`](events/AUCTION_HOUSE_SHOW.md) — Fires when the player begins interaction with an auction house
+- [`AUCTION_ITEM_LIST_UPDATE`](events/AUCTION_ITEM_LIST_UPDATE.md) — Fires when the information becomes available for the list of auction browse/search results
+- [`AUCTION_MULTISELL_FAILURE`](events/AUCTION_MULTISELL_FAILURE.md) — This event is not yet documented
+- [`AUCTION_MULTISELL_START`](events/AUCTION_MULTISELL_START.md) — This event is not yet documented
+- [`AUCTION_MULTISELL_UPDATE`](events/AUCTION_MULTISELL_UPDATE.md) — This event is not yet documented
+- [`AUCTION_OWNED_LIST_UPDATE`](events/AUCTION_OWNED_LIST_UPDATE.md) — Fires when information becomes available or changes for the list of auctions placed by the player
+- [`AUTOEQUIP_BIND_CONFIRM`](events/AUTOEQUIP_BIND_CONFIRM.md) — Fires when the player attempts to equip an item which will become soulbound in the process
+- [`AUTOFOLLOW_BEGIN`](events/AUTOFOLLOW_BEGIN.md) — Fires when the player starts following another character
+- [`AUTOFOLLOW_END`](events/AUTOFOLLOW_END.md) — Fires when the player stops following another character
+- [`BAG_CLOSED`](events/BAG_CLOSED.md) — Fires when one of the player's containers is closed
+- [`BAG_OPEN`](events/BAG_OPEN.md) — Fires when one of the player's containers is opened
+- [`BAG_UPDATE`](events/BAG_UPDATE.md) — Fires when the contents of one of the player's containers change
+- [`BAG_UPDATE_COOLDOWN`](events/BAG_UPDATE_COOLDOWN.md) — Fires when the cooldown begins or ends for an item in one of the player's containers
+- [`BANKFRAME_CLOSED`](events/BANKFRAME_CLOSED.md) — Fires when the player ends interaction with a bank
+- [`BANKFRAME_OPENED`](events/BANKFRAME_OPENED.md) — Fires when the player begins interaction with a bank
+- [`BARBER_SHOP_APPEARANCE_APPLIED`](events/BARBER_SHOP_APPEARANCE_APPLIED.md) — Fires after changes to the player's appearance have been purchased at a barber shop
+- [`BARBER_SHOP_CLOSE`](events/BARBER_SHOP_CLOSE.md) — Fires when the player ends interaction with a barber shop
+- [`BARBER_SHOP_OPEN`](events/BARBER_SHOP_OPEN.md) — Fires when the player begins interaction with a barber shop
+- [`BARBER_SHOP_SUCCESS`](events/BARBER_SHOP_SUCCESS.md) — Fires immediately when changes to the player's appearance have been purchased at a barber shop
+- [`BATTLEFIELDS_CLOSED`](events/BATTLEFIELDS_CLOSED.md) — Fires when the UI is no longer available for queueing for an arena or specific battleground instance
+- [`BATTLEFIELDS_SHOW`](events/BATTLEFIELDS_SHOW.md) — Fires when the UI becomes available for queueing for an arena or specific battleground instance
+- [`BATTLEFIELD_MGR_EJECTED`](events/BATTLEFIELD_MGR_EJECTED.md) — Fires when the player has been removed from a queued world PvP zone (e.g. Wintergrasp)
+- [`BATTLEFIELD_MGR_EJECT_PENDING`](events/BATTLEFIELD_MGR_EJECT_PENDING.md) — Fires when the player will be removed from or cannot yet enter a queued world PvP zone (e.g. Wint…
+- [`BATTLEFIELD_MGR_ENTERED`](events/BATTLEFIELD_MGR_ENTERED.md) — Fires when the player has been accepted into a queued world PvP zone (e.g. Wintergrasp)
+- [`BATTLEFIELD_MGR_ENTRY_INVITE`](events/BATTLEFIELD_MGR_ENTRY_INVITE.md) — Fires when the player is invited to enter a queued world PvP zone (e.g. Wintergrasp)
+- [`BATTLEFIELD_MGR_QUEUE_INVITE`](events/BATTLEFIELD_MGR_QUEUE_INVITE.md) — Fires when the player is invited to queue for a world PvP zone (e.g. Wintergrasp)
+- [`BATTLEFIELD_MGR_QUEUE_REQUEST_RESPONSE`](events/BATTLEFIELD_MGR_QUEUE_REQUEST_RESPONSE.md) — Fires in response to the player's attempt to enter or queue for a world PvP zone (e.g. Wintergrasp)
+- [`BATTLEFIELD_MGR_STATE_CHANGE`](events/BATTLEFIELD_MGR_STATE_CHANGE.md) — Fires when the player's state changes in the queue for a world PvP zone (e.g. Wintergrasp)
+- [`BILLING_NAG_DIALOG`](events/BILLING_NAG_DIALOG.md) — Fires when a message should be shown about the player's paid game time expiring soon
+- [`BIND_ENCHANT`](events/BIND_ENCHANT.md) — Fires when the player attempts to an enchant an item which will become soulbound in the process
+- [`BN_BLOCK_LIST_UPDATED`](events/BN_BLOCK_LIST_UPDATED.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_CLOSED`](events/BN_CHAT_CHANNEL_CLOSED.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_CREATE_FAILED`](events/BN_CHAT_CHANNEL_CREATE_FAILED.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_CREATE_SUCCEEDED`](events/BN_CHAT_CHANNEL_CREATE_SUCCEEDED.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_INVITE_FAILED`](events/BN_CHAT_CHANNEL_INVITE_FAILED.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_INVITE_SUCCEEDED`](events/BN_CHAT_CHANNEL_INVITE_SUCCEEDED.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_JOINED`](events/BN_CHAT_CHANNEL_JOINED.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_LEFT`](events/BN_CHAT_CHANNEL_LEFT.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_MEMBER_JOINED`](events/BN_CHAT_CHANNEL_MEMBER_JOINED.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_MEMBER_LEFT`](events/BN_CHAT_CHANNEL_MEMBER_LEFT.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_MEMBER_UPDATED`](events/BN_CHAT_CHANNEL_MEMBER_UPDATED.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_MESSAGE_BLOCKED`](events/BN_CHAT_CHANNEL_MESSAGE_BLOCKED.md) — This event is not yet documented
+- [`BN_CHAT_CHANNEL_MESSAGE_UNDELIVERABLE`](events/BN_CHAT_CHANNEL_MESSAGE_UNDELIVERABLE.md) — This event is not yet documented
+- [`BN_CHAT_WHISPER_UNDELIVERABLE`](events/BN_CHAT_WHISPER_UNDELIVERABLE.md) — This event is not yet documented
+- [`BN_CONNECTED`](events/BN_CONNECTED.md) — This event is not yet documented
+- [`BN_CUSTOM_MESSAGE_CHANGED`](events/BN_CUSTOM_MESSAGE_CHANGED.md) — This event is not yet documented
+- [`BN_CUSTOM_MESSAGE_LOADED`](events/BN_CUSTOM_MESSAGE_LOADED.md) — This event is not yet documented
+- [`BN_DISCONNECTED`](events/BN_DISCONNECTED.md) — This event is not yet documented
+- [`BN_FRIEND_ACCOUNT_OFFLINE`](events/BN_FRIEND_ACCOUNT_OFFLINE.md) — This event is not yet documented
+- [`BN_FRIEND_ACCOUNT_ONLINE`](events/BN_FRIEND_ACCOUNT_ONLINE.md) — This event is not yet documented
+- [`BN_FRIEND_INFO_CHANGED`](events/BN_FRIEND_INFO_CHANGED.md) — This event is not yet documented
+- [`BN_FRIEND_INVITE_ADDED`](events/BN_FRIEND_INVITE_ADDED.md) — This event is not yet documented
+- [`BN_FRIEND_INVITE_LIST_INITIALIZED`](events/BN_FRIEND_INVITE_LIST_INITIALIZED.md) — This event is not yet documented
+- [`BN_FRIEND_INVITE_REMOVED`](events/BN_FRIEND_INVITE_REMOVED.md) — This event is not yet documented
+- [`BN_FRIEND_INVITE_SEND_RESULT`](events/BN_FRIEND_INVITE_SEND_RESULT.md) — This event is not yet documented
+- [`BN_FRIEND_LIST_SIZE_CHANGED`](events/BN_FRIEND_LIST_SIZE_CHANGED.md) — This event is not yet documented
+- [`BN_FRIEND_TOON_OFFLINE`](events/BN_FRIEND_TOON_OFFLINE.md) — This event is not yet documented
+- [`BN_FRIEND_TOON_ONLINE`](events/BN_FRIEND_TOON_ONLINE.md) — This event is not yet documented
+- [`BN_MATURE_LANGUAGE_FILTER`](events/BN_MATURE_LANGUAGE_FILTER.md) — This event is not yet documented
+- [`BN_NEW_PRESENCE`](events/BN_NEW_PRESENCE.md) — This event is not yet documented
+- [`BN_REQUEST_FOF_FAILED`](events/BN_REQUEST_FOF_FAILED.md) — This event is not yet documented
+- [`BN_REQUEST_FOF_SUCCEEDED`](events/BN_REQUEST_FOF_SUCCEEDED.md) — This event is not yet documented
+- [`BN_SELF_OFFLINE`](events/BN_SELF_OFFLINE.md) — This event is not yet documented
+- [`BN_SELF_ONLINE`](events/BN_SELF_ONLINE.md) — This event is not yet documented
+- [`BN_SYSTEM_MESSAGE`](events/BN_SYSTEM_MESSAGE.md) — This event is not yet documented
+- [`BN_TOON_NAME_UPDATED`](events/BN_TOON_NAME_UPDATED.md) — This event is not yet documented
+- [`CALENDAR_ACTION_PENDING`](events/CALENDAR_ACTION_PENDING.md) — Fires when a change to the calendar is in progress
+- [`CALENDAR_CLOSE_EVENT`](events/CALENDAR_CLOSE_EVENT.md) — Fires when the player ends viewing or editing details of a calendar event
+- [`CALENDAR_EVENT_ALARM`](events/CALENDAR_EVENT_ALARM.md) — Fires when a calendar event is soon to begin
+- [`CALENDAR_NEW_EVENT`](events/CALENDAR_NEW_EVENT.md) — Fires when an event created by the player is added to the calendar
+- [`CALENDAR_OPEN_EVENT`](events/CALENDAR_OPEN_EVENT.md) — Fires when the player begins viewing or editing details of a calendar event
+- [`CALENDAR_UPDATE_ERROR`](events/CALENDAR_UPDATE_ERROR.md) — Fires when a calendar-related error message should be displayed
+- [`CALENDAR_UPDATE_EVENT`](events/CALENDAR_UPDATE_EVENT.md) — Fires when details become available for the event being viewed or edited
+- [`CALENDAR_UPDATE_EVENT_LIST`](events/CALENDAR_UPDATE_EVENT_LIST.md) — Fires when the list of events visible on the calendar changes
+- [`CALENDAR_UPDATE_INVITE_LIST`](events/CALENDAR_UPDATE_INVITE_LIST.md) — Fires when the invite/signup list is updated for the event being viewed or edited
+- [`CALENDAR_UPDATE_PENDING_INVITES`](events/CALENDAR_UPDATE_PENDING_INVITES.md) — Fires when the player receives new calendar event invitations
+- [`CANCEL_LOOT_ROLL`](events/CANCEL_LOOT_ROLL.md) — Fires when the player cancels a loot roll
+- [`CANCEL_SUMMON`](events/CANCEL_SUMMON.md) — Fires when a summons offered to the player is canceled
+- [`CHANNEL_COUNT_UPDATE`](events/CHANNEL_COUNT_UPDATE.md) — Fires when the number of members in a world or custom chat channel changes
+- [`CHANNEL_FLAGS_UPDATED`](events/CHANNEL_FLAGS_UPDATED.md) — Fires when information about a channel for the channel list display changes
+- [`CHANNEL_INVITE_REQUEST`](events/CHANNEL_INVITE_REQUEST.md) — Fires when a player is invited into a chat channel
+- [`CHANNEL_PASSWORD_REQUEST`](events/CHANNEL_PASSWORD_REQUEST.md) — Fires when the player attempts to join a password protected channel
+- [`CHANNEL_ROSTER_UPDATE`](events/CHANNEL_ROSTER_UPDATE.md) — Fires when the list of members in a channel changes
+- [`CHANNEL_UI_UPDATE`](events/CHANNEL_UI_UPDATE.md) — Fires when information for the channel list display changes
+- [`CHANNEL_VOICE_UPDATE`](events/CHANNEL_VOICE_UPDATE.md) — Fires when a member in a voice chat channel starts or stops speaking
+- [`CHARACTER_POINTS_CHANGED`](events/CHARACTER_POINTS_CHANGED.md) — Fires when the player's amount of available talent points changes
+- [`CHAT_MSG_ACHIEVEMENT`](events/CHAT_MSG_ACHIEVEMENT.md) — Fires when a nearby character earns an achievement
+- [`CHAT_MSG_ADDON`](events/CHAT_MSG_ADDON.md) — Fires when an addon communication message is received (see [[docs/api/SendAddonMessage|`SendAddon…
+- [`CHAT_MSG_AFK`](events/CHAT_MSG_AFK.md) — Fires when an automatic AFK response is received
+- [`CHAT_MSG_BATTLEGROUND`](events/CHAT_MSG_BATTLEGROUND.md) — Fires when a message is received in the battleground chat channel
+- [`CHAT_MSG_BATTLEGROUND_LEADER`](events/CHAT_MSG_BATTLEGROUND_LEADER.md) — Fires when a message is received in the battleground chat channel from the battleground group leader
+- [`CHAT_MSG_BG_SYSTEM_ALLIANCE`](events/CHAT_MSG_BG_SYSTEM_ALLIANCE.md) — Fires when an Alliance-related battleground system message is received
+- [`CHAT_MSG_BG_SYSTEM_HORDE`](events/CHAT_MSG_BG_SYSTEM_HORDE.md) — Fires when a Horde-related battleground system message is received
+- [`CHAT_MSG_BG_SYSTEM_NEUTRAL`](events/CHAT_MSG_BG_SYSTEM_NEUTRAL.md) — Fires when a general battleground, zone or world message is received
+- [`CHAT_MSG_BN_CONVERSATION`](events/CHAT_MSG_BN_CONVERSATION.md) — This event is not yet documented
+- [`CHAT_MSG_BN_CONVERSATION_LIST`](events/CHAT_MSG_BN_CONVERSATION_LIST.md) — This event is not yet documented
+- [`CHAT_MSG_BN_CONVERSATION_NOTICE`](events/CHAT_MSG_BN_CONVERSATION_NOTICE.md) — This event is not yet documented
+- [`CHAT_MSG_BN_INLINE_TOAST_ALERT`](events/CHAT_MSG_BN_INLINE_TOAST_ALERT.md) — This event is not yet documented
+- [`CHAT_MSG_BN_INLINE_TOAST_BROADCAST`](events/CHAT_MSG_BN_INLINE_TOAST_BROADCAST.md) — This event is not yet documented
+- [`CHAT_MSG_BN_INLINE_TOAST_BROADCAST_INFORM`](events/CHAT_MSG_BN_INLINE_TOAST_BROADCAST_INFORM.md) — This event is not yet documented
+- [`CHAT_MSG_BN_INLINE_TOAST_CONVERSATION`](events/CHAT_MSG_BN_INLINE_TOAST_CONVERSATION.md) — This event is not yet documented
+- [`CHAT_MSG_BN_WHISPER`](events/CHAT_MSG_BN_WHISPER.md) — This event is not yet documented
+- [`CHAT_MSG_BN_WHISPER_INFORM`](events/CHAT_MSG_BN_WHISPER_INFORM.md) — This event is not yet documented
+- [`CHAT_MSG_CHANNEL`](events/CHAT_MSG_CHANNEL.md) — Fires when a message is received in a world or custom chat channel
+- [`CHAT_MSG_CHANNEL_JOIN`](events/CHAT_MSG_CHANNEL_JOIN.md) — Fires when another character joins a world or custom chat channel monitored by the player
+- [`CHAT_MSG_CHANNEL_LEAVE`](events/CHAT_MSG_CHANNEL_LEAVE.md) — Fires when another character leaves a world or custom chat channel monitored by the player
+- [`CHAT_MSG_CHANNEL_LIST`](events/CHAT_MSG_CHANNEL_LIST.md) — Fires in response to a channel list query (e.g. `/chatlist`)
+- [`CHAT_MSG_CHANNEL_NOTICE`](events/CHAT_MSG_CHANNEL_NOTICE.md) — Fires when certain actions happen on a world or custom chat channel
+- [`CHAT_MSG_CHANNEL_NOTICE_USER`](events/CHAT_MSG_CHANNEL_NOTICE_USER.md) — Fires when certain actions pertaining to specific members happen on a world or custom chat channel
+- [`CHAT_MSG_COMBAT_FACTION_CHANGE`](events/CHAT_MSG_COMBAT_FACTION_CHANGE.md) — Fires when the player gains or loses reputation with a faction
+- [`CHAT_MSG_COMBAT_HONOR_GAIN`](events/CHAT_MSG_COMBAT_HONOR_GAIN.md) — Fires when the player gains honor points
+- [`CHAT_MSG_COMBAT_MISC_INFO`](events/CHAT_MSG_COMBAT_MISC_INFO.md) — Fires for miscellaneous messages to be displayed in the combat log, such as loss of equipment dur…
+- [`CHAT_MSG_COMBAT_XP_GAIN`](events/CHAT_MSG_COMBAT_XP_GAIN.md) — Fires when the player gains experience points
+- [`CHAT_MSG_DND`](events/CHAT_MSG_DND.md) — Fires when an automatic DND response is received
+- [`CHAT_MSG_EMOTE`](events/CHAT_MSG_EMOTE.md) — Fires when a custom emote message is received.
+- [`CHAT_MSG_FILTERED`](events/CHAT_MSG_FILTERED.md) — Fires when the player attempts to send a chat message which is blocked by the spam filter
+- [`CHAT_MSG_GUILD`](events/CHAT_MSG_GUILD.md) — Fires when a message is received in the guild chat channel
+- [`CHAT_MSG_GUILD_ACHIEVEMENT`](events/CHAT_MSG_GUILD_ACHIEVEMENT.md) — Fires when a member of the player's guild earns an achievement
+- [`CHAT_MSG_IGNORED`](events/CHAT_MSG_IGNORED.md) — Fires when an automatic response is received after whispering or inviting a character who is igno…
+- [`CHAT_MSG_LOOT`](events/CHAT_MSG_LOOT.md) — Fires when receiving notice that the player or a member of the player's group has looted an item
+- [`CHAT_MSG_MONEY`](events/CHAT_MSG_MONEY.md) — Fires when the player receives money as loot
+- [`CHAT_MSG_MONSTER_EMOTE`](events/CHAT_MSG_MONSTER_EMOTE.md) — Fires when a nearby NPC performs emote text
+- [`CHAT_MSG_MONSTER_PARTY`](events/CHAT_MSG_MONSTER_PARTY.md) — Fires when an NPC speaks to the player's party chat channel
+- [`CHAT_MSG_MONSTER_SAY`](events/CHAT_MSG_MONSTER_SAY.md) — Fires when a nearby NPC speaks (visible only to players in the immediate area)
+- [`CHAT_MSG_MONSTER_WHISPER`](events/CHAT_MSG_MONSTER_WHISPER.md) — Fires when an NPC whispers to the player
+- [`CHAT_MSG_MONSTER_YELL`](events/CHAT_MSG_MONSTER_YELL.md) — Fires when an NPC yells (visible to players in a wide area or the entire zone)
+- [`CHAT_MSG_OFFICER`](events/CHAT_MSG_OFFICER.md) — Fires when a message is received in officer chat.
+- [`CHAT_MSG_OPENING`](events/CHAT_MSG_OPENING.md) — Fires for messages about the player "opening" a world object
+- [`CHAT_MSG_PARTY`](events/CHAT_MSG_PARTY.md) — Fires when a message is received in the party chat channel
+- [`CHAT_MSG_PARTY_LEADER`](events/CHAT_MSG_PARTY_LEADER.md) — This event is not yet documented
+- [`CHAT_MSG_PET_INFO`](events/CHAT_MSG_PET_INFO.md) — Fires for pet-related messages normally displayed in the combat log (e.g. summoning or dismissing…
+- [`CHAT_MSG_RAID`](events/CHAT_MSG_RAID.md) — Fires when a message is received in the raid chat channel
+- [`CHAT_MSG_RAID_BOSS_EMOTE`](events/CHAT_MSG_RAID_BOSS_EMOTE.md) — Fires when a raid boss performs emote text
+- [`CHAT_MSG_RAID_BOSS_WHISPER`](events/CHAT_MSG_RAID_BOSS_WHISPER.md) — Fires when a raid boss whispers to the player
+- [`CHAT_MSG_RAID_LEADER`](events/CHAT_MSG_RAID_LEADER.md) — Fires when a message is received in the raid chat channel from the raid leader
+- [`CHAT_MSG_RAID_WARNING`](events/CHAT_MSG_RAID_WARNING.md) — Fires when a raid warning message is received
+- [`CHAT_MSG_RESTRICTED`](events/CHAT_MSG_RESTRICTED.md) — Fires when the player attempts to send a chat message which is disallowed because the player is o…
+- [`CHAT_MSG_SAY`](events/CHAT_MSG_SAY.md) — Fires when the player or a nearby character speaks (visible to other nearby characters)
+- [`CHAT_MSG_SKILL`](events/CHAT_MSG_SKILL.md) — Fires when skill related messages are received.
+- [`CHAT_MSG_SYSTEM`](events/CHAT_MSG_SYSTEM.md) — Fires when a system message is received
+- [`CHAT_MSG_TARGETICONS`](events/CHAT_MSG_TARGETICONS.md) — This event is not yet documented
+- [`CHAT_MSG_TEXT_EMOTE`](events/CHAT_MSG_TEXT_EMOTE.md) — Fires when the player receives a standard emote (e.g. `/dance`, `/flirt`) message
+- [`CHAT_MSG_TRADESKILLS`](events/CHAT_MSG_TRADESKILLS.md) — Fires when the player or a nearby character performs a trade skill recipe
+- [`CHAT_MSG_WHISPER`](events/CHAT_MSG_WHISPER.md) — Fires when the player receives a whisper from a player character
+- [`CHAT_MSG_WHISPER_INFORM`](events/CHAT_MSG_WHISPER_INFORM.md) — Fires when the player sends a whisper to a player character
+- [`CHAT_MSG_YELL`](events/CHAT_MSG_YELL.md) — Fires when the player or another player character yells (visible to other characters in a wide area)
+- [`CINEMATIC_START`](events/CINEMATIC_START.md) — Fires when an in-game-engine cinematic begins to play
+- [`CINEMATIC_STOP`](events/CINEMATIC_STOP.md) — Fires when an in-game-engine cinematic stops playing
+- [`CLOSE_INBOX_ITEM`](events/CLOSE_INBOX_ITEM.md) — Fires when the mail message being viewed is no longer available
+- [`CLOSE_TABARD_FRAME`](events/CLOSE_TABARD_FRAME.md) — Fires when the player ends interaction with a tabard designer
+- [`CLOSE_WORLD_MAP`](events/CLOSE_WORLD_MAP.md) — Fires when the world map should be hidden in response to external conditions
+- [`COMBAT_LOG_EVENT`](events/COMBAT_LOG_EVENT.md) — Fires when an event to be displayed in the combat log is received
+- [`COMBAT_LOG_EVENT_UNFILTERED`](events/COMBAT_LOG_EVENT_UNFILTERED.md) — Fires when a combat log event is received
+- [`COMBAT_RATING_UPDATE`](events/COMBAT_RATING_UPDATE.md) — Fires when the player's combat rating statistics change
+- [`COMBAT_TEXT_UPDATE`](events/COMBAT_TEXT_UPDATE.md) — Fires when a message is received which can be displayed by the default UI's floating combat text…
+- [`COMMENTATOR_ENTER_WORLD`](events/COMMENTATOR_ENTER_WORLD.md) — This is a Blizzard internal function
+- [`COMMENTATOR_MAP_UPDATE`](events/COMMENTATOR_MAP_UPDATE.md) — This is a Blizzard internal function
+- [`COMMENTATOR_PLAYER_UPDATE`](events/COMMENTATOR_PLAYER_UPDATE.md) — This is a Blizzard internal function
+- [`COMMENTATOR_SKIRMISH_MODE_REQUEST`](events/COMMENTATOR_SKIRMISH_MODE_REQUEST.md) — This event is not yet documented
+- [`COMMENTATOR_SKIRMISH_QUEUE_REQUEST`](events/COMMENTATOR_SKIRMISH_QUEUE_REQUEST.md) — This event is not yet documented
+- [`COMPANION_LEARNED`](events/COMPANION_LEARNED.md) — Fires when the player learns to summon a new mount or non-combat pet
+- [`COMPANION_UNLEARNED`](events/COMPANION_UNLEARNED.md) — This event is not yet documented
+- [`COMPANION_UPDATE`](events/COMPANION_UPDATE.md) — Fires when new information about the player's mounts and non-combat pets is available
+- [`CONFIRM_BINDER`](events/CONFIRM_BINDER.md) — Fires when the player attempts to set a new Hearthstone location
+- [`CONFIRM_DISENCHANT_ROLL`](events/CONFIRM_DISENCHANT_ROLL.md) — This event is not yet documented
+- [`CONFIRM_LOOT_ROLL`](events/CONFIRM_LOOT_ROLL.md) — Fires when the player attempts to roll for a loot item which Binds on Pickup
+- [`CONFIRM_SUMMON`](events/CONFIRM_SUMMON.md) — Fires when a summons is offered to the player
+- [`CONFIRM_TALENT_WIPE`](events/CONFIRM_TALENT_WIPE.md) — Fires when the player attempts to unlearn talents
+- [`CONFIRM_XP_LOSS`](events/CONFIRM_XP_LOSS.md) — Fires when the player attempts to resurrect at a graveyard spirit healer
+- [`CORPSE_IN_INSTANCE`](events/CORPSE_IN_INSTANCE.md) — Fires when the player (dead, in spirit form) approaches the entrance to the instance in which his…
+- [`CORPSE_IN_RANGE`](events/CORPSE_IN_RANGE.md) — Fires when the player (dead, in spirit form) approaches near enough to his corpse to return to life
+- [`CORPSE_OUT_OF_RANGE`](events/CORPSE_OUT_OF_RANGE.md) — Fires when the player (dead, in spirit form) moves too far away from his corpse to resurrect
+- [`CRITERIA_UPDATE`](events/CRITERIA_UPDATE.md) — Fires when information about achievement criteria or player statistics becomes available
+- [`CURRENCY_DISPLAY_UPDATE`](events/CURRENCY_DISPLAY_UPDATE.md) — Fires when new information for the currency list is available
+- [`CURRENT_SPELL_CAST_CHANGED`](events/CURRENT_SPELL_CAST_CHANGED.md) — Fires when the player starts or stops (cancels or finishes) casting a spell
+- [`CURSOR_UPDATE`](events/CURSOR_UPDATE.md) — Fires when the mouse cursor image or contents is changed
+- [`CVAR_UPDATE`](events/CVAR_UPDATE.md) — Fires when the value of a configuration variable is updated
+- [`DELETE_ITEM_CONFIRM`](events/DELETE_ITEM_CONFIRM.md) — Fires when the player attempts to delete an item
+- [`DISABLE_LOW_LEVEL_RAID`](events/DISABLE_LOW_LEVEL_RAID.md) — This event is not yet documented
+- [`DISABLE_TAXI_BENCHMARK`](events/DISABLE_TAXI_BENCHMARK.md) — Fires when a flight path benchmarking session ends or is canceled
+- [`DISABLE_XP_GAIN`](events/DISABLE_XP_GAIN.md) — Fires when the player disables experience point gains
+- [`DISPLAY_SIZE_CHANGED`](events/DISPLAY_SIZE_CHANGED.md) — Fires when the screen resolution changes
+- [`DUEL_FINISHED`](events/DUEL_FINISHED.md) — Fires when a duel in which the player is participating ends
+- [`DUEL_INBOUNDS`](events/DUEL_INBOUNDS.md) — Fires when the player reenters the duel area after leaving its boundaries
+- [`DUEL_OUTOFBOUNDS`](events/DUEL_OUTOFBOUNDS.md) — Fires when the player begins to move outside the boundaries of a duel area
+- [`DUEL_REQUESTED`](events/DUEL_REQUESTED.md) — Fires when the player is challenged to a duel
+- [`ENABLE_LOW_LEVEL_RAID`](events/ENABLE_LOW_LEVEL_RAID.md) — This event is not yet documented
+- [`ENABLE_TAXI_BENCHMARK`](events/ENABLE_TAXI_BENCHMARK.md) — Fires when taxi benchmarking mode is enabled
+- [`ENABLE_XP_GAIN`](events/ENABLE_XP_GAIN.md) — Fires when the player re-enabled experience point gain after disabling it
+- [`END_BOUND_TRADEABLE`](events/END_BOUND_TRADEABLE.md) — Fires when the player attempts an action which will make a looted Bind on Pickup item no longer t…
+- [`END_REFUND`](events/END_REFUND.md) — Fires when the player attempts an action which will make an item purchased with alternate currenc…
+- [`EQUIPMENT_SETS_CHANGED`](events/EQUIPMENT_SETS_CHANGED.md) — Fires when the player's list of equipment sets changes
+- [`EQUIPMENT_SWAP_FINISHED`](events/EQUIPMENT_SWAP_FINISHED.md) — Fires when the process of switching equipment sets is complete
+- [`EQUIPMENT_SWAP_PENDING`](events/EQUIPMENT_SWAP_PENDING.md) — Fires when the player begins to switch equipment sets
+- [`EQUIP_BIND_CONFIRM`](events/EQUIP_BIND_CONFIRM.md) — Fires when the player attempts to equip an item which will become soulbound in the process
+- [`EXECUTE_CHAT_LINE`](events/EXECUTE_CHAT_LINE.md) — Fires when a chat message is encountered in a running macro
+- [`FRIENDLIST_UPDATE`](events/FRIENDLIST_UPDATE.md) — Fires when the content of the player's friends list becomes available or changes
+- [`GLYPH_ADDED`](events/GLYPH_ADDED.md) — Fires when a glyph is inscribed into the player's spellbook
+- [`GLYPH_DISABLED`](events/GLYPH_DISABLED.md) — Fires when a glyph slot is no longer available
+- [`GLYPH_ENABLED`](events/GLYPH_ENABLED.md) — Fires when a glyph slot becomes available
+- [`GLYPH_REMOVED`](events/GLYPH_REMOVED.md) — Fires when the player removes an inscribed glyph
+- [`GLYPH_UPDATED`](events/GLYPH_UPDATED.md) — Fires when information about the player's inscribed glyphs becomes available
+- [`GMRESPONSE_RECEIVED`](events/GMRESPONSE_RECEIVED.md) — Fires when the player receives a response to a GM ticket
+- [`GMSURVEY_DISPLAY`](events/GMSURVEY_DISPLAY.md) — Fires when the player is invited to participate in a GM feedback survey
+- [`GM_PLAYER_INFO`](events/GM_PLAYER_INFO.md) — This event is not yet documented
+- [`GOSSIP_CLOSED`](events/GOSSIP_CLOSED.md) — Fires when an NPC gossip interaction ends
+- [`GOSSIP_CONFIRM`](events/GOSSIP_CONFIRM.md) — Fires when the player is requested to confirm a gossip choice
+- [`GOSSIP_CONFIRM_CANCEL`](events/GOSSIP_CONFIRM_CANCEL.md) — Fires when an attempt to confirm a gossip choice is canceled
+- [`GOSSIP_ENTER_CODE`](events/GOSSIP_ENTER_CODE.md) — Fires when the player attempts a gossip choice which requires entering a code
+- [`GOSSIP_SHOW`](events/GOSSIP_SHOW.md) — Fires when an NPC gossip interaction begins
+- [`GUILDBANKBAGSLOTS_CHANGED`](events/GUILDBANKBAGSLOTS_CHANGED.md) — Fires when information about the contents of guild bank item slots changes or becomes available
+- [`GUILDBANKFRAME_CLOSED`](events/GUILDBANKFRAME_CLOSED.md) — Fires when the player ends interaction with the guild bank
+- [`GUILDBANKFRAME_OPENED`](events/GUILDBANKFRAME_OPENED.md) — Fires when the player begins interaction with the guild bank
+- [`GUILDBANKLOG_UPDATE`](events/GUILDBANKLOG_UPDATE.md) — Fires when information for the guild bank transaction or money log becomes available
+- [`GUILDBANK_ITEM_LOCK_CHANGED`](events/GUILDBANK_ITEM_LOCK_CHANGED.md) — Fires when an item in the guild bank is locked for moving or unlocked afterward
+- [`GUILDBANK_TEXT_CHANGED`](events/GUILDBANK_TEXT_CHANGED.md) — Fires when the text associated with a guild bank tab is changed
+- [`GUILDBANK_UPDATE_MONEY`](events/GUILDBANK_UPDATE_MONEY.md) — Fires when the amount of money in the guild bank changes
+- [`GUILDBANK_UPDATE_TABS`](events/GUILDBANK_UPDATE_TABS.md) — Fires when information about guild bank tabs becomes available
+- [`GUILDBANK_UPDATE_TEXT`](events/GUILDBANK_UPDATE_TEXT.md) — Fires when text associated with a guild bank tab becomes available
+- [`GUILDBANK_UPDATE_WITHDRAWMONEY`](events/GUILDBANK_UPDATE_WITHDRAWMONEY.md) — Fires when the amount of money the player can withdraw from the guild bank changes
+- [`GUILDTABARD_UPDATE`](events/GUILDTABARD_UPDATE.md) — Fires when the player's guild tabard design changes.
+- [`GUILD_EVENT_LOG_UPDATE`](events/GUILD_EVENT_LOG_UPDATE.md) — Fires when information for the guild event log becomes available
+- [`GUILD_INVITE_CANCEL`](events/GUILD_INVITE_CANCEL.md) — Fires when an invitation to join a guild is no longer available
+- [`GUILD_INVITE_REQUEST`](events/GUILD_INVITE_REQUEST.md) — Fires when the player is invited to join a guild
+- [`GUILD_MOTD`](events/GUILD_MOTD.md) — Fires when the guild message of the day is updated
+- [`GUILD_REGISTRAR_CLOSED`](events/GUILD_REGISTRAR_CLOSED.md) — Fires when the player ends interaction with a guild registrar
+- [`GUILD_REGISTRAR_SHOW`](events/GUILD_REGISTRAR_SHOW.md) — Fires when the player begins interaction with a guild registrar
+- [`GUILD_ROSTER_UPDATE`](events/GUILD_ROSTER_UPDATE.md) — Fires when new information about the contents of the guild roster is available
+- [`HONOR_CURRENCY_UPDATE`](events/HONOR_CURRENCY_UPDATE.md) — Fires when the player's amount of honor points changes
+- [`IGNORELIST_UPDATE`](events/IGNORELIST_UPDATE.md) — Fires when the content of the player's ignore list becomes available or changes
+- [`IGR_BILLING_NAG_DIALOG`](events/IGR_BILLING_NAG_DIALOG.md) — Fires when a message should be shown about the player's paid-per-hour game time expiring soon
+- [`INSPECT_ACHIEVEMENT_READY`](events/INSPECT_ACHIEVEMENT_READY.md) — Fires after the player attempts to compare achievements with another character, indicating that a…
+- [`INSPECT_HONOR_UPDATE`](events/INSPECT_HONOR_UPDATE.md) — Fires when information about the inspected unit's PvP activities becomes available
+- [`INSPECT_TALENT_READY`](events/INSPECT_TALENT_READY.md) — Fires when information about the inspected player's talents becomes available
+- [`INSTANCE_BOOT_START`](events/INSTANCE_BOOT_START.md) — Fires when the player will soon be ejected from an instance
+- [`INSTANCE_BOOT_STOP`](events/INSTANCE_BOOT_STOP.md) — Fires when the warning countdown for ejecting the player from an instance is canceled
+- [`INSTANCE_ENCOUNTER_ENGAGE_UNIT`](events/INSTANCE_ENCOUNTER_ENGAGE_UNIT.md) — This event is not yet documented
+- [`INSTANCE_LOCK_START`](events/INSTANCE_LOCK_START.md) — Fires when the player will soon be saved to an instance
+- [`INSTANCE_LOCK_STOP`](events/INSTANCE_LOCK_STOP.md) — Fires when the warning countdown for saving the player to an instance is canceled
+- [`ITEM_LOCKED`](events/ITEM_LOCKED.md) — Fires when an item in the player's bags or equipped inventory is locked for moving
+- [`ITEM_LOCK_CHANGED`](events/ITEM_LOCK_CHANGED.md) — Fires when an item in the player's bags or equipped inventory is locked for moving or unlocked af…
+- [`ITEM_PUSH`](events/ITEM_PUSH.md) — Fires when the player receives an item
+- [`ITEM_TEXT_BEGIN`](events/ITEM_TEXT_BEGIN.md) — Fires when the player begins interaction with a readable item or world object
+- [`ITEM_TEXT_CLOSED`](events/ITEM_TEXT_CLOSED.md) — Fires when the player ends interaction with a readable item or world object
+- [`ITEM_TEXT_READY`](events/ITEM_TEXT_READY.md) — Fires when text changes or becomes available for the readable item or world object with which the…
+- [`ITEM_TEXT_TRANSLATION`](events/ITEM_TEXT_TRANSLATION.md) — Fires when a "translation" progress bar should be displayed while the player interacts with a rea…
+- [`ITEM_UNLOCKED`](events/ITEM_UNLOCKED.md) — Fires when an item in the player's bags or equipped inventory is unlocked after moving
+- [`KNOWLEDGE_BASE_ARTICLE_LOAD_FAILURE`](events/KNOWLEDGE_BASE_ARTICLE_LOAD_FAILURE.md) — Fires when a knowledge base article fails to load
+- [`KNOWLEDGE_BASE_ARTICLE_LOAD_SUCCESS`](events/KNOWLEDGE_BASE_ARTICLE_LOAD_SUCCESS.md) — Fires when the contents of a successfully loaded knowledge base article become available
+- [`KNOWLEDGE_BASE_QUERY_LOAD_FAILURE`](events/KNOWLEDGE_BASE_QUERY_LOAD_FAILURE.md) — Fires when a knowledge base query fails
+- [`KNOWLEDGE_BASE_QUERY_LOAD_SUCCESS`](events/KNOWLEDGE_BASE_QUERY_LOAD_SUCCESS.md) — Fires when results of a successful knowledge base query become available
+- [`KNOWLEDGE_BASE_SERVER_MESSAGE`](events/KNOWLEDGE_BASE_SERVER_MESSAGE.md) — Fires when the knowledge base server message changes or becomes available
+- [`KNOWLEDGE_BASE_SETUP_LOAD_FAILURE`](events/KNOWLEDGE_BASE_SETUP_LOAD_FAILURE.md) — Fires when the knowledge base's default listing fails to load
+- [`KNOWLEDGE_BASE_SETUP_LOAD_SUCCESS`](events/KNOWLEDGE_BASE_SETUP_LOAD_SUCCESS.md) — Fires when the knowledge base's default listing becomes available
+- [`KNOWLEDGE_BASE_SYSTEM_MOTD_UPDATED`](events/KNOWLEDGE_BASE_SYSTEM_MOTD_UPDATED.md) — Fires when the knowledge base system's message of the day changes or becomes available
+- [`KNOWN_CURRENCY_TYPES_UPDATE`](events/KNOWN_CURRENCY_TYPES_UPDATE.md) — Fires when the currency list changes
+- [`KNOWN_TITLES_UPDATE`](events/KNOWN_TITLES_UPDATE.md) — Fires when the number of titles available to the player changes
+- [`LANGUAGE_LIST_CHANGED`](events/LANGUAGE_LIST_CHANGED.md) — Fires when the list of known languages changes.
+- [`LEARNED_SPELL_IN_TAB`](events/LEARNED_SPELL_IN_TAB.md) — Fires when a spell is learned inside of a given spell book tab.
+- [`LEVEL_GRANT_PROPOSED`](events/LEVEL_GRANT_PROPOSED.md) — Fires when the player is offered to instantly gain a level thanks to a Recruit-A-Friend partner
+- [`LFG_BOOT_PROPOSAL_UPDATE`](events/LFG_BOOT_PROPOSAL_UPDATE.md) — This event is not yet documented
+- [`LFG_COMPLETION_REWARD`](events/LFG_COMPLETION_REWARD.md) — Fires when the player receives the completion reward for a randoms LFG dungeon
+- [`LFG_LOCK_INFO_RECEIVED`](events/LFG_LOCK_INFO_RECEIVED.md) — This event is not yet documented
+- [`LFG_OFFER_CONTINUE`](events/LFG_OFFER_CONTINUE.md) — This event is not yet documented
+- [`LFG_OPEN_FROM_GOSSIP`](events/LFG_OPEN_FROM_GOSSIP.md) — This event is not yet documented
+- [`LFG_PROPOSAL_FAILED`](events/LFG_PROPOSAL_FAILED.md) — This event is not yet documented
+- [`LFG_PROPOSAL_SHOW`](events/LFG_PROPOSAL_SHOW.md) — This event is not yet documented
+- [`LFG_PROPOSAL_SUCCEEDED`](events/LFG_PROPOSAL_SUCCEEDED.md) — This event is not yet documented
+- [`LFG_PROPOSAL_UPDATE`](events/LFG_PROPOSAL_UPDATE.md) — This event is not yet documented
+- [`LFG_QUEUE_STATUS_UPDATE`](events/LFG_QUEUE_STATUS_UPDATE.md) — This event is not yet documented
+- [`LFG_ROLE_CHECK_HIDE`](events/LFG_ROLE_CHECK_HIDE.md) — This event is not yet documented
+- [`LFG_ROLE_CHECK_ROLE_CHOSEN`](events/LFG_ROLE_CHECK_ROLE_CHOSEN.md) — This event is not yet documented
+- [`LFG_ROLE_CHECK_SHOW`](events/LFG_ROLE_CHECK_SHOW.md) — This event is not yet documented
+- [`LFG_ROLE_CHECK_UPDATE`](events/LFG_ROLE_CHECK_UPDATE.md) — This event is not yet documented
+- [`LFG_ROLE_UPDATE`](events/LFG_ROLE_UPDATE.md) — This event is not yet documented
+- [`LFG_UPDATE`](events/LFG_UPDATE.md) — Fires when information about the player's LFG system settings changes or becomes available
+- [`LFG_UPDATE_RANDOM_INFO`](events/LFG_UPDATE_RANDOM_INFO.md) — This event is not yet documented
+- [`LOCALPLAYER_PET_RENAMED`](events/LOCALPLAYER_PET_RENAMED.md) — Fires when the player's pet is renamed
+- [`LOGOUT_CANCEL`](events/LOGOUT_CANCEL.md) — Fires when the logout countdown is aborted
+- [`LOOT_BIND_CONFIRM`](events/LOOT_BIND_CONFIRM.md) — Fires when the player attempts to loot a Bind on Pickup item
+- [`LOOT_CLOSED`](events/LOOT_CLOSED.md) — Fires when the player ends interaction with a lootable corpse or object
+- [`LOOT_OPENED`](events/LOOT_OPENED.md) — Fires when the player begins interaction with a lootable corpse or object
+- [`LOOT_SLOT_CHANGED`](events/LOOT_SLOT_CHANGED.md) — This event is not yet documented
+- [`LOOT_SLOT_CLEARED`](events/LOOT_SLOT_CLEARED.md) — Fires when the contents of a loot slot are removed
+- [`MACRO_ACTION_BLOCKED`](events/MACRO_ACTION_BLOCKED.md) — Fires when a macro script attempts to use a protected API
+- [`MACRO_ACTION_FORBIDDEN`](events/MACRO_ACTION_FORBIDDEN.md) — Fires when a macro script attempts to use a protected API
+- [`MAIL_CLOSED`](events/MAIL_CLOSED.md) — Fires when the player ends interaction with a mailbox
+- [`MAIL_FAILED`](events/MAIL_FAILED.md) — Fires when an outgoing mail message fails to send
+- [`MAIL_INBOX_UPDATE`](events/MAIL_INBOX_UPDATE.md) — Fires when information about the contents of the player's inbox changes or becomes available
+- [`MAIL_LOCK_SEND_ITEMS`](events/MAIL_LOCK_SEND_ITEMS.md) — This event is not yet documented
+- [`MAIL_SEND_INFO_UPDATE`](events/MAIL_SEND_INFO_UPDATE.md) — Fires when information about the outgoing mail message's attachments changes
+- [`MAIL_SEND_SUCCESS`](events/MAIL_SEND_SUCCESS.md) — Fires when an outgoing message is successfully sent
+- [`MAIL_SHOW`](events/MAIL_SHOW.md) — Fires when the player begins interaction with a mailbox
+- [`MAIL_SUCCESS`](events/MAIL_SUCCESS.md) — This event is not yet documented
+- [`MAIL_UNLOCK_SEND_ITEMS`](events/MAIL_UNLOCK_SEND_ITEMS.md) — This event is not yet documented
+- [`MERCHANT_CLOSED`](events/MERCHANT_CLOSED.md) — Fires when the player ends interaction with a vendor
+- [`MERCHANT_SHOW`](events/MERCHANT_SHOW.md) — Fires when the player begins interaction with a vendor
+- [`MERCHANT_UPDATE`](events/MERCHANT_UPDATE.md) — Fires when information about a vendor's available items changes or becomes available
+- [`MINIGAME_UPDATE`](events/MINIGAME_UPDATE.md) — Unused
+- [`MINIMAP_PING`](events/MINIMAP_PING.md) — Fires when the player or a group member "pings" a point on the minimap to share its location with…
+- [`MINIMAP_UPDATE_TRACKING`](events/MINIMAP_UPDATE_TRACKING.md) — Fires when the player's currently active tracking ability changes
+- [`MINIMAP_UPDATE_ZOOM`](events/MINIMAP_UPDATE_ZOOM.md) — Fires when the minimap zoom type changes
+- [`MIRROR_TIMER_PAUSE`](events/MIRROR_TIMER_PAUSE.md) — Fires when a special countdown timer is paused
+- [`MIRROR_TIMER_START`](events/MIRROR_TIMER_START.md) — Fires when a special countdown timer starts
+- [`MIRROR_TIMER_STOP`](events/MIRROR_TIMER_STOP.md) — Fires when a special countdown timer stops
+- [`MODIFIER_STATE_CHANGED`](events/MODIFIER_STATE_CHANGED.md) — Fires when a modifier key is pressed or released.
+- [`MOVIE_COMPRESSING_PROGRESS`](events/MOVIE_COMPRESSING_PROGRESS.md) — Fires when compression of a movie recording starts
+- [`MOVIE_RECORDING_PROGRESS`](events/MOVIE_RECORDING_PROGRESS.md) — Fires when movie recording starts
+- [`MOVIE_UNCOMPRESSED_MOVIE`](events/MOVIE_UNCOMPRESSED_MOVIE.md) — Fires when the client prompts the player to allow compression of a movie recording
+- [`MUTELIST_UPDATE`](events/MUTELIST_UPDATE.md) — Fires when the content of the player's muted list becomes available or changes
+- [`NEW_AUCTION_UPDATE`](events/NEW_AUCTION_UPDATE.md) — Fires when the content of the auction house's Create Auction item slot changes
+- [`NEW_TITLE_EARNED`](events/NEW_TITLE_EARNED.md) — Fires when the player earns a new title
+- [`NPC_PVPQUEUE_ANYWHERE`](events/NPC_PVPQUEUE_ANYWHERE.md) — Fires when the player begins interaction with an NPC which can queue the player for any battleground
+- [`OLD_TITLE_LOST`](events/OLD_TITLE_LOST.md) — Fires when one of the player's titles is no longer available
+- [`OPEN_MASTER_LOOT_LIST`](events/OPEN_MASTER_LOOT_LIST.md) — Fires when the list of master loot candidates becomes available
+- [`OPEN_TABARD_FRAME`](events/OPEN_TABARD_FRAME.md) — Fires when the player begins interaction with a tabard designer
+- [`PARTY_CONVERTED_TO_RAID`](events/PARTY_CONVERTED_TO_RAID.md) — Fires when the player's party becomes a raid group
+- [`PARTY_INVITE_CANCEL`](events/PARTY_INVITE_CANCEL.md) — Fires when a pending invitation to join a group is no longer available
+- [`PARTY_INVITE_REQUEST`](events/PARTY_INVITE_REQUEST.md) — Fires when the player is invited to join a group
+- [`PARTY_LEADER_CHANGED`](events/PARTY_LEADER_CHANGED.md) — Fires when information about the leadership of the player's party changes or becomes available
+- [`PARTY_LFG_RESTRICTED`](events/PARTY_LFG_RESTRICTED.md) — This event is not yet documented
+- [`PARTY_LOOT_METHOD_CHANGED`](events/PARTY_LOOT_METHOD_CHANGED.md) — Fires when information about the loot rules for the player's party changes or becomes available
+- [`PARTY_MEMBERS_CHANGED`](events/PARTY_MEMBERS_CHANGED.md) — Fires when information about the membership of the player's party changes or becomes available
+- [`PARTY_MEMBER_DISABLE`](events/PARTY_MEMBER_DISABLE.md) — Fires when a party member goes offline
+- [`PARTY_MEMBER_ENABLE`](events/PARTY_MEMBER_ENABLE.md) — Fires when an offline party member comes back online
+- [`PETITION_CLOSED`](events/PETITION_CLOSED.md) — Fires when the player ends interaction with a guild or arena team charter
+- [`PETITION_SHOW`](events/PETITION_SHOW.md) — Fires when a guild or arena team charter is presented to the player
+- [`PETITION_VENDOR_CLOSED`](events/PETITION_VENDOR_CLOSED.md) — Fires when the player ends interaction with an arena registrar
+- [`PETITION_VENDOR_SHOW`](events/PETITION_VENDOR_SHOW.md) — Fires when the player begins interaction with an arena registrar
+- [`PETITION_VENDOR_UPDATE`](events/PETITION_VENDOR_UPDATE.md) — Fires when information about available options at an arena registrar becomes available
+- [`PET_ATTACK_START`](events/PET_ATTACK_START.md) — Fires when the player's pet starts auto-attacking
+- [`PET_ATTACK_STOP`](events/PET_ATTACK_STOP.md) — Fires when the player's pet stops auto-attacking
+- [`PET_BAR_HIDE`](events/PET_BAR_HIDE.md) — Fires when the pet action bar should be hidden
+- [`PET_BAR_HIDEGRID`](events/PET_BAR_HIDEGRID.md) — Fires when a pet ability is removed from the cursor
+- [`PET_BAR_SHOWGRID`](events/PET_BAR_SHOWGRID.md) — Fires when a pet ability is picked up onto the cursor
+- [`PET_BAR_UPDATE`](events/PET_BAR_UPDATE.md) — Fires when information about the content of the pet action bar changes or becomes available
+- [`PET_BAR_UPDATE_COOLDOWN`](events/PET_BAR_UPDATE_COOLDOWN.md) — Fires when the cooldown begins or ends for an ability on the pet action bar
+- [`PET_BAR_UPDATE_USABLE`](events/PET_BAR_UPDATE_USABLE.md) — This event is not yet documented
+- [`PET_DISMISS_START`](events/PET_DISMISS_START.md) — Fires when the player's pet is dismissed
+- [`PET_FORCE_NAME_DECLENSION`](events/PET_FORCE_NAME_DECLENSION.md) — Fires when the player is prompted to provide Russian declensions for a pet's name
+- [`PET_RENAMEABLE`](events/PET_RENAMEABLE.md) — Fires when the player is prompted to rename a pet which has been renamed before
+- [`PET_SPELL_POWER_UPDATE`](events/PET_SPELL_POWER_UPDATE.md) — This event is not yet documented
+- [`PET_STABLE_CLOSED`](events/PET_STABLE_CLOSED.md) — Fires when the player ends interaction with the pet stables
+- [`PET_STABLE_SHOW`](events/PET_STABLE_SHOW.md) — Fires when the player begins interaction with the pet stables
+- [`PET_STABLE_UPDATE`](events/PET_STABLE_UPDATE.md) — Fires when information about the pet stables' content changes or becomes available
+- [`PET_STABLE_UPDATE_PAPERDOLL`](events/PET_STABLE_UPDATE_PAPERDOLL.md) — Fires when information about 3D models used in the pet stables becomes available
+- [`PET_TALENT_UPDATE`](events/PET_TALENT_UPDATE.md) — Fires when the player's pet talent information changes - that is, when the pet is summoned, dismi…
+- [`PET_UI_CLOSE`](events/PET_UI_CLOSE.md) — Fires when information about the player's pet is no longer available
+- [`PET_UI_UPDATE`](events/PET_UI_UPDATE.md) — Fires when information about the player's pet changes or becomes available
+- [`PLAYERBANKBAGSLOTS_CHANGED`](events/PLAYERBANKBAGSLOTS_CHANGED.md) — Fires when the number of bank bag slots purchased by the player changes
+- [`PLAYERBANKSLOTS_CHANGED`](events/PLAYERBANKSLOTS_CHANGED.md) — Fires when the contents of a bank slot or bank bag slot are changed
+- [`PLAYER_ALIVE`](events/PLAYER_ALIVE.md) — Fires when the player's spirit is released after death or when the player accepts a resurrection…
+- [`PLAYER_AURAS_CHANGED`](events/PLAYER_AURAS_CHANGED.md) — Fires when the player gains or loses a buff or debuff
+- [`PLAYER_CAMPING`](events/PLAYER_CAMPING.md) — Fires when the player attempts to log out while not in a major city, inn, or other "resting" area
+- [`PLAYER_CONTROL_GAINED`](events/PLAYER_CONTROL_GAINED.md) — Fires when the player regains control of his or her character
+- [`PLAYER_CONTROL_LOST`](events/PLAYER_CONTROL_LOST.md) — Fires when the player loses control of his or her character
+- [`PLAYER_DAMAGE_DONE_MODS`](events/PLAYER_DAMAGE_DONE_MODS.md) — Fires when an effect changes the player's spell bonus damage
+- [`PLAYER_DEAD`](events/PLAYER_DEAD.md) — Fires when the player dies
+- [`PLAYER_DIFFICULTY_CHANGED`](events/PLAYER_DIFFICULTY_CHANGED.md) — This event is not yet documented
+- [`PLAYER_ENTERING_BATTLEGROUND`](events/PLAYER_ENTERING_BATTLEGROUND.md) — Fires when the player enters a battleground instance
+- [`PLAYER_ENTERING_WORLD`](events/PLAYER_ENTERING_WORLD.md) — Fired when the player enters the world, reloads the UI, enters/leaves an instance or battleground…
+- [`PLAYER_ENTER_COMBAT`](events/PLAYER_ENTER_COMBAT.md) — Fires when the player begins melee auto-attack mode
+- [`PLAYER_EQUIPMENT_CHANGED`](events/PLAYER_EQUIPMENT_CHANGED.md) — Fires when the player equips or unequips an item
+- [`PLAYER_FARSIGHT_FOCUS_CHANGED`](events/PLAYER_FARSIGHT_FOCUS_CHANGED.md) — Fires when the player's viewpoint changes
+- [`PLAYER_FLAGS_CHANGED`](events/PLAYER_FLAGS_CHANGED.md) — Fires when a unit's AFK or DND status changes
+- [`PLAYER_FOCUS_CHANGED`](events/PLAYER_FOCUS_CHANGED.md) — Fires when the player's focus unit changes
+- [`PLAYER_GAINS_VEHICLE_DATA`](events/PLAYER_GAINS_VEHICLE_DATA.md) — Fires when the player gains vehicle-related attributes without necessarily entering a vehicle
+- [`PLAYER_GUILD_UPDATE`](events/PLAYER_GUILD_UPDATE.md) — Fires when information about the player's guild membership changes
+- [`PLAYER_LEAVE_COMBAT`](events/PLAYER_LEAVE_COMBAT.md) — Fires when the player stops melee auto-attack mode
+- [`PLAYER_LEAVING_WORLD`](events/PLAYER_LEAVING_WORLD.md) — Fires when the player logs out or exits a world area
+- [`PLAYER_LEVEL_UP`](events/PLAYER_LEVEL_UP.md) — Fires when the player gains a character level
+- [`PLAYER_LOGIN`](events/PLAYER_LOGIN.md) — Fires immediately before `PLAYER_ENTERING_WORLD` on login and UI reload
+- [`PLAYER_LOGOUT`](events/PLAYER_LOGOUT.md) — Fires immediately before the player is logged out of the game
+- [`PLAYER_LOSES_VEHICLE_DATA`](events/PLAYER_LOSES_VEHICLE_DATA.md) — Fires when the player loses vehicle-related attributes without necessarily having been in a vehicle
+- [`PLAYER_MONEY`](events/PLAYER_MONEY.md) — Fires when the player gains or spends money
+- [`PLAYER_PVP_KILLS_CHANGED`](events/PLAYER_PVP_KILLS_CHANGED.md) — Fires whenever a player's number of Honorable Kills changes
+- [`PLAYER_PVP_RANK_CHANGED`](events/PLAYER_PVP_RANK_CHANGED.md) — Fires when the player's PvP rank changes
+- [`PLAYER_QUITING`](events/PLAYER_QUITING.md) — Fires when the player attempts to exit WoW while not in a major city, inn, or other "resting" area
+- [`PLAYER_REGEN_DISABLED`](events/PLAYER_REGEN_DISABLED.md) — Fires when the player enters combat status
+- [`PLAYER_REGEN_ENABLED`](events/PLAYER_REGEN_ENABLED.md) — Fires when the player leaves combat status
+- [`PLAYER_ROLES_ASSIGNED`](events/PLAYER_ROLES_ASSIGNED.md) — This event is not yet documented
+- [`PLAYER_SKINNED`](events/PLAYER_SKINNED.md) — Fires when another character takes the insignia from the player's corpse in a battleground or wor…
+- [`PLAYER_TALENT_UPDATE`](events/PLAYER_TALENT_UPDATE.md) — Fires when the player gains or spends talent points
+- [`PLAYER_TARGET_CHANGED`](events/PLAYER_TARGET_CHANGED.md) — Fires when the player changes targets
+- [`PLAYER_TOTEM_UPDATE`](events/PLAYER_TOTEM_UPDATE.md) — Fires when information about the player's placed totems changes or becomes available
+- [`PLAYER_TRADE_MONEY`](events/PLAYER_TRADE_MONEY.md) — Fires when the amount of money offered for trade by the player changes
+- [`PLAYER_UNGHOST`](events/PLAYER_UNGHOST.md) — Fires when a player resurrects after being in spirit form
+- [`PLAYER_UPDATE_RESTING`](events/PLAYER_UPDATE_RESTING.md) — Fires when the player enters or leaves a major city, inn or other "resting" area
+- [`PLAYER_XP_UPDATE`](events/PLAYER_XP_UPDATE.md) — Fires when the player's amount of accrued experience points changes
+- [`PLAYTIME_CHANGED`](events/PLAYTIME_CHANGED.md) — Fires when changes to the player's limited play time status take effect
+- [`PLAY_MOVIE`](events/PLAY_MOVIE.md) — Fires when an in-game movie should be played
+- [`PREVIEW_PET_TALENT_POINTS_CHANGED`](events/PREVIEW_PET_TALENT_POINTS_CHANGED.md) — Fires when pet talent points are spent or unspent in preview mode
+- [`PREVIEW_TALENT_POINTS_CHANGED`](events/PREVIEW_TALENT_POINTS_CHANGED.md) — Fires when the player spends or unspends talent points in preview mode
+- [`PVPQUEUE_ANYWHERE_SHOW`](events/PVPQUEUE_ANYWHERE_SHOW.md) — Fires when the player begins interacting with the UI feature allowing battleground queueing from…
+- [`PVPQUEUE_ANYWHERE_UPDATE_AVAILABLE`](events/PVPQUEUE_ANYWHERE_UPDATE_AVAILABLE.md) — Fires when information for the any-battleground queueing UI changes or becomes available
+- [`QUEST_ACCEPTED`](events/QUEST_ACCEPTED.md) — Fires when a new quest is added to the player's quest log (which is what happens after a player a…
+- [`QUEST_ACCEPT_CONFIRM`](events/QUEST_ACCEPT_CONFIRM.md) — Fires when certain kinds of quests (e.g. NPC escort quests) are started by another member of the…
+- [`QUEST_COMPLETE`](events/QUEST_COMPLETE.md) — Fires when the player is looking at the "Complete" page for a quest, at a questgiver.
+- [`QUEST_DETAIL`](events/QUEST_DETAIL.md) — Fires when details of an available quest are presented by a questgiver
+- [`QUEST_FINISHED`](events/QUEST_FINISHED.md) — Fires when the player ends interaction with a questgiver or ends a stage of the questgiver dialog
+- [`QUEST_GREETING`](events/QUEST_GREETING.md) — Fires when a questgiver presents a greeting along with a list of active or available quests
+- [`QUEST_ITEM_UPDATE`](events/QUEST_ITEM_UPDATE.md) — Fires when information about items in a questgiver dialog is updated
+- [`QUEST_LOG_UPDATE`](events/QUEST_LOG_UPDATE.md) — Fires when the game client receives updates relating to the player's quest log (this event is not…
+- [`QUEST_POI_UPDATE`](events/QUEST_POI_UPDATE.md) — This event is not yet documented
+- [`QUEST_PROGRESS`](events/QUEST_PROGRESS.md) — Fires when interacting with a questgiver about an active quest
+- [`QUEST_QUERY_COMPLETE`](events/QUEST_QUERY_COMPLETE.md) — Fires when quest completion information is available from the server
+- [`QUEST_WATCH_UPDATE`](events/QUEST_WATCH_UPDATE.md) — Fires when the player's status regarding a quest's objectives changes, for instance picking up a…
+- [`RAID_INSTANCE_WELCOME`](events/RAID_INSTANCE_WELCOME.md) — Fires when the player enters an instance that has a reset timer
+- [`RAID_ROSTER_UPDATE`](events/RAID_ROSTER_UPDATE.md) — Fires when the raid roster changes
+- [`RAID_TARGET_UPDATE`](events/RAID_TARGET_UPDATE.md) — Fires when raid target icons are assigned or cleared
+- [`RAISED_AS_GHOUL`](events/RAISED_AS_GHOUL.md) — Fires when the player is raised as a ghoul by a friendly death knight
+- [`READY_CHECK`](events/READY_CHECK.md) — Fires when a ready check is triggered
+- [`READY_CHECK_CONFIRM`](events/READY_CHECK_CONFIRM.md) — Fires when a unit responds to a ready check
+- [`READY_CHECK_FINISHED`](events/READY_CHECK_FINISHED.md) — Fires when a ready check ends
+- [`RECEIVED_ACHIEVEMENT_LIST`](events/RECEIVED_ACHIEVEMENT_LIST.md) — This event is not yet documented
+- [`REPLACE_ENCHANT`](events/REPLACE_ENCHANT.md) — Fires when the player attempts to enchant an item which is already enchanted
+- [`RESURRECT_REQUEST`](events/RESURRECT_REQUEST.md) — Fires when another character offers to resurrect the player
+- [`RUNE_POWER_UPDATE`](events/RUNE_POWER_UPDATE.md) — Fires when the availability of one of the player's rune resources changes
+- [`RUNE_TYPE_UPDATE`](events/RUNE_TYPE_UPDATE.md) — Fires when the type of one of the player's rune resources changes
+- [`SCREENSHOT_FAILED`](events/SCREENSHOT_FAILED.md) — Fires if an attempt to take a screenshot fails
+- [`SCREENSHOT_SUCCEEDED`](events/SCREENSHOT_SUCCEEDED.md) — Fires when a screenshot is successfully taken
+- [`SEND_MAIL_COD_CHANGED`](events/SEND_MAIL_COD_CHANGED.md) — Fires when the Cash On Delivery cost assigned for the outgoing mail message changes
+- [`SEND_MAIL_MONEY_CHANGED`](events/SEND_MAIL_MONEY_CHANGED.md) — Fires when the amount of money attached to the outgoing mail message changes
+- [`SKILL_LINES_CHANGED`](events/SKILL_LINES_CHANGED.md) — Fires when the content of the player's skill list changes
+- [`SOCKET_INFO_CLOSE`](events/SOCKET_INFO_CLOSE.md) — Fires when the player ends interaction with the item socketing UI
+- [`SOCKET_INFO_UPDATE`](events/SOCKET_INFO_UPDATE.md) — Fires when information about the contents of the item socketing UI changes or becomes available
+- [`SOUND_DEVICE_UPDATE`](events/SOUND_DEVICE_UPDATE.md) — Fires when information about sound input/output devices changes or becomes available
+- [`SPELLS_CHANGED`](events/SPELLS_CHANGED.md) — Fires when information about the contents of the player's spellbook changes or becomes available
+- [`SPELL_UPDATE_COOLDOWN`](events/SPELL_UPDATE_COOLDOWN.md) — Fires when the cooldown on one of the player's spells begins or ends
+- [`SPELL_UPDATE_USABLE`](events/SPELL_UPDATE_USABLE.md) — Fires when a spell becomes usable or unusable
+- [`START_AUTOREPEAT_SPELL`](events/START_AUTOREPEAT_SPELL.md) — Fires when the player casts a spell which automatically repeats
+- [`START_LOOT_ROLL`](events/START_LOOT_ROLL.md) — Fires when an item becomes available for group loot rolling
+- [`START_MINIGAME`](events/START_MINIGAME.md) — Unused
+- [`STOP_AUTOREPEAT_SPELL`](events/STOP_AUTOREPEAT_SPELL.md) — Fires when the player stops repetition of an automatically repeating spell
+- [`SYNCHRONIZE_SETTINGS`](events/SYNCHRONIZE_SETTINGS.md) — Fires when game options are manually synchronized with those saved on the server
+- [`TABARD_CANSAVE_CHANGED`](events/TABARD_CANSAVE_CHANGED.md) — Fires when information about the player's ability to save a guild tabard design changes or become…
+- [`TABARD_SAVE_PENDING`](events/TABARD_SAVE_PENDING.md) — Fires when the player attempts to save a guild tabard design
+- [`TALENTS_INVOLUNTARILY_RESET`](events/TALENTS_INVOLUNTARILY_RESET.md) — This event is not yet documented
+- [`TAXIMAP_CLOSED`](events/TAXIMAP_CLOSED.md) — Fires when the player begins interaction with a flight master
+- [`TAXIMAP_OPENED`](events/TAXIMAP_OPENED.md) — Fires when the player ends interaction with a flight master
+- [`TIME_PLAYED_MSG`](events/TIME_PLAYED_MSG.md) — Fires when information about the player's total time played becomes available
+- [`TRACKED_ACHIEVEMENT_UPDATE`](events/TRACKED_ACHIEVEMENT_UPDATE.md) — Fires when the player's progress changes on an achievement marked for watching in the objectives…
+- [`TRADE_ACCEPT_UPDATE`](events/TRADE_ACCEPT_UPDATE.md) — Fires when the player or trade target signals acceptance (or cancels acceptance) of the trade
+- [`TRADE_CLOSED`](events/TRADE_CLOSED.md) — Fires when a trade with another player ends or is canceled
+- [`TRADE_MONEY_CHANGED`](events/TRADE_MONEY_CHANGED.md) — Fires when the amount of money offered by the trade target changes
+- [`TRADE_PLAYER_ITEM_CHANGED`](events/TRADE_PLAYER_ITEM_CHANGED.md) — Fires when the set of items offered for trade by the player changes
+- [`TRADE_POTENTIAL_BIND_ENCHANT`](events/TRADE_POTENTIAL_BIND_ENCHANT.md) — This event is not yet documented
+- [`TRADE_REPLACE_ENCHANT`](events/TRADE_REPLACE_ENCHANT.md) — Fires if the player attempts to enchant an item offered by the trade target which is already ench…
+- [`TRADE_REQUEST`](events/TRADE_REQUEST.md) — Unused
+- [`TRADE_REQUEST_CANCEL`](events/TRADE_REQUEST_CANCEL.md) — Unused
+- [`TRADE_SHOW`](events/TRADE_SHOW.md) — Fires when a trade interaction with another character begins
+- [`TRADE_SKILL_CLOSE`](events/TRADE_SKILL_CLOSE.md) — Fires when the player ends interaction with a trade skill recipe list
+- [`TRADE_SKILL_FILTER_UPDATE`](events/TRADE_SKILL_FILTER_UPDATE.md) — Fires when the search filter for a trade skill recipe list changes
+- [`TRADE_SKILL_SHOW`](events/TRADE_SKILL_SHOW.md) — Fires when the player begins interaction with a trade skill recipe list
+- [`TRADE_SKILL_UPDATE`](events/TRADE_SKILL_UPDATE.md) — Fires when information about the contents of a trade skill recipe list changes or becomes available
+- [`TRADE_TARGET_ITEM_CHANGED`](events/TRADE_TARGET_ITEM_CHANGED.md) — Fires when the set of items offered for trade by the target changes
+- [`TRADE_UPDATE`](events/TRADE_UPDATE.md) — Fires when new information becomes available about a trade process underway with another character
+- [`TRAINER_CLOSED`](events/TRAINER_CLOSED.md) — Fires when the player ends interaction with a class or skill trainer
+- [`TRAINER_DESCRIPTION_UPDATE`](events/TRAINER_DESCRIPTION_UPDATE.md) — Fires when description information for the selected trainer service changes or becomes available
+- [`TRAINER_SHOW`](events/TRAINER_SHOW.md) — Fires when the player begins interaction with a class or skill trainer
+- [`TRAINER_UPDATE`](events/TRAINER_UPDATE.md) — Fires when information about the contents of the trainer service list changes or becomes available
+- [`TUTORIAL_TRIGGER`](events/TUTORIAL_TRIGGER.md) — Fires when a contextual tutorial should be shown
+- [`UI_ERROR_MESSAGE`](events/UI_ERROR_MESSAGE.md) — Fires when a game error message should be displayed
+- [`UI_INFO_MESSAGE`](events/UI_INFO_MESSAGE.md) — Fires when an informative message should be displayed
+- [`UNIT_ATTACK`](events/UNIT_ATTACK.md) — Fires when a unit's weapon (or standard melee attack damage) changes
+- [`UNIT_ATTACK_POWER`](events/UNIT_ATTACK_POWER.md) — Fires when a unit's attack power changes
+- [`UNIT_ATTACK_SPEED`](events/UNIT_ATTACK_SPEED.md) — Fires when a unit's attack speed changes
+- [`UNIT_AURA`](events/UNIT_AURA.md) — Fires when a unit loses or gains a buff or debuff.
+- [`UNIT_CLASSIFICATION_CHANGED`](events/UNIT_CLASSIFICATION_CHANGED.md) — Fires when a unit changes classification (e.g. if an elite unit becomes non-elite)
+- [`UNIT_COMBAT`](events/UNIT_COMBAT.md) — Fires when a unit takes or recovers from damage due to a combat effect
+- [`UNIT_COMBO_POINTS`](events/UNIT_COMBO_POINTS.md) — Fires when a unit scores combo points on its target
+- [`UNIT_DAMAGE`](events/UNIT_DAMAGE.md) — Fires when a unit's weapon damage changes.
+- [`UNIT_DEFENSE`](events/UNIT_DEFENSE.md) — Fires when a unit's defense changes.
+- [`UNIT_DISPLAYPOWER`](events/UNIT_DISPLAYPOWER.md) — Fires when a unit's primary power type (e.g. rage, energy, mana) changes
+- [`UNIT_DYNAMIC_FLAGS`](events/UNIT_DYNAMIC_FLAGS.md) — Fires when certain unit attributes change
+- [`UNIT_ENERGY`](events/UNIT_ENERGY.md) — Fires when a unit's energy level changes
+- [`UNIT_ENTERED_VEHICLE`](events/UNIT_ENTERED_VEHICLE.md) — Fires when a unit has entered a vehicle
+- [`UNIT_ENTERING_VEHICLE`](events/UNIT_ENTERING_VEHICLE.md) — Fires when a unit begins entering a vehicle
+- [`UNIT_EXITED_VEHICLE`](events/UNIT_EXITED_VEHICLE.md) — Fires when a unit has exited a vehicle
+- [`UNIT_EXITING_VEHICLE`](events/UNIT_EXITING_VEHICLE.md) — Fires when a unit begins exiting a vehicle
+- [`UNIT_FACTION`](events/UNIT_FACTION.md) — Fires when a unit's PvP status changes
+- [`UNIT_FLAGS`](events/UNIT_FLAGS.md) — Fires when certain combat statuses for a unit change (e.g. stunned, feared)
+- [`UNIT_FOCUS`](events/UNIT_FOCUS.md) — Fires when a unit's focus level changes
+- [`UNIT_HAPPINESS`](events/UNIT_HAPPINESS.md) — Fires when the player's pet's happiness level changes
+- [`UNIT_HEALTH`](events/UNIT_HEALTH.md) — Fires when a unit's health level changes
+- [`UNIT_INVENTORY_CHANGED`](events/UNIT_INVENTORY_CHANGED.md) — Fires when the player (or inspected unit) equips or unequips items
+- [`UNIT_LEVEL`](events/UNIT_LEVEL.md) — Fires when a unit's character level changes
+- [`UNIT_MANA`](events/UNIT_MANA.md) — Fires when a unit's mana level changes
+- [`UNIT_MAXENERGY`](events/UNIT_MAXENERGY.md) — Fires when a unit's maximum energy changes
+- [`UNIT_MAXFOCUS`](events/UNIT_MAXFOCUS.md) — Fires when a unit's maximum focus changes
+- [`UNIT_MAXHAPPINESS`](events/UNIT_MAXHAPPINESS.md) — Fires when a unit's maximum happiness changes
+- [`UNIT_MAXHEALTH`](events/UNIT_MAXHEALTH.md) — Fires when a unit's maximum health changes
+- [`UNIT_MAXMANA`](events/UNIT_MAXMANA.md) — Fires when a unit's maximum mana changes
+- [`UNIT_MAXRAGE`](events/UNIT_MAXRAGE.md) — Fires when a unit's maximum rage changes
+- [`UNIT_MAXRUNIC_POWER`](events/UNIT_MAXRUNIC_POWER.md) — Fires when a unit's maximum runic power changes
+- [`UNIT_MODEL_CHANGED`](events/UNIT_MODEL_CHANGED.md) — Fires when a unit's 3D model changes (e.g. due to shapeshifting, being polymorphed, or equipping…
+- [`UNIT_NAME_UPDATE`](events/UNIT_NAME_UPDATE.md) — Fires when a unit's name is changed
+- [`UNIT_PET`](events/UNIT_PET.md) — Fires when a unit gains or loses a pet
+- [`UNIT_PET_EXPERIENCE`](events/UNIT_PET_EXPERIENCE.md) — Fires when the player's pet gains experience points
+- [`UNIT_PORTRAIT_UPDATE`](events/UNIT_PORTRAIT_UPDATE.md) — Fires when a unit's portrait changes (e.g. due to shapeshifting, being polymorphed, or equipping…
+- [`UNIT_QUEST_LOG_CHANGED`](events/UNIT_QUEST_LOG_CHANGED.md) — Fires when a unit's quests change (accepted/objective progress/abandoned/completed)
+- [`UNIT_RAGE`](events/UNIT_RAGE.md) — Fires when a unit's rage level changes
+- [`UNIT_RANGEDDAMAGE`](events/UNIT_RANGEDDAMAGE.md) — Fires when a unit's ranged attack damage changes
+- [`UNIT_RANGED_ATTACK_POWER`](events/UNIT_RANGED_ATTACK_POWER.md) — Fires when a unit's ranged attack power changes
+- [`UNIT_RESISTANCES`](events/UNIT_RESISTANCES.md) — Fires when a unit's magic resistances change
+- [`UNIT_RUNIC_POWER`](events/UNIT_RUNIC_POWER.md) — Fires when a unit's runic power level changes
+- [`UNIT_SPELLCAST_CHANNEL_START`](events/UNIT_SPELLCAST_CHANNEL_START.md) — Fires when a unit starts channeling a spell
+- [`UNIT_SPELLCAST_CHANNEL_STOP`](events/UNIT_SPELLCAST_CHANNEL_STOP.md) — Fires when a unit stops or cancels a channeled spell
+- [`UNIT_SPELLCAST_CHANNEL_UPDATE`](events/UNIT_SPELLCAST_CHANNEL_UPDATE.md) — Fires when a unit's channeled spell is interrupted or delayed
+- [`UNIT_SPELLCAST_DELAYED`](events/UNIT_SPELLCAST_DELAYED.md) — Fires when a unit's spell cast is delayed
+- [`UNIT_SPELLCAST_FAILED`](events/UNIT_SPELLCAST_FAILED.md) — Fires when a unit's spell cast fails
+- [`UNIT_SPELLCAST_FAILED_QUIET`](events/UNIT_SPELLCAST_FAILED_QUIET.md) — Fires when a unit's spell cast fails and no error message should be displayed
+- [`UNIT_SPELLCAST_INTERRUPTED`](events/UNIT_SPELLCAST_INTERRUPTED.md) — Fires when a unit's spell cast is interrupted
+- [`UNIT_SPELLCAST_INTERRUPTIBLE`](events/UNIT_SPELLCAST_INTERRUPTIBLE.md) — Fires when a unit's spell cast becomes interruptible again
+- [`UNIT_SPELLCAST_NOT_INTERRUPTIBLE`](events/UNIT_SPELLCAST_NOT_INTERRUPTIBLE.md) — Fires when a unit's spell cast becomes uninterruptible
+- [`UNIT_SPELLCAST_SENT`](events/UNIT_SPELLCAST_SENT.md) — Fires when a request to cast a spell (on behalf of the player or a unit controlled by the player)…
+- [`UNIT_SPELLCAST_START`](events/UNIT_SPELLCAST_START.md) — Fires when a unit begins casting a spell
+- [`UNIT_SPELLCAST_STOP`](events/UNIT_SPELLCAST_STOP.md) — Fires when a unit stops or cancels casting a spell
+- [`UNIT_SPELLCAST_SUCCEEDED`](events/UNIT_SPELLCAST_SUCCEEDED.md) — Fires when a unit's spell cast succeeds
+- [`UNIT_STATS`](events/UNIT_STATS.md) — Fires when a unit's primary attributes change
+- [`UNIT_TARGET`](events/UNIT_TARGET.md) — Fires when a unit's target changes
+- [`UNIT_THREAT_LIST_UPDATE`](events/UNIT_THREAT_LIST_UPDATE.md) — Fires when a non-player unit's threat list is updated
+- [`UNIT_THREAT_SITUATION_UPDATE`](events/UNIT_THREAT_SITUATION_UPDATE.md) — Fires when a unit's threat state changes
+- [`UPDATE_BATTLEFIELD_SCORE`](events/UPDATE_BATTLEFIELD_SCORE.md) — Fires when information for the battleground scoreboard changes or becomes available
+- [`UPDATE_BATTLEFIELD_STATUS`](events/UPDATE_BATTLEFIELD_STATUS.md) — Fires when the player's status in a battleground or queue changes
+- [`UPDATE_BINDINGS`](events/UPDATE_BINDINGS.md) — Fires when information about the player's key binding settings changes or becomes available
+- [`UPDATE_BONUS_ACTIONBAR`](events/UPDATE_BONUS_ACTIONBAR.md) — Fires when information about the bonus action bar changes or becomes available
+- [`UPDATE_CHAT_COLOR`](events/UPDATE_CHAT_COLOR.md) — Fires when the color settings for chat message types are updated
+- [`UPDATE_CHAT_COLOR_NAME_BY_CLASS`](events/UPDATE_CHAT_COLOR_NAME_BY_CLASS.md) — Fires when settings for per-class color-coding of character names in chat are updated
+- [`UPDATE_CHAT_WINDOWS`](events/UPDATE_CHAT_WINDOWS.md) — Fires when saved chat window settings are loaded
+- [`UPDATE_EXHAUSTION`](events/UPDATE_EXHAUSTION.md) — Fires when the player's rest state or amount of rested XP changes
+- [`UPDATE_FACTION`](events/UPDATE_FACTION.md) — Fires when the contents of the reputation listing change or become available
+- [`UPDATE_FLOATING_CHAT_WINDOWS`](events/UPDATE_FLOATING_CHAT_WINDOWS.md) — Fires when chat window layout should be updated
+- [`UPDATE_GM_STATUS`](events/UPDATE_GM_STATUS.md) — Fires when the player's GM ticket status (or ability to submit tickets) changes
+- [`UPDATE_INSTANCE_INFO`](events/UPDATE_INSTANCE_INFO.md) — Fires when information about instances to which the player is saved changes or becomes available
+- [`UPDATE_INVENTORY_ALERTS`](events/UPDATE_INVENTORY_ALERTS.md) — Fires when an equipped item's durability alert status changes
+- [`UPDATE_INVENTORY_DURABILITY`](events/UPDATE_INVENTORY_DURABILITY.md) — Fires when an equipped item's durability changes
+- [`UPDATE_LFG_LIST`](events/UPDATE_LFG_LIST.md) — Fires when results of a Looking for More query become available
+- [`UPDATE_LFG_LIST_INCREMENTAL`](events/UPDATE_LFG_LIST_INCREMENTAL.md) — Fires when results of a Looking for More query are updated
+- [`UPDATE_LFG_TYPES`](events/UPDATE_LFG_TYPES.md) — Fires when information about possible Looking for Group settings changes or becomes available
+- [`UPDATE_MACROS`](events/UPDATE_MACROS.md) — Fires when information about the player's macros changes or becomes available
+- [`UPDATE_MASTER_LOOT_LIST`](events/UPDATE_MASTER_LOOT_LIST.md) — Fires when the contents of the master loot candidate list change or become available
+- [`UPDATE_MOUSEOVER_UNIT`](events/UPDATE_MOUSEOVER_UNIT.md) — Fires when the mouse cursor moves over a visible unit
+- [`UPDATE_MULTI_CAST_ACTIONBAR`](events/UPDATE_MULTI_CAST_ACTIONBAR.md) — Fires when the contents of the multi-cast action bar change or become available
+- [`UPDATE_PENDING_MAIL`](events/UPDATE_PENDING_MAIL.md) — Fires when information about newly received mail messages (not yet seen at a mailbox) becomes ava…
+- [`UPDATE_SHAPESHIFT_COOLDOWN`](events/UPDATE_SHAPESHIFT_COOLDOWN.md) — Fires when the cooldown begins or ends for an action on the stance/shapeshift bar
+- [`UPDATE_SHAPESHIFT_FORM`](events/UPDATE_SHAPESHIFT_FORM.md) — Fires when the player's shapeshift form changes
+- [`UPDATE_SHAPESHIFT_FORMS`](events/UPDATE_SHAPESHIFT_FORMS.md) — Fires when the contents of the stance/shapeshift bar change or become available
+- [`UPDATE_SHAPESHIFT_USABLE`](events/UPDATE_SHAPESHIFT_USABLE.md) — Fires when an ability on the stance/shapeshift bar becomes usable or unusable
+- [`UPDATE_STEALTH`](events/UPDATE_STEALTH.md) — Fires when the player uses or cancels a stealth ability
+- [`UPDATE_TICKET`](events/UPDATE_TICKET.md) — Fires when information about an active GM ticket changes or becomes available
+- [`UPDATE_TRADESKILL_RECAST`](events/UPDATE_TRADESKILL_RECAST.md) — Fires for each cast when performing multiple casts of a trade skill recipe
+- [`UPDATE_WORLD_STATES`](events/UPDATE_WORLD_STATES.md) — Fires when information for world state UI elements changes or becomes available
+- [`USE_BIND_CONFIRM`](events/USE_BIND_CONFIRM.md) — Fires when the player attempts to use an item which will become soulbound in the process
+- [`USE_GLYPH`](events/USE_GLYPH.md) — Fires when the player begins to use a glyph
+- [`VARIABLES_LOADED`](events/VARIABLES_LOADED.md) — Fires when non-addon-specific saved variables are loaded
+- [`VEHICLE_ANGLE_SHOW`](events/VEHICLE_ANGLE_SHOW.md) — Fires when controls for vehicle weapon pitch should be displayed
+- [`VEHICLE_ANGLE_UPDATE`](events/VEHICLE_ANGLE_UPDATE.md) — Fires when the player's vehicle weapon pitch changes
+- [`VEHICLE_PASSENGERS_CHANGED`](events/VEHICLE_PASSENGERS_CHANGED.md) — Fires when the list of passengers in the player's vehicle changes
+- [`VEHICLE_POWER_SHOW`](events/VEHICLE_POWER_SHOW.md) — Fires when controls for vehicle weapon power should be displayed
+- [`VEHICLE_UPDATE`](events/VEHICLE_UPDATE.md) — Fires when information about the player's vehicle changes or becomes available
+- [`VOICE_CHANNEL_STATUS_UPDATE`](events/VOICE_CHANNEL_STATUS_UPDATE.md) — Fires when voice-related status of a chat channel changes
+- [`VOICE_CHAT_ENABLED_UPDATE`](events/VOICE_CHAT_ENABLED_UPDATE.md) — Fires when the client's voice chat feature is enabled or disabled
+- [`VOICE_LEFT_SESSION`](events/VOICE_LEFT_SESSION.md) — Fires when a voice-enabled member leaves a chat channel
+- [`VOICE_PLATE_START`](events/VOICE_PLATE_START.md) — Fires when a channel member begins speaking in voice chat
+- [`VOICE_PLATE_STOP`](events/VOICE_PLATE_STOP.md) — Fires when a channel member finishes speaking in voice chat
+- [`VOICE_PUSH_TO_TALK_START`](events/VOICE_PUSH_TO_TALK_START.md) — Fires when the "Push to Talk" key binding is activated
+- [`VOICE_PUSH_TO_TALK_STOP`](events/VOICE_PUSH_TO_TALK_STOP.md) — Fires when the "Push to Talk" key binding is deactivated
+- [`VOICE_SELF_MUTE`](events/VOICE_SELF_MUTE.md) — Fires when the player's self mute setting changes
+- [`VOICE_SESSIONS_UPDATE`](events/VOICE_SESSIONS_UPDATE.md) — Fires when information about a voice chat session changes or becomes available
+- [`VOICE_START`](events/VOICE_START.md) — Fires when a channel member begins speaking in voice chat
+- [`VOICE_STATUS_UPDATE`](events/VOICE_STATUS_UPDATE.md) — Fires when a member of the player's group changes voice chat status
+- [`VOICE_STOP`](events/VOICE_STOP.md) — Fires when a channel member finishes speaking in voice chat
+- [`VOTE_KICK_REASON_NEEDED`](events/VOTE_KICK_REASON_NEEDED.md) — This event is not yet documented
+- [`WEAR_EQUIPMENT_SET`](events/WEAR_EQUIPMENT_SET.md) — Fires when the player's current equipment set changes
+- [`WHO_LIST_UPDATE`](events/WHO_LIST_UPDATE.md) — Fires when results of a Who query become available
+- [`WORLD_MAP_NAME_UPDATE`](events/WORLD_MAP_NAME_UPDATE.md) — Fires when the name of the current world map area changes or becomes available
+- [`WORLD_MAP_UPDATE`](events/WORLD_MAP_UPDATE.md) — Fires when the contents of the world map change or become available
+- [`WORLD_STATE_UI_TIMER_UPDATE`](events/WORLD_STATE_UI_TIMER_UPDATE.md) — Fires when the state of a timer world state UI element changes or becomes available
+- [`WOW_MOUSE_NOT_FOUND`](events/WOW_MOUSE_NOT_FOUND.md) — This event fires when a man buttoned WoW mouse is not found, in response to a [[docs/api/DetectWo…
+- [`ZONE_CHANGED`](events/ZONE_CHANGED.md) — Fires when the player moves between subzones or other named areas
+- [`ZONE_CHANGED_INDOORS`](events/ZONE_CHANGED_INDOORS.md) — Fires when the player moves between areas and the "indoors/outdoors" status may have changed
+- [`ZONE_CHANGED_NEW_AREA`](events/ZONE_CHANGED_NEW_AREA.md) — Fires when the player moves between major zones or enters/exits an instance
+
+---
+
+← [Home](index.md)

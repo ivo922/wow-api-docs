@@ -37,4 +37,5 @@ python3 tools/gen_api_index.py
 
 - [API categories](docs/index.md) (2010-07-26)
 - [API types](docs/API Types.md) (2010-03-24)
+- [Events](docs/Events.md) (2010-07-26)
 - [Widgets](docs/Widgets.md) (2010-07-26)

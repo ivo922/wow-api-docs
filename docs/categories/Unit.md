@@ -19,7 +19,7 @@ canInspect = CanInspect("unit", showError)
 **Arguments:**
 
 - `unit` - A unit to inspect (`string`, [unitID](../types/unitID.md))
-- `showError` - True to fire a [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event (causing the default UI to display an error message) if the unit cannot be inspected; otherwise false (`boolean`)
+- `showError` - True to fire a [`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md) event (causing the default UI to display an error message) if the unit cannot be inspected; otherwise false (`boolean`)
 
 **Returns:**
 
@@ -457,7 +457,7 @@ name, subText, text, texture, startTime, endTime, isTradeSkill, castID, notInter
 - `endTime` - Time at which the cast will finish (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
 - `isTradeSkill` - 1 if the spell being cast is a trade skill recipe; otherwise nil (`1nil`)
 - `castID` - Reference number for this spell; matches the 4th argument of `UNIT_SPELLCAST_*` events for the same spellcast (`number`)
-- `notInterruptible` - 1 if the spell can be interrupted; otherwise nil. See the [`UNIT_SPELLCAST_NOT_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_NOT_INTERRUPTIBLE) and [`UNIT_SPELLCAST_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_INTERRUPTIBLE) events for changes to this status. (`1nil`)
+- `notInterruptible` - 1 if the spell can be interrupted; otherwise nil. See the [`UNIT_SPELLCAST_NOT_INTERRUPTIBLE`](../events/UNIT_SPELLCAST_NOT_INTERRUPTIBLE.md) and [`UNIT_SPELLCAST_INTERRUPTIBLE`](../events/UNIT_SPELLCAST_INTERRUPTIBLE.md) events for changes to this status. (`1nil`)
 
 ---
 
@@ -484,7 +484,7 @@ name, subText, text, texture, startTime, endTime, isTradeSkill, notInterruptible
 - `startTime` - Time at which the cast was started (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
 - `endTime` - Time at which the cast will finish (in milliseconds; can be compared to [`GetTime()`](Utility.md#gettime) `* 1000`) (`number`)
 - `isTradeSkill` - 1 if the spell being cast is a trade skill recipe; otherwise nil (`1nil`)
-- `notInterruptible` - Indicates that the spell cannot be interrupted, [`UNIT_SPELLCAST_NOT_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_NOT_INTERRUPTIBLE) and [`UNIT_SPELLCAST_INTERRUPTIBLE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UNIT_SPELLCAST_INTERRUPTIBLE) are fired to indicate changes in the interruptible status. (`boolean`)
+- `notInterruptible` - Indicates that the spell cannot be interrupted, [`UNIT_SPELLCAST_NOT_INTERRUPTIBLE`](../events/UNIT_SPELLCAST_NOT_INTERRUPTIBLE.md) and [`UNIT_SPELLCAST_INTERRUPTIBLE`](../events/UNIT_SPELLCAST_INTERRUPTIBLE.md) are fired to indicate changes in the interruptible status. (`boolean`)
 
 ---
 

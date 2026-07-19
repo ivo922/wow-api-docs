@@ -174,7 +174,7 @@ SetCVar("cvar", value [, "raiseEvent"])
 
 - `cvar` - Name of the CVar to set (`string`)
 - `value` - New value for the CVar (`any`)
-- `raiseEvent` - If true, causes the [`CVAR_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/CVAR_UPDATE) event to fire (`string`)
+- `raiseEvent` - If true, causes the [`CVAR_UPDATE`](../events/CVAR_UPDATE.md) event to fire (`string`)
 
 ---
 

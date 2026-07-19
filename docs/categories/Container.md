@@ -440,7 +440,7 @@ PickupContainerItem(container, slot)
 
 Puts the item on the cursor into the player's backpack. The item will be placed in the lowest numbered slot ([`containerSlotID`](../types/containerSlotID.md)) in the player's backpack.
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the backpack is full.
+Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the backpack is full.
 
 **Signature:**
 
@@ -458,7 +458,7 @@ hadItem = PutItemInBackpack()
 
 Puts the item on the cursor into one of the player's bags or other containers. The item will be placed in the lowest numbered slot ([`containerSlotID`](../types/containerSlotID.md)) in the container.
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the container is full. Cannot be used to place an item into the player's backpack; see [`PutItemInBackpack()`](Container.md#putiteminbackpack).
+Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the container is full. Cannot be used to place an item into the player's backpack; see [`PutItemInBackpack()`](Container.md#putiteminbackpack).
 
 **Signature:**
 

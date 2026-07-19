@@ -194,6 +194,15 @@ def resolve(
     if path == "secure_template":
         return rel_link(from_file, "categories/Secure execution utility.md")
 
+    # events / events/UNIT_HEALTH / event/TRADE_SHOW (singular scrape typo)
+    if path in {"events", "event"}:
+        return rel_link(from_file, "Events.md")
+    if path.startswith("events/") or path.startswith("event/"):
+        name = path.split("/", 1)[1]
+        if (DOCS / "events" / f"{name}.md").exists():
+            return rel_link(from_file, f"events/{name}.md")
+        return None
+
     return None
 
 

@@ -22,7 +22,7 @@ AddTradeMoney()
 
 Equips the item on the cursor. The item is automatically equipped in the first available slot in which it fits. To equip an item in a specific slot, see [`EquipCursorItem()`](Cursor.md#equipcursoritem).
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
+Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
 
 **Signature:**
 
@@ -52,7 +52,7 @@ ClearCursor()
 
 Picks up an item from or puts an item into the "Create Auction" slot. If the cursor is empty and the slot contains an item, that item is put onto the cursor. If the cursor contains an item and the slot is empty, the item is placed into the slot. If both the cursor and the slot contain items, the contents of the cursor and the slot are exchanged.
 
-Only has effect if the player is interacting with an auctioneer (i.e. between the [`AUCTION_HOUSE_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_HOUSE_SHOW) and [`AUCTION_HOUSE_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/AUCTION_HOUSE_CLOSED) events). Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the item on the cursor cannot be put up for auction (e.g. if the item is soulbound).
+Only has effect if the player is interacting with an auctioneer (i.e. between the [`AUCTION_HOUSE_SHOW`](../events/AUCTION_HOUSE_SHOW.md) and [`AUCTION_HOUSE_CLOSED`](../events/AUCTION_HOUSE_CLOSED.md) events). Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the item on the cursor cannot be put up for auction (e.g. if the item is soulbound).
 
 **Signature:**
 
@@ -66,7 +66,7 @@ ClickAuctionSellItemButton()
 
 Picks up an item from or puts an item into an attachment slot for sending mail. If the cursor is empty and the mail attachment slot contains an item, that item is put onto the cursor. If the cursor contains an item and the slot is empty, the item is placed into the slot. If both the cursor and the slot contain items, the contents of the cursor and the mail attachment slot are exchanged.
 
-Only has effect if the player is interacting with a mailbox (i.e. between the [`MAIL_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MAIL_SHOW) and [`MAIL_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MAIL_CLOSED) events). Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if an invalid mail attachment slot is specified or if the item on the cursor cannot be mailed (e.g. if the item is soulbound).
+Only has effect if the player is interacting with a mailbox (i.e. between the [`MAIL_SHOW`](../events/MAIL_SHOW.md) and [`MAIL_CLOSED`](../events/MAIL_CLOSED.md) events). Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if an invalid mail attachment slot is specified or if the item on the cursor cannot be mailed (e.g. if the item is soulbound).
 
 **Signature:**
 
@@ -85,7 +85,7 @@ ClickSendMailItemButton(index, autoReturn)
 
 Picks up or places a gem in the Item Socketing UI. If the Item Socketing UI is open and the cursor contains a socketable gem, places the gem into socket `index`. If the cursor does not hold an item and socket `index` is not locked, picks up the gem in that socket.
 
-Only has an effect while the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_UPDATE) and [`SOCKET_INFO_CLOSE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SOCKET_INFO_CLOSE) events).
+Only has an effect while the Item Socketing UI is open (i.e. between the [`SOCKET_INFO_UPDATE`](../events/SOCKET_INFO_UPDATE.md) and [`SOCKET_INFO_CLOSE`](../events/SOCKET_INFO_CLOSE.md) events).
 
 **Signature:**
 
@@ -266,7 +266,7 @@ DropItemOnUnit("unit") or DropItemOnUnit("name")
 
 Puts the item on the cursor into a specific equipment slot. If the item on the cursor can be equipped but does not fit in the given slot, the item is automatically equipped in the first available slot in which it fits (as with [`AutoEquipCursorItem()`](Cursor.md#autoequipcursoritem)). Thus, this function is most useful when dealing with items which can be equipped in more than one slot: containers, rings, trinkets, and (for dual-wielding characters) one-handed weapons.
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
+Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the item on the cursor cannot be equipped. Does nothing if the cursor does not contain an item.
 
 **Signature:**
 
@@ -687,7 +687,7 @@ PlaceAction(slot)
 
 Puts the item on the cursor into the player's backpack. The item will be placed in the lowest numbered slot ([`containerSlotID`](../types/containerSlotID.md)) in the player's backpack.
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the backpack is full.
+Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the backpack is full.
 
 **Signature:**
 
@@ -705,7 +705,7 @@ hadItem = PutItemInBackpack()
 
 Puts the item on the cursor into one of the player's bags or other containers. The item will be placed in the lowest numbered slot ([`containerSlotID`](../types/containerSlotID.md)) in the container.
 
-Causes an error message ([`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE)) if the container is full. Cannot be used to place an item into the player's backpack; see [`PutItemInBackpack()`](Container.md#putiteminbackpack).
+Causes an error message ([`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md)) if the container is full. Cannot be used to place an item into the player's backpack; see [`PutItemInBackpack()`](Container.md#putiteminbackpack).
 
 **Signature:**
 
@@ -826,7 +826,7 @@ ShowMerchantSellCursor(index)
 
 Puts the cursor in item repair mode. Unlike most other cursor functions, this functions changes the behavior as well as the appearance of the mouse cursor: while repair mode is active, calling [`PickupContainerItem()`](Container.md#pickupcontaineritem) or [`PickupInventoryItem()`](Cursor.md#pickupinventoryitem) will attempt to repair the item (and deduct the cost of such from the player's savings) instead of putting it on the cursor.
 
-Only has effect while the player is interacting with a vendor which can perform repairs; i.e. between the [`MERCHANT_SHOW`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_SHOW) and [`MERCHANT_CLOSED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/MERCHANT_CLOSED) events, and only if [`CanMerchantRepair()`](Merchant.md#canmerchantrepair) returns `1`.
+Only has effect while the player is interacting with a vendor which can perform repairs; i.e. between the [`MERCHANT_SHOW`](../events/MERCHANT_SHOW.md) and [`MERCHANT_CLOSED`](../events/MERCHANT_CLOSED.md) events, and only if [`CanMerchantRepair()`](Merchant.md#canmerchantrepair) returns `1`.
 
 **Signature:**
 

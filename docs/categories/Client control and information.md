@@ -8,7 +8,7 @@
 
 ## CancelLogout `protected`
 
-Cancels a pending logout or quit. Only has effect if logout or quit is pending (following the [`PLAYER_CAMPING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_CAMPING) or [`PLAYER_QUITING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_QUITING) event).
+Cancels a pending logout or quit. Only has effect if logout or quit is pending (following the [`PLAYER_CAMPING`](../events/PLAYER_CAMPING.md) or [`PLAYER_QUITING`](../events/PLAYER_QUITING.md) event).
 
 **Signature:**
 
@@ -233,8 +233,8 @@ isWindows = IsWindowsClient()
 
 Attempts to log out and return to the character selection screen. Results vary based on current conditions:
 
-- If the player is in combat or under other temporary restrictions (e.g. falling), fires the [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event with a message indicating the player cannot log out at the moment.
-- If the player is not in an inn, major city, or other "rest" area (i.e. [`IsResting()`](Player information.md#isresting) returns `nil`), fires the [`PLAYER_CAMPING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_CAMPING) event, causing the default UI to show a countdown, logging the player out after a period of time if not canceled.
+- If the player is in combat or under other temporary restrictions (e.g. falling), fires the [`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md) event with a message indicating the player cannot log out at the moment.
+- If the player is not in an inn, major city, or other "rest" area (i.e. [`IsResting()`](Player information.md#isresting) returns `nil`), fires the [`PLAYER_CAMPING`](../events/PLAYER_CAMPING.md) event, causing the default UI to show a countdown, logging the player out after a period of time if not canceled.
 - If the player is in a "rest" area, logs out immediately.
 
 **Signature:**
@@ -247,7 +247,7 @@ Logout()
 
 ## NotWhileDeadError
 
-Causes the default UI to display an error message indicating that actions are disallowed while the player is dead. Fires a [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event containing a localized message identified by the global variable `ERR_PLAYER_DEAD`.
+Causes the default UI to display an error message indicating that actions are disallowed while the player is dead. Fires a [`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md) event containing a localized message identified by the global variable `ERR_PLAYER_DEAD`.
 
 **Signature:**
 
@@ -261,8 +261,8 @@ NotWhileDeadError()
 
 Attempts to exit the World of Warcraft client. Results vary based on current conditions:
 
-- If the player is in combat or under other temporary restrictions (e.g. falling), fires the [`UI_ERROR_MESSAGE`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/UI_ERROR_MESSAGE) event with a message indicating the player cannot log out at the moment.
-- If the player is not in an inn, major city, or other "rest" area (i.e. [`IsResting()`](Player information.md#isresting) returns `nil`), fires the [`PLAYER_QUITING`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/PLAYER_QUITING) event, causing the default UI to show a countdown, quitting WoW after a period of time if not canceled.
+- If the player is in combat or under other temporary restrictions (e.g. falling), fires the [`UI_ERROR_MESSAGE`](../events/UI_ERROR_MESSAGE.md) event with a message indicating the player cannot log out at the moment.
+- If the player is not in an inn, major city, or other "rest" area (i.e. [`IsResting()`](Player information.md#isresting) returns `nil`), fires the [`PLAYER_QUITING`](../events/PLAYER_QUITING.md) event, causing the default UI to show a countdown, quitting WoW after a period of time if not canceled.
 - If the player is in a "rest" area, quits the game immediately.
 
 **Signature:**
@@ -289,7 +289,7 @@ ReloadUI()
 
 Saves an image of the current game display. Screenshot images are saved to the folder `Screenshots` within the folder where the World of Warcraft client is installed.
 
-Taking a screenshot fires the [`SCREENSHOT_SUCCEEDED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SCREENSHOT_SUCCEEDED) event (or the [`SCREENSHOT_FAILED`](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/events/SCREENSHOT_FAILED) event in case of an error), which causes the default UI to display a message in the middle of the screen. Additional screenshots taken while this message is displayed will include it -- the default UI's `TakeScreenshot()` function hides this message so it is not included in screenshots.
+Taking a screenshot fires the [`SCREENSHOT_SUCCEEDED`](../events/SCREENSHOT_SUCCEEDED.md) event (or the [`SCREENSHOT_FAILED`](../events/SCREENSHOT_FAILED.md) event in case of an error), which causes the default UI to display a message in the middle of the screen. Additional screenshots taken while this message is displayed will include it -- the default UI's `TakeScreenshot()` function hides this message so it is not included in screenshots.
 
 **Signature:**
 
