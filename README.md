@@ -37,3 +37,4 @@ python3 tools/gen_api_index.py
 
 - [API categories](https://web.archive.org/web/20100726112636/http://wowprogramming.com/docs/api_categories) (2010-07-26)
 - [API types](https://web.archive.org/web/20100324131056/http://wowprogramming.com/docs/api_types) (2010-03-24)
+- [Widgets](https://web.archive.org/web/20100726120937/http://wowprogramming.com/docs/widgets) (2010-07-26)

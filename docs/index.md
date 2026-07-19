@@ -4,7 +4,7 @@ Obsidian-style reference of World of Warcraft API functions, scraped from the [w
 
 **2419** function entries (2137 unique) across **100** categories.
 
-Also see [API Types](API Types.md) and [Failed Scrapes](Failed Scrapes.md).
+Also see [Widgets](Widgets.md), [API Types](API Types.md) and [Failed Scrapes](Failed Scrapes.md).
 
 ## Categories
 

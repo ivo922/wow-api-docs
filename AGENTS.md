@@ -16,6 +16,8 @@ Cataclysm-era (~2010) World of Warcraft Lua API reference, archived from wowprog
 | [`docs/api-index.json`](docs/api-index.json) | Function/type catalog (start here) |
 | [`docs/index.md`](docs/index.md) | Human category index |
 | [`docs/API Types.md`](docs/API%20Types.md) | Type list |
+| [`docs/Widgets.md`](docs/Widgets.md) | Widget type index |
+| [`docs/widgets/*.md`](docs/widgets/) | Widget methods / script handlers |
 | [`docs/categories/*.md`](docs/categories/) | Full function docs (many APIs per file) |
 | [`llms.txt`](llms.txt) | Short machine-oriented site map |
 
